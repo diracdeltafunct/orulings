@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="blog/media/django-blog-bg.png" alt="Django Blog Logo" width="400">
+  <img src="blog/media/django-blog-bg.png" alt="(O)-Rulings Logo" width="400">
 </p>
 
 This is a minimalistic blog built using Django Admin for content management and Bootstrap for styling.
@@ -11,7 +11,7 @@ This is a minimalistic blog built using Django Admin for content management and 
 - Simple and lightweight structure for easy customization.
 
 <p align="center">
-  <img src="blog/media/preview.gif" alt="Django Blog Preview">
+  <img src="blog/media/preview.gif" alt="(O)-Rulings Preview">
 </p>
 
 ## Getting Started
