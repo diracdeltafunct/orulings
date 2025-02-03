@@ -150,6 +150,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static-extensions')
 ]
 
+
 # enabling media uploads
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_URL = '/media/'
