@@ -124,6 +124,22 @@ def blog_index(request):
     return render(request, "blog_index.html", context)
 
 
+def bold_before_colon(text):
+    """Helper function to bold text before first colon."""
+    if ":" in text:
+        parts = text.split(":", 1)
+        return f"<strong>{parts[0]}:</strong>{parts[1]}"
+    return text
+
+
+def format_section_text(section_data):
+    """Recursively format text in section data to bold text before colons."""
+    section_data["text"] = bold_before_colon(section_data["text"])
+    for child in section_data.get("children", []):
+        format_section_text(child)
+    return section_data
+
+
 def trsection_detail(request, section):
     """
     Displays a tournament rules section with links to its immediate children.
@@ -183,6 +199,9 @@ def trsection_detail(request, section):
 
     # Check if this is a top-level section (x00)
     is_top_level = section == top_level
+
+    # Format text to bold content before colons
+    data = format_section_text(data)
 
     context = {
         "section": data,
