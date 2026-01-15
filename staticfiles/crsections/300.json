@@ -1,0 +1,2052 @@
+{
+  "section": "300",
+  "text": "Playing the Game",
+  "children": [
+    {
+      "section": "301",
+      "text": "The Turn",
+      "children": []
+    },
+    {
+      "section": "302",
+      "text": "Play continues cyclically until one player wins.",
+      "children": []
+    },
+    {
+      "section": "303",
+      "text": "The phases of a turn are rigid, but the actions taken during those steps can be done in any order, unless otherwise speciﬁed.",
+      "children": [
+        {
+          "section": "303.1",
+          "text": "Game Actions of any nature are performed one at a time and are executed completely.",
+          "children": []
+        },
+        {
+          "section": "303.2",
+          "text": "Game Actions cannot be performed simultaneously for any reason.",
+          "children": [
+            {
+              "section": "303.2.a",
+              "text": "If one or more actions, game effects, or Triggered Abilities are activated simultaneously, then Turn Order is referenced to organize the sequence of actions. See rule 375. Triggered Abilities for more information.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "304",
+      "text": "The Turn Player is the player taking the current turn.",
+      "children": []
+    },
+    {
+      "section": "305",
+      "text": "When there are no items on the Chain and the Turn Player cannot or chooses not to perform any Discretionary Actions , the current phase or step of the turn ends and the next phase, step, or turn begins.",
+      "children": []
+    },
+    {
+      "section": "306",
+      "text": "The Turn Player changes when the current Turn Player reaches the End of all of the Phases of their Turn.",
+      "children": []
+    },
+    {
+      "section": "307",
+      "text": "States of the Turn",
+      "children": []
+    },
+    {
+      "section": "308",
+      "text": "At any given time, the turn is in either a Neutral State or a Showdown State.",
+      "children": [
+        {
+          "section": "308.1",
+          "text": "If a Showdown is in progress, the turn is in a Showdown State.",
+          "children": [
+            {
+              "section": "308.1.a",
+              "text": "Only cards and abilities with the Action or Reaction keywords can be played or activated in a Showdown State.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "308.2",
+          "text": "If no Showdown is in progress, the turn is in a Neutral State.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "309",
+      "text": "At any given time, the turn is in either an Open State or a Closed State.",
+      "children": [
+        {
+          "section": "309.1",
+          "text": "If a Chain exists, the turn is in a Closed State.",
+          "children": [
+            {
+              "section": "309.1.a",
+              "text": "Only cards and abilities with the Reaction keyword can be played or activated in a Closed State.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "309.2",
+          "text": "If no Chain exists, the turn is in an Open State.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "310",
+      "text": "These descriptions can be combined, such that the turn is always in one of these four states:",
+      "children": [
+        {
+          "section": "310.1",
+          "text": "Neutral Open: There is no Showdown in progress and no Chain exists.",
+          "children": [
+            {
+              "section": "310.1.a",
+              "text": "By default, cards can be played and abilities activated only when a player has priority on their turn in a Neutral Open state.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "310.2",
+          "text": "Neutral Closed: There is no Showdown in progress and a Chain exists.",
+          "children": []
+        },
+        {
+          "section": "310.3",
+          "text": "Showdown Open: A Showdown is in progress and no Chain exists.",
+          "children": []
+        },
+        {
+          "section": "310.4",
+          "text": "Showdown Closed: A Showdown is in progress and a Chain exists.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "311",
+      "text": "Priority and Focus",
+      "children": []
+    },
+    {
+      "section": "312",
+      "text": "At any given time, up to one player has Priority.",
+      "children": [
+        {
+          "section": "312.1",
+          "text": "Priority is the singular exclusive right to take Discretionary Actions. See_rule_REF_398.1_DOT Discretionary Actions for more information.",
+          "children": [
+            {
+              "section": "312.1.a",
+              "text": "The player with Priority can take appropriately timed Discretionary Actions.",
+              "children": []
+            },
+            {
+              "section": "312.1.b",
+              "text": "If no player has Priority , no player can take Discretionary Actions.",
+              "children": [
+                {
+                  "section": "312.1.b.1",
+                  "text": "Players can always take and make choices for Limited Actions when instructed, regardless of Priority.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "312.2",
+          "text": "A player receives Priority at the following times:",
+          "children": [
+            {
+              "section": "312.2.a",
+              "text": "When the turn is in a Neutral Open State during their Action Phase.",
+              "children": []
+            },
+            {
+              "section": "312.2.b",
+              "text": "When the turn is in a Showdown State and they gain Focus.",
+              "children": []
+            },
+            {
+              "section": "312.2.c",
+              "text": "When the turn is in a Closed State and they control the next item on the Chain.",
+              "children": []
+            },
+            {
+              "section": "312.2.d",
+              "text": "When the turn is in a Closed State , they are the next Player in Turn Order , and the player with Priority passes. 312.3 When a player is granted Priority, it is either created if no player has it or taken from the player with Priority.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "313",
+      "text": "At any given time, up to one player has Focus.",
+      "children": [
+        {
+          "section": "313.1",
+          "text": "Focus is the permission to take appropriately timed Discretionary Actions when the turn is in a Showdown Open State. See rule 307. States of the Turn for more information.",
+          "children": [
+            {
+              "section": "313.1.a",
+              "text": "The player with Focus must obey any additional restrictions on which Discretionary Actions may be performed. Example: A player with Focus may not play spells or activate abilities that don't have the Action or Reaction keywords.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "313.2",
+          "text": "A player who gains Focus also gains Priority.",
+          "children": []
+        },
+        {
+          "section": "313.3",
+          "text": "A player who passes Priority retains Focus. 313.4 A player may not make discretionary actions with Focus unless they also possess Priority.",
+          "children": []
+        },
+        {
+          "section": "313.5",
+          "text": "If the turn is in a Neutral State , no player has Focus.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "314",
+      "text": "Phases of the Turn",
+      "children": []
+    },
+    {
+      "section": "315",
+      "text": "Start of Turn",
+      "children": [
+        {
+          "section": "315.1",
+          "text": "Awaken Phase",
+          "children": [
+            {
+              "section": "315.1.a",
+              "text": "The Turn Player readies all Game Objects they control that are able to be readied. See rule 402. Ready for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "315.2",
+          "text": "Beginning Phase",
+          "children": [
+            {
+              "section": "315.2.a",
+              "text": "Beginning Step",
+              "children": [
+                {
+                  "section": "315.2.a.1",
+                  "text": "At the start of Beginning Phase game effects take place.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "315.2.b",
+              "text": "Scoring Step",
+              "children": [
+                {
+                  "section": "315.2.b.1",
+                  "text": "Holding occurs at this time. See rule 445. Scoring for more information.",
+                  "children": []
+                },
+                {
+                  "section": "315.2.b.2",
+                  "text": "Reminder: In Modes of Play with Teams , Battleﬁelds held by a Teammate of the Turn Player during this phase are disqualiﬁed from being scored this turn by the Turn Player.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "315.2.c",
+              "text": "Speciﬁc game effects or abilities will reference this timing and phase as necessary.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "315.3",
+          "text": "Channel Phase",
+          "children": [
+            {
+              "section": "315.3.a",
+              "text": "The Turn Player gains their additional runes for the turn.",
+              "children": []
+            },
+            {
+              "section": "315.3.b",
+              "text": "The Turn Player channels 2 runes from their Rune Deck. See rule 417. Channel for more information.",
+              "children": [
+                {
+                  "section": "315.3.b.1",
+                  "text": "If there are fewer than 2 runes in the Rune Deck, they channel as many as possible.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "315.3.c",
+              "text": "Perform any actions as instructed by game objects during this time.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "315.4",
+          "text": "Draw Phase",
+          "children": [
+            {
+              "section": "315.4.a",
+              "text": "The Turn Player gains their additional card for the turn.",
+              "children": []
+            },
+            {
+              "section": "315.4.b",
+              "text": "The Turn Player draws",
+              "children": [
+                {
+                  "section": "315.4.b.1",
+                  "text": "If there are no cards remaining in their Main Deck to draw, the Turn Player has been Burned Out . See rule 418. Burn Out for more information.",
+                  "children": []
+                },
+                {
+                  "section": "315.4.b.2",
+                  "text": "After completing the Burn Out the Turn Player still Draws",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "315.4.c",
+              "text": "Perform any actions as instructed by game objects during this time.",
+              "children": []
+            },
+            {
+              "section": "315.4.d",
+              "text": "As the Draw Phase ends, each player's Rune Pool empties. See rule 161. Rune Pools for more information.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "316",
+      "text": "Action Phase",
+      "children": [
+        {
+          "section": "316.1",
+          "text": "When all steps of the Start of Turn have been completed, the Action Phase begins.",
+          "children": []
+        },
+        {
+          "section": "316.2",
+          "text": "The Action Phase has no deﬁned structure.",
+          "children": [
+            {
+              "section": "316.2.a",
+              "text": "A player may take any number of Discretionary Actions they are able to perform during this phase. See_rule_REF_398.1_DOT Discretionary Actions for more information.",
+              "children": []
+            },
+            {
+              "section": "316.2.b",
+              "text": "This is denoted as a Neutral Open State , and only the Turn Player has the ability to play spells or activate abilities. See rule 307. States of the Turn for more information.",
+              "children": [
+                {
+                  "section": "316.2.b.1",
+                  "text": "In Modes of Play with teammates, the Turn Player's teammates may play spells and activate abilities, including ones without Action or Reaction.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "316.2.c",
+              "text": "In Modes of Play with Teammates, spells may be played by Teammates of the Turn Player during this time, but the actions of the Turn Player take precedence.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "316.3",
+          "text": "As a result of a player taking Discretionary Actions , one or more structured phases may occur.",
+          "children": []
+        },
+        {
+          "section": "316.4",
+          "text": "Combat",
+          "children": [
+            {
+              "section": "316.4.a",
+              "text": "A Combat phase occurs as a result of Units controlled by opposing players being present at the same Battleﬁeld .",
+              "children": []
+            },
+            {
+              "section": "316.4.b",
+              "text": "This could be the result of a Standard Move Standard Action , a Spell , or other Game Effect.",
+              "children": []
+            },
+            {
+              "section": "316.4.c",
+              "text": "The source effect does not change the structure or ﬂow of Combat once initiated.",
+              "children": []
+            },
+            {
+              "section": "316.4.d",
+              "text": "A Combat can only occur between two players. See rule 437. Combat for more information.",
+              "children": []
+            },
+            {
+              "section": "316.4.e",
+              "text": "Play proceeds following the steps of combat. See rule 441. Steps of Combat for more information.",
+              "children": []
+            },
+            {
+              "section": "316.4.f",
+              "text": "Combat will also include a Showdown.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "316.5",
+          "text": "Showdowns",
+          "children": [
+            {
+              "section": "316.5.a",
+              "text": "A Showdown occurs when a Combat occurs.",
+              "children": [
+                {
+                  "section": "316.5.a.1",
+                  "text": "Showdowns that occur as a result of Combat are a Sub-Phase of Combat.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "316.5.b",
+              "text": "A Showdown is marked as Staged at a Battleﬁeld when the Contested status is applied to a Battleﬁeld with no current controller.",
+              "children": [
+                {
+                  "section": "316.5.b.1",
+                  "text": "Showdowns that occur as a result of a player moving to an empty Battleﬁeld are a stand-alone Phase and do not create a Combat.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "316.5.c",
+              "text": "A Showdown is a structured Window of Opportunity where Players may play cards and activate abilities with Action or Reaction. See rule 337. Showdowns for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "316.6",
+          "text": "When a player has no more Discretionary Actions they wish to execute, they must indicate they are ending their turn.",
+          "children": [
+            {
+              "section": "316.6.a",
+              "text": "This ends the Action Phase.",
+              "children": []
+            },
+            {
+              "section": "316.6.b",
+              "text": "Play proceeds to the End of Turn.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "317",
+      "text": "End of Turn Phase",
+      "children": [
+        {
+          "section": "317.1",
+          "text": "Ending Step",
+          "children": [
+            {
+              "section": "317.1.a",
+              "text": "At the end of the turn Game Effects take place.",
+              "children": []
+            },
+            {
+              "section": "317.1.b",
+              "text": "Speciﬁc game effects and abilities will reference this timing and phase as necessary.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "317.2",
+          "text": "End of Turn Cleanup",
+          "children": [
+            {
+              "section": "317.2.a",
+              "text": "Invoke an End of Turn Special Cleanup. See rule 318. Cleanups for more information.",
+              "children": []
+            },
+            {
+              "section": "317.2.b",
+              "text": "Insert “2c. Heal all Units .”",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "317.3",
+          "text": "Expiration Step",
+          "children": [
+            {
+              "section": "317.3.a",
+              "text": "All \"this turn\" effects expire simultaneously.",
+              "children": []
+            },
+            {
+              "section": "317.3.b",
+              "text": "As the Expiration Step ends, all players' Rune Pools empty. Any unspent Energy and Power are lost.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "317.4",
+          "text": "The Turn Player then becomes the next player in Turn Order.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "318",
+      "text": "Cleanups",
+      "children": []
+    },
+    {
+      "section": "319",
+      "text": "A Cleanup occurs at the following times:",
+      "children": [
+        {
+          "section": "319.1",
+          "text": "After the game transitions to or from an Open or Closed state",
+          "children": []
+        },
+        {
+          "section": "319.2",
+          "text": "After the game transitions between Phases",
+          "children": []
+        },
+        {
+          "section": "319.3",
+          "text": "After a Pending Item becomes a Legal Item on the Chain",
+          "children": []
+        },
+        {
+          "section": "319.4",
+          "text": "After a Chain Item is removed from the Chain for any reason",
+          "children": []
+        },
+        {
+          "section": "319.5",
+          "text": "After any number of Game Objects enter or leave the Board",
+          "children": []
+        },
+        {
+          "section": "319.6",
+          "text": "After the status of any number of Game Objects changes for any reason",
+          "children": []
+        },
+        {
+          "section": "319.7",
+          "text": "After a Move is completed",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "320",
+      "text": "While a Cleanup is occurring, Chain Items cannot be Resolved.",
+      "children": [
+        {
+          "section": "320.1",
+          "text": "New Pending Items can be added, but Legal Items cannot be executed and Priority and Focus are not passed or awarded.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "321",
+      "text": "If an event occurs during a Cleanup that qualiﬁes for a Cleanup, another Cleanup will occur immediately after the ﬁrst completes, repeating until a Cleanup occurs with no new change in the game’s state.",
+      "children": []
+    },
+    {
+      "section": "322",
+      "text": "When a Cleanup occurs, the following steps occur in order:",
+      "children": [
+        {
+          "section": "322.4",
+          "text": "2b. All Units that have non-zero Damage marked on them equalling or exceeding their Might are killed and placed in their owners' Trash.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "323",
+      "text": "Special Cleanups are Cleanup steps invoked at speciﬁc times that have additional steps not present in a normal Cleanup.",
+      "children": [
+        {
+          "section": "323.1",
+          "text": "When a Special Cleanup is invoked, the unique steps added will be inserted and deﬁned by the sub-section that invokes it. Example: When a Combat Cleanup is invoked, the Combat section deﬁnes what steps are added to the Cleanup.",
+          "children": []
+        },
+        {
+          "section": "323.2",
+          "text": "If events during a Special Cleanup require another Cleanup, a normal Cleanup is invoked, not another iteration of the Special Cleanup .",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "324",
+      "text": "Chains and Showdowns",
+      "children": []
+    },
+    {
+      "section": "325",
+      "text": "Players can act during the following Windows of Opportunity that occur during the course of regular play:",
+      "children": [
+        {
+          "section": "325.1",
+          "text": "During a Chain",
+          "children": []
+        },
+        {
+          "section": "325.2",
+          "text": "During a Showdown",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "326",
+      "text": "Chains",
+      "children": []
+    },
+    {
+      "section": "327",
+      "text": "The Chain is a Non-Board Zone that temporarily exists whenever a card is played or an ability is activated.",
+      "children": [
+        {
+          "section": "327.1",
+          "text": "Cards are placed here as part of the process of being played.",
+          "children": []
+        },
+        {
+          "section": "327.2",
+          "text": "Abilities are queued here as part of the process of resolving. See rule 357. Abilities for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "328",
+      "text": "Cards and abilities added to the chain are added as Pending Chain Items that become Finalized Chain Items.",
+      "children": [
+        {
+          "section": "328.1",
+          "text": "Pending Items are on the Chain.",
+          "children": []
+        },
+        {
+          "section": "328.2",
+          "text": "Chain Items are Pending until the “Check Legality” step of playing a card. See rule 346. Playing Cards for more information.",
+          "children": []
+        },
+        {
+          "section": "328.3",
+          "text": "When a Pending Chain Item is no longer Pending it is ﬁnalized and becomes a Finalized Chain Item .",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "329",
+      "text": "The Chain exists as long as a Chain Item is on it.",
+      "children": [
+        {
+          "section": "329.1",
+          "text": "Only one Chain can exist at a time.",
+          "children": []
+        },
+        {
+          "section": "329.2",
+          "text": "If a card would begin to be played while a Chain already exists, it is placed on the existing Chain.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "330",
+      "text": "The State of the Turn is partially determined by whether or not the Chain currently exists.",
+      "children": [
+        {
+          "section": "330.1",
+          "text": "The turn is said to be in a Closed State if a Chain exists.",
+          "children": [
+            {
+              "section": "330.1.a",
+              "text": "Cards of all Categories, by default, cannot be played during a Closed State.",
+              "children": []
+            },
+            {
+              "section": "330.1.b",
+              "text": "Card abilities, by default, cannot be played during a Closed State.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "330.2",
+          "text": "The turn is said to be in an Open State if no Chain exists.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "331",
+      "text": "Steps of Resolving Chain Items",
+      "children": []
+    },
+    {
+      "section": "332",
+      "text": "Whenever a card or token is played or an ability is activated or triggered, a Chain is created.",
+      "children": [
+        {
+          "section": "332.1",
+          "text": "The player that created the chain becomes the ﬁrst Active Player.",
+          "children": []
+        },
+        {
+          "section": "332.2",
+          "text": "The Active Player is a designator similar to, but distinct from, Turn Player.",
+          "children": []
+        },
+        {
+          "section": "332.3",
+          "text": "Similar to the Turn Player , this designation will pass between players over the course of play.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "333",
+      "text": "Step 1: Finalize",
+      "children": [
+        {
+          "section": "333.1",
+          "text": "If one or more Items are Pending , their controllers must complete the steps of Playing those Pending Items until they are Finalized Items or leave the Chain.",
+          "children": [
+            {
+              "section": "333.1.a",
+              "text": "This process does not pass Priority.",
+              "children": []
+            },
+            {
+              "section": "333.1.b",
+              "text": "Each Item is Finalized in the order it was appended to the Chain.",
+              "children": []
+            },
+            {
+              "section": "333.1.c",
+              "text": "Abilities that Add resources, Units , and Gear resolve immediately when Finalized and do not progress to Step 2: Execute. See rule 346. Playing Cards for more information.",
+              "children": [
+                {
+                  "section": "333.1.c.1",
+                  "text": "If the Chain is empty, play proceeds in an Open State.",
+                  "children": []
+                },
+                {
+                  "section": "333.1.c.2",
+                  "text": "If the Chain is not empty and there are one or more Pending Items , repeat Step",
+                  "children": []
+                },
+                {
+                  "section": "333.1.c.3",
+                  "text": "If the Chain is not empty and there are no Pending Items , the controller of the newest item on the chain gains Priority and becomes the Active Player. Proceed to Step 2: Execute.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "334",
+      "text": "Step 2: Execute",
+      "children": [
+        {
+          "section": "334.1",
+          "text": "The Active Player may do any the following:",
+          "children": [
+            {
+              "section": "334.1.a",
+              "text": "Play a Card that is legally timed.",
+              "children": [
+                {
+                  "section": "334.1.a.1",
+                  "text": "Cards , by default, cannot be played during a Closed State.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.a.2",
+                  "text": "A Legally Timed Card would be a Card with Reaction.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.a.3",
+                  "text": "Other exceptions may be created during regular play.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.a.4",
+                  "text": "The card will be added to the chain as a Pending Item , following the steps of playing a card.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.a.5",
+                  "text": "This can be an additional card to the item that Started the Chain in the case of the ﬁrst Active Player after creating the Chain.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.a.6",
+                  "text": "Whether a Card is legally timed is evaluated during the “Check Legality” step of Playing a Card. See rule 346. Playing Cards for more information.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.a.7",
+                  "text": "Playing a card will create one or more Pending Items . Return to Step 1: Finalize.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "334.1.b",
+              "text": "Activate Abilities of Game Objects that are legally timed. See rule 386. Playing or Activating Abilities for more information.",
+              "children": [
+                {
+                  "section": "334.1.b.1",
+                  "text": "All rules for legally timed cards apply to legally timed abilities.",
+                  "children": []
+                },
+                {
+                  "section": "334.1.b.2",
+                  "text": "Activating abilities will create one or more Pending Items . Return to Step 1: Finalize.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "334.1.c",
+              "text": "Pass Priority",
+              "children": [
+                {
+                  "section": "334.1.c.1",
+                  "text": "The Active Player passes Priority to the next Player in Turn Order. Proceed to Step 3: Pass.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "335",
+      "text": "Step 3: Pass",
+      "children": [
+        {
+          "section": "335.1",
+          "text": "If all players have passed Priority without adding any items to the Chain , proceed to Step 4: Resolve.",
+          "children": []
+        },
+        {
+          "section": "335.2",
+          "text": "Otherwise, the Active Player passes Priority to the next Player in Turn Order. Return to Step 3: Execute.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "336",
+      "text": "Step 4: Resolve",
+      "children": [
+        {
+          "section": "336.1",
+          "text": "The newest item on the Chain resolves. Execute its game effects in their entirety. See rule 346. Playing Cards for more information on resolving spells. See rule 386. Playing or Activating Abilities for more information on resolving abilities.",
+          "children": []
+        },
+        {
+          "section": "336.2",
+          "text": "If the Chain is empty, play proceeds in an Open State.",
+          "children": []
+        },
+        {
+          "section": "336.3",
+          "text": "If the Chain is not empty and there are one or more Pending Items , return to Step 1: Finalize.",
+          "children": []
+        },
+        {
+          "section": "336.4",
+          "text": "If the Chain is not empty and there are no Pending Items , the controller of the newest item on the chain gains Priority and becomes the Active Player. Return to Step 2: Execute.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "337",
+      "text": "Showdowns",
+      "children": []
+    },
+    {
+      "section": "338",
+      "text": "A Showdown is a Window of Opportunity in which Players have an Open State in which they may play Spells in an alternating fashion.",
+      "children": [
+        {
+          "section": "338.1",
+          "text": "Each spell played this way creates a Chain as normal.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "339",
+      "text": "The State of the turn is partially determined by whether or not a Showdown is in progress.",
+      "children": [
+        {
+          "section": "339.1",
+          "text": "The turn is said to be in a Showdown State if a Showdown is in progress.",
+          "children": [
+            {
+              "section": "339.1.a",
+              "text": "Cards of all Categories, by default, cannot be played during a Showdown State.",
+              "children": []
+            },
+            {
+              "section": "339.1.b",
+              "text": "Card abilities, by default, cannot be played during a Showdown State.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "339.2",
+          "text": "The turn is said to be in a Neutral State if no Showdown is in progress.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "340",
+      "text": "A Showdown begins when Control of a Battleﬁeld is Contested and the turn is in a Neutral Open State.",
+      "children": [
+        {
+          "section": "340.1",
+          "text": "If Control of a Battleﬁeld is Contested between two players, then a Showdown will be opened as the ﬁrst step of Combat. See rule 437. Combat for more information.",
+          "children": []
+        },
+        {
+          "section": "340.2",
+          "text": "If Control of a Battleﬁeld is Contested and the Battleﬁeld in question is uncontrolled when it becomes Contested , a Showdown is opened during the Cleanup at the end of the action that caused the Battleﬁeld to become Contested.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "341",
+      "text": "As a Showdown begins, the player who applied Contested status to the Battleﬁeld gains Focus.",
+      "children": []
+    },
+    {
+      "section": "342",
+      "text": "When a Showdown begins, it may or may not begin with an Initial Chain.",
+      "children": [
+        {
+          "section": "342.1",
+          "text": "Showdowns that open as a result of Combat may have an Initial Chain of Triggered Abilities.",
+          "children": [
+            {
+              "section": "342.1.a",
+              "text": "These Triggered Abilities should be put on the chain ﬁrst by the player with Focus , then proceeding with players without the Defender designation in Turn Order. Finally, the player with the Defender designation will add their Triggered Abilities , if any, to the Chain.",
+              "children": []
+            },
+            {
+              "section": "342.1.b",
+              "text": "If there are no such Triggered Abilities present during a Combat -initiated Showdown then no Initial Chain is created, but the Showdown will still proceed.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "343",
+      "text": "When the last item on the chain resolves during a Showdown , Focus passes, and the next Player gains both Focus and Priority.",
+      "children": [
+        {
+          "section": "343.1",
+          "text": "Focus does not pass when the last item on the Initial Chain resolves, if there was one. Instead the player with Focus proceeds with play.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "344",
+      "text": "During a Showdown , the player with Focus may do one of the following:",
+      "children": [
+        {
+          "section": "344.1",
+          "text": "Play a spell that is legally timed.",
+          "children": [
+            {
+              "section": "344.1.a",
+              "text": "The spell will start a Chain as normal.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "344.2",
+          "text": "Activate Abilities of Game Objects that are legally timed. See rule 357. Abilities for more information.",
+          "children": []
+        },
+        {
+          "section": "344.3",
+          "text": "Pass.",
+          "children": [
+            {
+              "section": "344.3.a",
+              "text": "If all Players have passed once in sequence, the Showdown ends.",
+              "children": [
+                {
+                  "section": "344.3.a.1",
+                  "text": "Perform a Cleanup.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "344.4",
+          "text": "Otherwise, Focus passes to the next Player in Turn Order.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "345",
+      "text": "If all players pass Focus without playing a spell or activating an ability, then the Showdown Closes.",
+      "children": [
+        {
+          "section": "345.1",
+          "text": "If this Showdown opened as a result of Combat, proceed with the remaining steps of Combat to resolve the phase. See rule 441. The Steps of Combat for more information.",
+          "children": []
+        },
+        {
+          "section": "345.2",
+          "text": "If this Showdown opened as a result of Contested being applied to a Battleﬁeld without a controller, do one of the following:",
+          "children": [
+            {
+              "section": "345.2.a",
+              "text": "If only one player’s Units remain at the Battleﬁeld , and if that player does not already Control the Battleﬁeld , that player establishes Control over the Battleﬁeld . See rule 179. Control for more information on Control . See_rule_REF_446.1_DOT for more information on Conquering .",
+              "children": [
+                {
+                  "section": "345.2.a.1",
+                  "text": "This results in a Conquer if that player has not yet scored that Battleﬁeld this turn.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "345.2.b",
+              "text": "If two players’ Units remain at the Battleﬁeld , Control cannot be established and the Battleﬁeld remains Contested . This results in a Staged Combat . See rule 437. Combat for more information.",
+              "children": [
+                {
+                  "section": "345.2.b.1",
+                  "text": "The player who applied Contested to the Battleﬁeld will be the Attacker in the subsequent Combat.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "346",
+      "text": "Playing Cards",
+      "children": []
+    },
+    {
+      "section": "347",
+      "text": "Playing a card is the act of a player utilizing their cards.",
+      "children": [
+        {
+          "section": "347.1",
+          "text": "A card is Played when it has ﬁnished this process in its entirety.",
+          "children": []
+        },
+        {
+          "section": "347.2",
+          "text": "Tokens are not cards, but can still be Played. See rule 173. Tokens for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "348",
+      "text": "Cards have different behaviors when played.",
+      "children": [
+        {
+          "section": "348.1",
+          "text": "Permanents become Game Objects when Played.",
+          "children": []
+        },
+        {
+          "section": "348.2",
+          "text": "Spells create game effects that are executed, then the card is placed in the trash when Played.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "349",
+      "text": "Cards have different states during the process of being played.",
+      "children": [
+        {
+          "section": "349.1",
+          "text": "When initially being played cards are Pending, as Pending Chain Items.",
+          "children": []
+        },
+        {
+          "section": "349.2",
+          "text": "Near the end of the process cards will cease being Pending and become Finalized Chain Items .",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "350",
+      "text": "The Process of Play",
+      "children": []
+    },
+    {
+      "section": "352",
+      "text": "They use the phrase \"as an additional cost\" and the word \"may.\" Example: A unit has the ability \"As you play me, you may discard 1 as an additional cost. If you do, reduce my cost by [2].\" While playing the unit, its controller declares their intention to pay the additional cost in rule 352 , applies that additional cost in rule 353.2 , applies the discount granted by paying that cost in rule 353.4 , and discards a card to pay that additional cost in rule",
+      "children": [
+        {
+          "section": "352.1",
+          "text": "If the card is a spell, or has an effect that speciﬁes a choice \"As I am played,\" those choices are made now.",
+          "children": []
+        },
+        {
+          "section": "352.2",
+          "text": "For Units , choose a valid Location where that Unit will be placed upon being Played. 352.2.a By default, Valid locations include the controller’s Base or a Battleﬁeld the controller controls. 352.2.b Some Game Effects may grant players permission to play Units to locations that are not normally Valid . Such locations become Valid for the purposes of Playing the Unit. .",
+          "children": []
+        },
+        {
+          "section": "352.3",
+          "text": "For Spells and Abilities that Move one or more Units , choose a valid Location as the Move Destination for each Move that will be performed.",
+          "children": []
+        },
+        {
+          "section": "352.4",
+          "text": "If a card requires you to speciﬁcally choose one or more Game Objects , that choice is made now.",
+          "children": [
+            {
+              "section": "352.4.a",
+              "text": "This does not include cards that affect one or more Game Objects based on criteria. Example: \"Stun a unit at a battleﬁeld\" is a Choice. Example: \"Kill all gear\" is not a Choice.",
+              "children": []
+            },
+            {
+              "section": "352.4.b",
+              "text": "This does not include making choices for Triggered Abilities of permanents, even if those abilities trigger when the permanent is played. Example: A unit with a triggered ability that says \"When I'm played, kill a unit\" does not require you to choose a target as it's played. The target will be chosen when the ability triggers. See rule 375. Triggered Abilities for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "352.5",
+          "text": "Targeting",
+          "children": []
+        },
+        {
+          "section": "352.6",
+          "text": "When a card Chooses one or more speciﬁc Game Objects to affect, it is Targeted.",
+          "children": []
+        },
+        {
+          "section": "352.7",
+          "text": "In order to put a spell or ability on the chain, valid choices must be made for all targets.",
+          "children": []
+        },
+        {
+          "section": "352.8",
+          "text": "A target is a valid choice if it meets all of the following requirements:",
+          "children": [
+            {
+              "section": "352.8.a",
+              "text": "It is a permanent or rune on the board, a spell or ability on the chain, a player or zone, or speciﬁed explicitly or implicitly as being in some other zone. e.g., “Kill a unit” targets a unit on the board. e.g., “Recycle a unit from your trash” targets a unit card in your trash.",
+              "children": [
+                {
+                  "section": "352.8.a.1",
+                  "text": "“Unit,” “gear,” and “rune” refer to objects on the Board unless speciﬁed otherwise.",
+                  "children": []
+                },
+                {
+                  "section": "352.8.a.2",
+                  "text": "“Spell” and “ability” refer to objects on the Chain unless speciﬁed otherwise.",
+                  "children": []
+                },
+                {
+                  "section": "352.8.a.3",
+                  "text": "“Facedown card” refers to a card in a Facedown Zone unless speciﬁed otherwise.",
+                  "children": []
+                },
+                {
+                  "section": "352.8.a.4",
+                  "text": "“Legend” refers to a legend in the Legend Zone.",
+                  "children": []
+                },
+                {
+                  "section": "352.8.a.5",
+                  "text": "“Chosen Champion” and “unit in the Champion Zone” refer to a unit in the Champion Zone unless speciﬁed otherwise.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "352.8.b",
+              "text": "It meets all targeting restrictions. e.g., A unit is a valid target for a spell that refers to a “unit at a battleﬁeld,” “enemy unit,” “unit you control,” or “unit with Might 4 or greater” only if it meets the appropriate criteria.",
+              "children": []
+            },
+            {
+              "section": "352.8.c",
+              "text": "It is not the spell or ability itself. e.g., A spell that says “Counter a spell” cannot target itself. e.g., An ability of a permanent can target that permanent, because abilities and their sources are separate objects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "352.9",
+          "text": "If a spell or ability requires one or more players to choose objects, players, or zones that are not targets, those choices are made on resolution.",
+          "children": [
+            {
+              "section": "352.9.a",
+              "text": "Passive abilities never have targets.",
+              "children": []
+            },
+            {
+              "section": "352.9.b",
+              "text": "Replacement effects never have targets.",
+              "children": []
+            },
+            {
+              "section": "352.9.c",
+              "text": "Units and gear never have targets, although their abilities may.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "352.10",
+          "text": "A game object, player, or zone mentioned in the text of a spell, activated ability, or triggered ability is a target UNLESS any of the following are true:",
+          "children": [
+            {
+              "section": "352.10.a",
+              "text": "It is in a zone whose information status is not Public. e.g., “Ready a legend” targets a legend, because the Legend Zone is Public. e.g., “Return a unit from your trash to your hand” targets a unit card in your trash, because your trash is Public. e.g., “You may play a unit from your hand, ignoring its costs” does not target a unit card in your hand, because your hand is not a public zone.",
+              "children": [
+                {
+                  "section": "352.10.a.1",
+                  "text": "Public zones are Battleﬁeld Zones, Bases, Trashes, Legend Zones, Champion Zones, and Facedown Zones.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "352.10.b",
+              "text": "It is included only as part of a targeting restriction for another choice. e.g., “Kill a unit at a battleﬁeld” targets a unit, but not a battleﬁeld, because the units are targets and “at a battleﬁeld” is a restriction. e.g., “Kill all units at a battleﬁeld” targets a battleﬁeld, but not any units. e.g., “Move a unit to a battleﬁeld” targets both a unit and a battleﬁeld.",
+              "children": []
+            },
+            {
+              "section": "352.10.c",
+              "text": "It is included only as part of a cost, trigger condition, or replacement effect. e.g., “As an additional cost to play me, kill a friendly unit” doesn’t target anything. e.g., “When a friendly unit dies, kill a gear” targets a gear, but not a friendly unit. e.g., “When you play me, the next time a friendly unit would die this turn, return it to your hand instead” doesn’t target anything. The replacement effect applies when any friendly unit dies. e.g., “Choose a friendly unit. The next time it would die this turn, return it to your hand instead” targets a friendly unit, because “choose a friendly unit” is not part of the replacement effect.",
+              "children": [
+                {
+                  "section": "352.10.c.1",
+                  "text": "This includes costs within instructions, identiﬁed by phrases like “[do X] to [do Y].” The cost within that instruction is “[do X].” e.g., “When I hold, you may kill another friendly unit here to draw 1” does not target anything. e.g., “When you play me, you may spend a buff to move a friendly unit” targets the friendly unit, but not the buff.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "352.10.d",
+              "text": "It is programmatically selected based on its characteristics rather than chosen by the spell or ability’s controller. e.g., “Kill all units at a battleﬁeld” targets a battleﬁeld, but does not target any units. e.g., “Kill all units at battleﬁelds” doesn’t target anything. e.g., “Destroy a unit. Its controller draws 2 cards” targets the unit, but not its controller. e.g., “Ready your legend” doesn’t target anything, because you can only have one legend. e.g., “Ready a friendly legend” targets a legend, because in a 2v2 game there are two friendly legends. e.g., “Recycle all cards in your trash” doesn’t target anything, because it affects all cards and you only have one trash.",
+              "children": [
+                {
+                  "section": "352.10.d.1",
+                  "text": "This exception applies solely to objects for which no choice is ever possible.",
+                  "children": []
+                },
+                {
+                  "section": "352.10.d.2",
+                  "text": "This exception does not apply to objects that are the only valid choice at the moment a spell or ability is placed on the chain, but which would require a choice under other circumstances. e.g., “Kill a unit at a battleﬁeld” always targets a unit, even if that unit is the only unit currently at a battleﬁeld.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "352.10.e",
+              "text": "It is part of a set of objects chosen in whole or in part by other players. e.g., “Each player kills a unit they control” does not target. Each player, including the one who played the spell, chooses a unit to kill as the spell or ability resolves.",
+              "children": []
+            },
+            {
+              "section": "352.10.f",
+              "text": "It is identiﬁed in an instruction that a player “must” complete. e.g., “You must recycle one of your runes” doesn’t target anything. You choose from among your runes as the spell or ability resolves. e.g., “Recycle a rune you control” targets a rune. You choose a rune you control as you put the spell or ability on the chain.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "352.11",
+          "text": "Some cards identify a group of Targets with Targeting Requirements that must be met by the group as a whole.",
+          "children": [
+            {
+              "section": "352.11.a",
+              "text": "As they’re ﬁnalized on the chain, such cards can choose any group of valid targets that collectively fulﬁll the targeting restriction.",
+              "children": []
+            },
+            {
+              "section": "352.11.b",
+              "text": "If the group of targets no longer collectively fulﬁll the targeting restriction as the spell or ability resolves, that spell or ability’s controller can choose a subset of the original targets that fulﬁlls the targeting requirement for the spell or ability to affect. Example: A player plays Fox-Fire, a spell that says in part “Kill any number of units at a battleﬁeld with total Might 4 or less.” That player chooses four 1 [M] Recruit tokens at a single battleﬁeld. As a Reaction, another player gives two of those Recruits +1 [M], so the Recruits’ Mights are 1, 1, 2, and",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "352.12",
+          "text": "If a card speciﬁes that a player may choose some number of Game Objects to be affected by a card, then all choices are considered targeted and chosen independently.",
+          "children": []
+        },
+        {
+          "section": "352.13",
+          "text": "If a card speciﬁes that a player chooses “any number” or “up to” some number of Game Objects to be affected, they may choose any number of available targets, including zero. If they choose zero, the spell or ability can be played without any targets.",
+          "children": []
+        },
+        {
+          "section": "352.14",
+          "text": "Splitting",
+          "children": [
+            {
+              "section": "352.14.a",
+              "text": "If a card speciﬁes that an amount of damage may be split among some number of Units , then each Unit chosen is Targeted.",
+              "children": []
+            },
+            {
+              "section": "352.14.b",
+              "text": "The Targets are chosen when the spell or ability is ﬁnalized on the chain.",
+              "children": []
+            },
+            {
+              "section": "352.14.c",
+              "text": "A number of Targets can only be chosen up to, and not exceeding, the initial amount of damage available when the spell is played. Example: A player playing a spell that instructs them to \"Split 5 damage\" may only choose up to 5 units, but may choose fewer.",
+              "children": []
+            },
+            {
+              "section": "352.14.d",
+              "text": "Each Target is valid, and contributes to Chosen triggers individually.",
+              "children": []
+            },
+            {
+              "section": "352.14.e",
+              "text": "The choice of how much damage is divided across the split is not decided until the resolution of the spell or ability.",
+              "children": []
+            },
+            {
+              "section": "352.14.f",
+              "text": "Each Target must receive a valid amount of damage.",
+              "children": []
+            },
+            {
+              "section": "352.14.g",
+              "text": "Valid damage is a positive integer amount, greater than or equal to 1 damage.",
+              "children": []
+            },
+            {
+              "section": "352.14.h",
+              "text": "If, at resolution of the spell or effect, there are more Targets than available damage to divide, then the player who controls the effect dealing damage determines which Targets cease being Targets.",
+              "children": []
+            },
+            {
+              "section": "352.14.i",
+              "text": "Any costs that were paid, or effects that were triggered as a result of those Game Objects being chosen as Targets remain in effect, paid, or otherwise triggered.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "352.15",
+          "text": "These choices cannot be changed after this step.",
+          "children": []
+        },
+        {
+          "section": "352.16",
+          "text": "A player may not make choices during this step that will deterministically result in illegal choices or actions later in this process unless they have no choice. Example: A player plays Cruel Patron, which says \"As an additional cost to play me, kill a friendly unit.\" They control exactly one unit, which is at a battleﬁeld. They can't choose to play Cruel Patron to that battleﬁeld, because by the time they have ﬁnished paying costs, they will no longer control that battleﬁeld.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "357",
+      "text": "Abilities",
+      "children": []
+    },
+    {
+      "section": "358",
+      "text": "An Ability is the structured rules and capabilities of Game Objects or Spells.",
+      "children": [
+        {
+          "section": "358.1",
+          "text": "An Ability has multiple structures. Passive Abilities Replacement Effects Activated Abilities Triggered Abilities Delayed Abilities",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "359",
+      "text": "A card can have more than one Ability and more than one type of Ability.",
+      "children": []
+    },
+    {
+      "section": "360",
+      "text": "Passive Abilities",
+      "children": []
+    },
+    {
+      "section": "361",
+      "text": "Conditions, rules, constraints, or statements that affect the course of regular play.",
+      "children": [
+        {
+          "section": "361.1",
+          "text": "These abilities have a wide variety of formats to recognize. Example: \"I get +1[M] while you have 2 or more cards in your hand.\" Example: \"Friendly Yordles at my battleﬁeld have [Shield].\"",
+          "children": []
+        },
+        {
+          "section": "361.2",
+          "text": "They can be recognized by being statements of fact.",
+          "children": []
+        },
+        {
+          "section": "361.3",
+          "text": "Passive Abilities can be conditional.",
+          "children": [
+            {
+              "section": "361.3.a",
+              "text": "Conditional Passive Abilities can be recognized by the occurrence of \"if\" or \"while\" as part of the statement of the ability. Example: \" While I'm attacking or defending alone, I have +2 [M].\" Example: \" If an opponent controls a battleﬁeld, I enter ready.\"",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "362",
+      "text": "Presence on Permanents",
+      "children": [
+        {
+          "section": "362.1",
+          "text": "Passive Abilities of Permanents are typically only active while on the Board.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "363",
+      "text": "Presence on Card outside of the Board",
+      "children": [
+        {
+          "section": "363.1",
+          "text": "Passive Abilities of cards in zones that are outside of the Board will self-describe their context. Example: The passive ability \"Play me only during an opponent's turn.\" applies in any zone from which that card can be played.",
+          "children": []
+        },
+        {
+          "section": "363.2",
+          "text": "Passive Abilities can alter the costs of cards as they are played.",
+          "children": [
+            {
+              "section": "363.2.a",
+              "text": "These apply at all times in any zone from which the card with the ability can be played.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "364",
+      "text": "Replacement Effects",
+      "children": []
+    },
+    {
+      "section": "365",
+      "text": "An ability that alters the application of another game effect or game rule.",
+      "children": [
+        {
+          "section": "365.1",
+          "text": "Passive Abilities can be Replacement Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "366",
+      "text": "Replacement Effects intercede during the execution of a Game Effect and alter its execution.",
+      "children": [
+        {
+          "section": "366.1",
+          "text": "A Replacement Effect can be identiﬁed by the presence of the term \"instead.\" Example: Zhonya's Hourglass reads \"The next time a friendly unit would die, kill this instead. Recall that unit exhausted.\" This is a replacement effect that alters the execution of any Game Effect that would kill a friendly unit.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "367",
+      "text": "A Replacement Effect can alter the typical ﬂow of play, including other cards' executions.",
+      "children": []
+    },
+    {
+      "section": "368",
+      "text": "If more than one Replacement Effect applies to the same event being executed, then the owner of the object being acted on determines the order the Replacement Effects will apply.",
+      "children": [
+        {
+          "section": "368.1",
+          "text": "If it is a player being acted on, that player decides the order the Replacement Effects will apply.",
+          "children": []
+        },
+        {
+          "section": "368.2",
+          "text": "If the affected object is an Uncontrolled Battleﬁeld then the Current Turn Player decides the order the Replacement Effects will apply.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "369",
+      "text": "Activated Abilities",
+      "children": []
+    },
+    {
+      "section": "370",
+      "text": "Activated Abilities are repeatable effects with a cost. They follow a process of going onto the chain and resolving, similar to Playing a Card. See rule 346. Playing Cards for more information.",
+      "children": [
+        {
+          "section": "370.1",
+          "text": "Activated Abilities are recognized by the presence of a \":\" in the text of the card, preceded by a cost and succeeded by an effect. Example: \"[2]: Draw 1\" is an activated ability. The cost is 2 energy. The effect is to draw 1 card.",
+          "children": []
+        },
+        {
+          "section": "370.2",
+          "text": "Activated Abilities use the chain.",
+          "children": [
+            {
+              "section": "370.2.a",
+              "text": "Declare activation of the Ability.",
+              "children": [
+                {
+                  "section": "370.2.a.1",
+                  "text": "The ability goes on the chain but has no card to represent it, so players need to take note that it is now a Closed State.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "370.2.b",
+              "text": "Proceed with executing the Chain.",
+              "children": [
+                {
+                  "section": "370.2.b.1",
+                  "text": "Follow the steps of “Playing or Activating Abilities” in rule 386 . This ability will become a Pending Chain Item.",
+                  "children": []
+                },
+                {
+                  "section": "370.2.b.2",
+                  "text": "Opponents have an opportunity to respond, as appropriate, as if a card was played onto the chain.",
+                  "children": []
+                },
+                {
+                  "section": "370.2.b.3",
+                  "text": "If no further action is taken, execute the Activated Ability.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "371",
+      "text": "The controlling player chooses when and whether to activate an Activated Ability.",
+      "children": []
+    },
+    {
+      "section": "372",
+      "text": "Activated abilities are present on Game Objects and some Spells.",
+      "children": []
+    },
+    {
+      "section": "373",
+      "text": "Can primarily be activated while on the Board.",
+      "children": []
+    },
+    {
+      "section": "374",
+      "text": "All Activated Abilities can only be activated on the Controlling Player's Turn and during an Open State.",
+      "children": []
+    },
+    {
+      "section": "375",
+      "text": "Triggered Abilities",
+      "children": []
+    },
+    {
+      "section": "376",
+      "text": "Triggered Abilities are repeatable effects that happen when a Condition is met.",
+      "children": [
+        {
+          "section": "376.1",
+          "text": "Triggered Abilities can usually be recognized by the word \"when\" followed by a game action or event; the word \"at\" followed by a point in time during the turn sequence; or the phrase “the [Nth] time” followed by a game action or event. Examples: \" When you conquer here, you may spend a buff to draw 1.\" \"At the end of your turn, ready 2 runes.\" “The ﬁrst time I move each turn, you may ready something else that's exhausted.”",
+          "children": [
+            {
+              "section": "376.1.a",
+              "text": "The phrases that identify triggered abilities do not always appear at the beginning of sentences or abilities.",
+              "children": []
+            },
+            {
+              "section": "376.1.b",
+              "text": "If an ability triggers “the [Nth] time” something happens and that trigger condition is met multiple times simultaneously, the ability’s controller picks one of those instances to serve as the trigger condition. The ability triggers only once, due to the chosen condition. Example: Wraith of Echoes reads “The ﬁrst time another friendly unit dies each turn, draw 1.” That ability hasn’t triggered yet this turn. Two other friendly units die simultaneously (say, due to combat damage). The Wraith’s controller chooses one of those deaths to trigger Wraith’s ability.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "376.2",
+          "text": "Triggered Abilities have a Condition and an Effect.",
+          "children": [
+            {
+              "section": "376.2.a",
+              "text": "The Condition follows the When.",
+              "children": []
+            },
+            {
+              "section": "376.2.b",
+              "text": "The Effect is the Instruction that follows the comma after the Condition.",
+              "children": []
+            },
+            {
+              "section": "376.2.c",
+              "text": "The Condition of a Trigger is evaluated after a potentially inciting event has been processed.",
+              "children": [
+                {
+                  "section": "376.2.c.1",
+                  "text": "If a Game Object with a Triggered Ability that is active in a speciﬁc zone, it is evaluated and subsequently triggered if it enters that zone at the same time that its Trigger ’s condition is met. Example: Immortal Phoenix says “When you kill a unit with a spell, you may pay [1][C] to play me from your trash.” This ability triggers if Immortal Phoenix is in your trash immediately after you kill a unit with a spell, even if the unit you killed with a spell was that Immortal Phoenix.",
+                  "children": []
+                },
+                {
+                  "section": "376.2.c.2",
+                  "text": "A Game Object will not be able to successfully be able to evaluate its Trigger Condition , however, if it leaves the zone that its Trigger is active from at the same time that its Trigger is satisﬁed. Example: Viktor, Leader says “When another non-Recruit unit you control dies, play a 1 [M] Recruit unit token into your base.” This ability triggers if Viktor is on the board immediately after another non-Recruit unit you control dies. It does not trigger if Viktor and another non-Recruit unit you control die during the same game action (for instance, if they are both killed in the same Cleanup due to the damage dealt by Unchecked Power).",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "376.3",
+          "text": "When a Condition is met, a Triggered Ability behaves like an Activated Ability and is placed on the Chain.",
+          "children": [
+            {
+              "section": "376.3.a",
+              "text": "Triggered Abilities can be put on the Chain during Closed States or Open States on any player's turn.",
+              "children": []
+            },
+            {
+              "section": "376.3.b",
+              "text": "If more than one Triggered Ability is Triggered simultaneously, then the player that controls the Abilities selects the order to place them on the Chain.",
+              "children": [
+                {
+                  "section": "376.3.b.1",
+                  "text": "If multiple players separately control Triggered Abilities that are Triggered simultaneously, then starting with the Turn Player and proceeding in Turn Order , each player orders their Triggered Abilities on the Chain.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "376.4",
+          "text": "Some Conditions are commonly used and structured in a way that explicitly deﬁnes their use and other properties of the Effect that is associated with it.",
+          "children": [
+            {
+              "section": "376.4.a",
+              "text": "Play Effects are Triggered Abilities with the Condition that the Permanent that has the Play Effect being played to the board.",
+              "children": [
+                {
+                  "section": "376.4.a.1",
+                  "text": "These are commonly structured as “When you play me…” for Units and “When you play this…” for Gear.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.a.2",
+                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Permanent these effects correspond to is ﬁnalized and enters the board.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.a.3",
+                  "text": "These Triggered Abilities can be referred to as Play Effects.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.a.4",
+                  "text": "Abilities that trigger when another object is played are not considered Play Effects.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "376.4.b",
+              "text": "Conquer Effects are Triggered Abilities with a Condition of a Unit participating in, and successfully Conquering a Battleﬁeld.",
+              "children": [
+                {
+                  "section": "376.4.b.1",
+                  "text": "These are commonly structured as “When I conquer…” and “When you conquer…”",
+                  "children": []
+                },
+                {
+                  "section": "376.4.b.2",
+                  "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Conquer action, or Abilities that reference the player that performed the Conquer action. 376.4.b.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.b.3",
+                  "text": "These Triggered Abilities can be referred to as Conquer Effects.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "376.4.c",
+              "text": "Hold Effects are Triggered Abilities with a Condition of a Unit being present at a Battleﬁeld during the Beginning phase when a player scores Victory Points from Holding.",
+              "children": [
+                {
+                  "section": "376.4.c.1",
+                  "text": "These are commonly structured as “When I hold…” or “When you hold…”",
+                  "children": []
+                },
+                {
+                  "section": "376.4.c.2",
+                  "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Hold action, or Abilities that reference the player that performed the Hold action. 376.4.c.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.c.3",
+                  "text": "These Triggered Abilities can be referred to as Hold Effects.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "376.4.d",
+              "text": "Attack Triggers are Triggered Abilities that trigger when a Unit gains the Attacker designation for the ﬁrst time during a combat.",
+              "children": [
+                {
+                  "section": "376.4.d.1",
+                  "text": "These are commonly structured as “When I attack…”",
+                  "children": []
+                },
+                {
+                  "section": "376.4.d.2",
+                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Attacker designation during Combat . 376.4.d.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.d.3",
+                  "text": "These Triggered Abilities can be referred to as Attack Triggers.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "376.4.e",
+              "text": "Defend Triggers are Triggered Abilities that trigger when a Unit gains the Defender designation for the ﬁrst time during a combat.",
+              "children": [
+                {
+                  "section": "376.4.e.1",
+                  "text": "These are commonly structured as “When I defend…”",
+                  "children": []
+                },
+                {
+                  "section": "376.4.e.2",
+                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Defender designation during Combat . 376.4.e.",
+                  "children": []
+                },
+                {
+                  "section": "376.4.e.3",
+                  "text": "These Triggered Abilities can be referred to as Defend Triggers.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "377",
+      "text": "Presence on Permanents",
+      "children": [
+        {
+          "section": "377.1",
+          "text": "Typically active while on the Board.",
+          "children": []
+        },
+        {
+          "section": "377.2",
+          "text": "Triggered Abilities of Permanents are only able to have their Conditions evaluated while on the Board.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "378",
+      "text": "Presence on Cards outside of the Board",
+      "children": [
+        {
+          "section": "378.1",
+          "text": "Triggered Abilities on cards outside of the Board rely on the Information Level of the zone they are in.",
+          "children": []
+        },
+        {
+          "section": "378.2",
+          "text": "Triggered Abilities outside of the Board will self-describe their context. Example: The triggered ability \"When you conquer, you may discard 1 to return this from your trash to your hand.\" triggers while the card it's on is in the trash, and not anywhere else.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "379",
+      "text": "Reﬂexive Triggers",
+      "children": []
+    },
+    {
+      "section": "380",
+      "text": "Reﬂexive Triggers are a type of Triggered Ability that create one or more Chain Items when their condition is met.",
+      "children": [
+        {
+          "section": "380.1",
+          "text": "Reﬂexive Triggers can be recognized by the phrase “Do this:” or “Do one of the following:”.",
+          "children": [
+            {
+              "section": "380.1.a",
+              "text": "“Do this” can be followed by “N times.” The Reﬂexive Trigger will thus be added to the chain N times when its condition is met.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "380.2",
+          "text": "Reﬂexive Triggers will be preceded by their conditions, if any. If no condition is present in the ability then the Reﬂexive Trigger will always be added to the Chain.",
+          "children": []
+        },
+        {
+          "section": "380.3",
+          "text": "If present, the Condition of a Reﬂexive Trigger will follow the same format as a Triggered Ability.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "381",
+      "text": "Reﬂexive Triggers use the Chain.",
+      "children": [
+        {
+          "section": "381.1",
+          "text": "A new ability is created and added to the chain as a Pending Item . See rule 386. Playing or Activating Abilities for more information.",
+          "children": []
+        },
+        {
+          "section": "381.2",
+          "text": "If a Reﬂexive Trigger creates more than one Pending Item it creates them all in order, but does not go beyond the ﬁrst step of adding them to the Chain. See rule 386. Playing or Activating Abilities for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "382",
+      "text": "Delayed Abilities",
+      "children": []
+    },
+    {
+      "section": "383",
+      "text": "Delayed Abilities are a type of Ability whose trigger Condition identiﬁes a speciﬁc time during a turn or a speciﬁc event that can occur during a speciﬁc timeframe.",
+      "children": [
+        {
+          "section": "383.1",
+          "text": "Delayed Abilities can be any other type of Ability , and contain all of the properties of that type in addition to the properties of Delayed Abilities.",
+          "children": []
+        },
+        {
+          "section": "383.2",
+          "text": "Delayed Triggers are Triggered Abilities that can be recognized by describing a speciﬁc time of the turn, or by structuring a Triggered Ability with a speciﬁc frame of time as a restriction.",
+          "children": []
+        },
+        {
+          "section": "383.3",
+          "text": "Delayed Replacements are Replacement Effects that can be recognized by specifying the effect they are replacing at a speciﬁc time, or “the [Nth] time” in the description of the effect as it resolves.",
+          "children": []
+        },
+        {
+          "section": "383.4",
+          "text": "Delayed Passive Abilities are Passive Abilities that are applicable only during a speciﬁed window of time. The time that the Delayed Passive Ability applies will be recognized in the effect that initiates it.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "384",
+      "text": "Delayed Abilities will resolve or be active just like the ability they augment, but only during the speciﬁed time in the effect that created the Delayed Ability. Example: Ravenborn Tome reads “The next spell you play this turn deals 1 Bonus Damage” is a Delayed Passive Ability that passively adds 1 damage to just the next spell played. The next spell is a speciﬁc time, and the 1 Bonus Damage is a passive ability. Example: Noxian Guillotine reads “Choose a unit. Kill it the next time it takes damage this turn.” When the chosen unit takes damage is the speciﬁed time, and killing it is the condition for a Delayed Triggered Ability.",
+      "children": []
+    },
+    {
+      "section": "385",
+      "text": "Delayed Abilities are not associated with Units or Gear; they are created by other Abilities or Spells . As such they are executed when their condition and/or speciﬁed time occurs regardless of whether the source of the Delayed Ability is still on the board or not.",
+      "children": []
+    },
+    {
+      "section": "386",
+      "text": "Playing or Activating Abilities",
+      "children": []
+    },
+    {
+      "section": "387",
+      "text": "Playing or activating Abilities follows the same steps of playing cards.",
+      "children": []
+    },
+    {
+      "section": "388",
+      "text": "Abilities when added to the Chain become Pending Items until they complete the steps of Playing.",
+      "children": [
+        {
+          "section": "388.1",
+          "text": "When an Ability ﬁnishes the steps of playing it becomes a Chain Item just like a Spell.",
+          "children": []
+        },
+        {
+          "section": "388.2",
+          "text": "When an Ability with the [Add] action is ﬁnalized it resolves immediately instead of becoming a Chain Item , like a Unit or Gear.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "395",
+      "text": "Game Actions",
+      "children": []
+    },
+    {
+      "section": "396",
+      "text": "Game Actions are actions players may perform at any given time during the game.",
+      "children": []
+    },
+    {
+      "section": "397",
+      "text": "A player, unless otherwise speciﬁed or prompted, may only perform actions on their turn.",
+      "children": []
+    },
+    {
+      "section": "398",
+      "text": "There are two types of Game Actions:",
+      "children": [
+        {
+          "section": "398.1",
+          "text": "Discretionary Actions",
+          "children": [
+            {
+              "section": "398.1.a",
+              "text": "A Discretionary Action is a Game Action that may be performed at any time during a player's turn during a Neutral Open State. See rule 307. States of the Turn for more information.",
+              "children": []
+            },
+            {
+              "section": "398.1.b",
+              "text": "A player may take any number of Discretionary Actions available to them during their turn.",
+              "children": [
+                {
+                  "section": "398.1.b.1",
+                  "text": "As long as any conditions, if applicable, are met.",
+                  "children": []
+                },
+                {
+                  "section": "398.1.b.2",
+                  "text": "As long as any costs, if applicable, are paid.",
+                  "children": []
+                },
+                {
+                  "section": "398.1.b.3",
+                  "text": "As long as it does not result in any forbidden action being taken or game state being created. Example: A player can't use the Standard Move discretionary action to move a unit to a Battleﬁeld that's already occupied by Units controlled by two other players.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "398.2",
+          "text": "Limited Actions",
+          "children": [
+            {
+              "section": "398.2.a",
+              "text": "A Limited Action is a game action that a spell, ability, or circumstance of the turn's progression causes the player to perform. A player cannot perform these actions at-will.",
+              "children": []
+            },
+            {
+              "section": "398.2.b",
+              "text": "These actions can only be taken when a player is instructed to do so as the execution of an effect or during their speciﬁed occasion during the turn. Example: A player may Draw during the Draw Step of the Beginning Phase of their turn or when instructed to do so by a spell or ability. They can't choose to Draw at any other time.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "399",
+      "text": "Types of Actions",
+      "children": []
+    }
+  ]
+}

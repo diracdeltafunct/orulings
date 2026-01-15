@@ -1,0 +1,2362 @@
+{
+  "section": "400",
+  "text": "Draw",
+  "children": [
+    {
+      "section": "416",
+      "text": "Add for more information.",
+      "children": [
+        {
+          "section": "416.1",
+          "text": "Adding is the action of putting resources into a player's Rune Pool.",
+          "children": []
+        },
+        {
+          "section": "416.2",
+          "text": "Spells, triggered abilities, and activated abilities that Add resources ﬁnalize immediately.",
+          "children": [
+            {
+              "section": "416.2.a",
+              "text": "Priority and Focus will not pass from Add abilities being ﬁnalized, and will resolve before any other outstanding items on the chain are ﬁnalized.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "416.3",
+          "text": "Activated abilities that Add resources and have the Reaction tag can be activated during the playing or resolution of other spells and abilities, any time that those spells or abilities require that resources be paid. Example: A player can add Energy and Power through any means before initiating the process of playing a spell. After initiating that process, in the Pay Costs step, they may activate Add Reactions to add Energy or Power to pay costs.",
+          "children": []
+        },
+        {
+          "section": "416.4",
+          "text": "Adding is a Limited Action.",
+          "children": [
+            {
+              "section": "416.4.a",
+              "text": "Players may only Add resources when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "416.5",
+          "text": "This action is formatted as \"Add [one or more resources].\" e.g., \"Add [2].\" means \"Add 2 Energy.\" e.g., \"[E]: Add [Y].\" means \"Add 1 Power of the Order domain.\" e.g., \"Add [1][G].\" means \"Add 1 Energy and 1 Power of the Calm domain.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "400.1",
+      "text": "Drawing a card takes a single card from the top of the Main Deck and adds it to the player's Hand.",
+      "children": []
+    },
+    {
+      "section": "400.2",
+      "text": "This is a Limited Action.",
+      "children": [
+        {
+          "section": "400.2.a",
+          "text": "Each player draws 1 during the Draw Step of their Beginning Phase.",
+          "children": []
+        },
+        {
+          "section": "400.2.b",
+          "text": "The player may draw cards when instructed to do so by other game effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "400.3",
+      "text": "This action, when instructed, is formatted as \"Draw X.\"",
+      "children": []
+    },
+    {
+      "section": "400.4",
+      "text": "If a player attempts to draw more cards than are available in their Main Deck , they do the following:",
+      "children": [
+        {
+          "section": "400.4.a",
+          "text": "Draw as many as possible.",
+          "children": []
+        },
+        {
+          "section": "400.4.b",
+          "text": "Perform a Burn Out. See rule 418. Burn Out for more information.",
+          "children": []
+        },
+        {
+          "section": "400.4.c",
+          "text": "Draw the remaining cards needed to complete the Draw action.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "401",
+      "text": "Exhaust",
+      "children": [
+        {
+          "section": "401.1",
+          "text": "Exhausting is an action that marks a non-spell Game Object as \"spent.\"",
+          "children": [
+            {
+              "section": "401.1.a",
+              "text": "To mark it, rotate the card 90 degrees opposite of Readying , so that the orientation of the card is lengthwise in front of you.",
+              "children": []
+            },
+            {
+              "section": "401.1.b",
+              "text": "A Unit that is already Exhausted cannot be Exhausted again.",
+              "children": []
+            },
+            {
+              "section": "401.1.c",
+              "text": "If a Unit is instructed to be Exhausted while it is already Exhausted , nothing additional happens.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "401.2",
+          "text": "\"Exhausted\" is a state for Game Objects that other game effects and rules can reference.",
+          "children": []
+        },
+        {
+          "section": "401.3",
+          "text": "This is a Limited Action.",
+          "children": [
+            {
+              "section": "401.3.a",
+              "text": "Most Exhaust actions will be costs for Activated Abilities or Discretionary Actions. Example: A unit's Standard Move exhausts the unit as a cost.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "401.4",
+          "text": "When Exhausting is listed as a Cost , then the Action must be able to be completed for the cost to be paid. Example: A spell says \"As an additional cost to play this, you may exhaust a friendly unit.\" An exhausted friendly unit may not be exhausted again as the additional cost for the spell, and the additional cost has not been paid.",
+          "children": []
+        },
+        {
+          "section": "401.5",
+          "text": "In abilities, the Exhaust symbol represents the cost \"Exhaust this\" or \"Exhaust me.\" It resembles a card turning sideways.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "402",
+      "text": "Ready",
+      "children": [
+        {
+          "section": "402.1",
+          "text": "Readying is an action that marks a non-spell Game Object as available for action.",
+          "children": [
+            {
+              "section": "402.1.a",
+              "text": "To mark it, rotate the card 90 degrees opposite of Exhausting , so that it is vertically oriented in front of you.",
+              "children": []
+            },
+            {
+              "section": "402.1.b",
+              "text": "A Unit that is already Ready cannot be Readied again.",
+              "children": []
+            },
+            {
+              "section": "402.1.c",
+              "text": "If a Unit is instructed to be Readied while it is already Ready , nothing additional happens.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "402.2",
+          "text": "\"Ready\" is a state for Game Objects that other game effects and rules can reference.",
+          "children": []
+        },
+        {
+          "section": "402.3",
+          "text": "This is a Limited Action.",
+          "children": [
+            {
+              "section": "402.3.a",
+              "text": "A player Readies all non-spell Game Objects they Control during the Ready Step of the Beginning Phase on their turn.",
+              "children": []
+            },
+            {
+              "section": "402.3.b",
+              "text": "The player may also Ready their Game Objects when effects or spells instruct them to do so.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "403",
+      "text": "Recycle",
+      "children": [
+        {
+          "section": "403.1",
+          "text": "Recycling cards is the action in which a player takes one or more cards from a speciﬁc zone and then puts it on the bottom of the corresponding deck.",
+          "children": [
+            {
+              "section": "403.1.a",
+              "text": "Main Deck cards are Recycled to the Main Deck.",
+              "children": []
+            },
+            {
+              "section": "403.1.b",
+              "text": "Runes are Recycled to the Rune Deck.",
+              "children": []
+            },
+            {
+              "section": "403.1.c",
+              "text": "Each player Recycles cards to their own Main Deck and Rune Deck , regardless of which player is instructed to perform the Recycle action.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "403.2",
+          "text": "This is a Limited Action.",
+          "children": [
+            {
+              "section": "403.2.a",
+              "text": "The player must Recycle cards from the speciﬁed zones when instructed to do so by game effects or costs.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "403.3",
+          "text": "When Recycling is listed as a Cost , the action must be able to be completed for the cost to be paid. Example: Vi, Destructive has the ability \"Recycle 1 from your trash: Give me +1 [M] this turn.\" Each time a player activates the ability, they must recycle 1 card from their trash to pay its cost. If they have no cards in their trash, they can't activate the ability, because they can't pay its cost.",
+          "children": []
+        },
+        {
+          "section": "403.4",
+          "text": "When Recycling is part of an effect, a player must Recycle as many cards as possible from the speciﬁed zone or zones.",
+          "children": []
+        },
+        {
+          "section": "403.5",
+          "text": "If 2 or more cards are Recycled to the Main Deck simultaneously, they are placed on the bottom of that deck in a random order. Example: Garbage Grabber has the ability \"Recycle 3 from your trash, [1], [E]: Draw \" To pay the cost of activating this ability, its controller chooses 3 cards from their trash and places them on the bottom of their Main Deck in a random order.",
+          "children": [
+            {
+              "section": "403.5.a",
+              "text": "If 2 or more cards are Recycled to the Rune Deck simultaneously, they are placed on the bottom of that deck in the order of their owner's choosing.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "403.6",
+          "text": "This action, when instructed, is sometimes formatted as \" Recycle X from [Zone].\" That means to take X cards of the instructed player's choice from the relevant zone and recycle them. Example: Dr. Mundo, Expert has the ability \"At the start of your Beginning Phase, recycle 3 from your trash.\" As that ability resolves, its controller recycles 3 cards from their trash. If there are fewer than 3 cards in that player's trash, they recycle as many as they can.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "404",
+      "text": "Deal",
+      "children": [
+        {
+          "section": "404.1",
+          "text": "Spells, Units, Abilities, and other game effects may Deal Damage to units.",
+          "children": [
+            {
+              "section": "404.1.a",
+              "text": "Assigning Damage during Combat Resolution is not Dealing Damage, but will cause Damage to be Dealt when assignment is complete.",
+              "children": []
+            },
+            {
+              "section": "404.1.b",
+              "text": "To Deal Damage to Units, mark the speciﬁed amount of Damage on the Unit.",
+              "children": []
+            },
+            {
+              "section": "404.1.c",
+              "text": "Damage is marked on each unit separately.",
+              "children": []
+            },
+            {
+              "section": "404.1.d",
+              "text": "Damage can be Dealt to more than one Unit at the same time.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "404.2",
+          "text": "Only Damage can be Dealt.",
+          "children": []
+        },
+        {
+          "section": "404.3",
+          "text": "Dealing Damage is a Limited Action.",
+          "children": [
+            {
+              "section": "404.3.a",
+              "text": "Assigning Damage causes Damage to be dealt outside of being directed to Deal Damage. See rule 437. Combat for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "404.4",
+          "text": "Dealing can have the intrinsic property of Bonus Damage.",
+          "children": []
+        },
+        {
+          "section": "404.5",
+          "text": "Bonus Damage is a property granted to the action of Dealing and alters the amount of Damage distributed by this action. See rule 712. Bonus Damage for more information.",
+          "children": []
+        },
+        {
+          "section": "404.6",
+          "text": "Deal actions can originate from one or more sources.",
+          "children": [
+            {
+              "section": "404.6.a",
+              "text": "If a game effect does not specify a source, the game effect describing the Deal action is the source. Example: Void Seeker is a spell that reads “Deal 4 to a unit at a battleﬁeld. Draw 1.” The damage that Void Seeker instructs you to deal is dealt by Void Seeker.",
+              "children": []
+            },
+            {
+              "section": "404.6.b",
+              "text": "If a game effect does specify a source, then that source is what is considered the origin of the Damage for this Deal action.",
+              "children": [
+                {
+                  "section": "404.6.b.1",
+                  "text": "Units and Spells can be the source of Damage for Deal actions.",
+                  "children": []
+                },
+                {
+                  "section": "404.6.b.2",
+                  "text": "Abilities can be the source of Damage for Deal actions. 404.6.b.",
+                  "children": []
+                },
+                {
+                  "section": "404.6.b.3",
+                  "text": "When a spell or ability speciﬁes a Unit as the source of the Damage for the Deal action, it is not in addition to the spell or ability that speciﬁed it. Example: Challenge is a spell that reads “Choose a friendly unit and an enemy unit. They deal damage equal to their Mights to each other.” The damage that Challenge causes to be dealt is dealt by the chosen units, not by Challenge.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "404.6.c",
+              "text": "Damage Dealt as a result of being assigned during Combat has the Units as its source.",
+              "children": [
+                {
+                  "section": "404.6.c.1",
+                  "text": "The Damage assigned, and subsequently Dealt , to attackers has the defenders as the source and vice versa.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "404.7",
+          "text": "Deal actions can distribute Damage as part of combat actions or non-combat actions.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "405",
+      "text": "Heal",
+      "children": [
+        {
+          "section": "405.1",
+          "text": "Damage being cleared from Units is Healing.",
+          "children": [
+            {
+              "section": "405.1.a",
+              "text": "If Damage is cleared for any reason it is considered Healing.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "405.2",
+          "text": "More than one Unit can be Healed at the same time.",
+          "children": []
+        },
+        {
+          "section": "405.3",
+          "text": "Healing is a Limited Action.",
+          "children": [
+            {
+              "section": "405.3.a",
+              "text": "Players may only Heal units when game effects instruct them to, or at speciﬁc points in the turn.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "406",
+      "text": "Play",
+      "children": [
+        {
+          "section": "406.1",
+          "text": "A player Plays cards by paying costs associated with that card. See rule 346. Playing Cards for more information.",
+          "children": []
+        },
+        {
+          "section": "406.2",
+          "text": "This is a Discretionary Action.",
+          "children": [
+            {
+              "section": "406.2.a",
+              "text": "As long as a player has the resources to pay the costs associated with the card, they may play cards.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "406.3",
+          "text": "Game effects may result in cards being played as part of their resolution.",
+          "children": [
+            {
+              "section": "406.3.a",
+              "text": "This treats Play as a Limited Action.",
+              "children": []
+            },
+            {
+              "section": "406.3.b",
+              "text": "Treat all steps of Play as normal, except as noted by the game effect creating this Limited Play Effect.",
+              "children": []
+            },
+            {
+              "section": "406.3.c",
+              "text": "If there are no eligible cards to Play when instructed to Play in this manner like this, then nothing happens and resolution continues.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "406.4",
+          "text": "Some Abilities trigger when cards are played or otherwise check whether cards have been played.",
+          "children": [
+            {
+              "section": "406.4.a",
+              "text": "These abilities trigger when the act of playing the card has been completed by the resolution of the card.",
+              "children": []
+            },
+            {
+              "section": "406.4.b",
+              "text": "If a game effect prevents the resolution of the card—for example, because the card was countered —the card wasn't played and no abilities that trigger on playing cards trigger. See rule 412. Counter for more information.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "407",
+      "text": "Move",
+      "children": [
+        {
+          "section": "407.1",
+          "text": "Moving is the act of a Game Object moving between two Locations on The Board.",
+          "children": []
+        },
+        {
+          "section": "407.2",
+          "text": "Moving is a Limited Action.",
+          "children": [
+            {
+              "section": "407.2.a",
+              "text": "Players may only move Game Objects when instructed to do so by Game Effects or costs.",
+              "children": []
+            },
+            {
+              "section": "407.2.b",
+              "text": "The Standard Move inherent to Units may also cause Movement. See rule 142 for more information on the Standard Move .",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "407.3",
+          "text": "The Standard Move inherent to Units is a Discretionary Action.",
+          "children": [
+            {
+              "section": "407.3.a",
+              "text": "The Cost is Exhausting one or more Units.",
+              "children": []
+            },
+            {
+              "section": "407.3.b",
+              "text": "The Effect is Moving those Unit.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "408",
+      "text": "Hide",
+      "children": [
+        {
+          "section": "408.1",
+          "text": "Hiding a card is the act of placing a card facedown at a Battleﬁeld you control.",
+          "children": []
+        },
+        {
+          "section": "408.2",
+          "text": "Hiding is a Discretionary Action.",
+          "children": [
+            {
+              "section": "408.2.a",
+              "text": "The Hidden keyword allows a player to pay a cost to Hide a card any time they have a Hidden card in their hand or Champion Zone and meet the prerequisites. See rule 737. Hidden for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "408.3",
+          "text": "Cards that are facedown at Battleﬁelds have their gameplay properties and permissions deﬁned by the effect that put them there. Example: Cards that players Hide with the Hidden keyword can be Played for [0] on any subsequent turn as a property of the Hidden keyword.",
+          "children": []
+        },
+        {
+          "section": "408.4",
+          "text": "If a facedown card would be put into a zone whose Privacy is Private or Secret , or if the game ends, its owner reveals it to all players. See rule 127. Privacy for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "409",
+      "text": "Discard",
+      "children": [
+        {
+          "section": "409.1",
+          "text": "Discarding a card is moving it from a player's hand directly into their trash without activating or executing its normal rules text.",
+          "children": [
+            {
+              "section": "409.1.a",
+              "text": "The player who is performing the action chooses which cards to send to their Trash , and may use Private Information to do so.",
+              "children": []
+            },
+            {
+              "section": "409.1.b",
+              "text": "“When I am discarded” abilities or other Triggered Abilities that trigger on discarding are executed after discarding has occurred.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "409.2",
+          "text": "Discarding is a Limited Action.",
+          "children": [
+            {
+              "section": "409.2.a",
+              "text": "A player must Discard cards when instructed to do so by game effects or costs.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "409.3",
+          "text": "When Discarding is listed as a Cost , then the Action must be able to be completed for the cost to be paid. Example: A card has the ability \"Discard 2: Deal 2 damage to a unit at a battleﬁeld.\" To activate the ability, the card's controller must have at least 2 cards in hand and must be able to discard them.",
+          "children": []
+        },
+        {
+          "section": "409.4",
+          "text": "When Discarding is part of an effect, then a player must Discard as many cards as possible from their hand. If instructed to discard more cards than they have in their hand, further discard instructions are ignored. Example: Undercover Agent has the ability \"[Deathknell] — Discard 2, then draw",
+          "children": []
+        },
+        {
+          "section": "409.5",
+          "text": "This action is formatted as \"Discard X.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "410",
+      "text": "Stun",
+      "children": [
+        {
+          "section": "410.1",
+          "text": "Stunning is the act of selecting one or more Units on the Board and rendering them Stunned.",
+          "children": [
+            {
+              "section": "410.1.a",
+              "text": "Stunned is a binary state. A Unit is Stunned or it isn't.",
+              "children": [
+                {
+                  "section": "410.1.a.1",
+                  "text": "A Stunned Unit can not be Stunned again. Example: Eclipse Herald has the ability \"When you stun an enemy unit, ready me and give me +1 [M] this turn.\" Its controller plays a spell that reads \"Stun a unit.\" They may choose a unit that's already stunned, but if they do, Eclipse Herald will not trigger.",
+                  "children": []
+                },
+                {
+                  "section": "410.1.a.2",
+                  "text": "Stunned Units lose the Stunned status at the beginning of the next Ending Step.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "410.1.b",
+              "text": "A Stunned Unit does not contribute its might to damage in combat.",
+              "children": []
+            },
+            {
+              "section": "410.1.c",
+              "text": "A Stunned Unit must still have damage applied to it equal to, or greater than, its full might value to be killed.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "410.2",
+          "text": "Stunning is a Limited Action.",
+          "children": [
+            {
+              "section": "410.2.a",
+              "text": "Players may only Stun Units when directed to by Game Effects.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "411",
+      "text": "Reveal",
+      "children": [
+        {
+          "section": "411.1",
+          "text": "Revealing is the act of presenting a card to all players from a zone that one or more players do not have access to the information of.",
+          "children": [
+            {
+              "section": "411.1.a",
+              "text": "Revealed is a temporary state and is not a zone.",
+              "children": [
+                {
+                  "section": "411.1.a.1",
+                  "text": "Other cards, including the card being revealed, can reference the act of being Revealed.",
+                  "children": []
+                },
+                {
+                  "section": "411.1.a.2",
+                  "text": "Cards remain in the zone they are being Revealed from. Example: If a card is being Revealed from the top of a player's Main Deck , it is still the top card of that player's Main Deck.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "411.1.b",
+              "text": "Unless otherwise described, Revealed cards do nothing else beyond become temporarily known information to all players.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "411.2",
+          "text": "Revealing is a Limited Action.",
+          "children": [
+            {
+              "section": "411.2.a",
+              "text": "Players may only Reveal cards from Private or Secret zones when instructed to do so by Game Effects.",
+              "children": []
+            },
+            {
+              "section": "411.2.b",
+              "text": "During the course of a game of Riftbound , a player may choose to show Private information to one or more other players. This does not count as revealing and does not trigger any effects that trigger when cards are revealed.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "411.3",
+          "text": "This action is formatted as \"Reveal cards from [zone].\" Example: \"Reveal 2 cards from the top of your Main Deck\" would be executed by taking the two cards from the top of your Main Deck, and then presenting them to all players to clearly read and understand at the table. Then, when all players have had a chance to understand the revealed information, return them to the top of the deck in the same order.",
+          "children": []
+        },
+        {
+          "section": "411.4",
+          "text": "Game Effects can manipulate or modify the cards Revealed while they are Revealed",
+          "children": [
+            {
+              "section": "411.4.a",
+              "text": "While cards are Revealed , those cards can be further manipulated, or accessed. They can even have their destination modiﬁed for when the Reveal ends. Example: \"Reveal 2 cards from the top of your Main Deck. Put one into your hand and Recycle the other\" would be executed by taking the top two cards from your Main Deck to the table, and once every player present has had a chance to understand them you would make the selection of one of them to add to your hand. The one you did not select would then be Recycled to the bottom of the Main Deck.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "412",
+      "text": "Counter",
+      "children": [
+        {
+          "section": "412.1",
+          "text": "Countering is the act of negating the execution, activation, or otherwise playing of a card by a player.",
+          "children": [
+            {
+              "section": "412.1.a",
+              "text": "A card that is Countered does nothing and is then placed in the Trash.",
+              "children": []
+            },
+            {
+              "section": "412.1.b",
+              "text": "A card that is Countered is not considered to have been played.",
+              "children": []
+            },
+            {
+              "section": "412.1.c",
+              "text": "Countering does not refund any costs paid to play a card.",
+              "children": [
+                {
+                  "section": "412.1.c.1",
+                  "text": "This includes additional costs.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "412.2",
+          "text": "Countering is a Limited Action.",
+          "children": [
+            {
+              "section": "412.2.a",
+              "text": "Players may only Counter cards when directed to by Game Effects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "412.3",
+          "text": "This action is formatted as \" Counter [a card or ability on the chain].\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "413",
+      "text": "Buff",
+      "children": [
+        {
+          "section": "413.1",
+          "text": "Bufﬁng is the action of placing a Buff counter on a Unit . See rule 701. Buffs for more information.",
+          "children": [
+            {
+              "section": "413.1.a",
+              "text": "A Buff is also an object.",
+              "children": []
+            },
+            {
+              "section": "413.1.b",
+              "text": "To Buff a unit, place a Buff Counter on it if it does not have one already",
+              "children": [
+                {
+                  "section": "413.1.b.1",
+                  "text": "If the unit already has a Buff Counter on it, it does not get another one.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "413.1.c",
+              "text": "Units with Buff Counters can still be chosen for actions that Buff units, but will not be Buffed as part of the execution. Example: A spell reads \"Buff a unit. Then, if it was buffed this way, draw a card.\" It will place a buff counter on a unit that has no buff counter, and then its controller will draw a card. However, if the player chooses a unit with a buff counter on it already, then the card will not be drawn.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "413.2",
+          "text": "Bufﬁng is a Limited Action.",
+          "children": [
+            {
+              "section": "413.2.a",
+              "text": "Players may only Buff units when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "413.3",
+          "text": "This action is formatted as \" Buff [one or more units].\" e.g., \"Buff a unit.\" e.g., \"Buff a friendly unit.\" e.g., \"Buff two friendly units at the same battleﬁeld.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "414",
+      "text": "Banish",
+      "children": [
+        {
+          "section": "414.1",
+          "text": "Banishing is the action of placing a card from any zone to Banishment. See",
+          "children": []
+        },
+        {
+          "section": "414.2",
+          "text": "When a card is Banished it is placed directly into the Banishment zone from its origin.",
+          "children": [
+            {
+              "section": "414.2.a",
+              "text": "Banish is not a subset of Kill.",
+              "children": []
+            },
+            {
+              "section": "414.2.b",
+              "text": "Banish is not a subset of Discard.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "414.3",
+          "text": "Cards and effects can refer to cards that were banished by the same object.",
+          "children": [
+            {
+              "section": "414.3.a",
+              "text": "Separate instances of an object or effect banishing cards do not reference other banished cards by objects of the same name or effects originating from cards of the same name. Example: A spell reads \"Banish the top card of your Main Deck. When you conquer this turn, draw it.\" This card effect allows you to draw the banished card from banishment if a condition is met. If more than one of these effects is played, each one triggers separately. Each card will be drawn separately. If the turn player passes the turn without playing the card, the card remains in banishment indeﬁnitely. If the same player plays another copy of the same spell, banishes another card, and satisﬁes its condition, they could play the new banished card, but not the original banished card.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "414.4",
+          "text": "Banishing is a Limited Action.",
+          "children": [
+            {
+              "section": "414.4.a",
+              "text": "Players may only Banish cards or permanents when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "414.5",
+          "text": "This action is formatted as \"Banish [one or more permanents or cards].\" e.g., \"Banish a card from your hand.\" e.g., \"Banish 2 cards from your trash.\" e.g., \"Look at the top 2 cards of your Main Deck. Draw one of them and banish the other.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "415",
+      "text": "Kill",
+      "children": [
+        {
+          "section": "415.1",
+          "text": "Killing is the action of a Permanent going to the trash from the board.",
+          "children": [
+            {
+              "section": "415.1.a",
+              "text": "This can be Active or Passive.",
+              "children": [
+                {
+                  "section": "415.1.a.1",
+                  "text": "Active Kill is when the action is taken when instructed by a game effect or as a cost for a card or ability. 415.1.a.",
+                  "children": []
+                },
+                {
+                  "section": "415.1.a.2",
+                  "text": "Passive Kill is when the action is taken as a result of Lethal Damage or as a consequence for any other state.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "415.2",
+          "text": "When a permanent is killed it is placed directly in the trash from its place of origin.",
+          "children": [
+            {
+              "section": "415.2.a",
+              "text": "It is only considered Killed if its origin was any zone on the board.",
+              "children": []
+            },
+            {
+              "section": "415.2.b",
+              "text": "This is not a subset of Move.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "415.3",
+          "text": "Killing is a Limited Action.",
+          "children": [
+            {
+              "section": "415.3.a",
+              "text": "Players may only Kill units when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "415.4",
+          "text": "Killing can also be the result of resolving a Cleanup.",
+          "children": []
+        },
+        {
+          "section": "415.5",
+          "text": "Killing can be attributed to one or more Game Objects.",
+          "children": [
+            {
+              "section": "415.5.a",
+              "text": "The Killed Unit or Gear is said to be Killed by that Game Object.",
+              "children": []
+            },
+            {
+              "section": "415.5.b",
+              "text": "A spell or ability that contains a Kill instruction is responsible for Killing the Unit or Gear.",
+              "children": []
+            },
+            {
+              "section": "415.5.c",
+              "text": "When one or more Units is killed due to a Cleanup , the spell or ability that resolved immediately prior to that Cleanup that applied damage to the Unit or Units is responsible for that Kill action.",
+              "children": []
+            },
+            {
+              "section": "415.5.d",
+              "text": "Abilities originating from Game Objects that are responsible for Kill Actions are responsible in addition to the Game Object that created them. Example: Falling Star is a spell that says “Do this twice: Deal 3 to a unit.” Immortal Phoenix is a unit that says “When you kill a unit with a spell, you may pay [1][C] to play me from your trash.” A player plays Falling Star while Immortal Phoenix is in their trash. The “do this” phrasing on Falling Star means that it has a reﬂexive triggered ability, which places two triggered abilities on the chain. As each of those triggered abilities resolve, it deals damage to the unit chosen for that ability. If one of these abilities deals lethal damage to a unit, both Falling Star and its ability are considered sources of the damage, and so both Falling Star and its ability are responsible for killing the unit. This means that Falling Star’s controller killed a unit with a spell, so Immortal Phoenix’s ability will trigger.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "415.6",
+          "text": "This action is formatted as \"Kill [one or more permanents].\" e.g., \"Kill an enemy unit.\" e.g., \"Kill this, [2]: Draw 1.\" e.g., \"Kill all gear.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "417",
+      "text": "Channel",
+      "children": [
+        {
+          "section": "417.1",
+          "text": "Channeling is the action of taking one or more Runes from the top of a player's Rune Deck and putting them on the board.",
+          "children": []
+        },
+        {
+          "section": "417.2",
+          "text": "The Game Effect that instructs a player to channel 1 or more runes may specify the conditions or circumstances under which those runes enter the board. Example: A spell reads \"Channel 1 rune exhausted.\" As that spell resolves, its controller puts the top rune of their rune deck onto the board and that rune enters the board exhausted rather than ready.",
+          "children": []
+        },
+        {
+          "section": "417.3",
+          "text": "Channeling is a Limited Action.",
+          "children": [
+            {
+              "section": "417.3.a",
+              "text": "Players may only channel runes when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "417.4",
+          "text": "This action is formatted as \"Channel X rune(s),\" optionally followed by conditions or stipulations. e.g., \"Channel 1 rune.\" e.g., \"When you play me, channel 1 rune exhausted.\" e.g., \"Channel 2 runes exhausted. If you couldn't channel 2 runes this way, draw 1.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "418",
+      "text": "Burn Out",
+      "children": [
+        {
+          "section": "418.1",
+          "text": "Burning Out is an action a player must perform if they attempt to move one or more cards from their Main Deck to any other zone in excess of the number of cards remaining in their Main Deck:",
+          "children": [
+            {
+              "section": "418.1.a",
+              "text": "If a player must Draw cards in excess to the number of cards in their deck, they will Draw as many as possible, perform this action, then Draw the remaining amount instructed.",
+              "children": []
+            },
+            {
+              "section": "418.1.b",
+              "text": "If a player must put one or more cards from their Main Deck in any other zone, such as the Trash , in excess of the number of cards in their deck they will do so as much as possible, perform this action, and then complete the remaining number required by the instruction.",
+              "children": []
+            },
+            {
+              "section": "418.1.c",
+              "text": "If an instruction directs a player to look at or reveal cards in excess to the number of cards in a player’s Main Deck , that player looks at or Reveals as many as possible, but does not Burn Out, then proceeds with the rest of the instruction.",
+              "children": [
+                {
+                  "section": "418.1.c.1",
+                  "text": "If there are insufﬁcient cards among the looked at or revealed cards to perform subsequent actions to the revealed or looked at cards, any further instructions are ignored. This does not cause a Burn Out , even if those instructions would cause those cards to change zones. Reminder: Cards are considered in the zone of origin while being looked at or revealed, in this case the Main Deck .",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "418.2",
+          "text": "To Burn Out , a player does the following in sequence:",
+          "children": [
+            {
+              "section": "418.2.a",
+              "text": "Performs as much of the prescribed action as possible.",
+              "children": []
+            },
+            {
+              "section": "418.2.b",
+              "text": "Recycles their trash into their Main Deck. Reminder: When multiple cards are Recycled to the Main Deck at the same time, those cards must be randomized",
+              "children": []
+            },
+            {
+              "section": "418.2.c",
+              "text": "Chooses an opponent to gain 1 point.",
+              "children": []
+            },
+            {
+              "section": "418.2.d",
+              "text": "Completes the remainder of the action that caused them to burn out. Example: A player attempts to draw 1 during their Draw Phase while their Main Deck is empty. That player instead recycles their trash into their Main Deck, randomizing it as normal, then chooses an opponent to gain 1 point, and then draws",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "418.3",
+          "text": "A player's Main Deck may remain empty as they Burn Out , usually because their trash is also empty. When they attempt to perform the original action again, it will cause another Burn Out .",
+          "children": [
+            {
+              "section": "418.3.a",
+              "text": "Unless some effect intervenes, this will result in them burning out repeatedly, giving 1 point to an opponent each time, until an opponent passes the Victory Score and wins the game.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "418.4",
+          "text": "Burning Out is a Limited Action.",
+          "children": [
+            {
+              "section": "418.4.a",
+              "text": "Players may only burn out when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "418.5",
+          "text": "Burning Out is a Replacement Effect. See rule 364. Replacement Effects for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "419",
+      "text": "Double",
+      "children": [
+        {
+          "section": "419.1",
+          "text": "Doubling is the act of increasing a numeric attribute by an amount equal to that attribute’s current value.",
+          "children": [
+            {
+              "section": "419.1.a",
+              "text": "This creates an effect that modulates that attribute by that speciﬁc amount for the duration speciﬁed by the Game Effect that instructed the player to perform this action. Example: A unit with 3 base Might and Shield 2 is in combat as a Defender. Since Shield applies, its current Might is",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "420",
+      "text": "Swap",
+      "children": [
+        {
+          "section": "420.1",
+          "text": "Swapping is the act of increasing one numeric value and decreasing another numeric value on some number of Game Objects such that their values are reversed.",
+          "children": [
+            {
+              "section": "420.1.a",
+              "text": "Swapping creates two different effects that apply to each attribute. One that Increases one value and one that Decreases the other.",
+              "children": []
+            },
+            {
+              "section": "420.1.b",
+              "text": "To accomplish this, determine the difference between these values and then apply an Increase for that amount to the lower value of the two attributes, and a Decrease of that amount to the higher value of the two attributes. 420.1.c If both attributes are the same numeric value, Swapping has no effect.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "420.2",
+          "text": "Swapping is a Limited Action. 420.2.a Players may only swap when Game Effects direct them to do so.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "421",
+      "text": "Attach",
+      "children": [
+        {
+          "section": "421.1",
+          "text": "Attaching is the act of linking two cards on the board together to combine their effects in some way. This causes one or more cards to become Attached and at least one card to become a Top-Most Card. See rule 716 Attachment for more information.",
+          "children": [
+            {
+              "section": "421.1.a",
+              "text": "Attaching affects two cards at once.",
+              "children": [
+                {
+                  "section": "421.1.a.1",
+                  "text": "One card will be designated as the one being Attached , and thus become Attached. The other will become the Top-Most Card.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "421.1.b",
+              "text": "This is represented by physically laying the Top-Most card on top of the other or others such that all Effect Texts and Might Bonuses are showing, but nothing else from the card or cards Attached.",
+              "children": [
+                {
+                  "section": "421.1.b.1",
+                  "text": "In the situation where there is more than one card attached to the Top-Most card , they should be stacked in such a way that all Effect Text boxes and Might Bonuses are readable. The order of the Attached cards has no bearing on the application of effects.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "421.1.c",
+              "text": "The Top-Most card has all Effect Text of all cards Attached to it appended to its Rules Text.",
+              "children": []
+            },
+            {
+              "section": "421.1.d",
+              "text": "The Top-Most Card has its Might modulated by the Might Bonus of all cards Attached to it.",
+              "children": []
+            },
+            {
+              "section": "421.1.e",
+              "text": "Attaching one or more cards will cause those cards’ Rules Text to become Inactive for as long as they remain Attached. See rule 716 Attachment for more information.",
+              "children": []
+            },
+            {
+              "section": "421.1.f",
+              "text": "Attaching a card will cause it to Detach from any card to which it is currently Attached.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "421.2",
+          "text": "Attaching is a Limited Action.",
+          "children": [
+            {
+              "section": "421.2.a",
+              "text": "Players may only Attach cards when directed to by Game Effects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "421.3",
+          "text": "Attaching cards does not inherently choose or specify a target. However, Game Effects that Attach cards may do so.",
+          "children": []
+        },
+        {
+          "section": "421.4",
+          "text": "When a card Attaches to a card, its location becomes the same as the new Top-Most Card.",
+          "children": [
+            {
+              "section": "421.4.a",
+              "text": "This is not a Move.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "422",
+      "text": "Detach",
+      "children": [
+        {
+          "section": "422.1",
+          "text": "Detaching is the act of unlinking two cards that are currently linked through the act of Attaching . This causes one to cease being Attached , and potentially causes the other to cease being a Top-Most card.",
+          "children": [
+            {
+              "section": "422.1.a",
+              "text": "Detaching affects only cards that are currently Attached to another card.",
+              "children": [
+                {
+                  "section": "422.1.a.1",
+                  "text": "Game effects that instruct a player to Detach a card that is currently not Attached to anything will do nothing.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "422.1.b",
+              "text": "When one or more cards become Detached , they cease to be in the Attached state.",
+              "children": [
+                {
+                  "section": "422.1.b.1",
+                  "text": "To represent this, these cards should no longer be placed under the card they were previously placed under as Top-Most Card.",
+                  "children": []
+                },
+                {
+                  "section": "422.1.b.2",
+                  "text": "If the Top-Most Card no longer has any cards Attached to it after this, it is no longer a Top-Most Card.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "422.1.c",
+              "text": "The card being Detached has its Effect Text become Inactive and its Rules Text cease being Inactive.",
+              "children": []
+            },
+            {
+              "section": "422.1.d",
+              "text": "The Top-Most Card ceases to have the Effect Text of the card being Detached appended to its Rules Text.",
+              "children": []
+            },
+            {
+              "section": "422.1.e",
+              "text": "The Top-Most Card ceases to have its Might modulated by the Might Bonus of the card being Detached.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "422.2",
+          "text": "Detaching is a Limited Action.",
+          "children": [
+            {
+              "section": "422.2.a",
+              "text": "Players may only Detach cards when directed to by Game Effects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "422.3",
+          "text": "Detaching cards does not inherently choose, or specify a target. However, Game Effects that Detach cards may.",
+          "children": []
+        },
+        {
+          "section": "422.4",
+          "text": "When a card Detaches from a Top-Most Card , its location is the same as the Top-Most Card from which it Detached.",
+          "children": [
+            {
+              "section": "422.4.a",
+              "text": "If the Detached card was a Gear and this causes it to become present at a Battleﬁeld , it will be Recalled during the next Cleanup.",
+              "children": []
+            },
+            {
+              "section": "422.4.b",
+              "text": "If the Attached card was Detached because the Top-Most Card changed zones from a board zone to a non-board zone, then the location that the Attached Card will Detach to is the last location the Top-Most Card was at before changing from a board zone to a non-board zone.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "423",
+      "text": "Movement",
+      "children": []
+    },
+    {
+      "section": "424",
+      "text": "Moving is a Limited Action.",
+      "children": [
+        {
+          "section": "424.1",
+          "text": "A Permanent changing its position from any space on the Board to another space on the Board is a Move , unless it is caused by a corrective Recall . See rule 407. Move for more information.",
+          "children": []
+        },
+        {
+          "section": "424.2",
+          "text": "A card changing game zones does not in itself constitute a Move.",
+          "children": []
+        },
+        {
+          "section": "424.3",
+          "text": "Moving is instantaneous.",
+          "children": [
+            {
+              "section": "424.3.a",
+              "text": "There is no state for Permanents between locations.",
+              "children": []
+            },
+            {
+              "section": "424.3.b",
+              "text": "Permanents are either at their Origin before Moving or their Destination after Moving.",
+              "children": []
+            },
+            {
+              "section": "424.3.c",
+              "text": "Moving does not use the Chain , nor is it able to be Reacted to.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "425",
+      "text": "Moving is deﬁned by the Origin and Destination of the Permanent that is changing locations.",
+      "children": [
+        {
+          "section": "425.1",
+          "text": "The Origin is where the Permanent is starting from.",
+          "children": []
+        },
+        {
+          "section": "425.2",
+          "text": "The Destination is where the Permanent is going to.",
+          "children": [
+            {
+              "section": "425.2.a",
+              "text": "In Modes of Play with more than two players, Battleﬁelds with Staged Combats or Combats in Progress are Invalid Destinations for Moves of all kinds ( Standard Moves or otherwise) by Units controlled by Players who don't already have permanents at that Battleﬁeld .",
+              "children": []
+            },
+            {
+              "section": "425.2.b",
+              "text": "If an action would require a Move that would cause a Unit to become present in a Location where it cannot move for any reason, such as a Battleﬁeld with two players that are not the controller of the Unit performing this Move action are in a Combat or such a Combat is Staged , it instead Recalls. See rule 432. Recalls for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "425.3",
+          "text": "Units are the only Permanents that can Move.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "426",
+      "text": "Players may choose to move their Units with the Standard Move. See rule 142. for more information on the Standard Move.",
+      "children": []
+    },
+    {
+      "section": "427",
+      "text": "Spells , Abilities , or other effects may cause a Move to occur.",
+      "children": [
+        {
+          "section": "427.1",
+          "text": "The source of the Move will provide details on any restrictions on legality for Destination.",
+          "children": []
+        },
+        {
+          "section": "427.2",
+          "text": "Units cannot Move to a Battleﬁeld that already has units from 2 other players present by any means.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "428",
+      "text": "The Destination becomes Contested if it is a Battleﬁeld not controlled by the controller of the Unit or Units that moved.",
+      "children": []
+    },
+    {
+      "section": "429",
+      "text": "Units may cause a Showdown without a Combat when they Move.",
+      "children": [
+        {
+          "section": "429.1",
+          "text": "A Showdown is opened when a Move causes a Battleﬁeld to become Contested while it has no Units present from any player other than those that just moved.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "430",
+      "text": "Units may cause Combat when they Move.",
+      "children": [
+        {
+          "section": "430.1",
+          "text": "A Combat is triggered when a Move causes a Battleﬁeld to become Contested and Units controlled by opposing players. See rule 437. Combat for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "431",
+      "text": "When a Move action is complete, perform a Cleanup.",
+      "children": []
+    },
+    {
+      "section": "432",
+      "text": "Recalls",
+      "children": []
+    },
+    {
+      "section": "433",
+      "text": "A Recall is when a Permanent is relocated from anywhere to its Base without it being a Move.",
+      "children": []
+    },
+    {
+      "section": "434",
+      "text": "Recalls are not Moves.",
+      "children": [
+        {
+          "section": "434.1",
+          "text": "They do not cause Triggered Abilities to trigger that are triggered by Move actions.",
+          "children": []
+        },
+        {
+          "section": "434.2",
+          "text": "A Recall causes a Permanent to change locations.",
+          "children": []
+        },
+        {
+          "section": "434.3",
+          "text": "A Recall cannot be prevented by actions and Game Effects that restrict or block Movement.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "435",
+      "text": "Gear can be Recalled.",
+      "children": [
+        {
+          "section": "435.1",
+          "text": "When an un-attached Gear is created or played at a battleﬁeld, or is at a battleﬁeld for any other reason, it is Recalled to its controller's base during the next Cleanup. Example: An Equipment is attached to a unit at a battleﬁeld, so the Equipment is present at that battleﬁeld. If the unit dies, the Equipment will be recalled during the next cleanup.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "436",
+      "text": "Recalls do not affect the state of the Permanent being recalled.",
+      "children": [
+        {
+          "section": "436.1",
+          "text": "Unless otherwise stated by the source of the Recall , Damage, Exhausted Status, Buffed Status, and applied Layer alterations will all remain unaffected by a Recall .",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "437",
+      "text": "Combat",
+      "children": []
+    },
+    {
+      "section": "438",
+      "text": "A Combat occurs when a Cleanup occurs, there are no items on the Chain , and a Battleﬁeld has Units controlled by two opposing players.",
+      "children": []
+    },
+    {
+      "section": "439",
+      "text": "Combat is considered Staged if there are units controlled by two opposing players at a Battleﬁeld but the Steps of Combat have not been initiated.",
+      "children": [
+        {
+          "section": "439.1",
+          "text": "If more than one Battleﬁeld has Units controlled by opposing players at it at the same time, the Turn Player decides which Combat to resolve ﬁrst.",
+          "children": []
+        },
+        {
+          "section": "439.2",
+          "text": "If Staged Combats stop being Staged before the Steps of Combat are initiated, they are not resolved or executed.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "440",
+      "text": "Combat can only occur between Units controlled by exactly two players.",
+      "children": [
+        {
+          "section": "440.1",
+          "text": "In Modes of Play with more than two players, Battleﬁelds with Staged Combats or Combats in Progress are Invalid Destinations for Moves of all kinds ( Standard Moves or otherwise) by Units controlled by Players who don't already have Units at that Battleﬁeld. See_rule_REF_425.2.a_DOT for more information on Invalid Destinations.",
+          "children": []
+        },
+        {
+          "section": "440.2",
+          "text": "In Modes of Play with more than two players, Battleﬁelds with Staged Combats or Combats in Progress are Invalid to be chosen as a location to play one or more Units by a player not involved in that Combat by any means,",
+          "children": [
+            {
+              "section": "440.2.a",
+              "text": "If an effect would require a Unit be played to a Battleﬁeld with a Staged Combat or a Combat in Progress , where the controller of the played unit is not a participant, instead the Unit is played to its controller's Base.",
+              "children": []
+            },
+            {
+              "section": "440.2.b",
+              "text": "Any subsequent reference to \"here\" in the corresponding effect is reassigned to the Controller's Base , where the Unit was played. Any further effects that may be invalidated are invalidated as if the effect was mistargeted. See_rule_REF_352.5_DOT Targeting for more information on Mistargeting.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "440.3",
+          "text": "All choices that would result in a Combat occurring between more than two players simultaneously are invalid and ineligible to be completed.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "441",
+      "text": "The Steps of Combat",
+      "children": []
+    },
+    {
+      "section": "442",
+      "text": "Step 1: The Showdown Step",
+      "children": [
+        {
+          "section": "442.1",
+          "text": "A Showdown opens at this time.",
+          "children": [
+            {
+              "section": "442.1.a",
+              "text": "Establish who is Attacker and who is Defender.",
+              "children": [
+                {
+                  "section": "442.1.a.1",
+                  "text": "The Attacker is the player whose unit(s) applied the Contested status to the Battleﬁeld. They gain the Attacker designation now. 442.1.a.",
+                  "children": []
+                },
+                {
+                  "section": "442.1.a.2",
+                  "text": "The Defender is the player who did not apply the Contested status to the Battleﬁeld. They gain the Defender designation now.",
+                  "children": []
+                },
+                {
+                  "section": "442.1.a.3",
+                  "text": "Units at the Contested Battleﬁeld controlled by the Attacker gain the Attacker designation now. 442.1.a.",
+                  "children": []
+                },
+                {
+                  "section": "442.1.a.4",
+                  "text": "Units at the Contested Battleﬁeld controlled by the Defender gain the Defender designation now. 442.1.a.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "442.1.b",
+              "text": "Finalize items on the Initial Chain if establishing Attacker and Defender has caused Triggered Abilities to become Pending.",
+              "children": [
+                {
+                  "section": "442.1.b.1",
+                  "text": "The Attacking player, who has Focus , places Triggered Abilities on the Chain ﬁrst, followed by all non- Defender players in Turn Order , followed by the Defending Player.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "442.1.c",
+              "text": "The State Closes if an Initial Chain was created.",
+              "children": [
+                {
+                  "section": "442.1.c.1",
+                  "text": "Otherwise the Showdown continues, with the State Open as normal.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "442.1.d",
+              "text": "Players proceed with any play on the Chain as normal.",
+              "children": []
+            },
+            {
+              "section": "442.1.e",
+              "text": "Focus does not pass upon closure of the Initial Chain, if any.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "443",
+      "text": "Step 2: The Combat Damage Step",
+      "children": [
+        {
+          "section": "443.1",
+          "text": "When the Showdown closes, Attackers and Defenders resolve Combat Damage at the Battleﬁeld that was attacked, using their current Might.",
+          "children": [
+            {
+              "section": "443.1.a",
+              "text": "The Combat Damage Step only occurs if both Attacking and Defending units remain at the location.",
+              "children": [
+                {
+                  "section": "443.1.a.1",
+                  "text": "If neither Attacking Units nor Defending Units remain at this stage, the Combat Damage Step is skipped.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "443.1.b",
+              "text": "Sum the Might of all Attacking Units.",
+              "children": []
+            },
+            {
+              "section": "443.1.c",
+              "text": "Sum the Might of all Defending Units.",
+              "children": []
+            },
+            {
+              "section": "443.1.d",
+              "text": "Starting with the Attacker , each player assigns an amount of damage equal to their summed Might among the other's Units.",
+              "children": [
+                {
+                  "section": "443.1.d.1",
+                  "text": "Assigning Damage is not Dealing Damage. 443.1.d.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.2",
+                  "text": "Abilities or effects may inﬂuence the order in which damage is assigned. Reminder: Lethal Damage is non-zero damage equaling or exceeding the Might of a Unit.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.3",
+                  "text": "Units must have lethal damage assigned to them in full before damage is assigned to a different Unit. Example: If a player has 5 damage to distribute among four 3 Might units, they may not choose to assign 2 damage to one of the units and 1 damage to each of the remaining",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.4",
+                  "text": "Units cannot have more damage assigned to them than the minimum required to constitute lethal damage unless no further units remain to have damage assigned to them.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.5",
+                  "text": "A player must obey all requirements and restrictions on damage assignment if able. Example: A player is assigning damage to the following units: a unit with Tank (\"I must be assigned combat damage ﬁrst.\"); Caitlyn, Patrolling (\"I must be assigned combat damage last.\"); and another unit without any abilities. That player must assign combat damage ﬁrst to the unit with Tank, then to the unit with no abilities, then to Caitlyn.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.6",
+                  "text": "If multiple Units have abilities or effects that require a player to assign them damage with the same priority, that player may assign damage to those units in any order. Example: A player is assigning damage to the following units: two units with Tank (\"I must be assigned combat damage ﬁrst.\") and one unit with no abilities. That player chooses one of the units with Tank and assigns combat damage to it. Then they must assign any remaining damage ﬁrst to the other unit with Tank, then to the unit with no abilities.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.7",
+                  "text": "If a Unit has one or more Abilities or effects applying to it that demand it be assigned damage in a speciﬁc way that is exclusionary, then the assigning player chooses only one of those abilities to apply when assigning damage. Example: Caitlyn, Patrolling (\"I must be assigned combat damage last.\") has been given the Tank ability (\"I must be assigned combat damage ﬁrst.\"). A player is assigning damage to this Caitlyn with Tank and two units with no abilities. That player can’t fulﬁll both of Caitlyn’s damage requirements, so they may choose to assign damage to Caitlyn ﬁrst, fulﬁlling the Tank requirement, or last, fulﬁlling Caitlyn’s printed requirement. They can’t choose to apply damage to Caitlyn in between the other two units, because that wouldn’t fulﬁll either requirement.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.8",
+                  "text": "If there is more than one unit in which this situation applies to, each unit is dealt with individually. The assigning player chooses which ability or effect applies, and then resolves the assignment. If this creates a situation where now more than one unit must be assigned with the same priority, those units may be assigned damage in any order as normal within that priority. Example: Two copies of Caitlyn, Patrolling (\"I must be assigned combat damage last.\") have been given the Tank ability (\"I must be assigned combat damage ﬁrst.\"). A player assigning damage to these two Caitlyns and one unit with no abilities could choose to fulﬁll both Caitlyns’ Tank requirements by assigning them both damage before the other unit.",
+                  "children": []
+                },
+                {
+                  "section": "443.1.d.9",
+                  "text": "If a unit cannot be dealt damage, then no amount of damage can be considered lethal. Such a unit is exempt from any considerations of mandatory assignment. Example: Kayn, Unleashed says “If I have moved twice this turn, I don't take damage.” While Kayn can’t take damage, it is ignored for the purposes of assigning lethal damage in combat.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "443.1.e",
+              "text": "Deal Damage to each unit equal to the amount assigned to it.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "444",
+      "text": "Step 3: The Resolution Step",
+      "children": []
+    },
+    {
+      "section": "445",
+      "text": "Scoring",
+      "children": []
+    },
+    {
+      "section": "446",
+      "text": "A player Scores in one of two ways:",
+      "children": [
+        {
+          "section": "446.1",
+          "text": "Conquer: A player gains Control of a Battleﬁeld they did not yet Score this turn.",
+          "children": [
+            {
+              "section": "446.1.a",
+              "text": "In Modes of Play with teammates, Battleﬁelds under the Control of a teammate during the Beginning Phase are also disqualiﬁed from being Scored through Conquer by any means.",
+              "children": []
+            },
+            {
+              "section": "446.1.b",
+              "text": "A player will gain control of a Battleﬁeld after establishing Control by applying Contested ﬁrst.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "446.2",
+          "text": "Hold: A player maintains Control of a Battleﬁeld during their Beginning Phase.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "447",
+      "text": "A player may only Score , from either method, once per Battleﬁeld per turn.",
+      "children": []
+    },
+    {
+      "section": "448",
+      "text": "When a player Scores , two things occur:",
+      "children": [
+        {
+          "section": "448.1",
+          "text": "The player earns up to one Point , depending on their current score.",
+          "children": [
+            {
+              "section": "448.1.a",
+              "text": "The Final Point has additional restrictions.",
+              "children": [
+                {
+                  "section": "448.1.a.1",
+                  "text": "Notably, points earned from sources that are not Conquer or Hold are not beholden to these restrictions.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "448.1.b",
+              "text": "When a player tries to earn a Point through a Score , and their current Point Total is 1 point from the Victory Score of the Mode of Play , the following occurs:",
+              "children": [
+                {
+                  "section": "448.1.b.1",
+                  "text": "If the player has Scored through Hold , that player scores the Final Point.",
+                  "children": []
+                },
+                {
+                  "section": "448.1.b.2",
+                  "text": "If the player has Scored through a Conquer and has Scored every Battleﬁeld through either method this turn, that player scores the Final Point . If the player has Scored through a Conquer and has not Scored every Battleﬁeld this turn, that player draws a card.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "448.2",
+          "text": "Trigger Score abilities at the Battleﬁeld that Scored.",
+          "children": [
+            {
+              "section": "448.2.a",
+              "text": "Conquer abilities trigger at a Battleﬁeld that was Conquered.",
+              "children": []
+            },
+            {
+              "section": "448.2.b",
+              "text": "Hold abilities trigger at a Battleﬁeld that was Held.",
+              "children": []
+            },
+            {
+              "section": "448.2.c",
+              "text": "These will only trigger when the Battleﬁeld is Scored; I.E. These cannot be triggered more than once per turn for a player.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "449",
+      "text": "When a player accrues Points equal to the Victory Score for their Mode of Play , they Win the Game immediately.",
+      "children": []
+    },
+    {
+      "section": "450",
+      "text": "Layers",
+      "children": []
+    },
+    {
+      "section": "451",
+      "text": "Layers are the mechanism in which Game Effects alter the Traits, Intrinsic Abilities, or other properties of Game Objects.",
+      "children": []
+    },
+    {
+      "section": "452",
+      "text": "Layers are an organizational structure.",
+      "children": [
+        {
+          "section": "452.1",
+          "text": "Layers only serve to structure the application and order that Game Effects apply to Game Objects to maintain consistency.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "453",
+      "text": "The layers are applied repeatedly until all effects operating on objects have been applied once and no changes have been processed.",
+      "children": [
+        {
+          "section": "453.1",
+          "text": "Layers are applied in sequence. Each effect in them is applied as soon as able, and only a single time across all sequences.",
+          "children": []
+        },
+        {
+          "section": "453.2",
+          "text": "When a sequence of applications completes, recur the process, and evaluate each layer again applying any effects that may now be applicable.",
+          "children": []
+        },
+        {
+          "section": "453.3",
+          "text": "The removal or disqualiﬁcation of an effect is separate from the application of the effect, but still can only be applied once. Example: Fiora, Victorious has printed Might 4 and says “While I'm Mighty, I have Deﬂect, Ganking, and Shield.” If a player places a buff on Fiora, her Might is increased in the Arithmetic layer, after the layer for Ability-Altering Effects. The Ability-Altering Effect layer is then re-checked and the abilities Deﬂect, Ganking, and Shield applied. Since each effect has been applied once and there are no other effects to apply, Fiora’s characteristics are ﬁnalized as 5 Might with Deﬂect, Ganking, and Shield. While a buffed Fiora, Victorious is in combat as a defender, an additional +1 Might will be applied in the Arithmetic layer, giving her 6 Might and the 3 keywords. Example: A buffed Fiora, Victorious is in combat as a defender when her buff is removed. Reevaluating the layers in sequence, she no longer gains Deﬂect, Ganking, and Shield during the Ability-Altering Effect layer, so when the Arithmetic layer is evaluated, neither the buff (which is gone) nor Shield (which she no longer has) apply. She goes directly from 6 Might with three keywords to 4 Might with no keywords..",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "454",
+      "text": "Layers are applied in the following order:",
+      "children": []
+    },
+    {
+      "section": "455",
+      "text": "If more than one effect applies to the same Game Object in the Same Layer , or to each other in the same layer, then both effects will apply but their order may be determined by Dependency.",
+      "children": [
+        {
+          "section": "455.1",
+          "text": "A Dependency is established if:",
+          "children": [
+            {
+              "section": "455.1.a",
+              "text": "Applying one of the effects alters the existence of the other; or",
+              "children": []
+            },
+            {
+              "section": "455.1.b",
+              "text": "Applying one of the effects alters the number of objects the other effect can inﬂuence",
+              "children": []
+            },
+            {
+              "section": "455.1.c",
+              "text": "Applying one of the effects alters the outcome when applying the other non- deterministically",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "456",
+      "text": "To determine which effect Depends on another, determine which of the prior criteria applies, and then also which effect’s evaluation is altered by the sequence of applications. That effect is said to Depend on the other.",
+      "children": [
+        {
+          "section": "456.1",
+          "text": "To resolve a dependency, the effects within the same layer that created the dependency must be applied such that:",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "457",
+      "text": "If more than one effect applies in the same layer but no dependency is established, then Timestamp order is applied to the effects within that layer and sublayer",
+      "children": [
+        {
+          "section": "457.1",
+          "text": "When an effect begins applying, it establishes a time for which it is compared against other Game Effects for purposes of resolving Layered effects as its Timestamp.",
+          "children": [
+            {
+              "section": "457.1.a",
+              "text": "Timestamps are not rote values.",
+              "children": []
+            },
+            {
+              "section": "457.1.b",
+              "text": "Timestamps are relative comparisons between effects and when they began applying to the game.",
+              "children": []
+            },
+            {
+              "section": "457.1.c",
+              "text": "Timestamps are not referenced by Game Effects in any way. They are only used to ﬁnalize layered effects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "457.2",
+          "text": "When Rules Text becomes Inactive for any reason, it loses its Timestamp. When it ceases to be Inactive, a new Timestamp is established.",
+          "children": []
+        },
+        {
+          "section": "457.3",
+          "text": "Effects are applied such that the earliest Timestamp within each Layer and Sublayer applies ﬁrst, followed by other Effects in that Layer and Sublayer in chronological order.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "458",
+      "text": "Modes of Play",
+      "children": []
+    },
+    {
+      "section": "459",
+      "text": "There are multiple methods of playing Riftbound.",
+      "children": []
+    },
+    {
+      "section": "460",
+      "text": "A Mode of Play must deﬁne several variables for the game.",
+      "children": [
+        {
+          "section": "460.1",
+          "text": "Number of Players : How many people are playing the game.",
+          "children": []
+        },
+        {
+          "section": "460.2",
+          "text": "Formation of Players : How the players are organized while playing.",
+          "children": [
+            {
+              "section": "460.2.a",
+              "text": "This deﬁnes if a player is alone or on a team.",
+              "children": []
+            },
+            {
+              "section": "460.2.b",
+              "text": "This deﬁnes the number of opponents.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "460.3",
+          "text": "Victory Score: The point total a player or team must reach to win.",
+          "children": [
+            {
+              "section": "460.3.a",
+              "text": "Victory Scores can be any positive number.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "460.4",
+          "text": "Battleﬁeld Count: Determines how many Battleﬁelds are in play, contributed by players, during play.",
+          "children": [
+            {
+              "section": "460.4.a",
+              "text": "This may inﬂuence deck building requirements in competitive settings.",
+              "children": []
+            },
+            {
+              "section": "460.4.b",
+              "text": "This may involve utilizing less Battleﬁelds than there are players.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "460.5",
+          "text": "Setup: Any changes to initial setup required for this mode.",
+          "children": []
+        },
+        {
+          "section": "460.6",
+          "text": "Format: Conditions to win or additional rules added over play.",
+          "children": []
+        },
+        {
+          "section": "460.7",
+          "text": "First Turn Process: Adjustments to each player's ﬁrst turn.",
+          "children": []
+        },
+        {
+          "section": "460.8",
+          "text": "Unique Rules",
+          "children": [
+            {
+              "section": "460.8.a",
+              "text": "If any, they will be appended here.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "461",
+      "text": "Sanctioned Modes",
+      "children": []
+    },
+    {
+      "section": "462",
+      "text": "1v1 (Duel)",
+      "children": [
+        {
+          "section": "462.1",
+          "text": "2 Players",
+          "children": []
+        },
+        {
+          "section": "462.2",
+          "text": "1v1 1 opponent each No teams",
+          "children": []
+        },
+        {
+          "section": "462.3",
+          "text": "Victory Score: 8",
+          "children": []
+        },
+        {
+          "section": "462.4",
+          "text": "Battleﬁeld Count: 2",
+          "children": [
+            {
+              "section": "462.4.a",
+              "text": "Each player provides three (3) Battleﬁelds , included in their deck during deck building. Only 1 will be used, chosen during setup.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "462.5",
+          "text": "Setup: Each player randomly selects one (1) of their three (3) Battleﬁelds . The other two are removed and will not be used for this game. The selected Battleﬁelds are placed in the Battleﬁeld Zone.",
+          "children": []
+        },
+        {
+          "section": "462.6",
+          "text": "Format: Best of",
+          "children": []
+        },
+        {
+          "section": "462.7",
+          "text": "First Turn Process: The player going second channels an extra Rune from their Rune Deck during their ﬁrst Channel Phase of the game.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "463",
+      "text": "1v1 (Match)",
+      "children": [
+        {
+          "section": "463.1",
+          "text": "2 Players",
+          "children": []
+        },
+        {
+          "section": "463.2",
+          "text": "1v1 1 opponent each No teams",
+          "children": []
+        },
+        {
+          "section": "463.3",
+          "text": "Victory Score: 8",
+          "children": []
+        },
+        {
+          "section": "463.4",
+          "text": "Battleﬁeld Count: 2",
+          "children": [
+            {
+              "section": "463.4.a",
+              "text": "Each player provides three (3) Battleﬁelds , included in their deck during deck building. Only 1 will be used, chosen during setup.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "463.5",
+          "text": "Setup: Each player selects one (1) of their three (3) Battleﬁelds . The other two are set aside and will not be used for this round of play. The selected Battleﬁelds are placed in the Battleﬁeld Zone . After this game, the Battleﬁelds that were used are to be removed and not selected again for this Match . One of the remaining Battleﬁelds that were set aside must be chosen instead.",
+          "children": []
+        },
+        {
+          "section": "463.6",
+          "text": "Format: Best of",
+          "children": []
+        },
+        {
+          "section": "463.7",
+          "text": "First Turn Process: The player going second channels an extra Rune from their Rune Deck during their ﬁrst Channel Phase of the game.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "464",
+      "text": "FFA3 (Skirmish)",
+      "children": [
+        {
+          "section": "464.1",
+          "text": "3 Players",
+          "children": []
+        },
+        {
+          "section": "464.2",
+          "text": "FFA 2 opponents each No teams",
+          "children": []
+        },
+        {
+          "section": "464.3",
+          "text": "Victory Score: 8",
+          "children": []
+        },
+        {
+          "section": "464.4",
+          "text": "Battleﬁeld Count: 3",
+          "children": [
+            {
+              "section": "464.4.a",
+              "text": "Each player provides three (3) Battleﬁelds, included in their deck during deck building. Only 1 will be used, chosen during setup.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "464.5",
+          "text": "Setup: Each player randomly selects one (1) of their three (3) Battleﬁelds . The other two are discarded and will not be used for this game. The selected Battleﬁelds are placed between the three Players before play and will be used for this game.",
+          "children": []
+        },
+        {
+          "section": "464.6",
+          "text": "Format: Best of",
+          "children": []
+        },
+        {
+          "section": "464.7",
+          "text": "First Turn Process: The player going ﬁrst does not draw a card during their ﬁrst Draw Phase of the game. The player going last channels an extra Rune from their Rune Deck during their ﬁrst Channel Phase of the game.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "465",
+      "text": "FFA4 (War)",
+      "children": [
+        {
+          "section": "465.1",
+          "text": "4 Players",
+          "children": []
+        },
+        {
+          "section": "465.2",
+          "text": "FFA 3 opponents each No teams",
+          "children": []
+        },
+        {
+          "section": "465.3",
+          "text": "Victory Score: 8",
+          "children": []
+        },
+        {
+          "section": "465.4",
+          "text": "Battleﬁeld Count: 3",
+          "children": [
+            {
+              "section": "465.4.a",
+              "text": "Each player provides three (3) Battleﬁelds , included in their deck during deck building.",
+              "children": []
+            },
+            {
+              "section": "465.4.b",
+              "text": "The player who is taking the ﬁrst turn removes their Battleﬁelds. They will not be used.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "465.5",
+          "text": "Setup: Each player who is not going ﬁrst randomly selects one (1) of their three (3) Battleﬁelds . The other two are removed and will not be used for this game. The selected Battleﬁelds are placed between the players before play and will be used for this game.",
+          "children": []
+        },
+        {
+          "section": "465.6",
+          "text": "Format: Best of",
+          "children": []
+        },
+        {
+          "section": "465.7",
+          "text": "First Turn Process: The player going ﬁrst does not draw a card during their ﬁrst Draw Phase of the game. The player going last channels an extra Rune from their Rune Deck during their ﬁrst Channel Phase of the game.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "466",
+      "text": "2v2 (Magma Chamber)",
+      "children": [
+        {
+          "section": "466.1",
+          "text": "4 Players",
+          "children": []
+        },
+        {
+          "section": "466.2",
+          "text": "2v2 2 opponents each 1 teammate",
+          "children": []
+        },
+        {
+          "section": "466.3",
+          "text": "Victory Score: 11",
+          "children": []
+        },
+        {
+          "section": "466.4",
+          "text": "Battleﬁeld Count: 3",
+          "children": [
+            {
+              "section": "466.4.a",
+              "text": "Each player provides one (1) Battleﬁeld , included in their deck during deck building.",
+              "children": []
+            },
+            {
+              "section": "466.4.b",
+              "text": "The player who is taking the ﬁrst turn removes their Battleﬁelds. They will not be used.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "466.5",
+          "text": "Setup:",
+          "children": [
+            {
+              "section": "466.5.a",
+              "text": "Each player who is not going ﬁrst randomly selects one (1) of their three (3) Battleﬁelds . The other two are removed and will not be used for this game. The selected Battleﬁelds are placed between the players before play and will be used for this game.",
+              "children": []
+            },
+            {
+              "section": "466.5.b",
+              "text": "Turn order alternates teams.",
+              "children": [
+                {
+                  "section": "466.5.b.1",
+                  "text": "The ﬁrst player will be followed by an opponent, then the ﬁrst player's teammate, then the ﬁrst opponent's teammate, and so on.",
+                  "children": []
+                },
+                {
+                  "section": "466.5.b.2",
+                  "text": "If allies are sitting across from each other, turn order proceeds clockwise as normal.",
+                  "children": []
+                },
+                {
+                  "section": "466.5.b.3",
+                  "text": "If allies are sitting next to each other, turn order is passed across the table.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "466.6",
+          "text": "Format: Best of",
+          "children": [
+            {
+              "section": "466.6.a",
+              "text": "Teammates win or lose together.",
+              "children": [
+                {
+                  "section": "466.6.a.1",
+                  "text": "If one player Concedes , then the entire team loses.",
+                  "children": []
+                },
+                {
+                  "section": "466.6.a.2",
+                  "text": "If one player Loses, then the entire team loses.",
+                  "children": []
+                },
+                {
+                  "section": "466.6.a.3",
+                  "text": "If one player Wins , then the entire team wins.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "466.7",
+          "text": "First Turn Process: The player going ﬁrst does not draw a card during their ﬁrst Draw Phase of the game. The player going last channels an extra Rune from their Rune Deck during their ﬁrst Channel Phase of the game.",
+          "children": []
+        },
+        {
+          "section": "466.8",
+          "text": "Unique Rules",
+          "children": [
+            {
+              "section": "466.8.a",
+              "text": "Players may play spells during their Teammate's Turn.",
+              "children": []
+            },
+            {
+              "section": "466.8.b",
+              "text": "Battleﬁelds controlled during the Beginning Phase of a player's turn by that player's teammate are disqualiﬁed from being scored by that Team, that turn. Example: A player may not induce their partner to retreat, and then conquer a Battleﬁeld their teammate was controlling.",
+              "children": []
+            },
+            {
+              "section": "466.8.c",
+              "text": "Control is not shared.",
+              "children": [
+                {
+                  "section": "466.8.c.1",
+                  "text": "Players may not Hide cards at Battleﬁelds controlled by their Teammate.",
+                  "children": []
+                },
+                {
+                  "section": "466.8.c.2",
+                  "text": "Players may not issue Standard Movement to their Teammate's Units.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "466.8.d",
+              "text": "Friendly describes controlled Game Objects by a player or their Teammate. Example: \"When I am played, ready a friendly unit \" could target a player's own Units or their teammate's Units.",
+              "children": []
+            },
+            {
+              "section": "466.8.e",
+              "text": "Hands are still Private Information.",
+              "children": [
+                {
+                  "section": "466.8.e.1",
+                  "text": "Players are not restricted in what they say to their Teammate, however. 466.8.e.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "466.8.f",
+              "text": "The Final Point has an adjustment to the criteria when scoring.",
+              "children": [
+                {
+                  "section": "466.8.f.1",
+                  "text": "When scoring the Final Point from Conquer , a player must Score each Battleﬁeld in the same turn, excepting any that were occupied by their ally during that turn’s Beginning Phase .",
+                  "children": []
+                },
+                {
+                  "section": "466.8.f.2",
+                  "text": "No other changes to Final Point restrictions.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "466.8.g",
+              "text": "Teammates may not utilize the same Champion Legend .",
+              "children": []
+            },
+            {
+              "section": "466.8.h",
+              "text": "Teammates may not utilize the same Battleﬁelds .",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

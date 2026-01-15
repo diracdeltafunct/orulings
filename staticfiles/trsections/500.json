@@ -34,7 +34,7 @@
       "children": [
         {
           "section": "502.1",
-          "text": "Cards have a level of privacy as specified in CR",
+          "text": "Cards have a level of privacy as specified in CR 127. Privacy. These apply to levels of information accessible to the players as well.",
           "children": []
         },
         {
@@ -43,7 +43,7 @@
           "children": [
             {
               "section": "502.2.a",
-              "text": "Derived information is a combination of public information and a player’s own skill or",
+              "text": "Derived information is a combination of public information and a player’s own skill or calculation.",
               "children": []
             },
             {
@@ -55,7 +55,7 @@
         },
         {
           "section": "502.3",
-          "text": "Like cards, other relevant information about the game state can be public, derived, private, or",
+          "text": "Like cards, other relevant information about the game state can be public, derived, private, or secret.",
           "children": []
         },
         {
@@ -64,7 +64,7 @@
           "children": [
             {
               "section": "502.4.a",
-              "text": "The current turn player, phase, step, state of the turn, and who has priority and",
+              "text": "The current turn player, phase, step, state of the turn, and who has priority and focus.",
               "children": []
             },
             {
@@ -89,7 +89,7 @@
             },
             {
               "section": "502.4.f",
-              "text": "Spells and abilities that resolved previously in the turn, and the sources of them are",
+              "text": "Spells and abilities that resolved previously in the turn, and the sources of them are themselves public.",
               "children": []
             }
           ]
@@ -148,17 +148,17 @@
       "children": [
         {
           "section": "503.1",
-          "text": "In competitions, players may take actions that skip parts of the technically precise play",
+          "text": "In competitions, players may take actions that skip parts of the technically precise play sequence without explicitly announcing that sequence.",
           "children": []
         },
         {
           "section": "503.2",
-          "text": "The most common type of shortcut is skipping one or more parts of a turn, phase, or step to the",
+          "text": "The most common type of shortcut is skipping one or more parts of a turn, phase, or step to the mutual understanding of all involved players.",
           "children": []
         },
         {
           "section": "503.3",
-          "text": "Players may request to use a new shortcut in a game but must be clear about the game state at the",
+          "text": "Players may request to use a new shortcut in a game but must be clear about the game state at the start and end of the shortcut.",
           "children": []
         },
         {
@@ -173,7 +173,7 @@
         },
         {
           "section": "503.6",
-          "text": "Players can’t use shortcuts they haven’t previously announced or modify existing shortcuts",
+          "text": "Players can’t use shortcuts they haven’t previously announced or modify existing shortcuts without announcement.",
           "children": []
         },
         {
@@ -183,7 +183,7 @@
         },
         {
           "section": "503.8",
-          "text": "When resolving spells or abilities, players can’t assume their opponents are using shortcuts",
+          "text": "When resolving spells or abilities, players can’t assume their opponents are using shortcuts without asking.",
           "children": []
         },
         {
@@ -192,22 +192,22 @@
           "children": [
             {
               "section": "503.9.a",
-              "text": "When a player channels runes or draws a card at the start of their turn, it is assumed",
+              "text": "When a player channels runes or draws a card at the start of their turn, it is assumed that they have passed through the Beginning Phase.",
               "children": []
             },
             {
               "section": "503.9.b",
-              "text": "When a player places a spell or ability on the chain, they are assumed to be passing",
+              "text": "When a player places a spell or ability on the chain, they are assumed to be passing priority unless they explicitly announce they intend to retain it.",
               "children": []
             },
             {
               "section": "503.9.c",
-              "text": "When a player puts a spell or ability on the chain and announces choices for it that",
+              "text": "When a player puts a spell or ability on the chain and announces choices for it that are normally made upon resolution, they must adhere to those choices unless their opponents react.",
               "children": []
             },
             {
               "section": "503.9.d",
-              "text": "When a player asks about choices normally made upon resolution, they are assumed to be",
+              "text": "When a player asks about choices normally made upon resolution, they are assumed to be passing priority and allowing the spell or ability to resolve.",
               "children": []
             }
           ]
@@ -220,7 +220,7 @@
       "children": [
         {
           "section": "504.1",
-          "text": "Complex series of game actions are sometimes shortcutted into out-of-order sequences, which are",
+          "text": "Complex series of game actions are sometimes shortcutted into out-of-order sequences, which are technically incorrect or imprecise, but arrive at the correct legal and understood game state.",
           "children": [
             {
               "section": "504.1.a",
@@ -231,12 +231,12 @@
         },
         {
           "section": "504.2",
-          "text": "Players may ask their opponents to do these actions, or a subset of these actions, in the correct",
+          "text": "Players may ask their opponents to do these actions, or a subset of these actions, in the correct order so that they can react at the appropriate time.",
           "children": []
         },
         {
           "section": "504.3",
-          "text": "Players can’t shortcut out-of-order in a way that gives them information prematurely that might",
+          "text": "Players can’t shortcut out-of-order in a way that gives them information prematurely that might affect decisions later in that sequence.",
           "children": []
         }
       ]
@@ -252,12 +252,12 @@
         },
         {
           "section": "505.2",
-          "text": "Players performing a loop must have each iteration of the loop be identical with no conditional",
+          "text": "Players performing a loop must have each iteration of the loop be identical with no conditional actions.",
           "children": []
         },
         {
           "section": "505.3",
-          "text": "To decide how to proceed with a loop, determine how many players are needed to maintain it (who",
+          "text": "To decide how to proceed with a loop, determine how many players are needed to maintain it (who must take actions or make decisions to sustain the loop):",
           "children": [
             {
               "section": "505.3.a",
@@ -283,42 +283,42 @@
         },
         {
           "section": "505.5",
-          "text": "Each other player (if any), in turn order, may choose to agree to that number or choose a number",
+          "text": "Each other player (if any), in turn order, may choose to agree to that number or choose a number of iterations after which they commit to taking action to break the loop or choose not to break the loop.",
           "children": []
         },
         {
           "section": "505.6",
-          "text": "If no player chooses to break the loop and there were no maintaining players, the game ends in a",
+          "text": "If no player chooses to break the loop and there were no maintaining players, the game ends in a draw.",
           "children": []
         },
         {
           "section": "505.7",
-          "text": "Otherwise, the loop continues until the lowest number of iterations chosen, then that player",
+          "text": "Otherwise, the loop continues until the lowest number of iterations chosen, then that player either gains priority (if a maintaining player) or breaks the loop.",
           "children": []
         },
         {
           "section": "505.8",
-          "text": "If a player intervenes to break a loop, they may choose to interrupt a partially completed",
+          "text": "If a player intervenes to break a loop, they may choose to interrupt a partially completed iteration.",
           "children": []
         },
         {
           "section": "505.9",
-          "text": "If a sequence of actions is non-deterministic, it may not be shortcut and iterations must be",
+          "text": "If a sequence of actions is non-deterministic, it may not be shortcut and iterations must be performed manually.",
           "children": []
         },
         {
           "section": "505.10",
-          "text": "Some loops are maintained by decisions rather than actions. In these cases, apply 505.4-505.8",
+          "text": "Some loops are maintained by decisions rather than actions. In these cases, apply 505.4-505.8 but with the player making a different decision rather than a different action.",
           "children": []
         },
         {
           "section": "505.11",
-          "text": "Judges are the final arbiter of what constitutes a loop, or if choices are available to continue",
+          "text": "Judges are the final arbiter of what constitutes a loop, or if choices are available to continue a loop when secret information is involved.",
           "children": []
         },
         {
           "section": "505.12",
-          "text": "Players who try to opt-out of shortcutting or propose incorrect shortcutting to use up time are",
+          "text": "Players who try to opt-out of shortcutting or propose incorrect shortcutting to use up time are cheating. See 704.8 for more information about cheating.",
           "children": []
         }
       ]
@@ -333,18 +333,18 @@
           "children": [
             {
               "section": "506.1.a",
-              "text": "Triggers caused by battlefields are controlled by the player triggering them, not the",
+              "text": "Triggers caused by battlefields are controlled by the player triggering them, not the player who owns the battlefield.",
               "children": []
             }
           ]
         },
         {
           "section": "506.2",
-          "text": "Players are not required to notify other players of triggered abilities they don’t control, but",
+          "text": "Players are not required to notify other players of triggered abilities they don’t control, but they may if they wish.",
           "children": [
             {
               "section": "506.2.a",
-              "text": "At low OPL, it is not required to notify other players of their triggers, but it is",
+              "text": "At low OPL, it is not required to notify other players of their triggers, but it is encouraged for sportsmanship and learning.",
               "children": []
             }
           ]
@@ -355,7 +355,7 @@
           "children": [
             {
               "section": "506.3.a",
-              "text": "A trigger is considered forgotten once a new game action is taken without acknowledging",
+              "text": "A trigger is considered forgotten once a new game action is taken without acknowledging the trigger.",
               "children": []
             },
             {
@@ -372,7 +372,7 @@
         },
         {
           "section": "506.5",
-          "text": "A triggered ability that was forgotten is still considered to have triggered for the purpose of",
+          "text": "A triggered ability that was forgotten is still considered to have triggered for the purpose of non-optional “once a turn” triggers.",
           "children": []
         }
       ]
@@ -383,12 +383,12 @@
       "children": [
         {
           "section": "507.1",
-          "text": "Players may communicate with teammates at all times unless explicitly prohibited by the format",
+          "text": "Players may communicate with teammates at all times unless explicitly prohibited by the format rules.",
           "children": []
         },
         {
           "section": "507.2",
-          "text": "Players that acquire secret or private information about a match in which a teammate is playing",
+          "text": "Players that acquire secret or private information about a match in which a teammate is playing can’t communicate with that teammate for the remainder of that match. See CR 127.",
           "children": []
         }
       ]
@@ -424,17 +424,17 @@
         },
         {
           "section": "508.6",
-          "text": "Legend must be between nonrunes and Chosen Champion, and both legend and Chosen Champion must be",
+          "text": "Legend must be between nonrunes and Chosen Champion, and both legend and Chosen Champion must be together on either the left side or the right side of the board.",
           "children": []
         },
         {
           "section": "508.7",
-          "text": "Each card or indicator that attaches to another card must be clearly associated with it",
+          "text": "Each card or indicator that attaches to another card must be clearly associated with it physically.",
           "children": []
         },
         {
           "section": "508.8",
-          "text": "Tokens must be represented by card objects that show all relevant information including ready",
+          "text": "Tokens must be represented by card objects that show all relevant information including ready state.",
           "children": []
         },
         {
@@ -444,7 +444,7 @@
         },
         {
           "section": "508.10",
-          "text": "Ready objects must be oriented facing the controller. Exhausted objects must be oriented at a 90",
+          "text": "Ready objects must be oriented facing the controller. Exhausted objects must be oriented at a 90 degree rotation to ready objects, either clockwise or counterclockwise, but all exhausted objects must be rotated consistently.",
           "children": []
         }
       ]
@@ -465,7 +465,7 @@
         },
         {
           "section": "509.3",
-          "text": "A player can rewind and make a different decision about an action just taken if and only if they",
+          "text": "A player can rewind and make a different decision about an action just taken if and only if they have not gained any new information since taking the action, and a judge allows it.",
           "children": []
         },
         {
@@ -475,7 +475,7 @@
         },
         {
           "section": "509.5",
-          "text": "Teammates recommending a player rewind a decision before any other information is gained should",
+          "text": "Teammates recommending a player rewind a decision before any other information is gained should not itself be considered new information.",
           "children": []
         }
       ]

@@ -624,7 +624,7 @@
         },
         {
           "section": "702.10",
-          "text": "Looking at Secret Information [Warning]: A player looks at information that is not available to any player. See CR",
+          "text": "Looking at Secret Information [Warning]: A player looks at information that is not available to any player. See CR 127. Privacy for information types.",
           "children": [
             {
               "section": "702.10.a",
@@ -651,7 +651,7 @@
         },
         {
           "section": "702.11",
-          "text": "Looking at Opponent Private Information [Warning]: A player accidentally looks at information that is private to their opponent. See CR",
+          "text": "Looking at Opponent Private Information [Warning]: A player accidentally looks at information that is private to their opponent. See CR 127. Privacy for information types.",
           "children": [
             {
               "section": "702.11.a",

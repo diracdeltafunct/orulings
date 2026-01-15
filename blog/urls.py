@@ -22,7 +22,13 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import re_path as url
 
-from post.views import blog_index, post_detail, post_list, trsection_detail
+from post.views import (
+    blog_index,
+    crsection_detail,
+    post_detail,
+    post_list,
+    trsection_detail,
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -31,6 +37,7 @@ urlpatterns = [
     path("posts/", post_list, name="post_list"),
     path("posts/<int:post_id>/", post_detail, name="post_detail"),
     path("trsections/<str:section>/", trsection_detail, name="trsection_detail"),
+    path("crsections/<str:section>/", crsection_detail, name="crsection_detail"),
 ]
 
 if settings.DEBUG:

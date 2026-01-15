@@ -13,6 +13,19 @@
         
     {% endif %}
     
+    {% if crsections %}
+        <div class="crsections mt-5">
+            <h2>Core Rules Sections</h2>
+            <div class="list-group">
+                {% for section in crsections %}
+                    <a href="{{ section.url }}" class="list-group-item list-group-item-action">
+                        <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    
     {% if trsections %}
         <div class="trsections mt-5">
             <h2>Tournament Rules Sections</h2>

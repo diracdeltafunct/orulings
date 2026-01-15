@@ -43,8 +43,31 @@ def get_webpage_text(url):
 
     # Split on section numbers that might be concatenated (e.g., "text100. Introduction")
     # Only split on 3-digit numbers followed by period and capital letter (start of title)
-    # This avoids splitting subsections like "703.500"
+    # BUT: Don't split if preceded by "CR " (Core Rules reference)
+    # This avoids splitting subsections like "703.500" and CR references like "CR 127. Privacy"
+
+    # First, protect CR references by temporarily replacing them
+    # Handle both "CR 127. Privacy" and "CR 127.\n Privacy" (with newlines/whitespace)
+    text = re.sub(r"CR\s+(\d{3})\.", r"CR_REF_\1_DOT", text)
+
+    # Now split on section numbers
     text = re.sub(r"(\D)(\d{3})\.\s+([A-Z])", r"\1\n\2. \3", text)
+
+    # Restore CR references
+    text = re.sub(r"CR_REF_(\d{3})_DOT", r"CR \1.", text)
+
+    # Join continuation lines (lines starting with lowercase) with previous line
+    lines = text.splitlines()
+    joined_lines = []
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped and i > 0 and stripped[0].islower():
+            # This is a continuation line, append to previous
+            if joined_lines:
+                joined_lines[-1] = joined_lines[-1] + " " + stripped
+        else:
+            joined_lines.append(line)
+    text = "\n".join(joined_lines)
 
     return text
 
@@ -103,15 +126,18 @@ def parse_lines_to_objects(text):
     all_sections = []  # List of (section, content) tuples in order
 
     # First pass: Create all Line objects
+    # Skip duplicates - only keep first occurrence of each section
     for line in text.splitlines():
         stripped = line.strip()
         match = pattern.match(stripped)
         if match:
             section = match.group(1)
             content = match.group(2)
-            line_obj = Line(section=section, text=content)
-            section_map[section] = line_obj
-            all_sections.append(section)
+            # Only add if we haven't seen this section before
+            if section not in section_map:
+                line_obj = Line(section=section, text=content)
+                section_map[section] = line_obj
+                all_sections.append(section)
 
     # Second pass: Build hierarchy
     for section in all_sections:

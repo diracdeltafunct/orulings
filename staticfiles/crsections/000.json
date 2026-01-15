@@ -1,0 +1,185 @@
+{
+  "section": "000",
+  "text": "Golden and Silver Rules",
+  "children": [
+    {
+      "section": "001",
+      "text": "Golden Rule",
+      "children": []
+    },
+    {
+      "section": "002",
+      "text": "Card text supersedes rules text. Whenever a card fundamentally contradicts the rules, the card's indication is what is true.",
+      "children": []
+    },
+    {
+      "section": "050",
+      "text": "Silver Rule",
+      "children": []
+    },
+    {
+      "section": "051",
+      "text": "Card text uses different terminology than rules. Card text should be interpreted according to these rules, not as though it were text within these rules.",
+      "children": []
+    },
+    {
+      "section": "052",
+      "text": "Card , when written in card effects, is shorthand for \" Main Deck card.\" Runes, legends, and battleﬁelds are not considered cards when executing the abilities and effects of game objects. They are considered cards for the purposes of these rules.",
+      "children": []
+    },
+    {
+      "section": "053",
+      "text": "Cards refer to themselves in the ﬁrst person.",
+      "children": [
+        {
+          "section": "053.1",
+          "text": "* Units and legends say \"I,\" \"me,\" etc.",
+          "children": []
+        },
+        {
+          "section": "053.2",
+          "text": "* Gear and spells say \"this.\"",
+          "children": []
+        },
+        {
+          "section": "053.3",
+          "text": "* Battleﬁelds say \"here.\"",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "054",
+      "text": "“Can’t beats Can”",
+      "children": [
+        {
+          "section": "054.1",
+          "text": "Cards that forbid actions or effects, as a broad method of determination, supersede cards that allow or permit that same action or effect.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "055",
+      "text": "When executing card text, do as much as you can, ignoring impossible instructions.",
+      "children": [
+        {
+          "section": "055.1",
+          "text": "If all of a card’s instructions are impossible, it is still played and resolved, but nothing happens.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "1",
+      "text": "If a player has as many points as the Victory Score , that player wins. 322.2",
+      "children": [
+        {
+          "section": "1.a",
+          "text": "This is referred to as a Kill Instruction. 415.1.a.",
+          "children": []
+        },
+        {
+          "section": "1.b",
+          "text": "When a unit with a Deathknell is to be put in the Trash due to a Kill Instruction , it ﬁrst has its Deathknell added to the chain as a Pending Item. Note the unit’s location, attributes, and other relevant information to process its Deathknell when ﬁnalized before completing this Kill Instruction .",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "2",
+      "text": "Handle outstanding board state 322.3 2a. All Units that have non-zero Damage marked on them equalling or exceeding their Might that have Deathknell abilities will trigger their Deathknell ability now, making note of their current location, attributes, and other information relevant to add the trigger as a Pending Item See rule 734 Deathknell for more information .",
+      "children": [
+        {
+          "section": "2.a",
+          "text": "The Conquer Abilities of Units are put on the Chain as Pending Items after the Unit(s) these effects correspond to are present at a Battleﬁeld when a player gains control of it and gains 1 Victory Point from Conquering. 376.4.b.",
+          "children": []
+        },
+        {
+          "section": "2.b",
+          "text": "The Conquer Abilities of anything that references the player Conquering is put on the Chain as a Pending Item when the Condition that the player that controls the triggering source has performed a Conquer and gained 1 Victory Point. 376.4.b.",
+          "children": []
+        },
+        {
+          "section": "2.c",
+          "text": "If the act of gaining one point from Conquering is negated or replaced in any way, the Conquer Effect will still trigger.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "3",
+      "text": "Assign or Remove the Attacker or Defender designation from Units as needed if there is a Combat in progress",
+      "children": [
+        {
+          "section": "3.a",
+          "text": "If a Unit controlled by the Attacker becomes present at this Battleﬁeld after this moment, it will gain the Attacker designation during the Cleanup phase following the action that caused it to become present",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "4",
+      "text": "Battleﬁelds with no Units occupying them and no Contested status become Uncontrolled.",
+      "children": [
+        {
+          "section": "4.a",
+          "text": "If a Unit controlled by the Defender becomes present at this Battleﬁeld after this moment it will gain the Defender designation during the Cleanup phase following the action that caused it to become present",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "5",
+      "text": "Recall all Gear at Battleﬁelds. Remove all Hidden cards from all Battleﬁelds that are not controlled by the same player and place them in their owner's Trash.",
+      "children": [
+        {
+          "section": "5.a",
+          "text": "When required as a cost, [A] can be paid by Power of any Domain . 134.2.e.",
+          "children": []
+        },
+        {
+          "section": "5.b",
+          "text": "When Added to a player’s Rune Pool, [A] can be spent to pay a Power cost of any Domain.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "6",
+      "text": "Mark a Showdown as Staged at each Battleﬁeld that Contested was applied to that is Uncontrolled . 322.8.a The Showdown remains Staged at each Battleﬁeld that is Contested and has only units present controlled by the player that applied Contested 322.9 6a. If Units of an opposing player are present at a Battleﬁeld that has a Showdown staged before it can be Opened, the Showdown will cease being Staged",
+      "children": [
+        {
+          "section": "6.a",
+          "text": "When a [C] shorthand is printed on a card as reminder text, it assumes that card’s usual Domain , but it still means “one Power of this card’s Domain .” 134.2.e.",
+          "children": []
+        },
+        {
+          "section": "6.b",
+          "text": "A [C] shorthand on a card with no Domain or with multiple Domains is processed as [A] instead.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "7",
+      "text": "Mark a Combat as Staged at each Battleﬁeld that Contested was applied to that have Units present controlled by opposing players.",
+      "children": []
+    },
+    {
+      "section": "8",
+      "text": "Finalize any Pending Items on the Chain",
+      "children": []
+    },
+    {
+      "section": "9",
+      "text": "If the current state is a Neutral Open State and one or more Showdowns are Staged , the Turn Player chooses one of those Battleﬁelds. A Showdown begins there.",
+      "children": []
+    },
+    {
+      "section": "10",
+      "text": "If the current state is a Neutral Open State and Combat is Staged at one or more Battleﬁelds , the Turn Player chooses one of those Battleﬁelds . Combat begins there.",
+      "children": []
+    }
+  ]
+}
