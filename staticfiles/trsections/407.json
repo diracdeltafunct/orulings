@@ -1,0 +1,31 @@
+{
+  "section": "407",
+  "text": "Play First Rule",
+  "children": [
+    {
+      "section": "407.1",
+      "text": "For the first game of a match, a designated player decides whether they wish to play first or last.",
+      "children": []
+    },
+    {
+      "section": "407.2",
+      "text": "Any random method that is agreed upon by all players in the current game may be used to determine the designated player.",
+      "children": []
+    },
+    {
+      "section": "407.3",
+      "text": "The player is designated and the choice of playing first is made during the Start of Game procedure. See CR 115. Determine turn order.",
+      "children": []
+    },
+    {
+      "section": "407.4",
+      "text": "For games after the first game of a match, the loser of the previous game gets to choose if they play first or last. If the previous game was a draw, the starting play from the previous game is maintained.",
+      "children": []
+    },
+    {
+      "section": "407.5",
+      "text": "For alterations to this rule for 2v2, see 603.7.",
+      "children": []
+    }
+  ]
+}

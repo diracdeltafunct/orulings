@@ -1,0 +1,56 @@
+{
+  "section": "508",
+  "text": "Layout",
+  "children": [
+    {
+      "section": "508.1",
+      "text": "In high OPL, players must arrange their cards according to the following rules, for clarity.",
+      "children": []
+    },
+    {
+      "section": "508.2",
+      "text": "Runes must be closer to the player than nonrunes.",
+      "children": []
+    },
+    {
+      "section": "508.3",
+      "text": "Nonrunes must be closer to the player’s opponent than the player’s runes.",
+      "children": []
+    },
+    {
+      "section": "508.4",
+      "text": "Main Deck and trash must be together on either the left side or the right side of the board.",
+      "children": []
+    },
+    {
+      "section": "508.5",
+      "text": "Rune Deck should be on the other side (right or left) of the board from the Main Deck.",
+      "children": []
+    },
+    {
+      "section": "508.6",
+      "text": "Legend must be between nonrunes and Chosen Champion, and both legend and Chosen Champion must be",
+      "children": []
+    },
+    {
+      "section": "508.7",
+      "text": "Each card or indicator that attaches to another card must be clearly associated with it",
+      "children": []
+    },
+    {
+      "section": "508.8",
+      "text": "Tokens must be represented by card objects that show all relevant information including ready",
+      "children": []
+    },
+    {
+      "section": "508.9",
+      "text": "Buffs must be represented by an object that unambiguously represents a buff in game terms.",
+      "children": []
+    },
+    {
+      "section": "508.10",
+      "text": "Ready objects must be oriented facing the controller. Exhausted objects must be oriented at a 90",
+      "children": []
+    }
+  ]
+}

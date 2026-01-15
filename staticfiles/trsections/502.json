@@ -1,0 +1,114 @@
+{
+  "section": "502",
+  "text": "Information",
+  "children": [
+    {
+      "section": "502.1",
+      "text": "Cards have a level of privacy as specified in CR 127. Privacy. These",
+      "children": []
+    },
+    {
+      "section": "502.2",
+      "text": "In addition to these levels of information, some information is derived.",
+      "children": [
+        {
+          "section": "502.2.a",
+          "text": "Derived information is a combination of public information and a player’s own skill or",
+          "children": []
+        },
+        {
+          "section": "502.2.b",
+          "text": "Players are not required to assist opponents in determining derived information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "502.3",
+      "text": "Like cards, other relevant information about the game state can be public, derived, private, or",
+      "children": []
+    },
+    {
+      "section": "502.4",
+      "text": "The additional relevant public information includes:",
+      "children": [
+        {
+          "section": "502.4.a",
+          "text": "The current turn player, phase, step, state of the turn, and who has priority and",
+          "children": []
+        },
+        {
+          "section": "502.4.b",
+          "text": "Rune Pools and the number and quantity of resources in them.",
+          "children": []
+        },
+        {
+          "section": "502.4.c",
+          "text": "All players’ current scores.",
+          "children": []
+        },
+        {
+          "section": "502.4.d",
+          "text": "A permanent’s current state, as distinct from its printed ones.",
+          "children": []
+        },
+        {
+          "section": "502.4.e",
+          "text": "Spells and abilities on the Chain, their order, and play choices made for them.",
+          "children": []
+        },
+        {
+          "section": "502.4.f",
+          "text": "Spells and abilities that resolved previously in the turn, and the sources of them are",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "502.5",
+      "text": "The additional relevant derived information includes:",
+      "children": [
+        {
+          "section": "502.5.a",
+          "text": "Which public cards have been recycled.",
+          "children": []
+        },
+        {
+          "section": "502.5.b",
+          "text": "The order of runes in a Rune Deck.",
+          "children": []
+        },
+        {
+          "section": "502.5.c",
+          "text": "Consequences of actions that might happen in the future, such as a unit receiving a",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "502.6",
+      "text": "Players must announce changes to public information that result from their cards and effects.",
+      "children": []
+    },
+    {
+      "section": "502.7",
+      "text": "Players must answer honestly any questions regarding public information.",
+      "children": []
+    },
+    {
+      "section": "502.8",
+      "text": "Players must not represent public or derived information incorrectly.",
+      "children": []
+    },
+    {
+      "section": "502.9",
+      "text": "Players must point out discrepancies between announced and recorded public information.",
+      "children": []
+    },
+    {
+      "section": "502.10",
+      "text": "Judges are encouraged to help players determine public information, but not derived information.",
+      "children": []
+    }
+  ]
+}

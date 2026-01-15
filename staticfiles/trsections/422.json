@@ -1,0 +1,53 @@
+{
+  "section": "422",
+  "text": "Sleeves",
+  "children": [
+    {
+      "section": "422.1",
+      "text": "Players may use plastic sleeves or other protective devices on their cards.",
+      "children": []
+    },
+    {
+      "section": "422.2",
+      "text": "If a player chooses to do this, all such sleeves must be identical and all cards in a deck must be placed in sleeves in the same manner. Cards in decks must have the same number of layers and be the same orientation at all times.",
+      "children": [
+        {
+          "section": "422.2.a",
+          "text": "It’s suggested but not required that players use different sleeves for the different decks (Main, Rune).",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "422.3",
+      "text": "Sleeves must have opaque backs.",
+      "children": []
+    },
+    {
+      "section": "422.4",
+      "text": "During a match, a player may request that a judge inspect an opponent’s sleeves.",
+      "children": []
+    },
+    {
+      "section": "422.5",
+      "text": "Judges may disallow any specific sleeve or the sleeves generally if they believe they are marked, worn, inappropriate, offensive, or otherwise interfere with shuffling or play.",
+      "children": []
+    },
+    {
+      "section": "422.6",
+      "text": "At high OPL, sleeves must also not:",
+      "children": [
+        {
+          "section": "422.6.a",
+          "text": "Have highly reflective backs.",
+          "children": []
+        },
+        {
+          "section": "422.6.b",
+          "text": "Contain holographic patterns on the front or back.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

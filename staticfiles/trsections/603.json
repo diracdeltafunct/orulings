@@ -1,0 +1,95 @@
+{
+  "section": "603",
+  "text": "2v2",
+  "children": [
+    {
+      "section": "603.1",
+      "text": "A 2v2 team consists of 2 players who enter a competition together and register together as a team to play congruently in a single match as described in the Core Rules.",
+      "children": []
+    },
+    {
+      "section": "603.2",
+      "text": "Each player must provide their individual registration information to enter the competition.",
+      "children": [
+        {
+          "section": "603.2.a",
+          "text": "When registering, teams must specify an ordering for the players on their team for seating purposes by indicating an A player and a B player.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "603.3",
+      "text": "If a player drops from a competition, their entire team is dropped.",
+      "children": []
+    },
+    {
+      "section": "603.4",
+      "text": "If a player is disqualified from a competition, their entire team is disqualified.",
+      "children": []
+    },
+    {
+      "section": "603.5",
+      "text": "In some competitions, 2v2 teams may provide a team name to be displayed. Tournament officials may disallow a specific name for any reason.",
+      "children": []
+    },
+    {
+      "section": "603.6",
+      "text": "A 2v2 competition can be either constructed or limited. In limited 2v2, the team shares a single product pool of 8 packs.",
+      "children": []
+    },
+    {
+      "section": "603.7",
+      "text": "During matches, teammates sit next to each other in their registered AB order. The setup process for a game of Riftbound is defined in the Core Rules, with these additional exceptions for 2v2:",
+      "children": [
+        {
+          "section": "603.7.a",
+          "text": "Turn order is as follows:",
+          "children": [
+            {
+              "section": "603.7.a.1",
+              "text": "The first team’s A player.",
+              "children": []
+            },
+            {
+              "section": "603.7.a.2",
+              "text": "The second team’s A player.",
+              "children": []
+            },
+            {
+              "section": "603.7.a.3",
+              "text": "The first team’s B player.",
+              "children": []
+            },
+            {
+              "section": "603.7.a.4",
+              "text": "The second team’s B player.",
+              "children": []
+            },
+            {
+              "section": "603.7.a.5",
+              "text": "Return to the top of the order.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "603.7.b",
+          "text": "A random method is used to decide which team selects the starting player.",
+          "children": []
+        },
+        {
+          "section": "603.7.c",
+          "text": "Once the appropriate step in the core rules process is reached, the team that earned the decision chooses where within the a.1-4 turn order play begins.",
+          "children": [
+            {
+              "section": "603.7.c.1",
+              "text": "For games after the first game of a match, the losing team of the previous game gets to choose who plays first. If the previous game was a draw, the turn order from the previous game is maintained.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

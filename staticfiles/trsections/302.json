@@ -1,0 +1,16 @@
+{
+  "section": "302",
+  "text": "Anyone is eligible to participate as a competition official, unless you are:",
+  "children": [
+    {
+      "section": "302.1",
+      "text": "Suspended.",
+      "children": []
+    },
+    {
+      "section": "302.2",
+      "text": "A player in that same competition, unless the competition explicitly allows it (non-premier competitions only).",
+      "children": []
+    }
+  ]
+}

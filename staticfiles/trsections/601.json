@@ -1,0 +1,117 @@
+{
+  "section": "601",
+  "text": "Constructed",
+  "children": [
+    {
+      "section": "601.1",
+      "text": "Deck Construction",
+      "children": [
+        {
+          "section": "601.1.a",
+          "text": "The rules for constructing a Riftbound deck are found in CR 101. Deck Construction, except where modified here below for the competition Constructed play format.",
+          "children": []
+        },
+        {
+          "section": "601.1.b",
+          "text": "In competitions, a player’s Main Deck must be exactly 40 cards.",
+          "children": []
+        },
+        {
+          "section": "601.1.c",
+          "text": "In competitions where a sideboard is allowed:",
+          "children": [
+            {
+              "section": "601.1.c.1",
+              "text": "A player’s sideboard must be exactly 0 or 8 cards.",
+              "children": []
+            },
+            {
+              "section": "601.1.c.2",
+              "text": "A sideboard can consist only of valid Main Deck cards.",
+              "children": []
+            },
+            {
+              "section": "601.1.c.3",
+              "text": "Limits on copies of named cards apply to the combination of main deck and sideboard.",
+              "children": []
+            },
+            {
+              "section": "601.1.c.4",
+              "text": "See 403 for more information about sideboards.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "601.1.d",
+          "text": "In some competitions, the legal battlefields are different from the format-legal battlefields. If this is the case, it will be communicated to players via specific event addenda.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "601.2",
+      "text": "Card Legality",
+      "children": [
+        {
+          "section": "601.2.a",
+          "text": "A card may only be included in a deck if it is from a set that is legal in that format or it has the same name as a card from a set that is legal in that format.",
+          "children": []
+        },
+        {
+          "section": "601.2.b",
+          "text": "Until set release parity is reached, regional limitations on the legality of cards will be enforced according to the official product launch date in the region where an event is being held.",
+          "children": []
+        },
+        {
+          "section": "601.2.c",
+          "text": "If an existing card is reprinted in a new set, but its collector number is not within the normal numbering of that set, it does not affect the card's format legality.",
+          "children": [
+            {
+              "section": "601.2.c.1",
+              "text": "Example: A card with collector number 300/250 is not automatically legal within the standard format of that set.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "601.2.d",
+          "text": "If a card is banned in a specific format, that card may not be included in a deck.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "601.3",
+      "text": "Standard",
+      "children": [
+        {
+          "section": "601.3.a",
+          "text": "Standard is a format consisting of the most recent 5-8 sets.",
+          "children": []
+        },
+        {
+          "section": "601.3.b",
+          "text": "Each standard consists of the current year’s sets plus the previous year’s sets.",
+          "children": []
+        },
+        {
+          "section": "601.3.c",
+          "text": "The current Standard consists of:",
+          "children": [
+            {
+              "section": "601.3.c.1",
+              "text": "The Origins supplemental set contained in Proving Grounds (OGS)",
+              "children": []
+            },
+            {
+              "section": "601.3.c.2",
+              "text": "Origins (OGN)",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

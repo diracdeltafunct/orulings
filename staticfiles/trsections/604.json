@@ -1,0 +1,22 @@
+{
+  "section": "604",
+  "text": "Event and Round Time Limits",
+  "children": [
+    {
+      "section": "604.1",
+      "text": "It’s recommended that players be given 50 minutes for rounds of play in the Swiss portion of a competitive event.",
+      "children": []
+    },
+    {
+      "section": "604.2",
+      "text": "For the Playoff portion of a competitive event, it’s recommended that rounds be untimed where possible.",
+      "children": [
+        {
+          "section": "604.2.a",
+          "text": "Players are still expected to play at a reasonable pace. See 703.2 the Slow Play penalty.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "section": "408",
+  "text": "End of Match Procedure",
+  "children": [
+    {
+      "section": "408.1",
+      "text": "A match is complete once a match result is recorded by players or a tournament official.",
+      "children": []
+    },
+    {
+      "section": "408.2",
+      "text": "If the time limit for a competition round is reached before a winner is determined, the player whose turn it is finishes their turn.",
+      "children": [
+        {
+          "section": "408.2.a",
+          "text": "After that player’s turn is complete, five additional turns are played, and then the match ends.",
+          "children": []
+        },
+        {
+          "section": "408.2.b",
+          "text": "If the game is incomplete at the end of the additional turns, the winner of the game is the one with the highest score. If scores are tied, the game is a draw.",
+          "children": []
+        },
+        {
+          "section": "408.2.c",
+          "text": "Additional turns are untimed, but at high OPL a judge must be present to ensure a reasonable pace of play.",
+          "children": []
+        },
+        {
+          "section": "408.2.d",
+          "text": "If the players are between games when the round time ends, no new game is started.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "408.3",
+      "text": "The winner of a match is the first player who reaches the appropriate game win score.",
+      "children": [
+        {
+          "section": "408.3.a",
+          "text": "If neither player has reached that score by the end of the end of match procedure, the player with more game wins wins the match.",
+          "children": []
+        },
+        {
+          "section": "408.3.b",
+          "text": "If players are tied on game wins, the match is a draw.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

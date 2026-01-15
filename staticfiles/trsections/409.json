@@ -1,0 +1,37 @@
+{
+  "section": "409",
+  "text": "Tiebreakers",
+  "children": [
+    {
+      "section": "409.1",
+      "text": "In the course of determining standings, the scorekeeper might need to distinguish between two players with equal match records.",
+      "children": []
+    },
+    {
+      "section": "409.2",
+      "text": "In these cases, the following tiebreakers should be applied in order:",
+      "children": [
+        {
+          "section": "409.2.a",
+          "text": "The player with higher game win%",
+          "children": []
+        },
+        {
+          "section": "409.2.b",
+          "text": "The player with higher opponents’ mean (average) match win%",
+          "children": []
+        },
+        {
+          "section": "409.2.c",
+          "text": "The player with higher opponents’ mean (average) game win%",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "409.3",
+      "text": "If after all tiebreakers are applied, two players are still of equal standing in the competition, the scorekeeper should use a random method to break the tie.",
+      "children": []
+    }
+  ]
+}

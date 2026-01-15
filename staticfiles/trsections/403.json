@@ -1,0 +1,77 @@
+{
+  "section": "403",
+  "text": "Sideboard",
+  "children": [
+    {
+      "section": "403.1",
+      "text": "In certain competitions, players may have a group of additional cards (outside of their starting configuration) called a sideboard.",
+      "children": []
+    },
+    {
+      "section": "403.2",
+      "text": "In constructed format’s, a player’s sideboard must be exactly 0 or 8 cards.",
+      "children": []
+    },
+    {
+      "section": "403.3",
+      "text": "A sideboard can consist only of valid Main Deck cards.",
+      "children": []
+    },
+    {
+      "section": "403.4",
+      "text": "Limits on copies of named cards apply to the combination of Main Deck and sideboard.",
+      "children": []
+    },
+    {
+      "section": "403.5",
+      "text": "Players may use those cards to modify their deck after the first game of a match.",
+      "children": [
+        {
+          "section": "403.5.a",
+          "text": "During that time, a player may change their Chosen Champion to one from their sideboard or main deck that matches their Legend.",
+          "children": []
+        },
+        {
+          "section": "403.5.b",
+          "text": "A player may not change their Legend or Battlefields at any point after deck registration.",
+          "children": []
+        },
+        {
+          "section": "403.5.c",
+          "text": "A player’s Main Deck must be exactly 40 cards after this process.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "403.6",
+      "text": "Players may not use sideboard cards in the first game of a match.",
+      "children": []
+    },
+    {
+      "section": "403.7",
+      "text": "Players may count the cards in their opponents’ sideboards at any time.",
+      "children": []
+    },
+    {
+      "section": "403.8",
+      "text": "A player may look at their own sideboard at any time, but must keep it distinguishable from other cards.",
+      "children": []
+    },
+    {
+      "section": "403.9",
+      "text": "A player’s deck and sideboard must be returned to their registered states before the first game of the next match.",
+      "children": []
+    },
+    {
+      "section": "403.10",
+      "text": "If a match skips the first game due to a penalty or an intentional draw, neither player qualifies for 403.5.",
+      "children": []
+    },
+    {
+      "section": "403.11",
+      "text": "If a game restarts due to an in-game effect or due to corrective action by judges, the state of each player’s deck and sideboard must remain the same in the restarted game.",
+      "children": []
+    }
+  ]
+}

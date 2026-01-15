@@ -1,0 +1,54 @@
+{
+  "section": "506",
+  "text": "Triggered Abilities",
+  "children": [
+    {
+      "section": "506.1",
+      "text": "Players have a responsibility to remember their own triggered abilities.",
+      "children": [
+        {
+          "section": "506.1.a",
+          "text": "Triggers caused by battlefields are controlled by the player triggering them, not the",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "506.2",
+      "text": "Players are not required to notify other players of triggered abilities they don’t control, but",
+      "children": [
+        {
+          "section": "506.2.a",
+          "text": "At low OPL, it is not required to notify other players of their triggers, but it is",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "506.3",
+      "text": "Players must announce their triggers when they occur. If they do not, they are forgotten.",
+      "children": [
+        {
+          "section": "506.3.a",
+          "text": "A trigger is considered forgotten once a new game action is taken without acknowledging",
+          "children": []
+        },
+        {
+          "section": "506.3.b",
+          "text": "Players can’t abuse this rule to intentionally forget their mandatory triggers. See",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "506.4",
+      "text": "A triggered ability that was forgotten never goes on the chain.",
+      "children": []
+    },
+    {
+      "section": "506.5",
+      "text": "A triggered ability that was forgotten is still considered to have triggered for the purpose of",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "section": "401",
+  "text": "Deck Registration",
+  "children": [
+    {
+      "section": "401.1",
+      "text": "Players in competitions are required to register their decks and sideboards (if applicable to the format) at high OPL.",
+      "children": [
+        {
+          "section": "401.1.a",
+          "text": "The Head Judge may require deck registration at low OPL.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "401.2",
+      "text": "A registered decklist must have a complete, unambiguous record of the player’s Champion Legend, battlefields, Main Deck including Chosen Champion, Rune Deck, and sideboard (if applicable to the format).",
+      "children": []
+    },
+    {
+      "section": "401.3",
+      "text": "Once a decklist has been registered and delivered to a competition official, it can’t be changed.",
+      "children": []
+    },
+    {
+      "section": "401.4",
+      "text": "In a constructed event, a player’s deck must be registered prior to the start of the first round of competition.",
+      "children": []
+    }
+  ]
+}
