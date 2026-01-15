@@ -1,5 +1,484 @@
 {
   "section": "500",
   "text": "Communication",
-  "children": []
+  "children": [
+    {
+      "section": "501",
+      "text": "Requirements",
+      "children": [
+        {
+          "section": "501.1",
+          "text": "Players are required to communicate honestly about the state of the game with their opponents.",
+          "children": []
+        },
+        {
+          "section": "501.2",
+          "text": "Players are required to communicate honestly and completely with tournament officials.",
+          "children": []
+        },
+        {
+          "section": "501.3",
+          "text": "Players are not required to assist their opponents in playing the game.",
+          "children": []
+        },
+        {
+          "section": "501.4",
+          "text": "Players are required to treat other players, tournament officials, and spectators with respect.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "502",
+      "text": "Information",
+      "children": [
+        {
+          "section": "502.1",
+          "text": "Cards have a level of privacy as specified in CR",
+          "children": []
+        },
+        {
+          "section": "502.2",
+          "text": "In addition to these levels of information, some information is derived.",
+          "children": [
+            {
+              "section": "502.2.a",
+              "text": "Derived information is a combination of public information and a player’s own skill or",
+              "children": []
+            },
+            {
+              "section": "502.2.b",
+              "text": "Players are not required to assist opponents in determining derived information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "502.3",
+          "text": "Like cards, other relevant information about the game state can be public, derived, private, or",
+          "children": []
+        },
+        {
+          "section": "502.4",
+          "text": "The additional relevant public information includes:",
+          "children": [
+            {
+              "section": "502.4.a",
+              "text": "The current turn player, phase, step, state of the turn, and who has priority and",
+              "children": []
+            },
+            {
+              "section": "502.4.b",
+              "text": "Rune Pools and the number and quantity of resources in them.",
+              "children": []
+            },
+            {
+              "section": "502.4.c",
+              "text": "All players’ current scores.",
+              "children": []
+            },
+            {
+              "section": "502.4.d",
+              "text": "A permanent’s current state, as distinct from its printed ones.",
+              "children": []
+            },
+            {
+              "section": "502.4.e",
+              "text": "Spells and abilities on the Chain, their order, and play choices made for them.",
+              "children": []
+            },
+            {
+              "section": "502.4.f",
+              "text": "Spells and abilities that resolved previously in the turn, and the sources of them are",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "502.5",
+          "text": "The additional relevant derived information includes:",
+          "children": [
+            {
+              "section": "502.5.a",
+              "text": "Which public cards have been recycled.",
+              "children": []
+            },
+            {
+              "section": "502.5.b",
+              "text": "The order of runes in a Rune Deck.",
+              "children": []
+            },
+            {
+              "section": "502.5.c",
+              "text": "Consequences of actions that might happen in the future, such as a unit receiving a",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "502.6",
+          "text": "Players must announce changes to public information that result from their cards and effects.",
+          "children": []
+        },
+        {
+          "section": "502.7",
+          "text": "Players must answer honestly any questions regarding public information.",
+          "children": []
+        },
+        {
+          "section": "502.8",
+          "text": "Players must not represent public or derived information incorrectly.",
+          "children": []
+        },
+        {
+          "section": "502.9",
+          "text": "Players must point out discrepancies between announced and recorded public information.",
+          "children": []
+        },
+        {
+          "section": "502.10",
+          "text": "Judges are encouraged to help players determine public information, but not derived information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "503",
+      "text": "Shortcuts",
+      "children": [
+        {
+          "section": "503.1",
+          "text": "In competitions, players may take actions that skip parts of the technically precise play",
+          "children": []
+        },
+        {
+          "section": "503.2",
+          "text": "The most common type of shortcut is skipping one or more parts of a turn, phase, or step to the",
+          "children": []
+        },
+        {
+          "section": "503.3",
+          "text": "Players may request to use a new shortcut in a game but must be clear about the game state at the",
+          "children": []
+        },
+        {
+          "section": "503.4",
+          "text": "Players may interrupt shortcuts by explaining where they want to intervene to take an action.",
+          "children": []
+        },
+        {
+          "section": "503.5",
+          "text": "Players may interrupt their own shortcuts.",
+          "children": []
+        },
+        {
+          "section": "503.6",
+          "text": "Players can’t use shortcuts they haven’t previously announced or modify existing shortcuts",
+          "children": []
+        },
+        {
+          "section": "503.7",
+          "text": "Players can’t interrupt a shortcut with the intent to do nothing.",
+          "children": []
+        },
+        {
+          "section": "503.8",
+          "text": "When resolving spells or abilities, players can’t assume their opponents are using shortcuts",
+          "children": []
+        },
+        {
+          "section": "503.9",
+          "text": "The following are common shortcuts for Riftbound competitions:",
+          "children": [
+            {
+              "section": "503.9.a",
+              "text": "When a player channels runes or draws a card at the start of their turn, it is assumed",
+              "children": []
+            },
+            {
+              "section": "503.9.b",
+              "text": "When a player places a spell or ability on the chain, they are assumed to be passing",
+              "children": []
+            },
+            {
+              "section": "503.9.c",
+              "text": "When a player puts a spell or ability on the chain and announces choices for it that",
+              "children": []
+            },
+            {
+              "section": "503.9.d",
+              "text": "When a player asks about choices normally made upon resolution, they are assumed to be",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "504",
+      "text": "Sequencing",
+      "children": [
+        {
+          "section": "504.1",
+          "text": "Complex series of game actions are sometimes shortcutted into out-of-order sequences, which are",
+          "children": [
+            {
+              "section": "504.1.a",
+              "text": "Example: Drawing a card before channeling runes.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "504.2",
+          "text": "Players may ask their opponents to do these actions, or a subset of these actions, in the correct",
+          "children": []
+        },
+        {
+          "section": "504.3",
+          "text": "Players can’t shortcut out-of-order in a way that gives them information prematurely that might",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "505",
+      "text": "Loops",
+      "children": [
+        {
+          "section": "505.1",
+          "text": "Some sequences of actions can be repeated and are shortcutted as a loop.",
+          "children": []
+        },
+        {
+          "section": "505.2",
+          "text": "Players performing a loop must have each iteration of the loop be identical with no conditional",
+          "children": []
+        },
+        {
+          "section": "505.3",
+          "text": "To decide how to proceed with a loop, determine how many players are needed to maintain it (who",
+          "children": [
+            {
+              "section": "505.3.a",
+              "text": "No players",
+              "children": []
+            },
+            {
+              "section": "505.3.b",
+              "text": "One player",
+              "children": []
+            },
+            {
+              "section": "505.3.c",
+              "text": "Two or more players",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "505.4",
+          "text": "For each maintaining player (if any), in turn order, that player chooses a number of iterations.",
+          "children": []
+        },
+        {
+          "section": "505.5",
+          "text": "Each other player (if any), in turn order, may choose to agree to that number or choose a number",
+          "children": []
+        },
+        {
+          "section": "505.6",
+          "text": "If no player chooses to break the loop and there were no maintaining players, the game ends in a",
+          "children": []
+        },
+        {
+          "section": "505.7",
+          "text": "Otherwise, the loop continues until the lowest number of iterations chosen, then that player",
+          "children": []
+        },
+        {
+          "section": "505.8",
+          "text": "If a player intervenes to break a loop, they may choose to interrupt a partially completed",
+          "children": []
+        },
+        {
+          "section": "505.9",
+          "text": "If a sequence of actions is non-deterministic, it may not be shortcut and iterations must be",
+          "children": []
+        },
+        {
+          "section": "505.10",
+          "text": "Some loops are maintained by decisions rather than actions. In these cases, apply 505.4-505.8",
+          "children": []
+        },
+        {
+          "section": "505.11",
+          "text": "Judges are the final arbiter of what constitutes a loop, or if choices are available to continue",
+          "children": []
+        },
+        {
+          "section": "505.12",
+          "text": "Players who try to opt-out of shortcutting or propose incorrect shortcutting to use up time are",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "506",
+      "text": "Triggered Abilities",
+      "children": [
+        {
+          "section": "506.1",
+          "text": "Players have a responsibility to remember their own triggered abilities.",
+          "children": [
+            {
+              "section": "506.1.a",
+              "text": "Triggers caused by battlefields are controlled by the player triggering them, not the",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "506.2",
+          "text": "Players are not required to notify other players of triggered abilities they don’t control, but",
+          "children": [
+            {
+              "section": "506.2.a",
+              "text": "At low OPL, it is not required to notify other players of their triggers, but it is",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "506.3",
+          "text": "Players must announce their triggers when they occur. If they do not, they are forgotten.",
+          "children": [
+            {
+              "section": "506.3.a",
+              "text": "A trigger is considered forgotten once a new game action is taken without acknowledging",
+              "children": []
+            },
+            {
+              "section": "506.3.b",
+              "text": "Players can’t abuse this rule to intentionally forget their mandatory triggers. See",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "506.4",
+          "text": "A triggered ability that was forgotten never goes on the chain.",
+          "children": []
+        },
+        {
+          "section": "506.5",
+          "text": "A triggered ability that was forgotten is still considered to have triggered for the purpose of",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "507",
+      "text": "Teams in Separate Matches",
+      "children": [
+        {
+          "section": "507.1",
+          "text": "Players may communicate with teammates at all times unless explicitly prohibited by the format",
+          "children": []
+        },
+        {
+          "section": "507.2",
+          "text": "Players that acquire secret or private information about a match in which a teammate is playing",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "508",
+      "text": "Layout",
+      "children": [
+        {
+          "section": "508.1",
+          "text": "In high OPL, players must arrange their cards according to the following rules, for clarity.",
+          "children": []
+        },
+        {
+          "section": "508.2",
+          "text": "Runes must be closer to the player than nonrunes.",
+          "children": []
+        },
+        {
+          "section": "508.3",
+          "text": "Nonrunes must be closer to the player’s opponent than the player’s runes.",
+          "children": []
+        },
+        {
+          "section": "508.4",
+          "text": "Main Deck and trash must be together on either the left side or the right side of the board.",
+          "children": []
+        },
+        {
+          "section": "508.5",
+          "text": "Rune Deck should be on the other side (right or left) of the board from the Main Deck.",
+          "children": []
+        },
+        {
+          "section": "508.6",
+          "text": "Legend must be between nonrunes and Chosen Champion, and both legend and Chosen Champion must be",
+          "children": []
+        },
+        {
+          "section": "508.7",
+          "text": "Each card or indicator that attaches to another card must be clearly associated with it",
+          "children": []
+        },
+        {
+          "section": "508.8",
+          "text": "Tokens must be represented by card objects that show all relevant information including ready",
+          "children": []
+        },
+        {
+          "section": "508.9",
+          "text": "Buffs must be represented by an object that unambiguously represents a buff in game terms.",
+          "children": []
+        },
+        {
+          "section": "508.10",
+          "text": "Ready objects must be oriented facing the controller. Exhausted objects must be oriented at a 90",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "509",
+      "text": "Player Rewind",
+      "children": [
+        {
+          "section": "509.1",
+          "text": "In competitions, players are responsible for considering options before taking actions.",
+          "children": []
+        },
+        {
+          "section": "509.2",
+          "text": "Once an action is communicated to an opponent, that action can’t generally be taken back.",
+          "children": []
+        },
+        {
+          "section": "509.3",
+          "text": "A player can rewind and make a different decision about an action just taken if and only if they",
+          "children": []
+        },
+        {
+          "section": "509.4",
+          "text": "Judges who can’t be sure a player gained no information should not allow that player to rewind.",
+          "children": []
+        },
+        {
+          "section": "509.5",
+          "text": "Teammates recommending a player rewind a decision before any other information is gained should",
+          "children": []
+        }
+      ]
+    }
+  ]
 }

@@ -41,6 +41,11 @@ def get_webpage_text(url):
     # Remove blank lines
     text = "\n".join(chunk for chunk in chunks if chunk)
 
+    # Split on section numbers that might be concatenated (e.g., "text100. Introduction")
+    # Only split on 3-digit numbers followed by period and capital letter (start of title)
+    # This avoids splitting subsections like "703.500"
+    text = re.sub(r"(\D)(\d{3})\.\s+([A-Z])", r"\1\n\2. \3", text)
+
     return text
 
 
@@ -77,8 +82,9 @@ class Line:
 def parse_lines_to_objects(text):
     """
     Parses text into a list of Line objects with hierarchical section numbering.
+    Only sections ending in 00 (100, 200, 300, etc.) are top-level.
+    Other sections in the same hundred (101-199, 201-299, etc.) are children.
     Handles patterns like: 204, 204.1, 204.1.a, 204.1.a.1
-    Subsections are added as children to their parent sections.
 
     Args:
         text (str): The text blob to parse
@@ -94,6 +100,9 @@ def parse_lines_to_objects(text):
     # Matches: number or letter, optionally followed by .number or .letter repeated
     pattern = re.compile(r"^((?:\d+|[a-zA-Z])(?:\.(?:\d+|[a-zA-Z]))*)\.\s+(.*)$")
 
+    all_sections = []  # List of (section, content) tuples in order
+
+    # First pass: Create all Line objects
     for line in text.splitlines():
         stripped = line.strip()
         match = pattern.match(stripped)
@@ -101,23 +110,37 @@ def parse_lines_to_objects(text):
             section = match.group(1)
             content = match.group(2)
             line_obj = Line(section=section, text=content)
-
-            # Store in map for quick lookup
             section_map[section] = line_obj
+            all_sections.append(section)
 
-            # Find parent section by removing last component
-            parts = section.split(".")
-            if len(parts) == 1:
-                # Top-level section
+    # Second pass: Build hierarchy
+    for section in all_sections:
+        line_obj = section_map[section]
+        parts = section.split(".")
+
+        if len(parts) == 1:
+            # Single number like "100", "101", "200"
+            section_num = int(section)
+            if section_num % 100 == 0:
+                # Top-level section (100, 200, 300, etc.)
                 top_level_lines.append(line_obj)
             else:
-                # Subsection - find parent and add as child
-                parent_section = ".".join(parts[:-1])
+                # Subsection of the nearest hundred (e.g., 101 is child of 100)
+                parent_num = (section_num // 100) * 100
+                parent_section = str(parent_num)
                 if parent_section in section_map:
                     section_map[parent_section].children.append(line_obj)
                 else:
                     # Parent not found, add to top level
                     top_level_lines.append(line_obj)
+        else:
+            # Has dots, so find parent by removing last component
+            parent_section = ".".join(parts[:-1])
+            if parent_section in section_map:
+                section_map[parent_section].children.append(line_obj)
+            else:
+                # Parent not found, add to top level (orphaned section)
+                top_level_lines.append(line_obj)
 
     return top_level_lines
 

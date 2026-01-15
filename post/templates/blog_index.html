@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{%  load static markdownify %}
+{% load markdownify %}
+
 {% block title %}Home - (O)-Rulings{% endblock %}
 
 {% block content %}
@@ -9,14 +10,19 @@
         <h1>{{ special_post.title }}</h1>
         <div>{{ special_post.content|safe|markdownify }}</div>
     {% else %}
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">Meow Meow.</p>
-            <hr class="my-4">
-            <p>
-                Woof woof
-            </p>
-            <a class="btn btn-primary btn-md" href="/posts" role="button">Explore</a>
+        
+    {% endif %}
+    
+    {% if trsections %}
+        <div class="trsections mt-5">
+            <h2>Tournament Rules Sections</h2>
+            <div class="list-group">
+                {% for section in trsections %}
+                    <a href="{{ section.url }}" class="list-group-item list-group-item-action">
+                        <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
     {% endif %}
 {% endblock %}

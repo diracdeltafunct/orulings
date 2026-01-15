@@ -1,5 +1,896 @@
 {
   "section": "400",
   "text": "Policies",
-  "children": []
+  "children": [
+    {
+      "section": "401",
+      "text": "Deck Registration",
+      "children": [
+        {
+          "section": "401.1",
+          "text": "Players in competitions are required to register their decks and sideboards (if applicable to the format) at high OPL.",
+          "children": [
+            {
+              "section": "401.1.a",
+              "text": "The Head Judge may require deck registration at low OPL.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "401.2",
+          "text": "A registered decklist must have a complete, unambiguous record of the player’s Champion Legend, battlefields, Main Deck including Chosen Champion, Rune Deck, and sideboard (if applicable to the format).",
+          "children": []
+        },
+        {
+          "section": "401.3",
+          "text": "Once a decklist has been registered and delivered to a competition official, it can’t be changed.",
+          "children": []
+        },
+        {
+          "section": "401.4",
+          "text": "In a constructed event, a player’s deck must be registered prior to the start of the first round of competition.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "402",
+      "text": "Deck Size",
+      "children": [
+        {
+          "section": "402.1",
+          "text": "In a constructed event, players must register a Main Deck of exactly 40 cards (including a chosen champion), 1 Legend, 12 runes, and exactly 3 battlefields each with a unique name.",
+          "children": []
+        },
+        {
+          "section": "402.2",
+          "text": "Otherwise, deck construction is defined in the Core Rules.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "403",
+      "text": "Sideboard",
+      "children": [
+        {
+          "section": "403.1",
+          "text": "In certain competitions, players may have a group of additional cards (outside of their starting configuration) called a sideboard.",
+          "children": []
+        },
+        {
+          "section": "403.2",
+          "text": "In constructed format’s, a player’s sideboard must be exactly 0 or 8 cards.",
+          "children": []
+        },
+        {
+          "section": "403.3",
+          "text": "A sideboard can consist only of valid Main Deck cards.",
+          "children": []
+        },
+        {
+          "section": "403.4",
+          "text": "Limits on copies of named cards apply to the combination of Main Deck and sideboard.",
+          "children": []
+        },
+        {
+          "section": "403.5",
+          "text": "Players may use those cards to modify their deck after the first game of a match.",
+          "children": [
+            {
+              "section": "403.5.a",
+              "text": "During that time, a player may change their Chosen Champion to one from their sideboard or main deck that matches their Legend.",
+              "children": []
+            },
+            {
+              "section": "403.5.b",
+              "text": "A player may not change their Legend or Battlefields at any point after deck registration.",
+              "children": []
+            },
+            {
+              "section": "403.5.c",
+              "text": "A player’s Main Deck must be exactly 40 cards after this process.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "403.6",
+          "text": "Players may not use sideboard cards in the first game of a match.",
+          "children": []
+        },
+        {
+          "section": "403.7",
+          "text": "Players may count the cards in their opponents’ sideboards at any time.",
+          "children": []
+        },
+        {
+          "section": "403.8",
+          "text": "A player may look at their own sideboard at any time, but must keep it distinguishable from other cards.",
+          "children": []
+        },
+        {
+          "section": "403.9",
+          "text": "A player’s deck and sideboard must be returned to their registered states before the first game of the next match.",
+          "children": []
+        },
+        {
+          "section": "403.10",
+          "text": "If a match skips the first game due to a penalty or an intentional draw, neither player qualifies for 403.5.",
+          "children": []
+        },
+        {
+          "section": "403.11",
+          "text": "If a game restarts due to an in-game effect or due to corrective action by judges, the state of each player’s deck and sideboard must remain the same in the restarted game.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "404",
+      "text": "Match",
+      "children": [
+        {
+          "section": "404.1",
+          "text": "A match of Riftbound consists of a series of games that are played until one side has won a predetermined number of games.",
+          "children": []
+        },
+        {
+          "section": "404.2",
+          "text": "Most matches of Riftbound are “best of 3,” meaning the predetermined number of games to win is 2.",
+          "children": []
+        },
+        {
+          "section": "404.3",
+          "text": "Games that end in a draw do not count toward this goal.",
+          "children": []
+        },
+        {
+          "section": "404.4",
+          "text": "If the competition round ends (due to time limits) prior to any side achieving the goal, the winner of the match is the one who has won the most games.",
+          "children": []
+        },
+        {
+          "section": "404.5",
+          "text": "If all sides have equal game wins, the match is a draw.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "405",
+      "text": "Start of Match Procedure",
+      "children": [
+        {
+          "section": "405.1",
+          "text": "Prior to the start of each round, players must seek out information about their imminent match, opponent, and seating in the venue.",
+          "children": []
+        },
+        {
+          "section": "405.2",
+          "text": "Players must arrive at their seats prior to the start of the round.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "406",
+      "text": "Start of Game Procedure",
+      "children": [
+        {
+          "section": "406.1",
+          "text": "The setup process for a game of Riftbound is defined in the Core Rules. See CR",
+          "children": [
+            {
+              "section": "406.1.a",
+              "text": "In competitions where sideboards are allowed, players may exchange cards from their main deck and their sideboard after each game of a match.",
+              "children": []
+            },
+            {
+              "section": "406.1.b",
+              "text": "Each player must shuffle their Main Deck and their Rune Deck. See 420 for more information on shuffling.",
+              "children": []
+            },
+            {
+              "section": "406.1.c",
+              "text": "Each player must present their Main Deck, Rune Deck, and sideboard (if applicable to the format) to their opponents.",
+              "children": []
+            },
+            {
+              "section": "406.1.d",
+              "text": "Each player may shuffle the Main Deck and Rune Deck of each of their opponents.",
+              "children": [
+                {
+                  "section": "406.1.d.1",
+                  "text": "In team competitions, each player may shuffe the Main Deck and Rune Deck of one of their team’s opponents.",
+                  "children": []
+                },
+                {
+                  "section": "406.1.d.2",
+                  "text": "At Professional OPL, this is required.",
+                  "children": []
+                },
+                {
+                  "section": "406.1.d.3",
+                  "text": "A player may request a judge shuffle their deck in lieu of an opponent, to be honored at judge discretion.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "406.1.e",
+              "text": "For the first game of a match, start of game procedures may be performed as soon as both players reach their assigned seat, even before the start of the round clock. Gameplay must wait for the round clock to begin.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "407",
+      "text": "Play First Rule",
+      "children": [
+        {
+          "section": "407.1",
+          "text": "For the first game of a match, a designated player decides whether they wish to play first or last.",
+          "children": []
+        },
+        {
+          "section": "407.2",
+          "text": "Any random method that is agreed upon by all players in the current game may be used to determine the designated player.",
+          "children": []
+        },
+        {
+          "section": "407.3",
+          "text": "The player is designated and the choice of playing first is made during the Start of Game procedure. See CR",
+          "children": []
+        },
+        {
+          "section": "407.4",
+          "text": "For games after the first game of a match, the loser of the previous game gets to choose if they play first or last. If the previous game was a draw, the starting play from the previous game is maintained.",
+          "children": []
+        },
+        {
+          "section": "407.5",
+          "text": "For alterations to this rule for 2v2, see 603.7.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "408",
+      "text": "End of Match Procedure",
+      "children": [
+        {
+          "section": "408.1",
+          "text": "A match is complete once a match result is recorded by players or a tournament official.",
+          "children": []
+        },
+        {
+          "section": "408.2",
+          "text": "If the time limit for a competition round is reached before a winner is determined, the player whose turn it is finishes their turn.",
+          "children": [
+            {
+              "section": "408.2.a",
+              "text": "After that player’s turn is complete, five additional turns are played, and then the match ends.",
+              "children": []
+            },
+            {
+              "section": "408.2.b",
+              "text": "If the game is incomplete at the end of the additional turns, the winner of the game is the one with the highest score. If scores are tied, the game is a draw.",
+              "children": []
+            },
+            {
+              "section": "408.2.c",
+              "text": "Additional turns are untimed, but at high OPL a judge must be present to ensure a reasonable pace of play.",
+              "children": []
+            },
+            {
+              "section": "408.2.d",
+              "text": "If the players are between games when the round time ends, no new game is started.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "408.3",
+          "text": "The winner of a match is the first player who reaches the appropriate game win score.",
+          "children": [
+            {
+              "section": "408.3.a",
+              "text": "If neither player has reached that score by the end of the end of match procedure, the player with more game wins wins the match.",
+              "children": []
+            },
+            {
+              "section": "408.3.b",
+              "text": "If players are tied on game wins, the match is a draw.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "409",
+      "text": "Tiebreakers",
+      "children": [
+        {
+          "section": "409.1",
+          "text": "In the course of determining standings, the scorekeeper might need to distinguish between two players with equal match records.",
+          "children": []
+        },
+        {
+          "section": "409.2",
+          "text": "In these cases, the following tiebreakers should be applied in order:",
+          "children": [
+            {
+              "section": "409.2.a",
+              "text": "The player with higher game win%",
+              "children": []
+            },
+            {
+              "section": "409.2.b",
+              "text": "The player with higher opponents’ mean (average) match win%",
+              "children": []
+            },
+            {
+              "section": "409.2.c",
+              "text": "The player with higher opponents’ mean (average) game win%",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "409.3",
+          "text": "If after all tiebreakers are applied, two players are still of equal standing in the competition, the scorekeeper should use a random method to break the tie.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "410",
+      "text": "Concessions and Intentional Draws",
+      "children": [
+        {
+          "section": "410.1",
+          "text": "At any time before a game is completed, any player may concede that game or all players may mutually agree to draw it.",
+          "children": []
+        },
+        {
+          "section": "410.2",
+          "text": "At any time before a match is completed, any player may concede that match or all players may mutually agree to draw it.",
+          "children": []
+        },
+        {
+          "section": "410.3",
+          "text": "Players can’t agree to concessions or draws in exchange for anything. See 704.5 for more information on bribery.",
+          "children": []
+        },
+        {
+          "section": "410.4",
+          "text": "Players can’t go to lengths to scout other match results before deciding to concede or draw their match and need to remain in their seats while their match is in progress.",
+          "children": []
+        },
+        {
+          "section": "410.5",
+          "text": "If a player refuses to play, tournament officials should treat that as conceding the match.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "411",
+      "text": "Deck Checks",
+      "children": [
+        {
+          "section": "411.1",
+          "text": "At high OPL, judges should perform deck checks during the course of the competition.",
+          "children": []
+        },
+        {
+          "section": "411.2",
+          "text": "When deck checks are performed, at least 10% of all decks, chosen at random, should be checked during the course of the competition.",
+          "children": []
+        },
+        {
+          "section": "411.3",
+          "text": "Deck checks for the players in a match should occur after players have randomized and presented their decks, but before opening hands are drawn.",
+          "children": [
+            {
+              "section": "411.3.a",
+              "text": "If a deck check is performed within a match, judges should grant a time extension to that match sufficient to cover the logistical time needed to perform the check.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "412",
+      "text": "Judge Calls",
+      "children": [
+        {
+          "section": "412.1",
+          "text": "At any point during a match, a player may pause to flag a floor judge. See 204.4 for floor judge responsibilities.",
+          "children": []
+        },
+        {
+          "section": "412.2",
+          "text": "Time extensions should be granted if the total time of a judge call is more than 1 minute.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "413",
+      "text": "Appeals",
+      "children": [
+        {
+          "section": "413.1",
+          "text": "If a player disagrees with a judge’s ruling, they may appeal to the head judge.",
+          "children": []
+        },
+        {
+          "section": "413.2",
+          "text": "At high OPL, the head judge may designate certain floor judges to be appeals judges, who are then empowered to hear and rule on appeals. In such cases, those judges must wear uniforms matching the head judge’s uniform.",
+          "children": []
+        },
+        {
+          "section": "413.3",
+          "text": "Players may not appeal before a full ruling is made by a judge.",
+          "children": []
+        },
+        {
+          "section": "413.4",
+          "text": "Players may not appeal a ruling of an appeals judge or the head judge.",
+          "children": []
+        },
+        {
+          "section": "413.5",
+          "text": "If a penalty is applied outside the scope of a competition, the appeals process should follow what’s laid out on the official Riot Games website. [citation needed]",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "414",
+      "text": "Dropping",
+      "children": [
+        {
+          "section": "414.1",
+          "text": "Players may drop from a competition at any time.",
+          "children": []
+        },
+        {
+          "section": "414.2",
+          "text": "If a player drops before the competition begins, they never participated in the competition.",
+          "children": []
+        },
+        {
+          "section": "414.3",
+          "text": "Players who wish to drop must inform the scorekeeper before pairings for the next round of the competition are generated.",
+          "children": []
+        },
+        {
+          "section": "414.4",
+          "text": "If a player doesn’t show up for their match, they are automatically dropped from the competition unless they report to the scorekeeper.",
+          "children": []
+        },
+        {
+          "section": "414.5",
+          "text": "Players who drop from limited format tournaments own the cards that they correctly have in their possession at the time of dropping, including unopened packs.",
+          "children": []
+        },
+        {
+          "section": "414.6",
+          "text": "If a player drops from a competition after a top placement cut has been made, no player is advanced in replacement. The highest ranked remaining player receives a bye if the drop happens before pairings.",
+          "children": []
+        },
+        {
+          "section": "414.7",
+          "text": "Players who have dropped may re-enter the competition before the start of the following round at the discretion of the head judge.",
+          "children": []
+        },
+        {
+          "section": "414.8",
+          "text": "Players can’t re-enter a competition if they missed a portion where a deck construction activity was required.",
+          "children": []
+        },
+        {
+          "section": "414.9",
+          "text": "Players can’t re-enter a competition after a top placement cut.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "415",
+      "text": "Tracking Score",
+      "children": [
+        {
+          "section": "415.1",
+          "text": "All players within a game are responsible for tracking all players’ scores throughout the game.",
+          "children": []
+        },
+        {
+          "section": "415.2",
+          "text": "Changes to score should be announced and acknowledged by all players.",
+          "children": []
+        },
+        {
+          "section": "415.3",
+          "text": "Scores must be tracked, displayed, and updated legibly in writing.",
+          "children": [
+            {
+              "section": "415.3.a",
+              "text": "At low OPL, an electronic device, dice, or similar methods can be used to track score.",
+              "children": []
+            },
+            {
+              "section": "415.3.b",
+              "text": "If any player notices a score discrepancy, they must immediately make all players aware of it. If it can’t be resolved easily by the players, a judge must be called.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "416",
+      "text": "Taking Notes",
+      "children": [
+        {
+          "section": "416.1",
+          "text": "Players may take written notes during a match and refer to those notes during games in the same match.",
+          "children": []
+        },
+        {
+          "section": "416.2",
+          "text": "At the beginning of each match, each player’s written note sheet must be empty and visible to all opponents and tournament officials.",
+          "children": []
+        },
+        {
+          "section": "416.3",
+          "text": "Players do not have to reveal their written notes to opponents. Judges may ask players to reveal and/or explain their notes.",
+          "children": []
+        },
+        {
+          "section": "416.4",
+          "text": "Players may not refer to notes from outside the current game, including notes from previous matches, during games.",
+          "children": []
+        },
+        {
+          "section": "416.5",
+          "text": "Between games, players may refer to notes they made prior to the match. They do not have to reveal these notes to opponents.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "417",
+      "text": "Electronic Devices",
+      "children": [
+        {
+          "section": "417.1",
+          "text": "Players may use electronic devices during competitions, but can’t use them during matches.",
+          "children": []
+        },
+        {
+          "section": "417.2",
+          "text": "At low OPL, digital devices may take the place of written note sheets.",
+          "children": []
+        },
+        {
+          "section": "417.3",
+          "text": "The head judge may further restrict or permit usage of electronic devices.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "418",
+      "text": "Coverage",
+      "children": [
+        {
+          "section": "418.1",
+          "text": "Some competitions at high OPL use video capture of matches.",
+          "children": []
+        },
+        {
+          "section": "418.2",
+          "text": "Certain events or portions of events may require players to appear on camera.",
+          "children": []
+        },
+        {
+          "section": "418.3",
+          "text": "Spectators and players who are on camera during matches are responsible for behaving respectfully toward all participants.",
+          "children": []
+        },
+        {
+          "section": "418.4",
+          "text": "Spectators are permitted to record matches using video capture, provided they do so without interfering with the match.",
+          "children": []
+        },
+        {
+          "section": "418.5",
+          "text": "At Professional OPL, the head judge may consult video capture to help make rulings during a match.",
+          "children": []
+        },
+        {
+          "section": "418.6",
+          "text": "Judges should never honor a player's request to consult video capture.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "419",
+      "text": "Proxies and Alters",
+      "children": [
+        {
+          "section": "419.1",
+          "text": "A proxy is a stand-in, unofficial version of an actual Riftbound card.",
+          "children": []
+        },
+        {
+          "section": "419.2",
+          "text": "Proxies are not allowed at competitions of any OPL.",
+          "children": [
+            {
+              "section": "419.2.a",
+              "text": "The only exception is an official proxy issued by the head judge at their discretion to replace a card deemed unusable.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "419.3",
+          "text": "An alter is an official Riftbound card that has been modified in some way.",
+          "children": []
+        },
+        {
+          "section": "419.4",
+          "text": "Alters are allowed in competition only if the modifications do not:",
+          "children": [
+            {
+              "section": "419.4.a",
+              "text": "Modify or obscure the card name or cost, or make the art unrecognizable.",
+              "children": []
+            },
+            {
+              "section": "419.4.b",
+              "text": "Contain substantial strategic advice.",
+              "children": []
+            },
+            {
+              "section": "419.4.c",
+              "text": "Contain offensive images or text.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "419.5",
+          "text": "The head judge of a competition is the final decider on whether a card is acceptable for a competition.",
+          "children": [
+            {
+              "section": "419.5.a",
+              "text": "Players using altered cards are responsible for having official unaltered versions of those cards to use during gameplay that is streamed or otherwise broadcast if instructed by a judge.",
+              "children": []
+            },
+            {
+              "section": "419.5.b",
+              "text": "When instructed, players must replace the altered versions with the official unaltered versions before gameplay begins for a match that is streamed or otherwise broadcast.",
+              "children": []
+            },
+            {
+              "section": "419.5.c",
+              "text": "Alters containing material outside of Riot Games intellectual property may not be permitted during matches that are streamed or otherwise broadcast.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "419.6",
+          "text": "The head judge of a competition is the final decider on whether a card is acceptable for a competition.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "420",
+      "text": "Card Language Consistency",
+      "children": [
+        {
+          "section": "420.1",
+          "text": "Players may use official Riftbound cards of any language as long as their deck contents match the following:",
+          "children": [
+            {
+              "section": "420.1.a",
+              "text": "All cards within the same deck or subset that can be shuffled together or drawn from randomly must be the same language. For example:",
+              "children": [
+                {
+                  "section": "420.1.a.1",
+                  "text": "All cards in a player’s Main Deck and sideboard must be the same language as each other. Your Chosen Champion is a Main Deck card.",
+                  "children": []
+                },
+                {
+                  "section": "420.1.a.2",
+                  "text": "All cards in a player’s Rune Deck must be the same language as each other.",
+                  "children": []
+                },
+                {
+                  "section": "420.1.a.3",
+                  "text": "A player’s Legend can be a different language than their Main Deck or Rune Deck.",
+                  "children": []
+                },
+                {
+                  "section": "420.1.a.4",
+                  "text": "A player’s battlefields can be a different language than their Main Deck or Rune Deck.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "420.2",
+          "text": "A player may call a judge at any time to get the Watcher wording for any card in the language of their preference.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "421",
+      "text": "Shuffling",
+      "children": [
+        {
+          "section": "421.1",
+          "text": "Decks must be made random at the start of each game, and whenever an instruction from cards or tournament officials require it.",
+          "children": []
+        },
+        {
+          "section": "421.2",
+          "text": "Random is defined as a state where no player could have any information about the order or position of cards in any part of the deck.",
+          "children": []
+        },
+        {
+          "section": "421.3",
+          "text": "Shuffling by methodically placing cards into distinct piles (informally known as “pile shuffling”) may be used as a method to count the deck, but can’t solely be used to make a deck random.",
+          "children": []
+        },
+        {
+          "section": "421.4",
+          "text": "When a deck is made random, it is presented to the player’s opponent. This signals that the player believes their deck is legal and random.",
+          "children": []
+        },
+        {
+          "section": "421.5",
+          "text": "Players must notify a judge if they believe their opponents’ deck has not been made sufficiently random. See 703.7 for more information on insufficient randomization.",
+          "children": []
+        },
+        {
+          "section": "421.6",
+          "text": "Players may shuffle their opponents’ decks additionally.",
+          "children": []
+        },
+        {
+          "section": "421.7",
+          "text": "Players must take care not to damage cards or sleeves through this process of shuffling, nor cause cards or sleeves to become marked.",
+          "children": []
+        },
+        {
+          "section": "421.8",
+          "text": "When two or more cards are recycled to your Main Deck as part of a single action, the above procedures 1-7 should be followed for that group of cards to properly randomize them before recycling them.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "422",
+      "text": "Sleeves",
+      "children": [
+        {
+          "section": "422.1",
+          "text": "Players may use plastic sleeves or other protective devices on their cards.",
+          "children": []
+        },
+        {
+          "section": "422.2",
+          "text": "If a player chooses to do this, all such sleeves must be identical and all cards in a deck must be placed in sleeves in the same manner. Cards in decks must have the same number of layers and be the same orientation at all times.",
+          "children": [
+            {
+              "section": "422.2.a",
+              "text": "It’s suggested but not required that players use different sleeves for the different decks (Main, Rune).",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "422.3",
+          "text": "Sleeves must have opaque backs.",
+          "children": []
+        },
+        {
+          "section": "422.4",
+          "text": "During a match, a player may request that a judge inspect an opponent’s sleeves.",
+          "children": []
+        },
+        {
+          "section": "422.5",
+          "text": "Judges may disallow any specific sleeve or the sleeves generally if they believe they are marked, worn, inappropriate, offensive, or otherwise interfere with shuffling or play.",
+          "children": []
+        },
+        {
+          "section": "422.6",
+          "text": "At high OPL, sleeves must also not:",
+          "children": [
+            {
+              "section": "422.6.a",
+              "text": "Have highly reflective backs.",
+              "children": []
+            },
+            {
+              "section": "422.6.b",
+              "text": "Contain holographic patterns on the front or back.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "423",
+      "text": "Marked Cards",
+      "children": [
+        {
+          "section": "423.1",
+          "text": "Players are responsible during competitions to make sure their cards and/or sleeves are not marked.",
+          "children": []
+        },
+        {
+          "section": "423.2",
+          "text": "Marked is defined as bearing something that makes it possible to identify the card without seeing its face.",
+          "children": []
+        },
+        {
+          "section": "423.3",
+          "text": "If cards are sleeved, they should be inspected for marking while in the sleeves.",
+          "children": []
+        },
+        {
+          "section": "423.4",
+          "text": "Judges may ask players to remove sleeves or replace any specific sleeve at any time during a competition.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "424",
+      "text": "Display",
+      "children": [
+        {
+          "section": "424.1",
+          "text": "During a match, the start of match procedure, and other relevant times during a competition, players must keep cards above the vertical level of the playing surface.",
+          "children": []
+        },
+        {
+          "section": "424.2",
+          "text": "Players are responsible for making reasonable effort to prevent secret information from being revealed accidentally. See CR",
+          "children": []
+        },
+        {
+          "section": "424.3",
+          "text": "Players may reveal private information unless specifically prohibited by the Core Rules.",
+          "children": []
+        },
+        {
+          "section": "424.4",
+          "text": "At high OPL, players don’t need to inform opponents of accidentally revealed private information.",
+          "children": []
+        }
+      ]
+    }
+  ]
 }

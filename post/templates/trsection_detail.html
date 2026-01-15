@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Section {{ section.section }} - Tournament Rules{% endblock %}
+
+{% block content %}
+    <div class="trsection-detail">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Section {{ section.section }}</li>
+            </ol>
+        </nav>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2>{{ section.section }}. {{ section.text }}</h2>
+            </div>
+        </div>
+        
+        {% if is_top_level %}
+            {% if section.children %}
+                <h3>Subsections</h3>
+                <div class="list-group mb-4">
+                    {% for child in section.children %}
+                        <a href="/trsections/{{ child.section }}/" class="list-group-item list-group-item-action">
+                            <h5 class="mb-1">{{ child.section }}. {{ child.text }}</h5>
+                            {% if child.children %}
+                                <small class="text-muted">{{ child.children|length }} subsection{{ child.children|length|pluralize }}</small>
+                            {% endif %}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="alert alert-info">
+                    This section has no subsections.
+                </div>
+            {% endif %}
+        {% else %}
+            {% if section.children %}
+                {% for child in section.children %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ child.section }}. {{ child.text }}</h4>
+                            
+                            {% if child.children %}
+                                {% for subchild in child.children %}
+                                    <div class="border-start border-3 border-primary ps-3 ms-2 mb-3 mt-3">
+                                        <h5>{{ subchild.section }}. {{ subchild.text }}</h5>
+                                        
+                                        {% if subchild.children %}
+                                            {% for subsubchild in subchild.children %}
+                                                <div class="border-start border-2 border-secondary ps-3 ms-2 mb-2 mt-2">
+                                                    <h6 class="text-muted">{{ subsubchild.section }}. {{ subsubchild.text }}</h6>
+                                                    
+                                                    {% if subsubchild.children %}
+                                                        {% for subsubsubchild in subsubchild.children %}
+                                                            <div class="ps-3 mb-1">
+                                                                <small><strong>{{ subsubsubchild.section }}.</strong> {{ subsubsubchild.text }}</small>
+                                                            </div>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+        
+        <div class="mt-4">
+            <a href="/" class="btn btn-secondary">Back to Home</a>
+            <a href="{{ json_url }}" class="btn btn-outline-primary" target="_blank">View JSON</a>
+        </div>
+    </div>
+{% endblock %}
