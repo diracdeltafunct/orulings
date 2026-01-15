@@ -333,7 +333,7 @@
                 },
                 {
                   "section": "404.6.b.2",
-                  "text": "Abilities can be the source of Damage for Deal actions. 404.6.b.",
+                  "text": "Abilities can be the source of Damage for Deal actions. 404.6.b.2.a. When an Ability is the source of Damage for a Deal action, it is in addition to the Spell or Unit that created that Ability. Example: Iron Ballista is a gear that says “[E]: Deal 2 to a unit at a battleﬁeld.” This damage is dealt both by a gear and by an ability.",
                   "children": []
                 },
                 {
@@ -568,7 +568,7 @@
         },
         {
           "section": "409.4",
-          "text": "When Discarding is part of an effect, then a player must Discard as many cards as possible from their hand. If instructed to discard more cards than they have in their hand, further discard instructions are ignored. Example: Undercover Agent has the ability \"[Deathknell] — Discard 2, then draw",
+          "text": "When Discarding is part of an effect, then a player must Discard as many cards as possible from their hand. If instructed to discard more cards than they have in their hand, further discard instructions are ignored. Example: Undercover Agent has the ability \"[Deathknell] — Discard 2, then draw 2. (When I die, get the effect.)\" If Undercover Agent's controller has 2 or more cards in hand, they must discard 2. If they have 1 card in hand, they discard 1, and the rest of the discard instruction is ignored. If they have no cards in hand, the entire discard instruction is ignored. Regardless of how many cards they discard, they then draw 2.",
           "children": []
         },
         {
@@ -858,7 +858,7 @@
               "children": [
                 {
                   "section": "415.1.a.1",
-                  "text": "Active Kill is when the action is taken when instructed by a game effect or as a cost for a card or ability. 415.1.a.",
+                  "text": "Active Kill is when the action is taken when instructed by a game effect or as a cost for a card or ability. 415.1.a.1.a. This is referred to as a Kill Instruction. 415.1.a.1.b. When a unit with a Deathknell is to be put in the Trash due to a Kill Instruction , it ﬁrst has its Deathknell added to the chain as a Pending Item. Note the unit’s location, attributes, and other relevant information to process its Deathknell when ﬁnalized before completing this Kill Instruction .",
                   "children": []
                 },
                 {
@@ -1019,7 +1019,7 @@
             },
             {
               "section": "418.2.d",
-              "text": "Completes the remainder of the action that caused them to burn out. Example: A player attempts to draw 1 during their Draw Phase while their Main Deck is empty. That player instead recycles their trash into their Main Deck, randomizing it as normal, then chooses an opponent to gain 1 point, and then draws",
+              "text": "Completes the remainder of the action that caused them to burn out. Example: A player attempts to draw 1 during their Draw Phase while their Main Deck is empty. That player instead recycles their trash into their Main Deck, randomizing it as normal, then chooses an opponent to gain 1 point, and then draws 1.",
               "children": []
             }
           ]
@@ -1063,7 +1063,18 @@
           "children": [
             {
               "section": "419.1.a",
-              "text": "This creates an effect that modulates that attribute by that speciﬁc amount for the duration speciﬁed by the Game Effect that instructed the player to perform this action. Example: A unit with 3 base Might and Shield 2 is in combat as a Defender. Since Shield applies, its current Might is",
+              "text": "This creates an effect that modulates that attribute by that speciﬁc amount for the duration speciﬁed by the Game Effect that instructed the player to perform this action. Example: A unit with 3 base Might and Shield 2 is in combat as a Defender. Since Shield applies, its current Might is 5. A player chooses it as the target for Last Stand, a spell that reads in part “Double a friendly unit's Might this turn.” Its current Might is 5, so it gets +5 Might this turn, for a current Might of 10. After combat, Shield no longer applies, but the +5 Might from Last Stand does, so the unit’s Might is 8.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "419.2",
+          "text": "Doubling is a Limited Action.",
+          "children": [
+            {
+              "section": "419.2.a",
+              "text": "Players may only Double when Game Effects direct them to do so.",
               "children": []
             }
           ]
@@ -1085,15 +1096,26 @@
             },
             {
               "section": "420.1.b",
-              "text": "To accomplish this, determine the difference between these values and then apply an Increase for that amount to the lower value of the two attributes, and a Decrease of that amount to the higher value of the two attributes. 420.1.c If both attributes are the same numeric value, Swapping has no effect.",
+              "text": "To accomplish this, determine the difference between these values and then apply an Increase for that amount to the lower value of the two attributes, and a Decrease of that amount to the higher value of the two attributes.",
+              "children": []
+            },
+            {
+              "section": "420.1.c",
+              "text": "If both attributes are the same numeric value, Swapping has no effect.",
               "children": []
             }
           ]
         },
         {
           "section": "420.2",
-          "text": "Swapping is a Limited Action. 420.2.a Players may only swap when Game Effects direct them to do so.",
-          "children": []
+          "text": "Swapping is a Limited Action.",
+          "children": [
+            {
+              "section": "420.2.a",
+              "text": "Players may only swap when Game Effects direct them to do so.",
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -1521,7 +1543,7 @@
               "children": [
                 {
                   "section": "442.1.a.1",
-                  "text": "The Attacker is the player whose unit(s) applied the Contested status to the Battleﬁeld. They gain the Attacker designation now. 442.1.a.",
+                  "text": "The Attacker is the player whose unit(s) applied the Contested status to the Battleﬁeld. They gain the Attacker designation now. 442.1.a.1.a. This player gains Focus as this Showdown begins.",
                   "children": []
                 },
                 {
@@ -1531,12 +1553,12 @@
                 },
                 {
                   "section": "442.1.a.3",
-                  "text": "Units at the Contested Battleﬁeld controlled by the Attacker gain the Attacker designation now. 442.1.a.",
+                  "text": "Units at the Contested Battleﬁeld controlled by the Attacker gain the Attacker designation now. 442.1.a.3.a. If a Unit controlled by the Attacker becomes present at this Battleﬁeld after this moment, it will gain the Attacker designation during the Cleanup phase following the action that caused it to become present",
                   "children": []
                 },
                 {
                   "section": "442.1.a.4",
-                  "text": "Units at the Contested Battleﬁeld controlled by the Defender gain the Defender designation now. 442.1.a.",
+                  "text": "Units at the Contested Battleﬁeld controlled by the Defender gain the Defender designation now. 442.1.a.4.a. If a Unit controlled by the Defender becomes present at this Battleﬁeld after this moment it will gain the Defender designation during the Cleanup phase following the action that caused it to become present",
                   "children": []
                 }
               ]
@@ -1612,7 +1634,7 @@
               "children": [
                 {
                   "section": "443.1.d.1",
-                  "text": "Assigning Damage is not Dealing Damage. 443.1.d.",
+                  "text": "Assigning Damage is not Dealing Damage. 443.1.d.1.a. When all Damage is assigned, it will be Dealt simultaneously. These actions are not synonymous.",
                   "children": []
                 },
                 {
@@ -1622,7 +1644,7 @@
                 },
                 {
                   "section": "443.1.d.3",
-                  "text": "Units must have lethal damage assigned to them in full before damage is assigned to a different Unit. Example: If a player has 5 damage to distribute among four 3 Might units, they may not choose to assign 2 damage to one of the units and 1 damage to each of the remaining",
+                  "text": "Units must have lethal damage assigned to them in full before damage is assigned to a different Unit. Example: If a player has 5 damage to distribute among four 3 Might units, they may not choose to assign 2 damage to one of the units and 1 damage to each of the remaining 3. They must assign at least 3 damage to one, and the remaining 2 to another.",
                   "children": []
                 },
                 {
@@ -1669,7 +1691,61 @@
     {
       "section": "444",
       "text": "Step 3: The Resolution Step",
-      "children": []
+      "children": [
+        {
+          "section": "444.1",
+          "text": "Perform a Combat Cleanup.",
+          "children": [
+            {
+              "section": "444.1.a",
+              "text": "Invoke a Combat Special Cleanup.",
+              "children": [
+                {
+                  "section": "444.1.a.1",
+                  "text": "Insert “2c. Heal all Units. ”",
+                  "children": []
+                },
+                {
+                  "section": "444.1.a.2",
+                  "text": "Insert “2d. Recall Attackers present at the Battleﬁeld if Defenders are still present.” See rule 432. Recalls for more information.",
+                  "children": []
+                },
+                {
+                  "section": "444.1.a.3",
+                  "text": "Insert “2e. Remove Attacker and Defender Designation from all Units and Players. ”",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "444.2",
+          "text": "If no Showdown or Combat is staged at this location, the player with Units remaining here Establishes Control .",
+          "children": [
+            {
+              "section": "444.2.a",
+              "text": "Clear the Contested Status .",
+              "children": []
+            },
+            {
+              "section": "444.2.b",
+              "text": "This results in a Conquer if that player has not yet scored that Battleﬁeld this turn. See rule 182. Control for more information on Control. See_rule_REF_446.1_DOT for more information on Conquering.",
+              "children": []
+            },
+            {
+              "section": "444.2.c",
+              "text": "This does not have to be the player that applied Contested to the Battleﬁeld.",
+              "children": []
+            },
+            {
+              "section": "444.2.d",
+              "text": "If there are no Units remaining here controlled by any player, the Battleﬁeld becomes Uncontrolled.",
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
       "section": "445",
@@ -1818,7 +1894,99 @@
     {
       "section": "454",
       "text": "Layers are applied in the following order:",
-      "children": []
+      "children": [
+        {
+          "section": "454.1",
+          "text": "Trait-Altering Effects",
+          "children": [
+            {
+              "section": "454.1.a",
+              "text": "This layer deals with effects that grant, remove, or replace inherent traits of Game Objects. Name Super Type Type Tags Controller Cost Domain",
+              "children": [
+                {
+                  "section": "454.1.a.1",
+                  "text": "Assignment of Might is dealt with in this layer. Example: A spell reads \"A unit's Might becomes 4 this turn.\" The unit's Might is set to 4 in this layer.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "454.1.b",
+              "text": "One Game Object becoming a copy of another.",
+              "children": [
+                {
+                  "section": "454.1.b.1",
+                  "text": "All Traits, including the Rules Text, replace or are added to those of the original Game Object as speciﬁed by the Game Effect directing the Copy. This is applied in this layer.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "454.1.c",
+              "text": "Effects for this layer can be identiﬁed by the phrase \"become(s)\", \"give,\" \"is,\" or \"are\" in the text. Example: A permanent has the ability \"Other friendly units are Yordles.\" Other friendly units gain the Yordle tag in this layer.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "454.2",
+          "text": "Ability-Altering Effects",
+          "children": [
+            {
+              "section": "454.2.a",
+              "text": "This layer deals with effects that grant, remove, or replace the abilities or rules text of Game Objects . Keywords Passive Abilities Appending rules text Removing rules text Duplicating Rules Text from one Game Object to another",
+              "children": []
+            },
+            {
+              "section": "454.2.b",
+              "text": "Effects for this layer can be identiﬁed by the phrase \"become(s),\" \"give,\" \"lose(s),\" \"have,\" \"has,\" \"is,\" or \"are\" in the text. Example: A permanent has the ability \"Other friendly units have [Vision].\" Other friendly units gain the Vision keyword in this layer.",
+              "children": []
+            },
+            {
+              "section": "454.2.c",
+              "text": "Abilities of Effect Text of Attached cards are appended in this layer.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "454.3",
+          "text": "Arithmetic",
+          "children": [
+            {
+              "section": "454.3.a",
+              "text": "This layer deals with the mathematics of increasing and decreasing the numeric values of the traits of Game Objects. Might Energy Cost Power Cost",
+              "children": []
+            },
+            {
+              "section": "454.3.b",
+              "text": "When an arithmetic effect has a limitation that applies, it is limited at the time of its application, and is “remembered” at that limited level for the duration of its effect. This process is called “snapshotting.” Example: If an effect gives a unit “-4 [M] to a min of 1 until end of turn” choosing a unit with 2 [M], then the effect will generate -1 [M] until end of turn.",
+              "children": []
+            },
+            {
+              "section": "454.3.c",
+              "text": "Might Bonuses of Attached cards are applied in this layer.",
+              "children": []
+            },
+            {
+              "section": "454.3.d",
+              "text": "This layer applies arithmetic in the following way.",
+              "children": [
+                {
+                  "section": "454.3.d.1",
+                  "text": "Increases 454.3.d.1.a. Positive values, or increases, to Might are applied ﬁrst. 454.3.d.1.b If there is a restriction or limitation to this increase, the limitation is “snapshotted” for the duration of the effect.",
+                  "children": []
+                },
+                {
+                  "section": "454.3.d.2",
+                  "text": "Decreases 454.3.d.2.a. Negative values, or decreases, to Might are applied last. 454.3.d.2.b. If there is a restriction or limitation to this decrease, the limitation is snapshotted for the duration of the effect.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "section": "455",
@@ -1853,7 +2021,7 @@
       "children": [
         {
           "section": "456.1",
-          "text": "To resolve a dependency, the effects within the same layer that created the dependency must be applied such that:",
+          "text": "To resolve a dependency, the effects within the same layer that created the dependency must be applied such that: 1. Identify which effect Depends on the other within the Layer. 2. Apply the effect that is depended on ﬁrst. 3. Immediately apply the effect that Depends on the ﬁrst effect next.",
           "children": []
         }
       ]
@@ -2027,7 +2195,7 @@
         },
         {
           "section": "462.6",
-          "text": "Format: Best of",
+          "text": "Format: Best of 1. The ﬁrst player to reach the Victory Score in Points wins the Match.",
           "children": []
         },
         {
@@ -2074,7 +2242,7 @@
         },
         {
           "section": "463.6",
-          "text": "Format: Best of",
+          "text": "Format: Best of 3. The ﬁrst player to reach the Victory Score in Points wins the game. The winner of that game earns One Set Point. Players then reset the game state, remove the Battleﬁelds in play from the game, choose new Battleﬁelds from those set aside, and play again. The ﬁrst player to earn Two Set Points wins.",
           "children": []
         },
         {
@@ -2121,7 +2289,7 @@
         },
         {
           "section": "464.6",
-          "text": "Format: Best of",
+          "text": "Format: Best of 1. The ﬁrst player to reach the Victory Score in Points wins the Match.",
           "children": []
         },
         {
@@ -2173,7 +2341,7 @@
         },
         {
           "section": "465.6",
-          "text": "Format: Best of",
+          "text": "Format: Best of 1. The ﬁrst player to reach the Victory Score in Points wins the Match.",
           "children": []
         },
         {
@@ -2252,7 +2420,7 @@
         },
         {
           "section": "466.6",
-          "text": "Format: Best of",
+          "text": "Format: Best of 1. The ﬁrst team to reach the Victory Score in Points wins the Match.",
           "children": [
             {
               "section": "466.6.a",
@@ -2323,7 +2491,7 @@
               "children": [
                 {
                   "section": "466.8.e.1",
-                  "text": "Players are not restricted in what they say to their Teammate, however. 466.8.e.",
+                  "text": "Players are not restricted in what they say to their Teammate, however. 466.8.e.1.a. Feel free to openly communicate, honestly or cryptically. 466.8.e.1.b. Revealing Cards is still a game action and cannot be done unless instructed. See rule 411. Reveal for more information.",
                   "children": []
                 }
               ]

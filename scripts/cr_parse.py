@@ -55,9 +55,19 @@ def get_pdf_text(pdf_path):
 
     # Split back into lines at section numbers
     # Add newlines before section numbers (like 000., 001., 100.1., etc.)
-    text = re.sub(r"(\d+(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\.\s+", r"\n\1. ", text)
+    # First handle standard format with period after: "322.1."
+    text = re.sub(r"(\d{3,}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\.\s+", r"\n\1. ", text)
+    # Then handle sections without trailing period: "322.2 " (at least one dot in the number)
+    text = re.sub(r"(\d+\.\d+(?:\.[a-zA-Z])?(?:\.\d+)*)\s+", r"\n\1. ", text)
     # Clean up any double newlines
     text = re.sub(r"\n+", "\n", text)
+
+    # Now handle redundant single digits (1., 2., 3., 2a., etc.) that appear AFTER section numbers
+    # Example: "322.1. 1. If a player..." should become "322.1. If a player..."
+    # Pattern: section number followed by space and single digit with optional letter
+    text = re.sub(
+        r"(\d+(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*\.\s+)\d+[a-z]?\.\s+", r"\1", text
+    )
 
     # Restore rule references
     text = re.sub(
@@ -129,8 +139,11 @@ def parse_lines_to_objects(text):
 
     # Pattern matches: digits, letters, and combinations with periods
     # Examples: 100, 204, 204.1, 204.1.a, 204.1.a.1
-    # Matches: number or letter, optionally followed by .number or .letter repeated
-    pattern = re.compile(r"^((?:\d+|[a-zA-Z])(?:\.(?:\d+|[a-zA-Z]))*)\.\s+(.*)$")
+    # IMPORTANT: Must start with 3 digits (like 100) OR have dots (like 204.1)
+    # This prevents single-digit numbers (1, 2, 3) from being parsed as standalone sections
+    pattern = re.compile(
+        r"^((?:\d{3,})|(?:\d+(?:\.\d+)+)|(?:\d+(?:\.[a-zA-Z])+)|(?:\d+\.\d+\.[a-zA-Z](?:\.\d+)*))\.\s+(.*)$"
+    )
 
     all_sections = []  # List of (section, content) tuples in order
 

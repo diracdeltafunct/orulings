@@ -182,10 +182,15 @@
             },
             {
               "section": "312.2.d",
-              "text": "When the turn is in a Closed State , they are the next Player in Turn Order , and the player with Priority passes. 312.3 When a player is granted Priority, it is either created if no player has it or taken from the player with Priority.",
+              "text": "When the turn is in a Closed State , they are the next Player in Turn Order , and the player with Priority passes.",
               "children": []
             }
           ]
+        },
+        {
+          "section": "312.3",
+          "text": "When a player is granted Priority, it is either created if no player has it or taken from the player with Priority.",
+          "children": []
         }
       ]
     },
@@ -211,7 +216,12 @@
         },
         {
           "section": "313.3",
-          "text": "A player who passes Priority retains Focus. 313.4 A player may not make discretionary actions with Focus unless they also possess Priority.",
+          "text": "A player who passes Priority retains Focus.",
+          "children": []
+        },
+        {
+          "section": "313.4",
+          "text": "A player may not make discretionary actions with Focus unless they also possess Priority.",
           "children": []
         },
         {
@@ -317,7 +327,7 @@
             },
             {
               "section": "315.4.b",
-              "text": "The Turn Player draws",
+              "text": "The Turn Player draws 1.",
               "children": [
                 {
                   "section": "315.4.b.1",
@@ -326,7 +336,7 @@
                 },
                 {
                   "section": "315.4.b.2",
-                  "text": "After completing the Burn Out the Turn Player still Draws",
+                  "text": "After completing the Burn Out the Turn Player still Draws 1.",
                   "children": []
                 }
               ]
@@ -599,8 +609,101 @@
       "text": "When a Cleanup occurs, the following steps occur in order:",
       "children": [
         {
+          "section": "322.1",
+          "text": "If a player has as many points as the Victory Score , that player wins.",
+          "children": []
+        },
+        {
+          "section": "322.2",
+          "text": "Handle outstanding board state",
+          "children": []
+        },
+        {
+          "section": "322.3",
+          "text": "All Units that have non-zero Damage marked on them equalling or exceeding their Might that have Deathknell abilities will trigger their Deathknell ability now, making note of their current location, attributes, and other information relevant to add the trigger as a Pending Item See rule 734 Deathknell for more information .",
+          "children": []
+        },
+        {
           "section": "322.4",
-          "text": "2b. All Units that have non-zero Damage marked on them equalling or exceeding their Might are killed and placed in their owners' Trash.",
+          "text": "All Units that have non-zero Damage marked on them equalling or exceeding their Might are killed and placed in their owners' Trash.",
+          "children": []
+        },
+        {
+          "section": "322.5",
+          "text": "Assign or Remove the Attacker or Defender designation from Units as needed if there is a Combat in progress",
+          "children": [
+            {
+              "section": "322.5.a",
+              "text": "If there are Units present at the Battleﬁeld the Combat is taking place at, but do not have a designation, they gain the same designation as their Controller now",
+              "children": []
+            },
+            {
+              "section": "322.5.b",
+              "text": "If there are Units present at the Battleﬁeld the Combat is taking place at, but have the opposite designation of their controller, they lose that designation, and gain the same designation as their controller now",
+              "children": []
+            },
+            {
+              "section": "322.5.c",
+              "text": "If there are Units at locations other than the Battleﬁeld that the Combat is taking place at, but have either Attacker or Defender designations, they lose those designations now",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "322.6",
+          "text": "Battleﬁelds with no Units occupying them and no Contested status become Uncontrolled.",
+          "children": []
+        },
+        {
+          "section": "322.7",
+          "text": "Recall all Gear at Battleﬁelds. Remove all Hidden cards from all Battleﬁelds that are not controlled by the same player and place them in their owner's Trash.",
+          "children": []
+        },
+        {
+          "section": "322.8",
+          "text": "Mark a Showdown as Staged at each Battleﬁeld that Contested was applied to that is Uncontrolled .",
+          "children": [
+            {
+              "section": "322.8.a",
+              "text": "The Showdown remains Staged at each Battleﬁeld that is Contested and has only units present controlled by the player that applied Contested",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "322.9",
+          "text": "If Units of an opposing player are present at a Battleﬁeld that has a Showdown staged before it can be Opened, the Showdown will cease being Staged",
+          "children": []
+        },
+        {
+          "section": "322.10",
+          "text": "Mark a Combat as Staged at each Battleﬁeld that Contested was applied to that have Units present controlled by opposing players.",
+          "children": [
+            {
+              "section": "322.10.a",
+              "text": "The Combat remains Staged at that Battleﬁeld as long as there are Units present from two opposing players there.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "322.11",
+          "text": "If Units of two opposing players are no longer present at a Battleﬁeld that has a Combat Staged before it has opened, the Combat will cease being Staged",
+          "children": []
+        },
+        {
+          "section": "322.12",
+          "text": "Finalize any Pending Items on the Chain",
+          "children": []
+        },
+        {
+          "section": "322.13",
+          "text": "If the current state is a Neutral Open State and one or more Showdowns are Staged , the Turn Player chooses one of those Battleﬁelds. A Showdown begins there.",
+          "children": []
+        },
+        {
+          "section": "322.14",
+          "text": "If the current state is a Neutral Open State and Combat is Staged at one or more Battleﬁelds , the Turn Player chooses one of those Battleﬁelds . Combat begins there.",
           "children": []
         }
       ]
@@ -782,7 +885,7 @@
                 },
                 {
                   "section": "333.1.c.2",
-                  "text": "If the Chain is not empty and there are one or more Pending Items , repeat Step",
+                  "text": "If the Chain is not empty and there are one or more Pending Items , repeat Step 1.",
                   "children": []
                 },
                 {
@@ -1157,8 +1260,29 @@
       "children": []
     },
     {
+      "section": "351",
+      "text": "Remove the card from the zone you are playing it from and put it onto the Chain.",
+      "children": [
+        {
+          "section": "351.1",
+          "text": "This Closes the State. See rule 307. States of the Turn for more information.",
+          "children": []
+        },
+        {
+          "section": "351.2",
+          "text": "This item becomes Pending.",
+          "children": []
+        },
+        {
+          "section": "351.3",
+          "text": "If another Card Effect or ability is currently resolving, continue resolving it before proceeding with any further steps of this process.",
+          "children": []
+        }
+      ]
+    },
+    {
       "section": "352",
-      "text": "They use the phrase \"as an additional cost\" and the word \"may.\" Example: A unit has the ability \"As you play me, you may discard 1 as an additional cost. If you do, reduce my cost by [2].\" While playing the unit, its controller declares their intention to pay the additional cost in rule 352 , applies that additional cost in rule 353.2 , applies the discount granted by paying that cost in rule 353.4 , and discards a card to pay that additional cost in rule",
+      "text": "Make necessary choices.",
       "children": [
         {
           "section": "352.1",
@@ -1167,8 +1291,19 @@
         },
         {
           "section": "352.2",
-          "text": "For Units , choose a valid Location where that Unit will be placed upon being Played. 352.2.a By default, Valid locations include the controller’s Base or a Battleﬁeld the controller controls. 352.2.b Some Game Effects may grant players permission to play Units to locations that are not normally Valid . Such locations become Valid for the purposes of Playing the Unit. .",
-          "children": []
+          "text": "For Units , choose a valid Location where that Unit will be placed upon being Played.",
+          "children": [
+            {
+              "section": "352.2.a",
+              "text": "By default, Valid locations include the controller’s Base or a Battleﬁeld the controller controls.",
+              "children": []
+            },
+            {
+              "section": "352.2.b",
+              "text": "Some Game Effects may grant players permission to play Units to locations that are not normally Valid . Such locations become Valid for the purposes of Playing the Unit. .",
+              "children": []
+            }
+          ]
         },
         {
           "section": "352.3",
@@ -1344,7 +1479,7 @@
             },
             {
               "section": "352.11.b",
-              "text": "If the group of targets no longer collectively fulﬁll the targeting restriction as the spell or ability resolves, that spell or ability’s controller can choose a subset of the original targets that fulﬁlls the targeting requirement for the spell or ability to affect. Example: A player plays Fox-Fire, a spell that says in part “Kill any number of units at a battleﬁeld with total Might 4 or less.” That player chooses four 1 [M] Recruit tokens at a single battleﬁeld. As a Reaction, another player gives two of those Recruits +1 [M], so the Recruits’ Mights are 1, 1, 2, and",
+              "text": "If the group of targets no longer collectively fulﬁll the targeting restriction as the spell or ability resolves, that spell or ability’s controller can choose a subset of the original targets that fulﬁlls the targeting requirement for the spell or ability to affect. Example: A player plays Fox-Fire, a spell that says in part “Kill any number of units at a battleﬁeld with total Might 4 or less.” That player chooses four 1 [M] Recruit tokens at a single battleﬁeld. As a Reaction, another player gives two of those Recruits +1 [M], so the Recruits’ Mights are 1, 1, 2, and 2. Then Fox-Fire resolves. The Recruits no longer have total Might 4 or less, so Fox-Fire’s controller must choose a legal subset of the original targets to affect. They could choose to kill the two 2 [M] Recruits, or the two 1 [M] Recruits plus one 2 [M] Recruit. The units they choose are Fox-Fire’s remaining legal targets. They can’t choose to affect units at the same battleﬁeld that weren’t initially chosen as targets, and they can’t affect any units that are no longer at the chosen battleﬁeld.",
               "children": []
             }
           ]
@@ -1419,6 +1554,301 @@
           "section": "352.16",
           "text": "A player may not make choices during this step that will deterministically result in illegal choices or actions later in this process unless they have no choice. Example: A player plays Cruel Patron, which says \"As an additional cost to play me, kill a friendly unit.\" They control exactly one unit, which is at a battleﬁeld. They can't choose to play Cruel Patron to that battleﬁeld, because by the time they have ﬁnished paying costs, they will no longer control that battleﬁeld.",
           "children": []
+        }
+      ]
+    },
+    {
+      "section": "353",
+      "text": "Determine Total Cost.",
+      "children": [
+        {
+          "section": "353.1",
+          "text": "If an ability or instruction allows you to \"ignore\" one or more of a card's costs, set the appropriate Base Cost(s) of the card to zero.",
+          "children": [
+            {
+              "section": "353.1.a",
+              "text": "If a card allows a player to play a card \"ignoring its cost,\" its base Energy cost and base Power cost are set to zero.",
+              "children": []
+            },
+            {
+              "section": "353.1.b",
+              "text": "If a card instructs a player to play a card \"ignoring its Energy cost\" or \"ignoring its Power cost,\" only the appropriate cost is set to zero, and the remaining cost still applies.",
+              "children": []
+            },
+            {
+              "section": "353.1.c",
+              "text": "Further additional costs and/or cost increases applied in subsequent steps may raise the card's Total Cost above zero. Example: Legion Rearguard is a Fury unit that costs 2 Energy and 0 Power and has Accelerate. A player plays Legion Rearguard and is instructed to ignore its costs, but chooses to pay the Accelerate cost. They ignore Legion Rearguard's Base Cost of 2 Energy, but the optional additional cost of 1 Energy and 1 Fury Power is added to its Total Cost and must be paid.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "353.2",
+          "text": "Apply additional costs in any order.",
+          "children": [
+            {
+              "section": "353.2.a",
+              "text": "Mandatory Additional Costs",
+              "children": [
+                {
+                  "section": "353.2.a.1",
+                  "text": "Some Additional Costs speciﬁed by Passive Abilities on the card being played or another card are Mandatory , and must be paid to complete playing the card. They use the phrase \"as an additional cost\" and don't include the word \"may.\" Example: A unit has the passive ability \"As an additional cost to play me, kill a friendly unit.\" To play that unit, a player must kill a friendly unit. See rule 360. Passive Abilities for more information.",
+                  "children": []
+                },
+                {
+                  "section": "353.2.a.2",
+                  "text": "The cost imposed by the Deﬂect keyword is a Mandatory Additional Cost. See rule 735. Deﬂect for more information.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "353.2.b",
+              "text": "Optional Additional Costs",
+              "children": [
+                {
+                  "section": "353.2.b.1",
+                  "text": "Some Optional Costs speciﬁed by Passive Abilities on the card being played or another card are Non-Mandatory , and must be paid only if the player made the choice to pay them in rule",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "353.4",
+          "text": ", and discards a card to pay that additional cost in rule",
+          "children": [
+            {
+              "section": "353.4.a",
+              "text": "Discounts may be applied by the card being played or by any other card or effect.",
+              "children": []
+            },
+            {
+              "section": "353.4.b",
+              "text": "Discounts may say that cards \"cost [amount] less\" or that one or more of their costs are \"reduced by [amount].\"",
+              "children": []
+            },
+            {
+              "section": "353.4.c",
+              "text": "If a discount applies a minimum cost, that minimum applies only to that discount. Example: Eager Apprentice says \"While I'm at a battleﬁeld, the Energy costs for spells you play is reduced by [1], to a minimum of [1].\" A player who controls Eager Apprentice and a unit with 7 Might plays Sky Splitter, a spell that costs 8 Energy and says \"This spell's Energy cost is reduced by the highest Might among units you control.\" That player can choose to apply Eager Apprentice's discount ﬁrst, reducing Sky Splitter's Energy cost to 7, then apply Sky Splitter's discount, reducing its Energy cost to 0. If they applied these discounts in the other order, Sky Splitter's Energy cost would be 1.",
+              "children": []
+            },
+            {
+              "section": "353.4.d",
+              "text": "Discounts can reduce additional costs, including to 0.",
+              "children": [
+                {
+                  "section": "353.4.d.1",
+                  "text": "An optional additional cost was \"paid\" if the player made the decision in rule 352 to pay it. It doesn't matter how much the player actually paid. Example: Clockwork Keeper is a unit that costs 2 Energy and 0 Power and says \"As you play me, you may pay [C] as an additional cost. If you do, draw \" A player controls a card that says \"Units you play cost [A] less.\" That player plays Clockwork Keeper and chooses to pay the optional additional cost of [C]. They will draw a card, even though the optional additional cost was reduced to 0.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "353.3",
+          "text": "Apply cost increases.",
+          "children": []
+        },
+        {
+          "section": "353.5",
+          "text": "Energy and Power costs can't be reduced below 0.",
+          "children": []
+        },
+        {
+          "section": "353.6",
+          "text": "Costs may be Energy costs, Power costs, or non-standard costs. Example: A card reads \"As an additional cost to play me, kill a friendly unit.\" Killing a friendly unit is an additional cost to play that card.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "354",
+      "text": "Pay the card's costs.",
+      "children": [
+        {
+          "section": "354.2",
+          "text": "See rule 360. Passive Abilities for more information.",
+          "children": [
+            {
+              "section": "354.2.a",
+              "text": "Costs that are replaced with other events by replacement effects are still considered paid. Example: A player plays Cruel Patron, which says \"As an additional cost to play me, kill a friendly unit.\" They also control Zhonya’s Hourglass, which says “If a friendly unit would die, kill this instead. Heal that unit, exhaust it, and recall it.” They choose to kill a friendly unit during rule",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "354.1",
+          "text": "In total, pay the combined Energy cost (if any) and Power cost (if any).",
+          "children": [
+            {
+              "section": "354.1.a",
+              "text": "During this step, the spell's controller can use activated abilities with the Reaction tag that Add resources to add Energy and Power to pay the spell's costs. See rule 161. Rune Pools and rule",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "354.3",
+          "text": "A player may not pay costs during this step that will deterministically result in illegal choices or actions later in this process unless they have no choice. Example: A player plays Cruel Patron, which says \"As an additional cost to play me, kill a friendly unit.\" They control multiple units, one of which is alone at a battleﬁeld. During rule",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "355",
+      "text": "Check legality.",
+      "children": [
+        {
+          "section": "355.1",
+          "text": "Check that all chosen targets are legal.",
+          "children": []
+        },
+        {
+          "section": "355.2",
+          "text": "Ensure that the outcome of the effect of this card being played would not create an illegal state. Example: Check that a spell's execution does not create a state where a Battleﬁeld has Units controlled by 3 different players.",
+          "children": []
+        },
+        {
+          "section": "355.3",
+          "text": "If the card, if continued to be played, would create an illegal state, or if a choice or action at this state is illegal, the actions taken in this process are undone and the action is cancelled.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "356",
+      "text": "Finalize this card and proceed with the card's category of Play.",
+      "children": [
+        {
+          "section": "356.1",
+          "text": "This card is no longer Pending .",
+          "children": []
+        },
+        {
+          "section": "356.2",
+          "text": "A Permanent leaves the Chain and becomes a Game Object.",
+          "children": [
+            {
+              "section": "356.2.a",
+              "text": "Any passive abilities become active.",
+              "children": []
+            },
+            {
+              "section": "356.2.b",
+              "text": "Execute all rules text on the card, from top to bottom.",
+              "children": []
+            },
+            {
+              "section": "356.2.c",
+              "text": "If it is a Unit , it enters the Board exhausted at the Location that was chosen.",
+              "children": []
+            },
+            {
+              "section": "356.2.d",
+              "text": "If it is a Gear, it enters the Board Ready at the player's Base.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "356.3",
+          "text": "A Spell lingers on the Chain.",
+          "children": [
+            {
+              "section": "356.3.a",
+              "text": "This card becomes a Finalized Chain Item.",
+              "children": []
+            },
+            {
+              "section": "356.3.b",
+              "text": "If there are other Pending Items on the Chain, then the controller of those Pending Items completes Steps 2 through 5 of Playing Cards for those items before continuing. See rule 326. Chains for more information .",
+              "children": []
+            },
+            {
+              "section": "356.3.c",
+              "text": "Other players have an opportunity to play Reactions before the resolution of spells. See rule 326. Chains for more information.",
+              "children": []
+            },
+            {
+              "section": "356.3.d",
+              "text": "Otherwise, execute the game effect of the spell, from top to bottom of the rules text of the card and then place the card in the Trash of the owning player.",
+              "children": []
+            },
+            {
+              "section": "356.3.e",
+              "text": "Handling illegal and impossible instructions",
+              "children": [
+                {
+                  "section": "356.3.e.1",
+                  "text": "The spell resolves even if some or all of its targets are illegal.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.2",
+                  "text": "A target is illegal as the spell resolves if it no longer meets the targeting requirements of the spell, or if it has changed Zones to or from a Non-Board Zone.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.3",
+                  "text": "If a target ceases to meet the targeting requirements while the spell is on the chain, then meets them again, it's a legal target. Example: A spell targets \"a unit at a battleﬁeld.\" A player reacts with a spell that moves the unit to base, then another player reacts with a spell that moves it back to that battleﬁeld, then the original spell resolves. The unit is a legal target.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.4",
+                  "text": "If a target changes Zones to or from a Non-Board Zone and then returns to its original zone, it is no longer a legal target, because it's not treated as the same object. Examples: An enemy unit at a battleﬁeld is no longer a legal target if it is no longer an enemy, no longer a unit, or no longer at a battleﬁeld. A unit with 3 or less Might is no longer a legal target if it is no longer a unit or if its Might is greater than 3. Something that's exhausted is no longer a legal target if it is no longer exhausted. (It can't stop being \"something.\") A spell that's played from hidden can normally only target its own battleﬁeld or something at that battleﬁeld. A target for such a spell may cease to be a legal target if it moves from the battleﬁeld where that spell was played, even if the spell has no location targeting requirement otherwise.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.5",
+                  "text": "If any of the spell's targets are no longer legal, those targets are unaffected by the spell as it resolves. Example: A player plays Void Seeker, a spell that says \"Deal 4 to a unit at a battleﬁeld. Draw 1.\" The unit's controller uses a Reaction to move the unit to their base. Since the unit is no longer a legal target, it is not dealt any damage. Void Seeker's controller still draws 1.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.6",
+                  "text": "Instructions that can't be followed, either because of illegal targets or other circumstances, are ignored.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.7",
+                  "text": "If all of an instruction's Targets become Invalid or Unavailable by the time the spell is ﬁnished being played, that instruction will not execute.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.8",
+                  "text": "If an instruction has more than one Target and fewer than all of the Targets become Invalid or Unavailable by the time the spell is ﬁnished being played, the instruction will execute, with only the Targets available and valid being operated on.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.9",
+                  "text": "The process for a card's choice becoming Invalid or Unavailable is referred to as mistargeting. Example: A spell has the instruction \"Deal 2 to a unit at a battleﬁeld.\" Before that instruction can execute, the chosen unit is moved to its base. The instruction will not be executed, because it speciﬁes that the unit it chooses must be at a Battleﬁeld, and by the time it attempted to execute, the unit was no longer valid as a choice.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.10",
+                  "text": "It is possible for none of a spell's instructions to be executed as it resolves, due to all of them requiring targets to act on and all of those targets becoming Invalid or Unavailable . In this case, the spell has no effect but is still considered played. Example: A player plays a spell that reads \"Deal 2 to a unit at a battleﬁeld\" with no other instructions, and chooses an enemy unit at a battleﬁeld. They also control a unit with the ability \"When you play a spell, give me +1 [M] this turn.\" Before the spell resolves, the chosen unit is moved to its base. The spell resolves and its only instruction cannot be executed, but the unit's ability still triggers as the spell resolves and gives it +1 [M].",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.11",
+                  "text": "Instructions that can be partially followed are followed as much as possible and ignored otherwise. Example: A player plays a spell that says \"Discard 2, then draw 2\" If their hand is empty, the instruction to discard 2 will be ignored. They'll still draw 2. If they had 1 card in hand, they would discard it and draw 2.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.12",
+                  "text": "If the spell checks information about a target that is no longer legal or a card or permanent whose location, zone, or status has changed such that that information is no longer available, that check returns \"null\" and all calculations based on it are ignored. Examples: A unit that is no longer on the board is treated as having null Might, null cost, etc. A unit that is no longer on the board has no location, is neither exhausted nor readied, etc. Baited Hook says \"[1][C], [E]: Kill a friendly unit. Look at the top 5 cards of your Main Deck. You may banish a unit from among them that has Might up to 1 more than the killed unit and play it, ignoring its cost. Then recycle the rest.\" While Baited Hook’s ability is on the chain, an opponent reacts with a spell that returns the friendly unit to its owner's hand. Because the friendly unit is no longer a legal target, it can't be killed and its Might is treated as null. Baited Hook’s controller reveals the top 5 cards of their Main Deck, but can’t choose any unit from among them.",
+                  "children": []
+                },
+                {
+                  "section": "356.3.e.13",
+                  "text": "A spell or ability that moves something to a different zone as a cost or effect can \"look back\" at its characteristics before it changes zones.",
+                  "children": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1750,7 +2180,7 @@
                 },
                 {
                   "section": "376.4.b.2",
-                  "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Conquer action, or Abilities that reference the player that performed the Conquer action. 376.4.b.",
+                  "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Conquer action, or Abilities that reference the player that performed the Conquer action. 376.4.b.2.a. The Conquer Abilities of Units are put on the Chain as Pending Items after the Unit(s) these effects correspond to are present at a Battleﬁeld when a player gains control of it and gains 1 Victory Point from Conquering. 376.4.b.2.b. The Conquer Abilities of anything that references the player Conquering is put on the Chain as a Pending Item when the Condition that the player that controls the triggering source has performed a Conquer and gained 1 Victory Point. 376.4.b.2.c. If the act of gaining one point from Conquering is negated or replaced in any way, the Conquer Effect will still trigger.",
                   "children": []
                 },
                 {
@@ -1771,7 +2201,7 @@
                 },
                 {
                   "section": "376.4.c.2",
-                  "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Hold action, or Abilities that reference the player that performed the Hold action. 376.4.c.",
+                  "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Hold action, or Abilities that reference the player that performed the Hold action. 376.4.c.2.a. The Hold Abilities of Units are put on the Chain as Pending Items after the Unit these effects correspond to are present at a Battleﬁeld when a player maintains control of it and Gains 1 Victory Point during their Beginning Phase from Holding. 376.4.c.2.b. The Hold Abilities of anything that references the player Holding is put on the Chain as a Pending Item when the Condition that the player that controls the triggering source has performed a Hold and gained 1 Victory Point. 376.4.c.2.c. If the act of gaining one point from Holding is negated or replaced in any way, the Hold Effect will still trigger.",
                   "children": []
                 },
                 {
@@ -1792,7 +2222,7 @@
                 },
                 {
                   "section": "376.4.d.2",
-                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Attacker designation during Combat . 376.4.d.",
+                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Attacker designation during Combat . 376.4.d.2.a. These triggers can only become fulﬁlled once per combat, despite a Unit being able to gain and lose the Attacker designation multiple times in the same combat.",
                   "children": []
                 },
                 {
@@ -1813,7 +2243,7 @@
                 },
                 {
                   "section": "376.4.e.2",
-                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Defender designation during Combat . 376.4.e.",
+                  "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Defender designation during Combat . 376.4.e.2.a. These triggers can only become fulﬁlled once per combat, despite a Unit being able to gain and lose the Defender designation multiple times in the same combat.",
                   "children": []
                 },
                 {
@@ -1970,6 +2400,155 @@
         {
           "section": "388.2",
           "text": "When an Ability with the [Add] action is ﬁnalized it resolves immediately instead of becoming a Chain Item , like a Unit or Gear.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "389",
+      "text": "Activate or trigger the Ability",
+      "children": [
+        {
+          "section": "389.1",
+          "text": "Add a Pending Item to the chain representing the Ability that is either being Activated or Triggered. Notably, although this Chain Item will not have a card representing it, this will create a Closed State. See rule 346. Playing Cards for more information.",
+          "children": []
+        },
+        {
+          "section": "389.2",
+          "text": "If there is currently a game effect being resolved, continue resolving the game effect instead of continuing the following steps.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "390",
+      "text": "Make relevant choices",
+      "children": [
+        {
+          "section": "390.1",
+          "text": "Make all choices required for this ability, such as targets, options, or other relevant decisions. See rule 346. Playing Cards for more information",
+          "children": []
+        },
+        {
+          "section": "390.2",
+          "text": "If legal options are not available for an Activated Ability, it is not legal to activate it.",
+          "children": []
+        },
+        {
+          "section": "390.3",
+          "text": "If there are not enough options to make legal choices for a Triggered Ability that has been put on the chain, remove it from the Chain now. It ceases to be a Pending Item but never becomes a Chain Item.",
+          "children": [
+            {
+              "section": "390.3.a",
+              "text": "This is not an Ability being countered.",
+              "children": []
+            },
+            {
+              "section": "390.3.b",
+              "text": "If there are legal options to choose, the ability’s controller must choose them. They may not decline this stage of playing a Trigger.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "391",
+      "text": "Determine Total Cost",
+      "children": [
+        {
+          "section": "391.1",
+          "text": "Determine the base cost of the Ability.",
+          "children": [
+            {
+              "section": "391.1.a",
+              "text": "Activated Abilities will have a cost listed before the “:” in their text.",
+              "children": []
+            },
+            {
+              "section": "391.1.b",
+              "text": "Triggered Abilities will typically not have a base cost associated with them when placed on the chain due to their conditions.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "391.2",
+          "text": "Apply cost increases and decreases as a result of choices made in the prior step. See rule 346. Playing Cards for more information.",
+          "children": []
+        },
+        {
+          "section": "391.3",
+          "text": "Apply any other cost increases or decreases as necessary. See rule 346. Playing Cards for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "392",
+      "text": "Pay Costs",
+      "children": [
+        {
+          "section": "392.1",
+          "text": "Pay costs as determined in the prior step. See rule 346. Playing Cards for more information.",
+          "children": []
+        },
+        {
+          "section": "392.2",
+          "text": "At this stage, players may decline to pay for Triggered Abilities that have incurred a cost. If they do, the ability will cease being a Pending Item and be removed from the Chain. It never becomes a Chain Item.",
+          "children": [
+            {
+              "section": "392.2.a",
+              "text": "This is not an Ability being countered.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "393",
+      "text": "Check Legality",
+      "children": [
+        {
+          "section": "393.1",
+          "text": "Ensure that the Ability’s targets are still legal.",
+          "children": []
+        },
+        {
+          "section": "393.2",
+          "text": "Ensure that the Ability ’s effect would not create an illegal state. If it would, resolve in the same way you would resolve a Card that creates an illegal state. See rule 346. Playing Cards for more information.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "394",
+      "text": "Proceed with Play",
+      "children": [
+        {
+          "section": "394.1",
+          "text": "This Ability is no longer Pending.",
+          "children": []
+        },
+        {
+          "section": "394.2",
+          "text": "This Ability becomes a Chain Item.",
+          "children": []
+        },
+        {
+          "section": "394.3",
+          "text": "If there are other Pending Items on the Chain, their controllers perform the remaining steps of playing now.",
+          "children": []
+        },
+        {
+          "section": "394.4",
+          "text": "Other players have an opportunity to play Reactions before the resolution of spells. See rule 326. Chains for more information.",
+          "children": []
+        },
+        {
+          "section": "394.5",
+          "text": "Otherwise, execute the Ability just like a Spell , then clear the Chain Item from the Chain.",
           "children": []
         }
       ]

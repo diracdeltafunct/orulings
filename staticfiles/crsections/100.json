@@ -614,29 +614,8 @@
     },
     {
       "section": "116",
-      "text": "Players each draw",
+      "text": "Players each draw 4.",
       "children": []
-    },
-    {
-      "section": "117",
-      "text": "In turn order, players perform their Mulligan.",
-      "children": [
-        {
-          "section": "117.1",
-          "text": "A player may choose up to two cards in their hand. They set those cards aside.",
-          "children": []
-        },
-        {
-          "section": "117.2",
-          "text": "Then, that player draws as many cards as they set aside.",
-          "children": []
-        },
-        {
-          "section": "117.3",
-          "text": "Finally, that player Recycles the cards that were set aside. See rule 403. Recycle for more information.",
-          "children": []
-        }
-      ]
     },
     {
       "section": "118",
@@ -813,10 +792,15 @@
             },
             {
               "section": "130.3.b",
-              "text": "This section may not be present on every card. 130.4 Effects that need to determine a card’s cost for any purpose always use its base cost, even if that cost is altered or ignored as the card is played. Example: Sky Splitter is a spell that costs 8 Energy and says in part “This spell's Energy cost is reduced by the highest Might among units you control.” Lux, Illuminated is a unit that says “When you play a spell that costs 5 or more, give me +3 [M] this turn.” If a player who controls Lux plays Sky Splitter, Lux’s ability will trigger, regardless of how much was actually paid for Sky Splitter.",
+              "text": "This section may not be present on every card.",
               "children": []
             }
           ]
+        },
+        {
+          "section": "130.4",
+          "text": "Effects that need to determine a card’s cost for any purpose always use its base cost, even if that cost is altered or ignored as the card is played. Example: Sky Splitter is a spell that costs 8 Energy and says in part “This spell's Energy cost is reduced by the highest Might among units you control.” Lux, Illuminated is a unit that says “When you play a spell that costs 5 or more, give me +3 [M] this turn.” If a player who controls Lux plays Sky Splitter, Lux’s ability will trigger, regardless of how much was actually paid for Sky Splitter.",
+          "children": []
         }
       ]
     },
@@ -836,7 +820,12 @@
         },
         {
           "section": "131.3",
-          "text": "Cards that are printed in different languages but represent the same card are considered to have the same name for the purposes of deckbuilding and gameplay. Example: Chemtech Enforcer in English and its counterpart in Chinese are considered the same card, despite the Name element on the card reading differently. 131.4 Some cards have both a short name and a subtitle. For all purposes, including rules and deckbuilding, such a card’s name is “[Short Name], [Subtitle]”. Example: Kai’Sa, Evolutionary and Kai’Sa, Survivor both have the short name Kai’Sa, but they have different names. You can include 3 of each in your deck under normal deckbuilding rules. If one of them is your Chosen Champion, the other is not.",
+          "text": "Cards that are printed in different languages but represent the same card are considered to have the same name for the purposes of deckbuilding and gameplay. Example: Chemtech Enforcer in English and its counterpart in Chinese are considered the same card, despite the Name element on the card reading differently.",
+          "children": []
+        },
+        {
+          "section": "131.4",
+          "text": "Some cards have both a short name and a subtitle. For all purposes, including rules and deckbuilding, such a card’s name is “[Short Name], [Subtitle]”. Example: Kai’Sa, Evolutionary and Kai’Sa, Survivor both have the short name Kai’Sa, but they have different names. You can include 3 of each in your deck under normal deckbuilding rules. If one of them is your Chosen Champion, the other is not.",
           "children": []
         }
       ]
@@ -1132,12 +1121,12 @@
                 },
                 {
                   "section": "134.2.e.5",
-                  "text": "Power of any Domain is represented by a swirling rainbow symbol. Its shorthand is [A]. 134.2.e.",
+                  "text": "Power of any Domain is represented by a swirling rainbow symbol. Its shorthand is [A]. 134.2.e.5.a. When required as a cost, [A] can be paid by Power of any Domain . 134.2.e.5.b. When Added to a player’s Rune Pool, [A] can be spent to pay a Power cost of any Domain.",
                   "children": []
                 },
                 {
                   "section": "134.2.e.6",
-                  "text": "Power of a domain corresponding to a card’s own Domain is not represented by a symbol, but appears in these rules similarly to other symbols. Its shorthand is [C]. 134.2.e.",
+                  "text": "Power of a domain corresponding to a card’s own Domain is not represented by a symbol, but appears in these rules similarly to other symbols. Its shorthand is [C]. 134.2.e.6.a. When a [C] shorthand is printed on a card as reminder text, it assumes that card’s usual Domain , but it still means “one Power of this card’s Domain .” 134.2.e.6.b. A [C] shorthand on a card with no Domain or with multiple Domains is processed as [A] instead.",
                   "children": []
                 }
               ]
@@ -1164,13 +1153,67 @@
     },
     {
       "section": "135",
-      "text": "Effect Text 135.1 Some cards have a separate section of text below the Rules Text . This is referred to as the Effect Text . 135.2 Effect Text can contain additional Abilities. 135.2.a Effect Text can be blank. 135.2.b Effect Text is inactive unless the card with the Effect Text is Attached to another card. See rule 716 Attachment for more information. See rule 720 Inactive for more information. 135.2.c The abilities in the Effect Text section of a card are appended to the Rules Text of the card to which the card with the Effect Text is Attached.",
-      "children": []
+      "text": "Effect Text",
+      "children": [
+        {
+          "section": "135.1",
+          "text": "Some cards have a separate section of text below the Rules Text . This is referred to as the Effect Text .",
+          "children": []
+        },
+        {
+          "section": "135.2",
+          "text": "Effect Text can contain additional Abilities.",
+          "children": [
+            {
+              "section": "135.2.a",
+              "text": "Effect Text can be blank.",
+              "children": []
+            },
+            {
+              "section": "135.2.b",
+              "text": "Effect Text is inactive unless the card with the Effect Text is Attached to another card. See rule 716 Attachment for more information. See rule 720 Inactive for more information.",
+              "children": []
+            },
+            {
+              "section": "135.2.c",
+              "text": "The abilities in the Effect Text section of a card are appended to the Rules Text of the card to which the card with the Effect Text is Attached.",
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
       "section": "136",
-      "text": "Might Bonus 136.1 Some cards have a Might Bonus in their lower right corner, expressed as an operator plus an integer. 136.2 A card’s Might Bonus can be +",
-      "children": []
+      "text": "Might Bonus",
+      "children": [
+        {
+          "section": "136.1",
+          "text": "Some cards have a Might Bonus in their lower right corner, expressed as an operator plus an integer.",
+          "children": []
+        },
+        {
+          "section": "136.2",
+          "text": "A card’s Might Bonus can be +0.",
+          "children": []
+        },
+        {
+          "section": "136.3",
+          "text": "A card’s Might Bonus modulates the Might of the card to which the card that has the Might Bonus is Attached . See rule 716 Attachment for more information.",
+          "children": [
+            {
+              "section": "136.3.a",
+              "text": "The Might Bonus is applied while Attached and stops applying as soon as the card with the Might Bonus is no longer Attached.",
+              "children": []
+            },
+            {
+              "section": "136.3.b",
+              "text": "If the card to which a card with a Might Bonus is Attached has no Might value, the Might Bonus is ignored.",
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
       "section": "137",

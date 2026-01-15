@@ -149,15 +149,10 @@
         },
         {
           "section": "715.3",
-          "text": "If the Deal action Splits damage, then the Bonus Damage applies to the amount of Damage that will be Split . This can alter the number of targets eligible to be chosen. Example: Volibear, Furious is a unit that says in part “When I attack, deal 5 damage split among any number of enemy units here.” A player attacks with Volibear, Furious while they also control Annie, Fiery, a unit that says “Your spells and abilities deal 1 Bonus Damage.” Volibear, Furious now deals 6 damage split among any number of enemy units at its location, and can choose to split that damage among up to 6 units rather than the usual",
+          "text": "If the Deal action Splits damage, then the Bonus Damage applies to the amount of Damage that will be Split . This can alter the number of targets eligible to be chosen. Example: Volibear, Furious is a unit that says in part “When I attack, deal 5 damage split among any number of enemy units here.” A player attacks with Volibear, Furious while they also control Annie, Fiery, a unit that says “Your spells and abilities deal 1 Bonus Damage.” Volibear, Furious now deals 6 damage split among any number of enemy units at its location, and can choose to split that damage among up to 6 units rather than the usual 5.",
           "children": []
         }
       ]
-    },
-    {
-      "section": "716",
-      "text": "Attachment",
-      "children": []
     },
     {
       "section": "717",
@@ -575,7 +570,7 @@
                 },
                 {
                   "section": "733.1.b.3",
-                  "text": "If X is omitted, it is presumed to be",
+                  "text": "If X is omitted, it is presumed to be 1.",
                   "children": []
                 }
               ]
@@ -715,7 +710,7 @@
                 },
                 {
                   "section": "735.1.b.3",
-                  "text": "If X is omitted, it is presumed to be",
+                  "text": "If X is omitted, it is presumed to be 1.",
                   "children": []
                 }
               ]
@@ -1071,7 +1066,7 @@
                 },
                 {
                   "section": "740.1.b.3",
-                  "text": "If X is omitted, it is presumed to be",
+                  "text": "If X is omitted, it is presumed to be 1.",
                   "children": []
                 }
               ]
@@ -1542,7 +1537,12 @@
         },
         {
           "section": "747.3",
-          "text": "Weaponmaster has no function while on the board. 747.4 Weaponmaster , and whether or not a unit has Weaponmaster , is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "text": "Weaponmaster has no function while on the board.",
+          "children": []
+        },
+        {
+          "section": "747.4",
+          "text": "Weaponmaster , and whether or not a unit has Weaponmaster , is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
           "children": []
         }
       ]
