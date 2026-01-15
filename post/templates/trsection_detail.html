@@ -51,9 +51,15 @@
                                 {% endif %}
                             </div>
                         {% else %}
+                            {% if child.children %}
                             <a href="/trsections/{{ child.section }}/" class="list-group-item list-group-item-action">
                                 <h5 class="mb-1">{{ child.section }}. {{ child.text|safe }}</h5>
                             </a>
+                            {% else %}
+                                <div class="list-group-item">
+                                    <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
+                                </div>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>

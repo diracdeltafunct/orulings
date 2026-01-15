@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 from django.db.models import Q
 from django.http import Http404, JsonResponse
@@ -132,11 +133,72 @@ def bold_before_colon(text):
     return text
 
 
-def format_section_text(section_data):
-    """Recursively format text in section data to bold text before colons."""
+def linkify_references(text, section_type="tr"):
+    """
+    Convert rule references in text to hyperlinks.
+
+    Args:
+        text: The text to process
+        section_type: Either 'tr' (tournament rules) or 'cr' (comprehensive rules)
+
+    Returns:
+        Text with references converted to HTML links
+    """
+    # Handle CR references (e.g., "See CR 127" or "CR 127.")
+    text = re.sub(
+        r"\bCR\s+(\d{3}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\b\.?",
+        r'<a href="/crsections/\1/">CR \1</a>',
+        text,
+    )
+
+    # Handle regular section references (e.g., "See 402" or "rule 703.4")
+    # Match patterns like "See 402", "see 703.4.a", "rule 318", etc.
+    if section_type == "tr":
+        base_url = "/trsections/"
+    else:
+        base_url = "/crsections/"
+
+    # Match section numbers that appear after words like "See", "see", "rule", "Rule", "section", "Section"
+    # or standalone section numbers that look like references
+    text = re.sub(
+        r"\b(See|see|rule|Rule|section|Section)\s+(\d{3}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\b",
+        rf'\1 <a href="{base_url}\2/">\2</a>',
+        text,
+    )
+
+    return text
+
+
+def format_section_text(section_data, section_type="tr"):
+    """
+    Recursively format text in section data to bold text before colons and linkify references.
+
+    Args:
+        section_data: The section data dictionary
+        section_type: Either 'tr' or 'cr' to determine link targets
+    """
+    # Always linkify the main section text
+    section_data["text"] = linkify_references(section_data["text"], section_type)
     section_data["text"] = bold_before_colon(section_data["text"])
+
+    # For children, check if they will be rendered as clickable links
     for child in section_data.get("children", []):
-        format_section_text(child)
+        child_section_str = child.get("section", "")
+        has_letter = any(
+            letter in child_section_str for letter in ["a", "b", "c", "d", "e"]
+        )
+        has_children = len(child.get("children", [])) > 0
+        will_be_clickable_link = has_children and not has_letter
+
+        # Only linkify child references if child won't be rendered as a clickable link
+        if not will_be_clickable_link:
+            child["text"] = linkify_references(child["text"], section_type)
+        child["text"] = bold_before_colon(child["text"])
+
+        # Recursively format grandchildren
+        for grandchild in child.get("children", []):
+            format_section_text(grandchild, section_type)
+
     return section_data
 
 
@@ -200,8 +262,8 @@ def trsection_detail(request, section):
     # Check if this is a top-level section (x00)
     is_top_level = section == top_level
 
-    # Format text to bold content before colons
-    data = format_section_text(data)
+    # Format text to bold content before colons and linkify references
+    data = format_section_text(data, section_type="tr")
 
     context = {
         "section": data,
@@ -273,6 +335,9 @@ def crsection_detail(request, section):
 
     # Check if this is a top-level section (x00)
     is_top_level = section == top_level
+
+    # Format text to bold content before colons and linkify references
+    data = format_section_text(data, section_type="cr")
 
     context = {
         "section": data,
