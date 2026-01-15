@@ -21,7 +21,7 @@
         
         {% if is_top_level %}
             {% if section.children %}
-                <h3>Subsections</h3>
+                
                 <div class="list-group mb-4">
                     {% for child in section.children %}
                         <a href="/trsections/{{ child.section }}/" class="list-group-item list-group-item-action">
@@ -36,7 +36,7 @@
             {% endif %}
         {% else %}
             {% if section.children %}
-                <h3>Subsections</h3>
+                
                 <div class="list-group mb-4">
                     {% for child in section.children %}
                         {% if 'a' in child.section or 'b' in child.section or 'c' in child.section or 'd' in child.section or 'e' in child.section %}

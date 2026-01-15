@@ -21,7 +21,7 @@
 
         {% if is_top_level %}
             {% if section.children %}
-                <h3>Subsections</h3>
+                
                 <div class="list-group mb-4">
                     {% for child in section.children %}
                         <a href="/crsections/{{ child.section }}/" class="list-group-item list-group-item-action">
