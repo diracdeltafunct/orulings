@@ -337,3 +337,33 @@ def save_annotation(request):
         return JsonResponse({"error": "Invalid JSON"}, status=400)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+
+
+def search_rules(request):
+    """
+    Search view for rule sections (both TR and CR).
+    Searches in section numbers, text, and annotations.
+    """
+    search_query = request.GET.get("q", "")
+    results = []
+    
+    if search_query:
+        # Search in both TR and CR sections
+        results = RuleSection.objects.filter(
+            Q(section__icontains=search_query) |
+            Q(text__icontains=search_query) |
+            Q(annotations__icontains=search_query)
+        ).select_related('parent').order_by('rule_type', 'order')[:50]  # Limit to 50 results
+    
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
+    
+    context = {
+        "search_query": search_query,
+        "results": results,
+        "result_count": len(results),
+        "logo_asset": logo_asset,
+        "copyright_asset": copyright_asset,
+    }
+    
+    return render(request, "search_results.html", context)

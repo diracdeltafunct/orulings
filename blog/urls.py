@@ -28,6 +28,7 @@ from post.views import (
     post_detail,
     post_list,
     save_annotation,
+    search_rules,
     secret_login,
     trsection_detail,
 )
@@ -40,6 +41,7 @@ urlpatterns = [
     path("posts/<int:post_id>/", post_detail, name="post_detail"),
     path("trsections/<str:section>/", trsection_detail, name="trsection_detail"),
     path("crsections/<str:section>/", crsection_detail, name="crsection_detail"),
+    path("search/", search_rules, name="search_rules"),
     path("secretadminlogin/", secret_login, name="secret_login"),
     path("api/save-annotation/", save_annotation, name="save_annotation"),
 ]
