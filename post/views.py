@@ -2,9 +2,10 @@ import json
 import os
 import re
 
+from django.contrib.auth import authenticate, login
 from django.db.models import Q
 from django.http import Http404, JsonResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import Post, RuleSection, Tag, TextAsset
 
@@ -187,38 +188,37 @@ def trsection_detail(request, section):
     """
     # Get the section from database
     try:
-        section_obj = RuleSection.objects.prefetch_related('children__children__children__children').get(
-            rule_type='TR',
-            section=section
-        )
+        section_obj = RuleSection.objects.prefetch_related(
+            "children__children__children__children"
+        ).get(rule_type="TR", section=section)
     except RuleSection.DoesNotExist:
-        raise Http404(f'Section {section} not found')
-    
+        raise Http404(f"Section {section} not found")
+
     # Convert to dict format
     data = section_obj.to_dict()
-    
+
     # Get text assets for template
-    logo_asset = TextAsset.objects.filter(asset_type='logo').first()
-    copyright_asset = TextAsset.objects.filter(asset_type='copyright').first()
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     # Get top-level section number
     top_level = section_obj.get_top_level_section()
-    
+
     # Check if this is a top-level section (x00)
     is_top_level = section == top_level
 
     # Format text to bold content before colons and linkify references
-    data = format_section_text(data, section_type='tr')
+    data = format_section_text(data, section_type="tr")
 
     context = {
-        'section': data,
-        'json_url': f'/trsections/{top_level}/',
-        'is_top_level': is_top_level,
-        'logo_asset': logo_asset,
-        'copyright_asset': copyright_asset,
+        "section": data,
+        "json_url": f"/trsections/{top_level}/",
+        "is_top_level": is_top_level,
+        "logo_asset": logo_asset,
+        "copyright_asset": copyright_asset,
     }
 
-    return render(request, 'trsection_detail.html', context)
+    return render(request, "trsection_detail.html", context)
 
 
 def crsection_detail(request, section):
@@ -230,35 +230,94 @@ def crsection_detail(request, section):
     """
     # Get the section from database
     try:
-        section_obj = RuleSection.objects.prefetch_related('children__children__children__children').get(
-            rule_type='CR',
-            section=section
-        )
+        section_obj = RuleSection.objects.prefetch_related(
+            "children__children__children__children"
+        ).get(rule_type="CR", section=section)
     except RuleSection.DoesNotExist:
-        raise Http404(f'Section {section} not found')
-    
+        raise Http404(f"Section {section} not found")
+
     # Convert to dict format
     data = section_obj.to_dict()
-    
+
     # Get text assets for template
-    logo_asset = TextAsset.objects.filter(asset_type='logo').first()
-    copyright_asset = TextAsset.objects.filter(asset_type='copyright').first()
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     # Get top-level section number
     top_level = section_obj.get_top_level_section()
-    
+
     # Check if this is a top-level section (x00)
     is_top_level = section == top_level
 
     # Format text to bold content before colons and linkify references
-    data = format_section_text(data, section_type='cr')
+    data = format_section_text(data, section_type="cr")
 
     context = {
-        'section': data,
-        'json_url': f'/crsections/{top_level}/',
-        'is_top_level': is_top_level,
-        'logo_asset': logo_asset,
-        'copyright_asset': copyright_asset,
+        "section": data,
+        "json_url": f"/crsections/{top_level}/",
+        "is_top_level": is_top_level,
+        "logo_asset": logo_asset,
+        "copyright_asset": copyright_asset,
     }
 
-    return render(request, 'crsection_detail.html', context)
+    return render(request, "crsection_detail.html", context)
+
+
+def secret_login(request):
+    """Secret admin login page"""
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            # Redirect to admin page after successful login
+            return redirect('/admin/')
+        else:
+            # Return to login page with error
+            return render(request, 'secret_login.html', {'error': 'Invalid credentials'})
+    
+    # GET request - show login form
+    return render(request, 'secret_login.html')
+
+
+def save_annotation(request):
+    """
+    AJAX endpoint to save annotations for a rule section.
+    Requires user to be authenticated.
+    """
+    if request.method != "POST":
+        return JsonResponse({"error": "POST required"}, status=405)
+    
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Authentication required"}, status=403)
+    
+    try:
+        data = json.loads(request.body)
+        rule_type = data.get("rule_type")
+        section = data.get("section")
+        annotation_html = data.get("annotation")
+        
+        if not all([rule_type, section]):
+            return JsonResponse({"error": "Missing required fields"}, status=400)
+        
+        # Get the section from database
+        section_obj = RuleSection.objects.get(rule_type=rule_type, section=section)
+        
+        # Update the annotations field
+        section_obj.annotations = annotation_html
+        section_obj.save()
+        
+        return JsonResponse({
+            "success": True,
+            "message": "Annotation saved successfully",
+            "section": section
+        })
+        
+    except RuleSection.DoesNotExist:
+        return JsonResponse({"error": f"Section {section} not found"}, status=404)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "Invalid JSON"}, status=400)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)

@@ -92,7 +92,12 @@ class RuleSection(models.Model):
 
     def to_dict(self, include_children=True):
         """Convert section to dictionary format matching JSON structure"""
-        data = {"section": self.section, "text": self.text, "children": []}
+        data = {
+            "section": self.section,
+            "text": self.text,
+            "annotations": self.annotations,
+            "children": [],
+        }
 
         if include_children:
             for child in self.children.all():
