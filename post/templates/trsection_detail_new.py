@@ -12,7 +12,7 @@ old1 = '''<h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>'''
 new1 = '''<div class="d-flex justify-content-between align-items-start">
                                     <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
                                     {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit Annotation</button>
+                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
                                     {% endif %}
                                 </div>
                                 <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;">

@@ -13,6 +13,14 @@
             </ol>
         </nav>
         
+        {% if parent_section %}
+        <div class="mb-3">
+            <a href="/trsections/{{ parent_section }}/" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back to {{ parent_section }}
+            </a>
+        </div>
+        {% endif %}
+        
         <div class="card mb-4">
             <div class="card-header">
                 <h2>{{ section.section }}. {{ section.text|safe }}</h2>
@@ -25,7 +33,7 @@
                 <div class="list-group mb-4">
                     {% for child in section.children %}
                         <a href="/trsections/{{ child.section }}/" class="list-group-item list-group-item-action">
-                            <h5 class="mb-1">{{ child.section }}. {{ child.text|safe }}</h5>
+                            <h5 class="mb-1"><span class="rule-number">{{ child.section }}.</span> {{ child.text|safe }}</h5>
                         </a>
                     {% endfor %}
                 </div>
@@ -44,7 +52,7 @@
                                 <div class="d-flex justify-content-between align-items-start">
                                 <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
                                     {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit Annotation</button>
+                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
                                     {% endif %}
                                 </div>
                                 <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
@@ -65,7 +73,7 @@
                                             <strong>{{ subchild.section }}.</strong> {{ subchild.text|safe }}
                                             </div>
                                             {% if user.is_authenticated %}
-                                                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Edit Annotation</button>
+                                                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Edit</button>
                                             {% endif %}
                                         </div>
                                         <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
@@ -85,14 +93,14 @@
                         {% else %}
                             {% if child.children %}
                             <a href="/trsections/{{ child.section }}/" class="list-group-item list-group-item-action">
-                                <h5 class="mb-1">{{ child.section }}. {{ child.text|safe }}</h5>
+                                <h5 class="mb-1"><span class="rule-number">{{ child.section }}.</span> {{ child.text|safe }}</h5>
                             </a>
                             {% else %}
                                 <div class="list-group-item">
                                 <div class="d-flex justify-content-between align-items-start">
                                     <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
                                     {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit Annotation</button>
+                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
                                     {% endif %}
                                 </div>
                                 <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
@@ -141,6 +149,22 @@
     min-height: 200px;
     background-color: white;
     font-size: 14px;
+  }
+  .edit-annotation-btn {
+    height: 31px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .list-group-item-action {
+    border-width: 2px;
+    font-weight: 500;
+  }
+  .list-group-item-action .rule-number {
+    color: #4169e1 !important;
+    font-weight: 600;
+  }
+  a.list-group-item-action h5 .rule-number {
+    color: #4169e1 !important;
   }
 </style>
 

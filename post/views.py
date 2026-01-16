@@ -210,10 +210,16 @@ def trsection_detail(request, section):
     # Format text to bold content before colons and linkify references
     data = format_section_text(data, section_type="tr")
 
+    # Get parent section if exists
+    parent_section = None
+    if section_obj.parent:
+        parent_section = section_obj.parent.section
+
     context = {
         "section": data,
         "json_url": f"/trsections/{top_level}/",
         "is_top_level": is_top_level,
+        "parent_section": parent_section,
         "logo_asset": logo_asset,
         "copyright_asset": copyright_asset,
     }
@@ -252,10 +258,16 @@ def crsection_detail(request, section):
     # Format text to bold content before colons and linkify references
     data = format_section_text(data, section_type="cr")
 
+    # Get parent section if exists
+    parent_section = None
+    if section_obj.parent:
+        parent_section = section_obj.parent.section
+
     context = {
         "section": data,
         "json_url": f"/crsections/{top_level}/",
         "is_top_level": is_top_level,
+        "parent_section": parent_section,
         "logo_asset": logo_asset,
         "copyright_asset": copyright_asset,
     }
@@ -265,21 +277,23 @@ def crsection_detail(request, section):
 
 def secret_login(request):
     """Secret admin login page"""
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
         user = authenticate(request, username=username, password=password)
-        
+
         if user is not None:
             login(request, user)
             # Redirect to admin page after successful login
-            return redirect('/admin/')
+            return redirect("/admin/")
         else:
             # Return to login page with error
-            return render(request, 'secret_login.html', {'error': 'Invalid credentials'})
-    
+            return render(
+                request, "secret_login.html", {"error": "Invalid credentials"}
+            )
+
     # GET request - show login form
-    return render(request, 'secret_login.html')
+    return render(request, "secret_login.html")
 
 
 def save_annotation(request):
@@ -289,32 +303,34 @@ def save_annotation(request):
     """
     if request.method != "POST":
         return JsonResponse({"error": "POST required"}, status=405)
-    
+
     if not request.user.is_authenticated:
         return JsonResponse({"error": "Authentication required"}, status=403)
-    
+
     try:
         data = json.loads(request.body)
         rule_type = data.get("rule_type")
         section = data.get("section")
         annotation_html = data.get("annotation")
-        
+
         if not all([rule_type, section]):
             return JsonResponse({"error": "Missing required fields"}, status=400)
-        
+
         # Get the section from database
         section_obj = RuleSection.objects.get(rule_type=rule_type, section=section)
-        
+
         # Update the annotations field
         section_obj.annotations = annotation_html
         section_obj.save()
-        
-        return JsonResponse({
-            "success": True,
-            "message": "Annotation saved successfully",
-            "section": section
-        })
-        
+
+        return JsonResponse(
+            {
+                "success": True,
+                "message": "Annotation saved successfully",
+                "section": section,
+            }
+        )
+
     except RuleSection.DoesNotExist:
         return JsonResponse({"error": f"Section {section} not found"}, status=404)
     except json.JSONDecodeError:
