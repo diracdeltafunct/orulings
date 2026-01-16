@@ -5,6 +5,7 @@
 This is a minimalistic blog built using Django Admin for content management and Bootstrap for styling.
 
 ## Features
+meaninglesschange
 
 - User-friendly Django Admin interface for managing blog content.
 - Bootstrap for a clean and responsive design.
