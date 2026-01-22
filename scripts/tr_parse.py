@@ -2,7 +2,7 @@ import json
 import os
 import re
 from dataclasses import asdict, dataclass, field
-from typing import List, Optional
+from typing import List
 
 import requests
 from bs4 import BeautifulSoup

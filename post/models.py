@@ -6,17 +6,6 @@ from mdeditor.fields import MDTextField
 from tag.models import Tag
 
 
-class Source(models.Model):
-    SOURCE_CHOICES = [
-        ("B", "BlueSky"),
-        ("T", "Twitter"),
-        ("Y", "Youtube"),
-        ("T", "Twitch"),
-    ]
-
-    source = models.CharField(max_length=1, choices=SOURCE_CHOICES)
-
-
 class Post(models.Model):
     title = models.CharField(max_length=200)
     content = MDTextField(null=True, blank=True)
@@ -26,7 +15,6 @@ class Post(models.Model):
     is_index_post = models.BooleanField(default=False)
     url = models.URLField(blank=True, null=True)
     tag = models.ForeignKey(Tag, on_delete=models.SET_NULL, null=True, blank=False)
-    tag = models.ForeignKey(Source, on_delete=models.SET_NULL, null=True, blank=False)
 
     def __str__(self):
         return self.title
