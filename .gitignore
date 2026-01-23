@@ -133,3 +133,4 @@ dmypy.json
 *.db
 .envrc
 secrets.json
+db.sqlite3
