@@ -24,6 +24,7 @@ from django.urls import re_path as url
 
 from post.views import (
     blog_index,
+    contact,
     crsection_detail,
     post_detail,
     post_list,
@@ -44,6 +45,7 @@ urlpatterns = [
     path("search/", search_rules, name="search_rules"),
     path("secretadminlogin/", secret_login, name="secret_login"),
     path("api/save-annotation/", save_annotation, name="save_annotation"),
+    path("contact/", contact, name="contact"),
 ]
 
 if settings.DEBUG:

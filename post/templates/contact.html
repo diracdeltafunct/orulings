@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Contact - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="contact-page">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <h2 class="mb-4">Contact Us</h2>
+
+            {% if error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            {% if success_message %}
+            <div class="alert alert-success" role="alert">
+                {{ success_message }}
+            </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="id_name" class="form-label">Name</label>
+                    {{ form.name }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="contact-type" class="form-label">Contact Type</label>
+                    {{ form.contact_type }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="contact-info" class="form-label">
+                        <span id="contact-info-label">Email or Discord</span>
+                    </label>
+                    {{ form.contact_info }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_reason" class="form-label">Reason for Contact</label>
+                    {{ form.reason }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_message" class="form-label">Message</label>
+                    {{ form.message }}
+                </div>
+
+                <div class="mb-3">
+                    <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactType = document.getElementById('contact-type');
+    const contactInfoLabel = document.getElementById('contact-info-label');
+    const contactInfo = document.getElementById('contact-info');
+
+    function updateContactLabel() {
+        if (contactType.value === 'email') {
+            contactInfoLabel.textContent = 'Email Address';
+            contactInfo.placeholder = 'your.email@example.com';
+        } else {
+            contactInfoLabel.textContent = 'Discord Username';
+            contactInfo.placeholder = 'username#1234 or username';
+        }
+    }
+
+    contactType.addEventListener('change', updateContactLabel);
+    updateContactLabel();
+});
+</script>
+{% endblock %}

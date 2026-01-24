@@ -1,11 +1,15 @@
 import json
 import re
 
+import requests
+from django.conf import settings
 from django.contrib.auth import authenticate, login
+from django.core.mail import send_mail
 from django.db.models import Q
 from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
+from .forms import ContactForm
 from .models import Post, RuleSection, Tag, TextAsset
 
 
@@ -370,3 +374,72 @@ def search_rules(request):
     }
 
     return render(request, "search_results.html", context)
+
+
+def contact(request):
+    """Contact form page with reCAPTCHA validation."""
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    error_message = None
+    success_message = None
+
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+
+        # Verify reCAPTCHA
+        recaptcha_response = request.POST.get("g-recaptcha-response")
+        recaptcha_data = {
+            "secret": settings.RECAPTCHA_SECRET_KEY,
+            "response": recaptcha_response,
+        }
+        recaptcha_verify = requests.post(
+            "https://www.google.com/recaptcha/api/siteverify", data=recaptcha_data
+        )
+        recaptcha_result = recaptcha_verify.json()
+
+        if not recaptcha_result.get("success"):
+            error_message = "reCAPTCHA verification failed. Please try again."
+        elif form.is_valid():
+            # Send email
+            name = form.cleaned_data["name"]
+            contact_type = form.cleaned_data["contact_type"]
+            contact_info = form.cleaned_data["contact_info"]
+            reason = form.cleaned_data["reason"]
+            message = form.cleaned_data["message"]
+
+            # Build email content
+            email_subject = f"[ScoutsCode Contact] {reason.title()} from {name}"
+            email_body = f"""New contact form submission:
+
+Name: {name}
+Contact Type: {contact_type.title()}
+Contact Info: {contact_info}
+Reason: {reason.title()}
+
+Message:
+{message}
+"""
+
+            try:
+                send_mail(
+                    subject=email_subject,
+                    message=email_body,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=["diracdeltafunct@gmail.com"],
+                    fail_silently=False,
+                )
+                success_message = "Your message has been sent successfully!"
+                form = ContactForm()  # Reset form on success
+            except Exception:
+                error_message = "Failed to send message. Please try again later."
+    else:
+        form = ContactForm()
+
+    context = {
+        "form": form,
+        "logo_asset": logo_asset,
+        "error_message": error_message,
+        "success_message": success_message,
+        "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
+    }
+
+    return render(request, "contact.html", context)
