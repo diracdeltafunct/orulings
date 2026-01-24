@@ -114,7 +114,7 @@ if DEVELOPMENT_MODE is True:
         }
     }
 elif len(sys.argv) > 0 and sys.argv[1] != "collectstatic":
-    #
+    # meaningless change
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
