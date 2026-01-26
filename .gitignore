@@ -134,3 +134,4 @@ dmypy.json
 .envrc
 secrets.json
 db.sqlite3
+cards/
