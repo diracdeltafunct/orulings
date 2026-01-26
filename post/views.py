@@ -10,7 +10,7 @@ from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import ContactForm
-from .models import Post, RuleSection, Tag, TextAsset
+from .models import Card, CardDomain, Post, RuleSection, Tag, TextAsset
 
 
 def post_list(request):
@@ -374,6 +374,121 @@ def search_rules(request):
     }
 
     return render(request, "search_results.html", context)
+
+
+def card_search(request):
+    """
+    Card search page with filters for all card fields.
+    If only one result, redirects directly to the card detail page.
+    """
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
+
+    # Get filter parameters
+    name = request.GET.get("name", "").strip()
+    card_type = request.GET.get("card_type", "")
+    card_set = request.GET.get("card_set", "")
+    rarity = request.GET.get("rarity", "")
+    domain = request.GET.get("domain", "")
+    energy_min = request.GET.get("energy_min", "")
+    energy_max = request.GET.get("energy_max", "")
+    power_min = request.GET.get("power_min", "")
+    power_max = request.GET.get("power_max", "")
+    ability = request.GET.get("ability", "").strip()
+    has_errata = request.GET.get("has_errata", "")
+
+    # Start with all cards
+    cards = Card.objects.all()
+    search_performed = False
+
+    # Apply filters
+    if name:
+        cards = cards.filter(name__icontains=name)
+        search_performed = True
+    if card_type:
+        cards = cards.filter(card_type=card_type)
+        search_performed = True
+    if card_set:
+        cards = cards.filter(card_set=card_set)
+        search_performed = True
+    if rarity:
+        cards = cards.filter(rarity=rarity)
+        search_performed = True
+    if domain:
+        cards = cards.filter(domain__name=domain)
+        search_performed = True
+    if energy_min:
+        cards = cards.filter(energy__gte=int(energy_min))
+        search_performed = True
+    if energy_max:
+        cards = cards.filter(energy__lte=int(energy_max))
+        search_performed = True
+    if power_min:
+        cards = cards.filter(power__gte=int(power_min))
+        search_performed = True
+    if power_max:
+        cards = cards.filter(power__lte=int(power_max))
+        search_performed = True
+    if ability:
+        cards = cards.filter(ability__icontains=ability)
+        search_performed = True
+    if has_errata == "yes":
+        cards = cards.exclude(errata_text__isnull=True).exclude(errata_text="")
+        search_performed = True
+    elif has_errata == "no":
+        cards = cards.filter(Q(errata_text__isnull=True) | Q(errata_text=""))
+        search_performed = True
+
+    # Get distinct results
+    cards = cards.distinct()
+
+    # If only one result, redirect to card detail
+    if search_performed and cards.count() == 1:
+        return redirect("card_detail", card_id=cards.first().card_id)
+
+    # Get choices for dropdowns
+    domains = CardDomain.objects.all().order_by("name")
+
+    context = {
+        "cards": cards if search_performed else None,
+        "search_performed": search_performed,
+        "result_count": cards.count() if search_performed else 0,
+        "domains": domains,
+        "logo_asset": logo_asset,
+        "copyright_asset": copyright_asset,
+        # Pass back filter values for form
+        "filter_name": name,
+        "filter_card_type": card_type,
+        "filter_card_set": card_set,
+        "filter_rarity": rarity,
+        "filter_domain": domain,
+        "filter_energy_min": energy_min,
+        "filter_energy_max": energy_max,
+        "filter_power_min": power_min,
+        "filter_power_max": power_max,
+        "filter_ability": ability,
+        "filter_has_errata": has_errata,
+    }
+
+    return render(request, "card_search.html", context)
+
+
+def card_detail(request, card_id):
+    """
+    Card detail page showing card image and all data fields.
+    """
+    card = get_object_or_404(Card, card_id=card_id)
+
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
+
+    context = {
+        "card": card,
+        "logo_asset": logo_asset,
+        "copyright_asset": copyright_asset,
+    }
+
+    return render(request, "card_detail.html", context)
 
 
 def contact(request):

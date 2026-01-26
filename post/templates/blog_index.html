@@ -10,9 +10,16 @@
         <h1>{{ special_post.title }}</h1>
         <div>{{ special_post.content|safe|markdownify }}</div>
     {% else %}
-        
+
     {% endif %}
-    
+
+    <div class="card-search mt-5">
+        <h2>Card Search</h2>
+        <a href="{% url 'card_search' %}" class="btn btn-primary btn-lg">
+            Search for cards by name, type, set, and more
+        </a>
+    </div>
+
     {% if crsections %}
         <div class="crsections mt-5">
             <h2>Core Rules Sections</h2>
@@ -26,7 +33,7 @@
             </div>
         </div>
     {% endif %}
-    
+
     {% if trsections %}
         <div class="trsections mt-5">
             <h2>Tournament Rules Sections</h2>

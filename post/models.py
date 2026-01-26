@@ -1,6 +1,7 @@
 # post/models.py
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from mdeditor.fields import MDTextField
 
 from tag.models import Tag
@@ -32,6 +33,86 @@ class TextAsset(models.Model):
 
     def __str__(self):
         return f"{self.get_asset_type_display()}: {self.content[:50]}"
+
+
+class Set(models.TextChoices):
+    ORIGINS = "Origins", _("Origins")
+    SPIRITFORGED = "Spiritforged", _("Spiritforged")
+    PROVING_GROUNDS = "Proving Grounds", _("Proving Grounds")
+
+
+class CardType(models.TextChoices):
+    LEGEND = "Legend", _("Legend")
+    SPELL = "Spell", _("Spell")
+    UNIT = "Unit", _("Unit")
+    RUNE = "Rune", _("Rune")
+    GEAR = "Gear", _("Gear")
+    BATTLEFIELD = "Battlefield", _("Battlefield")
+
+
+class Domain(models.TextChoices):
+    CHAOS = "Chaos", _("Chaos")
+    ORDER = "Order", _("Order")
+    FURY = "Fury", _("Fury")
+    CALM = "Calm", _("Calm")
+    MIND = "Mind", _("Mind")
+    BODY = "Body", _("Body")
+    COLORLESS = "Colorless", _("Colorless")
+
+
+class Rarity(models.TextChoices):
+    COMMON = "Common", _("Common")
+    UNCOMMON = "Uncommon", _("Uncommon")
+    RARE = "Rare", _("Rare")
+    EPIC = "Epic", _("Epic")
+    SHOWCASE = "Showcase", _("Showcase")
+
+
+class CardDomain(models.Model):
+    """Represents a domain that can be assigned to cards."""
+
+    name = models.CharField(max_length=20, choices=Domain.choices, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Card(models.Model):
+    card_id = models.CharField(max_length=20, unique=True)  # e.g., "sfd-198-221"
+    name = models.CharField(max_length=50)
+    collector_number = models.IntegerField()
+    energy = models.IntegerField(default=0)
+    power = models.IntegerField(default=0)
+    domain = models.ManyToManyField(CardDomain, related_name="cards", blank=True)
+    card_type = models.CharField(
+        max_length=20,
+        choices=CardType.choices,
+        default=CardType.UNIT,
+    )
+    rarity = models.CharField(
+        max_length=20,
+        choices=Rarity.choices,
+        default=Rarity.COMMON,
+    )
+    card_set = models.CharField(
+        max_length=20,
+        choices=Set.choices,
+        default=Set.ORIGINS,
+    )
+    image_url = models.URLField(max_length=200)
+    ability = models.TextField(blank=True, default="")
+    errata_text = models.TextField(blank=True, null=True)
+    errata_old_text = models.TextField(blank=True, null=True)
+
+    class Meta:
+        ordering = ["card_set", "collector_number"]
+
+    def __str__(self):
+        return f"{self.name} ({self.card_id})"
+
+    @property
+    def has_errata(self):
+        return bool(self.errata_text)
 
 
 class RuleSection(models.Model):

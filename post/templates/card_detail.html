@@ -1,0 +1,120 @@
+{% extends 'base.html' %} {% load static %} {% block title %}{{ card.name }} -
+Card Details{% endblock %} {% block content %}
+<div class="container">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'card_search' %}">Card Search</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ card.name }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Card Image (Left) -->
+        <div class="col-md-5 col-lg-4 mb-4">
+            <div class="sticky-top" style="top: 20px">
+                <img
+                    src="{{ card.image_url }}"
+                    alt="{{ card.name }}"
+                    class="img-fluid rounded shadow"
+                    style="max-width: 100%; height: auto"
+                />
+            </div>
+        </div>
+
+        <!-- Card Data Table (Right) -->
+        <div class="col-md-7 col-lg-8">
+            <h2 class="mb-4">{{ card.name }}</h2>
+
+            <table class="table table-striped table-bordered">
+                <tbody>
+                    <tr>
+                        <th scope="row" style="width: 30%">Collector Number</th>
+                        <td>{{ card.collector_number }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Card Type</th>
+                        <td>{{ card.card_type }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Set</th>
+                        <td>{{ card.card_set }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Rarity</th>
+                        <td>
+                            <span
+                                class="badge {% if card.rarity == 'Common' %}bg-secondary {% elif card.rarity == 'Uncommon' %}bg-success {% elif card.rarity == 'Rare' %}bg-primary {% elif card.rarity == 'Epic' %}bg-warning text-dark {% elif card.rarity == 'Showcase' %}bg-danger {% else %}bg-dark{% endif %}"
+                            >
+                                {{ card.rarity }}
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Domain</th>
+                        <td>
+                            {% for d in card.domain.all %}
+                            <span
+                                class="badge"
+                                style="{% if d.name == 'Mind' %}background-color: #3B82F6;{% elif d.name == 'Calm' %}background-color: #22C55E;{% elif d.name == 'Order' %}background-color: #EAB308;{% elif d.name == 'Body' %}background-color: #F97316;{% elif d.name == 'Fury' %}background-color: #EF4444;{% elif d.name == 'Chaos' %}background-color: #8B5CF6;{% elif d.name == 'Colorless' %}background-color: #6B7280;{% else %}background-color: #374151;{% endif %}"
+                            >
+                                {{ d.name }}
+                            </span>
+                            {% empty %}
+                            <span class="text-muted">None</span>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Energy</th>
+                        <td>{{ card.energy }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Power</th>
+                        <td>{{ card.power }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ability</th>
+                        <td>{{ card.ability }}</td>
+                    </tr>
+                    {% if card.has_errata %}
+                    <tr class="table-warning">
+                        <th scope="row">Errata</th>
+                        <td>
+                            <span class="badge bg-warning text-dark mb-2"
+                                >This card has errata</span
+                            >
+                            <div class="mt-2">
+                                <strong>Current Text:</strong>
+                                <p class="mb-2">{{ card.errata_text }}</p>
+                                <strong>Original Text:</strong>
+                                <p class="mb-0 text-muted">
+                                    <del>{{ card.errata_old_text }}</del>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+            <div class="mt-4">
+                <a href="{% url 'card_search' %}" class="btn btn-secondary"
+                    >Back to Search</a
+                >
+                <a
+                    href="{{ card.image_url }}"
+                    target="_blank"
+                    class="btn btn-outline-primary"
+                    >View Full Image</a
+                >
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

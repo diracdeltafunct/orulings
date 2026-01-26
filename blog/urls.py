@@ -24,6 +24,8 @@ from django.urls import re_path as url
 
 from post.views import (
     blog_index,
+    card_detail,
+    card_search,
     contact,
     crsection_detail,
     post_detail,
@@ -46,6 +48,8 @@ urlpatterns = [
     path("secretadminlogin/", secret_login, name="secret_login"),
     path("api/save-annotation/", save_annotation, name="save_annotation"),
     path("contact/", contact, name="contact"),
+    path("cards/", card_search, name="card_search"),
+    path("cards/<str:card_id>/", card_detail, name="card_detail"),
 ]
 
 if settings.DEBUG:

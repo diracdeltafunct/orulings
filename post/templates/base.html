@@ -1,5 +1,5 @@
 {% load static %}
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
     <head>
         <!-- Google tag (gtag.js) -->
         <script
@@ -81,9 +81,21 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarScroll">
+                    <!-- Theme Toggle -->
+                    <div class="ms-auto me-3">
+                        <select
+                            class="form-select form-select-sm"
+                            id="themeToggle"
+                            aria-label="Theme selector"
+                        >
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+
                     <!-- Place form inside the collapsed content -->
                     <form
-                        class="d-flex ms-auto"
+                        class="d-flex"
                         method="GET"
                         action="{% url 'search_rules' %}"
                     >
@@ -121,5 +133,24 @@
             <!-- Default or shared content goes here, if any -->
             {% endblock %}
         </main>
+        <!-- Theme Toggle Script -->
+        <script>
+            (function () {
+                const themeToggle = document.getElementById("themeToggle");
+                const html = document.documentElement;
+
+                // Load saved theme or default to dark
+                const savedTheme = localStorage.getItem("theme") || "dark";
+                html.setAttribute("data-bs-theme", savedTheme);
+                themeToggle.value = savedTheme;
+
+                // Handle theme change
+                themeToggle.addEventListener("change", function () {
+                    const theme = this.value;
+                    html.setAttribute("data-bs-theme", theme);
+                    localStorage.setItem("theme", theme);
+                });
+            })();
+        </script>
     </body>
 </html>

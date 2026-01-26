@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Card Search{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Card Search</h2>
+
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'card_search' %}" class="mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="row g-3">
+                    <!-- Name -->
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Card Name</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                               value="{{ filter_name }}" placeholder="Search by name...">
+                    </div>
+
+                    <!-- Ability Text -->
+                    <div class="col-md-6">
+                        <label for="ability" class="form-label">Ability Text</label>
+                        <input type="text" class="form-control" id="ability" name="ability"
+                               value="{{ filter_ability }}" placeholder="Search in ability text...">
+                    </div>
+
+                    <!-- Card Type -->
+                    <div class="col-md-4">
+                        <label for="card_type" class="form-label">Card Type</label>
+                        <select class="form-select" id="card_type" name="card_type">
+                            <option value="">All Types</option>
+                            <option value="Legend" {% if filter_card_type == "Legend" %}selected{% endif %}>Legend</option>
+                            <option value="Unit" {% if filter_card_type == "Unit" %}selected{% endif %}>Unit</option>
+                            <option value="Spell" {% if filter_card_type == "Spell" %}selected{% endif %}>Spell</option>
+                            <option value="Gear" {% if filter_card_type == "Gear" %}selected{% endif %}>Gear</option>
+                            <option value="Rune" {% if filter_card_type == "Rune" %}selected{% endif %}>Rune</option>
+                            <option value="Battlefield" {% if filter_card_type == "Battlefield" %}selected{% endif %}>Battlefield</option>
+                        </select>
+                    </div>
+
+                    <!-- Card Set -->
+                    <div class="col-md-4">
+                        <label for="card_set" class="form-label">Set</label>
+                        <select class="form-select" id="card_set" name="card_set">
+                            <option value="">All Sets</option>
+                            <option value="Origins" {% if filter_card_set == "Origins" %}selected{% endif %}>Origins</option>
+                            <option value="Spiritforged" {% if filter_card_set == "Spiritforged" %}selected{% endif %}>Spiritforged</option>
+                            <option value="Proving Grounds" {% if filter_card_set == "Proving Grounds" %}selected{% endif %}>Proving Grounds</option>
+                        </select>
+                    </div>
+
+                    <!-- Rarity -->
+                    <div class="col-md-4">
+                        <label for="rarity" class="form-label">Rarity</label>
+                        <select class="form-select" id="rarity" name="rarity">
+                            <option value="">All Rarities</option>
+                            <option value="Common" {% if filter_rarity == "Common" %}selected{% endif %}>Common</option>
+                            <option value="Uncommon" {% if filter_rarity == "Uncommon" %}selected{% endif %}>Uncommon</option>
+                            <option value="Rare" {% if filter_rarity == "Rare" %}selected{% endif %}>Rare</option>
+                            <option value="Epic" {% if filter_rarity == "Epic" %}selected{% endif %}>Epic</option>
+                            <option value="Showcase" {% if filter_rarity == "Showcase" %}selected{% endif %}>Showcase</option>
+                        </select>
+                    </div>
+
+                    <!-- Domain -->
+                    <div class="col-md-4">
+                        <label for="domain" class="form-label">Domain</label>
+                        <select class="form-select" id="domain" name="domain">
+                            <option value="">All Domains</option>
+                            {% for d in domains %}
+                            <option value="{{ d.name }}" {% if filter_domain == d.name %}selected{% endif %}>{{ d.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Energy Range -->
+                    <div class="col-md-2">
+                        <label for="energy_min" class="form-label">Energy Min</label>
+                        <input type="number" class="form-control" id="energy_min" name="energy_min"
+                               value="{{ filter_energy_min }}" min="0" max="20">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="energy_max" class="form-label">Energy Max</label>
+                        <input type="number" class="form-control" id="energy_max" name="energy_max"
+                               value="{{ filter_energy_max }}" min="0" max="20">
+                    </div>
+
+                    <!-- Power Range -->
+                    <div class="col-md-2">
+                        <label for="power_min" class="form-label">Power Min</label>
+                        <input type="number" class="form-control" id="power_min" name="power_min"
+                               value="{{ filter_power_min }}" min="0" max="20">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="power_max" class="form-label">Power Max</label>
+                        <input type="number" class="form-control" id="power_max" name="power_max"
+                               value="{{ filter_power_max }}" min="0" max="20">
+                    </div>
+
+                    <!-- Has Errata -->
+                    <div class="col-md-4">
+                        <label for="has_errata" class="form-label">Has Errata</label>
+                        <select class="form-select" id="has_errata" name="has_errata">
+                            <option value="">Any</option>
+                            <option value="yes" {% if filter_has_errata == "yes" %}selected{% endif %}>Yes</option>
+                            <option value="no" {% if filter_has_errata == "no" %}selected{% endif %}>No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        <a href="{% url 'card_search' %}" class="btn btn-secondary">Clear</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Results -->
+    {% if search_performed %}
+        <p class="text-muted mb-3">Found {{ result_count }} card{{ result_count|pluralize }}</p>
+
+        {% if cards %}
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3">
+                {% for card in cards %}
+                <div class="col">
+                    <a href="{% url 'card_detail' card_id=card.card_id %}" class="text-decoration-none">
+                        <div class="card h-100 card-hover">
+                            <img src="{{ card.image_url }}" class="card-img-top" alt="{{ card.name }}"
+                                 loading="lazy" style="aspect-ratio: 3/4; object-fit: cover;">
+                            <div class="card-body p-2">
+                                <p class="card-text text-center small mb-0 text-truncate" title="{{ card.name }}">
+                                    {{ card.name }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                No cards found matching your search criteria.
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-secondary">
+            Use the filters above to search for cards.
+        </div>
+    {% endif %}
+
+    <div class="mt-4">
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+</div>
+
+<style>
+    .card-hover {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+</style>
+{% endblock %}

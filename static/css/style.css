@@ -1,9 +1,19 @@
 :root {
-    --custom-primary: #3498db;     
-    --custom-secondary:rgb(119, 119, 119);   
-    --custom-body-color: #fff;
-    --custom-main-color: #000000;
+    --custom-primary: #3498db;
+    --custom-secondary: rgb(119, 119, 119);
     --custom-navbar-color: #303030;
+}
+
+/* Dark theme (default) */
+[data-bs-theme="dark"] {
+    --custom-body-color: #212529;
+    --custom-main-color: #ffffff;
+}
+
+/* Light theme */
+[data-bs-theme="light"] {
+    --custom-body-color: #ffffff;
+    --custom-main-color: #000000;
 }
 
 .navbar {
@@ -17,12 +27,12 @@ body {
 
 .btn-primary {
     background-color: var(--custom-primary);
-    border-color: var(--custom-primary); 
-    color: #fff; 
+    border-color: var(--custom-primary);
+    color: #fff;
 }
 
 .btn-secondary {
     background-color: var(--custom-secondary);
     border-color: var(--custom-secondary);
-    color: #fff; 
+    color: #fff;
 }
