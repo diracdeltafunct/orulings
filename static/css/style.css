@@ -36,3 +36,25 @@ body {
     border-color: var(--custom-secondary);
     color: #fff;
 }
+
+/* Annotation boxes - always black text */
+.annotation-display {
+    color: #000000 !important;
+}
+
+.annotation-display * {
+    color: #000000 !important;
+}
+
+/* Quill editor - always black text */
+.ql-editor {
+    color: #000000 !important;
+}
+
+.ql-editor * {
+    color: #000000 !important;
+}
+
+.ql-container {
+    color: #000000 !important;
+}
