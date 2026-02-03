@@ -49,19 +49,44 @@ def get_webpage_text(url):
     text = "\n".join(chunk for chunk in chunks if chunk)
 
     # Split on section numbers that might be concatenated (e.g., "text100. Introduction")
-    # Only split on 3-digit numbers followed by period and capital letter (start of title)
-    # BUT: Don't split if preceded by "CR " (Core Rules reference)
-    # This avoids splitting subsections like "703.500" and CR references like "CR 127. Privacy"
+    # Need to handle both top-level (100.) and subsections (601.1., 601.1.a., 601.1.a.1.)
+    # BUT: Don't split if preceded by "CR ", "section ", or "See " (references)
 
-    # First, protect CR references by temporarily replacing them
-    # Handle both "CR 127. Privacy" and "CR 127.\n Privacy" (with newlines/whitespace)
+    # First, protect references by temporarily replacing them
+    # CR references like "CR 127. Privacy"
     text = re.sub(r"CR\s+(\d{3})\.", r"CR_REF_\1_DOT", text)
+    # "section 700." references
+    text = re.sub(r"section\s+(\d{3})\.", r"section_REF_\1_DOT", text)
+    # "See 602.3.d." or "see 602.3.d." references (with optional subsections)
+    text = re.sub(
+        r"[Ss]ee\s+(\d{3}(?:\.\d+)*(?:\.[a-z])?(?:\.\d+)*)\.",
+        r"see_REF_\1_DOT",
+        text,
+    )
 
-    # Now split on section numbers
-    text = re.sub(r"(\D)(\d{3})\.\s+([A-Z])", r"\1\n\2. \3", text)
+    # Split on subsection numbers like 601.1. or 601.1.a. or 601.1.a.1.
+    # Pattern: 3 digits, then zero or more (.digit or .letter) groups, then ". " and content
+    # Use word boundary or non-digit to avoid splitting mid-number, but allow after short numbers like "2v2"
+    # First pass: split where preceded by non-digit
+    text = re.sub(
+        r"(\D)(\d{3}(?:\.\d+)*(?:\.[a-z])?(?:\.\d+)*)\.\s+", r"\1\n\2. ", text
+    )
+    # Second pass: split concatenated sections like "2v2603.1." where a single digit precedes a 3-digit section
+    # Only match if it's clearly a new section (3 digits starting with pattern like X00 or has dots)
+    text = re.sub(r"(\d)(\d{3}\.\d+(?:\.[a-z])?(?:\.\d+)*)\.\s+", r"\1\n\2. ", text)
+    # Third pass: handle top-level sections after patterns like ".5.603." (subsection ending, new section starting)
+    # The source sometimes has "602.4.b.5.603." where 603 should be a new section
+    # Match: .digit. followed by 3-digit section number (the extra dot before the section)
+    text = re.sub(r"(\.\d)\.(\d{3})\.\s+", r"\1\n\2. ", text)
 
-    # Restore CR references
+    # Restore protected references
     text = re.sub(r"CR_REF_(\d{3})_DOT", r"CR \1.", text)
+    text = re.sub(r"section_REF_(\d{3})_DOT", r"section \1.", text)
+    text = re.sub(
+        r"see_REF_(\d{3}(?:\.\d+)*(?:\.[a-z])?(?:\.\d+)*)_DOT",
+        r"see \1.",
+        text,
+    )
 
     # Join continuation lines (lines starting with lowercase) with previous line
     lines = text.splitlines()
@@ -152,15 +177,16 @@ def parse_lines_to_objects(text):
         parts = section.split(".")
 
         if len(parts) == 1:
-            # Single number like "100", "101", "200"
+            # Single number like "000", "001", "100", "101", "200"
             section_num = int(section)
             if section_num % 100 == 0:
-                # Top-level section (100, 200, 300, etc.)
+                # Top-level section (000, 100, 200, 300, etc.)
                 top_level_lines.append(line_obj)
             else:
-                # Subsection of the nearest hundred (e.g., 101 is child of 100)
+                # Subsection of the nearest hundred (e.g., 001 is child of 000, 101 is child of 100)
                 parent_num = (section_num // 100) * 100
-                parent_section = str(parent_num)
+                # Preserve leading zeros (e.g., 0 -> "000", 100 -> "100")
+                parent_section = f"{parent_num:03d}"
                 if parent_section in section_map:
                     section_map[parent_section].children.append(line_obj)
                 else:
@@ -205,7 +231,18 @@ def save_lines_to_files(
         }
 
     # Save each top-level line with all its children to one file
+    # Only save true top-level sections (3-digit numbers ending in 00, like 000, 100, 200)
     for line in lines:
+        # Skip orphaned sections that aren't true top-level
+        if "." in line.section:
+            continue  # Has dots, not a top-level section
+        try:
+            section_num = int(line.section)
+            if section_num % 100 != 0:
+                continue  # Not ending in 00, skip
+        except ValueError:
+            continue  # Not a number, skip
+
         line_dict = line_to_dict(line)
 
         # Save to file named by top-level section number
