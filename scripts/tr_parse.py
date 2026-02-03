@@ -7,7 +7,14 @@ from typing import List
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://riftbound.leagueoflegends.com/en-us/news/organizedplay/riftbound-tournament-rules/"
+# Original tournament rules URL
+ORIGINAL_URL = "https://riftbound.leagueoflegends.com/en-us/news/organizedplay/riftbound-tournament-rules/"
+
+# January 2026 update URL
+JANUARY_UPDATE_URL = "https://riftbound.leagueoflegends.com/en-us/news/announcements/tournament-rules-january-update/"
+
+# Default URL for backwards compatibility
+url = ORIGINAL_URL
 
 
 def get_webpage_text(url):
@@ -281,19 +288,77 @@ def load_all_lines(input_dir: str = "../staticfiles/trsections") -> List[Line]:
     return lines
 
 
-if __name__ == "__main__":
-    # Fetch and parse the webpage
+def parse_and_save(url: str, output_dir: str, description: str = ""):
+    """
+    Fetches, parses, and saves tournament rules from a URL.
+
+    Args:
+        url: The URL to fetch rules from
+        output_dir: Directory path relative to script location to save JSON files
+        description: Optional description for logging
+    """
+    print(f"Fetching rules from: {url}")
+    if description:
+        print(f"Description: {description}")
+
     text = get_webpage_text(url)
     lines = parse_lines_to_objects(text)
 
-    # Save to files
-    print(f"Saving {len(lines)} top-level sections...")
-    save_lines_to_files(lines)
+    print(f"Saving {len(lines)} top-level sections to {output_dir}...")
+    save_lines_to_files(lines, output_dir)
     print("Saved successfully!")
+
+    # Show summary
+    print(f"\nParsed sections:")
+    for line in lines:
+        child_count = len(line.children)
+        print(
+            f"  {line.section}. {line.text[:50]}{'...' if len(line.text) > 50 else ''} ({child_count} children)"
+        )
+
+    return lines
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Parse Riftbound Tournament Rules")
+    parser.add_argument(
+        "--january-update",
+        action="store_true",
+        help="Parse the January 2026 update instead of the original rules",
+    )
+    parser.add_argument(
+        "--url", type=str, help="Custom URL to parse (overrides other options)"
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        help="Custom output directory (relative to script location)",
+    )
+
+    args = parser.parse_args()
+
+    # Determine URL and output directory
+    if args.url:
+        target_url = args.url
+        output_dir = args.output_dir or "../staticfiles/trsections_custom"
+        description = "Custom URL"
+    elif args.january_update:
+        target_url = JANUARY_UPDATE_URL
+        output_dir = args.output_dir or "../staticfiles/trsections_january_2026"
+        description = "January 2026 Tournament Rules Update"
+    else:
+        target_url = ORIGINAL_URL
+        output_dir = args.output_dir or "../staticfiles/trsections"
+        description = "Original Tournament Rules"
+
+    # Parse and save
+    lines = parse_and_save(target_url, output_dir, description)
 
     # Test loading back
     print("\nLoading back from files...")
-    loaded_lines = load_all_lines()
+    loaded_lines = load_all_lines(output_dir)
     print(f"Loaded {len(loaded_lines)} top-level sections")
 
     # Show first section as example
