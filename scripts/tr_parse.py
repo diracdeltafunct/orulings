@@ -309,6 +309,9 @@ def load_all_lines(input_dir: str = "../staticfiles/trsections") -> List[Line]:
     top_level_sections = []
     for filename in json_files:
         section = filename.replace(".json", "")
+        # Skip metadata file
+        if section == "metadata":
+            continue
         # Top-level sections have no dots (e.g., "100", "200") or only digits before first dot
         if "." not in section:
             top_level_sections.append(section)
@@ -323,6 +326,31 @@ def load_all_lines(input_dir: str = "../staticfiles/trsections") -> List[Line]:
         lines.append(line)
 
     return lines
+
+
+def save_metadata(output_dir: str, url: str):
+    """
+    Saves metadata including the current date and source URL.
+
+    Args:
+        output_dir: Directory path relative to script location
+        url: The source URL that was parsed
+    """
+    from datetime import date
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    abs_output_dir = os.path.join(script_dir, output_dir)
+
+    metadata = {
+        "last_updated": date.today().isoformat(),
+        "source_url": url,
+    }
+
+    filepath = os.path.join(abs_output_dir, "metadata.json")
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(metadata, f, indent=2, ensure_ascii=False)
+
+    print(f"Saved metadata: last_updated={metadata['last_updated']}")
 
 
 def parse_and_save(url: str, output_dir: str, description: str = ""):
@@ -343,6 +371,7 @@ def parse_and_save(url: str, output_dir: str, description: str = ""):
 
     print(f"Saving {len(lines)} top-level sections to {output_dir}...")
     save_lines_to_files(lines, output_dir)
+    save_metadata(output_dir, url)
     print("Saved successfully!")
 
     # Show summary

@@ -101,6 +101,8 @@ def blog_index(request):
         "copyright_asset": copyright_asset,
         "trsections": trsections,
         "crsections": crsections,
+        "tr_last_updated": get_rules_last_updated("TR"),
+        "cr_last_updated": get_rules_last_updated("CR"),
     }
     return render(request, "blog_index.html", context)
 
@@ -182,6 +184,27 @@ def format_section_text(section_data, section_type="tr"):
     return section_data
 
 
+def get_rules_last_updated(rule_type):
+    """Get the last updated date from rules metadata file."""
+    import os
+
+    if rule_type == "TR":
+        metadata_path = os.path.join(
+            settings.BASE_DIR, "staticfiles/trsections_january_2026/metadata.json"
+        )
+    else:
+        metadata_path = os.path.join(
+            settings.BASE_DIR, "staticfiles/crsections/metadata.json"
+        )
+
+    try:
+        with open(metadata_path, "r", encoding="utf-8") as f:
+            metadata = json.load(f)
+            return metadata.get("last_updated", "Unknown")
+    except (FileNotFoundError, json.JSONDecodeError):
+        return "Unknown"
+
+
 def trsection_detail(request, section):
     """
     Displays a tournament rules section with links to its immediate children.
@@ -225,6 +248,7 @@ def trsection_detail(request, section):
         "parent_section": parent_section,
         "logo_asset": logo_asset,
         "copyright_asset": copyright_asset,
+        "last_updated": get_rules_last_updated("TR"),
     }
 
     return render(request, "trsection_detail.html", context)
@@ -273,6 +297,7 @@ def crsection_detail(request, section):
         "parent_section": parent_section,
         "logo_asset": logo_asset,
         "copyright_asset": copyright_asset,
+        "last_updated": get_rules_last_updated("CR"),
     }
 
     return render(request, "crsection_detail.html", context)
