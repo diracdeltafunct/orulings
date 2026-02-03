@@ -7,7 +7,14 @@ from typing import List
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://riftbound.leagueoflegends.com/en-us/news/organizedplay/riftbound-tournament-rules/"
+# Original tournament rules URL
+ORIGINAL_URL = "https://riftbound.leagueoflegends.com/en-us/news/organizedplay/riftbound-tournament-rules/"
+
+# January 2026 update URL
+JANUARY_UPDATE_URL = "https://riftbound.leagueoflegends.com/en-us/news/announcements/tournament-rules-january-update/"
+
+# Default URL for backwards compatibility
+url = ORIGINAL_URL
 
 
 def get_webpage_text(url):
@@ -42,19 +49,44 @@ def get_webpage_text(url):
     text = "\n".join(chunk for chunk in chunks if chunk)
 
     # Split on section numbers that might be concatenated (e.g., "text100. Introduction")
-    # Only split on 3-digit numbers followed by period and capital letter (start of title)
-    # BUT: Don't split if preceded by "CR " (Core Rules reference)
-    # This avoids splitting subsections like "703.500" and CR references like "CR 127. Privacy"
+    # Need to handle both top-level (100.) and subsections (601.1., 601.1.a., 601.1.a.1.)
+    # BUT: Don't split if preceded by "CR ", "section ", or "See " (references)
 
-    # First, protect CR references by temporarily replacing them
-    # Handle both "CR 127. Privacy" and "CR 127.\n Privacy" (with newlines/whitespace)
+    # First, protect references by temporarily replacing them
+    # CR references like "CR 127. Privacy"
     text = re.sub(r"CR\s+(\d{3})\.", r"CR_REF_\1_DOT", text)
+    # "section 700." references
+    text = re.sub(r"section\s+(\d{3})\.", r"section_REF_\1_DOT", text)
+    # "See 602.3.d." or "see 602.3.d." references (with optional subsections)
+    text = re.sub(
+        r"[Ss]ee\s+(\d{3}(?:\.\d+)*(?:\.[a-z])?(?:\.\d+)*)\.",
+        r"see_REF_\1_DOT",
+        text,
+    )
 
-    # Now split on section numbers
-    text = re.sub(r"(\D)(\d{3})\.\s+([A-Z])", r"\1\n\2. \3", text)
+    # Split on subsection numbers like 601.1. or 601.1.a. or 601.1.a.1.
+    # Pattern: 3 digits, then zero or more (.digit or .letter) groups, then ". " and content
+    # Use word boundary or non-digit to avoid splitting mid-number, but allow after short numbers like "2v2"
+    # First pass: split where preceded by non-digit
+    text = re.sub(
+        r"(\D)(\d{3}(?:\.\d+)*(?:\.[a-z])?(?:\.\d+)*)\.\s+", r"\1\n\2. ", text
+    )
+    # Second pass: split concatenated sections like "2v2603.1." where a single digit precedes a 3-digit section
+    # Only match if it's clearly a new section (3 digits starting with pattern like X00 or has dots)
+    text = re.sub(r"(\d)(\d{3}\.\d+(?:\.[a-z])?(?:\.\d+)*)\.\s+", r"\1\n\2. ", text)
+    # Third pass: handle top-level sections after patterns like ".5.603." (subsection ending, new section starting)
+    # The source sometimes has "602.4.b.5.603." where 603 should be a new section
+    # Match: .digit. followed by 3-digit section number (the extra dot before the section)
+    text = re.sub(r"(\.\d)\.(\d{3})\.\s+", r"\1\n\2. ", text)
 
-    # Restore CR references
+    # Restore protected references
     text = re.sub(r"CR_REF_(\d{3})_DOT", r"CR \1.", text)
+    text = re.sub(r"section_REF_(\d{3})_DOT", r"section \1.", text)
+    text = re.sub(
+        r"see_REF_(\d{3}(?:\.\d+)*(?:\.[a-z])?(?:\.\d+)*)_DOT",
+        r"see \1.",
+        text,
+    )
 
     # Join continuation lines (lines starting with lowercase) with previous line
     lines = text.splitlines()
@@ -145,15 +177,16 @@ def parse_lines_to_objects(text):
         parts = section.split(".")
 
         if len(parts) == 1:
-            # Single number like "100", "101", "200"
+            # Single number like "000", "001", "100", "101", "200"
             section_num = int(section)
             if section_num % 100 == 0:
-                # Top-level section (100, 200, 300, etc.)
+                # Top-level section (000, 100, 200, 300, etc.)
                 top_level_lines.append(line_obj)
             else:
-                # Subsection of the nearest hundred (e.g., 101 is child of 100)
+                # Subsection of the nearest hundred (e.g., 001 is child of 000, 101 is child of 100)
                 parent_num = (section_num // 100) * 100
-                parent_section = str(parent_num)
+                # Preserve leading zeros (e.g., 0 -> "000", 100 -> "100")
+                parent_section = f"{parent_num:03d}"
                 if parent_section in section_map:
                     section_map[parent_section].children.append(line_obj)
                 else:
@@ -198,7 +231,18 @@ def save_lines_to_files(
         }
 
     # Save each top-level line with all its children to one file
+    # Only save true top-level sections (3-digit numbers ending in 00, like 000, 100, 200)
     for line in lines:
+        # Skip orphaned sections that aren't true top-level
+        if "." in line.section:
+            continue  # Has dots, not a top-level section
+        try:
+            section_num = int(line.section)
+            if section_num % 100 != 0:
+                continue  # Not ending in 00, skip
+        except ValueError:
+            continue  # Not a number, skip
+
         line_dict = line_to_dict(line)
 
         # Save to file named by top-level section number
@@ -281,19 +325,77 @@ def load_all_lines(input_dir: str = "../staticfiles/trsections") -> List[Line]:
     return lines
 
 
-if __name__ == "__main__":
-    # Fetch and parse the webpage
+def parse_and_save(url: str, output_dir: str, description: str = ""):
+    """
+    Fetches, parses, and saves tournament rules from a URL.
+
+    Args:
+        url: The URL to fetch rules from
+        output_dir: Directory path relative to script location to save JSON files
+        description: Optional description for logging
+    """
+    print(f"Fetching rules from: {url}")
+    if description:
+        print(f"Description: {description}")
+
     text = get_webpage_text(url)
     lines = parse_lines_to_objects(text)
 
-    # Save to files
-    print(f"Saving {len(lines)} top-level sections...")
-    save_lines_to_files(lines)
+    print(f"Saving {len(lines)} top-level sections to {output_dir}...")
+    save_lines_to_files(lines, output_dir)
     print("Saved successfully!")
+
+    # Show summary
+    print(f"\nParsed sections:")
+    for line in lines:
+        child_count = len(line.children)
+        print(
+            f"  {line.section}. {line.text[:50]}{'...' if len(line.text) > 50 else ''} ({child_count} children)"
+        )
+
+    return lines
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Parse Riftbound Tournament Rules")
+    parser.add_argument(
+        "--january-update",
+        action="store_true",
+        help="Parse the January 2026 update instead of the original rules",
+    )
+    parser.add_argument(
+        "--url", type=str, help="Custom URL to parse (overrides other options)"
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        help="Custom output directory (relative to script location)",
+    )
+
+    args = parser.parse_args()
+
+    # Determine URL and output directory
+    if args.url:
+        target_url = args.url
+        output_dir = args.output_dir or "../staticfiles/trsections_custom"
+        description = "Custom URL"
+    elif args.january_update:
+        target_url = JANUARY_UPDATE_URL
+        output_dir = args.output_dir or "../staticfiles/trsections_january_2026"
+        description = "January 2026 Tournament Rules Update"
+    else:
+        target_url = ORIGINAL_URL
+        output_dir = args.output_dir or "../staticfiles/trsections"
+        description = "Original Tournament Rules"
+
+    # Parse and save
+    lines = parse_and_save(target_url, output_dir, description)
 
     # Test loading back
     print("\nLoading back from files...")
-    loaded_lines = load_all_lines()
+    loaded_lines = load_all_lines(output_dir)
     print(f"Loaded {len(loaded_lines)} top-level sections")
 
     # Show first section as example

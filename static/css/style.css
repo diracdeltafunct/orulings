@@ -20,11 +20,6 @@
     background-color: var(--custom-navbar-color);
 }
 
-body {
-    color: var(--custom-main-color);
-    background-color: var(--custom-body-color);
-}
-
 .btn-primary {
     background-color: var(--custom-primary);
     border-color: var(--custom-primary);
