@@ -1,5 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block title %}{{ card.name }} -
-Card Details{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% load card_filters %}
+{% block title %}{{ card.name }} - Card Details{% endblock %}
+{% block content %}
 <div class="container">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-4">
@@ -80,7 +83,7 @@ Card Details{% endblock %} {% block content %}
                     </tr>
                     <tr>
                         <th scope="row">Ability</th>
-                        <td>{{ card.ability }}</td>
+                        <td>{{ card.ability|replace_keywords }}</td>
                     </tr>
                     {% if card.has_errata %}
                     <tr class="table-warning">
