@@ -62,13 +62,15 @@ A Django web application for browsing Riftbound card game rules and cards. Featu
    python manage.py runserver
    ```
 
-## Restarting in Production
+## Redeploying in Production
 
-To restart the application on the server:
+Run the redeploy script, which backs up the database, collects static files, and restarts gunicorn:
 
 ```
-sudo systemctl restart gunicorn
+./redeploy.sh
 ```
+
+Database backups are saved to `backups/` with a timestamp.
 
 ## Project Structure
 

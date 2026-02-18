@@ -137,3 +137,4 @@ db.sqlite3
 cards/
 
 .claude/
+backups/
