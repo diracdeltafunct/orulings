@@ -127,9 +127,13 @@ def linkify_references(text, section_type="tr"):
         Text with references converted to HTML links
     """
     # Handle CR references (e.g., "See CR 127" or "CR 127.")
+    if section_type == "cr_single":
+        cr_link = r'<a href="#rule-\1">CR \1</a>'
+    else:
+        cr_link = r'<a href="/crsections/\1/">CR \1</a>'
     text = re.sub(
         r"\bCR\s+(\d{3}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\b\.?",
-        r'<a href="/crsections/\1/">CR \1</a>',
+        cr_link,
         text,
     )
 
@@ -137,16 +141,25 @@ def linkify_references(text, section_type="tr"):
     # Match patterns like "See 402", "see 703.4.a", "rule 318", etc.
     if section_type == "tr":
         base_url = "/trsections/"
+    elif section_type == "cr_single":
+        base_url = None
     else:
         base_url = "/crsections/"
 
     # Match section numbers that appear after words like "See", "see", "rule", "Rule", "section", "Section"
     # or standalone section numbers that look like references
-    text = re.sub(
-        r"\b(See|see|rule|Rule|section|Section)\s+(\d{3}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\b",
-        rf'\1 <a href="{base_url}\2/">\2</a>',
-        text,
-    )
+    if base_url is None:
+        text = re.sub(
+            r"\b(See|see|rule|Rule|section|Section)\s+(\d{3}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\b",
+            r'\1 <a href="#rule-\2">\2</a>',
+            text,
+        )
+    else:
+        text = re.sub(
+            r"\b(See|see|rule|Rule|section|Section)\s+(\d{3}(?:\.\d+)*(?:\.[a-zA-Z])?(?:\.\d+)*)\b",
+            rf'\1 <a href="{base_url}\2/">\2</a>',
+            text,
+        )
 
     return text
 
@@ -301,6 +314,33 @@ def crsection_detail(request, section):
     }
 
     return render(request, "crsection_detail.html", context)
+
+
+def core_rules(request):
+    """
+    Single-page view for all Comprehensive Rules with anchor navigation.
+    """
+    top_level_sections = RuleSection.objects.filter(
+        rule_type="CR", parent__isnull=True
+    ).prefetch_related("children__children__children__children")
+
+    sections = []
+    for section_obj in top_level_sections:
+        data = section_obj.to_dict()
+        data = format_section_text(data, section_type="cr_single")
+        sections.append(data)
+
+    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
+    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
+
+    context = {
+        "sections": sections,
+        "logo_asset": logo_asset,
+        "copyright_asset": copyright_asset,
+        "last_updated": get_rules_last_updated("CR"),
+    }
+
+    return render(request, "core_rules.html", context)
 
 
 def secret_login(request):

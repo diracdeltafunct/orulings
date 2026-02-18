@@ -135,3 +135,5 @@ dmypy.json
 secrets.json
 db.sqlite3
 cards/
+
+.claude/

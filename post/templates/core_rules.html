@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Core Rules - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Core Rules</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <h1 class="mb-2">Core Rules</h1>
+            <p class="text-muted mb-4">Last Updated: {{ last_updated }}</p>
+
+            {% for section in sections %}
+            <!-- Top-level section -->
+            <div id="rule-{{ section.section }}" class="cr-rule cr-top-level mb-4">
+                <h2 class="cr-section-heading">
+                    <a href="#rule-{{ section.section }}" class="cr-permalink" title="Link to this rule">#</a>
+                    {{ section.section }}. {{ section.text|safe }}
+                </h2>
+                {% if section.annotations %}
+                <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                    {{ section.annotations|safe }}
+                </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Edit</button>
+                <div id="editor-container-{{ section.section }}" class="editor-container" style="display: none;" data-annotation="{{ section.annotations }}">
+                    <div id="editor-{{ section.section }}" class="mb-2"></div>
+                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Save</button>
+                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ section.section }}">Cancel</button>
+                </div>
+                {% endif %}
+
+                {% for child in section.children %}
+                <!-- Child section -->
+                <div id="rule-{{ child.section }}" class="cr-rule cr-child ps-2 py-2 border-bottom">
+                    <div class="d-flex align-items-start">
+                        <a href="#rule-{{ child.section }}" class="cr-permalink me-2" title="Link to this rule">#</a>
+                        <div class="flex-grow-1">
+                            <strong class="cr-rule-number">{{ child.section }}.</strong> {{ child.text|safe }}
+                            {% if child.annotations %}
+                            <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                {{ child.annotations|safe }}
+                            </div>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Edit</button>
+                            <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
+                                <div id="editor-{{ child.section }}" class="mb-2"></div>
+                                <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
+                                <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
+                            </div>
+                            {% endif %}
+
+                            {% for subchild in child.children %}
+                            <!-- Subchild section -->
+                            <div id="rule-{{ subchild.section }}" class="cr-rule cr-subchild ps-3 py-1">
+                                <div class="d-flex align-items-start">
+                                    <a href="#rule-{{ subchild.section }}" class="cr-permalink me-2" title="Link to this rule">#</a>
+                                    <div class="flex-grow-1">
+                                        <strong class="cr-rule-number">{{ subchild.section }}.</strong> {{ subchild.text|safe }}
+                                        {% if subchild.annotations %}
+                                        <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                            {{ subchild.annotations|safe }}
+                                        </div>
+                                        {% endif %}
+                                        {% if user.is_authenticated %}
+                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Edit</button>
+                                        <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
+                                            <div id="editor-{{ subchild.section }}" class="mb-2"></div>
+                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Save</button>
+                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
+                                        </div>
+                                        {% endif %}
+
+                                        {% for leaf in subchild.children %}
+                                        <!-- Leaf section -->
+                                        <div id="rule-{{ leaf.section }}" class="cr-rule cr-leaf ps-3 py-1">
+                                            <div class="d-flex align-items-start">
+                                                <a href="#rule-{{ leaf.section }}" class="cr-permalink me-2" title="Link to this rule">#</a>
+                                                <div class="flex-grow-1">
+                                                    <strong class="cr-rule-number">{{ leaf.section }}.</strong> {{ leaf.text|safe }}
+                                                    {% if leaf.annotations %}
+                                                    <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                                        {{ leaf.annotations|safe }}
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+
+            <div class="mt-4 mb-5">
+                <a href="/" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+
+        <!-- Sticky TOC Sidebar -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="cr-toc sticky-top" style="top: 80px;">
+                <h6 class="text-muted text-uppercase mb-3">On this page</h6>
+                <nav class="nav flex-column">
+                    {% for section in sections %}
+                    <a class="nav-link cr-toc-link px-0 py-1" href="#rule-{{ section.section }}">
+                        {{ section.section }}. {{ section.text|striptags|truncatewords:6 }}
+                    </a>
+                    {% endfor %}
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  /* Anchor scroll offset for fixed navbar */
+  [id^="rule-"] {
+    scroll-margin-top: 80px;
+  }
+
+  /* Permalink styling */
+  .cr-permalink {
+    color: var(--bs-secondary-color);
+    text-decoration: none;
+    font-size: 0.85em;
+    opacity: 0;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+  .cr-rule:hover > .cr-permalink,
+  .cr-rule:hover > .d-flex > .cr-permalink,
+  .cr-section-heading:hover > .cr-permalink {
+    opacity: 1;
+  }
+  .cr-permalink:hover {
+    color: var(--custom-primary);
+    opacity: 1;
+  }
+
+  /* Section heading */
+  .cr-section-heading {
+    border-bottom: 2px solid var(--bs-border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* TOC sidebar */
+  .cr-toc {
+    padding: 1rem;
+    border-left: 2px solid var(--bs-border-color);
+  }
+  .cr-toc-link {
+    font-size: 0.9rem;
+    color: var(--bs-body-color);
+  }
+  .cr-toc-link:hover {
+    color: var(--custom-primary);
+  }
+
+  /* Rule number highlight */
+  .cr-rule-number {
+    color: #4169e1;
+  }
+
+  /* Editor (reuse from existing) */
+  .editor-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  .editor-container > div[id^="editor-"] {
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  .ql-toolbar {
+    background-color: #f8f9fa;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .ql-container {
+    min-height: 200px;
+    background-color: white;
+    font-size: 14px;
+  }
+  .edit-annotation-btn {
+    height: 31px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+</style>
+
+<script>
+  const quillEditors = {};
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".edit-annotation-btn").forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        const section = this.getAttribute("data-section");
+        const editorContainer = document.getElementById("editor-container-" + section);
+
+        if (editorContainer.style.display === "none" || editorContainer.style.display === "") {
+          editorContainer.style.display = "block";
+
+          if (!quillEditors[section]) {
+            quillEditors[section] = new Quill(document.getElementById("editor-" + section), {
+              theme: "snow",
+              placeholder: "Add your annotation here...",
+              modules: {
+                toolbar: [
+                  ["bold", "italic", "underline", "strike"],
+                  ["blockquote", "code-block"],
+                  [{ list: "ordered" }, { list: "bullet" }],
+                  [{ header: [1, 2, 3, false] }],
+                  ["link"],
+                  ["clean"],
+                ],
+              },
+            });
+
+            const existingAnnotation = editorContainer.getAttribute("data-annotation");
+            if (existingAnnotation) {
+              quillEditors[section].root.innerHTML = existingAnnotation;
+            }
+          }
+        } else {
+          editorContainer.style.display = "none";
+        }
+      });
+    });
+
+    document.querySelectorAll(".cancel-annotation-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        const section = this.getAttribute("data-section");
+        document.getElementById("editor-container-" + section).style.display = "none";
+      });
+    });
+
+    document.querySelectorAll(".save-annotation-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        const section = this.getAttribute("data-section");
+        const ruleType = this.getAttribute("data-rule-type") || "CR";
+        const editor = quillEditors[section];
+
+        if (editor) {
+          const content = editor.root.innerHTML;
+          const textContent = editor.getText().trim();
+          const finalContent = textContent.length > 0 ? content : "";
+
+          fetch("/api/save-annotation/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": getCookie("csrftoken"),
+            },
+            body: JSON.stringify({
+              rule_type: ruleType,
+              section: section,
+              annotation: finalContent,
+            }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              const editorContainer = document.getElementById("editor-container-" + section);
+              editorContainer.setAttribute("data-annotation", finalContent);
+              editorContainer.style.display = "none";
+              location.reload();
+            } else {
+              alert("Error: " + (data.error || "Failed to save"));
+            }
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("Failed to save annotation");
+          });
+        }
+      });
+    });
+
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + "=")) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+  });
+</script>
+{% endblock %}

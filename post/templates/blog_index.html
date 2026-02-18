@@ -26,7 +26,7 @@
             <p>Last Updated: {{ cr_last_updated }}</p>
             <div class="list-group">
                 {% for section in crsections %}
-                    <a href="{{ section.url }}" class="list-group-item list-group-item-action">
+                    <a href="{% url 'core_rules' %}#rule-{{ section.section }}" class="list-group-item list-group-item-action">
                         <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
                     </a>
                 {% endfor %}
