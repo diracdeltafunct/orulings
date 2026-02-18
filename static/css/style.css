@@ -32,6 +32,11 @@
     color: #fff;
 }
 
+/* Errata original text - ensure readable in dark mode */
+[data-bs-theme="dark"] .table-warning .text-muted {
+    color: #495057 !important;
+}
+
 /* Annotation boxes - always black text */
 .annotation-display {
     color: #000000 !important;
