@@ -42,6 +42,7 @@ def _replace_rb_token(match):
             f'alt="{token}" '
             f'title="{token}" '
             f'class="keyword-icon" '
+            f'loading="lazy" '
             f'style="height: 1.2em; vertical-align: middle;">'
         )
     return match.group(0)
@@ -66,6 +67,7 @@ def _replace_keyword(match):
             f'alt="{keyword}" '
             f'title="{keyword}" '
             f'class="keyword-icon" '
+            f'loading="lazy" '
             f'style="height: 1.2em; vertical-align: middle;">'
         )
     return match.group(0)

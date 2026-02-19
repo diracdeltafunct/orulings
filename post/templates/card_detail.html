@@ -1,5 +1,15 @@
-{% extends 'base.html' %} {% load static %} {% load card_filters %} {% block
-title %}{{ card.name }} - Card Details{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% load card_filters %}
+{% block title %}{{ card.name }} - Card Details{% endblock %}
+{% block meta_tags %}
+<meta property="og:title" content="{{ card.name }} - ScoutsCode" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="{{ card.image_url }}" />
+<meta property="og:description" content="{{ card.card_type }} | {{ card.card_set }} | {{ card.rarity }}" />
+<meta name="twitter:card" content="summary_large_image" />
+{% endblock %}
+{% block content %}
 <div class="container">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-4">

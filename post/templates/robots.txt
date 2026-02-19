@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /secretadminlogin/
+Disallow: /api/
+Disallow: /search?
+
+Sitemap: https://scoutscode.net/sitemap.xml

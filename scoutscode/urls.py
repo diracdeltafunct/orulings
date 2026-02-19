@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import TemplateView
 
 from post.views import (
     blog_index,
@@ -50,6 +51,11 @@ urlpatterns = [
     path("contact/", contact, name="contact"),
     path("cards/", card_search, name="card_search"),
     path("cards/<str:card_id>/", card_detail, name="card_detail"),
+    path(
+        "robots.txt",
+        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+        name="robots_txt",
+    ),
 ]
 
 if settings.DEBUG:

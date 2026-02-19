@@ -1,50 +1,53 @@
 {% extends 'base.html' %}
-
 {% load static %}
 {% load markdownify %}
-
 {% block title %}Home - ScoutsCode{% endblock %}
-
 {% block content %}
-    {% if special_post %}
-        <h1>{{ special_post.title }}</h1>
-        <div>{{ special_post.content|safe|markdownify }}</div>
-    {% else %}
+{% if special_post %}
+<h1>{{ special_post.title }}</h1>
+<div>{{ special_post.content|safe|markdownify }}</div>
+{% else %}
+{% endif %}
 
-    {% endif %}
+<div class="card-search mt-5">
+    <h2>Card Search</h2>
+    <a href="{% url 'card_search' %}" class="btn btn-primary btn-lg">
+        Search for cards by name, type, set, and more
+    </a>
+</div>
 
-    <div class="card-search mt-5">
-        <h2>Card Search</h2>
-        <a href="{% url 'card_search' %}" class="btn btn-primary btn-lg">
-            Search for cards by name, type, set, and more
+{% if crsections %}
+<div class="crsections mt-5">
+    <h2>Core Rules Sections</h2>
+    <p>Last Updated: {{ cr_last_updated }}</p>
+    <div class="list-group">
+        {% for section in crsections %}
+        <a
+            href="{% url 'core_rules' %}#rule-{{ section.section }}"
+            class="list-group-item list-group-item-action"
+        >
+            <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
         </a>
+        {% endfor %}
     </div>
+</div>
+{% endif %}
 
-    {% if crsections %}
-        <div class="crsections mt-5">
-            <h2>Core Rules Sections</h2>
-            <p>Last Updated: {{ cr_last_updated }}</p>
-            <div class="list-group">
-                {% for section in crsections %}
-                    <a href="{% url 'core_rules' %}#rule-{{ section.section }}" class="list-group-item list-group-item-action">
-                        <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
-                    </a>
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
+{% if trsections %}
+<div id="trsections" class="trsections mt-5">
+    <h2>Tournament Rules Sections</h2>
+    <p>Last Updated: {{ tr_last_updated }}</p>
+    <div class="list-group">
+        {% for section in trsections %}
+        <a
+            href="{{ section.url }}"
+            class="list-group-item list-group-item-action"
+        >
+            <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 
-    {% if trsections %}
-        <div class="trsections mt-5">
-            <h2>Tournament Rules Sections</h2>
-            <p>Last Updated: {{ tr_last_updated }}</p>
-            <div class="list-group">
-                {% for section in trsections %}
-                    <a href="{{ section.url }}" class="list-group-item list-group-item-action">
-                        <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
-                    </a>
-                {% endfor %}
-            </div>
-        </div>
-    {% endif %}
 {% endblock %}
