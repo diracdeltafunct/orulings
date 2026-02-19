@@ -139,3 +139,4 @@ cards/
 .claude/
 backups/
 django.log
+connect_ssh.ps1

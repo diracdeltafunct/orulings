@@ -29,6 +29,7 @@ python3 manage.py collectstatic --noinput
 
 echo "Restarting gunicorn..."
 sudo systemctl restart gunicorn &
+disown
 sleep 2
 
 echo "Redeploy complete."
