@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - main
-      - development
+      - develop
 
 jobs:
   deploy-production:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: production
+    environment: dep
     steps:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1
@@ -24,9 +24,9 @@ jobs:
             ./redeploy.sh gunicorn
 
   deploy-dev:
-    if: github.ref == 'refs/heads/development'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
-    environment: production
+    environment: dep
     steps:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1
@@ -36,5 +36,5 @@ jobs:
           key: ${{ secrets.DROPLET_SSH_KEY }}
           script: |
             cd /root/orulings-dev
-            git pull origin development
+            git pull origin develop
             ./redeploy.sh gunicorn-dev
