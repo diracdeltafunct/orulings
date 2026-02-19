@@ -1,5 +1,6 @@
 import json
 import re
+from difflib import SequenceMatcher
 
 import requests
 from django.conf import settings
@@ -441,6 +442,28 @@ def search_rules(request):
     return render(request, "search_results.html", context)
 
 
+def _fuzzy_name_match(query, card_names, cutoff=0.75):
+    """Return card names that fuzzy-match the query, sorted by relevance."""
+    clean_query = re.sub(r"[^a-z0-9 ]", "", query.lower())
+    if not clean_query:
+        return []
+    scored = []
+    for name in card_names:
+        clean_name = re.sub(r"[^a-z0-9 ]", "", name.lower())
+        # Substring match on punctuation-stripped name
+        if clean_query in clean_name:
+            scored.append((name, 1.0))
+            continue
+        # Score against each word and the full name
+        best = SequenceMatcher(None, clean_query, clean_name).ratio()
+        for word in clean_name.split():
+            best = max(best, SequenceMatcher(None, clean_query, word).ratio())
+        if best >= cutoff:
+            scored.append((name, best))
+    scored.sort(key=lambda x: x[1], reverse=True)
+    return [name for name, _ in scored]
+
+
 def card_search(request):
     """
     Card search page with filters for all card fields.
@@ -511,12 +534,47 @@ def card_search(request):
     if search_performed and cards.count() == 1:
         return redirect("card_detail", card_id=cards.first().card_id)
 
+    # Fuzzy fallback when name search returns no results
+    fuzzy_match = False
+    if search_performed and cards.count() == 0 and name:
+        all_names = list(Card.objects.values_list("name", flat=True).distinct())
+        matched_names = _fuzzy_name_match(name, all_names)
+        if matched_names:
+            cards = Card.objects.filter(name__in=matched_names)
+            # Re-apply non-name filters
+            if card_type:
+                cards = cards.filter(card_type=card_type)
+            if card_set:
+                cards = cards.filter(card_set=card_set)
+            if rarity:
+                cards = cards.filter(rarity=rarity)
+            if domain:
+                cards = cards.filter(domain__name=domain)
+            if energy_min:
+                cards = cards.filter(energy__gte=int(energy_min))
+            if energy_max:
+                cards = cards.filter(energy__lte=int(energy_max))
+            if power_min:
+                cards = cards.filter(power__gte=int(power_min))
+            if power_max:
+                cards = cards.filter(power__lte=int(power_max))
+            if ability:
+                cards = cards.filter(ability__icontains=ability)
+            if has_errata == "yes":
+                cards = cards.exclude(errata_text__isnull=True).exclude(errata_text="")
+            elif has_errata == "no":
+                cards = cards.filter(Q(errata_text__isnull=True) | Q(errata_text=""))
+            cards = cards.distinct()
+            if cards.exists():
+                fuzzy_match = True
+
     # Get choices for dropdowns
     domains = CardDomain.objects.all().order_by("name")
 
     context = {
         "cards": cards if search_performed else None,
         "search_performed": search_performed,
+        "fuzzy_match": fuzzy_match,
         "result_count": cards.count() if search_performed else 0,
         "domains": domains,
         "logo_asset": logo_asset,
