@@ -47,7 +47,7 @@
 
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg border-bottom border-body">
+        <nav class="navbar navbar-expand-lg border-bottom border-body sticky-top" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                     {% if logo_asset %}
@@ -158,6 +158,20 @@
             <!-- Default or shared content goes here, if any -->
             {% endblock %}
         </main>
+        <!-- Sticky navbar shrink on scroll -->
+        <script>
+            (function () {
+                var nav = document.getElementById("mainNav");
+                window.addEventListener("scroll", function () {
+                    if (window.scrollY > 50) {
+                        nav.classList.add("scrolled");
+                    } else {
+                        nav.classList.remove("scrolled");
+                    }
+                });
+            })();
+        </script>
+
         <!-- Theme Toggle Script -->
         <script>
             (function () {
