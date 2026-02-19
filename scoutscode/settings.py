@@ -10,12 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-import json
 import os
-import sys
 from pathlib import Path
 
-import dj_database_url
 import environ
 
 # Initialise environment variables
@@ -89,16 +86,14 @@ WSGI_APPLICATION = "scoutscode.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-
-if DEVELOPMENT_MODE is True:
+if DEVELOPMENT_MODE:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
-elif len(sys.argv) > 0 and sys.argv[1] != "collectstatic":
-    # meaningless change
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -141,10 +136,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
-    os.path.join(
-        BASE_DIR, "static"
-    ),  # If you have a 'static' folder at the project level
-    os.path.join(BASE_DIR, "static-extensions"),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 

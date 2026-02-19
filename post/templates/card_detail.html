@@ -1,8 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load card_filters %}
-{% block title %}{{ card.name }} - Card Details{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% load card_filters %} {% block
+title %}{{ card.name }} - Card Details{% endblock %} {% block content %}
 <div class="container">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-4">
@@ -94,10 +91,16 @@
                             >
                             <div class="mt-2">
                                 <strong>Current Text:</strong>
-                                <p class="mb-2">{{ card.errata_text }}</p>
+                                <p class="mb-2">
+                                    {{ card.errata_text|replace_keywords }}
+                                </p>
                                 <strong>Original Text:</strong>
                                 <p class="mb-0 text-muted">
-                                    <del>{{ card.errata_old_text }}</del>
+                                    <del
+                                        >{{
+                                        card.errata_old_text|replace_keywords
+                                        }}</del
+                                    >
                                 </p>
                             </div>
                         </td>
