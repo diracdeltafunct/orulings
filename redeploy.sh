@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Usage: ./redeploy.sh [service_name]
+# Default service is "gunicorn" (production)
+SERVICE_NAME="${1:-gunicorn}"
+
 # Activate virtual environment
 source .venv/bin/activate
 
@@ -27,8 +31,8 @@ python3 manage.py migrate --noinput
 echo "Collecting static files..."
 python3 manage.py collectstatic --noinput
 
-echo "Restarting gunicorn..."
-sudo systemctl restart gunicorn &
+echo "Restarting $SERVICE_NAME..."
+sudo systemctl restart "$SERVICE_NAME" &
 disown
 sleep 2
 
