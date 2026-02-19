@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Activate virtual environment
+source .venv/bin/activate
+
 BACKUP_DIR="backups"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
@@ -16,12 +19,13 @@ for dbfile in db.sqlite3 dbproduction.sqlite3; do
 done
 
 echo "Running migrations..."
-python manage.py migrate --noinput
+python3 manage.py migrate --noinput
 
 echo "Collecting static files..."
-python manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
 
 echo "Restarting gunicorn..."
-sudo systemctl restart gunicorn
+sudo systemctl restart gunicorn &
+sleep 2
 
 echo "Redeploy complete."
