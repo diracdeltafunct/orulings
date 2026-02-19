@@ -16,7 +16,7 @@
             
             <div class="list-group">
                 {% for result in results %}
-                    <a href="{% if result.rule_type == 'TR' %}/trsections/{{ result.section }}/{% else %}/crsections/{{ result.section }}/{% endif %}" 
+                    <a href="{% if result.rule_type == 'TR' %}/trsections/{{ result.section }}/{% else %}/core-rules/#rule-{{ result.section }}{% endif %}" 
                        class="list-group-item list-group-item-action">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">
