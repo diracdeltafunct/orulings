@@ -18,6 +18,21 @@
 
 .navbar {
     background-color: var(--custom-navbar-color);
+    transition: padding 0.3s ease;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar.scrolled {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .navbar-brand img {
+    height: 22px;
+    width: auto;
+    transition: height 0.3s ease;
 }
 
 .btn-primary {
