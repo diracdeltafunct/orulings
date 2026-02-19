@@ -18,6 +18,9 @@ for dbfile in db.sqlite3 dbproduction.sqlite3; do
     fi
 done
 
+echo "updating requirements"
+pip install -r requirements.txt
+
 echo "Running migrations..."
 python3 manage.py migrate --noinput
 

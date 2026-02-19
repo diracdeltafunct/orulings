@@ -1,0 +1,137 @@
+<style>
+  .editor-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  .editor-container > div[id^="editor-"] {
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  .ql-toolbar {
+    background-color: #f8f9fa;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .ql-container {
+    min-height: 200px;
+    background-color: white;
+    font-size: 14px;
+  }
+  .edit-annotation-btn {
+    height: 31px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+</style>
+
+<script>
+  const quillEditors = {};
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".edit-annotation-btn").forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        const section = this.getAttribute("data-section");
+        const editorContainer = document.getElementById("editor-container-" + section);
+
+        if (editorContainer.style.display === "none" || editorContainer.style.display === "") {
+          editorContainer.style.display = "block";
+
+          if (!quillEditors[section]) {
+            quillEditors[section] = new Quill(document.getElementById("editor-" + section), {
+              theme: "snow",
+              placeholder: "Add your annotation here...",
+              modules: {
+                toolbar: [
+                  ["bold", "italic", "underline", "strike"],
+                  ["blockquote", "code-block"],
+                  [{ list: "ordered" }, { list: "bullet" }],
+                  [{ header: [1, 2, 3, false] }],
+                  ["link"],
+                  ["clean"],
+                ],
+              },
+            });
+
+            const existingAnnotation = editorContainer.getAttribute("data-annotation");
+            if (existingAnnotation) {
+              quillEditors[section].root.innerHTML = existingAnnotation;
+            }
+          }
+        } else {
+          editorContainer.style.display = "none";
+        }
+      });
+    });
+
+    document.querySelectorAll(".cancel-annotation-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        const section = this.getAttribute("data-section");
+        const editorContainer = document.getElementById("editor-container-" + section);
+        editorContainer.style.display = "none";
+      });
+    });
+
+    document.querySelectorAll(".save-annotation-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        const section = this.getAttribute("data-section");
+        const ruleType = this.getAttribute("data-rule-type") || "TR";
+        const editor = quillEditors[section];
+
+        if (editor) {
+          const content = editor.root.innerHTML;
+          const textContent = editor.getText().trim();
+          const finalContent = textContent.length > 0 ? content : "";
+
+          fetch("/api/save-annotation/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": getCookie("csrftoken"),
+            },
+            body: JSON.stringify({
+              rule_type: ruleType,
+              section: section,
+              annotation: finalContent,
+            }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              const editorContainer = document.getElementById("editor-container-" + section);
+              editorContainer.setAttribute("data-annotation", finalContent);
+              editorContainer.style.display = "none";
+              location.reload();
+            } else {
+              alert("Error: " + (data.error || "Failed to save"));
+            }
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            alert("Failed to save annotation");
+          });
+        }
+      });
+    });
+
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + "=")) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+  });
+</script>

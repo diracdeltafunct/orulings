@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
-
 {% block title %}Section {{ section.section }} - Tournament Rules{% endblock %}
-
 {% block content %}
     <div class="trsection-detail">
         <nav aria-label="breadcrumb">
@@ -13,7 +10,7 @@
             </ol>
         </nav>
         <p class="text-muted">Last Updated: {{ last_updated }}</p>
-        
+
         {% if parent_section %}
         <div class="mb-3">
             <a href="/trsections/{{ parent_section }}/" class="btn btn-secondary">
@@ -21,15 +18,14 @@
             </a>
         </div>
         {% endif %}
-        
+
         <div class="card mb-4">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-start">
                     <h2>{{ section.section }}. {{ section.text|safe }}</h2>
-                    {% if user.is_authenticated %}
-                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Edit</button>
-                    {% endif %}
-                </div>
+                {% if user.is_authenticated %}
+                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Edit</button>
+                {% endif %}
                 <div id="editor-container-{{ section.section }}" class="editor-container" style="display: none;" data-annotation="{{ section.annotations }}">
                     <div id="editor-{{ section.section }}" class="mb-2"></div>
                     <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Save</button>
@@ -40,12 +36,12 @@
                     {{ section.annotations|safe }}
                 </div>
                 {% endif %}
+                </div>
             </div>
         </div>
-        
+
         {% if is_top_level %}
             {% if section.children %}
-                
                 <div class="list-group mb-4">
                     {% for child in section.children %}
                         <a href="/trsections/{{ child.section }}/" class="list-group-item list-group-item-action">
@@ -54,54 +50,49 @@
                     {% endfor %}
                 </div>
             {% else %}
-                <div class="alert alert-info">
-                    This section has no subsections.
-                </div>
+                <div class="alert alert-info">This section has no subsections.</div>
             {% endif %}
         {% else %}
             {% if section.children %}
-                
                 <div class="list-group mb-4">
                     {% for child in section.children %}
                         {% if 'a' in child.section or 'b' in child.section or 'c' in child.section or 'd' in child.section or 'e' in child.section %}
                             <div class="list-group-item">
                                 <div class="d-flex justify-content-between align-items-start">
-                                <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
+                                    <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
                                     {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
+                                    <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
+                                    {% endif %}
+                                    <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
+                                        <div id="editor-{{ child.section }}" class="mb-2"></div>
+                                        <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Save</button>
+                                        <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
+                                    </div>
+                                    {% if child.annotations %}
+                                    <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                        {{ child.annotations|safe }}
+                                    </div>
                                     {% endif %}
                                 </div>
-                                <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
-                                    <div id="editor-{{ child.section }}" class="mb-2"></div>
-                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Save</button>
-                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
-                                </div>
-                                {% if child.annotations %}
-                                <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
-                                    {{ child.annotations|safe }}
-                                </div>
-                                {% endif %}
                                 {% if child.children %}
                                     {% for subchild in child.children %}
                                         <div class="ps-3 mb-2">
-                                        <div class="d-flex justify-content-between align-items-start">
-                                            <div>
-                                            <strong>{{ subchild.section }}.</strong> {{ subchild.text|safe }}
-                                            </div>
-                                            {% if user.is_authenticated %}
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div><strong>{{ subchild.section }}.</strong> {{ subchild.text|safe }}</div>
+                                                {% if user.is_authenticated %}
                                                 <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Edit</button>
-                                            {% endif %}
-                                        </div>
-                                        <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
-                                            <div id="editor-{{ subchild.section }}" class="mb-2"></div>
-                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Save</button>
-                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
-                                        </div>
-                                        {% if subchild.annotations %}
-                                        <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
-                                            {{ subchild.annotations|safe }}
-                                        </div>
-                                        {% endif %}
+                                                {% endif %}
+                                                <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
+                                                    <div id="editor-{{ subchild.section }}" class="mb-2"></div>
+                                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Save</button>
+                                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
+                                                </div>
+                                                {% if subchild.annotations %}
+                                                <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                                    {{ subchild.annotations|safe }}
+                                                </div>
+                                                {% endif %}
+                                            </div>
                                         </div>
                                     {% endfor %}
                                 {% endif %}
@@ -113,22 +104,22 @@
                             </a>
                             {% else %}
                                 <div class="list-group-item">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
-                                    {% if user.is_authenticated %}
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
+                                        {% if user.is_authenticated %}
                                         <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
-                                    {% endif %}
-                                </div>
-                                <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
-                                    <div id="editor-{{ child.section }}" class="mb-2"></div>
-                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Save</button>
-                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
-                                </div>
-                                {% if child.annotations %}
-                                <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
-                                    {{ child.annotations|safe }}
-                                </div>
-                                {% endif %}
+                                        {% endif %}
+                                        <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
+                                            <div id="editor-{{ child.section }}" class="mb-2"></div>
+                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Save</button>
+                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
+                                        </div>
+                                        {% if child.annotations %}
+                                        <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                            {{ child.annotations|safe }}
+                                        </div>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             {% endif %}
                         {% endif %}
@@ -136,41 +127,13 @@
                 </div>
             {% endif %}
         {% endif %}
-        
+
         <div class="mt-4">
             <a href="/" class="btn btn-secondary">Back to Home</a>
         </div>
     </div>
 
 <style>
-  .editor-container {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-  }
-  .editor-container > div[id^="editor-"] {
-    min-height: 200px;
-    background-color: white;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-  }
-  .ql-toolbar {
-    background-color: #f8f9fa;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
-  .ql-container {
-    min-height: 200px;
-    background-color: white;
-    font-size: 14px;
-  }
-  .edit-annotation-btn {
-    height: 31px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
   .list-group-item-action {
     border-width: 2px;
     font-weight: 500;
@@ -184,126 +147,5 @@
   }
 </style>
 
-<script>
-  const quillEditors = {};
-
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".edit-annotation-btn").forEach((button) => {
-      button.addEventListener("click", function (e) {
-        e.preventDefault();
-        const section = this.getAttribute("data-section");
-        const editorContainer = document.getElementById("editor-container-" + section);
-        
-        if (editorContainer.style.display === "none" || editorContainer.style.display === "") {
-          editorContainer.style.display = "block";
-
-          if (!quillEditors[section]) {
-            console.log("Initializing Quill for section:", section);
-            const editorElement = document.getElementById("editor-" + section);
-            console.log("Editor element:", editorElement);
-            
-            // Use getElementById since section may contain dots
-            quillEditors[section] = new Quill(document.getElementById("editor-" + section), {
-              theme: "snow",
-              placeholder: "Add your annotation here...",
-              modules: {
-                toolbar: [
-                  ["bold", "italic", "underline", "strike"],
-                  ["blockquote", "code-block"],
-                  [{ list: "ordered" }, { list: "bullet" }],
-                  [{ header: [1, 2, 3, false] }],
-                  ["link"],
-                  ["clean"],
-                ],
-              },
-            });
-            console.log("Quill initialized:", quillEditors[section]);
-            
-            // Load existing annotation from data attribute
-            const existingAnnotation = editorContainer.getAttribute("data-annotation");
-            if (existingAnnotation) {
-              quillEditors[section].root.innerHTML = existingAnnotation;
-            }
-          }
-        } else {
-          editorContainer.style.display = "none";
-        }
-      });
-    });
-
-    document.querySelectorAll(".cancel-annotation-btn").forEach((button) => {
-      button.addEventListener("click", function () {
-        const section = this.getAttribute("data-section");
-        const editorContainer = document.getElementById("editor-container-" + section);
-        editorContainer.style.display = "none";
-      });
-    });
-
-    document.querySelectorAll(".save-annotation-btn").forEach((button) => {
-      button.addEventListener("click", function () {
-        const section = this.getAttribute("data-section");
-        const ruleType = this.getAttribute("data-rule-type") || "TR";
-        const editor = quillEditors[section];
-        
-        if (editor) {
-          const content = editor.root.innerHTML;
-          // Check if content is effectively empty (only whitespace/empty tags)
-          const textContent = editor.getText().trim();
-          const finalContent = textContent.length > 0 ? content : "";
-          
-          console.log("Saving annotation for section:", section);
-          console.log("Content:", finalContent);
-          
-          // Send AJAX request to save
-          fetch("/api/save-annotation/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-CSRFToken": getCookie("csrftoken"),
-            },
-            body: JSON.stringify({
-              rule_type: ruleType,
-              section: section,
-              annotation: finalContent,
-            }),
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              // Update the data attribute with new content
-              const editorContainer = document.getElementById("editor-container-" + section);
-              editorContainer.setAttribute("data-annotation", finalContent);
-              // Close the editor
-              editorContainer.style.display = "none";
-              // Reload the page to show the annotation
-              location.reload();
-            } else {
-              alert("Error: " + (data.error || "Failed to save"));
-            }
-          })
-          .catch(error => {
-            console.error("Error:", error);
-            alert("Failed to save annotation");
-          });
-        }
-      });
-    });
-    
-    // Helper function to get CSRF token
-    function getCookie(name) {
-      let cookieValue = null;
-      if (document.cookie && document.cookie !== "") {
-        const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
-          if (cookie.substring(0, name.length + 1) === (name + "=")) {
-            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-            break;
-          }
-        }
-      }
-      return cookieValue;
-    }
-  });
-</script>
+{% include "includes/annotation_editor.html" %}
 {% endblock %}

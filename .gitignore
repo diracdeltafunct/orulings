@@ -138,3 +138,4 @@ cards/
 
 .claude/
 backups/
+django.log

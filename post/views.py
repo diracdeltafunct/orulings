@@ -1,4 +1,5 @@
 import json
+import logging
 import re
 from difflib import SequenceMatcher
 from functools import lru_cache
@@ -8,9 +9,14 @@ import requests
 from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.core.mail import send_mail
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.cache import cache_page
+from django_ratelimit.decorators import ratelimit
+
+logger = logging.getLogger(__name__)
 
 from .forms import ContactForm
 from .models import Card, CardDomain, Post, RuleSection, Tag
@@ -50,7 +56,6 @@ def post_list(request):
         posts = posts.filter(
             Q(title__icontains=search_query) | Q(tag__name__icontains=search_query)
         )
-
 
     context = {
         "posts": posts,
@@ -325,6 +330,7 @@ def crsection_detail(request, section):
     return render(request, "crsection_detail.html", context)
 
 
+@cache_page(60 * 10)
 def core_rules(request):
     """
     Single-page view for all Comprehensive Rules with anchor navigation.
@@ -338,7 +344,6 @@ def core_rules(request):
         data = section_obj.to_dict()
         data = format_section_text(data, section_type="cr_single")
         sections.append(data)
-
 
     context = {
         "sections": sections,
@@ -421,6 +426,7 @@ def save_annotation(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
+@ratelimit(key="ip", rate="30/m", method="GET", block=True)
 def search_rules(request):
     """
     Search view for rule sections (both TR and CR).
@@ -440,7 +446,6 @@ def search_rules(request):
             .select_related("parent")
             .order_by("rule_type", "order")[:50]
         )  # Limit to 50 results
-
 
     context = {
         "search_query": search_query,
@@ -481,6 +486,7 @@ def _fuzzy_name_match(query, card_names, cutoff=0.75):
     return [name for name, _ in scored]
 
 
+@ratelimit(key="ip", rate="30/m", method="GET", block=True)
 def card_search(request):
     """
     Card search page with filters for all card fields.
@@ -586,11 +592,26 @@ def card_search(request):
     # Get choices for dropdowns
     domains = CardDomain.objects.all().order_by("name")
 
+    # Paginate results
+    page_obj = None
+    result_count = 0
+    if search_performed:
+        result_count = cards.count()
+        paginator = Paginator(cards, 24)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+
+    # Build query string without the page param for pagination links
+    query_params = request.GET.copy()
+    query_params.pop("page", None)
+    page_query = query_params.urlencode()
+
     context = {
-        "cards": cards if search_performed else None,
+        "cards": page_obj,
+        "page_query": page_query,
         "search_performed": search_performed,
         "fuzzy_match": fuzzy_match,
-        "result_count": cards.count() if search_performed else 0,
+        "result_count": result_count,
         "domains": domains,
         # Pass back filter values for form
         "filter_name": name,
@@ -615,7 +636,6 @@ def card_detail(request, card_id):
     """
     card = get_object_or_404(Card, card_id=card_id)
 
-
     context = {
         "card": card,
     }
@@ -623,6 +643,7 @@ def card_detail(request, card_id):
     return render(request, "card_detail.html", context)
 
 
+@ratelimit(key="ip", rate="5/m", method="POST", block=True)
 def contact(request):
     """Contact form page with reCAPTCHA validation."""
     error_message = None
