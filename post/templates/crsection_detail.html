@@ -23,9 +23,10 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-start">
                     <h2>{{ section.section }}. {{ section.text|safe }}</h2>
-                {% if user.is_authenticated %}
-                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Edit</button>
-                {% endif %}
+                    {% if user.is_authenticated %}
+                    <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Edit</button>
+                    {% endif %}
+                </div>
                 <div id="editor-container-{{ section.section }}" class="editor-container" style="display: none;" data-annotation="{{ section.annotations }}">
                     <div id="editor-{{ section.section }}" class="mb-2"></div>
                     <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Save</button>
@@ -36,7 +37,6 @@
                     {{ section.annotations|safe }}
                 </div>
                 {% endif %}
-                </div>
             </div>
         </div>
 
@@ -63,17 +63,17 @@
                                     {% if user.is_authenticated %}
                                     <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Edit</button>
                                     {% endif %}
-                                    <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
-                                        <div id="editor-{{ child.section }}" class="mb-2"></div>
-                                        <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
-                                        <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
-                                    </div>
-                                    {% if child.annotations %}
-                                    <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
-                                        {{ child.annotations|safe }}
-                                    </div>
-                                    {% endif %}
                                 </div>
+                                <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
+                                    <div id="editor-{{ child.section }}" class="mb-2"></div>
+                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
+                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
+                                </div>
+                                {% if child.annotations %}
+                                <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                    {{ child.annotations|safe }}
+                                </div>
+                                {% endif %}
                                 {% if child.children %}
                                     {% for subchild in child.children %}
                                         <div class="ps-3 mb-2">
@@ -82,17 +82,17 @@
                                                 {% if user.is_authenticated %}
                                                 <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Edit</button>
                                                 {% endif %}
-                                                <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
-                                                    <div id="editor-{{ subchild.section }}" class="mb-2"></div>
-                                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Save</button>
-                                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
-                                                </div>
-                                                {% if subchild.annotations %}
-                                                <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
-                                                    {{ subchild.annotations|safe }}
-                                                </div>
-                                                {% endif %}
                                             </div>
+                                            <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
+                                                <div id="editor-{{ subchild.section }}" class="mb-2"></div>
+                                                <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Save</button>
+                                                <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
+                                            </div>
+                                            {% if subchild.annotations %}
+                                            <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                                {{ subchild.annotations|safe }}
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     {% endfor %}
                                 {% endif %}
@@ -109,17 +109,17 @@
                                         {% if user.is_authenticated %}
                                         <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Edit</button>
                                         {% endif %}
-                                        <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
-                                            <div id="editor-{{ child.section }}" class="mb-2"></div>
-                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
-                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
-                                        </div>
-                                        {% if child.annotations %}
-                                        <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
-                                            {{ child.annotations|safe }}
-                                        </div>
-                                        {% endif %}
                                     </div>
+                                    <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
+                                        <div id="editor-{{ child.section }}" class="mb-2"></div>
+                                        <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
+                                        <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
+                                    </div>
+                                    {% if child.annotations %}
+                                    <div class="annotation-display" style="margin: 10px auto; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                        {{ child.annotations|safe }}
+                                    </div>
+                                    {% endif %}
                                 </div>
                             {% endif %}
                         {% endif %}
