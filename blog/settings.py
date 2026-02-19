@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import json
 import os
 import sys
 from pathlib import Path
@@ -23,34 +24,17 @@ environ.Env.read_env(".env")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = eval(env("DEBUG"))
+DEBUG = env("DEBUG", default="False") == "True"
 
-# Set the environment variables
-# You can either set these here or set the environment variables such as:
-# export ALLOWED_HOSTS=http://example.com,https://example.com,localhost
+hosts = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1"])
 
-# ALLOWED_HOSTS = ['http://example.com', 'https://example.com', 'localhost']
-# CSRF_TRUSTED_ORIGINS = ['http://example.com', 'https://example.com']
-
-hosts = eval(
-    env("ALLOWED_HOSTS")
-)  # .environ.get('ALLOWED_HOSTS', 'localhost').split(',')
-
-# Note, this assumes that the CSRF and ALLOWED hosts are the same!
 ALLOWED_HOSTS = hosts
-CSRF_TRUSTED_ORIGINS = ["http://" + host for host in hosts] + [
-    "https://" + host for host in hosts
-]
+CSRF_TRUSTED_ORIGINS = ["https://" + host for host in hosts]
 
 # Application definition
 
@@ -222,7 +206,7 @@ MDEDITOR_CONFIGS = {
             "fullscreen",
         ],  # custom edit box toolbar
         # image upload format type
-        "upload_image_formats": ["jpg", "jpeg", "gif", "png", "bmp", "webp", "svg"],
+        "upload_image_formats": ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
         "image_folder": "editor",  # image save the folder name
         "theme": "default",  # edit box theme, dark / default
         "preview_theme": "default",  # Preview area theme, dark / default
@@ -290,6 +274,18 @@ MARKDOWNIFY = {
     }
 }
 
+
+# HTTPS security headers (only enforce when not in DEBUG mode)
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+# Contact email
+CONTACT_EMAIL = env("CONTACT_EMAIL", default="diracdeltafunct@gmail.com")
 
 # reCAPTCHA settings
 # Get your keys from https://www.google.com/recaptcha/admin

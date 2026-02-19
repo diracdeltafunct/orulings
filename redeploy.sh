@@ -15,6 +15,9 @@ for dbfile in db.sqlite3 dbproduction.sqlite3; do
     fi
 done
 
+echo "Running migrations..."
+python manage.py migrate --noinput
+
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
 

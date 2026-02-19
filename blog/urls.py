@@ -16,11 +16,9 @@ Including another URLconf
 """
 
 from django.conf import settings
-from django.conf.urls import include
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
-from django.urls import re_path as url
+from django.urls import include, path
 
 from post.views import (
     blog_index,
@@ -39,8 +37,8 @@ from post.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    url(r"mdeditor/", include("mdeditor.urls")),
-    url(r"^$", blog_index, name="blog_index"),
+    path("mdeditor/", include("mdeditor.urls")),
+    path("", blog_index, name="blog_index"),
     path("posts/", post_list, name="post_list"),
     path("posts/<int:post_id>/", post_detail, name="post_detail"),
     path("trsections/<str:section>/", trsection_detail, name="trsection_detail"),

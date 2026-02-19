@@ -1,7 +1,9 @@
 import json
 import re
 from difflib import SequenceMatcher
+from functools import lru_cache
 
+import bleach
 import requests
 from django.conf import settings
 from django.contrib.auth import authenticate, login
@@ -11,7 +13,32 @@ from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
 from .forms import ContactForm
-from .models import Card, CardDomain, Post, RuleSection, Tag, TextAsset
+from .models import Card, CardDomain, Post, RuleSection, Tag
+
+ALLOWED_ANNOTATION_TAGS = [
+    "a",
+    "b",
+    "blockquote",
+    "br",
+    "code",
+    "em",
+    "h1",
+    "h2",
+    "h3",
+    "i",
+    "li",
+    "ol",
+    "p",
+    "pre",
+    "s",
+    "strike",
+    "strong",
+    "u",
+    "ul",
+]
+ALLOWED_ANNOTATION_ATTRS = {
+    "a": ["href", "title", "target"],
+}
 
 
 def post_list(request):
@@ -24,15 +51,11 @@ def post_list(request):
             Q(title__icontains=search_query) | Q(tag__name__icontains=search_query)
         )
 
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     context = {
         "posts": posts,
         "tags": tags,
         "search_query": search_query,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
     }
 
     return render(request, "post_list.html", context)
@@ -43,14 +66,10 @@ def post_detail(request, post_id):
     tags = Tag.objects.all()
 
     # Fetch text assets
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     context = {
         "post": post,
         "tags": tags,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
     }
 
     return render(request, "post_detail.html", context)
@@ -61,8 +80,6 @@ def blog_index(request):
         special_post = Post.objects.get(is_index_post=True)
     except Post.DoesNotExist:
         special_post = None
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     # Get top-level TR sections from database
     tr_top_level = RuleSection.objects.filter(
@@ -98,8 +115,6 @@ def blog_index(request):
 
     context = {
         "special_post": special_post,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
         "trsections": trsections,
         "crsections": crsections,
         "tr_last_updated": get_rules_last_updated("TR"),
@@ -198,6 +213,7 @@ def format_section_text(section_data, section_type="tr"):
     return section_data
 
 
+@lru_cache(maxsize=4)
 def get_rules_last_updated(rule_type):
     """Get the last updated date from rules metadata file."""
     import os
@@ -238,8 +254,6 @@ def trsection_detail(request, section):
     data = section_obj.to_dict()
 
     # Get text assets for template
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     # Get top-level section number
     top_level = section_obj.get_top_level_section()
@@ -260,8 +274,6 @@ def trsection_detail(request, section):
         "json_url": f"/trsections/{top_level}/",
         "is_top_level": is_top_level,
         "parent_section": parent_section,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
         "last_updated": get_rules_last_updated("TR"),
     }
 
@@ -287,8 +299,6 @@ def crsection_detail(request, section):
     data = section_obj.to_dict()
 
     # Get text assets for template
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     # Get top-level section number
     top_level = section_obj.get_top_level_section()
@@ -309,8 +319,6 @@ def crsection_detail(request, section):
         "json_url": f"/crsections/{top_level}/",
         "is_top_level": is_top_level,
         "parent_section": parent_section,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
         "last_updated": get_rules_last_updated("CR"),
     }
 
@@ -331,13 +339,9 @@ def core_rules(request):
         data = format_section_text(data, section_type="cr_single")
         sections.append(data)
 
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     context = {
         "sections": sections,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
         "last_updated": get_rules_last_updated("CR"),
     }
 
@@ -388,6 +392,15 @@ def save_annotation(request):
         # Get the section from database
         section_obj = RuleSection.objects.get(rule_type=rule_type, section=section)
 
+        # Sanitize HTML before saving
+        if annotation_html:
+            annotation_html = bleach.clean(
+                annotation_html,
+                tags=ALLOWED_ANNOTATION_TAGS,
+                attributes=ALLOWED_ANNOTATION_ATTRS,
+                strip=True,
+            )
+
         # Update the annotations field
         section_obj.annotations = annotation_html
         section_obj.save()
@@ -428,18 +441,22 @@ def search_rules(request):
             .order_by("rule_type", "order")[:50]
         )  # Limit to 50 results
 
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     context = {
         "search_query": search_query,
         "results": results,
         "result_count": len(results),
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
     }
 
     return render(request, "search_results.html", context)
+
+
+def _safe_int(value, default=None):
+    """Safely convert a string to int, returning default on failure."""
+    try:
+        return int(value)
+    except (ValueError, TypeError):
+        return default
 
 
 def _fuzzy_name_match(query, card_names, cutoff=0.75):
@@ -469,8 +486,6 @@ def card_search(request):
     Card search page with filters for all card fields.
     If only one result, redirects directly to the card detail page.
     """
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     # Get filter parameters
     name = request.GET.get("name", "").strip()
@@ -505,17 +520,17 @@ def card_search(request):
     if domain:
         cards = cards.filter(domain__name=domain)
         search_performed = True
-    if energy_min:
-        cards = cards.filter(energy__gte=int(energy_min))
+    if energy_min and _safe_int(energy_min) is not None:
+        cards = cards.filter(energy__gte=_safe_int(energy_min))
         search_performed = True
-    if energy_max:
-        cards = cards.filter(energy__lte=int(energy_max))
+    if energy_max and _safe_int(energy_max) is not None:
+        cards = cards.filter(energy__lte=_safe_int(energy_max))
         search_performed = True
-    if power_min:
-        cards = cards.filter(power__gte=int(power_min))
+    if power_min and _safe_int(power_min) is not None:
+        cards = cards.filter(power__gte=_safe_int(power_min))
         search_performed = True
-    if power_max:
-        cards = cards.filter(power__lte=int(power_max))
+    if power_max and _safe_int(power_max) is not None:
+        cards = cards.filter(power__lte=_safe_int(power_max))
         search_performed = True
     if ability:
         cards = cards.filter(ability__icontains=ability)
@@ -550,14 +565,14 @@ def card_search(request):
                 cards = cards.filter(rarity=rarity)
             if domain:
                 cards = cards.filter(domain__name=domain)
-            if energy_min:
-                cards = cards.filter(energy__gte=int(energy_min))
-            if energy_max:
-                cards = cards.filter(energy__lte=int(energy_max))
-            if power_min:
-                cards = cards.filter(power__gte=int(power_min))
-            if power_max:
-                cards = cards.filter(power__lte=int(power_max))
+            if energy_min and _safe_int(energy_min) is not None:
+                cards = cards.filter(energy__gte=_safe_int(energy_min))
+            if energy_max and _safe_int(energy_max) is not None:
+                cards = cards.filter(energy__lte=_safe_int(energy_max))
+            if power_min and _safe_int(power_min) is not None:
+                cards = cards.filter(power__gte=_safe_int(power_min))
+            if power_max and _safe_int(power_max) is not None:
+                cards = cards.filter(power__lte=_safe_int(power_max))
             if ability:
                 cards = cards.filter(ability__icontains=ability)
             if has_errata == "yes":
@@ -577,8 +592,6 @@ def card_search(request):
         "fuzzy_match": fuzzy_match,
         "result_count": cards.count() if search_performed else 0,
         "domains": domains,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
         # Pass back filter values for form
         "filter_name": name,
         "filter_card_type": card_type,
@@ -602,13 +615,9 @@ def card_detail(request, card_id):
     """
     card = get_object_or_404(Card, card_id=card_id)
 
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
-    copyright_asset = TextAsset.objects.filter(asset_type="copyright").first()
 
     context = {
         "card": card,
-        "logo_asset": logo_asset,
-        "copyright_asset": copyright_asset,
     }
 
     return render(request, "card_detail.html", context)
@@ -616,7 +625,6 @@ def card_detail(request, card_id):
 
 def contact(request):
     """Contact form page with reCAPTCHA validation."""
-    logo_asset = TextAsset.objects.filter(asset_type="logo").first()
     error_message = None
     success_message = None
 
@@ -662,7 +670,7 @@ Message:
                     subject=email_subject,
                     message=email_body,
                     from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=["diracdeltafunct@gmail.com"],
+                    recipient_list=[settings.CONTACT_EMAIL],
                     fail_silently=False,
                 )
                 success_message = "Your message has been sent successfully!"
@@ -674,7 +682,6 @@ Message:
 
     context = {
         "form": form,
-        "logo_asset": logo_asset,
         "error_message": error_message,
         "success_message": success_message,
         "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
