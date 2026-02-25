@@ -37,21 +37,29 @@ sitemaps = {
 }
 
 from post.views import (
+    api_cards_all,
     blog_index,
     card_detail,
     card_search,
     contact,
     core_rules,
     crsection_detail,
+    manifest_json,
+    offline_page,
     post_detail,
     post_list,
     save_annotation,
     search_rules,
     secret_login,
+    service_worker,
     trsection_detail,
 )
 
 urlpatterns = [
+    path("manifest.json", manifest_json, name="manifest"),
+    path("sw.js", service_worker, name="service_worker"),
+    path("offline/", offline_page, name="offline"),
+    path("api/cards/all/", api_cards_all, name="api_cards_all"),
     path("admin/", admin.site.urls),
     path("mdeditor/", include("mdeditor.urls")),
     path("", blog_index, name="blog_index"),

@@ -14,6 +14,7 @@ from django.db.models import Q
 from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import csrf_exempt
 from django_ratelimit.decorators import ratelimit
 
 logger = logging.getLogger(__name__)
@@ -374,6 +375,7 @@ def secret_login(request):
     return render(request, "secret_login.html")
 
 
+@csrf_exempt
 def save_annotation(request):
     """
     AJAX endpoint to save annotations for a rule section.
@@ -709,3 +711,39 @@ Message:
     }
 
     return render(request, "contact.html", context)
+
+
+def manifest_json(request):
+    return render(request, "manifest.json", content_type="application/manifest+json")
+
+
+def service_worker(request):
+    return render(request, "sw.js", content_type="application/javascript")
+
+
+def offline_page(request):
+    return render(request, "offline.html")
+
+
+@cache_page(60 * 60)
+def api_cards_all(request):
+    cards = Card.objects.prefetch_related("domain").all()
+    data = []
+    for card in cards:
+        data.append(
+            {
+                "card_id": card.card_id,
+                "name": card.name,
+                "collector_number": card.collector_number,
+                "energy": card.energy,
+                "power": card.power,
+                "card_type": card.card_type,
+                "rarity": card.rarity,
+                "card_set": card.card_set,
+                "image_url": card.image_url,
+                "ability": card.ability,
+                "errata_text": card.errata_text,
+                "domains": [d.name for d in card.domain.all()],
+            }
+        )
+    return JsonResponse(data, safe=False)
