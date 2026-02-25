@@ -93,6 +93,13 @@
                                                 {{ subchild.annotations|safe }}
                                             </div>
                                             {% endif %}
+                                            {% if subchild.children %}
+                                                {% for leaf in subchild.children %}
+                                                <div class="ps-3 mb-1">
+                                                    <strong>{{ leaf.section }}.</strong> {{ leaf.text|safe }}
+                                                </div>
+                                                {% endfor %}
+                                            {% endif %}
                                         </div>
                                     {% endfor %}
                                 {% endif %}

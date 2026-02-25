@@ -86,6 +86,22 @@
                                                         {{ leaf.annotations|safe }}
                                                     </div>
                                                     {% endif %}
+
+                                                    {% for subleaf in leaf.children %}
+                                                    <div id="rule-{{ subleaf.section }}" class="cr-rule cr-subleaf ps-3 py-1">
+                                                        <div class="d-flex align-items-start">
+                                                            <a href="#rule-{{ subleaf.section }}" class="cr-permalink me-2" title="Link to this rule">#</a>
+                                                            <div class="flex-grow-1">
+                                                                <strong class="cr-rule-number">{{ subleaf.section }}.</strong> {{ subleaf.text|safe }}
+                                                                {% if subleaf.annotations %}
+                                                                <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                                                    {{ subleaf.annotations|safe }}
+                                                                </div>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
                                                 </div>
                                             </div>
                                         </div>
