@@ -303,8 +303,9 @@ LOGGING = {
     },
 }
 
-# Rate limiting - use X-Forwarded-For behind reverse proxy
-RATELIMIT_IP_META_KEY = "HTTP_X_FORWARDED_FOR"
+# Rate limiting - use X-Forwarded-For behind reverse proxy, REMOTE_ADDR locally
+if not DEBUG:
+    RATELIMIT_IP_META_KEY = "HTTP_X_FORWARDED_FOR"
 
 # HTTPS security headers (only enforce when not in DEBUG mode)
 if not DEBUG:
