@@ -1,20 +1,25 @@
-{% load static %}const CACHE_VERSION = 'v1';
+{% load static %}const CACHE_VERSION = 'v2';
 const STATIC_CACHE = 'static-' + CACHE_VERSION;
 const PAGES_CACHE = 'pages-' + CACHE_VERSION;
 const IMAGES_CACHE = 'images-' + CACHE_VERSION;
 const IMAGES_CACHE_LIMIT = 200;
 
-const PRECACHE_URLS = [
-  '/',
-  '/offline/',
-  '/core-rules/',
-  '/cards/',
-  '/api/cards/all/',
+// Essential assets - must all succeed for SW to install
+const PRECACHE_STATIC = [
   '{% static "css/style.css" %}',
   '{% static "css/bootstrap.min.css" %}',
   '{% static "logo.png" %}',
   '{% static "favicon.png" %}',
   '{% static "icons/icon-192x192.png" %}',
+];
+
+// Pages to cache on install - cached individually so one failure doesn't block others
+const PRECACHE_PAGES = [
+  '/',
+  '/offline/',
+  '/core-rules/',
+  '/cards/',
+  '/api/cards/all/',
 ];
 
 const CDN_HOSTS = [
@@ -71,12 +76,21 @@ function clearSyncQueue() {
   });
 }
 
-// Install: precache app shell
+// Install: precache app shell and key pages
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())
+    Promise.all([
+      // Static assets - all must succeed
+      caches.open(STATIC_CACHE).then(cache => cache.addAll(PRECACHE_STATIC)),
+      // Pages - cache each individually so one failure doesn't block others
+      caches.open(PAGES_CACHE).then(cache => {
+        return Promise.all(
+          PRECACHE_PAGES.map(url =>
+            cache.add(url).catch(err => console.warn('Failed to precache:', url, err))
+          )
+        );
+      }),
+    ]).then(() => self.skipWaiting())
   );
 });
 
@@ -174,7 +188,7 @@ self.addEventListener('fetch', (event) => {
 
 // Cache first strategy
 function cacheFirst(request, cacheName) {
-  return caches.match(request).then(cached => {
+  return caches.match(request.url).then(cached => {
     if (cached) return cached;
     return fetch(request).then(response => {
       if (response.ok) {
@@ -188,7 +202,7 @@ function cacheFirst(request, cacheName) {
 
 // Cache first with size limit (for images)
 function cacheFirstWithLimit(request, cacheName, limit) {
-  return caches.match(request).then(cached => {
+  return caches.match(request.url).then(cached => {
     if (cached) return cached;
     return fetch(request).then(response => {
       if (response.ok) {
@@ -217,7 +231,9 @@ function networkFirst(request, cacheName) {
     }
     return response;
   }).catch(() => {
-    return caches.match(request).then(cached => {
+    // Match by URL string to avoid request mode/headers mismatch with precached entries
+    const url = request.url;
+    return caches.match(url, { ignoreSearch: true }).then(cached => {
       if (cached) return cached;
       // If HTML request, show offline page
       if (request.headers.get('Accept') && request.headers.get('Accept').includes('text/html')) {
@@ -258,7 +274,7 @@ function networkFirstWithRuleFallback(request, pathname) {
     }
     return response;
   }).catch(() => {
-    return caches.match(request).then(cached => {
+    return caches.match(request.url).then(cached => {
       if (cached) return cached;
       // Extract section number from /crsections/448.1/ or /trsections/100/
       const match = pathname.match(/\/(?:cr|tr)sections\/([^/]+)\//);
@@ -281,7 +297,7 @@ function networkFirstWithCardFallback(request, pathname) {
     }
     return response;
   }).catch(() => {
-    return caches.match(request).then(cached => {
+    return caches.match(request.url).then(cached => {
       if (cached) return cached;
       // Extract card_id from /cards/{card_id}/
       const match = pathname.match(/\/cards\/([^/]+)\//);
