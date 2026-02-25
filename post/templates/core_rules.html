@@ -22,13 +22,13 @@
                     {{ section.section }}. {{ section.text|safe }}
                 </h2>
                 {% if section.annotations %}
-                <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                <div class="annotation-display">
                     {{ section.annotations|safe }}
                 </div>
                 {% endif %}
                 {% if user.is_authenticated %}
                 <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Edit</button>
-                <div id="editor-container-{{ section.section }}" class="editor-container" style="display: none;" data-annotation="{{ section.annotations }}">
+                <div id="editor-container-{{ section.section }}" class="editor-container" data-annotation="{{ section.annotations }}">
                     <div id="editor-{{ section.section }}" class="mb-2"></div>
                     <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Save</button>
                     <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ section.section }}">Cancel</button>
@@ -42,13 +42,13 @@
                         <div class="flex-grow-1">
                             <strong class="cr-rule-number">{{ child.section }}.</strong> {{ child.text|safe }}
                             {% if child.annotations %}
-                            <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                            <div class="annotation-display">
                                 {{ child.annotations|safe }}
                             </div>
                             {% endif %}
                             {% if user.is_authenticated %}
                             <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Edit</button>
-                            <div id="editor-container-{{ child.section }}" class="editor-container" style="display: none;" data-annotation="{{ child.annotations }}">
+                            <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations }}">
                                 <div id="editor-{{ child.section }}" class="mb-2"></div>
                                 <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
                                 <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
@@ -62,13 +62,13 @@
                                     <div class="flex-grow-1">
                                         <strong class="cr-rule-number">{{ subchild.section }}.</strong> {{ subchild.text|safe }}
                                         {% if subchild.annotations %}
-                                        <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                        <div class="annotation-display">
                                             {{ subchild.annotations|safe }}
                                         </div>
                                         {% endif %}
                                         {% if user.is_authenticated %}
                                         <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Edit</button>
-                                        <div id="editor-container-{{ subchild.section }}" class="editor-container" style="display: none;" data-annotation="{{ subchild.annotations }}">
+                                        <div id="editor-container-{{ subchild.section }}" class="editor-container" data-annotation="{{ subchild.annotations }}">
                                             <div id="editor-{{ subchild.section }}" class="mb-2"></div>
                                             <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Save</button>
                                             <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
@@ -82,7 +82,7 @@
                                                 <div class="flex-grow-1">
                                                     <strong class="cr-rule-number">{{ leaf.section }}.</strong> {{ leaf.text|safe }}
                                                     {% if leaf.annotations %}
-                                                    <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                                    <div class="annotation-display">
                                                         {{ leaf.annotations|safe }}
                                                     </div>
                                                     {% endif %}
@@ -94,7 +94,7 @@
                                                             <div class="flex-grow-1">
                                                                 <strong class="cr-rule-number">{{ subleaf.section }}.</strong> {{ subleaf.text|safe }}
                                                                 {% if subleaf.annotations %}
-                                                                <div class="annotation-display" style="margin: 10px 0; padding: 15px; background-color: #e3f2fd; border-radius: 5px; border: 1px solid #90caf9; width: 85%;">
+                                                                <div class="annotation-display">
                                                                     {{ subleaf.annotations|safe }}
                                                                 </div>
                                                                 {% endif %}
@@ -123,7 +123,7 @@
         </div>
 
         <div class="col-lg-3 d-none d-lg-block">
-            <div class="cr-toc sticky-top" style="top: 80px;">
+            <div class="cr-toc sticky-top">
                 <h6 class="text-muted text-uppercase mb-3">On this page</h6>
                 <nav class="nav flex-column">
                     {% for section in sections %}
@@ -137,34 +137,6 @@
     </div>
 </div>
 
-<style>
-  [id^="rule-"] { scroll-margin-top: 80px; }
-  .cr-permalink {
-    color: var(--bs-secondary-color);
-    text-decoration: none;
-    font-size: 0.85em;
-    opacity: 0;
-    transition: opacity 0.15s;
-    flex-shrink: 0;
-    line-height: 1.5;
-  }
-  .cr-rule:hover > .cr-permalink,
-  .cr-rule:hover > .d-flex > .cr-permalink,
-  .cr-section-heading:hover > .cr-permalink { opacity: 1; }
-  .cr-permalink:hover { color: var(--custom-primary); opacity: 1; }
-  .cr-section-heading {
-    border-bottom: 2px solid var(--bs-border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .cr-toc {
-    padding: 1rem;
-    border-left: 2px solid var(--bs-border-color);
-  }
-  .cr-toc-link { font-size: 0.9rem; color: var(--bs-body-color); }
-  .cr-toc-link:hover { color: var(--custom-primary); }
-  .cr-rule-number { color: #4169e1; }
-</style>
 
 {% include "includes/annotation_editor.html" %}
 {% endblock %}
