@@ -2,7 +2,6 @@ import json
 import logging
 import re
 from difflib import SequenceMatcher
-from functools import lru_cache
 
 import bleach
 import requests
@@ -219,9 +218,14 @@ def format_section_text(section_data, section_type="tr"):
     return section_data
 
 
-@lru_cache(maxsize=4)
+_rules_last_updated_cache = {}
+
+
 def get_rules_last_updated(rule_type):
     """Get the last updated date from rules metadata file."""
+    if rule_type in _rules_last_updated_cache:
+        return _rules_last_updated_cache[rule_type]
+
     import os
 
     if rule_type == "TR":
@@ -236,7 +240,10 @@ def get_rules_last_updated(rule_type):
     try:
         with open(metadata_path, "r", encoding="utf-8") as f:
             metadata = json.load(f)
-            return metadata.get("last_updated", "Unknown")
+            result = metadata.get("last_updated", "Unknown")
+            if result != "Unknown":
+                _rules_last_updated_cache[rule_type] = result
+            return result
     except (FileNotFoundError, json.JSONDecodeError):
         return "Unknown"
 
