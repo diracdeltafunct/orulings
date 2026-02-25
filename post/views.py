@@ -226,11 +226,11 @@ def get_rules_last_updated(rule_type):
 
     if rule_type == "TR":
         metadata_path = os.path.join(
-            settings.BASE_DIR, "staticfiles/trsections_january_2026/metadata.json"
+            settings.BASE_DIR, "static/metadata/tr_metadata.json"
         )
     else:
         metadata_path = os.path.join(
-            settings.BASE_DIR, "staticfiles/crsections/metadata.json"
+            settings.BASE_DIR, "static/metadata/cr_metadata.json"
         )
 
     try:
