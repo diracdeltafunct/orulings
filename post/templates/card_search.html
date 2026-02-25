@@ -160,6 +160,14 @@
 </div>
 
 
+<div id="offline-banner" class="alert alert-warning d-none">
+    You are offline. Showing cached card data with client-side search.
+</div>
+<div id="offline-results" class="d-none">
+    <p class="text-muted mb-3" id="offline-count"></p>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-3" id="offline-grid"></div>
+</div>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var form = document.querySelector("form");
@@ -172,6 +180,74 @@
                 }
             });
         });
+
+        // Prefetch card data for offline use
+        if (navigator.onLine) {
+            fetch("/api/cards/all/")
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    try { localStorage.setItem("cardData", JSON.stringify(data)); } catch (e) {}
+                })
+                .catch(function () {});
+        }
+
+        // Offline card search
+        if (!navigator.onLine) {
+            enableOfflineSearch();
+        }
+        window.addEventListener("offline", enableOfflineSearch);
+        window.addEventListener("online", function () {
+            document.getElementById("offline-banner").classList.add("d-none");
+        });
+
+        function enableOfflineSearch() {
+            var raw = localStorage.getItem("cardData");
+            if (!raw) return;
+            document.getElementById("offline-banner").classList.remove("d-none");
+
+            var allCards = JSON.parse(raw);
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                var name = document.getElementById("name").value.toLowerCase();
+                var ability = document.getElementById("ability").value.toLowerCase();
+                var cardType = document.getElementById("card_type").value;
+                var cardSet = document.getElementById("card_set").value;
+                var rarity = document.getElementById("rarity").value;
+                var domain = document.getElementById("domain").value;
+                var energyMin = document.getElementById("energy_min").value;
+                var energyMax = document.getElementById("energy_max").value;
+                var powerMin = document.getElementById("power_min").value;
+                var powerMax = document.getElementById("power_max").value;
+
+                var results = allCards.filter(function (card) {
+                    if (name && card.name.toLowerCase().indexOf(name) === -1) return false;
+                    if (ability && (!card.ability || card.ability.toLowerCase().indexOf(ability) === -1)) return false;
+                    if (cardType && card.card_type !== cardType) return false;
+                    if (cardSet && card.card_set !== cardSet) return false;
+                    if (rarity && card.rarity !== rarity) return false;
+                    if (domain && card.domains.indexOf(domain) === -1) return false;
+                    if (energyMin && (card.energy === null || card.energy < parseInt(energyMin))) return false;
+                    if (energyMax && (card.energy === null || card.energy > parseInt(energyMax))) return false;
+                    if (powerMin && (card.power === null || card.power < parseInt(powerMin))) return false;
+                    if (powerMax && (card.power === null || card.power > parseInt(powerMax))) return false;
+                    return true;
+                });
+
+                var grid = document.getElementById("offline-grid");
+                var countEl = document.getElementById("offline-count");
+                var container = document.getElementById("offline-results");
+                container.classList.remove("d-none");
+                countEl.textContent = "Found " + results.length + " card" + (results.length !== 1 ? "s" : "") + " (offline)";
+                grid.innerHTML = results.map(function (card) {
+                    return '<div class="col"><a href="/cards/' + card.card_id + '/" class="text-decoration-none">'
+                        + '<div class="card h-100 card-hover">'
+                        + '<img src="' + card.image_url + '" class="card-img-top" alt="' + card.name + '" loading="lazy" style="aspect-ratio: 3/4; object-fit: cover" />'
+                        + '<div class="card-body p-2"><p class="card-text text-center small mb-0 text-truncate" title="' + card.name + '">' + card.name + '</p></div>'
+                        + '</div></a></div>';
+                }).join("");
+            });
+        }
     });
 </script>
 {% endblock %}
