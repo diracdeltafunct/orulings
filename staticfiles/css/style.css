@@ -18,11 +18,21 @@
 
 .navbar {
     background-color: var(--custom-navbar-color);
+    transition: padding 0.3s ease;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-body {
-    color: var(--custom-main-color);
-    background-color: var(--custom-body-color);
+.navbar.scrolled {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .navbar-brand img {
+    height: 22px;
+    width: auto;
+    transition: height 0.3s ease;
 }
 
 .btn-primary {
@@ -37,13 +47,60 @@ body {
     color: #fff;
 }
 
-/* Annotation boxes - always black text */
+/* Errata original text - ensure readable in dark mode */
+[data-bs-theme="dark"] .table-warning .text-muted {
+    color: #495057 !important;
+}
+
+/* Annotation boxes */
 .annotation-display {
     color: #000000 !important;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    border: 1px solid #90caf9;
+    width: 85%;
 }
 
 .annotation-display * {
     color: #000000 !important;
+}
+
+/* Annotation editor */
+.editor-container {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.editor-container > div[id^="editor-"] {
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.ql-toolbar {
+    background-color: #f8f9fa;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.ql-container {
+    min-height: 200px;
+    background-color: white;
+    font-size: 14px;
+    color: #000000 !important;
+}
+
+.edit-annotation-btn {
+    height: 31px;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
 /* Quill editor - always black text */
@@ -55,6 +112,80 @@ body {
     color: #000000 !important;
 }
 
-.ql-container {
-    color: #000000 !important;
+/* Core Rules page */
+[id^="rule-"] {
+    scroll-margin-top: 80px;
+}
+
+.cr-permalink {
+    color: var(--bs-secondary-color);
+    text-decoration: none;
+    font-size: 0.85em;
+    opacity: 0;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+    line-height: 1.5;
+}
+
+.cr-rule:hover > .cr-permalink,
+.cr-rule:hover > .d-flex > .cr-permalink,
+.cr-section-heading:hover > .cr-permalink {
+    opacity: 1;
+}
+
+.cr-permalink:hover {
+    color: var(--custom-primary);
+    opacity: 1;
+}
+
+.cr-section-heading {
+    border-bottom: 2px solid var(--bs-border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.cr-toc {
+    top: 80px;
+    padding: 1rem;
+    border-left: 2px solid var(--bs-border-color);
+}
+
+.cr-toc-link {
+    font-size: 0.9rem;
+    color: var(--bs-body-color);
+}
+
+.cr-toc-link:hover {
+    color: var(--custom-primary);
+}
+
+.cr-rule-number {
+    color: #4169e1;
+}
+
+/* Section detail pages (CR & TR) */
+.list-group-item-action {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+.list-group-item-action .rule-number {
+    color: #4169e1 !important;
+    font-weight: 600;
+}
+
+a.list-group-item-action h5 .rule-number {
+    color: #4169e1 !important;
+}
+
+/* Card search */
+.card-hover {
+    transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
