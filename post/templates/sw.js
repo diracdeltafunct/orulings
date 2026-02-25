@@ -7,6 +7,9 @@ const IMAGES_CACHE_LIMIT = 200;
 const PRECACHE_URLS = [
   '/',
   '/offline/',
+  '/core-rules/',
+  '/cards/',
+  '/api/cards/all/',
   '{% static "css/style.css" %}',
   '{% static "css/bootstrap.min.css" %}',
   '{% static "logo.png" %}',
@@ -141,6 +144,18 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Rule section detail pages: network first, offline redirect to /core-rules/#anchor
+  if (/^\/(cr|tr)sections\//.test(url.pathname)) {
+    event.respondWith(networkFirstWithRuleFallback(request, url.pathname));
+    return;
+  }
+
+  // Card detail pages: network first, offline renders from cached card data
+  if (/^\/cards\/[^/]+\/$/.test(url.pathname) && url.pathname !== '/cards/') {
+    event.respondWith(networkFirstWithCardFallback(request, url.pathname));
+    return;
+  }
+
   // HTML pages: network first with cache fallback
   if (request.headers.get('Accept') && request.headers.get('Accept').includes('text/html')) {
     event.respondWith(networkFirst(request, PAGES_CACHE));
@@ -232,4 +247,123 @@ function replayQueue() {
       }).catch(() => {}); // silently fail individual replays
     })).then(() => clearSyncQueue());
   });
+}
+
+// Network first for rule sections, fallback to /core-rules/#rule-{section}
+function networkFirstWithRuleFallback(request, pathname) {
+  return fetch(request).then(response => {
+    if (response.ok) {
+      const clone = response.clone();
+      caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
+    }
+    return response;
+  }).catch(() => {
+    return caches.match(request).then(cached => {
+      if (cached) return cached;
+      // Extract section number from /crsections/448.1/ or /trsections/100/
+      const match = pathname.match(/\/(?:cr|tr)sections\/([^/]+)\//);
+      if (match) {
+        const section = match[1];
+        const anchor = 'rule-' + section;
+        return Response.redirect('/core-rules/#' + anchor, 302);
+      }
+      return caches.match('/offline/');
+    });
+  });
+}
+
+// Network first for card detail, fallback to client-rendered page from cached data
+function networkFirstWithCardFallback(request, pathname) {
+  return fetch(request).then(response => {
+    if (response.ok) {
+      const clone = response.clone();
+      caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
+    }
+    return response;
+  }).catch(() => {
+    return caches.match(request).then(cached => {
+      if (cached) return cached;
+      // Extract card_id from /cards/{card_id}/
+      const match = pathname.match(/\/cards\/([^/]+)\//);
+      if (!match) return caches.match('/offline/');
+      const cardId = match[1];
+      // Build an offline card detail page
+      const html = buildOfflineCardPage(cardId);
+      return new Response(html, {
+        headers: { 'Content-Type': 'text/html; charset=utf-8' },
+      });
+    });
+  });
+}
+
+function buildOfflineCardPage(cardId) {
+  return `<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Detail (Offline) - ScoutsCode</title>
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container mt-4" id="card-container">
+    <p class="text-muted">Loading card data offline...</p>
+  </div>
+  <script>
+    (function() {
+      var cardId = ${JSON.stringify(cardId)};
+      var container = document.getElementById("card-container");
+
+      function renderCard(cards) {
+        if (!cards) {
+          container.innerHTML = '<div class="alert alert-warning">Card data not available offline.</div>';
+          return;
+        }
+      var card = cards.find(function(c) { return c.card_id === cardId; });
+      if (!card) {
+        container.innerHTML = '<div class="alert alert-warning">Card not found in offline data.</div>';
+        return;
+      }
+      var domains = card.domains ? card.domains.join(", ") : "";
+      var errata = "";
+      if (card.errata_text) {
+        errata = '<div class="alert alert-info mt-3"><strong>Errata:</strong> ' + card.errata_text + '</div>';
+      }
+      container.innerHTML = '<nav aria-label="breadcrumb"><ol class="breadcrumb">'
+        + '<li class="breadcrumb-item"><a href="/">Home</a></li>'
+        + '<li class="breadcrumb-item"><a href="/cards/">Cards</a></li>'
+        + '<li class="breadcrumb-item active">' + card.name + '</li></ol></nav>'
+        + '<div class="row"><div class="col-md-4">'
+        + '<img src="' + card.image_url + '" alt="' + card.name + '" class="img-fluid rounded" />'
+        + '</div><div class="col-md-8"><h1>' + card.name + '</h1>'
+        + '<table class="table"><tbody>'
+        + '<tr><th>Type</th><td>' + (card.card_type || "") + '</td></tr>'
+        + '<tr><th>Set</th><td>' + (card.card_set || "") + '</td></tr>'
+        + '<tr><th>Rarity</th><td>' + (card.rarity || "") + '</td></tr>'
+        + '<tr><th>Domain</th><td>' + domains + '</td></tr>'
+        + '<tr><th>Energy</th><td>' + (card.energy !== null ? card.energy : "-") + '</td></tr>'
+        + '<tr><th>Power</th><td>' + (card.power !== null ? card.power : "-") + '</td></tr>'
+        + '<tr><th>Collector #</th><td>' + (card.collector_number || "") + '</td></tr>'
+        + '</tbody></table>'
+        + (card.ability ? '<h5>Ability</h5><p>' + card.ability + '</p>' : '')
+        + errata
+        + '<p class="text-muted mt-3"><em>Viewing offline cached data</em></p>'
+        + '</div></div>'
+        + '<div class="mt-4"><a href="/cards/" class="btn btn-secondary">Back to Cards</a></div>';
+      }
+
+      // Try localStorage first, then fall back to cached API response
+      var raw = localStorage.getItem("cardData");
+      if (raw) {
+        renderCard(JSON.parse(raw));
+      } else {
+        fetch("/api/cards/all/").then(function(r) { return r.json(); })
+          .then(renderCard)
+          .catch(function() { renderCard(null); });
+      }
+    })();
+  </script>
+</body>
+</html>`;
 }

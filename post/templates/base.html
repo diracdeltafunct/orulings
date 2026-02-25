@@ -198,7 +198,7 @@
         <script>
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('/sw.js');
-                // Replay offline annotation queue when back online
+
                 window.addEventListener('online', function () {
                     navigator.serviceWorker.ready.then(function (reg) {
                         reg.active.postMessage({ type: 'REPLAY_QUEUE' });
