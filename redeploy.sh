@@ -8,6 +8,9 @@ SERVICE_NAME="${1:-gunicorn}"
 # Activate virtual environment
 source .venv/bin/activate
 
+echo "Pulling latest code..."
+git pull
+
 BACKUP_DIR="backups"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
