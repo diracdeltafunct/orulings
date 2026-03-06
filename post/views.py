@@ -338,7 +338,6 @@ def crsection_detail(request, section):
     return render(request, "crsection_detail.html", context)
 
 
-@cache_page(60 * 10)
 def core_rules(request):
     """
     Single-page view for all Comprehensive Rules with anchor navigation.
@@ -358,7 +357,15 @@ def core_rules(request):
         "last_updated": get_rules_last_updated("CR"),
     }
 
-    return render(request, "core_rules.html", context)
+    response = render(request, "core_rules.html", context)
+
+    # Only use browser/CDN caching for anonymous users to avoid caching admin UI
+    if not request.user.is_authenticated:
+        response["Cache-Control"] = "public, max-age=600"
+    else:
+        response["Cache-Control"] = "no-store"
+
+    return response
 
 
 def secret_login(request):

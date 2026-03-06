@@ -225,7 +225,9 @@ function cacheFirstWithLimit(request, cacheName, limit) {
 // Network first with cache fallback and offline page
 function networkFirst(request, cacheName) {
   return fetch(request).then(response => {
-    if (response.ok) {
+
+    if (response.ok && response.headers.get('X-Authenticated') !== 'true') {
+
       const clone = response.clone();
       caches.open(cacheName).then(cache => cache.put(request, clone));
     }
@@ -268,7 +270,9 @@ function replayQueue() {
 // Network first for rule sections, fallback to /core-rules/#rule-{section}
 function networkFirstWithRuleFallback(request, pathname) {
   return fetch(request).then(response => {
-    if (response.ok) {
+
+    if (response.ok && response.headers.get('X-Authenticated') !== 'true') {
+
       const clone = response.clone();
       caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
     }
@@ -291,7 +295,9 @@ function networkFirstWithRuleFallback(request, pathname) {
 // Network first for card detail, fallback to client-rendered page from cached data
 function networkFirstWithCardFallback(request, pathname) {
   return fetch(request).then(response => {
-    if (response.ok) {
+
+    if (response.ok && response.headers.get('X-Authenticated') !== 'true') {
+
       const clone = response.clone();
       caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
     }
