@@ -1,4 +1,4 @@
-{% load static %}const CACHE_VERSION = 'v2';
+{% load static %}const CACHE_VERSION = 'v3';
 const STATIC_CACHE = 'static-' + CACHE_VERSION;
 const PAGES_CACHE = 'pages-' + CACHE_VERSION;
 const IMAGES_CACHE = 'images-' + CACHE_VERSION;
@@ -222,12 +222,17 @@ function cacheFirstWithLimit(request, cacheName, limit) {
   });
 }
 
+// Check if the request comes from an authenticated session
+function isAuthenticated(request) {
+  const cookie = request.headers.get('Cookie') || '';
+  return /sessionid=/.test(cookie);
+}
+
 // Network first with cache fallback and offline page
 function networkFirst(request, cacheName) {
+  const skipCache = isAuthenticated(request);
   return fetch(request).then(response => {
-
-    if (response.ok && response.headers.get('X-Authenticated') !== 'true') {
-
+    if (response.ok && !skipCache) {
       const clone = response.clone();
       caches.open(cacheName).then(cache => cache.put(request, clone));
     }
@@ -269,9 +274,10 @@ function replayQueue() {
 
 // Network first for rule sections, fallback to /core-rules/#rule-{section}
 function networkFirstWithRuleFallback(request, pathname) {
+  const skipCache = isAuthenticated(request);
   return fetch(request).then(response => {
 
-    if (response.ok && response.headers.get('X-Authenticated') !== 'true') {
+    if (response.ok && !skipCache) {
 
       const clone = response.clone();
       caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
@@ -294,10 +300,9 @@ function networkFirstWithRuleFallback(request, pathname) {
 
 // Network first for card detail, fallback to client-rendered page from cached data
 function networkFirstWithCardFallback(request, pathname) {
+  const skipCache = isAuthenticated(request);
   return fetch(request).then(response => {
-
-    if (response.ok && response.headers.get('X-Authenticated') !== 'true') {
-
+    if (response.ok && !skipCache) {
       const clone = response.clone();
       caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
     }
