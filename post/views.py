@@ -776,16 +776,18 @@ def api_cards_all(request):
 
 
 # Mapping of rule_type -> (old_dir, new_dir, old_label, new_label)
+_RULES_SOURCE = os.path.join(settings.BASE_DIR, "rules_source")
+
 _DIFF_CONFIGS = {
     "tr": {
-        "old_dir": os.path.join(settings.BASE_DIR, "staticfiles", "trsections_january_2026"),
-        "new_dir": os.path.join(settings.BASE_DIR, "staticfiles", "trsections_march_2026"),
+        "old_dir": os.path.join(_RULES_SOURCE, "trsections_january_2026"),
+        "new_dir": os.path.join(_RULES_SOURCE, "trsections_march_2026"),
         "old_label": "January 2026",
         "new_label": "March 2026",
     },
     "cr": {
-        "old_dir": os.path.join(settings.BASE_DIR, "staticfiles", "crsections"),
-        "new_dir": os.path.join(settings.BASE_DIR, "staticfiles", "crsections_march_2026"),
+        "old_dir": os.path.join(_RULES_SOURCE, "crsections"),
+        "new_dir": os.path.join(_RULES_SOURCE, "crsections_march_2026"),
         "old_label": "December 2025",
         "new_label": "March 2026",
     },

@@ -1,0 +1,26 @@
+{
+  "section": "651",
+  "text": "When a player concedes, they are removed from the game in progress.",
+  "children": [
+    {
+      "section": "651.1",
+      "text": "If only one other player is remaining after a player has conceded, the player remaining Wins.",
+      "children": []
+    },
+    {
+      "section": "651.2",
+      "text": "If more than one player remains after a concession, follow the steps for the Removal of a Player.",
+      "children": []
+    },
+    {
+      "section": "651.3",
+      "text": "Removal of a player involves them no longer being able to make choices or otherwise influence the game.",
+      "children": []
+    },
+    {
+      "section": "651.4",
+      "text": "If the player has Teammates due to the Mode of Play, that player's Teammates also lose and are removed from the game.",
+      "children": []
+    }
+  ]
+}

@@ -154,7 +154,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="../staticfiles/crsections_march_2026",
+        default="../rules_source/crsections_march_2026",
         help="Output directory (relative to script location)",
     )
     parser.add_argument("--source-url", type=str, default=PDF_URL)

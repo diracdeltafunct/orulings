@@ -1,0 +1,474 @@
+{
+  "section": "600",
+  "text": "Competition Formats",
+  "children": [
+    {
+      "section": "601",
+      "text": "Constructed",
+      "children": [
+        {
+          "section": "601.1",
+          "text": "Deck Construction",
+          "children": [
+            {
+              "section": "601.1.a",
+              "text": "The rules for constructing a Riftbound deck are found in CR 101. Deck Construction, except where modified here below for the competition Constructed play format.",
+              "children": []
+            },
+            {
+              "section": "601.1.b",
+              "text": "In competitions, a player’s Main Deck must be exactly 40 cards.",
+              "children": []
+            },
+            {
+              "section": "601.1.c",
+              "text": "In competitions where a sideboard is allowed:",
+              "children": [
+                {
+                  "section": "601.1.c.1",
+                  "text": "A player’s sideboard can include 8 or fewer cards.",
+                  "children": []
+                },
+                {
+                  "section": "601.1.c.2",
+                  "text": "A sideboard can consist only of valid Main Deck cards.",
+                  "children": []
+                },
+                {
+                  "section": "601.1.c.3",
+                  "text": "Limits on copies of named cards apply to the combination of main deck and sideboard.",
+                  "children": []
+                },
+                {
+                  "section": "601.1.c.4",
+                  "text": "A player may change their Chosen Champion to one from their sideboard or main deck that matches their Legend whenever sideboarding would be allowed.",
+                  "children": []
+                },
+                {
+                  "section": "601.1.c.5",
+                  "text": "See 403 for more information about sideboards.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "601.1.d",
+              "text": "In some competitions, the legal battlefields are different from the format-legal battlefields. If this is the case, it will be communicated to players via specific event addenda.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "601.2",
+          "text": "Card Legality",
+          "children": [
+            {
+              "section": "601.2.a",
+              "text": "A card may only be included in a deck if it is from a set that is legal in that format or it has the same name as a card from a set that is legal in that format.",
+              "children": []
+            },
+            {
+              "section": "601.2.b",
+              "text": "Until set release parity is reached, regional limitations on the legality of cards will be enforced according to the official product launch date in the region where an event is being held.",
+              "children": []
+            },
+            {
+              "section": "601.2.c",
+              "text": "If an existing card is reprinted in a new set, but its collector number is not within the normal numbering of that set, it does not affect the card's format legality.",
+              "children": [
+                {
+                  "section": "601.2.c.1",
+                  "text": "Example: A card with collector number 300/250 is not automatically legal within the standard format of that set.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "601.2.d",
+              "text": "If a card is banned in a specific format, that card may not be included in a deck.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "601.3",
+          "text": "Standard",
+          "children": [
+            {
+              "section": "601.3.a",
+              "text": "Standard is a format consisting of the most recent 5-8 sets.",
+              "children": []
+            },
+            {
+              "section": "601.3.b",
+              "text": "Each Standard consists of the current year’s sets plus the previous year’s sets.",
+              "children": []
+            },
+            {
+              "section": "601.3.c",
+              "text": "The current Standard consists of:",
+              "children": [
+                {
+                  "section": "601.3.c.1",
+                  "text": "The Origins supplemental set contained in Proving Grounds (OGS)",
+                  "children": []
+                },
+                {
+                  "section": "601.3.c.2",
+                  "text": "Origins (OGN)",
+                  "children": []
+                },
+                {
+                  "section": "601.3.c.3",
+                  "text": "Spiritforged (SFD)",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "602",
+      "text": "Limited",
+      "children": [
+        {
+          "section": "602.1",
+          "text": "Legality",
+          "children": [
+            {
+              "section": "602.1.a",
+              "text": "A limited competition is one where all product needed for play is provided during the competition.modified here below for the Sealed play format.602.1.a.1 A card may only be included in a limited deck if it is provided to the player as part of the competition.602.1.a.1.a. For some limited competitions, players may be given additional promotional cards that the head judge will specify are not part of that player’s limited card pool and can’t be used for that event.602.1.a.2 Players may utilize basic Runes from any source, even if they are not in the player’s provided card pool.602.1.a.3 Players may utilize as many “blank” battlefields as they need for limited gameplay. see 602.3.d. below for more information on “blank” battlefields.",
+              "children": []
+            },
+            {
+              "section": "602.1.b",
+              "text": "Even if a card is banned in constructed, it is legal to use in a limited deck as long as it is not also banned in that limited format.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "602.2",
+          "text": "Abnormal Product",
+          "children": [
+            {
+              "section": "602.2.a",
+              "text": "There is no guarantee that the composition or distribution of any specific unopened product is correct.",
+              "children": []
+            },
+            {
+              "section": "602.2.b",
+              "text": "If a player notices a discrepancy between expected rarity or frequency of cards in a pack and what is opened, they must notify a judge.",
+              "children": []
+            },
+            {
+              "section": "602.2.c",
+              "text": "The head judge may, at their discretion, replace atypical product in these cases.",
+              "children": []
+            },
+            {
+              "section": "602.2.d",
+              "text": "In some cases, competition officials may allow players to provide their own product, but in such cases player-brought products must be pooled and distributed amongst participants randomly.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "602.3",
+          "text": "Building From a Limited Pool",
+          "children": [
+            {
+              "section": "602.3.a",
+              "text": "602.1.a. The rules for constructing a Riftbound deck are found in CR 101. Deck Construction, except where modified here below for limited formats.",
+              "children": []
+            },
+            {
+              "section": "602.3.b",
+              "text": "At high OPL, players may not use electronic devices to take notes or as a strategic aid during deckbuilding. At low OPL, this can be allowed by the head judge.",
+              "children": []
+            },
+            {
+              "section": "602.3.c",
+              "text": "At high OPL, players may not receive any outside assistance during deckbuilding. At low OPL, this can be allowed by the head judge.",
+              "children": []
+            },
+            {
+              "section": "602.3.d",
+              "text": "Limited decks can use battlefields from their provided card pool or any number of \"blank\" battlefields. Players may opt to use “blank” battlefields in place of battlefields they received in their provided card pool.",
+              "children": [
+                {
+                  "section": "602.3.d.1",
+                  "text": "“Blank” battlefields function as battlefields that do not have any rules text. Otherwise, they adhere to all other normal battlefield rules as defined in the Core Rules.",
+                  "children": []
+                },
+                {
+                  "section": "602.3.d.2",
+                  "text": "At low OPL, “Blank” battlefields can be represented by anything agreed upon by all players in the game.602.3.d.2.a. At high OPL, “Blank” battlefields must be represented by any official Riftbound card, put in an opaque card sleeve with the cardback facing outwards.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "602.3.e",
+              "text": "At high OPL, players must register a starting configuration from the card pool provided and must register the remaining contents of their card pool as their sideboard.",
+              "children": [
+                {
+                  "section": "602.3.e.1",
+                  "text": "Players must use their registered starting configuration in the first game of each match.",
+                  "children": []
+                },
+                {
+                  "section": "602.3.e.2",
+                  "text": "Legend, Chosen Champion, and Rune deck composition must be registered as part of a player’s starting configuration.",
+                  "children": []
+                },
+                {
+                  "section": "602.3.e.3",
+                  "text": "For “best of 1” competitions, players must register three battlefields to randomly select from during the start of game procedure, including any “blank” battlefields they wish to use.",
+                  "children": []
+                },
+                {
+                  "section": "602.3.e.4",
+                  "text": "For “best of 3” competitions, players may select any battlefield from their card pool or a “blank” battlefield during the start of game procedure.602.3.e.4.a. Players may only use a specific copy of a battlefield once per match, but may use the same named battlefield as many times as they have copies of it in their provided card pool.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "602.3.f",
+              "text": "At low OPL, starting configuration registration is not required and players may freely change the composition of their starting deck and sideboard between games and matches unless otherwise specified by the head judge.",
+              "children": []
+            },
+            {
+              "section": "602.3.g",
+              "text": "For card pool generation and deck construction rules specific to each limited format, see Limited Formats below.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "602.4",
+          "text": "Limited Formats",
+          "children": [
+            {
+              "section": "602.4.a",
+              "text": "Sealed",
+              "children": [
+                {
+                  "section": "602.4.a.1",
+                  "text": "Sealed is a limited format where players are each provided with 6 unopened Riftbound booster packs to open and use to construct their deck.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.2",
+                  "text": "Main Decks for sealed decks must be at least 25 cards, but can be more.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.3",
+                  "text": "The domain identity of a sealed deck is any three domains, or any domain plus the domains of the deck’s Champion Legend.602.4.a.3.a. A sealed deck may have any Champion Unit that is included in its domain identity as its Chosen Champion, even one that does not have a champion tag that matches its Champion Legend (if it has one).602.4.a.3.b. A sealed deck may contain any signature spells that are fully included in its domain identity, even if the deck does not include the corresponding champion.602.4.a.3.b.1. Example: A sealed deck with a domain identity of Fury/Body/Order could use signature spells that are Fury/Order or Body/Order, but not signature spells that are Fury/Mind or Body/Chaos.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.4",
+                  "text": "Players may only include Runes from any source in their Rune Deck that match the domain identity of their sealed deck.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.5",
+                  "text": "A sealed deck is still legal if it has no Champion Legend or Chosen Champion.602.4.a.5.a. A player may opt not to use a Champion Legend or a Chosen Champion in their sealed deck even if they have one in their provided card pool.602.4.a.5.b. If a player's deck is missing a Champion Legend and/or a Chosen Champion, they draw a card at the start of their first Beginning Phase each game. (If both are missing, they still only draw one card.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.6",
+                  "text": "The normal restrictions on quantities of named or signature cards do not apply. For example, a player may use 10 Pouty Poro in their Main Deck if they received them in the provided card pool.602.4.a.6.a. The “Unique” keyword does not apply in sealed.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.7",
+                  "text": "A sealed deck’s sideboard is every card provided to the player as part of the competition that isn’t used in their starting deck configuration, unless otherwise specified. See 403 for more information on sideboards.602.4.a.7.a. Additionally, players may change their domain identity, Rune Deck, Legend, and Chosen Champion while sideboarding as long as the resulting deck still meets 602.4.a.2-602.4.a.4.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.8",
+                  "text": "Sealed Pool Registration & Deck Construction602.4.a.8.a. At high OPL, the head judge must require registration of the sealed pool prior to deck construction.602.4.a.8.b. Each player receives the unopened product at their seat.602.4.a.8.c. Players on one side of the table (A) open their product, observed by players on the other side (B).602.4.a.8.d. Players verify that the product has the correct undamaged quantity of cards and rarity distribution. If a pack with an error is found, call a judge to replace the pack if possible.602.4.a.8.e. Once all unopened product has been opened and observed by B, those cards are placed next to B.602.4.a.8.f. Repeat the steps outlined in 602.4.8.c-e but with (B) opening and (A) observing.602.4.a.8.g. Each player now sorts and registers the contents of the pool placed next to them.602.4.a.8.h. After registration is complete, each player returns the pool and registration sheet to the other player.602.4.a.8.i. Each player verifies that their own pool has been registered correctly.602.4.a.8.j. Deck construction begins.602.4.a.8.k. It’s recommended that players be given 20 minutes for deck registration and 30 minutes for deck construction. Deck construction can be increased to 45 minutes for low OPL events where players are experiencing the cards for the first time, such as pre-rift and release events.602.4.a.8.l. The starting deck configuration and sideboard are registered on the same sheet as the total card pool.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.a.9",
+                  "text": "Preconstructed Decks in Sealed Competitions602.4.a.9.a. Some competitions or portions of competitions provide preconstructed decks for players to use. These are considered sealed decks.602.4.a.9.b. Players must use exactly the decks provided, except as modified by any addenda to the competition.602.4.a.9.b.1. This may override the sealed deck construction rules above.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "602.4.b",
+              "text": "Draft",
+              "children": [
+                {
+                  "section": "602.4.b.1",
+                  "text": "Draft is a limited format where players are each provided with 3 unopened Riftbound booster packs to open and draft amongst other players.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.2",
+                  "text": "Draft groups consist of as close to eight players as possible, seated randomly around a table. Draft process is as follows:602.4.b.2.a. Each player opens one of their boosters, removes the Rune or token, then looks through the remaining contents to ensure there are thirteen undamaged cards in the pack with a correct rarity distribution.602.4.b.2.a.1. Players can keep the Rune or token they opened.602.4.b.2.a.2. If an opened pack has an error, players must call a judge to replace the pack if possible.602.4.b.2.b. Once pack contents are verified, players will look through the cards in their pack and select one to draft to the top of a single unobscured facedown pile in front of them, then pass the remaining contents facedown to the player to their left. Players repeat this process with the cards passed to them until there are no cards remaining.602.4.b.2.b.1. Once the first pack is completed, repeat 602.4.b.2.a-602.4.b.2.b with the second pack, except passing cards to the right.602.4.b.2.b.2. Once the second pack is completed, repeat 602.4.b.2.a-602.4.b.2.b with the third pack, again passing cards to the left.602.4.b.2.b.3. Once a card has been added to a player’s single facedown pile in front of them it is considered selected and can’t be returned to the pack.602.4.b.2.b.4. Players must make a reasonable effort to conceal the front face of cards they have selected and cards in their current pack from other players.602.4.b.2.c. Once this process is complete, each player should have 39 cards to use as their limited card pool.602.4.b.2.d. At high OPL, players may not use electronic devices to take notes or as a strategic aid during drafting. At low OPL, this can be allowed by the head judge.602.4.b.2.e. At high OPL, players may not receive any outside assistance during drafting. At low OPL, this can be allowed by the head judge.602.4.b.2.f. At high OPL, during the draft process players may not reveal cards they have seen or selected, or openly discuss the draft. At low OPL, this can be allowed by the head judge.602.4.b.2.g. During the draft process, players are not permitted to seek knowledge of cards fronts other drafters are viewing or have already selected through any means. Attempting to do so is cheating.602.4.b.2.g.1. It is not cheating for a player to see card backs of cards other players are viewing or of cards players have added to the facedown pile in front of them.602.4.b.2.h. At high OPL, players can’t look at the cards they have already drafted, except during intervals designated by a judge between packs. At low OPL, this is allowed at any time as long as the player is not holding other cards at the same time.602.4.b.2.i. At professional OPL, drafts must be timed. At competitive OPL, drafts are timed at the discretion of the head judge. At casual OPL, drafts are untimed but players must draft at a reasonable pace.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.3",
+                  "text": "Main Decks for draft decks must be at least 20 cards, but can be more.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.4",
+                  "text": "The domain identity of a draft deck is any three domains, or any domain plus the domains of the deck’s Champion Legend.602.4.b.4.a. A draft deck may have any Champion Unit that is included in its domain identity as its Chosen Champion, even one that does not have a champion tag that matches its Champion Legend (if it has one).602.4.b.4.b. A draft deck may contain any signature spells that are fully included in its domain identity, even if the deck does not include the corresponding champion.602.4.b.4.b.1. Example: A draft deck with a domain identity of Fury/Body/Order could use signature spells that are Fury/Order or Body/Order, but not signature spells that are Fury/Mind or Body/Chaos.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.5",
+                  "text": "Players may only include Runes from any source in their Rune Deck that match the domain identity of their draft deck.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.6",
+                  "text": "A draft deck is still legal if it has no Champion Legend or Chosen Champion.602.4.b.6.a. A player may opt not to use a Champion Legend or a Chosen Champion in their draft deck even if they have them among their drafted cards.602.4.b.6.b. If a player's deck is missing a Champion Legend and/or a Chosen Champion, they draw a card at the start of their first Beginning Phase each game. (If both are missing, they still only draw one card.)",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.7",
+                  "text": "The normal restrictions on quantities of named or signature cards do not apply. For example, a player may use 10 Pouty Poro in their Main Deck if they selected them during the draft.602.4.b.7.a. The “Unique” keyword does not apply in draft.",
+                  "children": []
+                },
+                {
+                  "section": "602.4.b.8",
+                  "text": "A draft deck’s sideboard is every card drafted by the player as part of the competition that isn’t used in their starting deck configuration, unless otherwise specified. See 403 for more information on sideboards.602.4.b.8.a. Additionally, players may change their domain identity, Rune Deck, Legend, and Chosen Champion while sideboarding as long as the resulting deck still meets 602.4.b.3-",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "603",
+      "text": "2v2",
+      "children": [
+        {
+          "section": "603.1",
+          "text": "A 2v2 team consists of 2 players who enter a competition together and register together as a team to play congruently in a single match as described in the Core Rules.",
+          "children": []
+        },
+        {
+          "section": "603.2",
+          "text": "Each player must provide their individual registration information to enter the competition.",
+          "children": [
+            {
+              "section": "603.2.a",
+              "text": "When registering, teams must specify an ordering for the players on their team for seating purposes by indicating an A player and a B player.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "603.3",
+          "text": "If a player drops from a competition, their entire team is dropped.",
+          "children": []
+        },
+        {
+          "section": "603.4",
+          "text": "If a player is disqualified from a competition, their entire team is disqualified.",
+          "children": []
+        },
+        {
+          "section": "603.5",
+          "text": "In some competitions, 2v2 teams may provide a team name to be displayed. Tournament officials may disallow a specific name for any reason.",
+          "children": []
+        },
+        {
+          "section": "603.6",
+          "text": "A 2v2 competition can be either constructed or sealed. In sealed 2v2, the team shares a single product pool of 8 packs.",
+          "children": []
+        },
+        {
+          "section": "603.7",
+          "text": "During matches, teammates sit next to each other in their registered AB order. The setup process for a game of Riftbound is defined in the Core Rules, with these additional exceptions for 2v2:",
+          "children": [
+            {
+              "section": "603.7.a",
+              "text": "Turn order is as follows:",
+              "children": [
+                {
+                  "section": "603.7.a.1",
+                  "text": "The first team’s A player.",
+                  "children": []
+                },
+                {
+                  "section": "603.7.a.2",
+                  "text": "The second team’s A player.",
+                  "children": []
+                },
+                {
+                  "section": "603.7.a.3",
+                  "text": "The first team’s B player.",
+                  "children": []
+                },
+                {
+                  "section": "603.7.a.4",
+                  "text": "The second team’s B player.",
+                  "children": []
+                },
+                {
+                  "section": "603.7.a.5",
+                  "text": "Return to the top of the order.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "603.7.b",
+              "text": "A random method is used to decide which team selects the starting player.",
+              "children": []
+            },
+            {
+              "section": "603.7.c",
+              "text": "Once the appropriate step in the core rules process is reached, the team that earned the decision chooses where within the a.1-4 turn order play begins.",
+              "children": [
+                {
+                  "section": "603.7.c.1",
+                  "text": "For games after the first game of a match, the losing team of the previous game gets to choose who plays first. If the previous game was a draw, the turn order from the previous game is maintained.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "604",
+      "text": "Event and Round Time Limits",
+      "children": [
+        {
+          "section": "604.1",
+          "text": "It’s recommended that players be given 60 minutes for rounds of play in the Swiss portion of a competitive event.",
+          "children": []
+        },
+        {
+          "section": "604.2",
+          "text": "It is strongly recommended that single elimination matches use untimed rounds so players can play their games to a natural conclusion. If single elimination rounds must be timed, see 408.4. for an altered End of Match procedure.",
+          "children": [
+            {
+              "section": "604.2.a",
+              "text": "Players are still expected to play at a reasonable pace. see 703.2 the Slow Play penalty.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

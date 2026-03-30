@@ -205,7 +205,7 @@ def parse_lines_to_objects(text):
 
 
 def save_lines_to_files(
-    lines: List[Line], output_dir: str = "../staticfiles/trsections"
+    lines: List[Line], output_dir: str = "../rules_source/trsections"
 ):
     """
     Saves each top-level Line object (with all its children) to a separate JSON file.
@@ -254,7 +254,7 @@ def save_lines_to_files(
 
 
 def load_line_from_file(
-    section: str, input_dir: str = "../staticfiles/trsections"
+    section: str, input_dir: str = "../rules_source/trsections"
 ) -> Line:
     """
     Loads a Line object from a JSON file.
@@ -285,7 +285,7 @@ def load_line_from_file(
     return dict_to_line(line_dict)
 
 
-def load_all_lines(input_dir: str = "../staticfiles/trsections") -> List[Line]:
+def load_all_lines(input_dir: str = "../rules_source/trsections") -> List[Line]:
     """
     Loads all top-level Line objects from the directory.
 
@@ -408,15 +408,15 @@ if __name__ == "__main__":
     # Determine URL and output directory
     if args.url:
         target_url = args.url
-        output_dir = args.output_dir or "../staticfiles/trsections_custom"
+        output_dir = args.output_dir or "../rules_source/trsections_custom"
         description = "Custom URL"
     elif args.january_update:
         target_url = JANUARY_UPDATE_URL
-        output_dir = args.output_dir or "../staticfiles/trsections_january_2026"
+        output_dir = args.output_dir or "../rules_source/trsections_january_2026"
         description = "January 2026 Tournament Rules Update"
     else:
         target_url = ORIGINAL_URL
-        output_dir = args.output_dir or "../staticfiles/trsections"
+        output_dir = args.output_dir or "../rules_source/trsections"
         description = "Original Tournament Rules"
 
     # Parse and save
