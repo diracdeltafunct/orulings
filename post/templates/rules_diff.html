@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ rule_type }} Rules Diff - ScoutsCode{% endblock %}
+{% block content %}
+<h1>{{ rule_type }} Rules — Side-by-Side Diff</h1>
+
+{% if no_diff %}
+<p>No previous version is available for comparison.</p>
+{% else %}
+
+<div class="diff-header sticky-top bg-body py-2 border-bottom mb-3" style="z-index:100;">
+  <div class="d-flex align-items-center flex-wrap gap-2">
+    <span class="diff-badge diff-badge-added">+{{ n_added }} added</span>
+    <span class="diff-badge diff-badge-removed">-{{ n_removed }} removed</span>
+    <span class="diff-badge diff-badge-changed">~{{ n_changed }} changed</span>
+    <span class="text-muted small ms-2">
+      <strong>{{ old_label }}</strong> → <strong>{{ new_label }}</strong>
+    </span>
+    <button class="btn btn-sm btn-outline-secondary ms-auto" id="btn-toggle-unchanged">Hide unchanged</button>
+    <button class="btn btn-sm btn-outline-primary" id="btn-prev-change">&#8593; Prev</button>
+    <button class="btn btn-sm btn-outline-primary" id="btn-next-change">&#8595; Next</button>
+  </div>
+</div>
+
+<div class="diff-table-wrap">
+  <table class="diff-table w-100">
+    <thead>
+      <tr>
+        <th class="diff-col-section">Section</th>
+        <th class="diff-col-old">{{ old_label }}</th>
+        <th class="diff-col-new">{{ new_label }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in all_items %}
+      <tr class="diff-row diff-row-{{ item.kind }}" data-kind="{{ item.kind }}">
+        <td class="diff-col-section">{{ item.section }}</td>
+        {% if item.kind == "unchanged" %}
+        <td class="diff-cell-unchanged" colspan="1">{{ item.old_html }}</td>
+        <td class="diff-cell-unchanged">{{ item.new_html }}</td>
+        {% elif item.kind == "added" %}
+        <td class="diff-cell-empty"></td>
+        <td class="diff-cell-added">{{ item.new_html }}</td>
+        {% elif item.kind == "removed" %}
+        <td class="diff-cell-removed">{{ item.old_html }}</td>
+        <td class="diff-cell-empty"></td>
+        {% elif item.kind == "changed" %}
+        <td class="diff-cell-changed-old">{{ item.old_html|safe }}</td>
+        <td class="diff-cell-changed-new">{{ item.new_html|safe }}</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endif %}
+
+<style>
+.diff-table-wrap { overflow-x: auto; }
+.diff-table { border-collapse: collapse; table-layout: fixed; font-size: 0.85rem; }
+.diff-table th, .diff-table td {
+  padding: 4px 8px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--bs-border-color);
+  word-wrap: break-word;
+  color: var(--bs-body-color);
+}
+.diff-col-section { width: 90px; font-family: monospace; font-size: 0.8rem; white-space: nowrap; opacity: 0.7; }
+.diff-col-old, .diff-col-new { width: calc(50% - 45px); }
+.diff-table th {
+  background: var(--bs-tertiary-bg);
+  font-weight: 600;
+  position: sticky;
+  top: 56px;
+  z-index: 90;
+  border-bottom: 2px solid var(--bs-border-color);
+}
+
+.diff-cell-empty { background: var(--bs-secondary-bg); opacity: 0.5; }
+
+/* Semi-transparent tints work on both dark and light themes */
+.diff-cell-added    { background: rgba(63, 185, 80, 0.18); }
+.diff-cell-removed  { background: rgba(220, 53, 69, 0.18); text-decoration: line-through; opacity: 0.75; }
+.diff-cell-changed-old { background: rgba(210, 153, 34, 0.18); }
+.diff-cell-changed-new { background: rgba(63, 185, 80, 0.18); }
+
+.diff-row-added   td.diff-col-section { color: #3fb950; opacity: 1; }
+.diff-row-removed td.diff-col-section { color: #f85149; opacity: 1; }
+.diff-row-changed td.diff-col-section { color: #d29922; opacity: 1; }
+
+mark.diff-del { background: rgba(220, 53, 69, 0.35); border-radius: 2px; padding: 0 2px; text-decoration: line-through; color: inherit; }
+mark.diff-ins { background: rgba(63, 185, 80, 0.35); border-radius: 2px; padding: 0 2px; color: inherit; }
+
+.diff-badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+.diff-badge-added   { background: rgba(63, 185, 80, 0.2);  color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.4); }
+.diff-badge-removed { background: rgba(220, 53, 69, 0.2);  color: #f85149; border: 1px solid rgba(220, 53, 69, 0.4); }
+.diff-badge-changed { background: rgba(210, 153, 34, 0.2); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.4); }
+
+.diff-row-unchanged.diff-hidden { display: none; }
+.diff-row-changed, .diff-row-added, .diff-row-removed { scroll-margin-top: 100px; }
+</style>
+
+<script>
+(function () {
+  const btn = document.getElementById('btn-toggle-unchanged');
+  let hidden = false;
+  btn.addEventListener('click', function () {
+    hidden = !hidden;
+    document.querySelectorAll('.diff-row-unchanged').forEach(function (row) {
+      row.classList.toggle('diff-hidden', hidden);
+    });
+    btn.textContent = hidden ? 'Show unchanged' : 'Hide unchanged';
+  });
+
+  const changedRows = Array.from(document.querySelectorAll('.diff-row-changed, .diff-row-added, .diff-row-removed'));
+  let idx = -1;
+  function scrollTo(row) {
+    row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  document.getElementById('btn-next-change').addEventListener('click', function () {
+    idx = (idx + 1) % changedRows.length;
+    scrollTo(changedRows[idx]);
+  });
+  document.getElementById('btn-prev-change').addEventListener('click', function () {
+    idx = (idx - 1 + changedRows.length) % changedRows.length;
+    scrollTo(changedRows[idx]);
+  });
+})();
+</script>
+{% endblock %}

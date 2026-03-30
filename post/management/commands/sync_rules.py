@@ -160,7 +160,10 @@ class Command(BaseCommand):
     def load_json_rules(self, rules_dir, json_rules):
         """Load all rules from JSON files into a flat dict"""
         json_files = sorted([f for f in os.listdir(rules_dir) if f.endswith(".json")])
-        top_level_files = [f for f in json_files if "." not in f.replace(".json", "")]
+        top_level_files = [
+            f for f in json_files
+            if "." not in f.replace(".json", "") and f != "metadata.json"
+        ]
 
         for filename in top_level_files:
             filepath = os.path.join(rules_dir, filename)
@@ -182,7 +185,10 @@ class Command(BaseCommand):
         # Load full hierarchy to determine parents
         hierarchy = {}
         json_files = sorted([f for f in os.listdir(rules_dir) if f.endswith(".json")])
-        top_level_files = [f for f in json_files if "." not in f.replace(".json", "")]
+        top_level_files = [
+            f for f in json_files
+            if "." not in f.replace(".json", "") and f != "metadata.json"
+        ]
 
         for filename in top_level_files:
             filepath = os.path.join(rules_dir, filename)
