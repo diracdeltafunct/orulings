@@ -39,9 +39,9 @@ class Command(BaseCommand):
             source_dir = options["source_dir"]
         else:
             source_dir = (
-                "staticfiles/trsections"
+                "rules_source/trsections"
                 if rule_type == "TR"
-                else "staticfiles/crsections"
+                else "rules_source/crsections"
             )
 
         if dry_run:

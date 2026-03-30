@@ -195,7 +195,7 @@ def parse_lines_to_objects(text):
 
 
 def save_lines_to_files(
-    lines: List[Line], output_dir: str = "../staticfiles/crsections"
+    lines: List[Line], output_dir: str = "../rules_source/crsections"
 ):
     """
     Saves each top-level Line object (with all its children) to a separate JSON file.
@@ -247,7 +247,7 @@ def save_lines_to_files(
 
 
 def load_line_from_file(
-    section: str, input_dir: str = "../staticfiles/crsections"
+    section: str, input_dir: str = "../rules_source/crsections"
 ) -> Line:
     """
     Loads a Line object from a JSON file.
@@ -278,7 +278,7 @@ def load_line_from_file(
     return dict_to_line(line_dict)
 
 
-def load_all_lines(input_dir: str = "../staticfiles/crsections") -> List[Line]:
+def load_all_lines(input_dir: str = "../rules_source/crsections") -> List[Line]:
     """
     Loads all top-level Line objects from the directory.
 

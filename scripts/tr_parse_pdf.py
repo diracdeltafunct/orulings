@@ -197,7 +197,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="../staticfiles/trsections_march_2026",
+        default="../rules_source/trsections_march_2026",
         help="Output directory (relative to script location)",
     )
     parser.add_argument(

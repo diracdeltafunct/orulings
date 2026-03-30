@@ -1,0 +1,1498 @@
+{
+  "section": "800",
+  "text": "Keywords",
+  "children": [
+    {
+      "section": "801",
+      "text": "A Keyword is a specific term that appears on Cards that acts as a shorthand for a specific game effect, or ability of any variety.",
+      "children": [
+        {
+          "section": "801.1",
+          "text": "A Keyword can be an ability.",
+          "children": []
+        },
+        {
+          "section": "801.2",
+          "text": "Keywords can be identified by having a colored highlight behind them.",
+          "children": [
+            {
+              "section": "801.2.a",
+              "text": "The color of the highlight has no effect on gameplay.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "801.3",
+          "text": "Keywords can be referenced or specified by other Game Effects.",
+          "children": [
+            {
+              "section": "801.3.a",
+              "text": "Other effects may grant Keywords.",
+              "children": [
+                {
+                  "section": "801.3.a.1",
+                  "text": "The definition and rules of the specific Keyword will determine the behavior if a Keyword is granted while it is already present.",
+                  "children": []
+                },
+                {
+                  "section": "801.3.a.2",
+                  "text": "The effect that granted the Keyword will specify the duration for which it is granted.",
+                  "children": []
+                },
+                {
+                  "section": "801.3.a.3",
+                  "text": "If an effect that grants a Keyword does not specify a duration, the duration is as long as that Game Object remains on the Board or in its current Non-Board Zone.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "801.3.b",
+              "text": "Other effects may remove Keywords.",
+              "children": [
+                {
+                  "section": "801.3.b.1",
+                  "text": "The effect that removed the Keyword will specify the duration it is removed.",
+                  "children": []
+                },
+                {
+                  "section": "801.3.b.2",
+                  "text": "If an effect that removes a Keyword does not specify a duration, the duration is as long as that Game Object remains on the Board or in its current Non-Board Zone.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "802",
+      "text": "A card can have any number of Keywords.",
+      "children": []
+    },
+    {
+      "section": "803",
+      "text": "Similar to other rules text, execute any effects of Keywords in the order listed when reading the card from top to bottom of the rules text.",
+      "children": []
+    },
+    {
+      "section": "804",
+      "text": "Keyword Glossary",
+      "children": []
+    },
+    {
+      "section": "805",
+      "text": "Accelerate",
+      "children": [
+        {
+          "section": "805.1",
+          "text": "Accelerate is a Unit ability.",
+          "children": [
+            {
+              "section": "805.1.a",
+              "text": "Accelerate is functionally short for \"As you play me, you may pay [1] and 1 Power as an additional cost. If you do, I enter ready.\"",
+              "children": [
+                {
+                  "section": "805.1.a.1",
+                  "text": "If the unit has a single domain, the Power portion of the Accelerate cost can be paid only with a Power that matches the domain of the unit.",
+                  "children": []
+                },
+                {
+                  "section": "805.1.a.2",
+                  "text": "If the unit has no domain or more than one domain, the Power portion of the Accelerate cost can be paid with [A] (a Power of any domain).",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "805.2",
+          "text": "Accelerate is an Optional Additional Cost to be paid as a player plays the unit with the ability.",
+          "children": [
+            {
+              "section": "805.2.a",
+              "text": "Accelerate costs cannot be paid while the unit is on the board, only as part of the steps of playing a card.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "805.3",
+          "text": "Accelerate has no function while on the board.",
+          "children": []
+        },
+        {
+          "section": "805.4",
+          "text": "Multiple instances of Accelerate are redundant.",
+          "children": []
+        },
+        {
+          "section": "805.5",
+          "text": "Accelerate, and whether or not a unit has Accelerate, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        },
+        {
+          "section": "805.6",
+          "text": "Accelerate influences the state of the unit entering the Board. It does not enter exhausted and then become ready.",
+          "children": [
+            {
+              "section": "805.6.a",
+              "text": "Accelerate will not interact with, or trigger, abilities that are affected by units becoming ready.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "806",
+      "text": "Action",
+      "children": [
+        {
+          "section": "806.1",
+          "text": "Action is a Permissive keyword.",
+          "children": [
+            {
+              "section": "806.1.a",
+              "text": "It can be present on Cards, Rune Abilities, Legend Abilities or Permanent Abilities.",
+              "children": []
+            },
+            {
+              "section": "806.1.b",
+              "text": "Action grants the corresponding card or effect permission to be played or activated during Showdowns, even when it is not the Controlling player's turn.",
+              "children": []
+            },
+            {
+              "section": "806.1.c",
+              "text": "Action is functionally short for the following:",
+              "children": [
+                {
+                  "section": "806.1.c.1",
+                  "text": "On Cards: \"This can be played during showdowns on any player's turn.\"",
+                  "children": []
+                },
+                {
+                  "section": "806.1.c.2",
+                  "text": "On Rune, Legend, or Permanent Abilities: \"This can be activated during showdowns on any player's turn.\"",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "806.1.d",
+              "text": "Action is formatted as \"[Action]\" on spells, or \"[Action][>]\" on abilities.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "806.2",
+          "text": "The card or effect with this keyword is not restricted to showdowns. This permission is inclusive of all other timings and options available to the ability as written or by default.",
+          "children": []
+        },
+        {
+          "section": "806.3",
+          "text": "Action does not alter the function of any instruction of the corresponding card or effect it is on. It is only permission. Example: Playing a Unit with Action still has the inherent restrictions of playing Units without Action. It can only be played to the controlling player's base or a battlefield they control.",
+          "children": []
+        },
+        {
+          "section": "806.4",
+          "text": "Some passive abilities may grant a card or ability Action under certain conditions. The card or ability does not have the Action keyword unless and until those circumstances are true.",
+          "children": [
+            {
+              "section": "806.4.a",
+              "text": "Those conditions might only be fulfilled while the card or ability is on the chain. In such a case, it can still be played or activated at the appropriate timing as long as doing so could fulfill the conditions.",
+              "children": []
+            },
+            {
+              "section": "806.4.b",
+              "text": "If the chain item does not fulfill the conditions by the time step 5: check legality has been reached, the actions taken while playing or activating the chain item are undone and it is returned to the zone it was played from if it is a card.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "806.5",
+          "text": "Action is a referenceable characteristic.",
+          "children": [
+            {
+              "section": "806.5.a",
+              "text": "Whether or not a Game Object has Action is a characteristic of that Game Object and may be checked or referenced by other Game Effects.",
+              "children": []
+            },
+            {
+              "section": "806.5.b",
+              "text": "Whether or not a Spell has Action is a characteristic of that Spell and may be checked or referenced by other Game Effects.",
+              "children": []
+            },
+            {
+              "section": "806.5.c",
+              "text": "Whether or not an Ability has Action is a characteristic of that Ability and may be checked or referenced by other Game Effects.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "807",
+      "text": "Assault",
+      "children": [
+        {
+          "section": "807.1",
+          "text": "Assault is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "807.1.a",
+              "text": "It is present on Units.",
+              "children": []
+            },
+            {
+              "section": "807.1.b",
+              "text": "Assault is formatted as \"Assault [X]\".",
+              "children": [
+                {
+                  "section": "807.1.b.1",
+                  "text": "The X is referenced in the functional text of the ability.",
+                  "children": []
+                },
+                {
+                  "section": "807.1.b.2",
+                  "text": "The X is referred to as the Assault Value.",
+                  "children": []
+                },
+                {
+                  "section": "807.1.b.3",
+                  "text": "If X is omitted, it is presumed to be 1.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "807.1.c",
+              "text": "It is functionally short for \"While I am an attacker, I have +X [M].\"",
+              "children": []
+            },
+            {
+              "section": "807.1.d",
+              "text": "Being an attacker means the Unit has gained the Attacker designation during Combat. See rule 454. Combat for more information.",
+              "children": [
+                {
+                  "section": "807.1.d.1",
+                  "text": "Assault remains in effect as long as the Unit maintains the Attacker designation.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "807.2",
+          "text": "If a Unit has Assault or has been granted Assault and is granted Assault by an additional source, the Assault Value of all granted Assault keywords is summed. Example: Petty Officer has Assault. It is chosen as the target of Cleave, which says \"Give a unit [Assault 3] this turn.\" After Cleave resolves, Petty Officer has Assault 4 this turn.",
+          "children": []
+        },
+        {
+          "section": "807.3",
+          "text": "Assault, and whether or not a unit has Assault, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "808",
+      "text": "Deathknell",
+      "children": [
+        {
+          "section": "808.1",
+          "text": "Deathknell is a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "808.1.a",
+              "text": "It is present on Permanents.",
+              "children": []
+            },
+            {
+              "section": "808.1.b",
+              "text": "It is formatted as \"[Deathknell][>] [Effect]\".",
+              "children": [
+                {
+                  "section": "808.1.b.1",
+                  "text": "[Effect] is the rules text for the specific instance of Deathknell. This is referred to as the Deathknell effect.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "808.1.c",
+              "text": "It is functionally short for \"When I die, [Effect].\"",
+              "children": [
+                {
+                  "section": "808.1.c.1",
+                  "text": "[Effect] is the rules text of the Deathknell effect.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "808.1.d",
+              "text": "The Trigger for this effect is the Permanent being Killed and sent to the Trash.",
+              "children": [
+                {
+                  "section": "808.1.d.1",
+                  "text": "If the Permanent with the effect is not sent to the Trash, for example because its \"killed\" event was replaced with a recall, the Deathknell will not occur.",
+                  "children": []
+                },
+                {
+                  "section": "808.1.d.2",
+                  "text": "The trigger will be added to the chain as a Pending Item before the card with Deathknell is moved to the trash due to a Kill instruction or a Cleanup.",
+                  "children": []
+                },
+                {
+                  "section": "808.1.d.3",
+                  "text": "Before the card with Deathknell is moved to the Trash, note its location, its attributes, and any other details related to the effect of its Deathknell to process the trigger after it has been Finalized.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "808.2",
+          "text": "Each instance of Deathknell a Permanent may have will trigger separately.",
+          "children": [
+            {
+              "section": "808.2.a",
+              "text": "The controller will choose the order to add these Triggers to the chain.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "808.3",
+          "text": "Deathknell, and whether or not a permanent has Deathknell, is a characteristic of the permanent and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "809",
+      "text": "Deflect",
+      "children": [
+        {
+          "section": "809.1",
+          "text": "Deflect is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "809.1.a",
+              "text": "It is present on Permanents.",
+              "children": []
+            },
+            {
+              "section": "809.1.b",
+              "text": "It is formatted as \"Deflect [X]\".",
+              "children": [
+                {
+                  "section": "809.1.b.1",
+                  "text": "The X is referenced in the functional text of the ability.",
+                  "children": []
+                },
+                {
+                  "section": "809.1.b.2",
+                  "text": "The X is referred to as the Deflect Value.",
+                  "children": []
+                },
+                {
+                  "section": "809.1.b.3",
+                  "text": "If X is omitted, it is presumed to be 1.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "809.1.c",
+              "text": "It is functionally short for \"Spells and abilities an opponent controls that choose me cost an amount of Power equal to [Deflect Value] more to play as an additional cost for each time they choose me.\"",
+              "children": [
+                {
+                  "section": "809.1.c.1",
+                  "text": "The Power used to pay this cost may always be of any Domain. Example: A Fury spell targets an Order unit with Deflect. The Power used to pay the Deflect cost can be any Domain; it does not need to match the Domain of the spell or the target.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "809.1.d",
+              "text": "It is an effect that imposes a Mandatory Additional Cost on Spells and Abilities that choose the permanent that has this ability. See rule 349. Playing Cards for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "809.2",
+          "text": "If a Unit has Deflect, or has been granted Deflect, and is granted Deflect by an additional source, the Deflect Value of all granted Deflect keywords is summed.",
+          "children": []
+        },
+        {
+          "section": "809.3",
+          "text": "Deflect, and whether or not a permanent has Deflect, is a characteristic of the permanent and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "810",
+      "text": "Ganking",
+      "children": [
+        {
+          "section": "810.1",
+          "text": "Ganking is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "810.1.a",
+              "text": "It is present on Units.",
+              "children": []
+            },
+            {
+              "section": "810.1.b",
+              "text": "It is functionally short for \"I may move to a battlefield from another battlefield with a standard move.\"",
+              "children": []
+            },
+            {
+              "section": "810.1.c",
+              "text": "It is a passive ability that adds permissions to the Unit's Standard Move.",
+              "children": [
+                {
+                  "section": "810.1.c.1",
+                  "text": "It does not restrict or remove options from the Unit's Standard Move.",
+                  "children": []
+                },
+                {
+                  "section": "810.1.c.2",
+                  "text": "It does not have an activation cost.",
+                  "children": []
+                },
+                {
+                  "section": "810.1.c.3",
+                  "text": "It does not give additional abilities or activations of Movement, only new options for the Standard Move.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "810.2",
+          "text": "Multiple instances of Ganking are redundant.",
+          "children": []
+        },
+        {
+          "section": "810.3",
+          "text": "Ganking, and whether or not a unit has Ganking, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "811",
+      "text": "Hidden",
+      "children": [
+        {
+          "section": "811.1",
+          "text": "Hidden is a keyword that acts as a prerequisite to perform the Hide Discretionary Action.",
+          "children": [
+            {
+              "section": "811.1.a",
+              "text": "It is present on Spells, Units, and Gear.",
+              "children": []
+            },
+            {
+              "section": "811.1.b",
+              "text": "It is functionally short for \"While this card is in your hand or in your Champion Zone on your turn during an Open State, you may pay [A] to hide this facedown at a battlefield you control that doesn't already have a facedown card hidden there for as long as you control that battlefield. Beginning on the next turn, this gains [Reaction] and you may play this, ignoring its base cost.\"",
+              "children": []
+            },
+            {
+              "section": "811.1.c",
+              "text": "It allows the player to take the Discretionary Action Hide.",
+              "children": [
+                {
+                  "section": "811.1.c.1",
+                  "text": "Hide is not a subset of Play.",
+                  "children": []
+                },
+                {
+                  "section": "811.1.c.2",
+                  "text": "Hiding a card does not open a chain.",
+                  "children": []
+                },
+                {
+                  "section": "811.1.c.3",
+                  "text": "Playing a card from facedown (or \"from Hidden\") does open a chain.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "811.1.d",
+              "text": "Some choices made while playing a card from Hidden are restricted to the battlefield where it was hidden. A card cannot be played from Hidden if it is a spell with no valid targets under these restrictions. See rule 355.6. Targeting for more information.",
+              "children": [
+                {
+                  "section": "811.1.d.1",
+                  "text": "A hidden permanent must be played to that battlefield.",
+                  "children": []
+                },
+                {
+                  "section": "811.1.d.2",
+                  "text": "If a hidden spell or a play effect of a hidden permanent chooses any targets, those targets must be chosen from among options at that battlefield, unless the ability explicitly restricts targeting in a way that makes this impossible. Example: Blastcone Fae is a unit with Hidden and \"When you play me, give a unit -2 [M] this turn, to a minimum of 1 [M].\" Because this is a play effect, its target must be chosen from among units at the same battlefield if Blastcone Fae was played from Hidden. Example: Tideturner is a unit with Hidden and \"When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.\" Because its play ability has a targeting restriction that can never be fulfilled by a unit at its battlefield, its target may be chosen freely from among the available options.",
+                  "children": []
+                },
+                {
+                  "section": "811.1.d.3",
+                  "text": "If a hidden spell or a play effect of a hidden permanent causes you to play a unit, you must choose to play that unit at that battlefield.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "811.2",
+          "text": "Abilities and instructions of hidden cards other than the choices listed above function as normal. Example: Stand United is a spell that has Hidden and says \"Buff a friendly unit. Buffs give an additional +1 might to friendly units this turn.\" If it's played from Hidden, the first part of its ability must choose a friendly unit at the same battlefield, but the second part of its ability affects all friendly units with buffs, no matter where they are.",
+          "children": []
+        },
+        {
+          "section": "811.3",
+          "text": "Instead of being hidden, a card with Hidden may be played for its cost as normal, at its normal timing with no restrictions on targeting.",
+          "children": []
+        },
+        {
+          "section": "811.4",
+          "text": "Multiple instances of Hidden are redundant.",
+          "children": []
+        },
+        {
+          "section": "811.5",
+          "text": "Hidden, and whether or not a card has Hidden, is a characteristic of the card and may be checked or referenced by other Game Effects.",
+          "children": [
+            {
+              "section": "811.5.a",
+              "text": "This is independent of the state of being facedown.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "811.6",
+          "text": "A card that is Hidden gains Reaction while facedown or played from facedown, and may be played any time a card with Reaction may be played as a result.",
+          "children": [
+            {
+              "section": "811.6.a",
+              "text": "The property is granted to the card in its facedown state, and is not publicly known.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "812",
+      "text": "Legion",
+      "children": [
+        {
+          "section": "812.1",
+          "text": "Legion is a Dependent Keyword.",
+          "children": [
+            {
+              "section": "812.1.a",
+              "text": "It is formatted as \"[Legion][>] [Text]\".",
+              "children": []
+            },
+            {
+              "section": "812.1.b",
+              "text": "Starting from the Keyword to the end of the clause, the entire statement is the Legion Ability.",
+              "children": [
+                {
+                  "section": "812.1.b.1",
+                  "text": "Legion is functionally short for \"If you have played another card this turn, this card gains [Text].\"",
+                  "children": []
+                },
+                {
+                  "section": "812.1.b.2",
+                  "text": "The [Text] is the Dependent Ability.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "812.1.c",
+              "text": "As long as a card different than the one with the Legion ability has been Finalized on the same turn then the Dependent Ability is Active on the card with Legion.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "812.2",
+          "text": "All instances of Legion on cards a player controls are satisfied by that player playing a single card. Example: One card has three different Legion Abilities. The Legion Text of all three abilities will be active as long as one card has been played by the card's controller earlier in the same turn.",
+          "children": []
+        },
+        {
+          "section": "812.3",
+          "text": "Legion, and whether or not a card has Legion, is a characteristic of the card and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "813",
+      "text": "Reaction",
+      "children": [
+        {
+          "section": "813.1",
+          "text": "Reaction is a Permissive keyword.",
+          "children": [
+            {
+              "section": "813.1.a",
+              "text": "It can be present on Cards, Rune Abilities, Legend Abilities and Permanent Abilities.",
+              "children": []
+            },
+            {
+              "section": "813.1.b",
+              "text": "Reaction grants the corresponding card or effect all abilities and permissions of Action.",
+              "children": []
+            },
+            {
+              "section": "813.1.c",
+              "text": "Reaction, additionally, is functionally short for the following:",
+              "children": [
+                {
+                  "section": "813.1.c.1",
+                  "text": "On Cards: \"This can be played during Closed States on any player's turn.\"",
+                  "children": []
+                },
+                {
+                  "section": "813.1.c.2",
+                  "text": "On Rune, Legend, or Permanent Abilities: \"This can be activated during Closed States on any player's turn.\"",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "813.1.d",
+              "text": "Reaction is formatted as \"[Reaction]\" on cards, or \"[Reaction][>]\" on abilities.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "813.2",
+          "text": "The corresponding card or effect with this keyword is not restricted to Closed States or Showdowns. This permission is inclusive of all other timings and options available to the ability as written, Action's permissions, or by default.",
+          "children": []
+        },
+        {
+          "section": "813.3",
+          "text": "Reaction does not alter the function of any instruction of the Card, Rune, or Effect it is on. It is only Permission.",
+          "children": [
+            {
+              "section": "813.3.a",
+              "text": "Playing Units with Reaction still has the inherent restrictions of playing Units without Reaction. It can only be played to the controlling player's base or a battlefield they control.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "813.4",
+          "text": "Some passive abilities may grant a card or ability Reaction under certain conditions. The card or ability does not have the Reaction keyword unless and until those circumstances are true.",
+          "children": [
+            {
+              "section": "813.4.a",
+              "text": "Those conditions might only be fulfilled while the card or ability is on the chain. In such a case, it can still be played or activated at the appropriate timing as long as doing so could fulfill the conditions.",
+              "children": []
+            },
+            {
+              "section": "813.4.b",
+              "text": "If the chain item does not fulfill the conditions by the time step 5: check legality has been reached, the actions taken while playing or activating the chain item are undone and it is returned to the zone it was played from if it is a card.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "813.5",
+          "text": "Reaction is a referencable characteristic.",
+          "children": [
+            {
+              "section": "813.5.a",
+              "text": "Whether or not a Game Object has Reaction is a characteristic of that Game Object and may be checked or referenced by other Game Effects.",
+              "children": []
+            },
+            {
+              "section": "813.5.b",
+              "text": "Whether or not a Spell has Reaction is a characteristic of that Spell and may be checked or referenced by other Game Effects.",
+              "children": []
+            },
+            {
+              "section": "813.5.c",
+              "text": "Whether or not an Ability has Reaction is a characteristic of that Ability and may be checked or referenced by other Game Effects.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "814",
+      "text": "Shield",
+      "children": [
+        {
+          "section": "814.1",
+          "text": "Shield is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "814.1.a",
+              "text": "It is present on Units.",
+              "children": []
+            },
+            {
+              "section": "814.1.b",
+              "text": "Shield is formatted as \"Shield [X]\".",
+              "children": [
+                {
+                  "section": "814.1.b.1",
+                  "text": "The X is referenced in the functional text of the ability.",
+                  "children": []
+                },
+                {
+                  "section": "814.1.b.2",
+                  "text": "The X is referred to as the Shield Value.",
+                  "children": []
+                },
+                {
+                  "section": "814.1.b.3",
+                  "text": "If X is omitted, it is presumed to be 1.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "814.1.c",
+              "text": "It is functionally short for \"While I am a defender, I have +X [M].\"",
+              "children": []
+            },
+            {
+              "section": "814.1.d",
+              "text": "Being a defender means the Unit has gained the Defender designation during Combat. See rule 454. Combat for more information.",
+              "children": [
+                {
+                  "section": "814.1.d.1",
+                  "text": "Shield remains in effect as long as the Unit maintains the Defender designation.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "814.2",
+          "text": "If a Unit has Shield, or has been granted Shield, and is granted Shield by an additional source, the Shield Value of all granted Shield keywords is summed. Example: Stalwart Poro has Shield. It is chosen as the target of Block, which says \"Give a unit [Shield 3] and [Tank] this turn.\" After Block resolves, Stalwart Poro has Shield 4 this turn.",
+          "children": []
+        },
+        {
+          "section": "814.3",
+          "text": "Shield, and whether or not a unit has Shield, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "815",
+      "text": "Tank",
+      "children": [
+        {
+          "section": "815.1",
+          "text": "Tank is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "815.1.a",
+              "text": "It is present on Units.",
+              "children": []
+            },
+            {
+              "section": "815.1.b",
+              "text": "It is functionally short for \"I must be assigned lethal damage before any other unit with the same controller as me that does not have [Tank] during the Combat Damage step.\"",
+              "children": []
+            },
+            {
+              "section": "815.1.c",
+              "text": "It alters how players can elect to assign combat damage during combat.",
+              "children": [
+                {
+                  "section": "815.1.c.1",
+                  "text": "Players must still assign lethal damage to a unit before moving to the next when assigning their damage.",
+                  "children": []
+                },
+                {
+                  "section": "815.1.c.2",
+                  "text": "If more than one unit with Tank is present with the same controller in Combat, damage may be assigned to any of them. Units without Tank are invalid assignments until all units with Tank have lethal damage assigned to them.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "815.2",
+          "text": "Multiple instances of Tank are redundant.",
+          "children": []
+        },
+        {
+          "section": "815.3",
+          "text": "Tank, and whether or not a unit has Tank, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "816",
+      "text": "Temporary",
+      "children": [
+        {
+          "section": "816.1",
+          "text": "Temporary is a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "816.1.a",
+              "text": "It is present on Permanents.",
+              "children": []
+            },
+            {
+              "section": "816.1.b",
+              "text": "It is functionally short for \"At the start of this permanent's controller's Beginning Phase, before scoring, kill this.\"",
+              "children": []
+            },
+            {
+              "section": "816.1.c",
+              "text": "The Trigger Condition is the controller of the permanent's Beginning Phase starting.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "816.2",
+          "text": "Multiple instances of Temporary are redundant.",
+          "children": [
+            {
+              "section": "816.2.a",
+              "text": "Regardless of how many instances there are, the ability will only trigger once.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "816.3",
+          "text": "Temporary, and whether or not a permanent has Temporary, is a characteristic of the permanent and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "817",
+      "text": "Vision",
+      "children": [
+        {
+          "section": "817.1",
+          "text": "Vision is a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "817.1.a",
+              "text": "It is present on Permanents.",
+              "children": []
+            },
+            {
+              "section": "817.1.b",
+              "text": "It is functionally short for \"When this is played, look at the top card of your Main Deck. You may recycle it.\"",
+              "children": []
+            },
+            {
+              "section": "817.1.c",
+              "text": "The trigger is the permanent entering the Board.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "817.2",
+          "text": "Multiple instances of Vision trigger separately.",
+          "children": [
+            {
+              "section": "817.2.a",
+              "text": "The player may choose to recycle or not recycle for each instance of Vision separately.",
+              "children": []
+            },
+            {
+              "section": "817.2.b",
+              "text": "If the player does not recycle the top card and nothing else happens in between the triggers resolving, each instance of Vision will see the same card.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "817.3",
+          "text": "Vision, and whether or not a permanent has Vision, is a characteristic of the permanent and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "818",
+      "text": "Equip",
+      "children": [
+        {
+          "section": "818.1",
+          "text": "Equip is an Activated Ability keyword.",
+          "children": [
+            {
+              "section": "818.1.a",
+              "text": "Equip is normally present on Gear with the tag Equipment.",
+              "children": []
+            },
+            {
+              "section": "818.1.b",
+              "text": "Equip has a cost to activate and Attaches the card with Equip to a chosen Unit when the cost is paid.",
+              "children": [
+                {
+                  "section": "818.1.b.1",
+                  "text": "Equip's choice is a Target.",
+                  "children": []
+                },
+                {
+                  "section": "818.1.b.2",
+                  "text": "The chosen Unit will become the Top-Most Card for the Attach action.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "818.1.c",
+              "text": "Equip is formatted as \"Equip [Cost]\"",
+              "children": [
+                {
+                  "section": "818.1.c.1",
+                  "text": "If paying costs or making choices for this ability causes triggered abilities to trigger, they will be placed on the chain above this ability in a Pending state. See rule 376. Activated Abilities for more information.",
+                  "children": []
+                },
+                {
+                  "section": "818.1.c.2",
+                  "text": "Equip is functionally short for \"[Cost]: Attach this gear to a unit you control.\"",
+                  "children": []
+                },
+                {
+                  "section": "818.1.c.3",
+                  "text": "Equip costs may include both resource costs and non-resource costs.",
+                  "children": []
+                },
+                {
+                  "section": "818.1.c.4",
+                  "text": "Equip abilities may also include text that alters the Equip cost. Such text is taken into account when determining a card's Equip cost for any reason.",
+                  "children": []
+                },
+                {
+                  "section": "818.1.c.5",
+                  "text": "Equip abilities may include text that alters the timing or targeting of the Equip ability.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "818.2",
+          "text": "When the Attach action completes from this keyword, the Unit that was chosen is considered to have been Equipped by the Gear with this ability.",
+          "children": [
+            {
+              "section": "818.2.a",
+              "text": "This is an event other Game Effects and Triggered Abilities can reference.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "818.3",
+          "text": "Equipped is the state of a Top-Most Card being Attached by one or more cards that are Equipment.",
+          "children": [
+            {
+              "section": "818.3.a",
+              "text": "The state of being Equipped is synchronous with that of the Attached state of the Equipment.",
+              "children": []
+            },
+            {
+              "section": "818.3.b",
+              "text": "A Top-Most Card is Equipped as long as one or more of its Attached cards are Equipment.",
+              "children": []
+            },
+            {
+              "section": "818.3.c",
+              "text": "The state of being Equipped corresponds to a Top-Most card having a card with Equip that is Attached to it.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "818.4",
+          "text": "Multiple instances of Equip are equivalent to multiple Activated Abilities and can each be activated separately by paying the corresponding costs.",
+          "children": []
+        },
+        {
+          "section": "818.5",
+          "text": "Equip, and whether or not a Gear has Equip, is a characteristic of the Gear and may be checked or referenced by other Game Effects.",
+          "children": [
+            {
+              "section": "818.5.a",
+              "text": "Whether or not a Gear has Equip may be referenced even if the Rules Text of the Gear is Inactive. See rule 716. Attachment for more information.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "819",
+      "text": "Quick-Draw",
+      "children": [
+        {
+          "section": "819.1",
+          "text": "Quick-Draw is a Triggered Ability keyword. It is also a Permissive keyword.",
+          "children": [
+            {
+              "section": "819.1.a",
+              "text": "Quick-Draw is present on Gear with Equip abilities.",
+              "children": []
+            },
+            {
+              "section": "819.1.b",
+              "text": "Cards with Quick-Draw have Reaction inherently.",
+              "children": []
+            },
+            {
+              "section": "819.1.c",
+              "text": "Quick-Draw allows cards to be played and Attached using Reaction timing.",
+              "children": []
+            },
+            {
+              "section": "819.1.d",
+              "text": "Quick-Draw is functionally short for \"[Reaction]\" and \"When you play this, attach it to a Unit you control.\" See rule 716. Attachment for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "819.2",
+          "text": "Multiple instances of Quick-Draw do not trigger separately and have no effect beyond the first.",
+          "children": []
+        },
+        {
+          "section": "819.3",
+          "text": "Quick-Draw, and whether or not a gear has Quick-Draw, is a characteristic of the Gear and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "820",
+      "text": "Repeat",
+      "children": [
+        {
+          "section": "820.1",
+          "text": "Repeat is an Optional Additional Cost keyword.",
+          "children": [
+            {
+              "section": "820.1.a",
+              "text": "Repeat is present on Spells.",
+              "children": []
+            },
+            {
+              "section": "820.1.b",
+              "text": "Repeat is an optional cost that a player may pay to execute the effect of their spells a second time.",
+              "children": []
+            },
+            {
+              "section": "820.1.c",
+              "text": "Repeat is formatted as \"Repeat [Cost]\"",
+              "children": [
+                {
+                  "section": "820.1.c.1",
+                  "text": "The Cost is an Additional Cost to be paid during the steps of playing the spell.",
+                  "children": []
+                },
+                {
+                  "section": "820.1.c.2",
+                  "text": "If a spell has more than one instance of Repeat, each Cost may be paid or not paid individually.",
+                  "children": []
+                },
+                {
+                  "section": "820.1.c.3",
+                  "text": "Each Repeat Cost can be paid only a single time.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "820.1.d",
+              "text": "Repeat is functionally short for \"You may pay [Cost] as an additional cost as you play this spell. If you do, execute the instructions of this spell one additional time.\"",
+              "children": [
+                {
+                  "section": "820.1.d.1",
+                  "text": "When the additional cost is paid, the effect of the spell, upon resolution, will be performed an additional time. Example: Desert's Call is a spell with [Repeat] [2] and \"Play a 2 [S] Sand Soldier unit token.\" If its controller pays its Repeat cost as they play it, the card's instruction to play a Sand Soldier is executed twice, as though the card says \"Play a 2 [S] Sand Soldier unit token. Play a 2 [S] Sand Soldier unit token.\"",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "820.2",
+          "text": "When a spell's effect is performed an additional time with Repeat, choices must be made at the usual time during the Make Relevant Choices step of Playing a Card. See rule 349. Playing Cards for more information.",
+          "children": [
+            {
+              "section": "820.2.a",
+              "text": "Choices made for the additional execution do not have to be the same as the choices made for the initial execution. Example: Rocket Barrage is a spell with [Repeat] [4][C] and \"Choose one -- Deal 4 to a unit in a base. [or] Kill a gear.\" If Rocket Barrage's controller pays its Repeat cost as they play it, they may choose the same mode or a different one, and if they choose the same mode, may choose the same target or a different one. If they choose \"Kill a gear\" twice and choose two different gear, they must specify which gear is the first target and which is the second. As the spell resolves, those two gear will be killed in the chosen order.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "820.3",
+          "text": "Multiple instances of Repeat can be paid for separately. The spell's instructions  will be executed an additional time for each instance of Repeat that is paid for.",
+          "children": [
+            {
+              "section": "820.3.a",
+              "text": "Regardless of the number of times a spell's instructions are executed with this keyword, the spell is only Played once.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "820.4",
+          "text": "Repeat, and whether or not a spell has Repeat, is a characteristic of the Spell and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "821",
+      "text": "Weaponmaster",
+      "children": [
+        {
+          "section": "821.1",
+          "text": "Weaponmaster is a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "821.1.a",
+              "text": "Weaponmaster is present on Units.",
+              "children": []
+            },
+            {
+              "section": "821.1.b",
+              "text": "Weaponmaster is a Play Effect that chooses an Equipment you control and allows you to pay its Equip cost at a discount, regardless of the usual timing of the Equip ability, to Attach that Equipment to the unit with Weaponmaster.",
+              "children": []
+            },
+            {
+              "section": "821.1.c",
+              "text": "Weaponmaster is functionally short for: \"When you play me, you may choose a Card you control with the Equipment tag. Necessary portions of its Rules Text are no longer Inactive if they are currently Inactive. Pay the cost of its Equip ability, reduced by [A], to attach it to this unit.\" See rule 716. Attachment for more information.",
+              "children": [
+                {
+                  "section": "821.1.c.1",
+                  "text": "Weaponmaster can choose an Equipment whether it has an Equip ability or not.",
+                  "children": []
+                },
+                {
+                  "section": "821.1.c.2",
+                  "text": "The cost of the Equip ability is determined as though that Equip ability was being activated choosing the unit with the Weaponmaster ability, as modulated by any abilities that alter Equip costs.",
+                  "children": []
+                },
+                {
+                  "section": "821.1.c.3",
+                  "text": "If the chosen card's Equip cost does not contain [A], it can still be paid, but will not be reduced.",
+                  "children": []
+                },
+                {
+                  "section": "821.1.c.4",
+                  "text": "If the chosen card doesn't have an Equip cost, it can't be paid.",
+                  "children": []
+                },
+                {
+                  "section": "821.1.c.5",
+                  "text": "If the chosen card's Equip cost can't be paid, if it can't be detached from its current Top-Most card, or if it can't be attached to the unit with the Weaponmaster ability, it stays in its current location, Attached to anything it was already Attached to.",
+                  "children": []
+                },
+                {
+                  "section": "821.1.c.6",
+                  "text": "The Equip ability is not activated this way, and the unit with the Weaponmaster ability is not chosen.",
+                  "children": []
+                },
+                {
+                  "section": "821.1.c.7",
+                  "text": "Multiple instances of Weaponmaster trigger separately, and can choose different targets.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "821.1.d",
+              "text": "If you choose the same target with multiple instances of Weaponmaster, each will resolve separately.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "821.2",
+          "text": "Weaponmaster has no function while on the board.",
+          "children": []
+        },
+        {
+          "section": "821.3",
+          "text": "Weaponmaster, and whether or not a unit has Weaponmaster, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "822",
+      "text": "Ambush",
+      "children": [
+        {
+          "section": "822.1",
+          "text": "Ambush is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "822.1.a",
+              "text": "It is present on Units.",
+              "children": []
+            },
+            {
+              "section": "822.1.b",
+              "text": "It is functionally short for \"I may be played to a battlefield where you control Units\" and \"I have [Reaction] as long as I'm being played to a battlefield where you control Units.\"",
+              "children": []
+            },
+            {
+              "section": "822.1.c",
+              "text": "It is a passive ability that adds options to locations that are valid for a Unit to be played to during the Make Relevant Choices step of Playing a Card See rule 349. Playing Cards for more information",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "822.2",
+          "text": "Multiple instances of Ambush are redundant.",
+          "children": []
+        },
+        {
+          "section": "822.3",
+          "text": "If there are no units at the location chosen before Finalization completes for any reason, then it is no longer a valid location by Ambush's reasoning and cannot be played there",
+          "children": [
+            {
+              "section": "822.3.a",
+              "text": "Other effects and permissions may still enable this Unit to be able to be played to the selected location, but Ambush's permission will not be valid",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "822.4",
+          "text": "Ambush, and whether or not a unit has Ambush, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "823",
+      "text": "Hunt",
+      "children": [
+        {
+          "section": "823.1",
+          "text": "Hunt is a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "823.1.a",
+              "text": "Hunt is present on Units.",
+              "children": []
+            },
+            {
+              "section": "823.1.b",
+              "text": "Hunt is both a Conquer and a Hold effect.",
+              "children": []
+            },
+            {
+              "section": "823.1.c",
+              "text": "Hunt is formatted as \"Hunt X\"",
+              "children": [
+                {
+                  "section": "823.1.c.1",
+                  "text": "Hunt is functionally short for: \"When I Conquer or Hold, my controller gains X XP.\" See rule 728. XP for more information",
+                  "children": []
+                },
+                {
+                  "section": "823.1.c.2",
+                  "text": "If X is omitted, it is presumed to be 1.",
+                  "children": []
+                },
+                {
+                  "section": "823.1.c.3",
+                  "text": "X is referred to as the Hunt Value.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "823.2",
+          "text": "If a Unit has Hunt, or has been granted Hunt, and is granted Hunt by an additional source, the Hunt Value of all granted Hunt keywords is summed.",
+          "children": []
+        },
+        {
+          "section": "823.3",
+          "text": "Hunt, and whether or not a unit has Hunt, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "824",
+      "text": "Level",
+      "children": [
+        {
+          "section": "824.1",
+          "text": "Level is a Dependent Keyword.",
+          "children": [
+            {
+              "section": "824.1.a",
+              "text": "It is formatted as \"[Level [N]][>] [Text]\".",
+              "children": []
+            },
+            {
+              "section": "824.1.b",
+              "text": "Starting from the Keyword to the end of the clause, the entire statement is the Level Ability.",
+              "children": [
+                {
+                  "section": "824.1.b.1",
+                  "text": "It is functionally short for \"While you have [N] or more XP, this card gains \"[Text]\".\"",
+                  "children": []
+                },
+                {
+                  "section": "824.1.b.2",
+                  "text": "The [Text] here is the Dependent Ability",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "824.1.c",
+              "text": "As long as the controlling player has [N] XP, then the Dependent Ability will be be Active on the card with Level",
+              "children": [
+                {
+                  "section": "824.1.c.1",
+                  "text": "If the controller of the card with Level changes, then the Dependent Ability will be rendered Active or Inactive based on the new controller's XP.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "824.1.d",
+              "text": "The Dependent Ability will be Inactive as soon as the controlling player has less than [N] XP.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "824.2",
+          "text": "Level, and whether or not a card has Level is a characteristic of the card and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "825",
+      "text": "Unique",
+      "children": [
+        {
+          "section": "825.1",
+          "text": "Unique is a Deck Constraint Permission.",
+          "children": []
+        },
+        {
+          "section": "825.2",
+          "text": "Unique is not functionally short for any rules text, and instead provides a restriction to players during Deck Construction.",
+          "children": [
+            {
+              "section": "825.2.a",
+              "text": "A Deck can contain only one card of a given name if the card has Unique",
+              "children": []
+            },
+            {
+              "section": "825.2.b",
+              "text": "If a card is a Signature card and is also Unique, then that Deck can contain any combination of three Signature cards, but still only one of each named Unique card.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "825.3",
+          "text": "Cards with Unique have no additional effects during gameplay.",
+          "children": []
+        },
+        {
+          "section": "825.4",
+          "text": "Unique, and whether or not a Card has Unique, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "826",
+      "text": "Backline",
+      "children": [
+        {
+          "section": "826.1",
+          "text": "Backline is a Passive Ability keyword.",
+          "children": []
+        },
+        {
+          "section": "826.2",
+          "text": "It is present on Units.",
+          "children": []
+        },
+        {
+          "section": "826.3",
+          "text": "It is functionally short for \"I must be assigned lethal damage after any other unit with the same controller as me that does not have [Backline] during the Combat Damage step.\"",
+          "children": []
+        },
+        {
+          "section": "826.4",
+          "text": "It alters how players can elect to assign combat damage during combat.",
+          "children": [
+            {
+              "section": "826.4.a",
+              "text": "Players must still assign lethal damage to a unit before moving to the next when assigning their damage.",
+              "children": []
+            },
+            {
+              "section": "826.4.b",
+              "text": "If more than one unit with Backline is present with the same controller in Combat, damage may be assigned to any of them. Units with Backline are invalid assignments until all units without Backline have lethal damage assigned to them.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "826.5",
+          "text": "Multiple Instances of Backline are redundant.",
+          "children": []
+        },
+        {
+          "section": "826.6",
+          "text": "Backline, and whether or not a unit has Backline, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "section": "652",
+  "text": "If the game continues, follow these steps for Removal of a Player.",
+  "children": [
+    {
+      "section": "652.1",
+      "text": "Banish all permanents, runes, and facedown cards they currently control and all permanents, runes, and facedown cards they own.",
+      "children": []
+    },
+    {
+      "section": "652.2",
+      "text": "Remove the Battlefield they contributed to the game if it is in use.",
+      "children": [
+        {
+          "section": "652.2.a",
+          "text": "If it was in use, Replace it with a token battlefield with no abilities.",
+          "children": []
+        },
+        {
+          "section": "652.2.b",
+          "text": "Any units or hidden cards there do not move and are otherwise unaffected by this process. See rule 438. Replace for more information.",
+          "children": []
+        },
+        {
+          "section": "652.2.c",
+          "text": "If the removed battlefield was applying any continuous effects, those continuous effects immediately cease, which may cause changes in the characteristics of units or hidden cards there. Example: A battlefield reads \"Units here have +1 [M].\" If that battlefield's owner concedes and the battlefield is removed from the game as a result, units there immediately cease to get +1 [M].",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "652.3",
+      "text": "Remove all cards they own from the game.",
+      "children": []
+    },
+    {
+      "section": "652.4",
+      "text": "Counter all spells and abilities of all types controlled by the player that has conceded.",
+      "children": []
+    },
+    {
+      "section": "652.5",
+      "text": "Proceed with the game.",
+      "children": [
+        {
+          "section": "652.5.a",
+          "text": "Turn",
+          "children": [
+            {
+              "section": "652.5.a.1",
+              "text": "If the removed player was the Turn Player, play proceeds in Turn Order to the next available player in order.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "652.5.b",
+          "text": "Focus",
+          "children": [
+            {
+              "section": "652.5.b.1",
+              "text": "If the removed player had Focus in a Showdown, the next Player in order receives Focus.",
+              "children": []
+            },
+            {
+              "section": "652.5.b.2",
+              "text": "If the player being removed creates a state where all Players have Passed their Focus, the Showdown ends and play proceeds as necessary, E.G. Combat is resolved or a Cleanup is completed.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "652.5.c",
+          "text": "Priority",
+          "children": [
+            {
+              "section": "652.5.c.1",
+              "text": "If the removed player had Priority during a Chain, the next Player in order receives Priority.",
+              "children": []
+            },
+            {
+              "section": "652.5.c.2",
+              "text": "If the player being removed creates a state where all Players have passed Priority, then the most recent spell or ability on the Chain will resolve with Priority being re-established as appropriate for the state after the resolution of that spell or ability.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
