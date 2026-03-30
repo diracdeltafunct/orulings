@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import re
 from difflib import SequenceMatcher
 
@@ -102,21 +103,32 @@ def blog_index(request):
             }
         )
 
-    # Get top-level CR sections from database
-    cr_top_level = RuleSection.objects.filter(
-        rule_type="CR", parent__isnull=True
-    ).prefetch_related("children")
-
+    # CR index structure: fixed top-level headers with their sub-index sections
+    _CR_INDEX = [
+        {"top": "000", "subs": ["001", "050"]},
+        {"top": "100", "subs": ["101", "104", "120", "125", "140", "147", "152", "159", "168", "172", "176", "185"]},
+        {"top": "300", "subs": ["301", "318", "325", "349", "360", "407", "440", "454", "458", "462", "468", "476", "649"]},
+        {"top": "700", "subs": ["701", "706", "712", "716", "720", "726", "728", "734", "739", "800"]},
+    ]
+    all_cr_ids = [e["top"] for e in _CR_INDEX] + [s for e in _CR_INDEX for s in e["subs"]]
+    cr_map = {
+        r.section: r
+        for r in RuleSection.objects.filter(rule_type="CR", section__in=all_cr_ids)
+    }
     crsections = []
-    for section in cr_top_level:
-        crsections.append(
-            {
-                "section": section.section,
-                "text": section.text,
-                "url": f"/crsections/{section.section}/",
-                "children": list(section.children.values("section", "text")),
-            }
-        )
+    for entry in _CR_INDEX:
+        top = cr_map.get(entry["top"])
+        if not top:
+            continue
+        crsections.append({
+            "section": top.section,
+            "text": top.text,
+            "url": f"/crsections/{top.section}/",
+            "subs": [
+                {"section": s, "text": cr_map[s].text, "url": f"/crsections/{s}/"}
+                for s in entry["subs"] if s in cr_map
+            ],
+        })
 
     context = {
         "special_post": special_post,
@@ -754,3 +766,137 @@ def api_cards_all(request):
             }
         )
     return JsonResponse(data, safe=False)
+
+
+# Mapping of rule_type -> (old_dir, new_dir, old_label, new_label)
+_DIFF_CONFIGS = {
+    "tr": {
+        "old_dir": os.path.join(settings.BASE_DIR, "staticfiles", "trsections_january_2026"),
+        "new_dir": os.path.join(settings.BASE_DIR, "staticfiles", "trsections_march_2026"),
+        "old_label": "January 2026",
+        "new_label": "March 2026",
+    },
+    "cr": {
+        "old_dir": os.path.join(settings.BASE_DIR, "staticfiles", "crsections"),
+        "new_dir": os.path.join(settings.BASE_DIR, "staticfiles", "crsections_march_2026"),
+        "old_label": "December 2025",
+        "new_label": "March 2026",
+    },
+}
+
+
+_TYPOGRAPHIC_NORM = str.maketrans({
+    "\u2018": "'",  # left single quote
+    "\u2019": "'",  # right single quote / apostrophe
+    "\u201c": '"',  # left double quote
+    "\u201d": '"',  # right double quote
+    "\u2013": "-",  # en dash
+    "\u2014": "--", # em dash
+    "\ufffd": "",   # replacement character (encoding artefact)
+})
+
+
+def _norm(text):
+    """Normalise typographic punctuation so cosmetic encoding differences are ignored."""
+    return text.translate(_TYPOGRAPHIC_NORM)
+
+
+def _load_flat_rules(directory):
+    """Load all rule JSON files in a directory into a flat {section: text} dict."""
+    result = {}
+    if not os.path.isdir(directory):
+        return result
+    for filename in sorted(os.listdir(directory)):
+        if not filename.endswith(".json") or filename == "metadata.json":
+            continue
+        filepath = os.path.join(directory, filename)
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        _flatten_rule_node(data, result)
+    return result
+
+
+def _flatten_rule_node(node, result):
+    result[node["section"]] = node.get("text", "")
+    for child in node.get("children", []):
+        _flatten_rule_node(child, result)
+
+
+def _section_sort_key(section):
+    parts = section.split(".")
+    key = []
+    for part in parts:
+        if part.isdigit():
+            key.append((0, int(part)))
+        else:
+            key.append((1, part))
+    return key
+
+
+def _word_diff_html(old_text, new_text):
+    """Return (old_html, new_html) with word-level changes highlighted."""
+    old_words = old_text.split()
+    new_words = new_text.split()
+    matcher = SequenceMatcher(None, old_words, new_words)
+    old_parts = []
+    new_parts = []
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        if tag == "equal":
+            chunk = " ".join(old_words[i1:i2])
+            old_parts.append(chunk)
+            new_parts.append(chunk)
+        elif tag == "replace":
+            old_parts.append('<mark class="diff-del">' + " ".join(old_words[i1:i2]) + "</mark>")
+            new_parts.append('<mark class="diff-ins">' + " ".join(new_words[j1:j2]) + "</mark>")
+        elif tag == "delete":
+            old_parts.append('<mark class="diff-del">' + " ".join(old_words[i1:i2]) + "</mark>")
+        elif tag == "insert":
+            new_parts.append('<mark class="diff-ins">' + " ".join(new_words[j1:j2]) + "</mark>")
+    return " ".join(old_parts), " ".join(new_parts)
+
+
+def rules_diff(request, rule_type):
+    """Display a side-by-side diff of two versions of a rules document."""
+    config = _DIFF_CONFIGS.get(rule_type.lower())
+    if config is None:
+        return render(request, "rules_diff.html", {
+            "rule_type": rule_type.upper(),
+            "no_diff": True,
+        })
+
+    old_sections = _load_flat_rules(config["old_dir"])
+    new_sections = _load_flat_rules(config["new_dir"])
+
+    all_keys = sorted(
+        set(old_sections.keys()) | set(new_sections.keys()),
+        key=_section_sort_key,
+    )
+
+    all_items = []
+    n_added = n_removed = n_changed = 0
+    for section in all_keys:
+        old_text = old_sections.get(section)
+        new_text = new_sections.get(section)
+        if old_text is None:
+            all_items.append({"section": section, "kind": "added", "old_html": "", "new_html": new_text})
+            n_added += 1
+        elif new_text is None:
+            all_items.append({"section": section, "kind": "removed", "old_html": old_text, "new_html": ""})
+            n_removed += 1
+        elif _norm(old_text) != _norm(new_text):
+            old_html, new_html = _word_diff_html(_norm(old_text), _norm(new_text))
+            all_items.append({"section": section, "kind": "changed", "old_html": old_html, "new_html": new_html})
+            n_changed += 1
+        else:
+            all_items.append({"section": section, "kind": "unchanged", "old_html": _norm(new_text), "new_html": _norm(new_text)})
+
+    return render(request, "rules_diff.html", {
+        "rule_type": rule_type.upper(),
+        "old_label": config["old_label"],
+        "new_label": config["new_label"],
+        "all_items": all_items,
+        "n_added": n_added,
+        "n_removed": n_removed,
+        "n_changed": n_changed,
+        "no_diff": False,
+    })

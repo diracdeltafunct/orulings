@@ -18,16 +18,36 @@
 
 {% if crsections %}
 <div class="crsections mt-5">
-    <h2>Core Rules Sections</h2>
-    <p>Last Updated: {{ cr_last_updated }}</p>
-    <div class="list-group">
+    <div class="d-flex align-items-center gap-2 mb-1">
+        <h2 class="mb-0">Core Rules</h2>
+        <a href="{% url 'rules_diff' 'cr' %}" class="btn btn-sm btn-outline-secondary">View Diff</a>
+    </div>
+    <p class="text-muted small mb-3">Last Updated: {{ cr_last_updated }}</p>
+    <div class="row g-3">
         {% for section in crsections %}
-        <a
-            href="{% url 'core_rules' %}#rule-{{ section.section }}"
-            class="list-group-item list-group-item-action"
-        >
-            <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
-        </a>
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <a href="{% url 'core_rules' %}#rule-{{ section.section }}"
+                       class="text-decoration-none fw-semibold fs-6">
+                        {{ section.section }}. {{ section.text }}
+                    </a>
+                </div>
+                {% if section.subs %}
+                <div class="card-body py-2">
+                    <div class="cr-subs-grid">
+                        {% for sub in section.subs %}
+                        <a href="{% url 'core_rules' %}#rule-{{ sub.section }}"
+                           class="cr-sub-link text-decoration-none">
+                            <span class="cr-sub-num">{{ sub.section }}</span>
+                            {{ sub.text }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
         {% endfor %}
     </div>
 </div>
@@ -35,19 +55,45 @@
 
 {% if trsections %}
 <div id="trsections" class="trsections mt-5">
-    <h2>Tournament Rules Sections</h2>
-    <p>Last Updated: {{ tr_last_updated }}</p>
+    <div class="d-flex align-items-center gap-2 mb-1">
+        <h2 class="mb-0">Tournament Rules</h2>
+        <a href="{% url 'rules_diff' 'tr' %}" class="btn btn-sm btn-outline-secondary">View Diff</a>
+    </div>
+    <p class="text-muted small mb-3">Last Updated: {{ tr_last_updated }}</p>
     <div class="list-group">
         {% for section in trsections %}
-        <a
-            href="{{ section.url }}"
-            class="list-group-item list-group-item-action"
-        >
-            <h5 class="mb-1">{{ section.section }}. {{ section.text }}</h5>
+        <a href="{{ section.url }}" class="list-group-item list-group-item-action">
+            <span class="fw-semibold">{{ section.section }}.</span> {{ section.text }}
         </a>
         {% endfor %}
     </div>
 </div>
 {% endif %}
+
+<style>
+.cr-subs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+}
+.cr-sub-link {
+    display: block;
+    padding: 3px 4px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--bs-body-color);
+    transition: background 0.1s;
+}
+.cr-sub-link:hover {
+    background: var(--bs-tertiary-bg);
+    color: var(--bs-link-hover-color);
+}
+.cr-sub-num {
+    font-family: monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-right: 4px;
+}
+</style>
 
 {% endblock %}
