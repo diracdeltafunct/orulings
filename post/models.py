@@ -39,6 +39,7 @@ class Set(models.TextChoices):
     ORIGINS = "Origins", _("Origins")
     SPIRITFORGED = "Spiritforged", _("Spiritforged")
     PROVING_GROUNDS = "Proving Grounds", _("Proving Grounds")
+    UNLEASHED = "Unleashed", _("Unleashed")
 
 
 class CardType(models.TextChoices):
