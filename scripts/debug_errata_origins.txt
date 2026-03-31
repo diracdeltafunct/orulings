@@ -1,0 +1,957 @@
+Riftbound  Card  Errata  
+Last  Updated:  2025-10-21   
+Ava  Achiever  
+[NEW  TEXT]   When  I  attack,  you  may  pay  [C]  to  play  a  card  with  [Hidden]  from  your  hand,  
+ignoring
+ 
+its
+ 
+cost.
+ 
+If
+ 
+it’s
+ 
+a
+ 
+unit,
+ 
+play
+ 
+it
+ 
+here.
+ 
+▲  
+[OLD  TEXT]  When  I  attack,  you  may  pay  [C]  to  play  a  card  with  [Hidden]  from  your  hand  here,  
+ignoring
+ 
+its
+ 
+cost.
+  
+Baited  Hook  
+[NEW  TEXT]  [1][C],  [E]:  Kill  a  friendly  unit.  Look  at  the  top  5  cards  of  your  Main  Deck.  You  may  
+banish
+ 
+a
+ 
+unit
+ 
+from
+ 
+among
+ 
+them
+ 
+that
+ 
+has
+ 
+Might
+ 
+up
+ 
+to
+ 
+1
+ 
+more
+ 
+than
+ 
+the
+ 
+killed
+ 
+unit
+ 
+and
+ 
+play
+ 
+it,
+ 
+ignoring
+ 
+its
+ 
+cost.
+ 
+Then
+ 
+recycle
+ 
+the
+ 
+rest.
+ 
+▲  
+[OLD  TEXT]  [1][C],  [E]:  Kill  a  friendly  unit.  Look  at  the  top  5  cards  of  your  Main  Deck.  You  may  play  
+a
+ 
+unit
+ 
+from
+ 
+among
+ 
+them
+ 
+that
+ 
+has
+ 
+Might
+ 
+up
+ 
+to
+ 
+1
+ 
+more
+ 
+than
+ 
+the
+ 
+killed
+ 
+unit,
+ 
+ignoring
+ 
+its
+ 
+cost.
+ 
+Then
+ 
+recycle
+ 
+the
+ 
+rest.
+  
+ 
+  
+ 
+ 
+Blind  Fury  
+[NEW  TEXT]  [Action]  (Play  on  your  turn  or  in  showdowns.)  Each  opponent  reveals  the  top  card  of  their  Main  Deck.  Choose  one  and  banish  it,  
+then
+ 
+play
+ 
+it,
+ 
+ignoring
+ 
+its
+ 
+cost.
+ 
+Then
+ 
+recycle
+ 
+the
+ 
+rest.
+ 
+▲   
+[OLD  TEXT]  [Action]  (Play  on  your  turn  or  in  showdowns.)  Each  opponent  reveals  the  top  card  of  their  Main  Deck.  Choose  one  and  play  it,  
+ignoring
+ 
+its
+ 
+cost.
+ 
+Then
+ 
+recycle
+ 
+the
+ 
+rest.
+  
+Clockwork  Keeper  
+[NEW  TEXT]  You  may  pay  [C]  as  an  additional  cost  to  play  me.  When  you  play  me,  if  you  paid  the  additional  cost,  draw  1.  
+▲
+ 
+[OLD  TEXT]  As  you  play  me,  you  may  pay  [C]  as  an  additional  cost.  If  you  do,  draw  1.   
+  
+Convergent  Mutation  
+[NEW  TEXT]  [Reaction]  (Play  any  time,  even  before  spells  and  abilities  resolve.)  Choose  a  friendly  unit.  This  turn,  increase  its  Might  to  the  Might  of  another  friendly  
+unit.
+ 
+▲  
+[OLD  TEXT]   [Reaction]  (Play  any  time,  even  before  spells  and  abilities  resolve.)  Choose  a  friendly  unit.  Increase  its  Might  until  it  equals  the  Might  of  another  
+friendly
+ 
+unit.
+  
+Dark  Child,  Starter  
+[NEW  TEXT]   At  the  end  of  your  turn,  ready  up  to  2  runes.  
+▲  
+[OLD  TEXT]  At  the  end  of  your  turn,  ready  2  runes.   
+Dazzling  Aurora  
+[NEW  TEXT]   At  the  end  of  your  turn,  reveal  cards  from  the  top  of  your  Main  Deck  until  you  reveal  
+a
+ 
+unit
+ 
+and
+ 
+banish
+ 
+it.
+ 
+Play
+ 
+it,
+ 
+ignoring
+ 
+its
+ 
+cost,
+ 
+and
+ 
+recycle
+ 
+the
+ 
+rest.
+ 
+▲  
+[OLD  TEXT]  At  the  end  of  your  turn,  reveal  cards  from  the  top  of  your  Main  Deck  until  you  reveal  
+a
+ 
+unit.
+ 
+Play
+ 
+it,
+ 
+ignoring
+ 
+its
+ 
+cost,
+ 
+and
+ 
+recycle
+ 
+the
+ 
+rest.
+ 
+   
+Disintegrate  
+[NEW  TEXT]   Action  (Play  on  your  turn  or  in  showdowns.)  Deal  3  to  a  unit  at  a  battleﬁeld.  If  this  kills  it,  do  this:  draw  1.  
+▲  
+[OLD  TEXT]  [Action]  (Play  on  your  turn  or  in  showdowns.)  Deal  3  to  a  unit  at  a  battleﬁeld.  If  this  kills  it,  draw  1.   
+Dragon's  Rage  
+[NEW  TEXT]   Move  an  enemy  unit.  Then  do  this:  Choose  another  enemy  unit  at  its  destination.  
+They
+ 
+deal
+ 
+damage
+ 
+equal
+ 
+to
+ 
+their
+ 
+Mights
+ 
+to
+ 
+each
+ 
+other.
+ 
+▲  
+[OLD  TEXT]  Move  an  enemy  unit.  Then  choose  another  enemy  unit  at  its  destination.  They  deal  
+damage
+ 
+equal
+ 
+to
+ 
+their
+ 
+Mights
+ 
+to
+ 
+each
+ 
+other.
+  
+Dune  Drake  
+[NEW  TEXT]   When  I  attack,  give  me  +2  [M]  this  turn  if  there  is  a  ready  enemy  unit  here.  
+▲  
+[OLD  TEXT]  When  I  attack,  give  me  +2  [M]  if  there  is  a  ready  enemy  unit  here.  
+   
+Highlander  
+[NEW  TEXT]   [Reaction]  (Play  any  time,  even  before  spells  and  abilities  resolve.)  Choose  a  friendly  unit.  The  next  time  it  would  die  this  turn,  heal  it,  exhaust  it,  and  
+recall
+ 
+it
+ 
+instead.
+ 
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+ 
+▲  
+[OLD  TEXT]  [Reaction]  (Play  any  time,  even  before  spells  and  abilities  resolve.)  Choose  a  friendly  unit.  The  next  time  it  dies  this  turn,  recall  it  exhausted  instead.  
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+  
+Karma,  Channeler  
+[NEW  TEXT]   [Vision]  (When  you  play  me,  look  at  the  top  card  of  your  Main  Deck.  You  may  recycle  
+it.)
+ When  you  recycle  one  or  more  cards  to  your  Main  Deck,  buff  a  friendly  unit.  (If  it  
+doesn't
+ 
+have
+ 
+a
+ 
+buff,
+ 
+it
+ 
+gets
+ 
+a
+ 
++1
+ 
+[M]
+ 
+buff.
+ 
+Runes
+ 
+aren't
+ 
+cards.)
+ 
+▲  
+[OLD  TEXT]  [Vision]  (When  you  play  me,  look  at  the  top  card  of  your  Main  Deck.  You  may  recycle  
+it.)
+ When  you  recycle  one  or  more  cards,  buff  a  friendly  unit.  (If  it  doesn't  have  a  buff,  it  
+gets
+ 
+a
+ 
++1
+ 
+[M]
+ 
+buff.
+ 
+Runes
+ 
+aren't
+ 
+cards.)
+  
+  
+Kinkou  Monk  
+[NEW  TEXT]   When  you  play  me,  buff  up  to  two  other  friendly  units.  (Each  one  that  doesn't  have  
+a
+ 
+buff
+ 
+gets
+ 
+a
+ 
++1
+ 
+[M]
+ 
+buff.)
+ 
+▲  
+[OLD  TEXT]  When  you  play  me,  buff  two  other  friendly  units.  (Each  one  that  doesn't  have  a  buff  
+gets
+ 
+a
+ 
++1
+ 
+[M]
+ 
+buff.)
+  
+Nocturne,  Horrifying  
+[NEW  TEXT]   [Ganking]  (I  can  move  from  battleﬁeld  to  battleﬁeld.)  As  you  look  at  or  reveal  me  from  the  top  of  your  deck,  you  may  banish  me.  If  you  do,  
+you
+ 
+may
+ 
+play
+ 
+me
+ 
+for
+ 
+[A].
+ 
+▲  
+[OLD  TEXT]  [Ganking]  (I  can  move  from  battleﬁeld  to  battleﬁeld.)  When  you  look  at  cards  from  the  top  of  your  deck  (and  don't  draw  them)  and  see  
+me,
+ 
+you
+ 
+may
+ 
+play
+ 
+me
+ 
+for
+ 
+[A].
+  
+Pack  of  Wonders  
+[NEW  TEXT]   [E]:  Return  another  friendly  gear,  unit,  or  facedown  card  to  its  owner's  hand.  
+▲  
+[OLD  TEXT]  [E]:  Return  another  friendly  gear,  unit,  or  [Hidden]  card  to  its  owner's  hand.  
+   
+Portal  Rescue  
+[NEW  TEXT]   [Action]  (Play  on  your  turn  or  in  showdowns.)  Banish  a  friendly  unit,  then  its  owner  plays  it  to  their  base,  ignoring  its  cost.  
+▲  
+[OLD  TEXT]  [Action]  (Play  on  your  turn  or  in  showdowns.)  Banish  a  friendly  unit,  then  play  it  to  base,  ignoring  its  cost.   Note:  Text  only  differs  for  English  version  of  the  card   
+Promising  Future  
+[NEW  TEXT]   Each  player  looks  at  the  top  5  cards  of  their  Main  Deck,  banishes  one  of  them,  then  
+recycles
+ 
+the
+ 
+rest.
+ 
+Starting
+ 
+with
+ 
+the
+ 
+next
+ 
+player,
+ 
+each
+ 
+player
+ 
+plays
+ 
+those
+ 
+cards,
+ 
+ignoring
+ 
+Energy
+ 
+costs.
+ 
+(They
+ 
+must
+ 
+still
+ 
+pay
+ 
+Power
+ 
+costs.)
+ 
+▲  
+[OLD  TEXT]  Each  player  looks  at  the  top  5  cards  of  their  Main  Deck,  chooses  one,  then  recycles  
+the
+ 
+rest.
+ 
+Starting
+ 
+with
+ 
+the
+ 
+next
+ 
+player,
+ 
+each
+ 
+player
+ 
+plays
+ 
+those
+ 
+cards,
+ 
+ignoring
+ 
+Energy
+ 
+costs.
+ 
+(They
+ 
+must
+ 
+still
+ 
+pay
+ 
+Power
+ 
+costs.)
+  
+  
+ 
+Ravenborn  Tome  
+[NEW  TEXT]   [E]:  The  next  spell  you  play  this  turn  deals  1  Bonus  Damage.  (Each  instance  of  
+damage
+ 
+the
+ 
+spell
+ 
+deals
+ 
+is
+ 
+increased
+ 
+by
+ 
+1.)
+ 
+▲  
+[OLD  TEXT]  [E]:  The  next  spell  you  play  deals  1  Bonus  Damage.  (Each  instance  of  damage  the  
+spell
+ 
+deals
+ 
+is
+ 
+increased
+ 
+by
+ 
+1.)
+  
+Salvage  
+[NEW  TEXT]   [Action]  (Play  on  your  turn  or  in  showdowns.)  You  may  kill  up  to  one  gear.  Draw  1.  
+▲  
+[OLD  TEXT]  [Action]  (Play  on  your  turn  or  in  showdowns.)  You  may  kill  a  gear.  Draw  1.   
+  
+ 
+ 
+Sigil  of  the  Storm  
+[NEW  TEXT]   When  you  conquer  here,  you  must  recycle  one  of  your  runes.  (This  doesn’t  choose  
+anything.)
+ 
+▲  
+[OLD  TEXT]  When  you  conquer  here,  recycle  one  of  your  runes.   
+Sona,  Harmonious  
+[NEW  TEXT]   At  the  end  of  your  turn,  if  I'm  at  a  battleﬁeld,  ready  up  to  4  friendly  runes.  
+▲  
+[OLD  TEXT]  While  I'm  at  a  battleﬁeld,  ready  4  friendly  runes  at  the  end  of  your  turn.   
+  
+ 
+ 
+Targon's  Peak  
+[NEW  TEXT]   When  you  conquer  here,  ready  up  to  2  runes  at  the  end  of  this  turn.  
+▲  
+[OLD  TEXT]  When  you  conquer  here,  ready  2  runes  at  the  end  of  this  turn.   
+Teemo,  Strategist  
+[NEW  TEXT]   [Hidden]  (Hide  now  for  [A]  to  react  with  later  for  [0].)  When  I  defend,  choose  an  enemy  unit  here  and  reveal  the  top  5  cards  of  your  Main  
+Deck.
+ 
+Deal
+ 
+1
+ 
+to
+ 
+that
+ 
+unit
+ 
+for
+ 
+each
+ 
+card
+ 
+with
+ 
+[Hidden]
+ 
+revealed
+ 
+this
+ 
+way,
+ 
+then
+ 
+recycle
+ 
+the
+ 
+revealed
+ 
+cards.
+ 
+▲  
+[OLD  TEXT]  [Hidden]  (Hide  now  for  [A]  to  react  with  later  for  [0].)  When  I  defend  or  I'm  played  from  [Hidden],  reveal  the  top  5  cards  of  your  Main  
+Deck.
+ 
+Deal
+ 
+1
+ 
+to
+ 
+an
+ 
+enemy
+ 
+unit
+ 
+here
+ 
+for
+ 
+each
+ 
+card
+ 
+with
+ 
+[Hidden],
+ 
+then
+ 
+recycle
+ 
+them.
+  
+  
+The  Boss  
+[NEW  TEXT]   If  a  buffed  unit  you  control  would  die,  you  may  pay  [C],  exhaust  me,  and  spend  its  
+buff
+ 
+to
+ 
+heal
+ 
+it,
+ 
+exhaust
+ 
+it,
+ 
+and
+ 
+recall
+ 
+it
+ 
+instead.
+ 
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+ When  you  conquer,  ready  me.  
+▲  
+[OLD  TEXT]  When  a  buffed  unit  you  control  would  die,  you  may  pay  [C]  and  exhaust  me  to  
+spend
+ 
+its
+ 
+buff
+ 
+and
+ 
+recall
+ 
+it
+ 
+exhausted
+ 
+instead.
+ 
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+ When  you  conquer,  ready  me.   
+The  Dreaming  Tree  
+[NEW  TEXT]   When  a  player  chooses  a  friendly  unit  here  with  a  spell  for  the  ﬁrst  time  each  turn,  
+they
+ 
+draw
+ 
+1.
+ 
+▲  
+[OLD  TEXT]  The  ﬁrst  time  you  choose  a  friendly  unit  with  a  spell  here  each  turn,  draw  1.   
+  
+ 
+ 
+ 
+The  Syren  
+[NEW  TEXT]   [1],  [E]:  Move  a  friendly  unit  at  a  battleﬁeld  to  its  base.  
+▲  
+[OLD  TEXT]  [1],  [E]:  Move  a  friendly  unit  at  a  battleﬁeld  to  your  base.   Note:  Text  only  differs  for  English  version  of  the  card   
+Tideturner  
+[NEW  TEXT]   [Hidden]  (Hide  now  for  [A]  to  react  with  later  for  [0].)  When  you  play  me,  you  may  choose  a  unit  you  control  at  another  location.  Move  me  
+to
+ 
+its
+ 
+location
+ 
+and
+ 
+it
+ 
+to
+ 
+my
+ 
+original
+ 
+location.
+ 
+▲  
+[OLD  TEXT]  [Hidden]  (Hide  now  for  [A]  to  react  with  later  for  [0].)  When  you  play  me,  you  may  choose  a  friendly  unit.  Move  me  to  its  location  and  it  to  
+my
+ 
+original
+ 
+location.
+  
+  
+Unforgiven  
+[NEW  TEXT]   [2],  [E]:  Move  a  friendly  unit  to  or  from  its  base.  
+▲  
+[OLD  TEXT]  [2],  [E]:  Move  a  friendly  unit  to  or  from  your  base.   Note:  Text  only  differs  for  English  version  of  the  card   
+Unlicensed  Armory  
+[NEW  TEXT]   Discard  1,  [E]:  Choose  a  friendly  unit.  The  next  time  it  would  die  this  turn,  you  may  
+pay
+ 
+[C]
+ 
+to
+ 
+heal
+ 
+it,
+ 
+exhaust
+ 
+it,
+ 
+and
+ 
+recall
+ 
+it
+ 
+instead.
+ 
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+ 
+▲  
+[OLD  TEXT]  Discard  1,  [E]:  Choose  a  friendly  unit.  The  next  time  it  dies  this  turn,  you  may  pay  [C]  
+to
+ 
+recall
+ 
+it
+ 
+exhausted
+ 
+instead.
+ 
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+  
+Void  Gate  
+[NEW  TEXT]   Spells  and  abilities  deal  1  Bonus  Damage  to  units  here.  (Each  instance  of  damage  
+the
+ 
+spell
+ 
+deals
+ 
+to
+ 
+a
+ 
+unit
+ 
+here
+ 
+is
+ 
+increased
+ 
+by
+ 
+1.)
+ 
+▲  
+[OLD  TEXT]  Spells  and  abilities  affecting  units  here  each  deal  1  Bonus  Damage.  (Each  instance  
+of
+ 
+damage
+ 
+the
+ 
+spell
+ 
+deals
+ 
+is
+ 
+increased
+ 
+by
+ 
+1.)
+ 
+   
+Zhonya's  Hourglass  
+[NEW  TEXT]   [Hidden]  (Hide  now  for  [A]  to  react  with  later  for  [0].)  If  a  friendly  unit  would  die,  kill  this  instead.  Heal  that  unit,  exhaust  it,  and  recall  it.  
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+ 
+▲  
+[OLD  TEXT]  [Hidden]  (Hide  now  for  [A]  to  react  with  later  for  [0].)  The  next  time  a  friendly  unit  would  die,  kill  this  instead.  Recall  that  unit  exhausted.  
+(Send
+ 
+it
+ 
+to
+ 
+base.
+ 
+This
+ 
+isn't
+ 
+a
+ 
+move.)
+  
