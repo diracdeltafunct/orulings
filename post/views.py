@@ -810,27 +810,6 @@ def _norm(text):
     return text.translate(_TYPOGRAPHIC_NORM)
 
 
-def _load_flat_rules(directory):
-    """Load all rule JSON files in a directory into a flat {section: text} dict."""
-    result = {}
-    if not os.path.isdir(directory):
-        return result
-    for filename in sorted(os.listdir(directory)):
-        if not filename.endswith(".json") or filename == "metadata.json":
-            continue
-        filepath = os.path.join(directory, filename)
-        with open(filepath, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        _flatten_rule_node(data, result)
-    return result
-
-
-def _flatten_rule_node(node, result):
-    result[node["section"]] = node.get("text", "")
-    for child in node.get("children", []):
-        _flatten_rule_node(child, result)
-
-
 def _section_sort_key(section):
     parts = section.split(".")
     key = []
@@ -840,6 +819,27 @@ def _section_sort_key(section):
         else:
             key.append((1, part))
     return key
+
+
+def _load_ordered_rules(directory):
+    """Load all rule JSON files in document order, returning [(section, text), ...]."""
+    result = []
+    if not os.path.isdir(directory):
+        return result
+    filenames = [f for f in os.listdir(directory) if f.endswith(".json") and f != "metadata.json"]
+    filenames.sort(key=lambda f: _section_sort_key(f[:-5]))
+    for filename in filenames:
+        filepath = os.path.join(directory, filename)
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        _flatten_rule_node_ordered(data, result)
+    return result
+
+
+def _flatten_rule_node_ordered(node, result):
+    result.append((node["section"], node.get("text", "")))
+    for child in node.get("children", []):
+        _flatten_rule_node_ordered(child, result)
 
 
 def _word_diff_html(old_text, new_text):
@@ -873,31 +873,82 @@ def rules_diff(request, rule_type):
             "no_diff": True,
         })
 
-    old_sections = _load_flat_rules(config["old_dir"])
-    new_sections = _load_flat_rules(config["new_dir"])
+    old_items = _load_ordered_rules(config["old_dir"])
+    new_items = _load_ordered_rules(config["new_dir"])
 
-    all_keys = sorted(
-        set(old_sections.keys()) | set(new_sections.keys()),
-        key=_section_sort_key,
-    )
+    old_texts = [_norm(t) for _, t in old_items]
+    new_texts = [_norm(t) for _, t in new_items]
 
+    matcher = SequenceMatcher(None, old_texts, new_texts, autojunk=False)
     all_items = []
     n_added = n_removed = n_changed = 0
-    for section in all_keys:
-        old_text = old_sections.get(section)
-        new_text = new_sections.get(section)
-        if old_text is None:
-            all_items.append({"section": section, "kind": "added", "old_html": "", "new_html": new_text})
-            n_added += 1
-        elif new_text is None:
-            all_items.append({"section": section, "kind": "removed", "old_html": old_text, "new_html": ""})
-            n_removed += 1
-        elif _norm(old_text) != _norm(new_text):
-            old_html, new_html = _word_diff_html(_norm(old_text), _norm(new_text))
-            all_items.append({"section": section, "kind": "changed", "old_html": old_html, "new_html": new_html})
-            n_changed += 1
-        else:
-            all_items.append({"section": section, "kind": "unchanged", "old_html": _norm(new_text), "new_html": _norm(new_text)})
+
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        if tag == "equal":
+            for (old_sec, old_text), (new_sec, new_text) in zip(old_items[i1:i2], new_items[j1:j2]):
+                all_items.append({
+                    "old_section": old_sec,
+                    "new_section": new_sec,
+                    "kind": "unchanged",
+                    "old_html": _norm(old_text),
+                    "new_html": _norm(new_text),
+                })
+        elif tag == "replace":
+            old_chunk = old_items[i1:i2]
+            new_chunk = new_items[j1:j2]
+            for idx in range(max(len(old_chunk), len(new_chunk))):
+                if idx < len(old_chunk) and idx < len(new_chunk):
+                    old_sec, old_text = old_chunk[idx]
+                    new_sec, new_text = new_chunk[idx]
+                    old_html, new_html = _word_diff_html(_norm(old_text), _norm(new_text))
+                    all_items.append({
+                        "old_section": old_sec,
+                        "new_section": new_sec,
+                        "kind": "changed",
+                        "old_html": old_html,
+                        "new_html": new_html,
+                    })
+                    n_changed += 1
+                elif idx < len(old_chunk):
+                    old_sec, old_text = old_chunk[idx]
+                    all_items.append({
+                        "old_section": old_sec,
+                        "new_section": "",
+                        "kind": "removed",
+                        "old_html": _norm(old_text),
+                        "new_html": "",
+                    })
+                    n_removed += 1
+                else:
+                    new_sec, new_text = new_chunk[idx]
+                    all_items.append({
+                        "old_section": "",
+                        "new_section": new_sec,
+                        "kind": "added",
+                        "old_html": "",
+                        "new_html": _norm(new_text),
+                    })
+                    n_added += 1
+        elif tag == "delete":
+            for old_sec, old_text in old_items[i1:i2]:
+                all_items.append({
+                    "old_section": old_sec,
+                    "new_section": "",
+                    "kind": "removed",
+                    "old_html": _norm(old_text),
+                    "new_html": "",
+                })
+                n_removed += 1
+        elif tag == "insert":
+            for new_sec, new_text in new_items[j1:j2]:
+                all_items.append({
+                    "old_section": "",
+                    "new_section": new_sec,
+                    "kind": "added",
+                    "old_html": "",
+                    "new_html": _norm(new_text),
+                })
+                n_added += 1
 
     return render(request, "rules_diff.html", {
         "rule_type": rule_type.upper(),

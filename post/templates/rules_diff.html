@@ -34,7 +34,7 @@
     <tbody>
       {% for item in all_items %}
       <tr class="diff-row diff-row-{{ item.kind }}" data-kind="{{ item.kind }}">
-        <td class="diff-col-section">{{ item.section }}</td>
+        <td class="diff-col-section">{% if item.old_section != item.new_section and item.old_section and item.new_section %}{{ item.old_section }}&rarr;{{ item.new_section }}{% else %}{{ item.old_section }}{{ item.new_section }}{% endif %}</td>
         {% if item.kind == "unchanged" %}
         <td class="diff-cell-unchanged" colspan="1">{{ item.old_html }}</td>
         <td class="diff-cell-unchanged">{{ item.new_html }}</td>
