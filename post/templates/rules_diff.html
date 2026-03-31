@@ -16,7 +16,7 @@
     <span class="text-muted small ms-2">
       <strong>{{ old_label }}</strong> → <strong>{{ new_label }}</strong>
     </span>
-    <button class="btn btn-sm btn-outline-secondary ms-auto" id="btn-toggle-unchanged">Hide unchanged</button>
+    <button class="btn btn-sm btn-outline-secondary ms-auto" id="btn-toggle-unchanged">Show unchanged</button>
     <button class="btn btn-sm btn-outline-primary" id="btn-prev-change">&#8593; Prev</button>
     <button class="btn btn-sm btn-outline-primary" id="btn-next-change">&#8595; Next</button>
   </div>
@@ -34,7 +34,7 @@
     <tbody>
       {% for item in all_items %}
       <tr class="diff-row diff-row-{{ item.kind }}" data-kind="{{ item.kind }}">
-        <td class="diff-col-section">{% if item.old_section != item.new_section and item.old_section and item.new_section %}<span class="d-block">{{ item.old_section }}</span><span class="d-block text-muted">&darr;</span><span class="d-block">{{ item.new_section }}</span>{% else %}{{ item.old_section }}{{ item.new_section }}{% endif %}</td>
+        <td class="diff-col-section">{% if item.old_section != item.new_section and item.old_section and item.new_section %}<span class="d-block">{{ item.old_section }}</span><span class="d-block text-muted">&darr;</span><span class="d-block">{{ item.new_section }}</span>{% elif item.new_section %}{{ item.new_section }}{% else %}{{ item.old_section }}{% endif %}</td>
         {% if item.kind == "unchanged" %}
         <td class="diff-cell-unchanged" colspan="1">{{ item.old_html }}</td>
         <td class="diff-cell-unchanged">{{ item.new_html }}</td>
@@ -104,7 +104,11 @@ mark.diff-ins { background: rgba(63, 185, 80, 0.35); border-radius: 2px; padding
 <script>
 (function () {
   const btn = document.getElementById('btn-toggle-unchanged');
-  let hidden = false;
+  let hidden = true;
+  document.querySelectorAll('.diff-row-unchanged').forEach(function (row) {
+    row.classList.add('diff-hidden');
+  });
+  btn.textContent = 'Show unchanged';
   btn.addEventListener('click', function () {
     hidden = !hidden;
     document.querySelectorAll('.diff-row-unchanged').forEach(function (row) {
