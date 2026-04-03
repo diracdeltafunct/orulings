@@ -1348,7 +1348,9 @@
     "rarity": "Rare",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e06e3e3033640bc8a5bc98acd4e3a0925c6e2c9a-744x1039.png?accountingTag=RB",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. When they do, [Stun] it. (It doesn't deal combat damage this turn.)"
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. When they do, [Stun] it. (It doesn't deal combat damage this turn.)",
+    "errata_old_text": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. When they do, [Stun] it. (It doesn't deal combat damage this turn.)",
+    "errata_text": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. If they do, then do this: [Stun] it. (It doesn't deal combat damage this turn.)"
   },
   {
     "id": "sfd-118-221",
@@ -2453,7 +2455,9 @@
     "rarity": "Epic",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/17d93a11a252287e3b0f4bbe32722ecc9469ec66-744x1039.png?accountingTag=RB",
-    "ability": "Kill a unit at a battlefield. Then, if it had 3 :rb_might: or less, you may play this from your trash for :rb_rune_rainbow:."
+    "ability": "Kill a unit at a battlefield. Then, if it had 3 :rb_might: or less, you may play this from your trash for :rb_rune_rainbow:.",
+    "errata_old_text": "Kill a unit at a battlefield. Then, if it had 3 :rb_might: or less, you may play this from your trash for :rb_rune_rainbow:.",
+    "errata_text": "Kill a unit at a battlefield. Then, if it had 3 :rb_might: or less, do this: You may play this from your trash for :rb_rune_rainbow:."
   },
   {
     "id": "sfd-163-221",
@@ -2481,7 +2485,9 @@
     "rarity": "Showcase",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/78a3153e914b2124cdc918f3134a8087b342caf7-744x1039.png?accountingTag=RB",
-    "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary]."
+    "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_old_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary]."
   },
   {
     "id": "unl-199-219",
@@ -2495,7 +2501,9 @@
     "rarity": "Rare",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c17d29602d61d6702372fec4db44c6fb2a29e8a2-744x1039.png?accountingTag=RB",
-    "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary]."
+    "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_old_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary]."
   },
   {
     "id": "unl-235-219",
@@ -2509,7 +2517,9 @@
     "rarity": "Showcase",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/656450f89be4dc253438a4e0af7f7638ed5f90b2-744x1039.png?accountingTag=RB",
-    "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary]."
+    "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_old_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary]."
   },
   {
     "id": "ogs-024-024",
@@ -4413,7 +4423,9 @@
     "rarity": "Common",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1dc4fef81d018c6cf14f0344b51ebcdec968aab9-744x1039.png",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Play a 2 :rb_might: Sand Soldier unit token. You may pay :rb_rune_order: to ready it."
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Play a 2 :rb_might: Sand Soldier unit token. You may pay :rb_rune_order: to ready it.",
+    "errata_old_text": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Play a 2 :rb_might: Sand Soldier unit token. You may pay :rb_rune_order: to ready it.",
+    "errata_text": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Play a 2 :rb_might: Sand Soldier unit token. Then do this: You may pay :rb_rune_order: to ready it."
   },
   {
     "id": "ogn-264-298",
@@ -5602,7 +5614,9 @@
     "rarity": "Rare",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/67606d98bd3d8816e686dacacb91a56627d4b5f5-744x1039.png",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. They become copies of me."
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. They become copies of me.",
+    "errata_old_text": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. They become copies of me.",
+    "errata_text": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. Then do this: They become copies of me."
   },
   {
     "id": "unl-237-star-219",
@@ -6715,7 +6729,9 @@
     "rarity": "Epic",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a7ef8a09c0297cd796c4e2dee15922745ede7417-744x1039.png",
-    "ability": "Choose a unit. Play a ready Reflection unit token to your base. It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)"
+    "ability": "Choose a unit. Play a ready Reflection unit token to your base. It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)",
+    "errata_old_text": "Choose a unit. Play a ready Reflection unit token to your base. It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)",
+    "errata_text": "Choose a unit. Play a ready Reflection unit token to your base. Then do this: It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)"
   },
   {
     "id": "unl-003-219",
@@ -8370,7 +8386,9 @@
     "rarity": "Epic",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/48754730486abefdb56221d0760b9c963aae7c09-744x1039.png",
-    "ability": "[Action] (Play on your turn or in showdowns.) Move a friendly unit. You may attach an Equipment with the same controller to it. This turn, that unit has &quot;When I conquer, you may move me to my base.&quot;"
+    "ability": "[Action] (Play on your turn or in showdowns.) Move a friendly unit. You may attach an Equipment with the same controller to it. This turn, that unit has &quot;When I conquer, you may move me to my base.&quot;",
+    "errata_old_text": "[Action] (Play on your turn or in showdowns.) Move a friendly unit. You may attach an Equipment with the same controller to it. This turn, that unit has &quot;When I conquer, you may move me to my base.&quot;",
+    "errata_text": "[Action] (Play on your turn or in showdowns.) Move a friendly unit. You may attach up to one Equipment with the same controller to it. This turn, that unit has &quot;When I conquer, you may move me to my base.&quot;"
   },
   {
     "id": "ogn-300-star-298",
@@ -8509,7 +8527,9 @@
     "rarity": "Showcase",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7e6d106e0170e7f45341c1755f829f286d782bb7-744x1039.png",
-    "ability": "[Ambush] I can be played to a battlefield where there are enemy units."
+    "ability": "[Ambush] I can be played to a battlefield where there are enemy units.",
+    "errata_old_text": "[Ambush] I can be played to a battlefield where there are enemy units.",
+    "errata_text": "[Ambush] I can [Ambush] to a battlefield where there are enemy units."
   },
   {
     "id": "unl-120-219",
@@ -8523,7 +8543,9 @@
     "rarity": "Epic",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8e159fd8aa9bb349e32bda6a10b0178cc28ca8dd-744x1039.png",
-    "ability": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can be played to a battlefield where there are enemy units (even if you don't have units there)."
+    "ability": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can be played to a battlefield where there are enemy units (even if you don't have units there).",
+    "errata_old_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can be played to a battlefield where there are enemy units (even if you don't have units there).",
+    "errata_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can [Ambush] to a battlefield where there are enemy units (even if you don't have units there)."
   },
   {
     "id": "unl-024a-219",
