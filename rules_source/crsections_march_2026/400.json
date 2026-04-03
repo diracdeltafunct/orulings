@@ -2445,12 +2445,17 @@
               "children": [
                 {
                   "section": "461.3.d.1",
-                  "text": "If \"No Result\" was reached, and both players have units remaining, stage a Combat at this battlefield. 461.4 The following Task becomes Outstanding:",
+                  "text": "If \"No Result\" was reached, and both players have units remaining, stage a Combat at this battlefield.",
                   "children": []
                 }
               ]
             }
           ]
+        },
+        {
+          "section": "461.4",
+          "text": "The following Task becomes Outstanding:",
+          "children": []
         },
         {
           "section": "461.5",
