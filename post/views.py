@@ -751,6 +751,30 @@ def offline_page(request):
     return render(request, "offline.html")
 
 
+@ratelimit(key="ip", rate="30/m", method="GET", block=True)
+def api_rule(request, rule_type, section):
+    """
+    Return a single rule section as JSON.
+
+    rule_type: 'cr' or 'tr' (case-insensitive)
+    section:   rule number, e.g. '703', '703.4', '703.4.a'
+    """
+    rt = rule_type.upper()
+    if rt not in ("CR", "TR"):
+        return JsonResponse({"error": "Invalid rule type. Use 'cr' or 'tr'."}, status=400)
+
+    try:
+        section_obj = RuleSection.objects.prefetch_related(
+            "children__children__children__children"
+        ).get(rule_type=rt, section=section)
+    except RuleSection.DoesNotExist:
+        return JsonResponse({"error": f"Section {section} not found."}, status=404)
+
+    data = section_obj.to_dict()
+    data["rule_type"] = rt
+    return JsonResponse(data)
+
+
 @cache_page(60 * 60)
 def api_cards_all(request):
     cards = Card.objects.prefetch_related("domain").all()

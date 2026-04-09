@@ -38,6 +38,7 @@ sitemaps = {
 
 from post.views import (
     api_cards_all,
+    api_rule,
     blog_index,
     card_detail,
     card_search,
@@ -61,6 +62,7 @@ urlpatterns = [
     path("sw.js", service_worker, name="service_worker"),
     path("offline/", offline_page, name="offline"),
     path("api/cards/all/", api_cards_all, name="api_cards_all"),
+    path("api/rules/<str:rule_type>/<str:section>/", api_rule, name="api_rule"),
     path("admin/", admin.site.urls),
     path("mdeditor/", include("mdeditor.urls")),
     path("", blog_index, name="blog_index"),
