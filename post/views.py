@@ -772,6 +772,10 @@ def api_rule(request, rule_type, section):
 
     data = section_obj.to_dict()
     data["rule_type"] = rt
+    if rt == "CR":
+        data["url"] = request.build_absolute_uri(f"/core-rules/#rule-{section}")
+    else:
+        data["url"] = request.build_absolute_uri(f"/trsections/{section}/")
     return JsonResponse(data)
 
 
