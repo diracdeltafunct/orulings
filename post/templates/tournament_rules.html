@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load card_filters %}
+{% block title %}Tournament Rules - ScoutsCode{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tournament Rules</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-9">
+            <h1 class="mb-2">Tournament Rules</h1>
+            <p class="text-muted mb-4">Last Updated: {{ last_updated }}</p>
+
+            {% for section in sections %}
+            {% if not forloop.first %}<hr class="tr-section-divider my-5">{% endif %}
+            <div id="rule-{{ section.section }}" class="tr-rule tr-top-level mb-4">
+                <h2 class="tr-section-heading">
+                    <a href="#rule-{{ section.section }}" class="tr-permalink" title="Link to this rule">#</a>
+                    {{ section.section }}. {{ section.text|safe }}
+                </h2>
+                {% if section.annotations %}
+                <div class="annotation-display">
+                    {{ section.annotations|safe }}
+                </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Edit</button>
+                <div id="editor-container-{{ section.section }}" class="editor-container" data-annotation="{{ section.annotations }}">
+                    <div id="editor-{{ section.section }}" class="mb-2"></div>
+                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Save</button>
+                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ section.section }}">Cancel</button>
+                </div>
+                {% endif %}
+
+                {% for child in section.children %}
+                <div id="rule-{{ child.section }}" class="tr-rule tr-child ps-2 py-2 border-bottom">
+                    <div class="d-flex align-items-start">
+                        <a href="#rule-{{ child.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
+                        <div class="flex-grow-1">
+                            <strong class="tr-rule-number">{{ child.section }}.</strong> {{ child.text|safe }}
+                            {% if child.annotations %}
+                            <div class="annotation-display">
+                                {{ child.annotations|safe }}
+                            </div>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
+                            <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations }}">
+                                <div id="editor-{{ child.section }}" class="mb-2"></div>
+                                <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Save</button>
+                                <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
+                            </div>
+                            {% endif %}
+
+                            {% if child.section == "701" or child.section == "702" or child.section == "703" or child.section == "704" %}
+                            {% if child.children %}
+                            <div class="tr-subnav-box card my-3">
+                                <table class="table table-sm table-hover mb-0">
+                                    <tbody>
+                                        {% for subchild in child.children %}
+                                        <tr>
+                                            <td class="tr-subnav-num text-muted">{{ subchild.section }}</td>
+                                            <td><a href="#rule-{{ subchild.section }}" class="text-decoration-none">{{ subchild.text|before_colon }}</a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% endif %}
+                            {% endif %}
+
+                            {% for subchild in child.children %}
+                            <div id="rule-{{ subchild.section }}" class="tr-rule tr-subchild ps-3 py-1">
+                                <div class="d-flex align-items-start">
+                                    <a href="#rule-{{ subchild.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
+                                    <div class="flex-grow-1">
+                                        <strong class="tr-rule-number">{{ subchild.section }}.</strong> {{ subchild.text|safe }}
+                                        {% if subchild.annotations %}
+                                        <div class="annotation-display">
+                                            {{ subchild.annotations|safe }}
+                                        </div>
+                                        {% endif %}
+                                        {% if user.is_authenticated %}
+                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Edit</button>
+                                        <div id="editor-container-{{ subchild.section }}" class="editor-container" data-annotation="{{ subchild.annotations }}">
+                                            <div id="editor-{{ subchild.section }}" class="mb-2"></div>
+                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Save</button>
+                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
+                                        </div>
+                                        {% endif %}
+
+                                        {% for leaf in subchild.children %}
+                                        <div id="rule-{{ leaf.section }}" class="tr-rule tr-leaf ps-3 py-1">
+                                            <div class="d-flex align-items-start">
+                                                <a href="#rule-{{ leaf.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
+                                                <div class="flex-grow-1">
+                                                    <strong class="tr-rule-number">{{ leaf.section }}.</strong> {{ leaf.text|safe }}
+                                                    {% if leaf.annotations %}
+                                                    <div class="annotation-display">
+                                                        {{ leaf.annotations|safe }}
+                                                    </div>
+                                                    {% endif %}
+
+                                                    {% for subleaf in leaf.children %}
+                                                    <div id="rule-{{ subleaf.section }}" class="tr-rule tr-subleaf ps-3 py-1">
+                                                        <div class="d-flex align-items-start">
+                                                            <a href="#rule-{{ subleaf.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
+                                                            <div class="flex-grow-1">
+                                                                <strong class="tr-rule-number">{{ subleaf.section }}.</strong> {{ subleaf.text|safe }}
+                                                                {% if subleaf.annotations %}
+                                                                <div class="annotation-display">
+                                                                    {{ subleaf.annotations|safe }}
+                                                                </div>
+                                                                {% endif %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+
+            <div class="mt-4 mb-5">
+                <a href="/" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="tr-toc sticky-top">
+                <h6 class="text-muted text-uppercase mb-3">On this page</h6>
+                <nav class="nav flex-column">
+                    {% for section in sections %}
+                    <a class="nav-link tr-toc-link px-0 py-1" href="#rule-{{ section.section }}">
+                        {{ section.section }}. {{ section.text|striptags|truncatewords:6 }}
+                    </a>
+                    {% endfor %}
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.tr-subnav-num {
+    font-family: monospace;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    width: 1%;
+    padding-right: 1rem !important;
+}
+.tr-section-divider {
+    border-color: var(--bs-border-color);
+    opacity: 0.5;
+}
+.tr-section-heading {
+    font-size: 1.5rem;
+}
+.tr-permalink {
+    color: var(--bs-secondary-color);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.1s;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+.tr-rule:hover > .d-flex > .tr-permalink,
+.tr-top-level:hover > .tr-section-heading > .tr-permalink {
+    opacity: 1;
+}
+.tr-rule-number {
+    font-family: monospace;
+}
+.tr-toc {
+    padding-top: 1rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+.tr-toc-link {
+    font-size: 0.875rem;
+    color: var(--bs-body-color);
+}
+.tr-toc-link:hover {
+    color: var(--bs-link-hover-color);
+}
+</style>
+
+{% include "includes/annotation_editor.html" %}
+{% endblock %}

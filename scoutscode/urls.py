@@ -54,6 +54,7 @@ from post.views import (
     search_rules,
     secret_login,
     service_worker,
+    tournament_rules,
     trsection_detail,
 )
 
@@ -71,6 +72,7 @@ urlpatterns = [
     path("trsections/<str:section>/", trsection_detail, name="trsection_detail"),
     path("crsections/<str:section>/", crsection_detail, name="crsection_detail"),
     path("core-rules/", core_rules, name="core_rules"),
+    path("tournament-rules/", tournament_rules, name="tournament_rules"),
     path("rules-diff/<str:rule_type>/", rules_diff, name="rules_diff"),
     path("search/", search_rules, name="search_rules"),
     path("secretadminlogin/", secret_login, name="secret_login"),

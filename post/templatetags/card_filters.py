@@ -73,6 +73,13 @@ def _replace_keyword(match):
     return match.group(0)
 
 
+@register.filter(name="before_colon")
+def before_colon(text):
+    """Return only the portion of text before the first colon, stripped of HTML tags."""
+    plain = re.sub(r"<[^>]+>", "", str(text))
+    return plain.split(":")[0].strip()
+
+
 @register.filter(name="replace_keywords")
 def replace_keywords(text):
     """Replace [Keyword] and :rb_*: patterns in card text with corresponding images."""

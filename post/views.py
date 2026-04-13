@@ -92,14 +92,22 @@ def blog_index(request):
         rule_type="TR", parent__isnull=True
     ).prefetch_related("children")
 
+    _TR_NO_SUBS = {"000", "100", "200", "300"}
     trsections = []
     for section in tr_top_level:
         trsections.append(
             {
                 "section": section.section,
                 "text": section.text,
-                "url": f"/trsections/{section.section}/",
-                "children": list(section.children.values("section", "text")),
+                "url": f"/tournament-rules/#rule-{section.section}",
+                "subs": [] if section.section in _TR_NO_SUBS else [
+                    {
+                        "section": child["section"],
+                        "text": child["text"],
+                        "url": f"/tournament-rules/#rule-{child['section']}",
+                    }
+                    for child in section.children.values("section", "text")
+                ],
             }
         )
 
@@ -174,7 +182,7 @@ def linkify_references(text, section_type="tr"):
     # Match patterns like "See 402", "see 703.4.a", "rule 318", etc.
     if section_type == "tr":
         base_url = "/trsections/"
-    elif section_type == "cr_single":
+    elif section_type in ("cr_single", "tr_single"):
         base_url = None
     else:
         base_url = "/crsections/"
@@ -372,6 +380,35 @@ def core_rules(request):
     response = render(request, "core_rules.html", context)
 
     # Only use browser/CDN caching for anonymous users to avoid caching admin UI
+    if not request.user.is_authenticated:
+        response["Cache-Control"] = "public, max-age=600"
+    else:
+        response["Cache-Control"] = "no-store"
+
+    return response
+
+
+def tournament_rules(request):
+    """
+    Single-page view for all Tournament Rules with anchor navigation.
+    """
+    top_level_sections = RuleSection.objects.filter(
+        rule_type="TR", parent__isnull=True
+    ).prefetch_related("children__children__children__children")
+
+    sections = []
+    for section_obj in top_level_sections:
+        data = section_obj.to_dict()
+        data = format_section_text(data, section_type="tr_single")
+        sections.append(data)
+
+    context = {
+        "sections": sections,
+        "last_updated": get_rules_last_updated("TR"),
+    }
+
+    response = render(request, "tournament_rules.html", context)
+
     if not request.user.is_authenticated:
         response["Cache-Control"] = "public, max-age=600"
     else:
