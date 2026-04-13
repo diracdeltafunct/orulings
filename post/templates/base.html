@@ -46,6 +46,23 @@
             rel="stylesheet"
         />
         <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+        <style>
+            body.annotations-hidden .annotation-display {
+                display: none !important;
+            }
+        </style>
+
+        <!-- Apply annotation visibility before paint to avoid flash -->
+        <script>
+            (function () {
+                var show = localStorage.getItem("showAnnotations") === "true";
+                if (!show) document.documentElement.classList.add("annotations-hidden-early");
+            })();
+        </script>
+        <style>
+            html.annotations-hidden-early .annotation-display { display: none !important; }
+        </style>
     </head>
 
     <body>
@@ -108,6 +125,17 @@
                             >
                         </li>
                     </ul>
+
+                    <!-- Annotation Toggle -->
+                    <div class="me-3">
+                        <button
+                            id="annotationToggle"
+                            class="btn btn-sm btn-outline-secondary"
+                            title="Toggle annotations"
+                        >
+                            Annotations: <span id="annotationToggleLabel">Off</span>
+                        </button>
+                    </div>
 
                     <!-- Theme Toggle -->
                     <div class="me-3">
@@ -194,6 +222,39 @@
                 });
             })();
         </script>
+
+        <!-- Annotation Toggle Script -->
+        <script>
+            (function () {
+                const btn = document.getElementById("annotationToggle");
+                const label = document.getElementById("annotationToggleLabel");
+                const body = document.body;
+                const html = document.documentElement;
+
+                function applyState(show) {
+                    if (show) {
+                        body.classList.remove("annotations-hidden");
+                        label.textContent = "On";
+                    } else {
+                        body.classList.add("annotations-hidden");
+                        label.textContent = "Off";
+                    }
+                    // Remove the early-hide class now that body class is set
+                    html.classList.remove("annotations-hidden-early");
+                }
+
+                // Default: hidden (false)
+                var show = localStorage.getItem("showAnnotations") === "true";
+                applyState(show);
+
+                btn.addEventListener("click", function () {
+                    show = !show;
+                    localStorage.setItem("showAnnotations", show);
+                    applyState(show);
+                });
+            })();
+        </script>
+
         <!-- Service Worker Registration -->
         <script>
             if ('serviceWorker' in navigator) {
