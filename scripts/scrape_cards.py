@@ -138,6 +138,14 @@ def extract_card_data(raw_card):
             if isinstance(rich_text, dict) and "body" in rich_text:
                 card["ability"] = strip_html(rich_text["body"])
 
+    # Tags - structure is {"label": "Tags", "tags": ["ChampionName", ...]}
+    if "tags" in raw_card:
+        tag_data = raw_card["tags"]
+        if isinstance(tag_data, dict) and "tags" in tag_data:
+            card["tags"] = tag_data["tags"]
+        elif isinstance(tag_data, list):
+            card["tags"] = tag_data
+
     # Remove None values
     card = {k: v for k, v in card.items() if v is not None}
 
