@@ -198,8 +198,18 @@ def parse_lines_to_objects(text):
             if parent_section in section_map:
                 section_map[parent_section].children.append(line_obj)
             else:
-                # Parent not found, add to top level (orphaned section)
-                top_level_lines.append(line_obj)
+                # Direct parent missing — walk up the ancestor chain
+                ancestor_parts = parts[:-2]
+                attached = False
+                while ancestor_parts:
+                    ancestor = ".".join(ancestor_parts)
+                    if ancestor in section_map:
+                        section_map[ancestor].children.append(line_obj)
+                        attached = True
+                        break
+                    ancestor_parts = ancestor_parts[:-1]
+                if not attached:
+                    top_level_lines.append(line_obj)
 
     return top_level_lines
 

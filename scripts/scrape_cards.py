@@ -146,6 +146,10 @@ def extract_card_data(raw_card):
         elif isinstance(tag_data, list):
             card["tags"] = tag_data
 
+    # Legend name: prepend champion tag so name becomes "Ahri, Nine-Tailed Fox"
+    if card.get("card_type") == "Legend" and len(card.get("tags", [])) == 1:
+        card["name"] = f"{card['tags'][0]}, {card['name']}"
+
     # Remove None values
     card = {k: v for k, v in card.items() if v is not None}
 

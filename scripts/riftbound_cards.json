@@ -100,24 +100,6 @@
     ]
   },
   {
-    "id": "ogn-119a-298",
-    "name": "Ahri, Inquisitive",
-    "collector_number": 119,
-    "energy": 3,
-    "power": 1,
-    "might": 3,
-    "domain": "Mind",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7adc5aa8dba66bf918b8140699cb3a74f7b0efb5-744x1039.png?accountingTag=RB",
-    "ability": "When I attack or defend, give an enemy unit here -2 :rb_might: this turn, to a minimum of 1 :rb_might:.",
-    "tags": [
-      "Ahri",
-      "Ionia"
-    ]
-  },
-  {
     "id": "ogn-119-298",
     "name": "Ahri, Inquisitive",
     "collector_number": 119,
@@ -133,6 +115,23 @@
     "tags": [
       "Ahri",
       "Ionia"
+    ]
+  },
+  {
+    "id": "sfd-227-star-221",
+    "name": "Ahri, Inquisitive",
+    "collector_number": 227,
+    "energy": 3,
+    "power": 1,
+    "might": 3,
+    "domain": "Mind",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/608f786c30a7e80db87d3c2d45bc0c26b0840c5e-744x1039.png?accountingTag=RB",
+    "ability": "When I attack or defend, give an enemy unit here -2 :rb_might: this turn, to a minimum of 1 :rb_might:.",
+    "tags": [
+      "Ahri"
     ]
   },
   {
@@ -153,20 +152,21 @@
     ]
   },
   {
-    "id": "sfd-227-star-221",
+    "id": "ogn-119a-298",
     "name": "Ahri, Inquisitive",
-    "collector_number": 227,
+    "collector_number": 119,
     "energy": 3,
     "power": 1,
     "might": 3,
     "domain": "Mind",
     "card_type": "Unit",
     "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/608f786c30a7e80db87d3c2d45bc0c26b0840c5e-744x1039.png?accountingTag=RB",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7adc5aa8dba66bf918b8140699cb3a74f7b0efb5-744x1039.png?accountingTag=RB",
     "ability": "When I attack or defend, give an enemy unit here -2 :rb_might: this turn, to a minimum of 1 :rb_might:.",
     "tags": [
-      "Ahri"
+      "Ahri",
+      "Ionia"
     ]
   },
   {
@@ -435,24 +435,6 @@
     ]
   },
   {
-    "id": "sfd-049-221",
-    "name": "Aphelios, Exalted",
-    "collector_number": 49,
-    "energy": 4,
-    "power": 1,
-    "might": 4,
-    "domain": "Calm",
-    "card_type": "Unit",
-    "rarity": "Rare",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/df9ccbba2501059e5781a44434745a1f0e33ecae-744x1039.png?accountingTag=RB",
-    "ability": "When you attach an Equipment to me, choose one that hasn't been chosen this turn — Ready 2 runes. Channel 1 rune exhausted. Buff a friendly unit.",
-    "tags": [
-      "Aphelios",
-      "Mount Targon"
-    ]
-  },
-  {
     "id": "sfd-224-star-221",
     "name": "Aphelios, Exalted",
     "collector_number": 224,
@@ -464,6 +446,24 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/58bb3f7a73a8aa38159cc63439e0483ca2574157-744x1039.png?accountingTag=RB",
+    "ability": "When you attach an Equipment to me, choose one that hasn't been chosen this turn — Ready 2 runes. Channel 1 rune exhausted. Buff a friendly unit.",
+    "tags": [
+      "Aphelios",
+      "Mount Targon"
+    ]
+  },
+  {
+    "id": "sfd-049-221",
+    "name": "Aphelios, Exalted",
+    "collector_number": 49,
+    "energy": 4,
+    "power": 1,
+    "might": 4,
+    "domain": "Calm",
+    "card_type": "Unit",
+    "rarity": "Rare",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/df9ccbba2501059e5781a44434745a1f0e33ecae-744x1039.png?accountingTag=RB",
     "ability": "When you attach an Equipment to me, choose one that hasn't been chosen this turn — Ready 2 runes. Channel 1 rune exhausted. Buff a friendly unit.",
     "tags": [
       "Aphelios",
@@ -960,7 +960,7 @@
   },
   {
     "id": "unl-230-star-219",
-    "name": "Bashful Bloom",
+    "name": "Lillia, Bashful Bloom",
     "collector_number": 230,
     "domain": [
       "Calm",
@@ -977,7 +977,7 @@
   },
   {
     "id": "unl-189-219",
-    "name": "Bashful Bloom",
+    "name": "Lillia, Bashful Bloom",
     "collector_number": 189,
     "domain": [
       "Calm",
@@ -994,7 +994,7 @@
   },
   {
     "id": "unl-230-219",
-    "name": "Bashful Bloom",
+    "name": "Lillia, Bashful Bloom",
     "collector_number": 230,
     "domain": [
       "Calm",
@@ -1028,7 +1028,7 @@
   },
   {
     "id": "sfd-203-221",
-    "name": "Battle Mistress",
+    "name": "Sivir, Battle Mistress",
     "collector_number": 203,
     "domain": [
       "Body",
@@ -1045,7 +1045,7 @@
   },
   {
     "id": "sfd-250-221",
-    "name": "Battle Mistress",
+    "name": "Sivir, Battle Mistress",
     "collector_number": 250,
     "domain": [
       "Body",
@@ -1183,7 +1183,7 @@
   },
   {
     "id": "sfd-246-221",
-    "name": "Blade Dancer",
+    "name": "Irelia, Blade Dancer",
     "collector_number": 246,
     "domain": [
       "Calm",
@@ -1200,7 +1200,7 @@
   },
   {
     "id": "sfd-195-221",
-    "name": "Blade Dancer",
+    "name": "Irelia, Blade Dancer",
     "collector_number": 195,
     "domain": [
       "Calm",
@@ -1338,7 +1338,7 @@
   },
   {
     "id": "ogn-257-298",
-    "name": "Blind Monk",
+    "name": "Lee Sin, Blind Monk",
     "collector_number": 257,
     "domain": [
       "Calm",
@@ -1354,25 +1354,8 @@
     ]
   },
   {
-    "id": "ogn-304-star-298",
-    "name": "Blind Monk",
-    "collector_number": 304,
-    "domain": [
-      "Calm",
-      "Body"
-    ],
-    "card_type": "Legend",
-    "rarity": "Showcase",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b4dfd543b1cfcdefba4568fe78146e0d6e46add7-1488x2078.png?accountingTag=RB",
-    "ability": ":rb_energy_1:, :rb_exhaust:: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 :rb_might: buff.)",
-    "tags": [
-      "Lee Sin"
-    ]
-  },
-  {
     "id": "ogn-304-298",
-    "name": "Blind Monk",
+    "name": "Lee Sin, Blind Monk",
     "collector_number": 304,
     "domain": [
       "Calm",
@@ -1382,6 +1365,23 @@
     "rarity": "Showcase",
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fb6316c39ad2a00d65f4b6cc823cbdd61cadda3b-1488x2078.png?accountingTag=RB",
+    "ability": ":rb_energy_1:, :rb_exhaust:: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 :rb_might: buff.)",
+    "tags": [
+      "Lee Sin"
+    ]
+  },
+  {
+    "id": "ogn-304-star-298",
+    "name": "Lee Sin, Blind Monk",
+    "collector_number": 304,
+    "domain": [
+      "Calm",
+      "Body"
+    ],
+    "card_type": "Legend",
+    "rarity": "Showcase",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b4dfd543b1cfcdefba4568fe78146e0d6e46add7-1488x2078.png?accountingTag=RB",
     "ability": ":rb_energy_1:, :rb_exhaust:: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 :rb_might: buff.)",
     "tags": [
       "Lee Sin"
@@ -1456,7 +1456,7 @@
   },
   {
     "id": "unl-185-219",
-    "name": "Bloodharbor Ripper",
+    "name": "Pyke, Bloodharbor Ripper",
     "collector_number": 185,
     "domain": [
       "Fury",
@@ -1473,7 +1473,7 @@
   },
   {
     "id": "unl-228-star-219",
-    "name": "Bloodharbor Ripper",
+    "name": "Pyke, Bloodharbor Ripper",
     "collector_number": 228,
     "domain": [
       "Fury",
@@ -1490,7 +1490,7 @@
   },
   {
     "id": "unl-228-219",
-    "name": "Bloodharbor Ripper",
+    "name": "Pyke, Bloodharbor Ripper",
     "collector_number": 228,
     "domain": [
       "Fury",
@@ -1614,25 +1614,8 @@
     ]
   },
   {
-    "id": "ogn-309-298",
-    "name": "Bounty Hunter",
-    "collector_number": 309,
-    "domain": [
-      "Body",
-      "Chaos"
-    ],
-    "card_type": "Legend",
-    "rarity": "Showcase",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f4b7f334f442d30ccea4743c641760c5533804b4-1488x2078.png?accountingTag=RB",
-    "ability": ":rb_exhaust:: Give a unit [Ganking] this turn. (It can move from battlefield to battlefield.)",
-    "tags": [
-      "Miss Fortune"
-    ]
-  },
-  {
     "id": "ogn-309-star-298",
-    "name": "Bounty Hunter",
+    "name": "Miss Fortune, Bounty Hunter",
     "collector_number": 309,
     "domain": [
       "Body",
@@ -1648,8 +1631,25 @@
     ]
   },
   {
+    "id": "ogn-309-298",
+    "name": "Miss Fortune, Bounty Hunter",
+    "collector_number": 309,
+    "domain": [
+      "Body",
+      "Chaos"
+    ],
+    "card_type": "Legend",
+    "rarity": "Showcase",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f4b7f334f442d30ccea4743c641760c5533804b4-1488x2078.png?accountingTag=RB",
+    "ability": ":rb_exhaust:: Give a unit [Ganking] this turn. (It can move from battlefield to battlefield.)",
+    "tags": [
+      "Miss Fortune"
+    ]
+  },
+  {
     "id": "ogn-267-298",
-    "name": "Bounty Hunter",
+    "name": "Miss Fortune, Bounty Hunter",
     "collector_number": 267,
     "domain": [
       "Body",
@@ -2026,17 +2026,6 @@
     "ability": "[Action] (Play on your turn or in showdowns.) Choose a friendly unit and an enemy unit. They deal damage equal to their Mights to each other."
   },
   {
-    "id": "ogn-166a-298",
-    "name": "Chaos Rune",
-    "collector_number": 166,
-    "domain": "Chaos",
-    "card_type": "Rune",
-    "rarity": "Showcase",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fbcde2f71fcc06fb8afc83855e24447a393f8943-1488x2078.png?accountingTag=RB",
-    "ability": ""
-  },
-  {
     "id": "ogn-166-298",
     "name": "Chaos Rune",
     "collector_number": 166,
@@ -2045,6 +2034,17 @@
     "rarity": "Common",
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/daf23b0deaa5e1a5a5d310b59e9ad25d1bd70363-744x1039.png?accountingTag=RB",
+    "ability": ""
+  },
+  {
+    "id": "ogn-166a-298",
+    "name": "Chaos Rune",
+    "collector_number": 166,
+    "domain": "Chaos",
+    "card_type": "Rune",
+    "rarity": "Showcase",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fbcde2f71fcc06fb8afc83855e24447a393f8943-1488x2078.png?accountingTag=RB",
     "ability": ""
   },
   {
@@ -2062,7 +2062,7 @@
   },
   {
     "id": "sfd-249-221",
-    "name": "Chem-Baroness",
+    "name": "Renata Glasc, Chem-Baroness",
     "collector_number": 249,
     "domain": [
       "Mind",
@@ -2079,7 +2079,7 @@
   },
   {
     "id": "sfd-201-221",
-    "name": "Chem-Baroness",
+    "name": "Renata Glasc, Chem-Baroness",
     "collector_number": 201,
     "domain": [
       "Mind",
@@ -2581,22 +2581,6 @@
     ]
   },
   {
-    "id": "unl-225-219",
-    "name": "Daring Poro",
-    "collector_number": 225,
-    "energy": 2,
-    "might": 2,
-    "domain": "Order",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Unleashed",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9b097e8f9866788e0de2bfada48627c752d3e4b9-744x1039.png?accountingTag=RB",
-    "ability": "[Assault]",
-    "tags": [
-      "Poro"
-    ]
-  },
-  {
     "id": "ogn-210-298",
     "name": "Daring Poro",
     "collector_number": 210,
@@ -2608,6 +2592,22 @@
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/41dee7ec46124c261352595cfbd8a6d38d32b947-744x1039.png?accountingTag=RB",
     "ability": "[Assault] (+1 :rb_might: while I'm an attacker.)",
+    "tags": [
+      "Poro"
+    ]
+  },
+  {
+    "id": "unl-225-219",
+    "name": "Daring Poro",
+    "collector_number": 225,
+    "energy": 2,
+    "might": 2,
+    "domain": "Order",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Unleashed",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9b097e8f9866788e0de2bfada48627c752d3e4b9-744x1039.png?accountingTag=RB",
+    "ability": "[Assault]",
     "tags": [
       "Poro"
     ]
@@ -2650,6 +2650,24 @@
     ]
   },
   {
+    "id": "sfd-236-star-221",
+    "name": "Darius, Executioner",
+    "collector_number": 236,
+    "energy": 6,
+    "power": 1,
+    "might": 6,
+    "domain": "Order",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/46fc840c17925406d22703b82ad02f5eb2ab62cf-744x1039.png?accountingTag=RB",
+    "ability": "[Legion] — When you play me, ready me. (Get the effect if you've played another card this turn) Other friendly units have +1 :rb_might: here.",
+    "tags": [
+      "Trifarian",
+      "Darius"
+    ]
+  },
+  {
     "id": "ogn-243-298",
     "name": "Darius, Executioner",
     "collector_number": 243,
@@ -2666,24 +2684,6 @@
       "Trifarian",
       "Darius",
       "Noxus"
-    ]
-  },
-  {
-    "id": "sfd-236-star-221",
-    "name": "Darius, Executioner",
-    "collector_number": 236,
-    "energy": 6,
-    "power": 1,
-    "might": 6,
-    "domain": "Order",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/46fc840c17925406d22703b82ad02f5eb2ab62cf-744x1039.png?accountingTag=RB",
-    "ability": "[Legion] — When you play me, ready me. (Get the effect if you've played another card this turn) Other friendly units have +1 :rb_might: here.",
-    "tags": [
-      "Trifarian",
-      "Darius"
     ]
   },
   {
@@ -2726,7 +2726,7 @@
   },
   {
     "id": "ogs-017-024",
-    "name": "Dark Child - Starter",
+    "name": "Annie, Dark Child - Starter",
     "collector_number": 17,
     "domain": [
       "Fury",
@@ -2743,7 +2743,7 @@
   },
   {
     "id": "ogn-299-star-298",
-    "name": "Daughter of the Void",
+    "name": "Kai'Sa, Daughter of the Void",
     "collector_number": 299,
     "domain": [
       "Fury",
@@ -2759,25 +2759,8 @@
     ]
   },
   {
-    "id": "ogn-247-298",
-    "name": "Daughter of the Void",
-    "collector_number": 247,
-    "domain": [
-      "Fury",
-      "Mind"
-    ],
-    "card_type": "Legend",
-    "rarity": "Rare",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a576472c7bb00f475882ac814e1d8f9be233b402-744x1040.png?accountingTag=RB",
-    "ability": ":rb_exhaust:: [Reaction] — [Add] :rb_rune_rainbow:. Use only to play spells. (Abilities that add resources can't be reacted to.)",
-    "tags": [
-      "Kai'Sa"
-    ]
-  },
-  {
     "id": "ogn-299-298",
-    "name": "Daughter of the Void",
+    "name": "Kai'Sa, Daughter of the Void",
     "collector_number": 299,
     "domain": [
       "Fury",
@@ -2787,6 +2770,23 @@
     "rarity": "Showcase",
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/57e13462b8fea9a5cfa1b424d3ad3005f37b00ad-1488x2078.png?accountingTag=RB",
+    "ability": ":rb_exhaust:: [Reaction] — [Add] :rb_rune_rainbow:. Use only to play spells. (Abilities that add resources can't be reacted to.)",
+    "tags": [
+      "Kai'Sa"
+    ]
+  },
+  {
+    "id": "ogn-247-298",
+    "name": "Kai'Sa, Daughter of the Void",
+    "collector_number": 247,
+    "domain": [
+      "Fury",
+      "Mind"
+    ],
+    "card_type": "Legend",
+    "rarity": "Rare",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a576472c7bb00f475882ac814e1d8f9be233b402-744x1040.png?accountingTag=RB",
     "ability": ":rb_exhaust:: [Reaction] — [Add] :rb_rune_rainbow:. Use only to play spells. (Abilities that add resources can't be reacted to.)",
     "tags": [
       "Kai'Sa"
@@ -2885,7 +2885,7 @@
   },
   {
     "id": "unl-235-star-219",
-    "name": "Deceiver",
+    "name": "LeBlanc, Deceiver",
     "collector_number": 235,
     "domain": [
       "Mind",
@@ -2902,7 +2902,7 @@
   },
   {
     "id": "unl-199-219",
-    "name": "Deceiver",
+    "name": "LeBlanc, Deceiver",
     "collector_number": 199,
     "domain": [
       "Mind",
@@ -2919,7 +2919,7 @@
   },
   {
     "id": "unl-235-219",
-    "name": "Deceiver",
+    "name": "LeBlanc, Deceiver",
     "collector_number": 235,
     "domain": [
       "Mind",
@@ -3373,24 +3373,6 @@
     ]
   },
   {
-    "id": "sfd-148-221",
-    "name": "Draven, Audacious",
-    "collector_number": 148,
-    "energy": 6,
-    "power": 1,
-    "might": 6,
-    "domain": "Chaos",
-    "card_type": "Unit",
-    "rarity": "Epic",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8247622cbe90eadada8d0660ea31d146b1207a87-744x1039.png",
-    "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) The first time I win a combat each turn, you score 1 point. When I die in combat, choose an opponent. They score 1 point.",
-    "tags": [
-      "Draven",
-      "Noxus"
-    ]
-  },
-  {
     "id": "sfd-148a-221",
     "name": "Draven, Audacious",
     "collector_number": 148,
@@ -3402,6 +3384,24 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2b2c2a20cd22c8799b211dd4d7f95c95a8be33ea-744x1039.png",
+    "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) The first time I win a combat each turn, you score 1 point. When I die in combat, choose an opponent. They score 1 point.",
+    "tags": [
+      "Draven",
+      "Noxus"
+    ]
+  },
+  {
+    "id": "sfd-148-221",
+    "name": "Draven, Audacious",
+    "collector_number": 148,
+    "energy": 6,
+    "power": 1,
+    "might": 6,
+    "domain": "Chaos",
+    "card_type": "Unit",
+    "rarity": "Epic",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/8247622cbe90eadada8d0660ea31d146b1207a87-744x1039.png",
     "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) The first time I win a combat each turn, you score 1 point. When I die in combat, choose an opponent. They score 1 point.",
     "tags": [
       "Draven",
@@ -3688,7 +3688,7 @@
   },
   {
     "id": "sfd-197-221",
-    "name": "Emperor of the Sands",
+    "name": "Azir, Emperor of the Sands",
     "collector_number": 197,
     "domain": [
       "Calm",
@@ -3705,7 +3705,7 @@
   },
   {
     "id": "sfd-247-221",
-    "name": "Emperor of the Sands",
+    "name": "Azir, Emperor of the Sands",
     "collector_number": 247,
     "domain": [
       "Calm",
@@ -4153,24 +4153,6 @@
     "ability": "[Action] (Play on your turn or in showdowns.) If an opponent's score is within 3 points of the Victory Score, this costs :rb_energy_2: less. Draw 1 and channel 1 rune exhausted."
   },
   {
-    "id": "sfd-110-221",
-    "name": "Fiora, Peerless",
-    "collector_number": 110,
-    "energy": 3,
-    "power": 1,
-    "might": 3,
-    "domain": "Body",
-    "card_type": "Unit",
-    "rarity": "Rare",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3fb80fed6fb916f47b7cebd5b31a970f1d0d562a-744x1039.png",
-    "ability": "When I attack or defend one on one, double my Might this combat.",
-    "tags": [
-      "Fiora",
-      "Demacia"
-    ]
-  },
-  {
     "id": "sfd-110a-221",
     "name": "Fiora, Peerless",
     "collector_number": 110,
@@ -4182,6 +4164,24 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9081906c24455218d9fef8c0faa04ecc85dc462c-744x1039.png",
+    "ability": "When I attack or defend one on one, double my Might this combat.",
+    "tags": [
+      "Fiora",
+      "Demacia"
+    ]
+  },
+  {
+    "id": "sfd-110-221",
+    "name": "Fiora, Peerless",
+    "collector_number": 110,
+    "energy": 3,
+    "power": 1,
+    "might": 3,
+    "domain": "Body",
+    "card_type": "Unit",
+    "rarity": "Rare",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3fb80fed6fb916f47b7cebd5b31a970f1d0d562a-744x1039.png",
     "ability": "When I attack or defend one on one, double my Might this combat.",
     "tags": [
       "Fiora",
@@ -4241,7 +4241,7 @@
   },
   {
     "id": "sfd-244-221",
-    "name": "Fire Below the Mountain",
+    "name": "Ornn, Fire Below the Mountain",
     "collector_number": 244,
     "domain": [
       "Calm",
@@ -4258,7 +4258,7 @@
   },
   {
     "id": "sfd-189-221",
-    "name": "Fire Below the Mountain",
+    "name": "Ornn, Fire Below the Mountain",
     "collector_number": 189,
     "domain": [
       "Calm",
@@ -4833,7 +4833,7 @@
   },
   {
     "id": "unl-232-219",
-    "name": "Gloomist",
+    "name": "Vex, Gloomist",
     "collector_number": 232,
     "domain": [
       "Calm",
@@ -4850,7 +4850,7 @@
   },
   {
     "id": "unl-232-star-219",
-    "name": "Gloomist",
+    "name": "Vex, Gloomist",
     "collector_number": 232,
     "domain": [
       "Calm",
@@ -4867,7 +4867,7 @@
   },
   {
     "id": "unl-193-219",
-    "name": "Gloomist",
+    "name": "Vex, Gloomist",
     "collector_number": 193,
     "domain": [
       "Calm",
@@ -4883,25 +4883,8 @@
     ]
   },
   {
-    "id": "sfd-242-221",
-    "name": "Glorious Executioner",
-    "collector_number": 242,
-    "domain": [
-      "Fury",
-      "Chaos"
-    ],
-    "card_type": "Legend",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5a06fcd2cadbdb574d34d210ca97441ec33c9277-744x1039.png",
-    "ability": "When you win a combat, draw 1. (You win if only your units remain after combat.)",
-    "tags": [
-      "Draven"
-    ]
-  },
-  {
     "id": "sfd-185-221",
-    "name": "Glorious Executioner",
+    "name": "Draven, Glorious Executioner",
     "collector_number": 185,
     "domain": [
       "Fury",
@@ -4917,15 +4900,21 @@
     ]
   },
   {
-    "id": "unl-t05",
-    "name": "Gold",
-    "collector_number": 5,
-    "domain": "Colorless",
-    "card_type": "Gear",
-    "rarity": "Common",
-    "card_set": "Unleashed",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e566605fa989e12e91cd3d3e0b7985f7a8be8e74-744x1039.png",
-    "ability": "[Reaction][&gt;] Kill this, :rb_exhaust:: [Add] :rb_rune_rainbow:. (Abilities that add resources can't be reacted to.)"
+    "id": "sfd-242-221",
+    "name": "Draven, Glorious Executioner",
+    "collector_number": 242,
+    "domain": [
+      "Fury",
+      "Chaos"
+    ],
+    "card_type": "Legend",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5a06fcd2cadbdb574d34d210ca97441ec33c9277-744x1039.png",
+    "ability": "When you win a combat, draw 1. (You win if only your units remain after combat.)",
+    "tags": [
+      "Draven"
+    ]
   },
   {
     "id": "sfd-t03",
@@ -4939,25 +4928,19 @@
     "ability": "Kill this, :rb_exhaust:: [Reaction] — [Add] :rb_rune_rainbow:. (Abilities that add resources can't be reacted to.)"
   },
   {
-    "id": "sfd-205-221",
-    "name": "Grand Duelist",
-    "collector_number": 205,
-    "domain": [
-      "Body",
-      "Order"
-    ],
-    "card_type": "Legend",
-    "rarity": "Rare",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/37064aa79c13316b5dd28f0a2b054821a43f6650-744x1039.png",
-    "ability": "When one of your units becomes [Mighty], you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ :rb_might:.)",
-    "tags": [
-      "Fiora"
-    ]
+    "id": "unl-t05",
+    "name": "Gold",
+    "collector_number": 5,
+    "domain": "Colorless",
+    "card_type": "Gear",
+    "rarity": "Common",
+    "card_set": "Unleashed",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e566605fa989e12e91cd3d3e0b7985f7a8be8e74-744x1039.png",
+    "ability": "[Reaction][&gt;] Kill this, :rb_exhaust:: [Add] :rb_rune_rainbow:. (Abilities that add resources can't be reacted to.)"
   },
   {
     "id": "sfd-251-221",
-    "name": "Grand Duelist",
+    "name": "Fiora, Grand Duelist",
     "collector_number": 251,
     "domain": [
       "Body",
@@ -4967,6 +4950,23 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/720df5a56619a6b53aa1217cb84446f2469b40e5-744x1039.png",
+    "ability": "When one of your units becomes [Mighty], you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ :rb_might:.)",
+    "tags": [
+      "Fiora"
+    ]
+  },
+  {
+    "id": "sfd-205-221",
+    "name": "Fiora, Grand Duelist",
+    "collector_number": 205,
+    "domain": [
+      "Body",
+      "Order"
+    ],
+    "card_type": "Legend",
+    "rarity": "Rare",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/37064aa79c13316b5dd28f0a2b054821a43f6650-744x1039.png",
     "ability": "When one of your units becomes [Mighty], you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ :rb_might:.)",
     "tags": [
       "Fiora"
@@ -4987,7 +4987,7 @@
   },
   {
     "id": "sfd-245-221",
-    "name": "Grandmaster at Arms",
+    "name": "Jax, Grandmaster at Arms",
     "collector_number": 245,
     "domain": [
       "Calm",
@@ -5004,7 +5004,7 @@
   },
   {
     "id": "sfd-193-221",
-    "name": "Grandmaster at Arms",
+    "name": "Jax, Grandmaster at Arms",
     "collector_number": 193,
     "domain": [
       "Calm",
@@ -5021,7 +5021,7 @@
   },
   {
     "id": "unl-195-219",
-    "name": "Green Father",
+    "name": "Ivern, Green Father",
     "collector_number": 195,
     "domain": [
       "Calm",
@@ -5038,7 +5038,7 @@
   },
   {
     "id": "unl-233-219",
-    "name": "Green Father",
+    "name": "Ivern, Green Father",
     "collector_number": 233,
     "domain": [
       "Calm",
@@ -5055,7 +5055,7 @@
   },
   {
     "id": "unl-233-star-219",
-    "name": "Green Father",
+    "name": "Ivern, Green Father",
     "collector_number": 233,
     "domain": [
       "Calm",
@@ -5238,7 +5238,7 @@
   },
   {
     "id": "ogn-302-star-298",
-    "name": "Hand of Noxus",
+    "name": "Darius, Hand of Noxus",
     "collector_number": 302,
     "domain": [
       "Fury",
@@ -5255,7 +5255,7 @@
   },
   {
     "id": "ogn-302-298",
-    "name": "Hand of Noxus",
+    "name": "Darius, Hand of Noxus",
     "collector_number": 302,
     "domain": [
       "Fury",
@@ -5272,7 +5272,7 @@
   },
   {
     "id": "ogn-253-298",
-    "name": "Hand of Noxus",
+    "name": "Darius, Hand of Noxus",
     "collector_number": 253,
     "domain": [
       "Fury",
@@ -5414,7 +5414,7 @@
   },
   {
     "id": "ogn-308-star-298",
-    "name": "Herald of the Arcane",
+    "name": "Viktor, Herald of the Arcane",
     "collector_number": 308,
     "domain": [
       "Mind",
@@ -5431,7 +5431,7 @@
   },
   {
     "id": "ogn-308-298",
-    "name": "Herald of the Arcane",
+    "name": "Viktor, Herald of the Arcane",
     "collector_number": 308,
     "domain": [
       "Mind",
@@ -5448,7 +5448,7 @@
   },
   {
     "id": "ogn-265-298",
-    "name": "Herald of the Arcane",
+    "name": "Viktor, Herald of the Arcane",
     "collector_number": 265,
     "domain": [
       "Mind",
@@ -5850,23 +5850,6 @@
     ]
   },
   {
-    "id": "sfd-057-221",
-    "name": "Irelia, Fervent",
-    "collector_number": 57,
-    "energy": 5,
-    "might": 4,
-    "domain": "Calm",
-    "card_type": "Unit",
-    "rarity": "Epic",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fe05fa55781f8036f8bfc9c10bba94326a0c8cc9-744x1039.png",
-    "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) When you choose or ready me, give me +1 :rb_might: this turn.",
-    "tags": [
-      "Irelia",
-      "Ionia"
-    ]
-  },
-  {
     "id": "sfd-225-221",
     "name": "Irelia, Fervent",
     "collector_number": 225,
@@ -5877,6 +5860,23 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/40454a8534f7c9444bafd000ffbfc0e5bcc847f0-744x1039.png",
+    "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) When you choose or ready me, give me +1 :rb_might: this turn.",
+    "tags": [
+      "Irelia",
+      "Ionia"
+    ]
+  },
+  {
+    "id": "sfd-057-221",
+    "name": "Irelia, Fervent",
+    "collector_number": 57,
+    "energy": 5,
+    "might": 4,
+    "domain": "Calm",
+    "card_type": "Unit",
+    "rarity": "Epic",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/fe05fa55781f8036f8bfc9c10bba94326a0c8cc9-744x1039.png",
     "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) When you choose or ready me, give me +1 :rb_might: this turn.",
     "tags": [
       "Irelia",
@@ -5901,24 +5901,6 @@
     ]
   },
   {
-    "id": "sfd-141a-221",
-    "name": "Irelia, Graceful",
-    "collector_number": 141,
-    "energy": 4,
-    "power": 1,
-    "might": 4,
-    "domain": "Chaos",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/08419c2b5b7aa7e5f63854e324d5dabe0b5997a2-744x1039.png",
-    "ability": "Your spells that choose me cost :rb_energy_1: or :rb_rune_rainbow: less.",
-    "tags": [
-      "Irelia",
-      "Ionia"
-    ]
-  },
-  {
     "id": "sfd-141-221",
     "name": "Irelia, Graceful",
     "collector_number": 141,
@@ -5930,6 +5912,24 @@
     "rarity": "Rare",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/03b9d73a7ef02447d7f4b67381a76616249061cc-744x1039.png",
+    "ability": "Your spells that choose me cost :rb_energy_1: or :rb_rune_rainbow: less.",
+    "tags": [
+      "Irelia",
+      "Ionia"
+    ]
+  },
+  {
+    "id": "sfd-141a-221",
+    "name": "Irelia, Graceful",
+    "collector_number": 141,
+    "energy": 4,
+    "power": 1,
+    "might": 4,
+    "domain": "Chaos",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/08419c2b5b7aa7e5f63854e324d5dabe0b5997a2-744x1039.png",
     "ability": "Your spells that choose me cost :rb_energy_1: or :rb_rune_rainbow: less.",
     "tags": [
       "Irelia",
@@ -6100,24 +6100,6 @@
     ]
   },
   {
-    "id": "sfd-054-221",
-    "name": "Jax, Unmatched",
-    "collector_number": 54,
-    "energy": 5,
-    "power": 1,
-    "might": 5,
-    "domain": "Calm",
-    "card_type": "Unit",
-    "rarity": "Rare",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3d425589c74dbff818fa09db134fdd8bb7136420-744x1039.png",
-    "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) Your Equipment everywhere have [Quick-Draw]. (Each gains [Reaction]. When you play it, attach it to a unit you control.)",
-    "tags": [
-      "Jax",
-      "Icathia"
-    ]
-  },
-  {
     "id": "sfd-054a-221",
     "name": "Jax, Unmatched",
     "collector_number": 54,
@@ -6136,18 +6118,18 @@
     ]
   },
   {
-    "id": "sfd-119-221",
-    "name": "Jax, Unrelenting",
-    "collector_number": 119,
-    "energy": 4,
+    "id": "sfd-054-221",
+    "name": "Jax, Unmatched",
+    "collector_number": 54,
+    "energy": 5,
     "power": 1,
-    "might": 3,
-    "domain": "Body",
+    "might": 5,
+    "domain": "Calm",
     "card_type": "Unit",
-    "rarity": "Epic",
+    "rarity": "Rare",
     "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e63ab3370a6e4ce4baddfba12ab92468f6cc9541-744x1039.png",
-    "ability": "[Weaponmaster] (When you play me, you may [Equip] one of your Equipment to me for :rb_rune_rainbow: less, even if it's already attached.) When you attach an Equipment to me, you may pay :rb_energy_1: to draw 1.",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3d425589c74dbff818fa09db134fdd8bb7136420-744x1039.png",
+    "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.) Your Equipment everywhere have [Quick-Draw]. (Each gains [Reaction]. When you play it, attach it to a unit you control.)",
     "tags": [
       "Jax",
       "Icathia"
@@ -6165,6 +6147,24 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a5796125bdb0af8ceb60cd0c5c273c6417e0f7da-744x1039.png",
+    "ability": "[Weaponmaster] (When you play me, you may [Equip] one of your Equipment to me for :rb_rune_rainbow: less, even if it's already attached.) When you attach an Equipment to me, you may pay :rb_energy_1: to draw 1.",
+    "tags": [
+      "Jax",
+      "Icathia"
+    ]
+  },
+  {
+    "id": "sfd-119-221",
+    "name": "Jax, Unrelenting",
+    "collector_number": 119,
+    "energy": 4,
+    "power": 1,
+    "might": 3,
+    "domain": "Body",
+    "card_type": "Unit",
+    "rarity": "Epic",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e63ab3370a6e4ce4baddfba12ab92468f6cc9541-744x1039.png",
     "ability": "[Weaponmaster] (When you play me, you may [Equip] one of your Equipment to me for :rb_rune_rainbow: less, even if it's already attached.) When you attach an Equipment to me, you may pay :rb_energy_1: to draw 1.",
     "tags": [
       "Jax",
@@ -6576,7 +6576,7 @@
   },
   {
     "id": "unl-237-star-219",
-    "name": "Keeper of the Hammer",
+    "name": "Poppy, Keeper of the Hammer",
     "collector_number": 237,
     "domain": [
       "Body",
@@ -6592,25 +6592,8 @@
     ]
   },
   {
-    "id": "unl-203-219",
-    "name": "Keeper of the Hammer",
-    "collector_number": 203,
-    "domain": [
-      "Body",
-      "Order"
-    ],
-    "card_type": "Legend",
-    "rarity": "Rare",
-    "card_set": "Unleashed",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ee1393b9bace7bfea4e87405b793bb5462305ed0-744x1039.png",
-    "ability": "When you hold, gain 1 XP. Spend 3 XP, :rb_exhaust:: Draw 1.",
-    "tags": [
-      "Poppy"
-    ]
-  },
-  {
     "id": "unl-237-219",
-    "name": "Keeper of the Hammer",
+    "name": "Poppy, Keeper of the Hammer",
     "collector_number": 237,
     "domain": [
       "Body",
@@ -6620,6 +6603,23 @@
     "rarity": "Showcase",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/41321ddb3b1c63492285d1c3d067ee42ade502e4-744x1039.png",
+    "ability": "When you hold, gain 1 XP. Spend 3 XP, :rb_exhaust:: Draw 1.",
+    "tags": [
+      "Poppy"
+    ]
+  },
+  {
+    "id": "unl-203-219",
+    "name": "Poppy, Keeper of the Hammer",
+    "collector_number": 203,
+    "domain": [
+      "Body",
+      "Order"
+    ],
+    "card_type": "Legend",
+    "rarity": "Rare",
+    "card_set": "Unleashed",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/ee1393b9bace7bfea4e87405b793bb5462305ed0-744x1039.png",
     "ability": "When you hold, gain 1 XP. Spend 3 XP, :rb_exhaust:: Draw 1.",
     "tags": [
       "Poppy"
@@ -6800,7 +6800,7 @@
   },
   {
     "id": "ogs-021-024",
-    "name": "Lady of Luminosity - Starter",
+    "name": "Lux, Lady of Luminosity - Starter",
     "collector_number": 21,
     "domain": [
       "Mind",
@@ -6982,24 +6982,6 @@
     ]
   },
   {
-    "id": "ogn-078-298",
-    "name": "Lee Sin, Ascetic",
-    "collector_number": 78,
-    "energy": 5,
-    "power": 1,
-    "might": 5,
-    "domain": "Calm",
-    "card_type": "Unit",
-    "rarity": "Epic",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/70734e8833bfbbdb2736407c449f418553e3cf7c-744x1039.png",
-    "ability": "[Shield] (+1 :rb_might: while I'm a defender.) :rb_exhaust:: Buff me. (I get a +1 :rb_might: buff.) I can have any number of buffs.",
-    "tags": [
-      "Lee Sin",
-      "Ionia"
-    ]
-  },
-  {
     "id": "ogn-078a-298",
     "name": "Lee Sin, Ascetic",
     "collector_number": 78,
@@ -7011,6 +6993,24 @@
     "rarity": "Showcase",
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d34a98faacd3f7d32afd6fad99c806f202aa9dad-744x1039.png",
+    "ability": "[Shield] (+1 :rb_might: while I'm a defender.) :rb_exhaust:: Buff me. (I get a +1 :rb_might: buff.) I can have any number of buffs.",
+    "tags": [
+      "Lee Sin",
+      "Ionia"
+    ]
+  },
+  {
+    "id": "ogn-078-298",
+    "name": "Lee Sin, Ascetic",
+    "collector_number": 78,
+    "energy": 5,
+    "power": 1,
+    "might": 5,
+    "domain": "Calm",
+    "card_type": "Unit",
+    "rarity": "Epic",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/70734e8833bfbbdb2736407c449f418553e3cf7c-744x1039.png",
     "ability": "[Shield] (+1 :rb_might: while I'm a defender.) :rb_exhaust:: Buff me. (I get a +1 :rb_might: buff.) I can have any number of buffs.",
     "tags": [
       "Lee Sin",
@@ -7300,7 +7300,7 @@
   },
   {
     "id": "ogn-251-298",
-    "name": "Loose Cannon",
+    "name": "Jinx, Loose Cannon",
     "collector_number": 251,
     "domain": [
       "Fury",
@@ -7317,7 +7317,7 @@
   },
   {
     "id": "ogn-301-star-298",
-    "name": "Loose Cannon",
+    "name": "Jinx, Loose Cannon",
     "collector_number": 301,
     "domain": [
       "Fury",
@@ -7334,7 +7334,7 @@
   },
   {
     "id": "ogn-301-298",
-    "name": "Loose Cannon",
+    "name": "Jinx, Loose Cannon",
     "collector_number": 301,
     "domain": [
       "Fury",
@@ -7413,24 +7413,6 @@
     ]
   },
   {
-    "id": "sfd-028a-221",
-    "name": "Lucian, Gunslinger",
-    "collector_number": 28,
-    "energy": 3,
-    "might": 2,
-    "domain": "Fury",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3982de5a4aee53471ca589179f5cf8617169fb52-744x1039.png",
-    "ability": "[Assault] (+1 :rb_might: while I'm an attacker.) When I attack, deal damage equal to my [Assault] to an enemy unit here.",
-    "tags": [
-      "Lucian",
-      "Demacia",
-      "Sentinel"
-    ]
-  },
-  {
     "id": "sfd-028-221",
     "name": "Lucian, Gunslinger",
     "collector_number": 28,
@@ -7441,6 +7423,24 @@
     "rarity": "Epic",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/2dfb106d7c85235436d25261195a638e2ab15092-744x1039.png",
+    "ability": "[Assault] (+1 :rb_might: while I'm an attacker.) When I attack, deal damage equal to my [Assault] to an enemy unit here.",
+    "tags": [
+      "Lucian",
+      "Demacia",
+      "Sentinel"
+    ]
+  },
+  {
+    "id": "sfd-028a-221",
+    "name": "Lucian, Gunslinger",
+    "collector_number": 28,
+    "energy": 3,
+    "might": 2,
+    "domain": "Fury",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/3982de5a4aee53471ca589179f5cf8617169fb52-744x1039.png",
     "ability": "[Assault] (+1 :rb_might: while I'm an attacker.) When I attack, deal damage equal to my [Assault] to an enemy unit here.",
     "tags": [
       "Lucian",
@@ -7772,7 +7772,7 @@
   },
   {
     "id": "sfd-240-221",
-    "name": "Mechanized Menace",
+    "name": "Rumble, Mechanized Menace",
     "collector_number": 240,
     "domain": [
       "Fury",
@@ -7789,7 +7789,7 @@
   },
   {
     "id": "sfd-181-221",
-    "name": "Mechanized Menace",
+    "name": "Rumble, Mechanized Menace",
     "collector_number": 181,
     "domain": [
       "Fury",
@@ -7851,7 +7851,7 @@
   },
   {
     "id": "ogs-023-024",
-    "name": "Might of Demacia - Starter",
+    "name": "Garen, Might of Demacia - Starter",
     "collector_number": 23,
     "domain": [
       "Body",
@@ -8379,7 +8379,7 @@
   },
   {
     "id": "ogn-303-star-298",
-    "name": "Nine-Tailed Fox",
+    "name": "Ahri, Nine-Tailed Fox",
     "collector_number": 303,
     "domain": [
       "Calm",
@@ -8396,7 +8396,7 @@
   },
   {
     "id": "ogn-255-298",
-    "name": "Nine-Tailed Fox",
+    "name": "Ahri, Nine-Tailed Fox",
     "collector_number": 255,
     "domain": [
       "Calm",
@@ -8413,7 +8413,7 @@
   },
   {
     "id": "ogn-303-298",
-    "name": "Nine-Tailed Fox",
+    "name": "Ahri, Nine-Tailed Fox",
     "collector_number": 303,
     "domain": [
       "Calm",
@@ -8604,24 +8604,6 @@
     "ability": "While you control this battlefield, the first friendly non-token gear played each turn costs :rb_energy_1: less."
   },
   {
-    "id": "sfd-058a-221",
-    "name": "Ornn, Blacksmith",
-    "collector_number": 58,
-    "energy": 5,
-    "power": 1,
-    "might": 5,
-    "domain": "Calm",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e0621bba6475425d93191677b2b120c07a8efe20-744x1039.png",
-    "ability": "When you play me or when I hold, look at the top 4 cards of your Main Deck. You may reveal a gear from among them and draw it. Then recycle the rest.",
-    "tags": [
-      "Ornn",
-      "Freljord"
-    ]
-  },
-  {
     "id": "sfd-058-221",
     "name": "Ornn, Blacksmith",
     "collector_number": 58,
@@ -8640,17 +8622,18 @@
     ]
   },
   {
-    "id": "sfd-085a-221",
-    "name": "Ornn, Forge God",
-    "collector_number": 85,
-    "energy": 6,
-    "might": 4,
-    "domain": "Mind",
+    "id": "sfd-058a-221",
+    "name": "Ornn, Blacksmith",
+    "collector_number": 58,
+    "energy": 5,
+    "power": 1,
+    "might": 5,
+    "domain": "Calm",
     "card_type": "Unit",
     "rarity": "Showcase",
     "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/22af72b06cb92d4a0078dddfb87cc9c21c92231d-744x1039.png",
-    "ability": "[Deflect 2] (Opponents must pay :rb_rune_rainbow::rb_rune_rainbow: to choose me with a spell or ability.) [Weaponmaster] (When you play me, you may [Equip] one of your Equipment to me for :rb_rune_rainbow: less, even if it's already attached.) I have +1 :rb_might: for each friendly gear.",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e0621bba6475425d93191677b2b120c07a8efe20-744x1039.png",
+    "ability": "When you play me or when I hold, look at the top 4 cards of your Main Deck. You may reveal a gear from among them and draw it. Then recycle the rest.",
     "tags": [
       "Ornn",
       "Freljord"
@@ -8667,6 +8650,23 @@
     "rarity": "Rare",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/f33c4ea9010ea5f440d4470554845c0ecae2c893-744x1039.png",
+    "ability": "[Deflect 2] (Opponents must pay :rb_rune_rainbow::rb_rune_rainbow: to choose me with a spell or ability.) [Weaponmaster] (When you play me, you may [Equip] one of your Equipment to me for :rb_rune_rainbow: less, even if it's already attached.) I have +1 :rb_might: for each friendly gear.",
+    "tags": [
+      "Ornn",
+      "Freljord"
+    ]
+  },
+  {
+    "id": "sfd-085a-221",
+    "name": "Ornn, Forge God",
+    "collector_number": 85,
+    "energy": 6,
+    "might": 4,
+    "domain": "Mind",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/22af72b06cb92d4a0078dddfb87cc9c21c92231d-744x1039.png",
     "ability": "[Deflect 2] (Opponents must pay :rb_rune_rainbow::rb_rune_rainbow: to choose me with a spell or ability.) [Weaponmaster] (When you play me, you may [Equip] one of your Equipment to me for :rb_rune_rainbow: less, even if it's already attached.) I have +1 :rb_might: for each friendly gear.",
     "tags": [
       "Ornn",
@@ -8854,7 +8854,7 @@
   },
   {
     "id": "unl-229-star-219",
-    "name": "Piltover Enforcer",
+    "name": "Vi, Piltover Enforcer",
     "collector_number": 229,
     "domain": [
       "Fury",
@@ -8871,7 +8871,7 @@
   },
   {
     "id": "unl-229-219",
-    "name": "Piltover Enforcer",
+    "name": "Vi, Piltover Enforcer",
     "collector_number": 229,
     "domain": [
       "Fury",
@@ -8888,7 +8888,7 @@
   },
   {
     "id": "unl-187-219",
-    "name": "Piltover Enforcer",
+    "name": "Vi, Piltover Enforcer",
     "collector_number": 187,
     "domain": [
       "Fury",
@@ -9131,22 +9131,6 @@
     "ability": "[Action] (Play on your turn or in showdowns.) Choose an enemy unit at a battlefield. Take control of it and recall it. (Send it to your base. This isn't a move.)"
   },
   {
-    "id": "unl-220-219",
-    "name": "Pouty Poro",
-    "collector_number": 220,
-    "energy": 2,
-    "might": 2,
-    "domain": "Fury",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Unleashed",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0c91b90d91c4f988aa9942dd9e06a634a66c6975-744x1039.png",
-    "ability": "[Deflect]",
-    "tags": [
-      "Poro"
-    ]
-  },
-  {
     "id": "ogn-013-298",
     "name": "Pouty Poro",
     "collector_number": 13,
@@ -9158,6 +9142,22 @@
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/d541bf3bcb5aa3ad0d48d87f5753569b72ac426f-744x1039.png",
     "ability": "[Deflect] (Opponents must pay :rb_rune_rainbow: to choose me with a spell or ability.)",
+    "tags": [
+      "Poro"
+    ]
+  },
+  {
+    "id": "unl-220-219",
+    "name": "Pouty Poro",
+    "collector_number": 220,
+    "energy": 2,
+    "might": 2,
+    "domain": "Fury",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Unleashed",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0c91b90d91c4f988aa9942dd9e06a634a66c6975-744x1039.png",
+    "ability": "[Deflect]",
     "tags": [
       "Poro"
     ]
@@ -9204,7 +9204,7 @@
   },
   {
     "id": "unl-227-star-219",
-    "name": "Pridestalker",
+    "name": "Rengar, Pridestalker",
     "collector_number": 227,
     "domain": [
       "Fury",
@@ -9221,7 +9221,7 @@
   },
   {
     "id": "unl-183-219",
-    "name": "Pridestalker",
+    "name": "Rengar, Pridestalker",
     "collector_number": 183,
     "domain": [
       "Fury",
@@ -9238,7 +9238,7 @@
   },
   {
     "id": "unl-227-219",
-    "name": "Pridestalker",
+    "name": "Rengar, Pridestalker",
     "collector_number": 227,
     "domain": [
       "Fury",
@@ -9286,7 +9286,7 @@
   },
   {
     "id": "sfd-199-221",
-    "name": "Prodigal Explorer",
+    "name": "Ezreal, Prodigal Explorer",
     "collector_number": 199,
     "domain": [
       "Mind",
@@ -9303,7 +9303,7 @@
   },
   {
     "id": "sfd-248-221",
-    "name": "Prodigal Explorer",
+    "name": "Ezreal, Prodigal Explorer",
     "collector_number": 248,
     "domain": [
       "Mind",
@@ -9372,7 +9372,7 @@
   },
   {
     "id": "sfd-183-221",
-    "name": "Purifier",
+    "name": "Lucian, Purifier",
     "collector_number": 183,
     "domain": [
       "Fury",
@@ -9389,7 +9389,7 @@
   },
   {
     "id": "sfd-241-221",
-    "name": "Purifier",
+    "name": "Lucian, Purifier",
     "collector_number": 241,
     "domain": [
       "Fury",
@@ -9512,7 +9512,7 @@
   },
   {
     "id": "ogn-306-298",
-    "name": "Radiant Dawn",
+    "name": "Leona, Radiant Dawn",
     "collector_number": 306,
     "domain": [
       "Calm",
@@ -9528,25 +9528,8 @@
     ]
   },
   {
-    "id": "ogn-306-star-298",
-    "name": "Radiant Dawn",
-    "collector_number": 306,
-    "domain": [
-      "Calm",
-      "Order"
-    ],
-    "card_type": "Legend",
-    "rarity": "Showcase",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/bd526a0f9177aaa9ec575add7d02e72b46520070-744x1039.png",
-    "ability": "When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 :rb_might: buff.)",
-    "tags": [
-      "Leona"
-    ]
-  },
-  {
     "id": "ogn-261-298",
-    "name": "Radiant Dawn",
+    "name": "Leona, Radiant Dawn",
     "collector_number": 261,
     "domain": [
       "Calm",
@@ -9556,6 +9539,23 @@
     "rarity": "Rare",
     "card_set": "Origins",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/822b8bc7987a47498550708b18ef166b121fd620-744x1039.png",
+    "ability": "When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 :rb_might: buff.)",
+    "tags": [
+      "Leona"
+    ]
+  },
+  {
+    "id": "ogn-306-star-298",
+    "name": "Leona, Radiant Dawn",
+    "collector_number": 306,
+    "domain": [
+      "Calm",
+      "Order"
+    ],
+    "card_type": "Legend",
+    "rarity": "Showcase",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/bd526a0f9177aaa9ec575add7d02e72b46520070-744x1039.png",
     "ability": "When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 :rb_might: buff.)",
     "tags": [
       "Leona"
@@ -9900,7 +9900,7 @@
   },
   {
     "id": "ogn-300-298",
-    "name": "Relentless Storm",
+    "name": "Volibear, Relentless Storm",
     "collector_number": 300,
     "domain": [
       "Fury",
@@ -9917,7 +9917,7 @@
   },
   {
     "id": "ogn-249-298",
-    "name": "Relentless Storm",
+    "name": "Volibear, Relentless Storm",
     "collector_number": 249,
     "domain": [
       "Fury",
@@ -9934,7 +9934,7 @@
   },
   {
     "id": "ogn-300-star-298",
-    "name": "Relentless Storm",
+    "name": "Volibear, Relentless Storm",
     "collector_number": 300,
     "domain": [
       "Fury",
@@ -10003,23 +10003,6 @@
     ]
   },
   {
-    "id": "sfd-088a-221",
-    "name": "Renata Glasc, Mastermind",
-    "collector_number": 88,
-    "energy": 5,
-    "might": 4,
-    "domain": "Mind",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b2b269d8ec274f3869ba42982f5710b160c4c43f-744x1039.png",
-    "ability": ":rb_energy_1::rb_rune_mind:: Draw 1. :rb_energy_4::rb_rune_mind::rb_rune_mind::rb_rune_mind::rb_rune_mind:, :rb_exhaust:: Score 1 point. Use my abilities only while I'm at a battlefield.",
-    "tags": [
-      "Renata Glasc",
-      "Zaun"
-    ]
-  },
-  {
     "id": "sfd-088-221",
     "name": "Renata Glasc, Mastermind",
     "collector_number": 88,
@@ -10030,6 +10013,23 @@
     "rarity": "Epic",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/be8f7e08562c076e8947aafc3ecd202051d17c02-744x1039.png",
+    "ability": ":rb_energy_1::rb_rune_mind:: Draw 1. :rb_energy_4::rb_rune_mind::rb_rune_mind::rb_rune_mind::rb_rune_mind:, :rb_exhaust:: Score 1 point. Use my abilities only while I'm at a battlefield.",
+    "tags": [
+      "Renata Glasc",
+      "Zaun"
+    ]
+  },
+  {
+    "id": "sfd-088a-221",
+    "name": "Renata Glasc, Mastermind",
+    "collector_number": 88,
+    "energy": 5,
+    "might": 4,
+    "domain": "Mind",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/b2b269d8ec274f3869ba42982f5710b160c4c43f-744x1039.png",
     "ability": ":rb_energy_1::rb_rune_mind:: Draw 1. :rb_energy_4::rb_rune_mind::rb_rune_mind::rb_rune_mind::rb_rune_mind:, :rb_exhaust:: Score 1 point. Use my abilities only while I'm at a battlefield.",
     "tags": [
       "Renata Glasc",
@@ -10621,7 +10621,7 @@
   },
   {
     "id": "unl-234-219",
-    "name": "Scorn of the Moon",
+    "name": "Diana, Scorn of the Moon",
     "collector_number": 234,
     "domain": [
       "Mind",
@@ -10638,7 +10638,7 @@
   },
   {
     "id": "unl-234-star-219",
-    "name": "Scorn of the Moon",
+    "name": "Diana, Scorn of the Moon",
     "collector_number": 234,
     "domain": [
       "Mind",
@@ -10655,7 +10655,7 @@
   },
   {
     "id": "unl-197-219",
-    "name": "Scorn of the Moon",
+    "name": "Diana, Scorn of the Moon",
     "collector_number": 197,
     "domain": [
       "Mind",
@@ -10763,19 +10763,6 @@
     ]
   },
   {
-    "id": "ogn-204-298",
-    "name": "Seal of Discord",
-    "collector_number": 204,
-    "energy": 0,
-    "power": 1,
-    "domain": "Chaos",
-    "card_type": "Gear",
-    "rarity": "Epic",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dd8433e77e46ca77aaf0be35d1774218d9a2f037-744x1039.png",
-    "ability": ":rb_exhaust:: [Reaction] — [Add] :rb_rune_chaos:. (Abilities that add resources can't be reacted to.)"
-  },
-  {
     "id": "sfd-234-221",
     "name": "Seal of Discord",
     "collector_number": 234,
@@ -10786,6 +10773,19 @@
     "rarity": "Showcase",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/9263b8f36725a4cec320c1049608824ae72f6237-744x1039.png",
+    "ability": ":rb_exhaust:: [Reaction] — [Add] :rb_rune_chaos:. (Abilities that add resources can't be reacted to.)"
+  },
+  {
+    "id": "ogn-204-298",
+    "name": "Seal of Discord",
+    "collector_number": 204,
+    "energy": 0,
+    "power": 1,
+    "domain": "Chaos",
+    "card_type": "Gear",
+    "rarity": "Epic",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/dd8433e77e46ca77aaf0be35d1774218d9a2f037-744x1039.png",
     "ability": ":rb_exhaust:: [Reaction] — [Add] :rb_rune_chaos:. (Abilities that add resources can't be reacted to.)"
   },
   {
@@ -10979,21 +10979,20 @@
     ]
   },
   {
-    "id": "ogn-164-298",
+    "id": "sfd-232-221",
     "name": "Sett, Brawler",
-    "collector_number": 164,
+    "collector_number": 232,
     "energy": 5,
     "power": 1,
     "might": 4,
     "domain": "Body",
     "card_type": "Unit",
-    "rarity": "Epic",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/00ddd4d478f2e49e18a60ed67f4d1452041b7da3-744x1039.png",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a13d5473e205cb9dd8123895c58ed6ac8f19e814-744x1039.png",
     "ability": "When I'm played and when I conquer, buff me. (If I don't have a buff, I get a +1 :rb_might: buff.) Spend my buff: Give me +4 :rb_might: this turn.",
     "tags": [
-      "Sett",
-      "Ionia"
+      "Sett"
     ]
   },
   {
@@ -11015,20 +11014,21 @@
     ]
   },
   {
-    "id": "sfd-232-221",
+    "id": "ogn-164-298",
     "name": "Sett, Brawler",
-    "collector_number": 232,
+    "collector_number": 164,
     "energy": 5,
     "power": 1,
     "might": 4,
     "domain": "Body",
     "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/a13d5473e205cb9dd8123895c58ed6ac8f19e814-744x1039.png",
+    "rarity": "Epic",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/00ddd4d478f2e49e18a60ed67f4d1452041b7da3-744x1039.png",
     "ability": "When I'm played and when I conquer, buff me. (If I don't have a buff, I get a +1 :rb_might: buff.) Spend my buff: Give me +4 :rb_might: this turn.",
     "tags": [
-      "Sett"
+      "Sett",
+      "Ionia"
     ]
   },
   {
@@ -11795,21 +11795,6 @@
     "ability": "[Reaction] (Play any time, even before spells and abilities resolve.) If an enemy unit has died this turn, this costs :rb_energy_2: less. Draw 2."
   },
   {
-    "id": "ogn-274-298",
-    "name": "Sprite",
-    "collector_number": 274,
-    "might": 3,
-    "domain": "Colorless",
-    "card_type": "Unit",
-    "rarity": "Common",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/055892752559d2d3d32e76f491a7a0b540e1a669-744x1039.png",
-    "ability": "[Temporary] (Kill me at the start of your Beginning Phase, before scoring.)",
-    "tags": [
-      "Fae"
-    ]
-  },
-  {
     "id": "unl-t07",
     "name": "Sprite",
     "collector_number": 7,
@@ -11819,6 +11804,21 @@
     "rarity": "Common",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1a90578f055e01515ebfb069dc3dbdba08d24da0-744x1039.png",
+    "ability": "[Temporary] (Kill me at the start of your Beginning Phase, before scoring.)",
+    "tags": [
+      "Fae"
+    ]
+  },
+  {
+    "id": "ogn-274-298",
+    "name": "Sprite",
+    "collector_number": 274,
+    "might": 3,
+    "domain": "Colorless",
+    "card_type": "Unit",
+    "rarity": "Common",
+    "card_set": "Origins",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/055892752559d2d3d32e76f491a7a0b540e1a669-744x1039.png",
     "ability": "[Temporary] (Kill me at the start of your Beginning Phase, before scoring.)",
     "tags": [
       "Fae"
@@ -12241,7 +12241,7 @@
   },
   {
     "id": "ogn-307-star-298",
-    "name": "Swift Scout",
+    "name": "Teemo, Swift Scout",
     "collector_number": 307,
     "domain": [
       "Mind",
@@ -12258,7 +12258,7 @@
   },
   {
     "id": "ogn-263-298",
-    "name": "Swift Scout",
+    "name": "Teemo, Swift Scout",
     "collector_number": 263,
     "domain": [
       "Mind",
@@ -12275,7 +12275,7 @@
   },
   {
     "id": "ogn-307-298",
-    "name": "Swift Scout",
+    "name": "Teemo, Swift Scout",
     "collector_number": 307,
     "domain": [
       "Mind",
@@ -12444,6 +12444,42 @@
     ]
   },
   {
+    "id": "sfd-230-star-221",
+    "name": "Teemo, Strategist",
+    "collector_number": 230,
+    "energy": 2,
+    "power": 1,
+    "might": 2,
+    "domain": "Mind",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5e31f0ea037604aa531d84c1d56d26f255210b7c-744x1039.png",
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) When I defend or I'm played from [Hidden], reveal the top 5 cards of your Main Deck. Deal 1 to an enemy unit here for each card with [Hidden], then recycle them.",
+    "tags": [
+      "Yordle",
+      "Teemo"
+    ]
+  },
+  {
+    "id": "sfd-230-221",
+    "name": "Teemo, Strategist",
+    "collector_number": 230,
+    "energy": 2,
+    "power": 1,
+    "might": 2,
+    "domain": "Mind",
+    "card_type": "Unit",
+    "rarity": "Showcase",
+    "card_set": "Spiritforged",
+    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/7f0962b840d228ad551fb9334fe9bdf76d209e7d-744x1039.png",
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) When I defend or I'm played from [Hidden], reveal the top 5 cards of your Main Deck. Deal 1 to an enemy unit here for each card with [Hidden], then recycle them.",
+    "tags": [
+      "Yordle",
+      "Teemo"
+    ]
+  },
+  {
     "id": "ogn-121-298",
     "name": "Teemo, Strategist",
     "collector_number": 121,
@@ -12460,43 +12496,6 @@
       "Yordle",
       "Teemo",
       "Bandle City"
-    ]
-  },
-  {
-    "id": "ogn-121a-298",
-    "name": "Teemo, Strategist",
-    "collector_number": 121,
-    "energy": 2,
-    "power": 1,
-    "might": 2,
-    "domain": "Mind",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Origins",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/0709ab02b75d9acc8f3c4037ec3a4140323150d8-744x1039.png",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with [Hidden] revealed this way, then recycle the revealed cards.",
-    "tags": [
-      "Yordle",
-      "Teemo",
-      "Bandle City"
-    ]
-  },
-  {
-    "id": "sfd-230-star-221",
-    "name": "Teemo, Strategist",
-    "collector_number": 230,
-    "energy": 2,
-    "power": 1,
-    "might": 2,
-    "domain": "Mind",
-    "card_type": "Unit",
-    "rarity": "Showcase",
-    "card_set": "Spiritforged",
-    "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/5e31f0ea037604aa531d84c1d56d26f255210b7c-744x1039.png",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) When I defend or I'm played from [Hidden], reveal the top 5 cards of your Main Deck. Deal 1 to an enemy unit here for each card with [Hidden], then recycle them.",
-    "tags": [
-      "Yordle",
-      "Teemo"
     ]
   },
   {
@@ -12565,7 +12564,7 @@
   },
   {
     "id": "ogn-269-298",
-    "name": "The Boss",
+    "name": "Sett, The Boss",
     "collector_number": 269,
     "domain": [
       "Body",
@@ -12582,7 +12581,7 @@
   },
   {
     "id": "ogn-310-star-298",
-    "name": "The Boss",
+    "name": "Sett, The Boss",
     "collector_number": 310,
     "domain": [
       "Body",
@@ -12599,7 +12598,7 @@
   },
   {
     "id": "ogn-310-298",
-    "name": "The Boss",
+    "name": "Sett, The Boss",
     "collector_number": 310,
     "domain": [
       "Body",
@@ -13215,7 +13214,7 @@
   },
   {
     "id": "ogn-305-star-298",
-    "name": "Unforgiven",
+    "name": "Yasuo, Unforgiven",
     "collector_number": 305,
     "domain": [
       "Calm",
@@ -13232,7 +13231,7 @@
   },
   {
     "id": "ogn-305-298",
-    "name": "Unforgiven",
+    "name": "Yasuo, Unforgiven",
     "collector_number": 305,
     "domain": [
       "Calm",
@@ -13249,7 +13248,7 @@
   },
   {
     "id": "ogn-259-298",
-    "name": "Unforgiven",
+    "name": "Yasuo, Unforgiven",
     "collector_number": 259,
     "domain": [
       "Calm",
@@ -13863,7 +13862,7 @@
   },
   {
     "id": "unl-226-star-219",
-    "name": "Virtuoso",
+    "name": "Jhin, Virtuoso",
     "collector_number": 226,
     "domain": [
       "Fury",
@@ -13880,7 +13879,7 @@
   },
   {
     "id": "unl-226-219",
-    "name": "Virtuoso",
+    "name": "Jhin, Virtuoso",
     "collector_number": 226,
     "domain": [
       "Fury",
@@ -13897,7 +13896,7 @@
   },
   {
     "id": "unl-181-219",
-    "name": "Virtuoso",
+    "name": "Jhin, Virtuoso",
     "collector_number": 181,
     "domain": [
       "Fury",
@@ -13933,7 +13932,7 @@
   },
   {
     "id": "sfd-243-221",
-    "name": "Void Burrower",
+    "name": "Rek'Sai, Void Burrower",
     "collector_number": 243,
     "domain": [
       "Fury",
@@ -13950,7 +13949,7 @@
   },
   {
     "id": "sfd-187-221",
-    "name": "Void Burrower",
+    "name": "Rek'Sai, Void Burrower",
     "collector_number": 187,
     "domain": [
       "Fury",
@@ -14042,7 +14041,7 @@
   },
   {
     "id": "unl-201-219",
-    "name": "Voidreaver",
+    "name": "Kha'Zix, Voidreaver",
     "collector_number": 201,
     "domain": [
       "Body",
@@ -14059,7 +14058,7 @@
   },
   {
     "id": "unl-236-219",
-    "name": "Voidreaver",
+    "name": "Kha'Zix, Voidreaver",
     "collector_number": 236,
     "domain": [
       "Body",
@@ -14076,7 +14075,7 @@
   },
   {
     "id": "unl-236-star-219",
-    "name": "Voidreaver",
+    "name": "Kha'Zix, Voidreaver",
     "collector_number": 236,
     "domain": [
       "Body",
@@ -14455,7 +14454,7 @@
   },
   {
     "id": "ogs-019-024",
-    "name": "Wuju Bladesman - Starter",
+    "name": "Master Yi, Wuju Bladesman - Starter",
     "collector_number": 19,
     "domain": [
       "Calm",
@@ -14472,7 +14471,7 @@
   },
   {
     "id": "unl-231-219",
-    "name": "Wuju Master",
+    "name": "Master Yi, Wuju Master",
     "collector_number": 231,
     "domain": [
       "Calm",
@@ -14489,7 +14488,7 @@
   },
   {
     "id": "unl-231-star-219",
-    "name": "Wuju Master",
+    "name": "Master Yi, Wuju Master",
     "collector_number": 231,
     "domain": [
       "Calm",
@@ -14506,7 +14505,7 @@
   },
   {
     "id": "unl-191-219",
-    "name": "Wuju Master",
+    "name": "Master Yi, Wuju Master",
     "collector_number": 191,
     "domain": [
       "Calm",

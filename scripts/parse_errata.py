@@ -309,6 +309,24 @@ def main():
         for name in unmatched:
             print(f"  - {name}")
 
+    # Apply manual overrides (errata not in any PDF, matched by card id)
+    overrides_file = script_dir / "manual_errata_overrides.json"
+    if overrides_file.exists():
+        with open(overrides_file, "r", encoding="utf-8") as f:
+            overrides = json.load(f)
+        cards_by_id = {card["id"]: card for card in cards}
+        override_count = 0
+        for override in overrides:
+            card_id = override.get("id")
+            if card_id and card_id in cards_by_id:
+                cards_by_id[card_id]["errata_text"] = override["errata_text"]
+                cards_by_id[card_id]["errata_old_text"] = override["errata_old_text"]
+                override_count += 1
+                print(f"  Override applied: {override.get('name', card_id)}")
+            else:
+                print(f"  Override WARNING: id '{card_id}' not found in cards")
+        print(f"Applied {override_count} manual override(s) from {overrides_file.name}")
+
     # Save updated cards
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(cards, f, indent=2, ensure_ascii=False)

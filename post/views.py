@@ -845,10 +845,10 @@ _RULES_SOURCE = os.path.join(settings.BASE_DIR, "rules_source")
 
 _DIFF_CONFIGS = {
     "tr": {
-        "old_dir": os.path.join(_RULES_SOURCE, "trsections_january_2026"),
-        "new_dir": os.path.join(_RULES_SOURCE, "trsections_march_2026"),
-        "old_label": "January 2026",
-        "new_label": "March 2026",
+        "old_dir": os.path.join(_RULES_SOURCE, "trsections_march_2026"),
+        "new_dir": os.path.join(_RULES_SOURCE, "trsections_april_2026"),
+        "old_label": "March 2026",
+        "new_label": "April 2026",
     },
     "cr": {
         "old_dir": os.path.join(_RULES_SOURCE, "crsections"),
