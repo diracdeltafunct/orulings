@@ -9,13 +9,25 @@
 {% else %}
 
 <div class="diff-header sticky-top bg-body py-2 border-bottom mb-3" style="z-index:100;">
+  <form method="get" class="d-flex align-items-center flex-wrap gap-2 mb-2">
+    <label class="small text-muted mb-0">Compare</label>
+    <select name="old" class="form-select form-select-sm" style="width:auto;">
+      {% for v in versions %}
+      <option value="{{ v.dir }}"{% if v.dir == old_dir_name %} selected{% endif %}>{{ v.label }}</option>
+      {% endfor %}
+    </select>
+    <span class="text-muted">→</span>
+    <select name="new" class="form-select form-select-sm" style="width:auto;">
+      {% for v in versions %}
+      <option value="{{ v.dir }}"{% if v.dir == new_dir_name %} selected{% endif %}>{{ v.label }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-sm btn-primary">Diff</button>
+  </form>
   <div class="d-flex align-items-center flex-wrap gap-2">
     <span class="diff-badge diff-badge-added">+{{ n_added }} added</span>
     <span class="diff-badge diff-badge-removed">-{{ n_removed }} removed</span>
     <span class="diff-badge diff-badge-changed">~{{ n_changed }} changed</span>
-    <span class="text-muted small ms-2">
-      <strong>{{ old_label }}</strong> → <strong>{{ new_label }}</strong>
-    </span>
     <button class="btn btn-sm btn-outline-secondary ms-auto" id="btn-toggle-unchanged">Show unchanged</button>
     <button class="btn btn-sm btn-outline-primary" id="btn-prev-change">&#8593; Prev</button>
     <button class="btn btn-sm btn-outline-primary" id="btn-next-change">&#8595; Next</button>

@@ -843,20 +843,30 @@ def api_cards_all(request):
 # Mapping of rule_type -> (old_dir, new_dir, old_label, new_label)
 _RULES_SOURCE = os.path.join(settings.BASE_DIR, "rules_source")
 
-_DIFF_CONFIGS = {
-    "tr": {
-        "old_dir": os.path.join(_RULES_SOURCE, "trsections_march_2026"),
-        "new_dir": os.path.join(_RULES_SOURCE, "trsections_april_2026"),
-        "old_label": "March 2026",
-        "new_label": "April 2026",
-    },
-    "cr": {
-        "old_dir": os.path.join(_RULES_SOURCE, "crsections"),
-        "new_dir": os.path.join(_RULES_SOURCE, "crsections_march_2026"),
-        "old_label": "December 2025",
-        "new_label": "March 2026",
-    },
-}
+def _get_available_versions(rule_type):
+    """Scan rules_source/ for version directories, return list sorted oldest→newest."""
+    from datetime import date as _date
+    prefix = "trsections" if rule_type == "tr" else "crsections"
+    live_dir = prefix  # exact name "trsections" / "crsections" is the live copy — skip it
+    versions = []
+    for name in os.listdir(_RULES_SOURCE):
+        if not name.startswith(prefix) or name == live_dir:
+            continue
+        dir_path = os.path.join(_RULES_SOURCE, name)
+        if not os.path.isdir(dir_path):
+            continue
+        metadata_path = os.path.join(dir_path, "metadata.json")
+        if not os.path.exists(metadata_path):
+            continue
+        try:
+            with open(metadata_path, encoding="utf-8") as f:
+                meta = json.load(f)
+            d = _date.fromisoformat(meta["last_updated"])
+            versions.append({"dir": name, "date": d, "label": d.strftime("%B %Y")})
+        except Exception:
+            continue
+    versions.sort(key=lambda v: v["date"])
+    return versions
 
 
 _TYPOGRAPHIC_NORM = str.maketrans({
@@ -931,15 +941,27 @@ def _word_diff_html(old_text, new_text):
 
 def rules_diff(request, rule_type):
     """Display a side-by-side diff of two versions of a rules document."""
-    config = _DIFF_CONFIGS.get(rule_type.lower())
-    if config is None:
+    rt = rule_type.lower()
+    versions = _get_available_versions(rt)
+    if len(versions) < 2:
         return render(request, "rules_diff.html", {
             "rule_type": rule_type.upper(),
             "no_diff": True,
         })
 
-    old_items = _load_ordered_rules(config["old_dir"])
-    new_items = _load_ordered_rules(config["new_dir"])
+    valid_dirs = {v["dir"] for v in versions}
+    old_dir_name = request.GET.get("old", versions[-2]["dir"])
+    new_dir_name = request.GET.get("new", versions[-1]["dir"])
+    if old_dir_name not in valid_dirs:
+        old_dir_name = versions[-2]["dir"]
+    if new_dir_name not in valid_dirs:
+        new_dir_name = versions[-1]["dir"]
+
+    old_label = next(v["label"] for v in versions if v["dir"] == old_dir_name)
+    new_label = next(v["label"] for v in versions if v["dir"] == new_dir_name)
+
+    old_items = _load_ordered_rules(os.path.join(_RULES_SOURCE, old_dir_name))
+    new_items = _load_ordered_rules(os.path.join(_RULES_SOURCE, new_dir_name))
 
     old_texts = [_norm(t) for _, t in old_items]
     new_texts = [_norm(t) for _, t in new_items]
@@ -1017,8 +1039,11 @@ def rules_diff(request, rule_type):
 
     return render(request, "rules_diff.html", {
         "rule_type": rule_type.upper(),
-        "old_label": config["old_label"],
-        "new_label": config["new_label"],
+        "old_label": old_label,
+        "new_label": new_label,
+        "old_dir_name": old_dir_name,
+        "new_dir_name": new_dir_name,
+        "versions": versions,
         "all_items": all_items,
         "n_added": n_added,
         "n_removed": n_removed,
