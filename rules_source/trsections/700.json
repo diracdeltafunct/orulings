@@ -491,7 +491,7 @@
             },
             {
               "section": "702.5.b",
-              "text": "Once extra cards being looked at have touched a new private or secret group from their original source, they become part of that group. If the extra cards have not touched a new group, this is instead a Looking at Secret Information error. See",
+              "text": "Once extra cards being looked at have touched a new private or secret group from their original source, they become part of that group. If the extra cards have not touched a new group, this is instead a Looking at Secret Information error. See 702.10. for more on Looking at Secret Information errors.",
               "children": [
                 {
                   "section": "702.5.b.1",
@@ -518,33 +518,6 @@
                 {
                   "section": "702.5.c.2",
                   "text": "If the error is caught at a later stage in the game, instruct players to continue playing.",
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "section": "702.10",
-          "text": "for more on Looking at Secret Information errors.",
-          "children": [
-            {
-              "section": "702.10.a",
-              "text": "Players should not be penalized via a remedy for errors their opponents make. Example: If one of your opponents inappropriately flips over the top card of their deck, you do not receive a penalty if you see it.",
-              "children": []
-            },
-            {
-              "section": "702.10.b",
-              "text": "Remedies:",
-              "children": [
-                {
-                  "section": "702.10.b.1",
-                  "text": "If possible, take involved cards in the now-known secret information and re-randomize them with the original randomized source of appropriate cards to remove the information advantage.",
-                  "children": []
-                },
-                {
-                  "section": "702.10.b.2",
-                  "text": "If this is not possible, reveal the information to all players to remove the information advantage and instruct the players to continue playing.",
                   "children": []
                 }
               ]
@@ -686,6 +659,33 @@
                 {
                   "section": "702.9.b.3",
                   "text": "If rewinding is not possible, instruct the players to continue playing.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "702.10",
+          "text": "Looking at Secret Information [Warning]: A player looks at information that is not available to any player. See CR 127. Privacy for information types.",
+          "children": [
+            {
+              "section": "702.10.a",
+              "text": "Players should not be penalized via a remedy for errors their opponents make. Example: If one of your opponents inappropriately flips over the top card of their deck, you do not receive a penalty if you see it.",
+              "children": []
+            },
+            {
+              "section": "702.10.b",
+              "text": "Remedies:",
+              "children": [
+                {
+                  "section": "702.10.b.1",
+                  "text": "If possible, take involved cards in the now-known secret information and re-randomize them with the original randomized source of appropriate cards to remove the information advantage.",
+                  "children": []
+                },
+                {
+                  "section": "702.10.b.2",
+                  "text": "If this is not possible, reveal the information to all players to remove the information advantage and instruct the players to continue playing.",
                   "children": []
                 }
               ]

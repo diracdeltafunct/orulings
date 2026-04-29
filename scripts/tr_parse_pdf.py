@@ -117,8 +117,16 @@ def extract_rows_from_page(page):
     for y_key in sorted(y_buckets.keys()):
         spans = sorted(y_buckets[y_key], key=lambda t: t[0])
         combined = " ".join(t[1].strip() for t in spans if t[1].strip())
-        if combined:
-            rows.append(combined)
+        if not combined:
+            continue
+        # If the leftmost span is in the text column (x > 80), not the section-number
+        # column (x ≈ 36-80), this row is a continuation line even if it starts with
+        # something that looks like a section number (e.g. a cross-reference like "702.10.").
+        # Prepend a space so join_continuation_lines won't treat it as a new section.
+        leftmost_x = spans[0][0]
+        if leftmost_x > 80:
+            combined = " " + combined
+        rows.append(combined)
 
     return rows
 
@@ -133,15 +141,18 @@ def join_continuation_lines(rows):
     """
     result = []
     for row in rows:
+        # A leading space means this row originated in the text column (not the
+        # section-number column), so treat it as a continuation regardless of content.
+        is_text_column = row.startswith(" ")
         stripped = row.strip()
         if not stripped:
             continue
-        if SECTION_PATTERN.match(stripped):
+        if not is_text_column and SECTION_PATTERN.match(stripped):
             result.append(stripped)
         else:
             # Check for multi-component section number without trailing period
             m = NO_PERIOD_SECTION.match(stripped)
-            if m:
+            if m and not is_text_column:
                 result.append(f"{m.group(1)}. {m.group(2)}")
             elif result:
                 result[-1] = result[-1] + " " + stripped
