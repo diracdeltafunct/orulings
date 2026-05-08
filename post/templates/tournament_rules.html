@@ -105,6 +105,14 @@
                                                         {{ leaf.annotations|safe }}
                                                     </div>
                                                     {% endif %}
+                                                    {% if user.is_authenticated %}
+                                                    <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ leaf.section }}" data-rule-type="TR">Edit</button>
+                                                    <div id="editor-container-{{ leaf.section }}" class="editor-container" data-annotation="{{ leaf.annotations }}">
+                                                        <div id="editor-{{ leaf.section }}" class="mb-2"></div>
+                                                        <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ leaf.section }}" data-rule-type="TR">Save</button>
+                                                        <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ leaf.section }}">Cancel</button>
+                                                    </div>
+                                                    {% endif %}
 
                                                     {% for subleaf in leaf.children %}
                                                     <div id="rule-{{ subleaf.section }}" class="tr-rule tr-subleaf ps-3 py-1">
@@ -115,6 +123,14 @@
                                                                 {% if subleaf.annotations %}
                                                                 <div class="annotation-display">
                                                                     {{ subleaf.annotations|safe }}
+                                                                </div>
+                                                                {% endif %}
+                                                                {% if user.is_authenticated %}
+                                                                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subleaf.section }}" data-rule-type="TR">Edit</button>
+                                                                <div id="editor-container-{{ subleaf.section }}" class="editor-container" data-annotation="{{ subleaf.annotations }}">
+                                                                    <div id="editor-{{ subleaf.section }}" class="mb-2"></div>
+                                                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subleaf.section }}" data-rule-type="TR">Save</button>
+                                                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subleaf.section }}">Cancel</button>
                                                                 </div>
                                                                 {% endif %}
                                                             </div>
