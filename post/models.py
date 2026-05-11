@@ -102,6 +102,8 @@ class Card(models.Model):
     )
     image_url = models.URLField(max_length=200)
     ability = models.TextField(blank=True, default="")
+    might_bonus = models.IntegerField(null=True, blank=True)
+    gear_effect = models.TextField(blank=True, default="")
     errata_text = models.TextField(blank=True, null=True)
     errata_old_text = models.TextField(blank=True, null=True)
 

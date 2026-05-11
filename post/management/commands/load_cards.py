@@ -90,6 +90,8 @@ class Command(BaseCommand):
                     "card_set": card_data.get("card_set", "Origins"),
                     "image_url": card_data.get("image_url", ""),
                     "ability": card_data.get("ability", ""),
+                    "might_bonus": card_data.get("might_bonus"),
+                    "gear_effect": card_data.get("gear_effect", ""),
                     "errata_text": card_data.get("errata_text"),
                     "errata_old_text": card_data.get("errata_old_text"),
                 }

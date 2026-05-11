@@ -68,17 +68,19 @@ def extract_card_data(raw_card):
         else:
             card["power"] = power_data
 
-    # Might - extract numeric value from nested structure
-    if "might" in raw_card:
-        might_data = raw_card["might"]
-        if isinstance(might_data, dict):
-            value = might_data.get("value", {})
-            if isinstance(value, dict):
-                card["might"] = value.get("id")
+    # Might Bonus - present on Gear cards; try both "might" and "mightBonus" keys
+    for might_key in ("might", "mightBonus"):
+        if might_key in raw_card:
+            might_data = raw_card[might_key]
+            if isinstance(might_data, dict):
+                value = might_data.get("value", {})
+                if isinstance(value, dict):
+                    card["might_bonus"] = value.get("id")
+                else:
+                    card["might_bonus"] = value
             else:
-                card["might"] = value
-        else:
-            card["might"] = might_data
+                card["might_bonus"] = might_data
+            break
 
     # Domain
     if "domain" in raw_card:
@@ -138,6 +140,22 @@ def extract_card_data(raw_card):
             if isinstance(rich_text, dict) and "body" in rich_text:
                 card["ability"] = strip_html(rich_text["body"])
 
+    # Gear Effect - separate text field present on Gear cards
+    for effect_key in ("effect", "gearEffect", "gearText", "cardEffect"):
+        if effect_key in raw_card:
+            effect_data = raw_card[effect_key]
+            if isinstance(effect_data, dict):
+                rich_text = effect_data.get("richText", {})
+                if isinstance(rich_text, dict) and "body" in rich_text:
+                    card["gear_effect"] = strip_html(rich_text["body"])
+                elif "body" in effect_data:
+                    card["gear_effect"] = strip_html(effect_data["body"])
+                elif isinstance(effect_data.get("value"), str):
+                    card["gear_effect"] = effect_data["value"]
+            elif isinstance(effect_data, str):
+                card["gear_effect"] = effect_data
+            break
+
     # Tags - structure is {"label": "Tags", "tags": ["ChampionName", ...]}
     if "tags" in raw_card:
         tag_data = raw_card["tags"]
@@ -145,6 +163,17 @@ def extract_card_data(raw_card):
             card["tags"] = tag_data["tags"]
         elif isinstance(tag_data, list):
             card["tags"] = tag_data
+
+    # Debug: report unrecognized keys on Gear cards so field names can be verified
+    if card.get("card_type") == "Gear":
+        known_keys = {
+            "id", "name", "collectorNumber", "energy", "power", "might",
+            "mightBonus", "domain", "cardType", "rarity", "set", "cardImage",
+            "text", "tags", "effect", "gearEffect", "gearText", "cardEffect",
+        }
+        unexpected = set(raw_card.keys()) - known_keys
+        if unexpected:
+            print(f"  [Gear card '{raw_card.get('name', '?')}'] unexpected keys: {unexpected}")
 
     # Legend name: prepend champion tag so name becomes "Ahri, Nine-Tailed Fox"
     if card.get("card_type") == "Legend" and len(card.get("tags", [])) == 1:
@@ -246,7 +275,8 @@ def main():
     # Print stats
     cards_with_energy = sum(1 for c in cards if "energy" in c)
     cards_with_power = sum(1 for c in cards if "power" in c)
-    cards_with_might = sum(1 for c in cards if "might" in c)
+    cards_with_might = sum(1 for c in cards if "might_bonus" in c)
+    cards_with_gear_effect = sum(1 for c in cards if "gear_effect" in c)
     cards_with_ability = sum(1 for c in cards if "ability" in c)
 
     # Count unique domains, types, sets, rarities
@@ -277,7 +307,8 @@ def main():
     print(f"  Total cards: {len(cards)}")
     print(f"  Cards with energy: {cards_with_energy}")
     print(f"  Cards with power: {cards_with_power}")
-    print(f"  Cards with might: {cards_with_might}")
+    print(f"  Cards with might bonus: {cards_with_might}")
+    print(f"  Cards with gear effect: {cards_with_gear_effect}")
     print(f"  Cards with ability text: {cards_with_ability}")
     print(f"\n  Domains: {sorted(domains)}")
     print(f"  Card types: {sorted(card_types)}")

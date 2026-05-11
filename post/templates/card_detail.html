@@ -84,6 +84,26 @@
                         <th scope="row">Energy</th>
                         <td>{{ card.energy }}</td>
                     </tr>
+                    {% if card.card_type == "Gear" %}
+                    {% if card.might_bonus is not None %}
+                    <tr>
+                        <th scope="row">Might Bonus</th>
+                        <td>{{ card.might_bonus }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.gear_effect %}
+                    <tr>
+                        <th scope="row">Effect</th>
+                        <td>{{ card.gear_effect|replace_keywords }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.ability %}
+                    <tr>
+                        <th scope="row">Ability</th>
+                        <td>{{ card.ability|replace_keywords }}</td>
+                    </tr>
+                    {% endif %}
+                    {% else %}
                     <tr>
                         <th scope="row">Power</th>
                         <td>{{ card.power }}</td>
@@ -92,6 +112,7 @@
                         <th scope="row">Ability</th>
                         <td>{{ card.ability|replace_keywords }}</td>
                     </tr>
+                    {% endif %}
                     {% if card.has_errata %}
                     <tr class="table-warning">
                         <th scope="row">Errata</th>
