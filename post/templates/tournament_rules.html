@@ -75,75 +75,7 @@
                             {% endif %}
 
                             {% for subchild in child.children %}
-                            <div id="rule-{{ subchild.section }}" class="tr-rule tr-subchild ps-3 py-1">
-                                <div class="d-flex align-items-start">
-                                    <a href="#rule-{{ subchild.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
-                                    <div class="flex-grow-1">
-                                        <strong class="tr-rule-number">{{ subchild.section }}.</strong> {{ subchild.text|safe }}
-                                        {% if subchild.annotations %}
-                                        <div class="annotation-display">
-                                            {{ subchild.annotations|safe }}
-                                        </div>
-                                        {% endif %}
-                                        {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Edit</button>
-                                        <div id="editor-container-{{ subchild.section }}" class="editor-container" data-annotation="{{ subchild.annotations }}">
-                                            <div id="editor-{{ subchild.section }}" class="mb-2"></div>
-                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="TR">Save</button>
-                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
-                                        </div>
-                                        {% endif %}
-
-                                        {% for leaf in subchild.children %}
-                                        <div id="rule-{{ leaf.section }}" class="tr-rule tr-leaf ps-3 py-1">
-                                            <div class="d-flex align-items-start">
-                                                <a href="#rule-{{ leaf.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
-                                                <div class="flex-grow-1">
-                                                    <strong class="tr-rule-number">{{ leaf.section }}.</strong> {{ leaf.text|safe }}
-                                                    {% if leaf.annotations %}
-                                                    <div class="annotation-display">
-                                                        {{ leaf.annotations|safe }}
-                                                    </div>
-                                                    {% endif %}
-                                                    {% if user.is_authenticated %}
-                                                    <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ leaf.section }}" data-rule-type="TR">Edit</button>
-                                                    <div id="editor-container-{{ leaf.section }}" class="editor-container" data-annotation="{{ leaf.annotations }}">
-                                                        <div id="editor-{{ leaf.section }}" class="mb-2"></div>
-                                                        <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ leaf.section }}" data-rule-type="TR">Save</button>
-                                                        <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ leaf.section }}">Cancel</button>
-                                                    </div>
-                                                    {% endif %}
-
-                                                    {% for subleaf in leaf.children %}
-                                                    <div id="rule-{{ subleaf.section }}" class="tr-rule tr-subleaf ps-3 py-1">
-                                                        <div class="d-flex align-items-start">
-                                                            <a href="#rule-{{ subleaf.section }}" class="tr-permalink me-2" title="Link to this rule">#</a>
-                                                            <div class="flex-grow-1">
-                                                                <strong class="tr-rule-number">{{ subleaf.section }}.</strong> {{ subleaf.text|safe }}
-                                                                {% if subleaf.annotations %}
-                                                                <div class="annotation-display">
-                                                                    {{ subleaf.annotations|safe }}
-                                                                </div>
-                                                                {% endif %}
-                                                                {% if user.is_authenticated %}
-                                                                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subleaf.section }}" data-rule-type="TR">Edit</button>
-                                                                <div id="editor-container-{{ subleaf.section }}" class="editor-container" data-annotation="{{ subleaf.annotations }}">
-                                                                    <div id="editor-{{ subleaf.section }}" class="mb-2"></div>
-                                                                    <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subleaf.section }}" data-rule-type="TR">Save</button>
-                                                                    <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subleaf.section }}">Cancel</button>
-                                                                </div>
-                                                                {% endif %}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            </div>
+                                {% include "includes/rule_node_tr.html" with node=subchild %}
                             {% endfor %}
                         </div>
                     </div>

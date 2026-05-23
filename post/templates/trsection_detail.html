@@ -93,6 +93,31 @@
                                                 {{ subchild.annotations|safe }}
                                             </div>
                                             {% endif %}
+                                            {% if subchild.children %}
+                                                {% for subsubchild in subchild.children %}
+                                                    <div class="ps-3 mb-1">
+                                                        <div class="d-flex justify-content-between align-items-start">
+                                                            <div><strong>{{ subsubchild.section }}.</strong> {{ subsubchild.text|safe }}</div>
+                                                            {% if user.is_authenticated %}
+                                                            <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subsubchild.section }}" data-rule-type="TR">Edit</button>
+                                                            {% endif %}
+                                                        </div>
+                                                        <div id="editor-container-{{ subsubchild.section }}" class="editor-container" data-annotation="{{ subsubchild.annotations }}">
+                                                            <div id="editor-{{ subsubchild.section }}" class="mb-2"></div>
+                                                            <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subsubchild.section }}" data-rule-type="TR">Save</button>
+                                                            <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subsubchild.section }}">Cancel</button>
+                                                        </div>
+                                                        {% if subsubchild.annotations %}
+                                                        <div class="annotation-display">
+                                                            {{ subsubchild.annotations|safe }}
+                                                        </div>
+                                                        {% endif %}
+                                                        {% if subsubchild.children %}
+                                                        <a href="/trsections/{{ subsubchild.section }}/" class="small text-muted ms-1">&#8618; view subsections</a>
+                                                        {% endif %}
+                                                    </div>
+                                                {% endfor %}
+                                            {% endif %}
                                         </div>
                                     {% endfor %}
                                 {% endif %}

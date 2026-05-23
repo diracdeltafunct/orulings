@@ -278,7 +278,7 @@ def trsection_detail(request, section):
     # Get the section from database
     try:
         section_obj = RuleSection.objects.prefetch_related(
-            "children__children__children__children"
+            "children__children__children__children__children__children"
         ).get(rule_type="TR", section=section)
     except RuleSection.DoesNotExist:
         raise Http404(f"Section {section} not found")
@@ -323,7 +323,7 @@ def crsection_detail(request, section):
     # Get the section from database
     try:
         section_obj = RuleSection.objects.prefetch_related(
-            "children__children__children__children"
+            "children__children__children__children__children__children"
         ).get(rule_type="CR", section=section)
     except RuleSection.DoesNotExist:
         raise Http404(f"Section {section} not found")
@@ -364,7 +364,7 @@ def core_rules(request):
     """
     top_level_sections = RuleSection.objects.filter(
         rule_type="CR", parent__isnull=True
-    ).prefetch_related("children__children__children__children")
+    ).prefetch_related("children__children__children__children__children__children")
 
     sections = []
     for section_obj in top_level_sections:
@@ -394,7 +394,7 @@ def tournament_rules(request):
     """
     top_level_sections = RuleSection.objects.filter(
         rule_type="TR", parent__isnull=True
-    ).prefetch_related("children__children__children__children")
+    ).prefetch_related("children__children__children__children__children__children")
 
     sections = []
     for section_obj in top_level_sections:
@@ -802,7 +802,7 @@ def api_rule(request, rule_type, section):
 
     try:
         section_obj = RuleSection.objects.prefetch_related(
-            "children__children__children__children"
+            "children__children__children__children__children__children"
         ).get(rule_type=rt, section=section)
     except RuleSection.DoesNotExist:
         return JsonResponse({"error": f"Section {section} not found."}, status=404)
