@@ -5,6 +5,9 @@ Downloads errata PDFs from:
 - Origins: https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/5bcbb23cb6131680ec8d469de6c87a3966a7622d.pdf
 - Spiritforged: https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/44d1c3c1185a8360b290ddfbb1ba7f7aaae34e62.pdf
 
+Also scrapes errata from web pages (where the PDF URL is dynamically loaded):
+- Unleashed: https://riftbound.leagueoflegends.com/en-us/news/rules-and-releases/unleashed-errata-updates/
+
 Finds old text and new text for each card, then updates the riftbound_cards.json
 with an "errata_text" field containing the new text.
 
@@ -14,6 +17,7 @@ Requires: pip install pypdf requests
 import json
 import re
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 import requests
@@ -34,6 +38,15 @@ ERRATA_PDFS = [
     {
         "name": "Spiritforged",
         "url": "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/44d1c3c1185a8360b290ddfbb1ba7f7aaae34e62.pdf",
+    },
+]
+
+# Web pages whose PDF URLs are dynamically loaded — scraped directly as HTML.
+# Note: the Unleashed errata supersedes the Spiritforged PDF for any SF cards listed there.
+ERRATA_PAGES = [
+    {
+        "name": "Unleashed",
+        "url": "https://riftbound.leagueoflegends.com/en-us/news/rules-and-releases/unleashed-errata-updates/",
     },
 ]
 
@@ -171,6 +184,101 @@ def parse_errata_from_text(text):
     return errata_entries
 
 
+def fetch_text_from_webpage(url):
+    """Fetch a webpage and return its plain text with HTML tags stripped."""
+
+    class _Extractor(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self._parts = []
+            self._skip = 0
+            self._block = {"p", "div", "h1", "h2", "h3", "h4", "h5", "li", "br", "tr"}
+            self._hide = {"script", "style", "nav", "footer", "header"}
+
+        def handle_starttag(self, tag, attrs):
+            if tag in self._hide:
+                self._skip += 1
+            elif tag in self._block and self._skip == 0:
+                self._parts.append("\n")
+
+        def handle_endtag(self, tag):
+            if tag in self._hide and self._skip > 0:
+                self._skip -= 1
+            elif tag in self._block and self._skip == 0:
+                self._parts.append("\n")
+
+        def handle_data(self, data):
+            if self._skip == 0:
+                self._parts.append(data)
+
+        def get_text(self):
+            return "".join(self._parts)
+
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; errata-parser/1.0)"}
+    response = requests.get(url, timeout=60, headers=headers)
+    response.raise_for_status()
+    extractor = _Extractor()
+    extractor.feed(response.text)
+    return extractor.get_text()
+
+
+# Patterns that are NOT card names (section headers, notes, etc.)
+_WEBPAGE_SKIP = re.compile(
+    r"^(New:|Old:|Note:|Spiritforged|Unleashed|Riftbound|Last\s+Updated|"
+    r"Card\s+Errata|You\s+can\s+find|This\s+document|Page\s*\d+)",
+    re.IGNORECASE,
+)
+
+
+def parse_errata_from_webpage(text):
+    """Parse errata from a Riftbound errata webpage.
+
+    Expects entries in the form:
+        Card Name
+        New: "new ability text"
+        Old: "old ability text"
+    """
+    entries = []
+    lines = [line.strip() for line in text.split("\n") if line.strip()]
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        new_match = re.match(r"^New:\s*(.*)", line, re.IGNORECASE)
+        if new_match:
+            new_text = new_match.group(1).strip().strip('"“”')
+
+            # Nearest preceding line that looks like a card name
+            card_name = None
+            for back in range(i - 1, max(i - 6, -1), -1):
+                potential = lines[back]
+                if _WEBPAGE_SKIP.match(potential):
+                    continue
+                if len(potential) > 100:
+                    continue
+                card_name = potential
+                break
+
+            if card_name and i + 1 < len(lines):
+                old_match = re.match(r"^Old:\s*(.*)", lines[i + 1], re.IGNORECASE)
+                if old_match:
+                    old_text = old_match.group(1).strip().strip('"“”')
+                    entries.append(
+                        {
+                            "card_name": re.sub(r"\s+", " ", card_name).strip(),
+                            "new_text": re.sub(r"\s+", " ", new_text).strip(),
+                            "old_text": re.sub(r"\s+", " ", old_text).strip(),
+                        }
+                    )
+                    i += 2
+                    continue
+
+        i += 1
+
+    return entries
+
+
 def main():
     print("Riftbound Errata PDF Parser")
     print("=" * 40)
@@ -247,6 +355,36 @@ def main():
 
         for e in errata:
             e["source"] = pdf_name
+
+        all_errata.extend(errata)
+
+    # Download and parse errata from web pages (PDF links are JS-only on these pages)
+    print("\nDownloading and parsing errata web pages...")
+    for page_info in ERRATA_PAGES:
+        page_name = page_info["name"]
+        page_url = page_info["url"]
+
+        print(f"\n{page_name} Errata (web page):")
+        print(f"  Fetching: {page_url}")
+
+        try:
+            text = fetch_text_from_webpage(page_url)
+            print(f"  Extracted {len(text)} characters of text")
+
+            debug_file = script_dir / f"debug_errata_{page_name.lower()}_web.txt"
+            with open(debug_file, "w", encoding="utf-8") as f:
+                f.write(text)
+            print(f"  Saved debug text to: {debug_file}")
+
+        except Exception as e:
+            print(f"  ERROR fetching page: {e}")
+            continue
+
+        errata = parse_errata_from_text(text)
+        print(f"  Found {len(errata)} errata entries")
+
+        for e in errata:
+            e["source"] = page_name
 
         all_errata.extend(errata)
 

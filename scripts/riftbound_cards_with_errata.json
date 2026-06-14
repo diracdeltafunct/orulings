@@ -1595,7 +1595,9 @@
     "rarity": "Rare",
     "card_set": "Unleashed",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/e06e3e3033640bc8a5bc98acd4e3a0925c6e2c9a-744x1039.png?accountingTag=RB",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. When they do, [Stun] it. (It doesn't deal combat damage this turn.)"
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. When they do, [Stun] it. (It doesn't deal combat damage this turn.)",
+    "errata_text": "[Hidden] (Hide now for [A] to react with later for [0].) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. If they do, then do this: [Stun] it. (It doesn't deal combat damage this turn.)",
+    "errata_old_text": "[Hidden] (Hide now for [A] to react with later for [0].) Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. When they do, [Stun] it. (It doesn't deal combat damage this turn.)"
   },
   {
     "id": "sfd-118-221",
@@ -2901,7 +2903,9 @@
     "ability": "Kill a unit at a battlefield. Then, if it had 3 :rb_might: or less, you may play this from your trash for :rb_rune_rainbow:.",
     "tags": [
       "Pyke"
-    ]
+    ],
+    "errata_text": "Kill a unit at a battlefield. Then, if it had 3 [M] or less, do this: You may play this from your trash for [A].",
+    "errata_old_text": "Kill a unit at a battlefield. Then, if it had 3 [M] or less, you may play this from your trash for [A]."
   },
   {
     "id": "sfd-163-221",
@@ -2932,7 +2936,9 @@
     "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
     "tags": [
       "LeBlanc"
-    ]
+    ],
+    "errata_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_old_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary]."
   },
   {
     "id": "unl-199-219",
@@ -2949,7 +2955,9 @@
     "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
     "tags": [
       "LeBlanc"
-    ]
+    ],
+    "errata_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_old_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary]."
   },
   {
     "id": "unl-235-219",
@@ -2966,7 +2974,9 @@
     "ability": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary].",
     "tags": [
       "LeBlanc"
-    ]
+    ],
+    "errata_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary].",
+    "errata_old_text": "When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. It becomes a copy of another unit there. Give it [Temporary]."
   },
   {
     "id": "ogs-024-024",
@@ -5209,7 +5219,9 @@
     "rarity": "Common",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1dc4fef81d018c6cf14f0344b51ebcdec968aab9-744x1039.png",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Play a 2 :rb_might: Sand Soldier unit token. You may pay :rb_rune_order: to ready it."
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) Play a 2 :rb_might: Sand Soldier unit token. You may pay :rb_rune_order: to ready it.",
+    "errata_text": "[Hidden] (Hide now for [A] to react with later for [0].) Play a 2 [M] Sand Soldier unit token. Then do this: You may pay [C] to ready it.",
+    "errata_old_text": "[Hidden] (Hide now for [A] to react with later for [0].) Play a 2 [M] Sand Soldier unit token. You may pay [C] to ready it."
   },
   {
     "id": "ogn-264-298",
@@ -6654,7 +6666,9 @@
     "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. They become copies of me.",
     "tags": [
       "Ionia"
-    ]
+    ],
+    "errata_text": "[Hidden] (Hide now for [A] to react with later for [0].) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. Then do this: They become copies of me.",
+    "errata_old_text": "[Hidden] (Hide now for [A] to react with later for [0].) [Temporary] (Kill me at the start of my controller's Beginning Phase, before scoring.) When you play me, play two Reflection unit tokens here. They become copies of me."
   },
   {
     "id": "unl-237-star-219",
@@ -8037,7 +8051,9 @@
     "ability": "Choose a unit. Play a ready Reflection unit token to your base. It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)",
     "tags": [
       "LeBlanc"
-    ]
+    ],
+    "errata_text": "Choose a unit. Play a ready Reflection unit token to your base. Then do this: It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)",
+    "errata_old_text": "Choose a unit. Play a ready Reflection unit token to your base. It becomes a copy of that unit. Give it [Temporary]. (Kill it at the start of its controller's Beginning Phase, before scoring.)"
   },
   {
     "id": "unl-003-219",
@@ -10183,7 +10199,9 @@
       "Cat",
       "Rengar",
       "Ixtal"
-    ]
+    ],
+    "errata_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can [Ambush] to a battlefield where there are enemy units, even if you don't have units there.",
+    "errata_old_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can be played to a battlefield where there are enemy units (even if you don't have units there). Related Articles Rules and Releases 2026-04-29T16:00:00.000Z Unleashed Rules FAQ and Clarifications Sharing clarifications and answering some frequent questions regarding Unleashed’s core rules updates. Rules and Releases 2026-03-30T16:00:00.000Z Riftbound Core Rules: Unleashed Patch Notes Learn all about the updates to Riftbound’s rules which arrive with Unleashed. Rules and Releases 2026-01-30T02:00:00.000Z Tournament Rules, January Update Rules, responsibilities and procedures to be followed in all Riftbound competitions. Rules and Releases 2026-01-14T02:00:00.000Z Riftbound Spiritforged FAQ Everything you need to know about Origins and Spiritforged rules clarifications and errata Rules and Releases 2026-01-14T02:00:00.000Z Riftbound Spiritforged Errata A quick summary of the latest Origins and Spiritforged Errata Rules and Releases 2025-12-05T02:00:00.000Z Riftbound Core Rules: Spiritforged Patch Notes Here are the updates for Riftbound’s Core Rules that come with the arrival of Spiritforged. Rules and Releases 2025-10-28T01:00:00.000Z Riftbound: Origins Card Errata The first batch of Riftbound cards errata for Origins. Rules and Releases 2025-10-24T01:00:00.000Z Riftbound Core Rules: Patch Notes The first major Riftbound rules patch is here! Rules and Releases 2025-10-16T19:00:00.000Z Riftbound Tournament Rules Rules, responsibilities and procedures to be followed in all Riftbound competitions."
   },
   {
     "id": "unl-120-219",
@@ -10202,7 +10220,9 @@
       "Cat",
       "Rengar",
       "Ixtal"
-    ]
+    ],
+    "errata_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can [Ambush] to a battlefield where there are enemy units, even if you don't have units there.",
+    "errata_old_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) I can be played to a battlefield where there are enemy units (even if you don't have units there). Related Articles Rules and Releases 2026-04-29T16:00:00.000Z Unleashed Rules FAQ and Clarifications Sharing clarifications and answering some frequent questions regarding Unleashed’s core rules updates. Rules and Releases 2026-03-30T16:00:00.000Z Riftbound Core Rules: Unleashed Patch Notes Learn all about the updates to Riftbound’s rules which arrive with Unleashed. Rules and Releases 2026-01-30T02:00:00.000Z Tournament Rules, January Update Rules, responsibilities and procedures to be followed in all Riftbound competitions. Rules and Releases 2026-01-14T02:00:00.000Z Riftbound Spiritforged FAQ Everything you need to know about Origins and Spiritforged rules clarifications and errata Rules and Releases 2026-01-14T02:00:00.000Z Riftbound Spiritforged Errata A quick summary of the latest Origins and Spiritforged Errata Rules and Releases 2025-12-05T02:00:00.000Z Riftbound Core Rules: Spiritforged Patch Notes Here are the updates for Riftbound’s Core Rules that come with the arrival of Spiritforged. Rules and Releases 2025-10-28T01:00:00.000Z Riftbound: Origins Card Errata The first batch of Riftbound cards errata for Origins. Rules and Releases 2025-10-24T01:00:00.000Z Riftbound Core Rules: Patch Notes The first major Riftbound rules patch is here! Rules and Releases 2025-10-16T19:00:00.000Z Riftbound Tournament Rules Rules, responsibilities and procedures to be followed in all Riftbound competitions."
   },
   {
     "id": "unl-024-219",
