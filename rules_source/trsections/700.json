@@ -629,7 +629,7 @@
         },
         {
           "section": "702.9",
-          "text": "Mispayment for Cost [Warning]: A player pays a cost underpaying its power or energy cost, or uses the incorrect domain to pay a power cost.",
+          "text": "Mispayment for Cost [Warning]: A player pays a cost underpaying its requirements or using the incorrect requirements. See CR 201. Costs for more detail on costs.",
           "children": [
             {
               "section": "702.9.a",
@@ -647,7 +647,7 @@
                 },
                 {
                   "section": "702.9.b.2",
-                  "text": "If a simple rewind is not possible, correct the cost paid if possible, by exhausting, or recycling runes as needed.",
+                  "text": "If a simple rewind is not possible, correct the cost paid if possible.",
                   "children": [
                     {
                       "section": "702.9.b.2.a",
@@ -667,7 +667,7 @@
         },
         {
           "section": "702.10",
-          "text": "Looking at Secret Information [Warning]: A player looks at information that is not available to any player. See CR 127. Privacy for information types.",
+          "text": "Looking at Secret Information [Warning]: A player looks at information that is not available to any player. See CR 128. Privacy for information types.",
           "children": [
             {
               "section": "702.10.a",
@@ -694,7 +694,7 @@
         },
         {
           "section": "702.11",
-          "text": "Looking at Opponent Private Information [Warning]: A player accidentally looks at information that is private to their opponent. See CR 127. Privacy for information types.",
+          "text": "Looking at Opponent Private Information [Warning]: A player accidentally looks at information that is private to their opponent. See CR 128. Privacy for information types.",
           "children": [
             {
               "section": "702.11.a",
@@ -1436,7 +1436,7 @@
         },
         {
           "section": "704.4",
-          "text": "Angle Shooting [Warning]: A player uses the technical precision of the rules to gain an advantage where the spirit of the rules would not have garnered that advantage.",
+          "text": "Angle Shooting [Warning]: A player intentionally uses the technical precision of the rules to gain an advantage where the spirit of the rules would not have garnered that advantage.",
           "children": [
             {
               "section": "704.4.a",
@@ -1459,7 +1459,7 @@
                 },
                 {
                   "section": "704.4.a.4",
-                  "text": "Using a printing of a card that is pre-errata without informing opponents once the card is played.",
+                  "text": "Attempting to mislead an opponent during gameplay based on cards that have rules errata.",
                   "children": []
                 },
                 {
@@ -1513,7 +1513,7 @@
             },
             {
               "section": "704.5.c",
-              "text": "It is not bribery when players in the single-elimination portion of a tournament offering only items such as cash, store credit, and/or unopened product, with the tournament organizer's permission, agree to divide the subsequent tournament prizes evenly. All players still in the tournament must agree to the arrangement.",
+              "text": "It is not bribery when players in the single-elimination portion of a tournament offering only items such as cash, store credit, and/or unopened product, with the competition organizer's permission, agree to divide the subsequent tournament prizes evenly. All players still in the tournament must agree to the arrangement.",
               "children": [
                 {
                   "section": "704.5.c.1",
@@ -1524,7 +1524,7 @@
             },
             {
               "section": "704.5.d",
-              "text": "It is not bribery when, in the final round of the single-elimination portion of a tournament, with the tournament organizer's permission, players mutually agree on a winner and how to divide the remaining prizes. In such cases, one player must agree to drop from the tournament. Prizes are then awarded based on each player's final standing.",
+              "text": "It is not bribery when, in the final round of the single-elimination portion of a tournament, with the competition organizer's permission, players mutually agree on a winner and how to divide the remaining prizes. In such cases, one player must agree to drop from the tournament. Prizes are then awarded based on each player's final standing.",
               "children": []
             }
           ]
@@ -1572,6 +1572,217 @@
             {
               "section": "704.8.d",
               "text": "The head judge has ultimate discretion to issue penalties for cheating.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "705",
+      "text": "Disciplinary Code",
+      "children": [
+        {
+          "section": "705.1",
+          "text": "Overview",
+          "children": [
+            {
+              "section": "705.1.a",
+              "text": "All players participating in a premier or qualifier Riftbound competition are subject to this Disciplinary Code.",
+              "children": []
+            },
+            {
+              "section": "705.1.b",
+              "text": "Players accept and agree to be bound by these Riftbound Tournament Rules including this Disciplinary Code by: a) signing a contract or registration form in which these Riftbound Tournament Rules are incorporated, linked, referenced, or attached, b) clicking \"Accept\" when given the option to do so in an online registration process (or through a similar method of acceptance); or c) participating in any Regional Championship, Regional Qualifier, Showdown Series,  or any equivalent events.",
+              "children": []
+            },
+            {
+              "section": "705.1.c",
+              "text": "Players also accept and agree that the Competition Organizer and Riot Games have the right to:",
+              "children": [
+                {
+                  "section": "705.1.c.1",
+                  "text": "Monitor compliance with these Riftbound Tournament Rules, other Riftbound competition policies, the Riot Games Terms of Service, and any other competition-specific rules.",
+                  "children": []
+                },
+                {
+                  "section": "705.1.c.2",
+                  "text": "Investigate (or have a representative investigate) possible violations of any of the foregoing, and/or possible violations of applicable law.",
+                  "children": []
+                },
+                {
+                  "section": "705.1.c.3",
+                  "text": "Where appropriate, impose sanctions for violations of these Riftbound Tournament Rules or other regulations referenced above, as further described below.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "705.1.d",
+              "text": "This Disciplinary Code applies globally anywhere Riftbound competitions are held. It may also apply to circumstances that occur outside of competition play entirely, if the alleged conduct could have an adverse impact on Riftbound competitions or in circumstances where the alleged conduct could be associated with Riot Games, Riot Games affiliates, Riot Games game titles, or other properties, in each case as determined by Riot Games.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "705.2",
+          "text": "Investigations of Rule Violations and Consequences",
+          "children": [
+            {
+              "section": "705.2.a",
+              "text": "Reporting: Players must report any violation of these Riftbound Tournament Rules to the Competition Organizer or Competition Officials upon becoming aware of the violation. Reports must be made honestly and in good faith. Knowingly false, fabricated, or recklessly misleading allegations, coordinated complaints made in bad faith, or other abuses of the reporting process are prohibited and may result in sanctions.",
+              "children": []
+            },
+            {
+              "section": "705.2.b",
+              "text": "Duty to Cooperate: Players are required to cooperate with the Competition Organizer, Riot Games, or designated representatives in any internal or external investigation that is conducted relating to a suspected violation of these Riftbound Tournament Rules. Players have a duty to tell the truth in connection with any such investigation, and a duty not to obstruct any such investigation, mislead investigators, withhold evidence, or abuse investigative processes.",
+              "children": []
+            },
+            {
+              "section": "705.2.c",
+              "text": "Abiding to Decisions: Players must comply with all instructions, directions, decisions, or rulings, including any disciplinary measures or final decisions issued by the Competition Organizer or another entity recognized by Riot Games.",
+              "children": []
+            },
+            {
+              "section": "705.2.d",
+              "text": "Consequences: At the Competition Organizer and/or Riot Games' discretion, sanctions will be proportionate to the severity of the violation, taking into account any prior sanctions. Multiple sanctions may be applied for a single violation. Violations of these Riftbound Tournament Rules may be sanctioned by the application of one or more of the following disciplinary measures:",
+              "children": [
+                {
+                  "section": "705.2.d.1",
+                  "text": "Warning (private or public)",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.2",
+                  "text": "Prize forfeiture and return of prizes (including previously awarded money and trophies)",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.3",
+                  "text": "Restrictions or bans on entering a venue",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.4",
+                  "text": "Game, match, or competition forfeiture (including the disqualification of competitions in progress and/or exclusion from future competitions)",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.5",
+                  "text": "Replaying a game or match",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.6",
+                  "text": "Forfeiture of points or rankings in any competitive ranking system",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.7",
+                  "text": "Suspension, disqualification, or ban from one or more Riftbound competitions",
+                  "children": []
+                },
+                {
+                  "section": "705.2.d.8",
+                  "text": "Riot game account suspension or termination",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "705.2.e",
+              "text": "Interim Measures: The Competition Organizer and/or Riot Games may issue interim or provisional disciplinary measures pending the outcome of an investigation and until a decision on the merits is finalized. In circumstances where credible evidence may suggest a breach of these Riftbound Tournament Rules, the Competition Organizer and/or Riot Games may implement provisional measures, including the suspension of individuals involved.",
+              "children": []
+            },
+            {
+              "section": "705.2.f",
+              "text": "Aggravating and Mitigating Circumstances: The type and extent of the disciplinary measures that may be imposed are based on the specific circumstances of each case, taking into account the seriousness of the offense as well as aggravating and mitigating circumstances. Repeated or multiple concurrent violations or infractions may be considered as aggravating circumstances and may be subject to escalating sanctions.",
+              "children": []
+            },
+            {
+              "section": "705.2.g",
+              "text": "Intent. Violations of the Riftbound Tournament Rules are subject to disciplinary action, whether or not they were committed intentionally or as part of a joke, a stunt, or some form of social media performance.",
+              "children": []
+            },
+            {
+              "section": "705.2.h",
+              "text": "Final Determinations. Competition Organizer's and/or Riot Games' determination as to the appropriate disciplinary action (or combination of disciplinary actions) will be final and binding.",
+              "children": []
+            },
+            {
+              "section": "705.2.i",
+              "text": "Public Decisions. The Competition Organizer and/or Riot Games may make decisions public at their sole discretion, which may include certain facts, details, consequences, or other information arising in connection with a ruling or other disciplinary decision regarding a violation or alleged violation of these Riftbound Tournament Rules.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "705.3",
+          "text": "Conduct Rules",
+          "children": [
+            {
+              "section": "705.3.a",
+              "text": "General Obligations:  Players who participate in Riftbound competitions must at all times observe the highest standards of personal integrity and sporting conduct. Players are required to behave in a respectful manner in all of their interactions with other competitors, judges, competition officials, the media, sponsors, fans and other persons. Players must promptly comply with the decisions and instructions of Competition Officials (particularly of Judges) in a respectful and non-combative manner.",
+              "children": []
+            },
+            {
+              "section": "705.3.b",
+              "text": "Unsporting Conduct. Players may not engage in any unsporting conduct listed in 704. Engaging in unsporting conduct may additionally be subject to sanction under this Disciplinary Code.",
+              "children": []
+            },
+            {
+              "section": "705.3.c",
+              "text": "Cheating. Cheating is prohibited. Enabling or assisting others to cheat is also prohibited.",
+              "children": []
+            },
+            {
+              "section": "705.3.d",
+              "text": "Unauthorized Communications. Unauthorized coaching and other communications during a match can give a player an unfair competitive advantage, and are prohibited.",
+              "children": []
+            },
+            {
+              "section": "705.3.e",
+              "text": "Derogatory or Defamatory Statements and Hateful Acts. Players may not use words, gestures, digital or physical objects, or any other means to transmit, allow or facilitate messages or actions that insult, encourage hatred, undermine, or harm the integrity of a country, individual, or group of people. This includes contemptuous, discriminatory, or denigrating expressions based on race, skin color, ethnic, national, or social origin, gender, language, religion, political or other opinions, financial status, birth, sexual orientation, medical condition or history, or any other characteristic or status.",
+              "children": []
+            },
+            {
+              "section": "705.3.f",
+              "text": "Vulgar or Provocative. Players may not use words, gestures, digital or physical objects, or any other means to transmit, allow or facilitate messages or actions that are obscene, vulgar, provocative, hateful, racist, insulting, threatening, abusive, libelous, slanderous, defamatory, or otherwise offensive or objectionable.",
+              "children": []
+            },
+            {
+              "section": "705.3.g",
+              "text": "Harassment. Players may not engage in any form of harassment. Harassment is defined as unwelcome and unwanted behaviors that diminish, demean, or otherwise intimidate. This rule also prohibits sexual harassment, which is defined as any form of unwelcome sexual advances. Stalking, conduct that involves threats of violence (whether physically or online) and sharing personal information of another individual without permission are considered forms of harassment as is any conduct by an individual that incites or encourages abuse by others. All forms of harassment are prohibited, even if the behavior is not sufficiently severe or pervasive to constitute unlawful activity under applicable law.",
+              "children": []
+            },
+            {
+              "section": "705.3.h",
+              "text": "Bullying and Abuse. Players may not engage in any form of bullying or physical or mental abuse. Bullying is defined as malicious conduct which an objective observer would consider hostile, offensive, and unrelated to legitimate competition, especially in circumstances where the person is perceived as vulnerable. Abuse is defined as treating a person with cruelty or violence (including physical altercation), especially if done repeatedly.  Acting with reckless disregard for the potential negative impact of one's actions is also considered a form of bullying and is prohibited.",
+              "children": []
+            },
+            {
+              "section": "705.3.i",
+              "text": "Credible Threats. Players may not threaten others. A threat is defined as a statement of intention to commit an act of violence or take other hostile action against someone in retribution for something done or not done that could cause an objective observer to believe it will be carried out.",
+              "children": []
+            },
+            {
+              "section": "705.3.j",
+              "text": "Match-fixing or Manipulation. Players may not match-fix or otherwise manipulate the outcome of any match or competition or request, encourage, or instruct others to manipulate it. Manipulation is defined as the unlawful or undue influence or alteration, directly or indirectly, by an act or an omission, of the course, result, or any other aspect of a match (i.e. spot-fixing) or a competition, irrespective of whether the behavior is committed for financial gain, sporting advantage, or any other purpose. For the purposes of this rule, manipulation also includes any attempt to manipulate, any action that creates the appearance of manipulation, and/or any behavior that could reasonably give rise to suspicions of manipulation, whether or not the manipulation is ultimately carried out or successful.",
+              "children": []
+            },
+            {
+              "section": "705.3.k",
+              "text": "Retaliation. Players may not retaliate against anyone who reports a possible violation of these Riftbound Tournament Rules in good faith or who provides truthful information during an investigation. Retaliation (for example, threats, intimidation, harassment, employment actions, or any other form of reprisal) constitutes an independent violation, regardless of the outcome of the underlying report.",
+              "children": []
+            },
+            {
+              "section": "705.3.l",
+              "text": "Violations of Law. Players are required to comply with all applicable laws at all times during their participation in Riftbound competitions. Players may not engage in (or encourage or solicit others to engage in) any illegal activity or behavior that is under investigation or has resulted in formal charges, whether or not a conviction has occurred, if such activity may bring Riot Games, the Competition Organizer, and/or a Riftbound competition into disrepute, negatively affect the authority, honor, and brand value of Riot Games, the Competition Organizer, and/or a Riftbound competition, or cause harm to the operation of a Riftbound competition.",
+              "children": []
+            },
+            {
+              "section": "705.3.m",
+              "text": "Violations of Riot Games Terms of Service. Players are required to comply with the Riot Games Terms of Service and may face sanctions under this Disciplinary Code in addition to consequences established in the Riot Games Terms of Service.",
               "children": []
             }
           ]

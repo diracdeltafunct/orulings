@@ -24,12 +24,12 @@
     },
     {
       "section": "052",
-      "text": "Card , when written in card effects, is shorthand for \" Main Deck card.\" Runes, legends, and battleﬁelds are not considered cards when executing the abilities and effects of game objects. They are considered cards for the purposes of these rules.",
+      "text": "Card, when written in card effects, is shorthand for \"Main Deck card.\" Runes, legends, and battlefields are not considered cards when executing the abilities and effects of game objects. They are considered cards for the purposes of these rules.",
       "children": []
     },
     {
       "section": "053",
-      "text": "Cards refer to themselves in the ﬁrst person.",
+      "text": "Cards refer to themselves in the first person.",
       "children": [
         {
           "section": "053.1",
@@ -43,18 +43,28 @@
         },
         {
           "section": "053.3",
-          "text": "* Battleﬁelds say \"here.\"",
+          "text": "* Battlefields say \"here.\"",
+          "children": []
+        },
+        {
+          "section": "053.4",
+          "text": "* Cards may refer to themselves by their name for clarity. This is shorthand for the above terms.",
           "children": []
         }
       ]
     },
     {
       "section": "054",
-      "text": "“Can’t beats Can”",
+      "text": "\"Can't beats Can\"",
       "children": [
         {
           "section": "054.1",
           "text": "Cards that forbid actions or effects, as a broad method of determination, supersede cards that allow or permit that same action or effect.",
+          "children": []
+        },
+        {
+          "section": "054.2",
+          "text": "If a card specifies that an action can \"only\" be performed under certain circumstances, it cannot be performed under any other circumstances.",
           "children": []
         }
       ]
@@ -65,7 +75,23 @@
       "children": [
         {
           "section": "055.1",
-          "text": "If all of a card’s instructions are impossible, it is still played and resolved, but nothing happens.",
+          "text": "If all of a card's instructions are impossible, it is still played and resolved, but nothing happens.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "056",
+      "text": "Cards a player owns may never be placed into a non-Board zone belonging to another player.",
+      "children": [
+        {
+          "section": "056.1",
+          "text": "Non-Board zones corresponding to a player include Main Deck, Rune Deck, Trash, Hand, Chosen Champion zone, and Banishment.",
+          "children": []
+        },
+        {
+          "section": "056.2",
+          "text": "If a card would enter such a zone, it goes to its owner's corresponding zone instead.",
           "children": []
         }
       ]

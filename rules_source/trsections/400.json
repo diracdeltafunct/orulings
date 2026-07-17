@@ -280,7 +280,7 @@
                 },
                 {
                   "section": "406.1.g.7",
-                  "text": "Players perform shuffling steps 406.1.c.-406.1.e.3. listed above, then proceed to CR 116. Setup Process.",
+                  "text": "Players perform shuffling steps 406.1.c.-406.1.e.3. listed above, then proceed to CR 110. Setup Process.",
                   "children": []
                 }
               ]
@@ -407,7 +407,7 @@
                 },
                 {
                   "section": "408.4.c.3",
-                  "text": "If the point score of the current game is tied and the game score of the match is tied, players continue to play until the next point is scored. The player who scores that point wins the match. This does not remove normal scoring restrictions if the next point is the Final Point. See CR 448.1.a. for Final Point details.",
+                  "text": "If the point score of the current game is tied and the game score of the match is tied, players continue to play until the next point is scored. The player who scores that point wins the match. This does not remove normal scoring restrictions if the next point is the Final Point. See CR 469.1.a. for Final Point details.",
                   "children": []
                 }
               ]
@@ -616,7 +616,7 @@
     },
     {
       "section": "415",
-      "text": "Tracking Score",
+      "text": "Tracking Score & Resources",
       "children": [
         {
           "section": "415.1",
@@ -640,6 +640,22 @@
             {
               "section": "415.3.b",
               "text": "If any player notices a score discrepancy, they must immediately make all players aware of it. If it can't be resolved easily by the players, a judge must be called.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "415.4",
+          "text": "Players must track their own resources such as XP and unspent Energy/Power they have floating. They are not required to be written down, but they must be represented in a way that is clear and understandable to all players, such as with dice or counters.",
+          "children": [
+            {
+              "section": "415.4.a",
+              "text": "Resources being immediately spent need to be communicated, but do not need to be tracked in this way.",
+              "children": []
+            },
+            {
+              "section": "415.4.b",
+              "text": "If any player notices a resource discrepancy, they must immediately make all players aware of it. If it can't be resolved easily by the players, a judge must be called.",
               "children": []
             }
           ]
@@ -865,7 +881,7 @@
         },
         {
           "section": "421.8",
-          "text": "When two or more cards are recycled to the player'sMain Deck as part of a single action, the above procedures 1-7 should be followed for that group of cards to properly randomize them before recycling them.",
+          "text": "When two or more cards are recycled to the player's Main Deck as part of a single action, the above procedures 1-7 should be followed for that group of cards to properly randomize them before recycling them.",
           "children": []
         }
       ]
@@ -890,7 +906,7 @@
             },
             {
               "section": "422.2.b",
-              "text": "Players may use a unique sleeve or additional layer to distinguish their Chosen Champion during game setup, but must change its sleeve to match their Main Deck if it would enter a zone whose information level is private during gameplay. See CR 127. Privacy for information types.",
+              "text": "Players may use a unique sleeve or additional layer to distinguish their Chosen Champion during game setup, but must change its sleeve to match their Main Deck if it would enter a zone whose information level is private during gameplay. See CR 128. Privacy for information types.",
               "children": []
             }
           ]
@@ -970,7 +986,7 @@
         },
         {
           "section": "424.2",
-          "text": "Players are responsible for making reasonable effort to prevent secret information from being revealed accidentally. See CR 127. Privacy for information types.",
+          "text": "Players are responsible for making reasonable effort to prevent secret information from being revealed accidentally. See CR 128. Privacy for information types.",
           "children": []
         },
         {

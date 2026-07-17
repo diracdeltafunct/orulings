@@ -25,36 +25,54 @@
     },
     {
       "section": "202",
-      "text": "Competition Format: Riftbound competitions can be run with one of two formats.",
+      "text": "Tournament Modes:",
       "children": [
         {
           "section": "202.1",
-          "text": "Limited: A limited competition is one where all product needed for play is provided during the competition.",
-          "children": []
+          "text": "Competition Formats:",
+          "children": [
+            {
+              "section": "202.1.a",
+              "text": "Limited: A limited competition is one where all product needed for play is provided during the competition.",
+              "children": []
+            },
+            {
+              "section": "202.1.b",
+              "text": "Constructed: A constructed competition is one where players compete using decks they prepare beforehand.",
+              "children": []
+            },
+            {
+              "section": "202.1.c",
+              "text": "See 600. for more information on Competition Formats.",
+              "children": []
+            }
+          ]
         },
         {
           "section": "202.2",
-          "text": "Constructed: A constructed competition is one where players compete using decks they prepare beforehand.",
-          "children": []
+          "text": "Round Structures:",
+          "children": [
+            {
+              "section": "202.2.a",
+              "text": "Swiss: A competition or component of a competition where players are paired each round against players they haven't already played in the competition who, if possible, share the same current record.",
+              "children": [
+                {
+                  "section": "202.2.a.1",
+                  "text": "Power Pairing: When the final round of a swiss competition is paired in exact order of the current standings of the competition. For example: Seed 1 plays against seed 2, seed 3 plays against seed 4, etc.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "202.2.b",
+              "text": "Playoff: A competition or component of a competition where players are initially paired based on their standing and are subsequently eliminated by losses.",
+              "children": []
+            }
+          ]
         },
         {
           "section": "202.3",
-          "text": "Swiss: A competition or component of a competition where players are paired based on their current standing in the competition.",
-          "children": []
-        },
-        {
-          "section": "202.4",
-          "text": "Playoff: A competition or component of a competition where players are initially paired based on their standing and are subsequently eliminated by losses.",
-          "children": []
-        },
-        {
-          "section": "202.5",
-          "text": "Rules: Each format has rules specific to it.",
-          "children": []
-        },
-        {
-          "section": "202.6",
-          "text": "Multiple: Some competitions may consist of multiple formats within the same competition.",
+          "text": "Multiple: Some competitions may consist of multiple formats and/or structures within the same competition.",
           "children": []
         }
       ]
@@ -188,7 +206,7 @@
               "children": [
                 {
                   "section": "204.5.a.1",
-                  "text": "At high OPL, judges may not answer direct questions about the results of game actions a player has not yet taken. In these situations, players must ask hypothetical questions about the rules. Examples:",
+                  "text": "At high OPL, judges may not answer direct questions about the results of game actions a player has not yet taken. In these situations, players must ask questions about the rules. Examples:",
                   "children": [
                     {
                       "section": "204.5.a.1.a",

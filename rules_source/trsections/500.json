@@ -39,7 +39,7 @@
       "children": [
         {
           "section": "502.1",
-          "text": "Cards have a level of privacy as specified in CR 127. Privacy. These apply to levels of information accessible to the players as well.",
+          "text": "Cards have a level of privacy as specified in CR 128. Privacy. These apply to levels of information accessible to the players as well.",
           "children": []
         },
         {
@@ -122,8 +122,14 @@
         },
         {
           "section": "502.6",
-          "text": "Players must acknowledge changes to public information that result from their cards and effects as those effects would have an observable impact on the game. See 506.3.d. for examples of observable impact.",
-          "children": []
+          "text": "Players must acknowledge changes to public information that result from their cards and effects as those effects would have an observable impact on the game. See 506.3.e. for examples of observable impact.",
+          "children": [
+            {
+              "section": "502.6.a",
+              "text": "As part of acknowledging changes to public information, the accountable player must communicate the change to all other players in an understandable and observable way. Examples include verbally announcing the change, physically indicating the change, or other means of communication understood and agreed upon by all players in the game.",
+              "children": []
+            }
+          ]
         },
         {
           "section": "502.7",
@@ -355,11 +361,11 @@
       "children": [
         {
           "section": "506.1",
-          "text": "Accountable Player: The player responsible for putting a triggered ability on the chain, as defined by the core rules. See CR 375. Triggered Abilities for more information on triggered abilities.",
+          "text": "Accountable Player: The player responsible for putting a triggered ability on the chain, as defined by the core rules. See CR 383. Triggered Abilities for more information on triggered abilities.",
           "children": [
             {
               "section": "506.1.a",
-              "text": "The accountable player for triggers sourced from battlefields depends on control of the battlefield and is not automatically the player who brought the battlefield to the game. See CR 184.6. For more information on battlefield abilities.",
+              "text": "The accountable player for triggers sourced from battlefields depends on control of the battlefield and is not automatically the player who brought the battlefield to the game. See CR 190.6. For more information on battlefield abilities.",
               "children": []
             }
           ]
@@ -381,65 +387,70 @@
           "children": [
             {
               "section": "506.3.a",
-              "text": "A trigger is considered forgotten once its point of observable impact has been reached and a new game action is taken without the accountable player acknowledging the trigger.",
+              "text": "As part of acknowledging a trigger, the accountable player must communicate the trigger to all other players in an understandable and observable way. Examples include verbally announcing the trigger, physically indicating the trigger, or other means of communication understood and agreed upon by all players in the game.",
               "children": []
             },
             {
               "section": "506.3.b",
-              "text": "Players ruled to be abusing this rule to intentionally forget mandatory triggers that they are the accountable player for will be penalized. See 702.2 for more information about missed triggers as a penalty.",
+              "text": "A trigger is considered forgotten once its point of observable impact has been reached and a new game action is taken without the accountable player acknowledging the trigger.",
               "children": []
             },
             {
               "section": "506.3.c",
-              "text": "For triggers that occur \"At the start of each player's first Beginning Phase\", the accountable player has the full duration of the turn in which the trigger occurs to acknowledge the trigger before it's considered forgotten, regardless of its observable impact. (Example cards: Obelisk of Power and The Arena's Greatest.)",
+              "text": "Players ruled to be abusing this rule to intentionally forget mandatory triggers that they are the accountable player for will be penalized. See 702.2 for more information about missed triggers as a penalty.",
               "children": []
             },
             {
               "section": "506.3.d",
+              "text": "For triggers that occur \"At the start of each player's first Beginning Phase\", the accountable player has the full duration of the turn in which the trigger occurs to acknowledge the trigger before it's considered forgotten, regardless of its observable impact. (Example cards: Obelisk of Power and The Arena's Greatest.)",
+              "children": []
+            },
+            {
+              "section": "506.3.e",
               "text": "Examples of observable impact:",
               "children": [
                 {
-                  "section": "506.3.d.1",
+                  "section": "506.3.e.1",
                   "text": "The trigger would change a point total. (Example card: Ahri, Alluring)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.2",
+                  "section": "506.3.e.2",
                   "text": "The trigger would change a rune total. (Example card: Startipped Peak)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.3",
+                  "section": "506.3.e.3",
                   "text": "The trigger would add a Buff token to a unit. (Example card: Sett, Brawler)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.4",
+                  "section": "506.3.e.4",
                   "text": "The trigger would impact combat or other game procedures. A card that reads \"When you play a spell, give me +1 Might this turn.\" does NOT have an immediate observable impact. It has an observable impact once it's Might would be relevant. (Example card: Ravenbloom Student)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.5",
+                  "section": "506.3.e.5",
                   "text": "A trigger would cause a player to draw or discard. (Example card: Traveling Merchant)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.6",
+                  "section": "506.3.e.6",
                   "text": "A trigger would cause a game object to be exhausted or readied. (Example card: Miss Fortune, Captain)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.7",
+                  "section": "506.3.e.7",
                   "text": "A trigger would cause a unit to move. (Example card: Stealthy Pursuer)",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.8",
+                  "section": "506.3.e.8",
                   "text": "A player asks for public information that would be impacted by a trigger. See 502 for more information on public information.",
                   "children": []
                 },
                 {
-                  "section": "506.3.d.9",
+                  "section": "506.3.e.9",
                   "text": "A player would be required to make a choice of whether or not to place an optional trigger on the chain. (Example: Overzealous Fan)",
                   "children": []
                 }
@@ -470,7 +481,7 @@
         },
         {
           "section": "507.2",
-          "text": "Players that acquire secret or private information about a match in which a teammate is playing can't communicate with that teammate for the remainder of that match. See CR 127. Privacy for information types",
+          "text": "Players that acquire secret or private information about a match in which a teammate is playing can't communicate with that teammate for the remainder of that match. See CR 128. Privacy for information types.",
           "children": []
         }
       ]

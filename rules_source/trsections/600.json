@@ -26,7 +26,7 @@
               "children": [
                 {
                   "section": "601.1.c.1",
-                  "text": "A player's sideboard can include 8 or fewer cards.",
+                  "text": "A player's sideboard can include 10 or fewer cards.",
                   "children": []
                 },
                 {
@@ -143,15 +143,15 @@
                 {
                   "section": "601.3.c.4",
                   "text": "Unleashed (UNL)",
+                  "children": []
+                },
+                {
+                  "section": "601.3.c.5",
+                  "text": "Vendetta (Ven)",
                   "children": [
                     {
-                      "section": "601.3.c.4.a",
-                      "text": "China legal date - 4/10/26",
-                      "children": []
-                    },
-                    {
-                      "section": "601.3.c.4.b",
-                      "text": "Rest of world legal date - 5/8/26",
+                      "section": "601.3.c.5.a",
+                      "text": "Release Date: July 31st, 2026",
                       "children": []
                     }
                   ]
@@ -300,7 +300,7 @@
             },
             {
               "section": "602.3.f",
-              "text": "At low OPL, starting configuration registration is not required and players may freely change the composition of their starting deck and sideboard between games and matches unless otherwise specified by the head judge.",
+              "text": "At low OPL, starting configuration registration is not required and players may freely change the composition of their starting deck and sideboard between games and matches unless otherwise specified by the head judge. Players may still only use a specific copy of a battlefield once per match, but may use the same named battlefield as many times as they have copies of it in their provided card pool.",
               "children": []
             },
             {
