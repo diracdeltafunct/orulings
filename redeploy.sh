@@ -31,6 +31,10 @@ pip install -r requirements.txt
 echo "Running migrations..."
 python3 manage.py migrate --noinput
 
+echo "Syncing tournament and core rules..."
+python3 manage.py sync_rules --rule-type tr
+python3 manage.py sync_rules --rule-type cr
+
 echo "Collecting static files..."
 python3 manage.py collectstatic --noinput
 
