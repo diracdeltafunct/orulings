@@ -1,6 +1,6 @@
 """
 Script to scrape card data from the Riftbound card gallery.
-https://riftbound.leagueoflegends.com/en-us/card-gallery/
+https://playriftbound.com/en-us/card-gallery/
 
 Collects: Energy, Power, Might, Domain, Card Type, Ability, Rarity, Card Set, and Image URL
 for each card and saves to a JSON file.
@@ -196,7 +196,7 @@ async def scrape_cards():
 
         print("Navigating to card gallery...")
         await page.goto(
-            "https://riftbound.leagueoflegends.com/en-us/card-gallery/",
+            "https://playriftbound.com/en-us/card-gallery/",
             wait_until="domcontentloaded",
             timeout=60000,
         )
