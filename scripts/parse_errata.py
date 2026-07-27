@@ -6,7 +6,8 @@ Downloads errata PDFs from:
 - Spiritforged: https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/44d1c3c1185a8360b290ddfbb1ba7f7aaae34e62.pdf
 
 Also scrapes errata from web pages (where the PDF URL is dynamically loaded):
-- Unleashed: https://riftbound.leagueoflegends.com/en-us/news/rules-and-releases/unleashed-errata-updates/
+- Unleashed: https://playriftbound.com/en-us/news/rules-and-releases/unleashed-errata-updates/
+- Vendetta (also covers Spiritforged/Unleashed updates): https://playriftbound.com/en-us/news/announcements/vendetta-errata-updates/
 
 Finds old text and new text for each card, then updates the riftbound_cards.json
 with an "errata_text" field containing the new text.
@@ -46,7 +47,11 @@ ERRATA_PDFS = [
 ERRATA_PAGES = [
     {
         "name": "Unleashed",
-        "url": "https://riftbound.leagueoflegends.com/en-us/news/rules-and-releases/unleashed-errata-updates/",
+        "url": "https://playriftbound.com/en-us/news/rules-and-releases/unleashed-errata-updates/",
+    },
+    {
+        "name": "Vendetta",
+        "url": "https://playriftbound.com/en-us/news/announcements/vendetta-errata-updates/",
     },
 ]
 

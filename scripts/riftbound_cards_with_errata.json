@@ -899,7 +899,9 @@
     "tags": [
       "Bird",
       "Mount Targon"
-    ]
+    ],
+    "errata_text": "When you play your first card each turn, if I'm at a battlefield, the next card you play this turn costs [2][A][A] less.",
+    "errata_old_text": "When you play your first card each turn, if I'm at a battlefield, your next card costs [2][A][A] less."
   },
   {
     "id": "unl-170-219",
@@ -3833,7 +3835,9 @@
     "tags": [
       "Diana",
       "Mount Targon"
-    ]
+    ],
+    "errata_text": "When a showdown begins here, you may pay [1] to [Predict], then reveal the top card of your Main Deck. If it's a spell, draw it. (To Predict, look at the top card of your Main Deck. You may recycle it.)",
+    "errata_old_text": "When a showdown begins here, you may pay [1]. If you do, [Predict], then reveal the top card of your Main Deck. If it's a spell, draw it. (To Predict, look at the top card of your Main Deck. You may recycle it.)"
   },
   {
     "id": "unl-079a-219",
@@ -3850,7 +3854,9 @@
     "tags": [
       "Diana",
       "Mount Targon"
-    ]
+    ],
+    "errata_text": "When a showdown begins here, you may pay [1] to [Predict], then reveal the top card of your Main Deck. If it's a spell, draw it. (To Predict, look at the top card of your Main Deck. You may recycle it.)",
+    "errata_old_text": "When a showdown begins here, you may pay [1]. If you do, [Predict], then reveal the top card of your Main Deck. If it's a spell, draw it. (To Predict, look at the top card of your Main Deck. You may recycle it.)"
   },
   {
     "id": "ven-183-166",
@@ -4317,7 +4323,9 @@
     "tags": [
       "Draven",
       "Noxus"
-    ]
+    ],
+    "errata_text": "When I win a combat, play a Gold gear token exhausted. When I attack or defend, you may pay [C] to give me +2 [M] this turn.",
+    "errata_old_text": "When I win a combat, play a Gold gear token exhausted. When I attack or defend, you may pay [C]. If you do, give me +2 [M] this turn."
   },
   {
     "id": "sfd-020a-221",
@@ -4334,7 +4342,9 @@
     "tags": [
       "Draven",
       "Noxus"
-    ]
+    ],
+    "errata_text": "When I win a combat, play a Gold gear token exhausted. When I attack or defend, you may pay [C] to give me +2 [M] this turn.",
+    "errata_old_text": "When I win a combat, play a Gold gear token exhausted. When I attack or defend, you may pay [C]. If you do, give me +2 [M] this turn."
   },
   {
     "id": "ven-049-166",
@@ -4655,7 +4665,9 @@
     "rarity": "Uncommon",
     "card_set": "Spiritforged",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/c1ea4f6f58a62fc2b62647aa3459109e3d10297a-1039x744.png?accountingTag=RB",
-    "ability": "When you conquer here, you may pay :rb_energy_1: and return a unit you control here to its owner's hand. If you do, play a 2 :rb_might: Sand Soldier unit token here."
+    "ability": "When you conquer here, you may pay :rb_energy_1: and return a unit you control here to its owner's hand. If you do, play a 2 :rb_might: Sand Soldier unit token here.",
+    "errata_text": "When you conquer here, you may pay [1] and return a unit you control here to its owner's hand to play a 2 [M] Sand Soldier unit token here.",
+    "errata_old_text": "When you conquer here, you may pay [1] and return a unit you control here to its owner's hand. If you do, play a 2 [M] Sand Soldier unit token here."
   },
   {
     "id": "sfd-043-221",
@@ -5383,7 +5395,9 @@
       "Yordle",
       "Fizz",
       "Bilgewater"
-    ]
+    ],
+    "errata_text": "When you play me, you may play a spell from your trash with Energy cost no more than [3], ignoring its Energy cost. Then recycle it. (You must still pay its Power cost.)",
+    "errata_old_text": "When you play me, you may play a spell from your trash with Energy cost no more than [3], ignoring its Energy cost. Recycle that spell after you play it. (You must still pay its Power cost.) Unleashed Cards"
   },
   {
     "id": "ogn-006-298",
@@ -5793,7 +5807,9 @@
     "ability": "[Empower] :rb_rune_body::rb_rune_body: [Empowered][&gt;] If a spell or ability that chooses me would stun me, give me -:rb_might:, or return me to hand, give me +3 :rb_might: instead.",
     "tags": [
       "Gangplank"
-    ]
+    ],
+    "errata_text": "[Empower] [C][C] ([C][C]: Empower me. Use only if not Empowered.) [Empowered][>] If a spell or ability that chooses me would stun me, give me -[M], or return me to hand, give me +3 [M] this turn instead.",
+    "errata_old_text": "[Empower] [C][C] ([C][C]: Empower me. Use only if not Empowered.) [Empowered][>] If a spell or ability that chooses me would stun me, give me -[M], or return me to hand, give me +3 [M] instead."
   },
   {
     "id": "ven-086-166",
@@ -5810,7 +5826,9 @@
     "tags": [
       "Bilgewater",
       "Gangplank"
-    ]
+    ],
+    "errata_text": "[Empower] [C][C] ([C][C]: Empower me. Use only if not Empowered.) [Empowered][>] If a spell or ability that chooses me would stun me, give me -[M], or return me to hand, give me +3 [M] this turn instead.",
+    "errata_old_text": "[Empower] [C][C] ([C][C]: Empower me. Use only if not Empowered.) [Empowered][>] If a spell or ability that chooses me would stun me, give me -[M], or return me to hand, give me +3 [M] instead."
   },
   {
     "id": "ogn-099-298",
@@ -12942,7 +12960,9 @@
     "rarity": "Uncommon",
     "card_set": "Vendetta",
     "image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/1a625de128019d65d41dd0af4f8d189d5de530a5-744x1039.png?accountingTag=RB",
-    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Reaction] (Play on your turn or in showdowns.) Choose a battlefield you control and a unit you control at a different location. Move that unit to that battlefield and give it +2 :rb_might: this turn."
+    "ability": "[Hidden] (Hide now for :rb_rune_rainbow: to react with later for :rb_energy_0:.) [Reaction] (Play on your turn or in showdowns.) Choose a battlefield you control and a unit you control at a different location. Move that unit to that battlefield and give it +2 :rb_might: this turn.",
+    "errata_text": "[Hidden] (Hide now for [A] to react with later for [0].) [Reaction] (Play any time, even before spells and abilities resolve.) Choose a battlefield you control and a unit you control at a different location. Move that unit to that battlefield and give it +2 [S] this turn.",
+    "errata_old_text": "[Hidden] (Hide now for [A] to react with later for [0].) [Reaction] (Play on your turn or in showdowns.) Choose a battlefield you control and a unit you control at a different location. Move that unit to that battlefield and give it +2 [S] this turn. Related Articles Announcements 2026-07-20T16:00:00.000Z Preparing for the Vendetta Pre-Rift Get ready to play Riftbound’s newest set at your local Pre-Rift. Announcements 2026-07-17T16:00:00.000Z Riftbound: Vendetta, Wild Rift, and You! Participants in the Pre-Rift and winners of the first Summoner Skirmish get special prizes from Wild Rift! Announcements 2026-07-17T16:00:00.000Z Riftbound at Gen Con 2026 How to experience Riftbound at one of gaming’s largest conventions. Announcements 2026-07-17T00:30:00.000Z Core Rules: Vendetta Patch Notes Here are the updates to Riftbound’s Core Rules with Vendetta Announcements 2026-07-17T00:30:00.000Z July Ban List Updates We are announcing new bans for Standard as well as the creation of a Constructed 2v2 ban list. Announcements 2026-07-17T00:30:00.000Z A Note on Vendetta Card Images We have identified a few updates for Vendetta we want to tell you. Announcements 2026-07-17T00:30:00.000Z July 2026 Tournament Rules Update & Changelog Riftbound’s latest tournament rule updates explained. Announcements 2026-07-17T00:30:00.000Z Rules Hub One page for easy access to the current rules of Riftbound Announcements 2026-07-07T01:00:00.000Z The Vendetta Begins A first glance at Riftbound’s 4th set!"
   },
   {
     "id": "ogn-104-298",
@@ -15321,7 +15341,9 @@
     "tags": [
       "Dog",
       "Freljord"
-    ]
+    ],
+    "errata_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) As an additional cost to play me, kill a Bird, Cat, Dog, or Poro you control. You may [Ambush] me to its battlefield, even if you don't have other units there.",
+    "errata_old_text": "[Ambush] (You may play me as a [Reaction] to a battlefield where you have units.) As an additional cost to play me, kill a Bird, Cat, Dog, or Poro you control. You may play me to its battlefield (even if you don't have other units there). Vendetta Cards"
   },
   {
     "id": "ogn-052-298",
