@@ -49,6 +49,8 @@ from post.views import (
     offline_page,
     post_detail,
     post_list,
+    resume,
+    resume_download,
     rules_diff,
     save_annotation,
     search_rules,
@@ -78,6 +80,8 @@ urlpatterns = [
     path("secretadminlogin/", secret_login, name="secret_login"),
     path("api/save-annotation/", save_annotation, name="save_annotation"),
     path("contact/", contact, name="contact"),
+    path("resume/", resume, name="resume"),
+    path("resume/download/", resume_download, name="resume_download"),
     path("cards/", card_search, name="card_search"),
     path("cards/<str:card_id>/", card_detail, name="card_detail"),
     path(

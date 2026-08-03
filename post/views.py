@@ -11,7 +11,7 @@ from django.contrib.auth import authenticate, login
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.http import Http404, JsonResponse
+from django.http import FileResponse, Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_exempt
@@ -786,6 +786,17 @@ def service_worker(request):
 
 def offline_page(request):
     return render(request, "offline.html")
+
+
+def resume(request):
+    return render(request, "resume.html")
+
+
+def resume_download(request):
+    path = os.path.join(settings.BASE_DIR, "static", "resume", "muckle_resume.pdf")
+    response = FileResponse(open(path, "rb"), content_type="application/pdf")
+    response["Content-Disposition"] = 'attachment; filename="muckle_resume.pdf"'
+    return response
 
 
 @ratelimit(key="ip", rate="30/m", method="GET", block=True)

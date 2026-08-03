@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthew Muckle - Resume</title>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 2.5rem 1.5rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #ffffff;
+            line-height: 1.5;
+        }
+        .resume {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            margin: 0 0 0.15rem 0;
+            font-size: 2rem;
+        }
+        header h5 {
+            margin: 0;
+            font-weight: 400;
+            color: #555;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 0.6rem 1.25rem;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .download-btn:hover {
+            background: #333;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        .contact-list li {
+            margin-bottom: 0.25rem;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 1.5rem 0;
+        }
+        h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 0.25rem;
+        }
+        section {
+            margin-bottom: 1.75rem;
+        }
+        .job {
+            margin-bottom: 1.25rem;
+        }
+        .job h5 {
+            margin: 0;
+            font-size: 1.05rem;
+        }
+        .job .meta {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        ul.details {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.25rem;
+        }
+        .skills-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .skills-grid ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            flex: 1 1 200px;
+        }
+        @media print {
+            .download-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <header>
+            <div>
+                <h1>Matthew Muckle</h1>
+                <h5>Sr Developer</h5>
+            </div>
+            <a href="{% url 'resume_download' %}" class="download-btn">Download PDF</a>
+        </header>
+
+        <ul class="contact-list">
+            <li><a href="mailto:diracdeltafunct@gmail.com">diracdeltafunct@gmail.com</a></li>
+            <li>757-403-5734</li>
+            <li>Earlysville, VA 22936</li>
+            <li><a href="https://www.linkedin.com/in/matt-muckle/" target="_blank" rel="noopener">linkedin.com/in/matt-muckle</a></li>
+        </ul>
+
+        <hr />
+
+        <section>
+            <h3>Summary</h3>
+            <p>
+                Results-oriented developer and project manager with over a decade of experience
+                in software development and scientific research. Proven track record in developing
+                automation solutions and managing complex projects, contributing to innovative
+                advancements in laboratory instrumentation. Agile approach to development with
+                a focus on solving problems.
+            </p>
+        </section>
+
+        <section>
+            <h3>Experience</h3>
+
+            <div class="job">
+                <h5>BrightSpec Inc - Sr. Software Dev, Scientist, Founder</h5>
+                <div class="meta">Charlottesville, Virginia &nbsp;|&nbsp; 03/2012 - 01/2026</div>
+                <ul class="details">
+                    <li>Used Rust (2021-Now), Python (2012-Now) and Typescript (2021-Now) for desktop and cloud based development</li>
+                    <li>Large data analysis development and data management through SQL</li>
+                    <li>Wrote and managed SBIR grants</li>
+                    <li>Developed software to control advanced laboratory instrumentation</li>
+                    <li>Designed and integrated automation software</li>
+                    <li>Designed and integrated RF circuits</li>
+                    <li>Built automation robotics for chemical sample analysis</li>
+                    <li>Firmware design and implementation for microcontrollers (Rust and C/C++)</li>
+                    <li>Project management in Jira for internal and externally contracted assignments</li>
+                    <li>Customer sales through trade shows and site visits</li>
+                    <li>AI assisted development (Claude/Codex)</li>
+                    <li>AI development for analysis of complex molecular spectra</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h5>University of Virginia - Graduate Researcher</h5>
+                <div class="meta">Charlottesville, Virginia &nbsp;|&nbsp; 06/2007 - 05/2012</div>
+                <ul class="details">
+                    <li>Developed and constructed rotational spectrometers, research in astrochemistry, wrote instrument control and big data analysis software</li>
+                    <li>Presented research at multiple international conferences</li>
+                    <li>Collaborated on cross-university research projects</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3>Skills</h3>
+            <div class="skills-grid">
+                <ul>
+                    <li>Agile Software Development/Engineering</li>
+                    <li>Project management</li>
+                    <li>RF circuit design</li>
+                    <li>Automation robotics</li>
+                    <li>Firmware development</li>
+                    <li>Experimental analysis</li>
+                </ul>
+                <ul>
+                    <li>Rust Language</li>
+                    <li>Python Language</li>
+                    <li>TypeScript</li>
+                    <li>Mentoring</li>
+                    <li>Cloud Computing</li>
+                    <li>SQL</li>
+                    <li>AI Development</li>
+                    <li>Git</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h3>Education And Training</h3>
+            <div style="margin-bottom: 0.75rem;">
+                <div class="meta">05/2012</div>
+                <div><strong>Master of Science</strong>: Physical Chemistry</div>
+                <div><strong>University of Virginia</strong>, Charlottesville, VA</div>
+            </div>
+            <div>
+                <div class="meta">05/2007</div>
+                <div><strong>Bachelor of Science</strong>: Chemistry</div>
+                <div><strong>University of Virginia</strong>, Charlottesville, VA</div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Websites &amp; Social Links</h3>
+            <ul class="details" style="padding-left: 0; list-style: none;">
+                <li>
+                    <a href="https://scholar.google.com/citations?user=hmM88ncAAAAJ&hl=en" target="_blank" rel="noopener">
+                        Google Scholar
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Activities</h3>
+            <p>Magic the Gathering: Level 3 Judge, 3d printing, pottery, laser cutting</p>
+        </section>
+    </div>
+</body>
+</html>
