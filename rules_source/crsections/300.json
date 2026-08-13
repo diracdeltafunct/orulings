@@ -1953,12 +1953,29 @@
                 {
                   "section": "359.3.f.2",
                   "text": "Information referenced in an instruction in this way will be checked on execution of the instruction. Examples: ​ A player moves Yasuo, Remorseful to an occupied enemy battlefield and initiates combat there. In reaction to the Yasuo, Remorseful attack trigger, their opponent plays Fight or Flight from hidden targeting Yasuo, moving him back to base. When the attack trigger resolves, \"here\" is no longer the battlefield where combat is ongoing and the attack trigger mistargets. In reaction to a Yasuo, Remorseful attack trigger, an opponent plays Stupefy targeting Yasuo. When Yasuo's attack trigger resolves, it will deal damage equal to his current Might of 5.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "359.3.f.2.a",
+                      "text": "When a referent checks information on execution of the instruction related to a target, and that target isn't legal, that referent will return \"null\" and all instructions related to it will be ignored.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "359.3.f.3",
                   "text": "Some information used by triggered abilities is referenced from the trigger condition of the ability. This information is checked when the trigger condition is fulfilled. Example: Lillia, Fae Fawn reads \"when I move from a location, play a 3 [M] Sprite token with Temporary there.\" If Lillia moves to a battlefield, her triggered ability will be placed on the chain and it will note the location she moved from when it does so. If she moves to a non-board zone in reaction to the triggered ability on the chain, it will not affect where the Sprite token will be played when the triggered ability resolves.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "359.3.f.3.a",
+                      "text": "In the case of a delayed triggered ability, the information is referenced when the triggered ability is created unless specified otherwise.",
+                      "children": []
+                    },
+                    {
+                      "section": "359.3.f.3.b",
+                      "text": "In the case of a linked ability that references information from a linked triggered ability, that information may be referenced from the trigger condition of the linked triggered ability if specified. Example: Iascylla reads \"When I hold, at the start of your next Main Phase, you may move an enemy unit to this battlefield.\" The \"this battlefield\" in her delayed triggered ability refers to the battlefield she held, and so will be referenced from the trigger condition, when the triggered ability is generated.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "359.3.f.4",
