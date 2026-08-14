@@ -94,11 +94,7 @@
                                             </div>
                                             {% endif %}
                                             {% if subchild.children %}
-                                                {% for leaf in subchild.children %}
-                                                <div class="ps-3 mb-1">
-                                                    <strong>{{ leaf.section }}.</strong> {{ leaf.text|safe }}
-                                                </div>
-                                                {% endfor %}
+                                                {% include "includes/cr_detail_leaf.html" with nodes=subchild.children %}
                                             {% endif %}
                                         </div>
                                     {% endfor %}

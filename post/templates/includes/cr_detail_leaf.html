@@ -1,0 +1,8 @@
+{% for leaf in nodes %}
+<div class="ps-3 mb-1">
+    <strong>{{ leaf.section }}.</strong> {{ leaf.text|safe }}
+    {% if leaf.children %}
+        {% include "includes/cr_detail_leaf.html" with nodes=leaf.children %}
+    {% endif %}
+</div>
+{% endfor %}

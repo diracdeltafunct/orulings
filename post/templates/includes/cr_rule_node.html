@@ -1,0 +1,27 @@
+{% for node in nodes %}
+<div id="rule-{{ node.section }}" class="cr-rule cr-nested ps-3 py-1">
+    <div class="d-flex align-items-start">
+        <a href="#rule-{{ node.section }}" class="cr-permalink me-2" title="Link to this rule">#</a>
+        <div class="flex-grow-1">
+            <strong class="cr-rule-number">{{ node.section }}.</strong> {{ node.text|safe }}
+            {% if node.annotations %}
+            <div class="annotation-display">
+                {{ node.annotations|safe }}
+            </div>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ node.section }}" data-rule-type="CR">Edit</button>
+            <div id="editor-container-{{ node.section }}" class="editor-container" data-annotation="{{ node.annotations }}">
+                <div id="editor-{{ node.section }}" class="mb-2"></div>
+                <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ node.section }}" data-rule-type="CR">Save</button>
+                <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ node.section }}">Cancel</button>
+            </div>
+            {% endif %}
+
+            {% if node.children %}
+            {% include "includes/cr_rule_node.html" with nodes=node.children %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
