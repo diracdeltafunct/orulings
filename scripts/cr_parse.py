@@ -137,12 +137,15 @@ def parse_lines_to_objects(text):
     top_level_lines = []
     section_map = {}  # Maps section number to Line object
 
-    # Pattern matches: digits, letters, and combinations with periods
-    # Examples: 100, 204, 204.1, 204.1.a, 204.1.a.1
+    # Pattern matches: digits, letters, and combinations with periods, to
+    # arbitrary depth. Examples: 100, 204, 204.1, 204.1.a, 204.1.a.1,
+    # 204.1.a.1.a (previous alternation-based pattern only recognized a
+    # fixed set of shapes and silently dropped deeper nesting like
+    # 359.3.f.2.a - see rules missing from the CR).
     # IMPORTANT: Must start with 3 digits (like 100) OR have dots (like 204.1)
     # This prevents single-digit numbers (1, 2, 3) from being parsed as standalone sections
     pattern = re.compile(
-        r"^((?:\d{3,})|(?:\d+(?:\.\d+)+)|(?:\d+(?:\.[a-zA-Z])+)|(?:\d+\.\d+\.[a-zA-Z](?:\.\d+)*))\.\s+(.*)$"
+        r"^((?:\d{3,})|(?:\d+(?:\.(?:\d+|[a-zA-Z]))+))\.\s+(.*)$"
     )
 
     all_sections = []  # List of (section, content) tuples in order

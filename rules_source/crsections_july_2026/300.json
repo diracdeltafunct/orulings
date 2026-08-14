@@ -454,7 +454,13 @@
                 {
                   "section": "316.8.b.1",
                   "text": "Showdowns that occur as a result of a player moving to an empty Battlefield are a stand-alone Phase and do not create a Combat.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "316.8.b.1.a",
+                      "text": "These Showdowns are called Non-Combat Showdowns. During the proceedings of a Non-Combat Showdown, units controlled by a different player may become present at the Battlefield where the Showdown is ongoing. This will cause the Showdown to become a Combat Showdown in the following cleanup.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             },
@@ -1902,7 +1908,13 @@
                 {
                   "section": "359.3.e.9",
                   "text": "The process for a card's choice becoming Invalid or Unavailable is referred to as mistargeting. Example: A spell has the instruction \"Deal 2 to a unit at a battlefield.\" Before that instruction can execute, the chosen unit is moved to its base. The instruction will not be executed, because it specifies that the unit it chooses must be at a Battlefield, and by the time it attempted to execute, the unit was no longer valid as a choice.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "359.3.e.9.a",
+                      "text": "If another spell or ability attempts to reference the number of game objects, players, or zones that a Finalized Chain Item targets, it will include any mistargeted choices, but not any targets that have changed to a non-board zone. Example: When a player moves their Volibear, Furious to an occupied enemy battlefield and combat initiates, Volibear's attack trigger goes on the chain targeting three of the units at that battlefield. In reaction, the defending player plays Flash moving two of the three units back. That player cannot then target the attack trigger with Repulse, which reads \"Choose a friendly unit at a battlefield. Counter an enemy spell or ability that chooses it and no other friendly unit.\" If the defending player instead played Heedless Resurrection twice, killing the two units, Repulse can legally target the attack trigger, because two of the targets have changed to a non-board zone.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "359.3.e.10",
@@ -1917,7 +1929,13 @@
                 {
                   "section": "359.3.e.12",
                   "text": "If the spell checks information about a target that is no longer legal or a card or permanent whose location, zone, or status has changed such that that information is no longer available, that check returns \"null\" and all calculations based on it are ignored. Examples: A unit that is no longer on the board is treated as having null Might, null cost, etc. A unit that is no longer on the board has no location, is neither exhausted nor readied, etc. Baited Hook says \"[1][C], [E]: Kill a friendly unit. Look at the top 5 cards of your Main Deck. You may banish a unit from among them that has Might up to 1 more than the killed unit and play it, ignoring its cost. Then recycle the rest.\" While Baited Hook's ability is on the chain, an opponent reacts with a spell that returns the friendly unit to its owner's hand. Because the friendly unit is no longer a legal target, it can't be killed and its Might is treated as null. Baited Hook's controller looks at the top 5 cards of their Main Deck, but can't choose any unit from among them. Strike Down reads \"Choose an equipped friendly unit. It deals damage equal to its Might to an enemy unit. Then detach an Equipment from it.\" While Strike Down is on the chain targeting a unit with only one Equipment attached to it, that unit has its Equipment detached via Angle Shot. When Strike Down goes to resolve, the targeted unit is no longer legal, so the unit's Might will return as \"null\" and the instructions related to it are ignored.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "359.3.e.12.a",
+                      "text": "If the spell checks information about a target that is legal or a card or permanent whose location, zone, or status has not changed such that information is no longer available, that information is accessible.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "359.3.e.13",
@@ -1927,7 +1945,23 @@
                 {
                   "section": "359.3.e.14",
                   "text": "Some instructions may reference Game Objects affected by, or Game Actions performed in, other instructions in a card. The referenced and referencing instructions are called \"linked instructions.\" Example: Hidden Blade reads \"Kill a unit at a battlefield. Its controller draws 2.\" The \"its\" in the second instruction references the unit in the first, so the two instructions of the spell are linked.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "359.3.e.14.a",
+                      "text": "In order for a later linked instruction to execute, its earlier linked instruction must have executed. If the earlier linked instruction is ignored for any reason, the later linked instruction will also be ignored. Example: Hidden Blade reads \"Kill a unit at a battlefield. Its controller draws 2.\" If the chosen unit changes zones or moves to base in reaction to Hidden Blade, the spell will mistarget and the first instruction will be ignored. If the first instruction is ignored, the second instruction will not execute and the unit's controller will not draw 2.",
+                      "children": []
+                    },
+                    {
+                      "section": "359.3.e.14.b",
+                      "text": "If the Game Action performed in an earlier linked instruction is replaced, this will not affect the later linked instruction, unless the later linked instruction directly references the Game Action being performed. Example: Hidden Blade reads \"Kill a unit at a battlefield. Its controller draws 2.\" This effect is split into two instructions: killing the unit and the targeted unit's controller drawing 2. The later linked instruction doesn't reference an action directly, so it will execute even if the kill action of the earlier linked action is replaced by some other event. Example: Deathgrip reads \"Kill a friendly unit. If you do, give +[M] equal to its Might to another friendly unit this turn.\" If the friendly unit in question is not killed by Deathgrip because its death is replaced with another event, the later linked instruction will not execute because \"if you do\" directly references the game action.",
+                      "children": []
+                    },
+                    {
+                      "section": "359.3.e.14.c",
+                      "text": "Referencing a game action in this way only refers to the game action being performed and the object or player it was performed on, not the circumstances of its performance. Example: A spell reads \"Deal 3 to an enemy unit at a battlefield. If you do, heal units you control at the same location as that unit.\" If some but not all of that damage is prevented, the later linked instruction will still execute. Example: A spell reads \"Banish an enemy unit at a battlefield, then play it to any battlefield. Then if you do, do this: stun all enemy units there.\" A player plays it targeting a unit that has a passive replacement effect that reads \"I enter in base.\" The replacement effect causes the unit to enter in base, but this does not prevent the reflexive trigger of the spell from being placed on the chain. All that matters is that the unit was played.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "359.3.e.15",
@@ -2474,7 +2508,18 @@
                 {
                   "section": "383.3.e.2",
                   "text": "If the Triggered Ability says \"you may\" or \"they may\" as the first part of its effect, its controller has the choice of whether or not it is performed.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "383.3.e.2.a",
+                      "text": "During finalization of the Triggered Ability, the player who controls the Triggered Ability may choose to perform it.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.3.e.2.b",
+                      "text": "If they do not, it is removed from the chain. Example: A player controls a unit that reads in part \"Once each turn, when an enemy unit dies, you may banish it.\" When an enemy Recruit token dies, the triggered ability goes on the chain. If they choose not to perform the ability on finalization, it is removed from the chain. When a Stalwart Poro dies later in the turn, they can choose to trigger it then.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }
@@ -2548,7 +2593,23 @@
                 {
                   "section": "383.4.c.2",
                   "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Conquer action, or Abilities that reference the player that performed the Conquer action.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "383.4.c.2.a",
+                      "text": "The Conquer Abilities of Units are put on the Chain as Pending Items after the Unit(s) these effects correspond to are present at a Battlefield when a player gains control of it and gains 1 Victory Point from Conquering.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.4.c.2.b",
+                      "text": "The Conquer Abilities of anything that references the player Conquering is put on the Chain as a Pending Item when the Condition that the player that controls the triggering source has performed a Conquer and gained 1 Victory Point.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.4.c.2.c",
+                      "text": "If the act of gaining one point from Conquering is negated or replaced in any way, the Conquer Effect will still trigger.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "383.4.c.3",
@@ -2569,7 +2630,23 @@
                 {
                   "section": "383.4.d.2",
                   "text": "This category of Triggered Abilities encompasses only those that are triggered from Units that were present during the Hold action, or Abilities that reference the player that performed the Hold action.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "383.4.d.2.a",
+                      "text": "The Hold Abilities of Units are put on the Chain as Pending Items after the Unit these effects correspond to are present at a Battlefield when a player maintains control of it and Gains 1 Victory Point during their Beginning Phase from Holding.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.4.d.2.b",
+                      "text": "The Hold Abilities of anything that references the player Holding is put on the Chain as a Pending Item when the Condition that the player that controls the triggering source has performed a Hold and gained 1 Victory Point.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.4.d.2.c",
+                      "text": "If the act of gaining one point from Holding is negated or replaced in any way, the Hold Effect will still trigger.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "383.4.d.3",
@@ -2590,7 +2667,18 @@
                 {
                   "section": "383.4.e.2",
                   "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Attacker designation during Combat.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "383.4.e.2.a",
+                      "text": "These triggers will only have their condition checked once per combat, despite a Unit being able to gain and lose the Attacker designation multiple times in the same combat.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.4.e.2.b",
+                      "text": "If the trigger condition contains other requirements besides attacking and if those requirements are not fulfilled when the unit gains the Attacker designation, it will not trigger in that combat.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "383.4.e.3",
@@ -2611,7 +2699,18 @@
                 {
                   "section": "383.4.f.2",
                   "text": "These Triggered Abilities are put on the Chain as Pending Items after the Unit these effects correspond to gains the Defender designation during Combat.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "383.4.f.2.a",
+                      "text": "These triggers will only have their condition checked once per combat, despite a Unit being able to gain and lose the Defender designation multiple times in the same combat.",
+                      "children": []
+                    },
+                    {
+                      "section": "383.4.f.2.b",
+                      "text": "If the trigger condition contains other requirements besides defending and if those requirements are not fulfilled when the unit gains the Defender designation, it will not trigger in that combat.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "383.4.f.3",

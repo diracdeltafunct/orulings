@@ -422,7 +422,13 @@
                 {
                   "section": "727.1.c.1",
                   "text": "Triggered Abilities of Dependent Keywords must be Active for their trigger to be evaluated.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "727.1.c.1.a",
+                      "text": "If a Triggered Ability becomes active at the same time as its trigger condition would be fulfilled, it triggers.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "727.1.c.2",
@@ -432,7 +438,13 @@
                 {
                   "section": "727.1.c.3",
                   "text": "Activated Abilities that become Active from Dependent Keywords can be activated at their associated timing after that ability has been granted",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "727.1.c.3.a",
+                      "text": "If the condition for the Dependent Keyword causes the Activated Ability to become Inactive after it has been added to the chain as a Pending Item, that chain item will not be affected and will proceed with being played as normal.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }
@@ -602,7 +614,13 @@
                 {
                   "section": "740.4.a.2",
                   "text": "For triggered abilities, costs within instructions that appear in the first part of the trigger effect are paid on finalization of the triggered ability. In order to place the triggered ability on the chain, the cost must be paid.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "740.4.a.2.a",
+                      "text": "Costs within instructions that appear in any later part of the trigger effect are paid on resolution.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }

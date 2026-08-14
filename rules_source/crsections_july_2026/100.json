@@ -1136,7 +1136,13 @@
                 {
                   "section": "135.2.b.5",
                   "text": "A single instruction is made up of a game action and its complement.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "135.2.b.5.a",
+                      "text": "The complement of a game action is made up of the players or Game Objects that perform that game action, that that game action is performed on, the condition under which it is performed, and the duration for its effect to last. Some game actions omit a complement entirely. Example: Void Seeker is made up of two instructions. The first is \"deal 4 to a unit at a battlefield.\" Here \"deal 4\" is the game action, while \"a unit at a battlefield,\" is its complement. The second instruction, \"draw 1,\" has no complement. Example: Teemo, Strategist's defend trigger reads \"When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with Hidden revealed this way, then recycle the revealed cards.\" There are four instructions here: \"choose an enemy unit here,\" \"reveal the top 5 cards of your Main Deck,\" \"deal 1 to that unit for each card with Hidden revealed this way,\" and \"recycle the revealed cards.\"",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "135.2.b.6",
@@ -1209,17 +1215,55 @@
                 {
                   "section": "135.2.e.5",
                   "text": "Power of any Domain is represented by a swirling rainbow symbol. Its shorthand is [A].",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "135.2.e.5.a",
+                      "text": "When required as a cost, [A] can be paid by Power of any Domain.",
+                      "children": []
+                    },
+                    {
+                      "section": "135.2.e.5.b",
+                      "text": "When Added to a player's Rune Pool, [A] can be spent to pay a Power cost of any Domain.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "135.2.e.6",
                   "text": "Power of a domain corresponding to a card's own Domain is not represented by a symbol, but appears in these rules similarly to other symbols. Its shorthand is [C].",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "135.2.e.6.a",
+                      "text": "When a [C] shorthand is printed on a card as reminder text, it assumes that card's usual Domain, but it still means \"one Power of this card's Domain.\"",
+                      "children": []
+                    },
+                    {
+                      "section": "135.2.e.6.b",
+                      "text": "A [C] shorthand on a card with no Domain is processed as [A] instead.",
+                      "children": []
+                    },
+                    {
+                      "section": "135.2.e.6.c",
+                      "text": "A [C] shorthand on a card with multiple Domains is processed as any power of that card's Domains. Example: Defiant Dance is a Calm and Chaos spell. Its cost is [1][C]. The power component of that cost can be paid with either [G] or [P]. Example: Tibbers is a Fury and Chaos Unit. If Tibbers is granted the Accelerate keyword, the power component of the optional additional cost can be paid with either [R] or [P].",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "135.2.e.7",
                   "text": "A keyword associated with an ability is indicated by the [>] symbol.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "135.2.e.7.a",
+                      "text": "This could be a dependent keyword like [Legion][>] or [Level][>], a triggered ability with a keyworded trigger condition like [Deathknell] or it could be a permissive keyword associated with an ability like [Action][>] or [Reaction][>].",
+                      "children": []
+                    },
+                    {
+                      "section": "135.2.e.7.b",
+                      "text": "Whatever instruction or ability comes after the [>] is modified by the keyword that comes before the [>]. It will either be inactive, in the case of a dependent keyword; the trigger effect, in the case of a keyword triggered ability; or it will receive the permission granted by the keyword in the case of a permissive keyword.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }
@@ -2340,7 +2384,13 @@
                 {
                   "section": "178.1.a.1",
                   "text": "If a Game Object is a Unit, regardless of its other types, it has Might, can have damage marked on it, enters exhausted, and can be played to any valid location.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "178.1.a.1.a",
+                      "text": "It will not be recalled to base in step 5 of a cleanup.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "178.1.a.2",

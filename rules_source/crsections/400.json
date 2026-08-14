@@ -612,7 +612,13 @@
                 {
                   "section": "417.6.b.2",
                   "text": "Abilities can be the source of Damage for Deal actions.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "417.6.b.2.a",
+                      "text": "When an Ability is the source of Damage for a Deal action, it is in addition to the Spell or Unit that created that Ability. Example: Iron Ballista is a gear that says \"[E]: Deal 2 to a unit at a battlefield.\" This damage is dealt both by a gear and by an ability.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "417.6.b.3",
@@ -1182,7 +1188,18 @@
                 {
                   "section": "428.1.a.1",
                   "text": "Active Kill is when the action is taken when instructed by a game effect or as a cost for a card or ability.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "428.1.a.1.a",
+                      "text": "This is referred to as a Kill Instruction.",
+                      "children": []
+                    },
+                    {
+                      "section": "428.1.a.1.b",
+                      "text": "When a unit with a Deathknell or other ability that triggers on its own death is to be put in the Trash due to a Kill Instruction, it first has any such ability added to the chain as a Pending Item. Note the unit's location, attributes, and other relevant information to process those abilities when finalized before completing this Kill Instruction. Example: Draven, Audacious reads in part \"When I die in combat, choose an opponent. They gain 1 point.\" The ability triggers when Draven himself dies, so it will go on the chain first when a kill instruction is performed on Draven, before he is put in the trash.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "428.1.a.2",
@@ -1797,7 +1814,18 @@
                 {
                   "section": "437.1.b.1",
                   "text": "Prevent actions are usually formatted as \"Prevent the next X [source] damage that would be dealt to a [unit] this turn.\"",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "437.1.b.1.a",
+                      "text": "The X is referred to as the Prevent Value.",
+                      "children": []
+                    },
+                    {
+                      "section": "437.1.b.1.b",
+                      "text": "X can be \"All,\" which specifies an infinite amount of damage.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "437.1.b.2",
@@ -2598,7 +2626,18 @@
                 {
                   "section": "464.2.c.1",
                   "text": "The Attacker is the player whose unit(s) applied the Contested status to the Battlefield.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "464.2.c.1.a",
+                      "text": "If a showdown opens as part of combat, this player gains Focus as the showdown begins.",
+                      "children": []
+                    },
+                    {
+                      "section": "464.2.c.1.b",
+                      "text": "If a showdown was already ongoing when the combat opens, the player who has Focus maintains their Focus.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "464.2.c.2",
@@ -2608,7 +2647,13 @@
                 {
                   "section": "464.2.c.3",
                   "text": "The attacker and defender gain the Attacker or Defender designation now, as appropriate. Units at the Contested Battlefield controlled by the Attacker or Defender gain the Attacker or Defender designation now, as appropriate.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "464.2.c.3.a",
+                      "text": "If a Unit controlled by the Attacker or Defender becomes present at this Battlefield after this moment, it will gain the Attacker or Defender designation during the Cleanup phase following the action that caused it to become present, as appropriate for its controller.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             },
@@ -2678,7 +2723,13 @@
                 {
                   "section": "465.2.c.1",
                   "text": "Assigning Damage is not Dealing Damage.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "465.2.c.1.a",
+                      "text": "When all Damage is assigned, it will be Dealt simultaneously. These actions are not synonymous.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "465.2.c.2",
@@ -2693,7 +2744,13 @@
                 {
                   "section": "465.2.c.4",
                   "text": "Units cannot have more damage assigned to them than the minimum required to constitute lethal damage unless no further units remain to have damage assigned to them. Example: If a player has 5 damage to distribute among four 3 Might units and those units each have 1 damage already marked on them, that player may not assign more than 2 damage to any of those units.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "465.2.c.4.a",
+                      "text": "If the damage assigned to a Unit is modified to or replaced by an amount of damage larger than the initial value, the assigning player must choose the minimum applied value such that the unit would take lethal damage. Example: A unit with 3 [M] is being assigned damage in the combat damage step. There are other units without damage assigned to them with the same controller. The unit has a delayed replacement effect applied to it that reads \"Double all damage that would be dealt to it this turn.\" When assigning damage, the assigning player can only choose to assign 1 or 2 damage to this unit--when doing so, the assigned damage is doubled to 2 or 4 damage respectively. The minimum applied value such that the unit would take lethal damage in this way is 4 damage.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "465.2.c.5",
@@ -3044,7 +3101,18 @@
                 {
                   "section": "477.1.b.1",
                   "text": "When one Game Object becomes a copy of another, all copyable traits replace or are added to those of the original Game Object as specified by the Game Effect directing the Copy. This is applied in this layer.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "477.1.b.1.a",
+                      "text": "Copyable traits are: Name Super Type Type Tags Cost Domain Rules Text",
+                      "children": []
+                    },
+                    {
+                      "section": "477.1.b.1.b",
+                      "text": "Copy effects will copy the copyable traits of a Game Object. By default, those are the printed traits of the Game Object. When a Game Object becomes a copy of something, its copyable traits are updated to the new traits it has received. Example: A player triggers Leblanc, Deceiver's hold effect and plays a Reflection token, making it a copy of Honest Broker. That player then plays Mirror Image, targeting the Reflection token. When the Mirror Image Reflection token is played, it copies all of the copyable traits of the original Reflection token - which are currently those of Honest Broker which it is a copy of. That player will have three units named Honest Broker in play, two of which are token Copies with Temporary.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "477.1.b.2",
@@ -3112,12 +3180,34 @@
                 {
                   "section": "477.3.e.1",
                   "text": "1. Increases",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "477.3.e.1.a",
+                      "text": "Positive values, or increases, to Might are applied first.",
+                      "children": []
+                    },
+                    {
+                      "section": "477.3.e.1.b",
+                      "text": "If there is a restriction or limitation to this increase and it isn't from a passive ability, the limitation is \"snapshotted\" for the duration of the effect.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "477.3.e.2",
                   "text": "2. Decreases",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "477.3.e.2.a",
+                      "text": "Negative values, or decreases, to Might are applied last.",
+                      "children": []
+                    },
+                    {
+                      "section": "477.3.e.2.b",
+                      "text": "If there is a restriction or limitation to this decrease and it isn't from a passive ability, the limitation is snapshotted for the duration of the effect.",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }

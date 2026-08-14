@@ -545,12 +545,24 @@
                 {
                   "section": "811.1.d.1",
                   "text": "A hidden permanent must be played to that battlefield.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "811.1.d.1.a",
+                      "text": "This includes hidden gear, and overrides the normal restriction that gear have in only being allowed to be played to base.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "811.1.d.2",
                   "text": "If a hidden spell or a play effect of a hidden permanent chooses any targets, those targets must be chosen from among options at that battlefield, unless the ability explicitly restricts targeting in a way that makes this impossible. Example: Blastcone Fae is a unit with Hidden and \"When you play me, give a unit -2 [M] this turn, to a minimum of 1 [M].\" Because this is a play effect, its target must be chosen from among units at the same battlefield if Blastcone Fae was played from Hidden. Example: Tideturner is a unit with Hidden and \"When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.\" Because its play effect has a targeting restriction that can never be fulfilled by a unit at its battlefield, its target may be chosen freely from among the available options.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "811.1.d.2.a",
+                      "text": "Each target is treated separately and individually when processing this rule. Example: Smoke and Mirrors is a spell that reads in part \"Choose a unit you control and another unit you control at a different location.\" If Smoke and Mirrors is played from hidden, the first unit chosen can be chosen at the battlefield Smoke and Mirrors was played from, so it must be. The second unit chosen explicitly restricts targeting in a way that makes this impossible, so it can be chosen from any location.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "811.1.d.3",
