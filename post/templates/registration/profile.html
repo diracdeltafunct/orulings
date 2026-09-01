@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7 col-lg-5">
+        <h1 class="h3 mb-3">Your profile</h1>
+        <dl class="row">
+            <dt class="col-sm-4">Username</dt><dd class="col-sm-8">{{ user.username }}</dd>
+            <dt class="col-sm-4">Role</dt><dd class="col-sm-8">{{ user_profile.role }}</dd>
+        </dl>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+                <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% for error in field.errors %}<div class="text-danger">{{ error }}</div>{% endfor %}
+            </div>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit">Save profile</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

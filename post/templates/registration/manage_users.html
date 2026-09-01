@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Manage users - ScoutsCode{% endblock %}
+
+{% block content %}
+<h1 class="h3 mb-4">Manage user roles</h1>
+<div class="table-responsive">
+    <table class="table align-middle">
+        <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Current role</th><th>Change role</th></tr></thead>
+        <tbody>
+        {% for account in users %}
+        <tr>
+            <td>{{ account.username }}</td>
+            <td>{{ account.first_name|default:"—" }}</td>
+            <td>{{ account.email|default:"—" }}</td>
+            <td>
+                {% if account.is_superuser %}Admin{% elif account.is_staff %}Staff{% else %}General contributor{% endif %}
+            </td>
+            <td>
+                {% if not user.is_superuser and account.is_superuser %}
+                <span class="text-muted">Admins can only be changed by an admin.</span>
+                {% elif not user.is_superuser and account == user %}
+                <span class="text-muted">Staff cannot change their own role.</span>
+                {% else %}
+                <form class="d-flex gap-2" method="post" action="{% url 'update_user_role' account.id %}">
+                    {% csrf_token %}
+                    <select class="form-select" name="role" aria-label="Role for {{ account.username }}">
+                        <option value="contributor" {% if not account.is_staff %}selected{% endif %}>General contributor</option>
+                        <option value="staff" {% if account.is_staff and not account.is_superuser %}selected{% endif %}>Staff</option>
+                        {% if user.is_superuser %}<option value="admin" {% if account.is_superuser %}selected{% endif %}>Admin</option>{% endif %}
+                    </select>
+                    <button class="btn btn-primary" type="submit">Update</button>
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

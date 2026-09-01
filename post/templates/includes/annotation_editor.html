@@ -2,105 +2,95 @@
   const quillEditors = {};
 
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".edit-annotation-btn").forEach((button) => {
-      button.addEventListener("click", function (e) {
-        e.preventDefault();
-        const section = this.getAttribute("data-section");
+    document.querySelectorAll(".edit-content-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        const section = this.dataset.section;
+        const editKind = this.dataset.editKind;
         const editorContainer = document.getElementById("editor-container-" + section);
+        editorContainer.style.display = "block";
+        editorContainer.dataset.editKind = editKind;
 
-        if (editorContainer.style.display === "none" || editorContainer.style.display === "") {
-          editorContainer.style.display = "block";
-
-          if (!quillEditors[section]) {
-            quillEditors[section] = new Quill(document.getElementById("editor-" + section), {
-              theme: "snow",
-              placeholder: "Add your annotation here...",
-              modules: {
-                toolbar: [
-                  ["bold", "italic", "underline", "strike"],
-                  ["blockquote", "code-block"],
-                  [{ list: "ordered" }, { list: "bullet" }],
-                  [{ header: [1, 2, 3, false] }],
-                  ["link"],
-                  ["clean"],
-                ],
-              },
-            });
-
-            const existingAnnotation = editorContainer.getAttribute("data-annotation");
-            if (existingAnnotation) {
-              quillEditors[section].root.innerHTML = existingAnnotation;
-            }
-          }
-        } else {
-          editorContainer.style.display = "none";
+        if (!quillEditors[section]) {
+          quillEditors[section] = new Quill(document.getElementById("editor-" + section), {
+            theme: "snow",
+            modules: {
+              toolbar: [
+                ["bold", "italic", "underline", "strike"],
+                ["blockquote", "code-block"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ header: [1, 2, 3, false] }],
+                ["link"],
+                ["clean"],
+              ],
+            },
+          });
         }
+
+        const editor = quillEditors[section];
+        editor.root.dataset.placeholder = editKind === "personal-note"
+          ? "Add your private personal note here..."
+          : "Add a shared annotation here...";
+        editor.root.innerHTML = editKind === "personal-note"
+          ? editorContainer.dataset.personalNote
+          : editorContainer.dataset.annotation;
       });
     });
 
     document.querySelectorAll(".cancel-annotation-btn").forEach((button) => {
       button.addEventListener("click", function () {
-        const section = this.getAttribute("data-section");
-        const editorContainer = document.getElementById("editor-container-" + section);
-        editorContainer.style.display = "none";
+        document.getElementById("editor-container-" + this.dataset.section).style.display = "none";
       });
     });
 
     document.querySelectorAll(".save-annotation-btn").forEach((button) => {
       button.addEventListener("click", function () {
-        const section = this.getAttribute("data-section");
-        const ruleType = this.getAttribute("data-rule-type") || "TR";
+        const section = this.dataset.section;
+        const ruleType = this.dataset.ruleType || "TR";
+        const editorContainer = document.getElementById("editor-container-" + section);
         const editor = quillEditors[section];
+        if (!editor) return;
 
-        if (editor) {
-          const content = editor.root.innerHTML;
-          const textContent = editor.getText().trim();
-          const finalContent = textContent.length > 0 ? content : "";
-
-          fetch("/api/save-annotation/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "X-CSRFToken": getCookie("csrftoken"),
-            },
-            body: JSON.stringify({
-              rule_type: ruleType,
-              section: section,
-              annotation: finalContent,
-            }),
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.success) {
-              const editorContainer = document.getElementById("editor-container-" + section);
-              editorContainer.setAttribute("data-annotation", finalContent);
-              editorContainer.style.display = "none";
-              location.reload();
-            } else {
-              alert("Error: " + (data.error || "Failed to save"));
-            }
-          })
-          .catch(error => {
-            console.error("Error:", error);
-            alert("Failed to save annotation");
-          });
+        const content = editor.root.innerHTML;
+        const textContent = editor.getText().trim();
+        const finalContent = textContent.length > 0 ? content : "";
+        const isPersonalNote = editorContainer.dataset.editKind === "personal-note";
+        if (isPersonalNote && textContent.length > 2000) {
+          alert("Personal notes cannot exceed 2,000 characters.");
+          return;
         }
+        const endpoint = isPersonalNote ? "/api/save-personal-note/" : "/api/save-annotation/";
+        const payload = { rule_type: ruleType, section: section };
+        payload[isPersonalNote ? "note" : "annotation"] = finalContent;
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCookie("csrftoken"),
+          },
+          body: JSON.stringify(payload),
+        })
+        .then(response => response.json().then(data => ({ ok: response.ok, data })))
+        .then(({ ok, data }) => {
+          if (!ok || !data.success) throw new Error(data.error || "Failed to save");
+          if (data.pending) {
+            alert("Your annotation edit was submitted for admin approval.");
+          }
+          location.reload();
+        })
+        .catch(error => alert("Error: " + error.message));
       });
     });
 
     function getCookie(name) {
-      let cookieValue = null;
-      if (document.cookie && document.cookie !== "") {
-        const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
-          if (cookie.substring(0, name.length + 1) === (name + "=")) {
-            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-            break;
-          }
+      const cookies = document.cookie ? document.cookie.split(";") : [];
+      for (const rawCookie of cookies) {
+        const cookie = rawCookie.trim();
+        if (cookie.startsWith(name + "=")) {
+          return decodeURIComponent(cookie.substring(name.length + 1));
         }
       }
-      return cookieValue;
+      return null;
     }
   });
 </script>

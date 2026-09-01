@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Attribution - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="mb-3">Contributor attribution</h1>
+        <p class="lead">Thank you to everyone whose contributions have helped improve ScoutsCode.</p>
+
+        {% if contributors %}
+        <div class="list-group mt-4">
+            {% for contributor in contributors %}
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <strong>{{ contributor.first_name|default:contributor.username }}</strong>
+                <span class="badge bg-primary rounded-pill">
+                    {{ contributor.accepted_contribution_count }} accepted contribution{{ contributor.accepted_contribution_count|pluralize }}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-muted mt-4">Accepted contributors will be recognized here.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -2,25 +2,41 @@ import json
 import logging
 import os
 import re
+from html import unescape
 from difflib import SequenceMatcher
 
 import bleach
 import requests
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
-from django.db.models import Q
-from django.http import FileResponse, Http404, JsonResponse
+from django.db import transaction
+from django.db.models import Count, Q
+from django.http import FileResponse, Http404, HttpResponseForbidden, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
+from django.utils.html import strip_tags
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_exempt
 from django_ratelimit.decorators import ratelimit
 
 logger = logging.getLogger(__name__)
 
-from .forms import ContactForm
-from .models import Card, CardDomain, Post, RuleSection, Tag
+from .forms import ContactForm, ProfileForm, RoleUpdateForm, SignUpForm
+from .models import (
+    AnnotationProposal,
+    Card,
+    CardDomain,
+    PersonalNote,
+    Post,
+    RuleSection,
+    Tag,
+    UserProfile,
+)
 
 ALLOWED_ANNOTATION_TAGS = [
     "a",
@@ -46,6 +62,84 @@ ALLOWED_ANNOTATION_TAGS = [
 ALLOWED_ANNOTATION_ATTRS = {
     "a": ["href", "title", "target"],
 }
+PERSONAL_NOTE_MAX_LENGTH = 2000
+
+
+def attribution(request):
+    contributors = (
+        User.objects.annotate(
+            accepted_contribution_count=Count(
+                "annotation_proposals",
+                filter=Q(
+                    annotation_proposals__status=AnnotationProposal.Status.APPROVED
+                ),
+                distinct=True,
+            )
+        )
+        .filter(accepted_contribution_count__gt=0)
+        .order_by("first_name", "username")
+    )
+    return render(request, "attribution.html", {"contributors": contributors})
+
+
+@ratelimit(key="ip", rate="5/h", method="POST", block=True)
+def signup(request):
+    if request.user.is_authenticated:
+        return redirect("profile")
+
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "Your contributor account has been created.")
+            return redirect("profile")
+    else:
+        form = SignUpForm()
+    return render(request, "registration/signup.html", {"form": form})
+
+
+@login_required
+def profile(request):
+    if request.method == "POST":
+        form = ProfileForm(request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your profile has been updated.")
+            return redirect("profile")
+    else:
+        form = ProfileForm(user=request.user)
+    user_profile, _ = UserProfile.objects.get_or_create(user=request.user)
+    return render(
+        request,
+        "registration/profile.html",
+        {"form": form, "user_profile": user_profile},
+    )
+
+
+@login_required
+def manage_users(request):
+    if not request.user.is_staff:
+        return HttpResponseForbidden("Staff access required.")
+    users = User.objects.select_related("profile").order_by("username")
+    return render(request, "registration/manage_users.html", {"users": users})
+
+
+@login_required
+def update_user_role(request, user_id):
+    if not request.user.is_staff:
+        return HttpResponseForbidden("Staff access required.")
+    target = get_object_or_404(User, pk=user_id)
+    if request.method != "POST":
+        return redirect("manage_users")
+
+    form = RoleUpdateForm(request.POST, actor=request.user, target=target)
+    if form.is_valid():
+        form.save()
+        messages.success(request, f"Updated {target.username}'s role.")
+    else:
+        messages.error(request, " ".join(form.non_field_errors()))
+    return redirect("manage_users")
 
 
 def post_list(request):
@@ -238,6 +332,24 @@ def format_section_text(section_data, section_type="tr"):
     return section_data
 
 
+def attach_personal_notes(section_data, notes_by_section):
+    """Attach the current user's private note to each rendered rule dictionary."""
+    section_data["personal_note"] = notes_by_section.get(section_data["section"], "")
+    for child in section_data.get("children", []):
+        attach_personal_notes(child, notes_by_section)
+    return section_data
+
+
+def get_personal_notes(request, rule_type):
+    if not request.user.is_authenticated:
+        return {}
+    return dict(
+        PersonalNote.objects.filter(
+            user=request.user, rule_section__rule_type=rule_type
+        ).values_list("rule_section__section", "content")
+    )
+
+
 _rules_last_updated_cache = {}
 
 
@@ -296,6 +408,7 @@ def trsection_detail(request, section):
 
     # Format text to bold content before colons and linkify references
     data = format_section_text(data, section_type="tr")
+    data = attach_personal_notes(data, get_personal_notes(request, "TR"))
 
     # Get parent section if exists
     parent_section = None
@@ -310,7 +423,10 @@ def trsection_detail(request, section):
         "last_updated": get_rules_last_updated("TR"),
     }
 
-    return render(request, "trsection_detail.html", context)
+    response = render(request, "trsection_detail.html", context)
+    if request.user.is_authenticated:
+        response["Cache-Control"] = "private, no-store"
+    return response
 
 
 def crsection_detail(request, section):
@@ -341,6 +457,7 @@ def crsection_detail(request, section):
 
     # Format text to bold content before colons and linkify references
     data = format_section_text(data, section_type="cr")
+    data = attach_personal_notes(data, get_personal_notes(request, "CR"))
 
     # Get parent section if exists
     parent_section = None
@@ -355,7 +472,10 @@ def crsection_detail(request, section):
         "last_updated": get_rules_last_updated("CR"),
     }
 
-    return render(request, "crsection_detail.html", context)
+    response = render(request, "crsection_detail.html", context)
+    if request.user.is_authenticated:
+        response["Cache-Control"] = "private, no-store"
+    return response
 
 
 def core_rules(request):
@@ -366,11 +486,12 @@ def core_rules(request):
         rule_type="CR", parent__isnull=True
     ).prefetch_related("children__children__children__children__children__children")
 
+    notes_by_section = get_personal_notes(request, "CR")
     sections = []
     for section_obj in top_level_sections:
         data = section_obj.to_dict()
         data = format_section_text(data, section_type="cr_single")
-        sections.append(data)
+        sections.append(attach_personal_notes(data, notes_by_section))
 
     context = {
         "sections": sections,
@@ -396,11 +517,12 @@ def tournament_rules(request):
         rule_type="TR", parent__isnull=True
     ).prefetch_related("children__children__children__children__children__children")
 
+    notes_by_section = get_personal_notes(request, "TR")
     sections = []
     for section_obj in top_level_sections:
         data = section_obj.to_dict()
         data = format_section_text(data, section_type="tr_single")
-        sections.append(data)
+        sections.append(attach_personal_notes(data, notes_by_section))
 
     context = {
         "sections": sections,
@@ -470,8 +592,25 @@ def save_annotation(request):
                 attributes=ALLOWED_ANNOTATION_ATTRS,
                 strip=True,
             )
+        annotation_html = annotation_html or ""
 
-        # Update the annotations field
+        if not request.user.is_staff:
+            proposal = AnnotationProposal.objects.create(
+                rule_section=section_obj,
+                submitted_by=request.user,
+                content=annotation_html,
+            )
+            return JsonResponse(
+                {
+                    "success": True,
+                    "pending": True,
+                    "message": "Annotation submitted for admin approval",
+                    "proposal_id": proposal.pk,
+                    "section": section,
+                }
+            )
+
+        # Staff and admins are trusted to publish annotation edits immediately.
         section_obj.annotations = annotation_html
         section_obj.save()
 
@@ -489,6 +628,106 @@ def save_annotation(request):
         return JsonResponse({"error": "Invalid JSON"}, status=400)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+
+
+@login_required
+def annotation_review_queue(request):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden("Admin access required.")
+    proposals = AnnotationProposal.objects.filter(
+        status=AnnotationProposal.Status.PENDING
+    ).select_related("rule_section", "submitted_by")
+    return render(
+        request,
+        "registration/annotation_review_queue.html",
+        {"proposals": proposals},
+    )
+
+
+@login_required
+def review_annotation_proposal(request, proposal_id, action):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden("Admin access required.")
+    if request.method != "POST":
+        return redirect("annotation_review_queue")
+    if action not in {"approve", "reject"}:
+        raise Http404("Unknown review action")
+
+    with transaction.atomic():
+        proposal = get_object_or_404(
+            AnnotationProposal.objects.select_for_update().select_related(
+                "rule_section"
+            ),
+            pk=proposal_id,
+        )
+        if proposal.status != AnnotationProposal.Status.PENDING:
+            messages.warning(request, "That proposal has already been reviewed.")
+            return redirect("annotation_review_queue")
+
+        if action == "approve":
+            proposal.rule_section.annotations = proposal.content
+            proposal.rule_section.save(update_fields=["annotations"])
+            proposal.status = AnnotationProposal.Status.APPROVED
+            messages.success(request, "The annotation is now public.")
+        else:
+            proposal.status = AnnotationProposal.Status.REJECTED
+            messages.success(request, "The annotation proposal was rejected.")
+
+        proposal.reviewed_by = request.user
+        proposal.reviewed_at = timezone.now()
+        proposal.save(update_fields=["status", "reviewed_by", "reviewed_at"])
+
+    return redirect("annotation_review_queue")
+
+
+def save_personal_note(request):
+    """Save or clear the authenticated user's private note for a rule section."""
+    if request.method != "POST":
+        return JsonResponse({"error": "POST required"}, status=405)
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Authentication required"}, status=403)
+
+    try:
+        data = json.loads(request.body)
+        rule_type = data.get("rule_type")
+        section = data.get("section")
+        note_html = data.get("note") or ""
+        if not all([rule_type, section]):
+            return JsonResponse({"error": "Missing required fields"}, status=400)
+
+        rule_section = RuleSection.objects.get(rule_type=rule_type, section=section)
+        note_html = bleach.clean(
+            note_html,
+            tags=ALLOWED_ANNOTATION_TAGS,
+            attributes=ALLOWED_ANNOTATION_ATTRS,
+            strip=True,
+        )
+        note_text = unescape(strip_tags(note_html)).strip()
+        if len(note_text) > PERSONAL_NOTE_MAX_LENGTH:
+            return JsonResponse(
+                {
+                    "error": (
+                        "Personal notes cannot exceed "
+                        f"{PERSONAL_NOTE_MAX_LENGTH} characters."
+                    )
+                },
+                status=400,
+            )
+        if note_html:
+            PersonalNote.objects.update_or_create(
+                user=request.user,
+                rule_section=rule_section,
+                defaults={"content": note_html},
+            )
+        else:
+            PersonalNote.objects.filter(
+                user=request.user, rule_section=rule_section
+            ).delete()
+        return JsonResponse({"success": True, "section": section})
+    except RuleSection.DoesNotExist:
+        return JsonResponse({"error": f"Section {section} not found"}, status=404)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "Invalid JSON"}, status=400)
 
 
 @ratelimit(key="ip", rate="30/m", method="GET", block=True)

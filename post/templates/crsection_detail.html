@@ -24,10 +24,10 @@
                 <div class="d-flex justify-content-between align-items-start">
                     <h2>{{ section.section }}. {{ section.text|safe }}</h2>
                     {% if user.is_authenticated %}
-                    <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Edit</button>
+                    {% include "includes/edit_rule_menu.html" with rule=section rule_type="CR" %}
                     {% endif %}
                 </div>
-                <div id="editor-container-{{ section.section }}" class="editor-container" data-annotation="{{ section.annotations }}">
+                <div id="editor-container-{{ section.section }}" class="editor-container" data-annotation="{{ section.annotations|escape }}" data-personal-note="{{ section.personal_note|escape }}">
                     <div id="editor-{{ section.section }}" class="mb-2"></div>
                     <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="CR">Save</button>
                     <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ section.section }}">Cancel</button>
@@ -37,6 +37,7 @@
                     {{ section.annotations|safe }}
                 </div>
                 {% endif %}
+                {% include "includes/personal_note_display.html" with rule=section %}
             </div>
         </div>
 
@@ -61,10 +62,10 @@
                                 <div class="d-flex justify-content-between align-items-start">
                                     <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
                                     {% if user.is_authenticated %}
-                                    <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Edit</button>
+                                    {% include "includes/edit_rule_menu.html" with rule=child rule_type="CR" %}
                                     {% endif %}
                                 </div>
-                                <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations }}">
+                                <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations|escape }}" data-personal-note="{{ child.personal_note|escape }}">
                                     <div id="editor-{{ child.section }}" class="mb-2"></div>
                                     <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
                                     <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
@@ -74,16 +75,17 @@
                                     {{ child.annotations|safe }}
                                 </div>
                                 {% endif %}
+                                {% include "includes/personal_note_display.html" with rule=child %}
                                 {% if child.children %}
                                     {% for subchild in child.children %}
                                         <div class="ps-3 mb-2">
                                             <div class="d-flex justify-content-between align-items-start">
                                                 <div><strong>{{ subchild.section }}.</strong> {{ subchild.text|safe }}</div>
                                                 {% if user.is_authenticated %}
-                                                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Edit</button>
+                                                {% include "includes/edit_rule_menu.html" with rule=subchild rule_type="CR" %}
                                                 {% endif %}
                                             </div>
-                                            <div id="editor-container-{{ subchild.section }}" class="editor-container" data-annotation="{{ subchild.annotations }}">
+                                            <div id="editor-container-{{ subchild.section }}" class="editor-container" data-annotation="{{ subchild.annotations|escape }}" data-personal-note="{{ subchild.personal_note|escape }}">
                                                 <div id="editor-{{ subchild.section }}" class="mb-2"></div>
                                                 <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ subchild.section }}" data-rule-type="CR">Save</button>
                                                 <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ subchild.section }}">Cancel</button>
@@ -93,6 +95,7 @@
                                                 {{ subchild.annotations|safe }}
                                             </div>
                                             {% endif %}
+                                            {% include "includes/personal_note_display.html" with rule=subchild %}
                                             {% if subchild.children %}
                                                 {% include "includes/cr_detail_leaf.html" with nodes=subchild.children %}
                                             {% endif %}
@@ -110,10 +113,10 @@
                                     <div class="d-flex justify-content-between align-items-start">
                                         <h5 class="mb-2">{{ child.section }}. {{ child.text|safe }}</h5>
                                         {% if user.is_authenticated %}
-                                        <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Edit</button>
+                                        {% include "includes/edit_rule_menu.html" with rule=child rule_type="CR" %}
                                         {% endif %}
                                     </div>
-                                    <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations }}">
+                                    <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations|escape }}" data-personal-note="{{ child.personal_note|escape }}">
                                         <div id="editor-{{ child.section }}" class="mb-2"></div>
                                         <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="CR">Save</button>
                                         <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>
@@ -123,6 +126,7 @@
                                         {{ child.annotations|safe }}
                                     </div>
                                     {% endif %}
+                                    {% include "includes/personal_note_display.html" with rule=child %}
                                 </div>
                             {% endif %}
                         {% endif %}

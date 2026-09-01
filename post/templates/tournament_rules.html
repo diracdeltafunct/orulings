@@ -28,9 +28,10 @@
                     {{ section.annotations|safe }}
                 </div>
                 {% endif %}
+                {% include "includes/personal_note_display.html" with rule=section %}
                 {% if user.is_authenticated %}
-                <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Edit</button>
-                <div id="editor-container-{{ section.section }}" class="editor-container" data-annotation="{{ section.annotations }}">
+                {% include "includes/edit_rule_menu.html" with rule=section rule_type="TR" %}
+                <div id="editor-container-{{ section.section }}" class="editor-container" data-annotation="{{ section.annotations|escape }}" data-personal-note="{{ section.personal_note|escape }}">
                     <div id="editor-{{ section.section }}" class="mb-2"></div>
                     <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ section.section }}" data-rule-type="TR">Save</button>
                     <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ section.section }}">Cancel</button>
@@ -48,9 +49,10 @@
                                 {{ child.annotations|safe }}
                             </div>
                             {% endif %}
+                            {% include "includes/personal_note_display.html" with rule=child %}
                             {% if user.is_authenticated %}
-                            <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Edit</button>
-                            <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations }}">
+                            {% include "includes/edit_rule_menu.html" with rule=child rule_type="TR" %}
+                            <div id="editor-container-{{ child.section }}" class="editor-container" data-annotation="{{ child.annotations|escape }}" data-personal-note="{{ child.personal_note|escape }}">
                                 <div id="editor-{{ child.section }}" class="mb-2"></div>
                                 <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ child.section }}" data-rule-type="TR">Save</button>
                                 <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ child.section }}">Cancel</button>

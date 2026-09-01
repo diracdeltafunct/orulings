@@ -9,9 +9,10 @@
                 {{ node.annotations|safe }}
             </div>
             {% endif %}
+            {% include "includes/personal_note_display.html" with rule=node %}
             {% if user.is_authenticated %}
-            <button class="btn btn-sm btn-outline-primary ms-2 edit-annotation-btn" data-section="{{ node.section }}" data-rule-type="CR">Edit</button>
-            <div id="editor-container-{{ node.section }}" class="editor-container" data-annotation="{{ node.annotations }}">
+            {% include "includes/edit_rule_menu.html" with rule=node rule_type="CR" %}
+            <div id="editor-container-{{ node.section }}" class="editor-container" data-annotation="{{ node.annotations|escape }}" data-personal-note="{{ node.personal_note|escape }}">
                 <div id="editor-{{ node.section }}" class="mb-2"></div>
                 <button class="btn btn-sm btn-success save-annotation-btn" data-section="{{ node.section }}" data-rule-type="CR">Save</button>
                 <button class="btn btn-sm btn-secondary cancel-annotation-btn" data-section="{{ node.section }}">Cancel</button>

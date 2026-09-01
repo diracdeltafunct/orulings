@@ -35,6 +35,22 @@ class TextAsset(models.Model):
         return f"{self.get_asset_type_display()}: {self.content[:50]}"
 
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    discord_handle = models.CharField(max_length=100, blank=True)
+
+    @property
+    def role(self):
+        if self.user.is_superuser:
+            return "Admin"
+        if self.user.is_staff:
+            return "Staff"
+        return "General contributor"
+
+    def __str__(self):
+        return f"{self.user.username}'s profile"
+
+
 class Set(models.TextChoices):
     ORIGINS = "Origins", _("Origins")
     SPIRITFORGED = "Spiritforged", _("Spiritforged")
@@ -177,3 +193,55 @@ class RuleSection(models.Model):
                 data["children"].append(child.to_dict(include_children=True))
 
         return data
+
+
+class PersonalNote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="personal_notes")
+    rule_section = models.ForeignKey(
+        RuleSection, on_delete=models.CASCADE, related_name="personal_notes"
+    )
+    content = models.TextField(blank=True, default="")
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "rule_section"], name="unique_personal_note_per_rule"
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.user.username}: {self.rule_section}"
+
+
+class AnnotationProposal(models.Model):
+    class Status(models.TextChoices):
+        PENDING = "pending", "Pending"
+        APPROVED = "approved", "Approved"
+        REJECTED = "rejected", "Rejected"
+
+    rule_section = models.ForeignKey(
+        RuleSection, on_delete=models.CASCADE, related_name="annotation_proposals"
+    )
+    submitted_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="annotation_proposals"
+    )
+    content = models.TextField(blank=True, default="")
+    status = models.CharField(
+        max_length=10, choices=Status.choices, default=Status.PENDING, db_index=True
+    )
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    reviewed_by = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="reviewed_annotation_proposals",
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["submitted_at"]
+
+    def __str__(self):
+        return f"{self.rule_section} proposal by {self.submitted_by.username}"
