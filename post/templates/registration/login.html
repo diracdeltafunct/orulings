@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Log in - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <h1 class="h3 mb-4">Log in</h1>
+        {% if form.errors %}
+        <div class="alert alert-danger">Your username or password was incorrect.</div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <div class="mb-3">
+                <label class="form-label" for="id_username">Username</label>
+                <input class="form-control" id="id_username" name="username" autocomplete="username" required autofocus>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="id_password">Password</label>
+                <input class="form-control" id="id_password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Log in</button>
+            <a class="btn btn-link" href="{% url 'signup' %}">Create an account</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -18,6 +18,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 from django.views.generic import TemplateView
@@ -46,18 +47,23 @@ from post.views import (
     core_rules,
     crsection_detail,
     manifest_json,
+    manage_users,
     offline_page,
     post_detail,
     post_list,
+    profile,
     resume,
     resume_download,
     rules_diff,
     save_annotation,
+    save_personal_note,
     search_rules,
     secret_login,
     service_worker,
+    signup,
     tournament_rules,
     trsection_detail,
+    update_user_role,
 )
 
 urlpatterns = [
@@ -68,6 +74,24 @@ urlpatterns = [
     path("api/rules/<str:rule_type>/<str:section>/", api_rule, name="api_rule"),
     path("admin/", admin.site.urls),
     path("mdeditor/", include("mdeditor.urls")),
+    path("accounts/signup/", signup, name="signup"),
+    path(
+        "accounts/login/",
+        auth_views.LoginView.as_view(template_name="registration/login.html"),
+        name="login",
+    ),
+    path(
+        "accounts/logout/",
+        auth_views.LogoutView.as_view(next_page="blog_index"),
+        name="logout",
+    ),
+    path("accounts/profile/", profile, name="profile"),
+    path("accounts/users/", manage_users, name="manage_users"),
+    path(
+        "accounts/users/<int:user_id>/role/",
+        update_user_role,
+        name="update_user_role",
+    ),
     path("", blog_index, name="blog_index"),
     path("posts/", post_list, name="post_list"),
     path("posts/<int:post_id>/", post_detail, name="post_detail"),
@@ -79,6 +103,7 @@ urlpatterns = [
     path("search/", search_rules, name="search_rules"),
     path("secretadminlogin/", secret_login, name="secret_login"),
     path("api/save-annotation/", save_annotation, name="save_annotation"),
+    path("api/save-personal-note/", save_personal_note, name="save_personal_note"),
     path("contact/", contact, name="contact"),
     path("resume/", resume, name="resume"),
     path("resume/download/", resume_download, name="resume_download"),

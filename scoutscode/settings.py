@@ -62,6 +62,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "scoutscode.urls"
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "profile"
 
 TEMPLATES = [
     {

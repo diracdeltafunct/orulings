@@ -1,4 +1,4 @@
-{% load static %}const CACHE_VERSION = 'v3';
+{% load static %}const CACHE_VERSION = 'v4';
 const STATIC_CACHE = 'static-' + CACHE_VERSION;
 const PAGES_CACHE = 'pages-' + CACHE_VERSION;
 const IMAGES_CACHE = 'images-' + CACHE_VERSION;
@@ -228,11 +228,19 @@ function isAuthenticated(request) {
   return /sessionid=/.test(cookie);
 }
 
+function isCacheableResponse(response) {
+  const cacheControl = response.headers.get('Cache-Control') || '';
+  return response.ok
+    && response.headers.get('X-Authenticated') !== 'true'
+    && !cacheControl.includes('no-store')
+    && !cacheControl.includes('private');
+}
+
 // Network first with cache fallback and offline page
 function networkFirst(request, cacheName) {
   const skipCache = isAuthenticated(request);
   return fetch(request).then(response => {
-    if (response.ok && !skipCache) {
+    if (isCacheableResponse(response) && !skipCache) {
       const clone = response.clone();
       caches.open(cacheName).then(cache => cache.put(request, clone));
     }
@@ -277,7 +285,7 @@ function networkFirstWithRuleFallback(request, pathname) {
   const skipCache = isAuthenticated(request);
   return fetch(request).then(response => {
 
-    if (response.ok && !skipCache) {
+    if (isCacheableResponse(response) && !skipCache) {
 
       const clone = response.clone();
       caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
@@ -302,7 +310,7 @@ function networkFirstWithRuleFallback(request, pathname) {
 function networkFirstWithCardFallback(request, pathname) {
   const skipCache = isAuthenticated(request);
   return fetch(request).then(response => {
-    if (response.ok && !skipCache) {
+    if (isCacheableResponse(response) && !skipCache) {
       const clone = response.clone();
       caches.open(PAGES_CACHE).then(cache => cache.put(request, clone));
     }

@@ -67,6 +67,25 @@
     color: #000000 !important;
 }
 
+/* Private notes use a warm background to distinguish them from shared annotations. */
+.personal-note-display {
+    color: #000000 !important;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: #fff3cd;
+    border-radius: 5px;
+    border: 1px solid #ffda6a;
+    width: 85%;
+}
+
+.personal-note-display * {
+    color: #000000 !important;
+}
+
+body.personal-notes-hidden .personal-note-display {
+    display: none !important;
+}
+
 /* Annotation editor */
 .editor-container {
     display: none;
@@ -97,7 +116,7 @@
     color: #000000 !important;
 }
 
-.edit-annotation-btn {
+.rule-edit-menu {
     height: 31px;
     line-height: 1;
     flex-shrink: 0;

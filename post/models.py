@@ -35,6 +35,22 @@ class TextAsset(models.Model):
         return f"{self.get_asset_type_display()}: {self.content[:50]}"
 
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    discord_handle = models.CharField(max_length=100, blank=True)
+
+    @property
+    def role(self):
+        if self.user.is_superuser:
+            return "Admin"
+        if self.user.is_staff:
+            return "Staff"
+        return "General contributor"
+
+    def __str__(self):
+        return f"{self.user.username}'s profile"
+
+
 class Set(models.TextChoices):
     ORIGINS = "Origins", _("Origins")
     SPIRITFORGED = "Spiritforged", _("Spiritforged")
@@ -177,3 +193,22 @@ class RuleSection(models.Model):
                 data["children"].append(child.to_dict(include_children=True))
 
         return data
+
+
+class PersonalNote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="personal_notes")
+    rule_section = models.ForeignKey(
+        RuleSection, on_delete=models.CASCADE, related_name="personal_notes"
+    )
+    content = models.TextField(blank=True, default="")
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "rule_section"], name="unique_personal_note_per_rule"
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.user.username}: {self.rule_section}"
