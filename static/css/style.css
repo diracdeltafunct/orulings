@@ -86,6 +86,19 @@ body.personal-notes-hidden .personal-note-display {
     display: none !important;
 }
 
+.annotation-proposal-display {
+    color: #000000;
+    min-height: 100%;
+    padding: 15px;
+    background-color: #d1e7dd;
+    border: 1px solid #75b798;
+    border-radius: 5px;
+}
+
+.annotation-proposal-display * {
+    color: #000000 !important;
+}
+
 /* Annotation editor */
 .editor-container {
     display: none;

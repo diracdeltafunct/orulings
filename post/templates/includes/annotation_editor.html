@@ -51,8 +51,13 @@
         if (!editor) return;
 
         const content = editor.root.innerHTML;
-        const finalContent = editor.getText().trim().length > 0 ? content : "";
+        const textContent = editor.getText().trim();
+        const finalContent = textContent.length > 0 ? content : "";
         const isPersonalNote = editorContainer.dataset.editKind === "personal-note";
+        if (isPersonalNote && textContent.length > 2000) {
+          alert("Personal notes cannot exceed 2,000 characters.");
+          return;
+        }
         const endpoint = isPersonalNote ? "/api/save-personal-note/" : "/api/save-annotation/";
         const payload = { rule_type: ruleType, section: section };
         payload[isPersonalNote ? "note" : "annotation"] = finalContent;
@@ -68,6 +73,9 @@
         .then(response => response.json().then(data => ({ ok: response.ok, data })))
         .then(({ ok, data }) => {
           if (!ok || !data.success) throw new Error(data.error || "Failed to save");
+          if (data.pending) {
+            alert("Your annotation edit was submitted for admin approval.");
+          }
           location.reload();
         })
         .catch(error => alert("Error: " + error.message));

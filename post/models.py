@@ -212,3 +212,36 @@ class PersonalNote(models.Model):
 
     def __str__(self):
         return f"{self.user.username}: {self.rule_section}"
+
+
+class AnnotationProposal(models.Model):
+    class Status(models.TextChoices):
+        PENDING = "pending", "Pending"
+        APPROVED = "approved", "Approved"
+        REJECTED = "rejected", "Rejected"
+
+    rule_section = models.ForeignKey(
+        RuleSection, on_delete=models.CASCADE, related_name="annotation_proposals"
+    )
+    submitted_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="annotation_proposals"
+    )
+    content = models.TextField(blank=True, default="")
+    status = models.CharField(
+        max_length=10, choices=Status.choices, default=Status.PENDING, db_index=True
+    )
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    reviewed_by = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="reviewed_annotation_proposals",
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["submitted_at"]
+
+    def __str__(self):
+        return f"{self.rule_section} proposal by {self.submitted_by.username}"

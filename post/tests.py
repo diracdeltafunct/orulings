@@ -1,6 +1,8 @@
+import json
+
 from django.test import TestCase
 from django.contrib.auth.models import User
-from post.models import PersonalNote, Post, RuleSection, Tag
+from post.models import AnnotationProposal, PersonalNote, Post, RuleSection, Tag
 from django.utils import timezone
 from django.urls import reverse
 
@@ -211,3 +213,184 @@ class PersonalNoteTests(TestCase):
 
         self.assertEqual(response.status_code, 403)
         self.assertFalse(PersonalNote.objects.exists())
+
+    def test_personal_note_cannot_exceed_2000_visible_characters(self):
+        self.client.force_login(self.user)
+
+        response = self.client.post(
+            reverse("save_personal_note"),
+            data=json.dumps(
+                {"rule_type": "CR", "section": "100", "note": "x" * 2001}
+            ),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 400)
+        self.assertFalse(PersonalNote.objects.exists())
+
+    def test_personal_note_allows_2000_visible_characters(self):
+        self.client.force_login(self.user)
+
+        response = self.client.post(
+            reverse("save_personal_note"),
+            data=json.dumps(
+                {"rule_type": "CR", "section": "100", "note": "x" * 2000}
+            ),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            len(PersonalNote.objects.get(user=self.user).content), 2000
+        )
+
+
+class AnnotationApprovalTests(TestCase):
+    def setUp(self):
+        self.contributor = User.objects.create_user("contributor", password="password")
+        self.staff = User.objects.create_user(
+            "staff", password="password", is_staff=True
+        )
+        self.admin = User.objects.create_superuser(
+            "admin", "admin@example.com", "password"
+        )
+        self.rule = RuleSection.objects.create(
+            rule_type="CR",
+            section="200",
+            text="Approval test rule",
+            annotations="<p>Current annotation</p>",
+        )
+
+    def submit_annotation(self, user, content):
+        self.client.force_login(user)
+        return self.client.post(
+            reverse("save_annotation"),
+            data=json.dumps(
+                {"rule_type": "CR", "section": "200", "annotation": content}
+            ),
+            content_type="application/json",
+        )
+
+    def test_contributor_edit_is_pending_and_not_public(self):
+        response = self.submit_annotation(
+            self.contributor, "<p>Proposed annotation</p><script>bad()</script>"
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.json()["pending"])
+        self.rule.refresh_from_db()
+        self.assertEqual(self.rule.annotations, "<p>Current annotation</p>")
+        proposal = AnnotationProposal.objects.get()
+        self.assertEqual(proposal.status, AnnotationProposal.Status.PENDING)
+        self.assertEqual(proposal.content, "<p>Proposed annotation</p>bad()")
+
+    def test_staff_edit_is_published_immediately(self):
+        response = self.submit_annotation(self.staff, "<p>Staff annotation</p>")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn("pending", response.json())
+        self.rule.refresh_from_db()
+        self.assertEqual(self.rule.annotations, "<p>Staff annotation</p>")
+        self.assertFalse(AnnotationProposal.objects.exists())
+
+    def test_only_admin_can_access_review_queue(self):
+        for user in (self.contributor, self.staff):
+            self.client.force_login(user)
+            response = self.client.get(reverse("annotation_review_queue"))
+            self.assertEqual(response.status_code, 403)
+
+        self.client.force_login(self.admin)
+        response = self.client.get(reverse("annotation_review_queue"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_admin_approval_publishes_proposal(self):
+        proposal = AnnotationProposal.objects.create(
+            rule_section=self.rule,
+            submitted_by=self.contributor,
+            content="<p>Approved annotation</p>",
+        )
+        self.client.force_login(self.admin)
+
+        response = self.client.post(
+            reverse("review_annotation_proposal", args=[proposal.pk, "approve"])
+        )
+
+        self.assertRedirects(response, reverse("annotation_review_queue"))
+        proposal.refresh_from_db()
+        self.rule.refresh_from_db()
+        self.assertEqual(proposal.status, AnnotationProposal.Status.APPROVED)
+        self.assertEqual(proposal.reviewed_by, self.admin)
+        self.assertIsNotNone(proposal.reviewed_at)
+        self.assertEqual(self.rule.annotations, "<p>Approved annotation</p>")
+        self.client.logout()
+        public_response = self.client.get(reverse("crsection_detail", args=["200"]))
+        self.assertContains(public_response, "Approved annotation")
+
+    def test_admin_rejection_does_not_change_public_annotation(self):
+        proposal = AnnotationProposal.objects.create(
+            rule_section=self.rule,
+            submitted_by=self.contributor,
+            content="<p>Rejected annotation</p>",
+        )
+        self.client.force_login(self.admin)
+
+        self.client.post(
+            reverse("review_annotation_proposal", args=[proposal.pk, "reject"])
+        )
+
+        proposal.refresh_from_db()
+        self.rule.refresh_from_db()
+        self.assertEqual(proposal.status, AnnotationProposal.Status.REJECTED)
+        self.assertEqual(self.rule.annotations, "<p>Current annotation</p>")
+
+
+class AttributionTests(TestCase):
+    def setUp(self):
+        self.rule = RuleSection.objects.create(
+            rule_type="TR", section="300", text="Attribution test rule"
+        )
+
+    def create_proposal(self, user, status):
+        return AnnotationProposal.objects.create(
+            rule_section=self.rule,
+            submitted_by=user,
+            content="A contribution",
+            status=status,
+        )
+
+    def test_only_users_with_approved_contributions_are_listed(self):
+        approved_user = User.objects.create_user(
+            "approved", first_name="Approved Person"
+        )
+        pending_user = User.objects.create_user("pending", first_name="Pending Person")
+        rejected_user = User.objects.create_user(
+            "rejected", first_name="Rejected Person"
+        )
+        self.create_proposal(approved_user, AnnotationProposal.Status.APPROVED)
+        self.create_proposal(pending_user, AnnotationProposal.Status.PENDING)
+        self.create_proposal(rejected_user, AnnotationProposal.Status.REJECTED)
+
+        response = self.client.get(reverse("attribution"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Approved Person")
+        self.assertNotContains(response, "Pending Person")
+        self.assertNotContains(response, "Rejected Person")
+
+    def test_contributor_is_listed_once_with_accepted_count(self):
+        user = User.objects.create_user("repeat", first_name="Repeat Contributor")
+        self.create_proposal(user, AnnotationProposal.Status.APPROVED)
+        self.create_proposal(user, AnnotationProposal.Status.APPROVED)
+
+        response = self.client.get(reverse("attribution"))
+
+        self.assertContains(response, "Repeat Contributor", count=1)
+        self.assertContains(response, "2 accepted contributions")
+
+    def test_username_is_used_when_profile_name_is_blank(self):
+        user = User.objects.create_user("fallback-user")
+        self.create_proposal(user, AnnotationProposal.Status.APPROVED)
+
+        response = self.client.get(reverse("attribution"))
+
+        self.assertContains(response, "fallback-user")

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Review annotation edits - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="h3 mb-1">Review annotation edits</h1>
+        <p class="text-muted mb-0">Contributor changes remain private until an admin approves them.</p>
+    </div>
+</div>
+
+{% for proposal in proposals %}
+<article class="card mb-4">
+    <div class="card-header">
+        <strong>{{ proposal.rule_section.get_rule_type_display }} {{ proposal.rule_section.section }}</strong>
+        <span class="text-muted">submitted by {{ proposal.submitted_by.username }} on {{ proposal.submitted_at }}</span>
+    </div>
+    <div class="card-body">
+        <p><strong>Rule:</strong> {{ proposal.rule_section.text|safe }}</p>
+        <div class="row g-3">
+            <div class="col-lg-6">
+                <h2 class="h6">Current public annotation</h2>
+                <div class="annotation-display w-100 m-0">
+                    {% if proposal.rule_section.annotations %}{{ proposal.rule_section.annotations|safe }}{% else %}<em>No public annotation</em>{% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="h6">Proposed annotation</h2>
+                <div class="annotation-proposal-display">
+                    {% if proposal.content %}{{ proposal.content|safe }}{% else %}<em>Remove the public annotation</em>{% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="d-flex gap-2 mt-3">
+            <form method="post" action="{% url 'review_annotation_proposal' proposal.id 'approve' %}">
+                {% csrf_token %}
+                <button class="btn btn-success" type="submit">Approve and publish</button>
+            </form>
+            <form method="post" action="{% url 'review_annotation_proposal' proposal.id 'reject' %}">
+                {% csrf_token %}
+                <button class="btn btn-outline-danger" type="submit">Reject</button>
+            </form>
+        </div>
+    </div>
+</article>
+{% empty %}
+<div class="alert alert-info">There are no annotation edits waiting for approval.</div>
+{% endfor %}
+{% endblock %}

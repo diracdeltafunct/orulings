@@ -38,8 +38,10 @@ sitemaps = {
 }
 
 from post.views import (
+    annotation_review_queue,
     api_cards_all,
     api_rule,
+    attribution,
     blog_index,
     card_detail,
     card_search,
@@ -52,6 +54,7 @@ from post.views import (
     post_detail,
     post_list,
     profile,
+    review_annotation_proposal,
     resume,
     resume_download,
     rules_diff,
@@ -75,6 +78,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("mdeditor/", include("mdeditor.urls")),
     path("accounts/signup/", signup, name="signup"),
+    path("attribution/", attribution, name="attribution"),
     path(
         "accounts/login/",
         auth_views.LoginView.as_view(template_name="registration/login.html"),
@@ -87,6 +91,16 @@ urlpatterns = [
     ),
     path("accounts/profile/", profile, name="profile"),
     path("accounts/users/", manage_users, name="manage_users"),
+    path(
+        "accounts/annotation-reviews/",
+        annotation_review_queue,
+        name="annotation_review_queue",
+    ),
+    path(
+        "accounts/annotation-reviews/<int:proposal_id>/<str:action>/",
+        review_annotation_proposal,
+        name="review_annotation_proposal",
+    ),
     path(
         "accounts/users/<int:user_id>/role/",
         update_user_role,

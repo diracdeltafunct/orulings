@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import re
+from html import unescape
 from difflib import SequenceMatcher
 
 import bleach
@@ -13,9 +14,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db import transaction
+from django.db.models import Count, Q
 from django.http import FileResponse, Http404, HttpResponseForbidden, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
+from django.utils.html import strip_tags
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_exempt
 from django_ratelimit.decorators import ratelimit
@@ -23,7 +27,16 @@ from django_ratelimit.decorators import ratelimit
 logger = logging.getLogger(__name__)
 
 from .forms import ContactForm, ProfileForm, RoleUpdateForm, SignUpForm
-from .models import Card, CardDomain, PersonalNote, Post, RuleSection, Tag, UserProfile
+from .models import (
+    AnnotationProposal,
+    Card,
+    CardDomain,
+    PersonalNote,
+    Post,
+    RuleSection,
+    Tag,
+    UserProfile,
+)
 
 ALLOWED_ANNOTATION_TAGS = [
     "a",
@@ -49,6 +62,24 @@ ALLOWED_ANNOTATION_TAGS = [
 ALLOWED_ANNOTATION_ATTRS = {
     "a": ["href", "title", "target"],
 }
+PERSONAL_NOTE_MAX_LENGTH = 2000
+
+
+def attribution(request):
+    contributors = (
+        User.objects.annotate(
+            accepted_contribution_count=Count(
+                "annotation_proposals",
+                filter=Q(
+                    annotation_proposals__status=AnnotationProposal.Status.APPROVED
+                ),
+                distinct=True,
+            )
+        )
+        .filter(accepted_contribution_count__gt=0)
+        .order_by("first_name", "username")
+    )
+    return render(request, "attribution.html", {"contributors": contributors})
 
 
 @ratelimit(key="ip", rate="5/h", method="POST", block=True)
@@ -561,8 +592,25 @@ def save_annotation(request):
                 attributes=ALLOWED_ANNOTATION_ATTRS,
                 strip=True,
             )
+        annotation_html = annotation_html or ""
 
-        # Update the annotations field
+        if not request.user.is_staff:
+            proposal = AnnotationProposal.objects.create(
+                rule_section=section_obj,
+                submitted_by=request.user,
+                content=annotation_html,
+            )
+            return JsonResponse(
+                {
+                    "success": True,
+                    "pending": True,
+                    "message": "Annotation submitted for admin approval",
+                    "proposal_id": proposal.pk,
+                    "section": section,
+                }
+            )
+
+        # Staff and admins are trusted to publish annotation edits immediately.
         section_obj.annotations = annotation_html
         section_obj.save()
 
@@ -580,6 +628,56 @@ def save_annotation(request):
         return JsonResponse({"error": "Invalid JSON"}, status=400)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+
+
+@login_required
+def annotation_review_queue(request):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden("Admin access required.")
+    proposals = AnnotationProposal.objects.filter(
+        status=AnnotationProposal.Status.PENDING
+    ).select_related("rule_section", "submitted_by")
+    return render(
+        request,
+        "registration/annotation_review_queue.html",
+        {"proposals": proposals},
+    )
+
+
+@login_required
+def review_annotation_proposal(request, proposal_id, action):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden("Admin access required.")
+    if request.method != "POST":
+        return redirect("annotation_review_queue")
+    if action not in {"approve", "reject"}:
+        raise Http404("Unknown review action")
+
+    with transaction.atomic():
+        proposal = get_object_or_404(
+            AnnotationProposal.objects.select_for_update().select_related(
+                "rule_section"
+            ),
+            pk=proposal_id,
+        )
+        if proposal.status != AnnotationProposal.Status.PENDING:
+            messages.warning(request, "That proposal has already been reviewed.")
+            return redirect("annotation_review_queue")
+
+        if action == "approve":
+            proposal.rule_section.annotations = proposal.content
+            proposal.rule_section.save(update_fields=["annotations"])
+            proposal.status = AnnotationProposal.Status.APPROVED
+            messages.success(request, "The annotation is now public.")
+        else:
+            proposal.status = AnnotationProposal.Status.REJECTED
+            messages.success(request, "The annotation proposal was rejected.")
+
+        proposal.reviewed_by = request.user
+        proposal.reviewed_at = timezone.now()
+        proposal.save(update_fields=["status", "reviewed_by", "reviewed_at"])
+
+    return redirect("annotation_review_queue")
 
 
 def save_personal_note(request):
@@ -604,6 +702,17 @@ def save_personal_note(request):
             attributes=ALLOWED_ANNOTATION_ATTRS,
             strip=True,
         )
+        note_text = unescape(strip_tags(note_html)).strip()
+        if len(note_text) > PERSONAL_NOTE_MAX_LENGTH:
+            return JsonResponse(
+                {
+                    "error": (
+                        "Personal notes cannot exceed "
+                        f"{PERSONAL_NOTE_MAX_LENGTH} characters."
+                    )
+                },
+                status=400,
+            )
         if note_html:
             PersonalNote.objects.update_or_create(
                 user=request.user,
