@@ -1,18 +1,101 @@
-"""Public URL configuration for the retired ScoutsCode site."""
+"""
+URL configuration for scoutscode project.
 
-from django.urls import path, re_path
-from django.views.generic import RedirectView, TemplateView
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('app/', include('app.urls'))
+"""
 
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from django.urls import include, path
+from django.views.generic import TemplateView
+
+from post.sitemaps import (
+    CardSitemap,
+    CRSectionSitemap,
+    StaticViewSitemap,
+    TRSectionSitemap,
+)
+
+sitemaps = {
+    "static": StaticViewSitemap,
+    "cards": CardSitemap,
+    "tr_sections": TRSectionSitemap,
+    "cr_sections": CRSectionSitemap,
+}
+
+from post.views import (
+    api_cards_all,
+    api_rule,
+    blog_index,
+    card_detail,
+    card_search,
+    contact,
+    core_rules,
+    crsection_detail,
+    manifest_json,
+    offline_page,
+    post_detail,
+    post_list,
+    resume,
+    resume_download,
+    rules_diff,
+    save_annotation,
+    search_rules,
+    secret_login,
+    service_worker,
+    tournament_rules,
+    trsection_detail,
+)
 
 urlpatterns = [
+    path("manifest.json", manifest_json, name="manifest"),
+    path("sw.js", service_worker, name="service_worker"),
+    path("offline/", offline_page, name="offline"),
+    path("api/cards/all/", api_cards_all, name="api_cards_all"),
+    path("api/rules/<str:rule_type>/<str:section>/", api_rule, name="api_rule"),
+    path("admin/", admin.site.urls),
+    path("mdeditor/", include("mdeditor.urls")),
+    path("", blog_index, name="blog_index"),
+    path("posts/", post_list, name="post_list"),
+    path("posts/<int:post_id>/", post_detail, name="post_detail"),
+    path("trsections/<str:section>/", trsection_detail, name="trsection_detail"),
+    path("crsections/<str:section>/", crsection_detail, name="crsection_detail"),
+    path("core-rules/", core_rules, name="core_rules"),
+    path("tournament-rules/", tournament_rules, name="tournament_rules"),
+    path("rules-diff/<str:rule_type>/", rules_diff, name="rules_diff"),
+    path("search/", search_rules, name="search_rules"),
+    path("secretadminlogin/", secret_login, name="secret_login"),
+    path("api/save-annotation/", save_annotation, name="save_annotation"),
+    path("contact/", contact, name="contact"),
+    path("resume/", resume, name="resume"),
+    path("resume/download/", resume_download, name="resume_download"),
+    path("cards/", card_search, name="card_search"),
+    path("cards/<str:card_id>/", card_detail, name="card_detail"),
     path(
-        "",
-        TemplateView.as_view(template_name="blog_index.html"),
-        name="blog_index",
+        "robots.txt",
+        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+        name="robots_txt",
     ),
-    re_path(
-        r"^.*$",
-        RedirectView.as_view(url="/", permanent=False),
-        name="retired_site_redirect",
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
     ),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

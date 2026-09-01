@@ -1,11 +1,121 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>ScoutsCode</title>
-    </head>
-    <body>
-        <p>I have elected to remove scoutscode as a resource.  Thank you for all your feedback. </p>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% load markdownify %}
+{% block title %}Home - ScoutsCode{% endblock %}
+{% block content %}
+{% if special_post %}
+<h1>{{ special_post.title }}</h1>
+<div>{{ special_post.content|safe|markdownify }}</div>
+{% else %}
+{% endif %}
+
+<div class="card-search mt-5">
+    <h2>Card Search</h2>
+    <a href="{% url 'card_search' %}" class="btn btn-primary btn-lg">
+        Search for cards by name, type, set, and more
+    </a>
+</div>
+
+{% if crsections %}
+<div class="crsections mt-5">
+    <div class="d-flex align-items-center gap-2 mb-1">
+        <h2 class="mb-0">Core Rules</h2>
+        <a href="{% url 'rules_diff' 'cr' %}" class="btn btn-sm btn-outline-secondary">View Diff</a>
+    </div>
+    <p class="text-muted small mb-3">Last Updated: {{ cr_last_updated }}</p>
+    <div class="row g-3">
+        {% for section in crsections %}
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <a href="{% url 'core_rules' %}#rule-{{ section.section }}"
+                       class="text-decoration-none fw-semibold fs-6">
+                        {{ section.section }}. {{ section.text }}
+                    </a>
+                </div>
+                {% if section.subs %}
+                <div class="card-body py-2">
+                    <div class="cr-subs-grid">
+                        {% for sub in section.subs %}
+                        <a href="{% url 'core_rules' %}#rule-{{ sub.section }}"
+                           class="cr-sub-link text-decoration-none">
+                            <span class="cr-sub-num">{{ sub.section }}</span>
+                            {{ sub.text }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if trsections %}
+<div id="trsections" class="trsections mt-5">
+    <div class="d-flex align-items-center gap-2 mb-1">
+        <h2 class="mb-0">Tournament Rules</h2>
+        <a href="{% url 'rules_diff' 'tr' %}" class="btn btn-sm btn-outline-secondary">View Diff</a>
+    </div>
+    <p class="text-muted small mb-3">Last Updated: {{ tr_last_updated }}</p>
+    <div class="row g-3">
+        {% for section in trsections %}
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <a href="{{ section.url }}"
+                       class="text-decoration-none fw-semibold fs-6">
+                        {{ section.section }}. {{ section.text }}
+                    </a>
+                </div>
+                {% if section.subs %}
+                <div class="card-body py-2">
+                    <div class="cr-subs-grid">
+                        {% for sub in section.subs %}
+                        <a href="{{ sub.url }}"
+                           class="cr-sub-link text-decoration-none">
+                            <span class="cr-sub-num">{{ sub.section }}</span>
+                            {{ sub.text }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<style>
+.cr-subs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 12px;
+}
+.cr-sub-link {
+    display: block;
+    padding: 3px 4px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--bs-body-color);
+    transition: background 0.1s;
+}
+.cr-sub-link:hover {
+    background: var(--bs-tertiary-bg);
+    color: var(--bs-link-hover-color);
+}
+.cr-sub-num {
+    font-family: monospace;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-right: 4px;
+}
+</style>
+
+<div class="mb-5"></div>
+
+{% endblock %}
