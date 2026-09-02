@@ -192,10 +192,11 @@
                         >Contact</a
                     >
 
+                    <a href="{% url 'how_to_contribute' %}" class="btn btn-primary ms-2">How to contribute</a>
+
                     {% if user.is_authenticated %}
                     <a href="{% url 'profile' %}" class="btn btn-outline-secondary ms-3">Profile</a>
                     {% if user.is_staff %}
-                    <a href="{% url 'manage_users' %}" class="btn btn-outline-secondary ms-2">Manage users</a>
                     {% if user.is_superuser %}
                     <a href="{% url 'annotation_review_queue' %}" class="btn btn-outline-secondary ms-2">Review edits</a>
                     {% endif %}

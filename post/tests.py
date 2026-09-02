@@ -394,3 +394,13 @@ class AttributionTests(TestCase):
         response = self.client.get(reverse("attribution"))
 
         self.assertContains(response, "fallback-user")
+
+
+class ContributionGuideTests(TestCase):
+    def test_contribution_guide_is_public_and_links_to_signup(self):
+        response = self.client.get(reverse("how_to_contribute"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, reverse("signup"))
+        self.assertContains(response, "Contributor submissions enter an approval queue")
+        self.assertContains(response, "Personal notes are private to your account")

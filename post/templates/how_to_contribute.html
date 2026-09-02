@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}How to contribute - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="mb-3">How to contribute</h1>
+        <p class="lead">You can help make difficult rules easier to understand while keeping the published rules clear and reliable.</p>
+
+        <section class="card mb-4">
+            <div class="card-body">
+                <h2 class="h4">1. Create a contributor account</h2>
+                <p>Sign up for a free account. New accounts begin as general contributors and can submit annotations or keep private notes.</p>
+                {% if user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'core_rules' %}">Browse the rules</a>
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'signup' %}">Sign up</a>
+                <a class="btn btn-outline-secondary" href="{% url 'login' %}">Log in</a>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="card mb-4">
+            <div class="card-body">
+                <h2 class="h4">2. Submit an annotation</h2>
+                <p>Find the relevant rule, open <strong>Edit</strong>, and select <strong>Annotation</strong>. Contributor submissions enter an approval queue. An admin reviews each edit before it becomes public.</p>
+
+                <h3 class="h5 mt-4">What makes a useful annotation?</h3>
+                <ul class="mb-0">
+                    <li>Call attention to a difficult decision, edge case, or interaction.</li>
+                    <li>Explain a practical complication that readers may otherwise miss.</li>
+                    <li>Keep the annotation tied closely to the published rule.</li>
+                    <li>Avoid suggesting house rules, deviations, or alternative rulings that could muddy the official guidance.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card mb-4">
+            <div class="card-body">
+                <h2 class="h4">3. Keep personal notes</h2>
+                <p>Open <strong>Edit</strong> and select <strong>Personal note</strong> to save your own thoughts alongside a rule. Personal notes are private to your account and are never submitted for approval or shown to other users.</p>
+                <p class="mb-0">Personal notes have a different background from public annotations. You can show or hide them with the personal-notes selector in the header.</p>
+            </div>
+        </section>
+
+        <p class="text-muted">Contributors whose annotation submissions are accepted are recognized on the <a href="{% url 'attribution' %}">attribution page</a>.</p>
+    </div>
+</div>
+{% endblock %}

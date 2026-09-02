@@ -80,6 +80,11 @@ urlpatterns = [
     path("accounts/signup/", signup, name="signup"),
     path("attribution/", attribution, name="attribution"),
     path(
+        "how-to-contribute/",
+        TemplateView.as_view(template_name="how_to_contribute.html"),
+        name="how_to_contribute",
+    ),
+    path(
         "accounts/login/",
         auth_views.LoginView.as_view(template_name="registration/login.html"),
         name="login",
