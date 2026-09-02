@@ -94,3 +94,99 @@
     }
   });
 </script>
+
+<div class="modal fade" id="bookmarkModal" tabindex="-1" aria-labelledby="bookmarkModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="bookmarkModalLabel">Bookmark rule</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="bookmarkNote" class="form-label">Short note <span class="text-muted">(optional)</span></label>
+        <textarea class="form-control" id="bookmarkNote" maxlength="250" rows="3" placeholder="Why did you save this rule?"></textarea>
+        <div class="form-text d-flex justify-content-between">
+          <span>This note is private and searchable on your bookmarks page.</span>
+          <span><span id="bookmarkNoteCount">0</span>/250</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger me-auto" id="removeBookmarkButton">Remove bookmark</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveBookmarkButton">Save bookmark</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modalElement = document.getElementById("bookmarkModal");
+    const modal = new bootstrap.Modal(modalElement);
+    const noteInput = document.getElementById("bookmarkNote");
+    const noteCount = document.getElementById("bookmarkNoteCount");
+    const removeButton = document.getElementById("removeBookmarkButton");
+    let activeBookmark = null;
+
+    noteInput.addEventListener("input", () => {
+      noteCount.textContent = noteInput.value.length;
+    });
+
+    document.querySelectorAll(".bookmark-rule-btn").forEach((button) => {
+      button.addEventListener("click", function () {
+        activeBookmark = this;
+        noteInput.value = this.dataset.bookmarkNote || "";
+        noteCount.textContent = noteInput.value.length;
+        removeButton.classList.toggle("d-none", this.dataset.bookmarked !== "true");
+        document.getElementById("bookmarkModalLabel").textContent =
+          "Bookmark " + this.dataset.ruleType + " " + this.dataset.section;
+        modal.show();
+        modalElement.addEventListener("shown.bs.modal", () => noteInput.focus(), { once: true });
+      });
+    });
+
+    document.getElementById("saveBookmarkButton").addEventListener("click", function () {
+      if (!activeBookmark) return;
+      submitBookmarkRequest("{% url 'save_bookmark' %}", {
+        rule_type: activeBookmark.dataset.ruleType,
+        section: activeBookmark.dataset.section,
+        note: noteInput.value,
+      });
+    });
+
+    removeButton.addEventListener("click", function () {
+      if (!activeBookmark) return;
+      submitBookmarkRequest("{% url 'remove_bookmark' %}", {
+        rule_type: activeBookmark.dataset.ruleType,
+        section: activeBookmark.dataset.section,
+      });
+    });
+
+    function submitBookmarkRequest(endpoint, payload) {
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": getBookmarkCookie("csrftoken"),
+        },
+        body: JSON.stringify(payload),
+      })
+      .then(response => response.json().then(data => ({ ok: response.ok, data })))
+      .then(({ ok, data }) => {
+        if (!ok || !data.success) throw new Error(data.error || "Bookmark request failed");
+        location.reload();
+      })
+      .catch(error => alert("Error: " + error.message));
+    }
+
+    function getBookmarkCookie(name) {
+      for (const rawCookie of (document.cookie ? document.cookie.split(";") : [])) {
+        const cookie = rawCookie.trim();
+        if (cookie.startsWith(name + "=")) {
+          return decodeURIComponent(cookie.substring(name.length + 1));
+        }
+      }
+      return null;
+    }
+  });
+</script>

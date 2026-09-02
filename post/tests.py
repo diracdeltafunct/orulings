@@ -2,7 +2,7 @@ import json
 
 from django.test import TestCase
 from django.contrib.auth.models import User
-from post.models import AnnotationProposal, PersonalNote, Post, RuleSection, Tag
+from post.models import AnnotationProposal, Bookmark, PersonalNote, Post, RuleSection, Tag
 from django.utils import timezone
 from django.urls import reverse
 
@@ -404,3 +404,71 @@ class ContributionGuideTests(TestCase):
         self.assertContains(response, reverse("signup"))
         self.assertContains(response, "Contributor submissions enter an approval queue")
         self.assertContains(response, "Personal notes are private to your account")
+
+
+class BookmarkTests(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user("bookmarkowner", password="password")
+        self.other_user = User.objects.create_user("otherbookmark", password="password")
+        self.rule = RuleSection.objects.create(
+            rule_type="CR", section="400", text="A searchable timing decision"
+        )
+
+    def save_bookmark(self, user, note):
+        self.client.force_login(user)
+        return self.client.post(
+            reverse("save_bookmark"),
+            data=json.dumps(
+                {"rule_type": "CR", "section": "400", "note": note}
+            ),
+            content_type="application/json",
+        )
+
+    def test_user_can_bookmark_rule_with_short_note(self):
+        response = self.save_bookmark(self.user, "Review before next tournament")
+
+        self.assertEqual(response.status_code, 200)
+        bookmark = Bookmark.objects.get(user=self.user, rule_section=self.rule)
+        self.assertEqual(bookmark.note, "Review before next tournament")
+
+    def test_bookmark_note_cannot_exceed_250_characters(self):
+        response = self.save_bookmark(self.user, "x" * 251)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertFalse(Bookmark.objects.exists())
+
+    def test_bookmarks_page_is_private_and_searchable(self):
+        Bookmark.objects.create(
+            user=self.user, rule_section=self.rule, note="priority interaction"
+        )
+        Bookmark.objects.create(
+            user=self.other_user, rule_section=self.rule, note="other user's secret"
+        )
+
+        anonymous_response = self.client.get(reverse("bookmarks"))
+        self.assertRedirects(
+            anonymous_response,
+            f"{reverse('login')}?next={reverse('bookmarks')}",
+        )
+
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("bookmarks"), {"q": "priority"})
+        self.assertContains(response, "A searchable timing decision")
+        self.assertContains(response, "priority interaction")
+        self.assertNotContains(response, "other user's secret")
+        self.assertEqual(response["Cache-Control"], "private, no-store")
+
+    def test_user_can_remove_only_their_bookmark(self):
+        Bookmark.objects.create(user=self.user, rule_section=self.rule)
+        Bookmark.objects.create(user=self.other_user, rule_section=self.rule)
+        self.client.force_login(self.user)
+
+        response = self.client.post(
+            reverse("remove_bookmark"),
+            data=json.dumps({"rule_type": "CR", "section": "400"}),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(Bookmark.objects.filter(user=self.user).exists())
+        self.assertTrue(Bookmark.objects.filter(user=self.other_user).exists())

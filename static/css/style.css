@@ -35,6 +35,15 @@
     transition: height 0.3s ease;
 }
 
+.header-menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 38px;
+    padding: 0;
+}
+
 .btn-primary {
     background-color: var(--custom-primary);
     border-color: var(--custom-primary);
@@ -97,6 +106,13 @@ body.personal-notes-hidden .personal-note-display {
 
 .annotation-proposal-display * {
     color: #000000 !important;
+}
+
+.bookmark-note {
+    padding: 0.75rem;
+    background: var(--bs-tertiary-bg);
+    border-left: 3px solid var(--bs-warning);
+    border-radius: 0.25rem;
 }
 
 /* Annotation editor */

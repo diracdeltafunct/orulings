@@ -214,6 +214,27 @@ class PersonalNote(models.Model):
         return f"{self.user.username}: {self.rule_section}"
 
 
+class Bookmark(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookmarks")
+    rule_section = models.ForeignKey(
+        RuleSection, on_delete=models.CASCADE, related_name="bookmarks"
+    )
+    note = models.CharField(max_length=250, blank=True, default="")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "rule_section"], name="unique_bookmark_per_rule"
+            )
+        ]
+        ordering = ["rule_section__rule_type", "rule_section__section"]
+
+    def __str__(self):
+        return f"{self.user.username}: {self.rule_section}"
+
+
 class AnnotationProposal(models.Model):
     class Status(models.TextChoices):
         PENDING = "pending", "Pending"
