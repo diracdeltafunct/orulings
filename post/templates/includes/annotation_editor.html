@@ -1,3 +1,24 @@
+<style>
+  .bookmark-rule-btn {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 2rem !important;
+    min-width: 2rem !important;
+    max-width: 2rem !important;
+    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    max-height: 2.5rem !important;
+    padding: 0 !important;
+    color: #ffc107 !important;
+    -webkit-text-fill-color: #ffc107 !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+</style>
+
 <script>
   const quillEditors = {};
 
@@ -85,6 +106,131 @@
     function getCookie(name) {
       const cookies = document.cookie ? document.cookie.split(";") : [];
       for (const rawCookie of cookies) {
+        const cookie = rawCookie.trim();
+        if (cookie.startsWith(name + "=")) {
+          return decodeURIComponent(cookie.substring(name.length + 1));
+        }
+      }
+      return null;
+    }
+  });
+</script>
+
+<div class="modal fade" id="bookmarkModal" tabindex="-1" aria-labelledby="bookmarkModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="bookmarkModalLabel">Bookmark rule</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="bookmarkNote" class="form-label">Short note <span class="text-muted">(optional)</span></label>
+        <textarea class="form-control" id="bookmarkNote" maxlength="250" rows="3" placeholder="Why did you save this rule?"></textarea>
+        <div class="form-text d-flex justify-content-between">
+          <span>This note is private and searchable on your bookmarks page.</span>
+          <span><span id="bookmarkNoteCount">0</span>/250</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger me-auto" id="removeBookmarkButton">Remove bookmark</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveBookmarkButton">Save bookmark</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const modalElement = document.getElementById("bookmarkModal");
+    const modal = new bootstrap.Modal(modalElement);
+    const noteInput = document.getElementById("bookmarkNote");
+    const noteCount = document.getElementById("bookmarkNoteCount");
+    const removeButton = document.getElementById("removeBookmarkButton");
+    let activeBookmark = null;
+    const bookmarkButtons = document.querySelectorAll(".bookmark-rule-btn");
+
+    bookmarkButtons.forEach((button) => {
+      button.parentElement.classList.add("bookmark-hover-scope");
+    });
+
+    document.addEventListener("click", function (event) {
+      const selectedScope = event.target.closest(".bookmark-hover-scope");
+      document.querySelectorAll(".bookmark-hover-scope.bookmark-active").forEach((scope) => {
+        if (scope !== selectedScope) scope.classList.remove("bookmark-active");
+      });
+      if (selectedScope) selectedScope.classList.add("bookmark-active");
+    });
+
+    noteInput.addEventListener("input", () => {
+      noteCount.textContent = noteInput.value.length;
+    });
+
+    bookmarkButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        activeBookmark = this;
+        noteInput.value = this.dataset.bookmarkNote || "";
+        noteCount.textContent = noteInput.value.length;
+        removeButton.classList.toggle("d-none", this.dataset.bookmarked !== "true");
+        document.getElementById("bookmarkModalLabel").textContent =
+          "Bookmark " + this.dataset.ruleType + " " + this.dataset.section;
+        modal.show();
+        modalElement.addEventListener("shown.bs.modal", () => noteInput.focus(), { once: true });
+      });
+    });
+
+    document.getElementById("saveBookmarkButton").addEventListener("click", function () {
+      if (!activeBookmark) return;
+      submitBookmarkRequest("{% url 'save_bookmark' %}", {
+        rule_type: activeBookmark.dataset.ruleType,
+        section: activeBookmark.dataset.section,
+        note: noteInput.value,
+      }, false);
+    });
+
+    removeButton.addEventListener("click", function () {
+      if (!activeBookmark) return;
+      submitBookmarkRequest("{% url 'remove_bookmark' %}", {
+        rule_type: activeBookmark.dataset.ruleType,
+        section: activeBookmark.dataset.section,
+      }, true);
+    });
+
+    function submitBookmarkRequest(endpoint, payload, isRemoving) {
+      fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": getBookmarkCookie("csrftoken"),
+        },
+        body: JSON.stringify(payload),
+      })
+      .then(response => response.json().then(data => ({ ok: response.ok, data })))
+      .then(({ ok, data }) => {
+        if (!ok || !data.success) throw new Error(data.error || "Bookmark request failed");
+        const ruleLabel = activeBookmark.dataset.section;
+        if (isRemoving) {
+          activeBookmark.dataset.bookmarked = "false";
+          activeBookmark.dataset.bookmarkNote = "";
+          activeBookmark.textContent = "☆";
+          activeBookmark.classList.remove("is-bookmarked");
+          activeBookmark.title = "Bookmark this rule";
+          activeBookmark.setAttribute("aria-label", "Bookmark rule " + ruleLabel);
+        } else {
+          activeBookmark.dataset.bookmarked = "true";
+          activeBookmark.dataset.bookmarkNote = payload.note;
+          activeBookmark.textContent = "★";
+          activeBookmark.classList.add("is-bookmarked");
+          activeBookmark.title = "Edit bookmark";
+          activeBookmark.setAttribute("aria-label", "Edit bookmark for rule " + ruleLabel);
+        }
+        modal.hide();
+      })
+      .catch(error => alert("Error: " + error.message));
+    }
+
+    function getBookmarkCookie(name) {
+      for (const rawCookie of (document.cookie ? document.cookie.split(";") : [])) {
         const cookie = rawCookie.trim();
         if (cookie.startsWith(name + "=")) {
           return decodeURIComponent(cookie.substring(name.length + 1));

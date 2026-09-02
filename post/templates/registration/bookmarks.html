@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Bookmarks - ScoutsCode{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <div>
+        <h1 class="h3 mb-1">Your bookmarked rules</h1>
+        <p class="text-muted mb-0">Bookmarks and their notes are private to your account.</p>
+    </div>
+    <form class="d-flex" method="get">
+        <input class="form-control me-2" type="search" name="q" value="{{ search_query }}" placeholder="Search bookmarks" aria-label="Search bookmarks">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</div>
+
+{% for bookmark in bookmarks %}
+<article class="card mb-3">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start gap-3">
+            <div>
+                <h2 class="h5 mb-2">{{ bookmark.rule_section.get_rule_type_display }} {{ bookmark.rule_section.section }}</h2>
+                <p class="mb-2">{{ bookmark.rule_section.text|striptags }}</p>
+                {% if bookmark.note %}<p class="bookmark-note mb-0"><strong>Your note:</strong> {{ bookmark.note }}</p>{% endif %}
+            </div>
+            <div class="d-flex flex-column gap-2 flex-shrink-0">
+                {% if bookmark.rule_section.rule_type == 'CR' %}
+                <a class="btn btn-outline-primary" href="{% url 'core_rules' %}#rule-{{ bookmark.rule_section.section }}">Open rule</a>
+                {% else %}
+                <a class="btn btn-outline-primary" href="{% url 'tournament_rules' %}#rule-{{ bookmark.rule_section.section }}">Open rule</a>
+                {% endif %}
+                <form method="post" action="{% url 'remove_bookmark' %}" onsubmit="return confirm('Delete this bookmark?');">
+                    {% csrf_token %}
+                    <input type="hidden" name="rule_type" value="{{ bookmark.rule_section.rule_type }}">
+                    <input type="hidden" name="section" value="{{ bookmark.rule_section.section }}">
+                    <button class="btn btn-outline-danger w-100" type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+{% empty %}
+<div class="alert alert-info">
+    {% if search_query %}No bookmarks match “{{ search_query }}”.{% else %}You have not bookmarked any rules yet. Use the ☆ button beside a rule to add one.{% endif %}
+</div>
+{% endfor %}
+{% endblock %}

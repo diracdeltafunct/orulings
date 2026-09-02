@@ -1,0 +1,11 @@
+<button
+    class="bookmark-rule-btn border-0 bg-transparent p-0 text-warning{% if rule.is_bookmarked %} is-bookmarked{% endif %}"
+    style="-webkit-appearance:none;appearance:none;width:2rem;min-width:2rem;max-width:2rem;height:2.5rem;min-height:2.5rem;max-height:2.5rem;padding:0;color:#ffc107;-webkit-text-fill-color:#ffc107;font-size:1.5rem;line-height:1;background:transparent;border:0;box-shadow:none;"
+    type="button"
+    title="{% if rule.is_bookmarked %}Edit bookmark{% else %}Bookmark this rule{% endif %}"
+    aria-label="{% if rule.is_bookmarked %}Edit bookmark for{% else %}Bookmark{% endif %} rule {{ rule.section }}"
+    data-section="{{ rule.section }}"
+    data-rule-type="{{ rule_type }}"
+    data-bookmarked="{{ rule.is_bookmarked|yesno:'true,false' }}"
+    data-bookmark-note="{{ rule.bookmark_note|escape }}"
+>{% if rule.is_bookmarked %}★{% else %}☆{% endif %}</button>

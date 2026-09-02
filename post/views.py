@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 from .forms import ContactForm, ProfileForm, RoleUpdateForm, SignUpForm
 from .models import (
     AnnotationProposal,
+    Bookmark,
     Card,
     CardDomain,
     PersonalNote,
@@ -332,11 +333,15 @@ def format_section_text(section_data, section_type="tr"):
     return section_data
 
 
-def attach_personal_notes(section_data, notes_by_section):
-    """Attach the current user's private note to each rendered rule dictionary."""
+def attach_user_rule_data(section_data, notes_by_section, bookmarks_by_section):
+    """Attach the current user's private note and bookmark to a rule tree."""
     section_data["personal_note"] = notes_by_section.get(section_data["section"], "")
+    section_data["is_bookmarked"] = section_data["section"] in bookmarks_by_section
+    section_data["bookmark_note"] = bookmarks_by_section.get(
+        section_data["section"], ""
+    )
     for child in section_data.get("children", []):
-        attach_personal_notes(child, notes_by_section)
+        attach_user_rule_data(child, notes_by_section, bookmarks_by_section)
     return section_data
 
 
@@ -347,6 +352,16 @@ def get_personal_notes(request, rule_type):
         PersonalNote.objects.filter(
             user=request.user, rule_section__rule_type=rule_type
         ).values_list("rule_section__section", "content")
+    )
+
+
+def get_bookmarks(request, rule_type):
+    if not request.user.is_authenticated:
+        return {}
+    return dict(
+        Bookmark.objects.filter(
+            user=request.user, rule_section__rule_type=rule_type
+        ).values_list("rule_section__section", "note")
     )
 
 
@@ -408,7 +423,9 @@ def trsection_detail(request, section):
 
     # Format text to bold content before colons and linkify references
     data = format_section_text(data, section_type="tr")
-    data = attach_personal_notes(data, get_personal_notes(request, "TR"))
+    data = attach_user_rule_data(
+        data, get_personal_notes(request, "TR"), get_bookmarks(request, "TR")
+    )
 
     # Get parent section if exists
     parent_section = None
@@ -457,7 +474,9 @@ def crsection_detail(request, section):
 
     # Format text to bold content before colons and linkify references
     data = format_section_text(data, section_type="cr")
-    data = attach_personal_notes(data, get_personal_notes(request, "CR"))
+    data = attach_user_rule_data(
+        data, get_personal_notes(request, "CR"), get_bookmarks(request, "CR")
+    )
 
     # Get parent section if exists
     parent_section = None
@@ -487,11 +506,14 @@ def core_rules(request):
     ).prefetch_related("children__children__children__children__children__children")
 
     notes_by_section = get_personal_notes(request, "CR")
+    bookmarks_by_section = get_bookmarks(request, "CR")
     sections = []
     for section_obj in top_level_sections:
         data = section_obj.to_dict()
         data = format_section_text(data, section_type="cr_single")
-        sections.append(attach_personal_notes(data, notes_by_section))
+        sections.append(
+            attach_user_rule_data(data, notes_by_section, bookmarks_by_section)
+        )
 
     context = {
         "sections": sections,
@@ -518,11 +540,14 @@ def tournament_rules(request):
     ).prefetch_related("children__children__children__children__children__children")
 
     notes_by_section = get_personal_notes(request, "TR")
+    bookmarks_by_section = get_bookmarks(request, "TR")
     sections = []
     for section_obj in top_level_sections:
         data = section_obj.to_dict()
         data = format_section_text(data, section_type="tr_single")
-        sections.append(attach_personal_notes(data, notes_by_section))
+        sections.append(
+            attach_user_rule_data(data, notes_by_section, bookmarks_by_section)
+        )
 
     context = {
         "sections": sections,
@@ -536,6 +561,25 @@ def tournament_rules(request):
     else:
         response["Cache-Control"] = "no-store"
 
+    return response
+
+
+@login_required
+def bookmarks_page(request):
+    search_query = request.GET.get("q", "").strip()
+    bookmarks = Bookmark.objects.filter(user=request.user).select_related("rule_section")
+    if search_query:
+        bookmarks = bookmarks.filter(
+            Q(note__icontains=search_query)
+            | Q(rule_section__section__icontains=search_query)
+            | Q(rule_section__text__icontains=search_query)
+        )
+    response = render(
+        request,
+        "registration/bookmarks.html",
+        {"bookmarks": bookmarks, "search_query": search_query},
+    )
+    response["Cache-Control"] = "private, no-store"
     return response
 
 
@@ -726,6 +770,66 @@ def save_personal_note(request):
         return JsonResponse({"success": True, "section": section})
     except RuleSection.DoesNotExist:
         return JsonResponse({"error": f"Section {section} not found"}, status=404)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "Invalid JSON"}, status=400)
+
+
+def save_bookmark(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "POST required"}, status=405)
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Authentication required"}, status=403)
+
+    try:
+        data = json.loads(request.body)
+        rule_type = data.get("rule_type")
+        section = data.get("section")
+        note = (data.get("note") or "").strip()
+        if not all([rule_type, section]):
+            return JsonResponse({"error": "Missing required fields"}, status=400)
+        if len(note) > 250:
+            return JsonResponse(
+                {"error": "Bookmark notes cannot exceed 250 characters."}, status=400
+            )
+
+        rule_section = RuleSection.objects.get(rule_type=rule_type, section=section)
+        bookmark, _ = Bookmark.objects.update_or_create(
+            user=request.user,
+            rule_section=rule_section,
+            defaults={"note": note},
+        )
+        return JsonResponse({"success": True, "bookmark_id": bookmark.pk})
+    except RuleSection.DoesNotExist:
+        return JsonResponse({"error": f"Section {section} not found"}, status=404)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "Invalid JSON"}, status=400)
+
+
+def remove_bookmark(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "POST required"}, status=405)
+    if not request.user.is_authenticated:
+        return JsonResponse({"error": "Authentication required"}, status=403)
+
+    expects_json = request.content_type == "application/json"
+    try:
+        data = json.loads(request.body) if expects_json else request.POST
+        rule_type = data.get("rule_type")
+        section = data.get("section")
+        if not all([rule_type, section]):
+            if expects_json:
+                return JsonResponse({"error": "Missing required fields"}, status=400)
+            messages.error(request, "Could not identify that bookmark.")
+            return redirect("bookmarks")
+        Bookmark.objects.filter(
+            user=request.user,
+            rule_section__rule_type=rule_type,
+            rule_section__section=section,
+        ).delete()
+        if not expects_json:
+            messages.success(request, f"Bookmark for {rule_type} {section} deleted.")
+            return redirect("bookmarks")
+        return JsonResponse({"success": True})
     except json.JSONDecodeError:
         return JsonResponse({"error": "Invalid JSON"}, status=400)
 

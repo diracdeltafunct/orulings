@@ -42,8 +42,7 @@ echo "Collecting static files..."
 python3 manage.py collectstatic --noinput
 
 echo "Restarting $SERVICE_NAME..."
-sudo systemctl restart "$SERVICE_NAME" &
-disown
-sleep 2
+sudo systemctl restart "$SERVICE_NAME"
+sudo systemctl is-active --quiet "$SERVICE_NAME"
 
 echo "Redeploy complete."

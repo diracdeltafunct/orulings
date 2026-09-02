@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -61,6 +61,9 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
           script: |
+            set -e
             cd /root/orulings-dev
-            git pull origin develop
+            git fetch origin develop
+            git checkout -B develop origin/develop
+            git branch --set-upstream-to=origin/develop develop
             ./redeploy.sh gunicorn-dev
