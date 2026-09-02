@@ -319,14 +319,22 @@
         </script>
         {% endif %}
 
-        <!-- Service Worker Registration -->
+        <!-- Remove legacy offline caches. They can serve mismatched HTML and CSS
+             after a deployment, which is worse than losing offline browsing. -->
         <script>
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js');
-
-                window.addEventListener('online', function () {
-                    navigator.serviceWorker.ready.then(function (reg) {
-                        reg.active.postMessage({ type: 'REPLAY_QUEUE' });
+                navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                    registrations.forEach(function (registration) {
+                        registration.unregister();
+                    });
+                });
+            }
+            if ('caches' in window) {
+                caches.keys().then(function (keys) {
+                    keys.forEach(function (key) {
+                        if (key.startsWith('static-') || key.startsWith('pages-')) {
+                            caches.delete(key);
+                        }
                     });
                 });
             }
