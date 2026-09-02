@@ -1,4 +1,4 @@
-{% load static %}const CACHE_VERSION = 'v6';
+{% load static %}const CACHE_VERSION = 'v9';
 const STATIC_CACHE = 'static-' + CACHE_VERSION;
 const PAGES_CACHE = 'pages-' + CACHE_VERSION;
 const IMAGES_CACHE = 'images-' + CACHE_VERSION;
@@ -6,7 +6,7 @@ const IMAGES_CACHE_LIMIT = 200;
 
 // Essential assets - must all succeed for SW to install
 const PRECACHE_STATIC = [
-  '{% static "css/style.css" %}?v=6',
+  '{% static "css/style.css" %}?v=9',
   '{% static "css/bootstrap.min.css" %}',
   '{% static "logo.png" %}',
   '{% static "favicon.png" %}',
@@ -140,9 +140,14 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Static assets: cache first
+  // Styles and scripts must prefer the network so a normal reload cannot revive
+  // stale UI code. Other versioned/static assets can remain cache first.
   if (url.pathname.startsWith('/static/')) {
-    event.respondWith(cacheFirst(request, STATIC_CACHE));
+    if (request.destination === 'style' || request.destination === 'script') {
+      event.respondWith(networkFirst(request, STATIC_CACHE));
+    } else {
+      event.respondWith(cacheFirst(request, STATIC_CACHE));
+    }
     return;
   }
 

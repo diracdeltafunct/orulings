@@ -811,17 +811,24 @@ def remove_bookmark(request):
     if not request.user.is_authenticated:
         return JsonResponse({"error": "Authentication required"}, status=403)
 
+    expects_json = request.content_type == "application/json"
     try:
-        data = json.loads(request.body)
+        data = json.loads(request.body) if expects_json else request.POST
         rule_type = data.get("rule_type")
         section = data.get("section")
         if not all([rule_type, section]):
-            return JsonResponse({"error": "Missing required fields"}, status=400)
+            if expects_json:
+                return JsonResponse({"error": "Missing required fields"}, status=400)
+            messages.error(request, "Could not identify that bookmark.")
+            return redirect("bookmarks")
         Bookmark.objects.filter(
             user=request.user,
             rule_section__rule_type=rule_type,
             rule_section__section=section,
         ).delete()
+        if not expects_json:
+            messages.success(request, f"Bookmark for {rule_type} {section} deleted.")
+            return redirect("bookmarks")
         return JsonResponse({"success": True})
     except json.JSONDecodeError:
         return JsonResponse({"error": "Invalid JSON"}, status=400)

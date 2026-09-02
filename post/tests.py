@@ -472,3 +472,15 @@ class BookmarkTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertFalse(Bookmark.objects.filter(user=self.user).exists())
         self.assertTrue(Bookmark.objects.filter(user=self.other_user).exists())
+
+    def test_user_can_delete_bookmark_from_bookmarks_page(self):
+        Bookmark.objects.create(user=self.user, rule_section=self.rule)
+        self.client.force_login(self.user)
+
+        response = self.client.post(
+            reverse("remove_bookmark"),
+            {"rule_type": "CR", "section": "400"},
+        )
+
+        self.assertRedirects(response, reverse("bookmarks"))
+        self.assertFalse(Bookmark.objects.filter(user=self.user).exists())

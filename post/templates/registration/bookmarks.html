@@ -23,11 +23,19 @@
                 <p class="mb-2">{{ bookmark.rule_section.text|striptags }}</p>
                 {% if bookmark.note %}<p class="bookmark-note mb-0"><strong>Your note:</strong> {{ bookmark.note }}</p>{% endif %}
             </div>
-            {% if bookmark.rule_section.rule_type == 'CR' %}
-            <a class="btn btn-outline-primary flex-shrink-0" href="{% url 'core_rules' %}#rule-{{ bookmark.rule_section.section }}">Open rule</a>
-            {% else %}
-            <a class="btn btn-outline-primary flex-shrink-0" href="{% url 'tournament_rules' %}#rule-{{ bookmark.rule_section.section }}">Open rule</a>
-            {% endif %}
+            <div class="d-flex flex-column gap-2 flex-shrink-0">
+                {% if bookmark.rule_section.rule_type == 'CR' %}
+                <a class="btn btn-outline-primary" href="{% url 'core_rules' %}#rule-{{ bookmark.rule_section.section }}">Open rule</a>
+                {% else %}
+                <a class="btn btn-outline-primary" href="{% url 'tournament_rules' %}#rule-{{ bookmark.rule_section.section }}">Open rule</a>
+                {% endif %}
+                <form method="post" action="{% url 'remove_bookmark' %}" onsubmit="return confirm('Delete this bookmark?');">
+                    {% csrf_token %}
+                    <input type="hidden" name="rule_type" value="{{ bookmark.rule_section.rule_type }}">
+                    <input type="hidden" name="section" value="{{ bookmark.rule_section.section }}">
+                    <button class="btn btn-outline-danger w-100" type="submit">Delete</button>
+                </form>
+            </div>
         </div>
     </div>
 </article>

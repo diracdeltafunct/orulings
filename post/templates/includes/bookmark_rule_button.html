@@ -1,5 +1,5 @@
 <button
-    class="bookmark-rule-btn{% if rule.is_bookmarked %} is-bookmarked{% endif %}"
+    class="bookmark-rule-btn border-0 bg-transparent p-0 text-warning{% if rule.is_bookmarked %} is-bookmarked{% endif %}"
     type="button"
     title="{% if rule.is_bookmarked %}Edit bookmark{% else %}Bookmark this rule{% endif %}"
     aria-label="{% if rule.is_bookmarked %}Edit bookmark for{% else %}Bookmark{% endif %} rule {{ rule.section }}"

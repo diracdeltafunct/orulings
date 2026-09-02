@@ -1,3 +1,24 @@
+<style>
+  .bookmark-rule-btn {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 2rem !important;
+    min-width: 2rem !important;
+    max-width: 2rem !important;
+    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    max-height: 2.5rem !important;
+    padding: 0 !important;
+    color: #ffc107 !important;
+    -webkit-text-fill-color: #ffc107 !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+</style>
+
 <script>
   const quillEditors = {};
 
@@ -164,7 +185,7 @@
         rule_type: activeBookmark.dataset.ruleType,
         section: activeBookmark.dataset.section,
         note: noteInput.value,
-      });
+      }, false);
     });
 
     removeButton.addEventListener("click", function () {
@@ -172,10 +193,10 @@
       submitBookmarkRequest("{% url 'remove_bookmark' %}", {
         rule_type: activeBookmark.dataset.ruleType,
         section: activeBookmark.dataset.section,
-      });
+      }, true);
     });
 
-    function submitBookmarkRequest(endpoint, payload) {
+    function submitBookmarkRequest(endpoint, payload, isRemoving) {
       fetch(endpoint, {
         method: "POST",
         headers: {
@@ -187,7 +208,23 @@
       .then(response => response.json().then(data => ({ ok: response.ok, data })))
       .then(({ ok, data }) => {
         if (!ok || !data.success) throw new Error(data.error || "Bookmark request failed");
-        location.reload();
+        const ruleLabel = activeBookmark.dataset.section;
+        if (isRemoving) {
+          activeBookmark.dataset.bookmarked = "false";
+          activeBookmark.dataset.bookmarkNote = "";
+          activeBookmark.textContent = "☆";
+          activeBookmark.classList.remove("is-bookmarked");
+          activeBookmark.title = "Bookmark this rule";
+          activeBookmark.setAttribute("aria-label", "Bookmark rule " + ruleLabel);
+        } else {
+          activeBookmark.dataset.bookmarked = "true";
+          activeBookmark.dataset.bookmarkNote = payload.note;
+          activeBookmark.textContent = "★";
+          activeBookmark.classList.add("is-bookmarked");
+          activeBookmark.title = "Edit bookmark";
+          activeBookmark.setAttribute("aria-label", "Edit bookmark for rule " + ruleLabel);
+        }
+        modal.hide();
       })
       .catch(error => alert("Error: " + error.message));
     }
