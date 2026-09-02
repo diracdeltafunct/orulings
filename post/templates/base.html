@@ -38,7 +38,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="{% static 'css/style.css' %}"
+            href="{% static 'css/style.css' %}?v=5"
         />
         <!-- Quill Editor -->
         <link
@@ -135,38 +135,6 @@
                         </li>
                     </ul>
 
-                    <!-- Annotation Toggle -->
-                    <div class="me-3">
-                        <button
-                            id="annotationToggle"
-                            class="btn btn-sm btn-outline-secondary"
-                            title="Toggle annotations"
-                        >
-                            Annotations: <span id="annotationToggleLabel">Off</span>
-                        </button>
-                    </div>
-
-                    <!-- Theme Toggle -->
-                    <div class="me-3">
-                        <select
-                            class="form-select form-select-sm"
-                            id="themeToggle"
-                            aria-label="Theme selector"
-                        >
-                            <option value="dark">Dark</option>
-                            <option value="light">Light</option>
-                        </select>
-                    </div>
-
-                    {% if user.is_authenticated %}
-                    <div class="me-3">
-                        <select class="form-select form-select-sm" id="personalNotesToggle" aria-label="Personal notes visibility">
-                            <option value="show">Show personal notes</option>
-                            <option value="hide">Hide personal notes</option>
-                        </select>
-                    </div>
-                    {% endif %}
-
                     <!-- Place form inside the collapsed content -->
                     <form
                         class="d-flex"
@@ -191,6 +159,7 @@
                             class="btn btn-outline-secondary header-menu-button"
                             type="button"
                             data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside"
                             aria-expanded="false"
                             aria-label="Open site menu"
                             title="Menu"
@@ -200,17 +169,33 @@
                             </svg>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center gap-2" id="themeToggle" type="button">
+                                    <span class="theme-toggle-icon" id="themeToggleIcon" aria-hidden="true">☀</span>
+                                    <span id="themeToggleLabel">Use light mode</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item" id="annotationToggle" type="button">
+                                    Annotations: <span id="annotationToggleLabel">Off</span>
+                                </button>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li>
+                                <button class="dropdown-item" id="personalNotesToggle" type="button">
+                                    Personal notes: <span id="personalNotesToggleLabel">On</span>
+                                </button>
+                            </li>
+                            {% endif %}
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'how_to_contribute' %}">How to contribute</a></li>
                             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% if user.is_authenticated %}
                             <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                             <li><a class="dropdown-item" href="{% url 'bookmarks' %}">Bookmarks</a></li>
-                            {% if user.is_staff %}
                             {% if user.is_superuser %}
                             <li><a class="dropdown-item" href="{% url 'annotation_review_queue' %}">Review edits</a></li>
-                            {% endif %}
-                            <li><a class="dropdown-item" href="{% url 'admin:index' %}">Django admin</a></li>
                             {% endif %}
                             <li><hr class="dropdown-divider"></li>
                             <li>
@@ -258,15 +243,22 @@
                 const themeToggle = document.getElementById("themeToggle");
                 const html = document.documentElement;
 
-                // Load saved theme or default to dark
                 const savedTheme = localStorage.getItem("theme") || "dark";
-                html.setAttribute("data-bs-theme", savedTheme);
-                themeToggle.value = savedTheme;
+                const icon = document.getElementById("themeToggleIcon");
+                const label = document.getElementById("themeToggleLabel");
 
-                // Handle theme change
-                themeToggle.addEventListener("change", function () {
-                    const theme = this.value;
+                function applyTheme(theme) {
                     html.setAttribute("data-bs-theme", theme);
+                    const isDark = theme === "dark";
+                    icon.textContent = isDark ? "☀" : "☾";
+                    label.textContent = isDark ? "Use light mode" : "Use dark mode";
+                    themeToggle.setAttribute("aria-label", label.textContent);
+                }
+
+                applyTheme(savedTheme);
+                themeToggle.addEventListener("click", function () {
+                    const theme = html.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
+                    applyTheme(theme);
                     localStorage.setItem("theme", theme);
                 });
             })();
@@ -307,20 +299,21 @@
         {% if user.is_authenticated %}
         <script>
             (function () {
-                const selector = document.getElementById("personalNotesToggle");
-                const show = localStorage.getItem("showPersonalNotes") !== "false";
+                const button = document.getElementById("personalNotesToggle");
+                const label = document.getElementById("personalNotesToggleLabel");
+                let show = localStorage.getItem("showPersonalNotes") !== "false";
 
                 function applyPersonalNotesVisibility(visible) {
                     document.body.classList.toggle("personal-notes-hidden", !visible);
                     document.documentElement.classList.remove("personal-notes-hidden-early");
-                    selector.value = visible ? "show" : "hide";
+                    label.textContent = visible ? "On" : "Off";
                 }
 
                 applyPersonalNotesVisibility(show);
-                selector.addEventListener("change", function () {
-                    const visible = this.value === "show";
-                    localStorage.setItem("showPersonalNotes", String(visible));
-                    applyPersonalNotesVisibility(visible);
+                button.addEventListener("click", function () {
+                    show = !show;
+                    localStorage.setItem("showPersonalNotes", String(show));
+                    applyPersonalNotesVisibility(show);
                 });
             })();
         </script>

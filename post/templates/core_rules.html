@@ -19,6 +19,7 @@
             <div id="rule-{{ section.section }}" class="cr-rule cr-top-level mb-4">
                 <h2 class="cr-section-heading">
                     <a href="#rule-{{ section.section }}" class="cr-permalink" title="Link to this rule">#</a>
+                    {% if user.is_authenticated %}{% include "includes/bookmark_rule_button.html" with rule=section rule_type="CR" %}{% endif %}
                     {{ section.section }}. {{ section.text|safe }}
                 </h2>
                 {% if section.annotations %}
@@ -40,6 +41,7 @@
                 <div id="rule-{{ child.section }}" class="cr-rule cr-child ps-2 py-2 border-bottom">
                     <div class="d-flex align-items-start">
                         <a href="#rule-{{ child.section }}" class="cr-permalink me-2" title="Link to this rule">#</a>
+                        {% if user.is_authenticated %}{% include "includes/bookmark_rule_button.html" with rule=child rule_type="CR" %}{% endif %}
                         <div class="flex-grow-1">
                             <strong class="cr-rule-number">{{ child.section }}.</strong> {{ child.text|safe }}
                             {% if child.annotations %}

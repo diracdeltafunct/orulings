@@ -1,4 +1,4 @@
-{% load static %}const CACHE_VERSION = 'v4';
+{% load static %}const CACHE_VERSION = 'v5';
 const STATIC_CACHE = 'static-' + CACHE_VERSION;
 const PAGES_CACHE = 'pages-' + CACHE_VERSION;
 const IMAGES_CACHE = 'images-' + CACHE_VERSION;
@@ -6,7 +6,7 @@ const IMAGES_CACHE_LIMIT = 200;
 
 // Essential assets - must all succeed for SW to install
 const PRECACHE_STATIC = [
-  '{% static "css/style.css" %}',
+  '{% static "css/style.css" %}?v=5',
   '{% static "css/bootstrap.min.css" %}',
   '{% static "logo.png" %}',
   '{% static "favicon.png" %}',

@@ -5,13 +5,3 @@
         <li><button class="dropdown-item edit-content-btn" type="button" data-edit-kind="personal-note" data-section="{{ rule.section }}" data-rule-type="{{ rule_type }}">Personal note</button></li>
     </ul>
 </div>
-<button
-    class="btn btn-sm btn-outline-warning ms-1 bookmark-rule-btn"
-    type="button"
-    title="{% if rule.is_bookmarked %}Edit bookmark{% else %}Bookmark this rule{% endif %}"
-    aria-label="{% if rule.is_bookmarked %}Edit bookmark for{% else %}Bookmark{% endif %} rule {{ rule.section }}"
-    data-section="{{ rule.section }}"
-    data-rule-type="{{ rule_type }}"
-    data-bookmarked="{{ rule.is_bookmarked|yesno:'true,false' }}"
-    data-bookmark-note="{{ rule.bookmark_note|escape }}"
->{% if rule.is_bookmarked %}★{% else %}☆{% endif %}</button>

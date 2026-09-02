@@ -127,12 +127,25 @@
     const noteCount = document.getElementById("bookmarkNoteCount");
     const removeButton = document.getElementById("removeBookmarkButton");
     let activeBookmark = null;
+    const bookmarkButtons = document.querySelectorAll(".bookmark-rule-btn");
+
+    bookmarkButtons.forEach((button) => {
+      button.parentElement.classList.add("bookmark-hover-scope");
+    });
+
+    document.addEventListener("click", function (event) {
+      const selectedScope = event.target.closest(".bookmark-hover-scope");
+      document.querySelectorAll(".bookmark-hover-scope.bookmark-active").forEach((scope) => {
+        if (scope !== selectedScope) scope.classList.remove("bookmark-active");
+      });
+      if (selectedScope) selectedScope.classList.add("bookmark-active");
+    });
 
     noteInput.addEventListener("input", () => {
       noteCount.textContent = noteInput.value.length;
     });
 
-    document.querySelectorAll(".bookmark-rule-btn").forEach((button) => {
+    bookmarkButtons.forEach((button) => {
       button.addEventListener("click", function () {
         activeBookmark = this;
         noteInput.value = this.dataset.bookmarkNote || "";

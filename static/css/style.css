@@ -44,6 +44,23 @@
     padding: 0;
 }
 
+.theme-toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    font-size: 1.15rem;
+}
+
+#mainNav .dropdown-menu {
+    min-width: 14rem;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.35);
+    opacity: 1;
+}
+
 .btn-primary {
     background-color: var(--custom-primary);
     border-color: var(--custom-primary);
@@ -113,6 +130,53 @@ body.personal-notes-hidden .personal-note-display {
     background: var(--bs-tertiary-bg);
     border-left: 3px solid var(--bs-warning);
     border-radius: 0.25rem;
+}
+
+.bookmark-rule-btn {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    flex: 0 0 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    min-width: 1rem;
+    max-width: 1rem;
+    height: 1.25rem;
+    min-height: 1.25rem;
+    max-height: 1.25rem;
+    margin: 0 0.3rem 0 0;
+    padding: 0;
+    overflow: visible;
+    color: #ffc107 !important;
+    -webkit-text-fill-color: #ffc107;
+    font-size: 0.75rem;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    vertical-align: 0.1em;
+    background: transparent;
+    border: 0;
+    opacity: 0;
+    transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+.bookmark-hover-scope:hover > .bookmark-rule-btn,
+.bookmark-hover-scope.bookmark-active > .bookmark-rule-btn,
+.bookmark-rule-btn:focus-visible {
+    opacity: 0.8;
+}
+
+.bookmark-rule-btn.is-bookmarked {
+    opacity: 1;
+}
+
+.bookmark-rule-btn:hover,
+.bookmark-rule-btn:focus-visible {
+    color: #ffc107 !important;
+    opacity: 1;
+    transform: scale(1.12);
+    outline: none;
 }
 
 /* Annotation editor */
