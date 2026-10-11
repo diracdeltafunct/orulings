@@ -5,7 +5,8 @@
     {
       "section": "301",
       "text": "The Turn",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "302",
@@ -555,7 +556,8 @@
     {
       "section": "318",
       "text": "Cleanups",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "319",
@@ -760,7 +762,8 @@
     {
       "section": "325",
       "text": "Chains and Showdowns",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "326",
@@ -1152,7 +1155,12 @@
           "children": [
             {
               "section": "347.1.a",
-              "text": "The card or activated ability will start a Chain as normal. When that Chain closes, the next Player in Turn Order gains Focus. 347.1.b.",
+              "text": "The card or activated ability will start a Chain as normal.",
+              "children": []
+            },
+            {
+              "section": "347.1.b",
+              "text": "When that Chain closes, the next Player in Turn Order gains Focus.",
               "children": []
             }
           ]
@@ -1206,7 +1214,8 @@
     {
       "section": "349",
       "text": "Playing Cards",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "350",
@@ -2068,7 +2077,8 @@
     {
       "section": "360",
       "text": "Abilities",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "361",
@@ -3074,5 +3084,6 @@
       "text": "Playing or Activating Abilities",
       "children": []
     }
-  ]
+  ],
+  "heading_level": 1
 }
