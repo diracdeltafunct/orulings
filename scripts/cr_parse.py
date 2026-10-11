@@ -119,6 +119,10 @@ class Line:
     section: str
     text: str
     children: list = field(default_factory=list)
+    # Navigation heading tier derived from PDF formatting (1=outermost
+    # division, 2=major section heading, None=regular rule). Populated by
+    # cr_parse_pdf.py after parsing; absent when parsing from plain text.
+    heading_level: int = None
 
 
 def parse_lines_to_objects(text):
@@ -217,11 +221,14 @@ def save_lines_to_files(
 
     def line_to_dict(line: Line) -> dict:
         """Recursively convert a Line and all its children to a dict."""
-        return {
+        d = {
             "section": line.section,
             "text": line.text,
             "children": [line_to_dict(child) for child in line.children],
         }
+        if line.heading_level is not None:
+            d["heading_level"] = line.heading_level
+        return d
 
     # Save each top-level line with all its children to one file
     # Only save sections that are true top-level (N00 format: 000, 100, 200, etc.)
@@ -276,7 +283,12 @@ def load_line_from_file(
     def dict_to_line(d: dict) -> Line:
         """Recursively convert dict to Line object."""
         children = [dict_to_line(child) for child in d["children"]]
-        return Line(section=d["section"], text=d["text"], children=children)
+        return Line(
+            section=d["section"],
+            text=d["text"],
+            children=children,
+            heading_level=d.get("heading_level"),
+        )
 
     return dict_to_line(line_dict)
 

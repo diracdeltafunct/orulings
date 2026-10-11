@@ -155,6 +155,11 @@ class RuleSection(models.Model):
     )
     # Order within parent for consistent display
     order = models.IntegerField(default=0)
+    # Navigation heading tier, derived from the source PDF's formatting:
+    # 1 = outermost division (large bold, e.g. CR "100. Game Concepts"),
+    # 2 = major section heading (smaller bold, e.g. CR "125. Cards"),
+    # null = a regular rule, not a heading.
+    heading_level = models.PositiveSmallIntegerField(null=True, blank=True, default=None)
 
     class Meta:
         ordering = ["rule_type", "order", "section"]

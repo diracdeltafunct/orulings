@@ -1,7 +1,13 @@
 {
   "section": "200",
-  "text": "Locations can be Destinations and Origins for movement. See rule 447. Movement for more information. 201. Costs",
+  "text": "Locations can be Destinations and Origins for movement. See rule 447. Movement for more information.",
   "children": [
+    {
+      "section": "201",
+      "text": "Costs",
+      "children": [],
+      "heading_level": 2
+    },
     {
       "section": "202",
       "text": "Some Game Effects will instruct players to pay resources, spend counters or XP, or perform game actions as a Cost in order to perform a linked Effect.",

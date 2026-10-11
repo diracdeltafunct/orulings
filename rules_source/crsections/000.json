@@ -5,7 +5,8 @@
     {
       "section": "001",
       "text": "Golden Rule",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "002",
@@ -15,7 +16,8 @@
     {
       "section": "050",
       "text": "Silver Rule",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "051",
@@ -96,5 +98,6 @@
         }
       ]
     }
-  ]
+  ],
+  "heading_level": 1
 }

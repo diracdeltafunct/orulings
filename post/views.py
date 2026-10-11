@@ -206,32 +206,28 @@ def blog_index(request):
             }
         )
 
-    # CR index structure: fixed top-level headers with their sub-index sections
-    _CR_INDEX = [
-        {"top": "000", "subs": ["001", "050"]},
-        {"top": "100", "subs": ["101", "104", "120", "125", "140", "147", "152", "159", "168", "172", "176", "185"]},
-        {"top": "300", "subs": ["301", "318", "325", "349", "360", "407", "440", "454", "458", "462", "468", "476", "649"]},
-        {"top": "700", "subs": ["701", "706", "712", "716", "720", "726", "728", "734", "739", "800"]},
-    ]
-    all_cr_ids = [e["top"] for e in _CR_INDEX] + [s for e in _CR_INDEX for s in e["subs"]]
-    cr_map = {
-        r.section: r
-        for r in RuleSection.objects.filter(rule_type="CR", section__in=all_cr_ids)
-    }
+    # CR index structure: derived from heading_level, which is set during
+    # PDF parsing from the source document's own formatting (large bold
+    # numbers like "100." are heading_level 1, smaller bold numbers like
+    # "125." are heading_level 2). See scripts/cr_parse_pdf.py.
+    cr_headings = RuleSection.objects.filter(
+        rule_type="CR", heading_level__isnull=False
+    ).order_by("section").values("section", "text", "heading_level")
+
     crsections = []
-    for entry in _CR_INDEX:
-        top = cr_map.get(entry["top"])
-        if not top:
-            continue
-        crsections.append({
-            "section": top.section,
-            "text": top.text,
-            "url": f"/crsections/{top.section}/",
-            "subs": [
-                {"section": s, "text": cr_map[s].text, "url": f"/crsections/{s}/"}
-                for s in entry["subs"] if s in cr_map
-            ],
-        })
+    current_top = None
+    for heading in cr_headings:
+        if heading["heading_level"] == 1:
+            current_top = {
+                "section": heading["section"],
+                "text": heading["text"],
+                "subs": [],
+            }
+            crsections.append(current_top)
+        elif current_top is not None:
+            current_top["subs"].append(
+                {"section": heading["section"], "text": heading["text"]}
+            )
 
     context = {
         "special_post": special_post,

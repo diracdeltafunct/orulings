@@ -8,6 +8,7 @@ Usage:
 
 import argparse
 import os
+import re
 import urllib.request
 
 import fitz  # PyMuPDF
@@ -25,35 +26,131 @@ from tr_parse_pdf import (
 PDF_URL = "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/861747d1d4d505b7c14d73aba9749d1c3a209a67.pdf"
 
 
-def extract_rows_from_page(page):
+def _group_rows(page):
     """
-    Extract text rows from a CR PDF page.
+    Group a page's text lines into logical rows by vertical-overlap
+    clustering, rather than snapping each line's y-position to a fixed
+    grid. The CR PDF lays the section number and its title out as
+    separate text lines that are visually on the same row but whose
+    bounding boxes don't share an identical y-position (number boxes are
+    taller than title boxes for bold heading rows) - rounding both to the
+    same 2px grid cell can land them in different buckets and silently
+    drop the title (see e.g. "197." / "Locations"). Overlap clustering
+    merges them correctly since one box's y-range sits inside the other's.
 
-    The CR PDF is single-column: section number and text appear on the same line,
-    with wrapped continuation text on subsequent indented lines.
-    There is no strikethrough in the CR PDF.
+    Returns rows in document order; each row is a dict with "parts": a
+    list of (x0, spans, text) sorted left-to-right.
     """
-    y_buckets = {}
+    items = []
     for block in page.get_text("dict")["blocks"]:
         if block["type"] != 0:
             continue
         for line in block["lines"]:
-            bbox = line["bbox"]
-            line_text = normalise_text("".join(s["text"] for s in line["spans"])).rstrip()
-            if not line_text.strip():
+            spans = line["spans"]
+            if not spans:
                 continue
-            y_key = round(bbox[1] / 2) * 2
-            if y_key not in y_buckets:
-                y_buckets[y_key] = []
-            y_buckets[y_key].append((bbox[0], line_text))
+            text = normalise_text("".join(s["text"] for s in spans)).rstrip()
+            if not text.strip():
+                continue
+            bbox = line["bbox"]
+            items.append((bbox[1], bbox[3], bbox[0], spans, text))
+
+    items.sort(key=lambda t: (t[0], t[2]))
 
     rows = []
-    for y_key in sorted(y_buckets.keys()):
-        spans = sorted(y_buckets[y_key], key=lambda t: t[0])
-        combined = " ".join(t[1].strip() for t in spans if t[1].strip())
+    for y0, y1, x0, spans, text in items:
+        for row in rows:
+            if y0 < row["y1"] and y1 > row["y0"]:
+                row["parts"].append((x0, spans, text))
+                row["y0"] = min(row["y0"], y0)
+                row["y1"] = max(row["y1"], y1)
+                break
+        else:
+            rows.append({"y0": y0, "y1": y1, "parts": [(x0, spans, text)]})
+
+    rows.sort(key=lambda r: r["y0"])
+    for row in rows:
+        row["parts"].sort(key=lambda t: t[0])
+    return rows
+
+
+def extract_rows_from_page(page):
+    """
+    Extract text rows from a CR PDF page.
+
+    The CR PDF is single-column: section number and text appear on the same row,
+    with wrapped continuation text on subsequent indented rows.
+    There is no strikethrough in the CR PDF.
+    """
+    rows = []
+    for row in _group_rows(page):
+        combined = " ".join(t[2].strip() for t in row["parts"] if t[2].strip())
         if combined:
             rows.append(combined)
     return rows
+
+
+def _is_bold(font):
+    return "Bold" in font or "Black" in font
+
+
+_HEADING_NUM_RE = re.compile(r"^(\d+(?:\.(?:\d+|[a-zA-Z]))*)\.\s*(.*)$")
+
+
+def detect_headings(doc):
+    """
+    Classify section numbers as navigation headings from PDF formatting:
+      - heading_level 1: title fully bold at 20pt+ (outermost divisions,
+        e.g. "100. Game Concepts")
+      - heading_level 2: title fully bold at 10-20pt (major section
+        headings, e.g. "125. Cards")
+
+    A section only counts as a heading when the text immediately after the
+    number is *entirely* bold - this distinguishes real headings from body
+    paragraphs that merely bold a lead-in phrase before a colon (e.g.
+    "204.1. Base Costs: These costs are...", where only "Base Costs:" is
+    bold). Smaller bold titles (~8pt) are a third, finer tier that exists
+    in the source but isn't surfaced as a navigation heading here.
+    """
+    headings = {}
+    for page in doc:
+        for row in _group_rows(page):
+            parts = row["parts"]
+            full_text = " ".join(t[2].strip() for t in parts if t[2].strip())
+            m = _HEADING_NUM_RE.match(full_text)
+            if not m or not m.group(2).strip():
+                continue
+            section, rest = m.group(1), m.group(2).strip()
+            if len(rest) > 60:
+                continue
+
+            # Spans making up the title, i.e. everything after the leading
+            # number token (which may itself be one or more spans).
+            title_spans = []
+            consumed_number = False
+            for _, spans, _ in parts:
+                for s in spans:
+                    if not consumed_number:
+                        if re.fullmatch(r"[\d.]+\.?\s*", s["text"]):
+                            continue
+                        consumed_number = True
+                    title_spans.append(s)
+            if not title_spans or not all(_is_bold(s["font"]) for s in title_spans):
+                continue
+
+            size = max(round(s["size"], 1) for s in title_spans)
+            if size >= 20:
+                headings[section] = 1
+            elif size >= 10:
+                headings[section] = 2
+    return headings
+
+
+def apply_heading_levels(lines, headings):
+    """Recursively set heading_level on a Line tree from a {section: level} map."""
+    for line in lines:
+        line.heading_level = headings.get(line.section)
+        apply_heading_levels(line.children, headings)
 
 
 def join_continuation_lines(rows):
@@ -74,8 +171,7 @@ def join_continuation_lines(rows):
     return result
 
 
-def extract_text_from_pdf(pdf_path):
-    doc = fitz.open(pdf_path)
+def extract_text_from_pdf(doc):
     all_rows = []
     for page in doc:
         all_rows.extend(extract_rows_from_page(page))
@@ -96,7 +192,8 @@ def save_metadata(output_dir, source_url):
 
 def parse_and_save_pdf(pdf_path, output_dir, source_url=""):
     print(f"Parsing CR PDF: {pdf_path}")
-    text = extract_text_from_pdf(pdf_path)
+    doc = fitz.open(pdf_path)
+    text = extract_text_from_pdf(doc)
 
     print("\nFirst 20 extracted lines:")
     for ln in text.splitlines()[:20]:
@@ -105,7 +202,15 @@ def parse_and_save_pdf(pdf_path, output_dir, source_url=""):
     print("\nParsing into section objects...")
     lines = parse_lines_to_objects(text)
 
-    print(f"Saving {len(lines)} top-level sections to: {output_dir}")
+    print("\nDetecting navigation headings from PDF formatting...")
+    headings = detect_headings(doc)
+    apply_heading_levels(lines, headings)
+    tier1 = sorted(s for s, lvl in headings.items() if lvl == 1)
+    tier2 = sorted(s for s, lvl in headings.items() if lvl == 2)
+    print(f"  Tier 1 (outermost): {tier1}")
+    print(f"  Tier 2 (major sections): {len(tier2)} found")
+
+    print(f"\nSaving {len(lines)} top-level sections to: {output_dir}")
     save_lines_to_files(lines, output_dir)
 
     # save_lines_to_files skips non-×100 orphaned sections (like 649).
@@ -115,8 +220,11 @@ def parse_and_save_pdf(pdf_path, output_dir, source_url=""):
     abs_out = os.path.join(script_dir, output_dir)
 
     def line_to_dict(line):
-        return {"section": line.section, "text": line.text,
-                "children": [line_to_dict(c) for c in line.children]}
+        d = {"section": line.section, "text": line.text,
+             "children": [line_to_dict(c) for c in line.children]}
+        if line.heading_level is not None:
+            d["heading_level"] = line.heading_level
+        return d
 
     for line in lines:
         if "." in line.section:

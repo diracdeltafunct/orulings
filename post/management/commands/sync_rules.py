@@ -62,7 +62,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.ERROR(f"Directory not found: {rules_dir}"))
             return
 
-        # Load all rules from JSON files into a flat dict {section: text}
+        # Load all rules from JSON files into a flat dict {section: (text, heading_level)}
         json_rules = {}
         self.load_json_rules(rules_dir, json_rules)
 
@@ -83,13 +83,13 @@ class Command(BaseCommand):
         to_insert = json_sections - db_sections
         to_check_update = json_sections & db_sections
 
-        # Find which existing rules need text updates
+        # Find which existing rules need text or heading_level updates
         to_update = []
         for section in to_check_update:
             db_rule = existing_rules[section]
-            json_text = json_rules[section]
-            if db_rule.text != json_text:
-                to_update.append((section, json_text))
+            json_text, json_heading_level = json_rules[section]
+            if db_rule.text != json_text or db_rule.heading_level != json_heading_level:
+                to_update.append((section, json_text, json_heading_level))
 
         # Report what will happen
         self.stdout.write(f"\nChanges to apply:")
@@ -106,10 +106,9 @@ class Command(BaseCommand):
         if to_insert:
             self.stdout.write(self.style.SUCCESS(f"\nRules to insert:"))
             for section in sorted(to_insert, key=self.section_sort_key)[:20]:
+                json_text, _ = json_rules[section]
                 text_preview = (
-                    json_rules[section][:50] + "..."
-                    if len(json_rules[section]) > 50
-                    else json_rules[section]
+                    json_text[:50] + "..." if len(json_text) > 50 else json_text
                 )
                 self.stdout.write(f"    {section}: {text_preview}")
             if len(to_insert) > 20:
@@ -117,7 +116,7 @@ class Command(BaseCommand):
 
         if to_update:
             self.stdout.write(self.style.WARNING(f"\nRules to update:"))
-            for section, new_text in sorted(
+            for section, new_text, new_heading_level in sorted(
                 to_update, key=lambda x: self.section_sort_key(x[0])
             )[:10]:
                 old_text = existing_rules[section].text
@@ -142,10 +141,10 @@ class Command(BaseCommand):
                 ).delete()[0]
                 self.stdout.write(f"\nDeleted {deleted_count} rules")
 
-            # Update existing rules with changed text
-            for section, new_text in to_update:
+            # Update existing rules with changed text/heading_level
+            for section, new_text, new_heading_level in to_update:
                 RuleSection.objects.filter(rule_type=rule_type, section=section).update(
-                    text=new_text
+                    text=new_text, heading_level=new_heading_level
                 )
             if to_update:
                 self.stdout.write(f"Updated {len(to_update)} rules")
@@ -172,10 +171,11 @@ class Command(BaseCommand):
                 self.flatten_rules(data, json_rules)
 
     def flatten_rules(self, data, json_rules):
-        """Recursively flatten rule hierarchy into dict"""
+        """Recursively flatten rule hierarchy into a {section: (text, heading_level)} dict"""
         section = data["section"]
         text = data.get("text", "")
-        json_rules[section] = text
+        heading_level = data.get("heading_level")
+        json_rules[section] = (text, heading_level)
 
         for child in data.get("children", []):
             self.flatten_rules(child, json_rules)
@@ -214,10 +214,12 @@ class Command(BaseCommand):
                         rule_type=rule_type, section=parent_section
                     ).first()
 
+            json_text, json_heading_level = json_rules[section]
             rule_obj = RuleSection.objects.create(
                 rule_type=rule_type,
                 section=section,
-                text=json_rules[section],
+                text=json_text,
+                heading_level=json_heading_level,
                 parent=parent_obj,
                 order=self.get_order(section),
             )

@@ -5,7 +5,8 @@
     {
       "section": "101",
       "text": "Deck Construction",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "102",
@@ -190,7 +191,8 @@
     {
       "section": "104",
       "text": "Setup",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "105",
@@ -684,7 +686,8 @@
     {
       "section": "119",
       "text": "Game Objects",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "120",
@@ -725,7 +728,8 @@
     {
       "section": "125",
       "text": "Cards",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "126",
@@ -1422,7 +1426,8 @@
     {
       "section": "140",
       "text": "Units",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "141",
@@ -1794,7 +1799,8 @@
     {
       "section": "147",
       "text": "Gear",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "148",
@@ -1970,7 +1976,8 @@
     {
       "section": "153",
       "text": "Spells",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "154",
@@ -2071,7 +2078,8 @@
     {
       "section": "160",
       "text": "Runes",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "161",
@@ -2233,7 +2241,8 @@
     {
       "section": "169",
       "text": "Battlefields",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "170",
@@ -2347,7 +2356,8 @@
     {
       "section": "173",
       "text": "Legends",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "174",
@@ -2417,10 +2427,16 @@
       "children": [
         {
           "section": "176.1",
-          "text": "The Champion Legend determines the Domain Identity of cards its owner can include. See rule 101. Deck Construction for more information. 177. Multiple Types",
+          "text": "The Champion Legend determines the Domain Identity of cards its owner can include. See rule 101. Deck Construction for more information.",
           "children": []
         }
       ]
+    },
+    {
+      "section": "177",
+      "text": "Multiple Types",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "178",
@@ -2481,7 +2497,8 @@
     {
       "section": "179",
       "text": "Tokens",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "180",
@@ -2690,7 +2707,8 @@
     {
       "section": "188",
       "text": "Control",
-      "children": []
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "189",
@@ -2930,10 +2948,16 @@
       "children": [
         {
           "section": "192.1",
-          "text": "The method of assignment of control is different, but the status of Control is the same across all Game Objects. 193. Winning",
+          "text": "The method of assignment of control is different, but the status of Control is the same across all Game Objects.",
           "children": []
         }
       ]
+    },
+    {
+      "section": "193",
+      "text": "Winning",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "194",
@@ -3023,8 +3047,14 @@
     },
     {
       "section": "196",
-      "text": "When a player wins the game, the game ends. 197. Locations",
+      "text": "When a player wins the game, the game ends.",
       "children": []
+    },
+    {
+      "section": "197",
+      "text": "Locations",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "198",
@@ -3053,5 +3083,6 @@
         }
       ]
     }
-  ]
+  ],
+  "heading_level": 1
 }

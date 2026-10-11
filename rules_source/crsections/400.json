@@ -179,10 +179,16 @@
         },
         {
           "section": "407.5",
-          "text": "Otherwise, execute the Ability just like a Spell, then clear the Chain Item from the Chain. 408. Game Actions",
+          "text": "Otherwise, execute the Ability just like a Spell, then clear the Chain Item from the Chain.",
           "children": []
         }
       ]
+    },
+    {
+      "section": "408",
+      "text": "Game Actions",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "409",
@@ -2441,12 +2447,18 @@
           "children": [
             {
               "section": "446.4.a",
-              "text": "Players may only Copy Game Objects when directed to by Game Effects. 447. Movement",
+              "text": "Players may only Copy Game Objects when directed to by Game Effects.",
               "children": []
             }
           ]
         }
       ]
+    },
+    {
+      "section": "447",
+      "text": "Movement",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "448",
@@ -2606,10 +2618,16 @@
       "children": [
         {
           "section": "460.1",
-          "text": "Unless otherwise stated by the source of the Recall, Damage and statuses of a permanent will all remain unaffected by a Recall. 461. Combat",
+          "text": "Unless otherwise stated by the source of the Recall, Damage and statuses of a permanent will all remain unaffected by a Recall.",
           "children": []
         }
       ]
+    },
+    {
+      "section": "461",
+      "text": "Combat",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "462",
@@ -2670,10 +2688,16 @@
         },
         {
           "section": "464.3",
-          "text": "All choices that would result in a Combat occurring between more than two players simultaneously are invalid and ineligible to be completed. 465. The Steps of Combat",
+          "text": "All choices that would result in a Combat occurring between more than two players simultaneously are invalid and ineligible to be completed.",
           "children": []
         }
       ]
+    },
+    {
+      "section": "465",
+      "text": "The Steps of Combat",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "466",
@@ -2992,12 +3016,18 @@
             },
             {
               "section": "468.7.c",
-              "text": "All \"this combat\" effects expire simultaneously. 469. Scoring",
+              "text": "All \"this combat\" effects expire simultaneously.",
               "children": []
             }
           ]
         }
       ]
+    },
+    {
+      "section": "469",
+      "text": "Scoring",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "470",
@@ -3109,8 +3139,14 @@
     },
     {
       "section": "474",
-      "text": "When a cleanup occurs and a player has accrued Points greater than or equal to the Victory Score for their Mode of Play, and if they have more points than every opponent, they Win the Game. 475. Layers",
+      "text": "When a cleanup occurs and a player has accrued Points greater than or equal to the Victory Score for their Mode of Play, and if they have more points than every opponent, they Win the Game.",
       "children": []
+    },
+    {
+      "section": "475",
+      "text": "Layers",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "476",
@@ -3389,10 +3425,16 @@
         },
         {
           "section": "482.3",
-          "text": "Effects are applied such that the earliest Timestamp within each Layer and Sublayer applies first, followed by other Effects in that Layer and Sublayer in chronological order. 483. Modes of Play",
+          "text": "Effects are applied such that the earliest Timestamp within each Layer and Sublayer applies first, followed by other Effects in that Layer and Sublayer in chronological order.",
           "children": []
         }
       ]
+    },
+    {
+      "section": "483",
+      "text": "Modes of Play",
+      "children": [],
+      "heading_level": 2
     },
     {
       "section": "484",
