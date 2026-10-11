@@ -88,19 +88,24 @@
       "children": [
         {
           "section": "805.1",
-          "text": "Accelerate is a Unit ability.",
+          "text": "Accelerate is an Optional Additional Cost keyword.",
           "children": [
             {
               "section": "805.1.a",
+              "text": "Accelerate is present on Units.",
+              "children": []
+            },
+            {
+              "section": "805.1.b",
               "text": "Accelerate is functionally short for \"As you play me, you may pay [1][C] as an additional cost. If you do, I enter ready.\"",
               "children": [
                 {
-                  "section": "805.1.a.1",
+                  "section": "805.1.b.1",
                   "text": "If the unit has one or more domains, the Power portion of the Accelerate cost can be paid only with a Power that matches one of the domains of the unit.",
                   "children": []
                 },
                 {
-                  "section": "805.1.a.2",
+                  "section": "805.1.b.2",
                   "text": "If the unit has no domain, the Power portion of the Accelerate cost can be paid with [A] (a Power of any domain).",
                   "children": []
                 }
@@ -119,7 +124,7 @@
             },
             {
               "section": "805.2.b",
-              "text": "Paying the cost generates a delayed Replacement Effect. Even if the unit loses the accelerate keyword during the finalization process, as long as the cost was paid, that unit will still enter ready.",
+              "text": "Paying the cost generates a Delayed Replacement Effect. Even if the unit loses the Accelerate keyword during the finalization process, as long as the cost was paid, that unit will still enter ready.",
               "children": []
             }
           ]
@@ -283,7 +288,7 @@
             },
             {
               "section": "807.1.d",
-              "text": "Being an attacker means the Unit has gained the Attacker designation during Combat. See rule 459. Combat for more information.",
+              "text": "Being an attacker means the Unit has gained the Attacker designation during Combat. See rule 461. Combat for more information.",
               "children": [
                 {
                   "section": "807.1.d.1",
@@ -337,6 +342,11 @@
                 {
                   "section": "808.1.c.1",
                   "text": "[Effect] is the rules text of the Deathknell effect.",
+                  "children": []
+                },
+                {
+                  "section": "808.1.c.2",
+                  "text": "[Effect] may be written in the past tense. In doing so, it refers to the moment the Deathknell trigger was added to the chain, not any previous moment.",
                   "children": []
                 }
               ]
@@ -540,7 +550,7 @@
             },
             {
               "section": "811.1.d",
-              "text": "Some choices made while playing a card from Hidden are restricted to the battlefield where it was hidden. A card cannot be played from Hidden if it is a spell with no valid targets under these restrictions. See rule 355.6. Targeting for more information.",
+              "text": "Some choices made while playing a card from facedown are restricted to the battlefield where it was hidden. A card cannot be played from facedown if it is a spell with no valid targets under these restrictions. See rule 355.6. Targeting for more information.",
               "children": [
                 {
                   "section": "811.1.d.1",
@@ -555,17 +565,27 @@
                 },
                 {
                   "section": "811.1.d.2",
-                  "text": "If a hidden spell or a play effect of a hidden permanent chooses any targets, those targets must be chosen from among options at that battlefield, unless the ability explicitly restricts targeting in a way that makes this impossible. Example: Blastcone Fae is a unit with Hidden and \"When you play me, give a unit -2 [M] this turn, to a minimum of 1 [M].\" Because this is a play effect, its target must be chosen from among units at the same battlefield if Blastcone Fae was played from Hidden. Example: Tideturner is a unit with Hidden and \"When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.\" Because its play effect has a targeting restriction that can never be fulfilled by a unit at its battlefield, its target may be chosen freely from among the available options.",
+                  "text": "If a hidden spell chooses any targets, those targets must be chosen from among options at the battlefield it was played from, unless it explicitly restricts targeting in such a way that makes this impossible. Example: Emperor's Divide is a spell with hidden that reads in part \"Move any number of friendly units at a battlefield to their base.\" When this spell is played from facedown, all units chosen for the spell must be located at the same battlefield it was played from.",
+                  "children": []
+                },
+                {
+                  "section": "811.1.d.3",
+                  "text": "If a play effect of a hidden permanent chooses any targets, those targets must be chosen from among options at the battlefield it was played to, unless the ability explicitly restricts targeting in a way that makes this impossible. Example: Blastcone Fae is a unit with Hidden and \"When you play me, give a unit -2 [M] this turn, to a minimum of 1 [M].\" Because this is a play effect, its target must be chosen from among units at the battlefield it was played to if Blastcone Fae was played from facedown. Example: Tideturner is a unit with Hidden and \"When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.\" Because its play effect has a targeting restriction that can never be fulfilled by a unit at its battlefield, its target may be chosen freely from among the available options. Example: A spell reads in part \"The next unit you play this turn can be played to any battlefield.\" After playing that spell, a player plays Blastcone Fae from facedown to a battlefield other than the one where it was hidden. Blastcone Fae's play effect must choose targets from among units at the battlefield Blastcone Fae was played to, not the one it was played from.",
                   "children": [
                     {
-                      "section": "811.1.d.2.a",
-                      "text": "Each target is treated separately and individually when processing this rule. Example: Smoke and Mirrors is a spell that reads in part \"Choose a unit you control and another unit you control at a different location.\" If Smoke and Mirrors is played from hidden, the first unit chosen can be chosen at the battlefield Smoke and Mirrors was played from, so it must be. The second unit chosen explicitly restricts targeting in a way that makes this impossible, so it can be chosen from any location.",
+                      "section": "811.1.d.3.a",
+                      "text": "A play effect of a permanent played from facedown references information from its source when determining what battlefield it was played from and what targets are legal. Example: A unit reads in part \"When you play me, kill another friendly unit.\" If it is played from the facedown zone, the play effect must choose a friendly unit at the battlefield the unit was played from. If the unit is no longer on the board when the play effect attempts to finalize, it will not be able to choose a legal target. If the unit is no longer on the board when the play effect attempts to resolve, the play effect will not be able to reference the information of where the unit was played from, and it will mistarget.",
                       "children": []
                     }
                   ]
                 },
                 {
-                  "section": "811.1.d.3",
+                  "section": "811.1.d.4",
+                  "text": "Each target is treated separately and individually when processing this rule. Example: Smoke and Mirrors is a spell that reads in part \"Choose a unit you control and another unit you control at a different location.\" If Smoke and Mirrors is played from facedown, the first unit chosen can be chosen at the battlefield Smoke and Mirrors was played from, so it must be. The second unit chosen explicitly restricts targeting in a way that makes this impossible, so it can be chosen from any location.",
+                  "children": []
+                },
+                {
+                  "section": "811.1.d.5",
                   "text": "If a hidden spell or a play effect of a hidden permanent causes you to play a unit, you must choose to play that unit at that battlefield.",
                   "children": []
                 }
@@ -575,7 +595,7 @@
         },
         {
           "section": "811.2",
-          "text": "Abilities and instructions of hidden cards other than the choices listed above function as normal. Example: Stand United is a spell that has Hidden and says \"Buff a friendly unit. Buffs give an additional +1 might to friendly units this turn.\" If it's played from Hidden, the first part of its ability must choose a friendly unit at the same battlefield, but the second part of its ability affects all friendly units with buffs, no matter where they are.",
+          "text": "Abilities and instructions of hidden cards other than the choices listed above function as normal. Example: Stand United is a spell that has Hidden and says \"Buff a friendly unit. Buffs give an additional +1 might to friendly units this turn.\" If it's played from facedown, the first part of its ability must choose a friendly unit at the same battlefield, but the second part of its ability affects all friendly units with buffs, no matter where they are.",
           "children": []
         },
         {
@@ -594,14 +614,14 @@
           "children": [
             {
               "section": "811.5.a",
-              "text": "This is independent of the state of being facedown.",
+              "text": "This is true as long as the card is not facedown. A facedown card is not a card with Hidden.",
               "children": []
             }
           ]
         },
         {
           "section": "811.6",
-          "text": "A card that is Hidden gains Reaction while facedown or played from facedown, and may be played any time a card with Reaction may be played as a result.",
+          "text": "A card that is Hidden gains Reaction the turn after it is hidden while facedown or played from facedown, and may be played any time a card with Reaction may be played as a result.",
           "children": [
             {
               "section": "811.6.a",
@@ -797,7 +817,7 @@
             },
             {
               "section": "814.1.d",
-              "text": "Being a defender means the Unit has gained the Defender designation during Combat. See rule 459. Combat for more information.",
+              "text": "Being a defender means the Unit has gained the Defender designation during Combat. See rule 461. Combat for more information.",
               "children": [
                 {
                   "section": "814.1.d.1",
@@ -926,7 +946,7 @@
             },
             {
               "section": "817.1.b",
-              "text": "It is functionally short for \"When this is played, predict.\"",
+              "text": "It is functionally short for \"When this is played, [Predict].\"",
               "children": []
             },
             {
@@ -1229,7 +1249,18 @@
                 {
                   "section": "821.1.c.2",
                   "text": "The cost of the Equip ability is determined as though that Equip ability was being activated choosing the unit with the Weaponmaster ability, as modulated by any abilities that alter Equip costs.",
-                  "children": []
+                  "children": [
+                    {
+                      "section": "821.1.c.2.a",
+                      "text": "The Equip ability is not actually activated when its cost is determined in this way. An effect that grants an activated ability a cost reduction when it is played will not apply to the Equip cost calculated during the resolution of a Weaponmaster trigger, because the Equip ability is not actually played.",
+                      "children": []
+                    },
+                    {
+                      "section": "821.1.c.2.b",
+                      "text": "Effects that reduce the cost of Equip abilities without referring to those abilities being played, or the Equip ability being referenced in specific, will be included when calculating costs in this way.",
+                      "children": []
+                    }
+                  ]
                 },
                 {
                   "section": "821.1.c.3",
@@ -1541,7 +1572,7 @@
             },
             {
               "section": "827.1.b",
-              "text": "Empower has a cost to activate and Empowers the source of the ability when the cost is paid. See rule 441. Empower (Game Action) for more information.",
+              "text": "Empower has a cost to activate and Empowers the source of the ability when the cost is paid. See rule 442. Empower (Game Action) for more information.",
               "children": [
                 {
                   "section": "827.1.b.1",
@@ -1572,6 +1603,11 @@
                 {
                   "section": "827.1.c.4",
                   "text": "Empower abilities may include text that alters the timing of the Empower ability.",
+                  "children": []
+                },
+                {
+                  "section": "827.1.c.5",
+                  "text": "Game Objects with Empower abilities may have or gain permissions to be Empowered multiple times. Such Game Objects ignore the normal \"Play only if not Empowered.\" restriction on Empower abilities.",
                   "children": []
                 }
               ]
@@ -1655,7 +1691,7 @@
       "children": [
         {
           "section": "829.1",
-          "text": "Flow is a passive ability keyword.",
+          "text": "Flow is a Passive Ability keyword.",
           "children": [
             {
               "section": "829.1.a",
@@ -1668,7 +1704,7 @@
               "children": [
                 {
                   "section": "829.1.b.1",
-                  "text": "Banishing the spell in this way is a delayed replacement effect. If the spell would leave the chain after becoming a finalized chain item, and leaving the chain wasn't instructed by its own execution, banish it instead. See rule 367. Replacement Effects for more information. See rule 389. Delayed Abilities for more information.",
+                  "text": "Banishing the spell in this way is a delayed replacement effect. If the spell would leave the chain after becoming a finalized chain item, and leaving the chain wasn't instructed by its own execution, banish it instead. See rule 367. Replacement Effects for more information. See rule 390. Delayed Abilities for more information.",
                   "children": []
                 },
                 {
@@ -1704,6 +1740,199 @@
         {
           "section": "829.2",
           "text": "Flow, and whether or not a spell has Flow, is a characteristic of the Spell and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "830",
+      "text": "Deploy",
+      "children": [
+        {
+          "section": "830.1",
+          "text": "Deploy is a Passive Ability and a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "830.1.a",
+              "text": "Deploy is present on Gear.",
+              "children": []
+            },
+            {
+              "section": "830.1.b",
+              "text": "Deploy is short for \"This may be played or created to any battlefield,\" \"Play or create this only to a battlefield,\" \"If this is not a unit, it is not recalled in cleanups,\" and \"When an opponent holds here, kill this.\"",
+              "children": [
+                {
+                  "section": "830.1.b.1",
+                  "text": "Deploy grants permission for Gear to be played to any Battlefield, including enemy occupied and open battlefields.",
+                  "children": []
+                },
+                {
+                  "section": "830.1.b.2",
+                  "text": "Gear with Deploy can be Moved by appropriate effects.",
+                  "children": []
+                },
+                {
+                  "section": "830.1.b.3",
+                  "text": "Non-Unit Gear with Deploy are not recalled from Battlefields in step 5 of a Cleanup. See rule 318. Cleanups for more information.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "830.2",
+          "text": "Multiple instances of Deploy are redundant.",
+          "children": []
+        },
+        {
+          "section": "830.3",
+          "text": "Deploy, and whether or not a card has Deploy, is a characteristic of the card and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "831",
+      "text": "Disarm",
+      "children": [
+        {
+          "section": "831.1",
+          "text": "Disarm is a Triggered Ability keyword.",
+          "children": [
+            {
+              "section": "831.1.a",
+              "text": "Disarm is present on Units.",
+              "children": []
+            },
+            {
+              "section": "831.1.b",
+              "text": "Disarm is an Attack Trigger.",
+              "children": []
+            },
+            {
+              "section": "831.1.c",
+              "text": "Disarm is formatted as \"Disarm X.\"",
+              "children": [
+                {
+                  "section": "831.1.c.1",
+                  "text": "The X is referenced in the functional text of the ability.",
+                  "children": []
+                },
+                {
+                  "section": "831.1.c.2",
+                  "text": "The X is referred to as the Disarm Value.",
+                  "children": []
+                },
+                {
+                  "section": "831.1.c.3",
+                  "text": "If X is omitted, it is presumed to be 1.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "831.1.d",
+              "text": "Disarm is functionally short for \"When I attack, give an enemy unit here -X [M] this turn.\"",
+              "children": [
+                {
+                  "section": "831.1.d.1",
+                  "text": "Regardless of how many instances of the Disarm keyword a unit has, it will only trigger once using the total Disarm Value.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "831.2",
+          "text": "If a Unit has Disarm, or has been granted Disarm, and is granted Disarm by an additional source, the Disarm Value of all granted Disarm keywords is summed. Example: Clanging Sentry reads \"Your Mechs have [Disarm].\" If you play a second Clanging Sentry, both of them will have Disarm 2.",
+          "children": []
+        },
+        {
+          "section": "831.3",
+          "text": "Disarm, and whether or not a unit has Disarm, is a characteristic of the Unit and may be checked or referenced by other Game Effects.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "section": "832",
+      "text": "Show Off",
+      "children": [
+        {
+          "section": "832.1",
+          "text": "Show Off is a Passive Ability keyword.",
+          "children": [
+            {
+              "section": "832.1.a",
+              "text": "Show Off is normally present on Cards.",
+              "children": []
+            },
+            {
+              "section": "832.1.b",
+              "text": "Show Off is formatted as \"[Show Off] [Object].\"",
+              "children": [
+                {
+                  "section": "832.1.b.1",
+                  "text": "The \"[Object]\" in this ability could be one object or multiple; object/s of a given type; or it could have further specifications on qualities of the object/s. The object in question could be Game Objects on the board or cards in hand. Examples: A card reads \"[Show Off] a unit.\" A card reads \"[Show Off] a card with Energy cost [7] or more.\" A card reads \"[Show Off] five units with different names.\"",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "832.1.c",
+              "text": "Show Off is functionally short for \"As you play [me/this], you may reveal [Object] from your hand and/or pick [Object] from among friendly game objects on the board.\"",
+              "children": [
+                {
+                  "section": "832.1.c.1",
+                  "text": "Showing Off one or more Cards or Game Objects in this way can be referenced by linked abilities and instructions. Example: A unit reads in part \"[Show Off] five units with different names,\" and \"When you play me, kill all other units. If you showed off, the next unit you play this turn costs [1] less for each killed unit.\"",
+                  "children": []
+                },
+                {
+                  "section": "832.1.c.2",
+                  "text": "The decision of whether or not to Show Off is made by the controller of the chain item with Show Off during the process of finalizing it. See rule 355. Make Relevant Choices for more information.",
+                  "children": []
+                },
+                {
+                  "section": "832.1.c.3",
+                  "text": "If [Object] is a set of Cards or Game Objects, that set can be composed of Game Objects on the board as well as Cards in hand, as long as the composed set satisfies the Show Off condition. Example: A unit reads in part \"[Show Off] five units with different names.\" When showing off as part of playing that unit, units may be revealed from hand or picked from among friendly units on the board, as long as the group of units picked and revealed satisfies the specified quality.",
+                  "children": []
+                },
+                {
+                  "section": "832.1.c.4",
+                  "text": "If some or all of the [Object] set leave the appropriate zones during the finalization process after being shown off, it will not prevent the source of the Show Off ability from becoming a Finalized Chain Item. Example: A spell reads \"[Show Off] a Mech\" and \"As an additional cost to play this, discard 1.\" When finalizing the spell, the same Mech being shown off can be discarded to the mandatory additional cost without preventing the spell from being finalized.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "832.1.d",
+              "text": "Linked abilities and instructions can reference information about the shown off object/s. Example: Primordial Roar is a spell that reads \"[Show Off] a unit,\" and \"If you showed off a unit, deal damage equal to that unit's Might to a unit.\"",
+              "children": [
+                {
+                  "section": "832.1.d.1",
+                  "text": "The information referenced in this way is checked when the card/s in question are shown off during finalization. Any later changes to the shown off objects will not be considered. Example: Primordial Roar is played showing off a friendly unit with 4 [M] and an enemy unit with 3 [M]. In reaction to Primordial Roar, an opponent plays Frigid Touch, giving the friendly unit -2 [M] this turn. Because the information was checked when the friendly unit was shown off, the spell still deals 4 damage to the enemy unit, killing it.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section": "832.2",
+          "text": "Multiple instances of Show Off are treated separately.",
+          "children": [
+            {
+              "section": "832.2.a",
+              "text": "If a linked effect or instruction refers to an instance of Show Off, it refers to the keyword granted by the same source unless specified otherwise or there is no keyword granted by the same source. If the linked effect or instruction specifies information about the shown off card, it is linked to only that instance of the Show Off keyword. If there is no linked keyword, an ability that references showing off is linked to all Show Off keywords on the appropriate card. Example: A card reads in part \"Spells you play have '[Show Off] a Mighty unit.' and 'If you showed off, this costs [A] less.\" If a spell that reads in part \"[Show Off] a spell with Energy cost [7] or more,\" and \"If you showed off, this can't be countered.\" is played by the same controller, showing off a Mighty unit will not be sufficient to satisfy both abilities that reference showing off because they refer to instances of the show off keyword granted by different sources.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "832.3",
+          "text": "Show Off, and whether or not a card has Show Off, is a characteristic of the card and may be checked or referenced by other Game Effects.",
           "children": []
         }
       ]

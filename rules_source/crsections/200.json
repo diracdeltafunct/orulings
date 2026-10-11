@@ -1,12 +1,7 @@
 {
   "section": "200",
-  "text": "Locations can be Destinations and Origins for movement. See rule 445. Movement for more information.",
+  "text": "Locations can be Destinations and Origins for movement. See rule 447. Movement for more information. 201. Costs",
   "children": [
-    {
-      "section": "201",
-      "text": "Costs",
-      "children": []
-    },
     {
       "section": "202",
       "text": "Some Game Effects will instruct players to pay resources, spend counters or XP, or perform game actions as a Cost in order to perform a linked Effect.",
@@ -39,7 +34,7 @@
       "children": [
         {
           "section": "204.1",
-          "text": "Base Costs: These costs are the most fundamental costs that must be paid to finalize a spell or ability.",
+          "text": "Base Costs: These costs are the most fundamental costs that must be paid to finalize a card or ability.",
           "children": [
             {
               "section": "204.1.a",
@@ -48,18 +43,23 @@
             },
             {
               "section": "204.1.b",
-              "text": "On activated abilities, the Base Cost is the resource or instruction written before the \":\".",
+              "text": "On activated abilities, the Base Cost is the resource or instruction written before the \":\". If there are multiple choices for costs to pay for an activated ability before the \":\", the Base Cost is whatever cost the player chooses from among those options. Example: Legion Marauder is a unit that reads in part \"[Empower] -- [1] or [C].\" This is functionally short for \"[1] or [C]: Empower me. Play only if not empowered.\" When finalizing the ability to the chain, the controller of the chain item will choose one of the base costs to pay. That is the base cost of the ability.",
+              "children": []
+            },
+            {
+              "section": "204.1.c",
+              "text": "On Triggered Abilities, the Base Cost if it is present is the Costs within Instructions that appears as the first part of the effect. It must be paid to finalize the triggered ability. See rule 204.3. Costs within Instructions for more information. Example: Overzealous Fan is a unit that reads \"When I defend, you may kill me to move an attacking unit to its base.\" In order to finalize the ability to the chain, its controller must kill Overzealous Fan.",
               "children": []
             }
           ]
         },
         {
           "section": "204.2",
-          "text": "Additional Costs: These Costs are in addition to the base cost of the spell or ability and will include \"as an additional cost.\"",
+          "text": "Additional Costs: These Costs are in addition to the base cost of the card or ability and will include \"as an additional cost.\"",
           "children": [
             {
               "section": "204.2.a",
-              "text": "Additional Costs must be paid to finalize the spell or ability, in addition to the base cost.",
+              "text": "Additional Costs must be paid to finalize the card or ability, in addition to the base cost.",
               "children": []
             }
           ]
@@ -70,11 +70,6 @@
           "children": [
             {
               "section": "204.3.a",
-              "text": "When Costs within Instructions appear as the first part of the effect in triggered abilities, the cost is taken to be the base cost of the triggered ability. It must be paid to finalize the triggered ability. Example: Overzealous Fan is a unit that reads \"When I defend, you may kill me to move an attacking unit to its base.\" In order to finalize the ability to the chain, its controller must kill Overzealous Fan.",
-              "children": []
-            },
-            {
-              "section": "204.3.b",
               "text": "When Costs within Instructions appear in spells, activated abilities, or in later parts of triggered abilities, the cost must be paid to get the effect during resolution of the spell or ability. Example: Bullet Time is a spell that reads \"Pay any amount of [A] to deal that much damage to all enemy units at a battlefield.\" As the spell resolves, its controller pays any amount of [A] as a cost, and deals that much damage to all units at a battlefield as the effect. Example: Ancient Henge is a gear that reads \"[Reaction][>] [E]: Pay any amount of Energy to Add that much [A].\" As the ability resolves, its controller pays any amount of Energy as a cost, and Adds that much [A] as the effect. Example: Insightful Investigator is a unit that reads \"When you play me, choose an opponent. They reveal their hand. You may pay 2 XP to choose a card from their hand. If you do, they discard that card and draw 1.\" As the ability resolves, its controller may pay 2 XP as a cost, and chooses a card from that player's hand as the effect.",
               "children": []
             }
@@ -95,7 +90,7 @@
               "children": [
                 {
                   "section": "204.4.b.1",
-                  "text": "Abilities that Add resources with the Reaction keyword can be activated at any time when costs need to be paid. See rule 429. Add for more information.",
+                  "text": "Abilities that Add resources with the Reaction keyword can be activated at any time when costs need to be paid. See rule 430. Add for more information.",
                   "children": []
                 }
               ]
@@ -116,7 +111,7 @@
     },
     {
       "section": "206",
-      "text": "Effects that need to determine a card's cost for any purpose always use its printed or copied cost, even if that cost is increased, decreased, or ignored as the card is played. Example: Sky Splitter is a spell that costs [8] and says in part \"This spell's Energy cost is reduced by the highest Might among units you control.\" Lux, Illuminated is a unit that says \"When you play a spell that costs 5 or more, give me +3 [M] this turn.\" If a player who controls Lux plays Sky Splitter, Lux's ability will trigger, regardless of how much was actually paid for Sky Splitter. Example: Defy is a spell which reads \"Counter a spell that costs no more than [4] and no more than [A].\" Rocket Barrage is a spell that costs [4][C] and has a Repeat cost of [4][C]. Rocket Barrage is a legal target for Defy even if Rocket Barrage's Repeat cost is paid, because Defy only checks the printed or copied cost of its target. Example: Atakhan is a unit that reads in part \"You may kill a friendly unit as an additional cost to play me. If you do, I cost [1] less for each Energy it costs and [Y] less for each Power it costs.\" If a player plays Atakhan and chooses to kill a Reflection token that is currently a copy of Noxus Hopeful, Atakhan will cost [4] less.",
+      "text": "Effects that need to determine a card or token's cost for any purpose always use its printed--or if a copy effect is applied, copied--cost, even if that cost is increased, decreased, or ignored as the card is played. Example: Sky Splitter is a spell that costs [8] and says in part \"This spell's Energy cost is reduced by the highest Might among units you control.\" Lux, Illuminated is a unit that says \"When you play a spell that costs 5 or more, give me +3 [M] this turn.\" If a player who controls Lux plays Sky Splitter, Lux's ability will trigger, regardless of how much was actually paid for Sky Splitter. Example: Defy is a spell which reads \"Counter a spell that costs no more than [4] and no more than [A].\" Rocket Barrage is a spell that costs [4][C] and has a Repeat cost of [4][C]. Rocket Barrage is a legal target for Defy even if Rocket Barrage's Repeat cost is paid, because Defy only checks the printed or copied cost of its target. Example: Atakhan is a unit that reads in part \"You may kill a friendly unit as an additional cost to play me. If you do, I cost [1] less for each Energy it costs and [Y] less for each Power it costs.\" If a player plays Atakhan and chooses to kill a Reflection token that is currently a copy of Noxus Hopeful, Atakhan will cost [4] less.",
       "children": [
         {
           "section": "206.1",

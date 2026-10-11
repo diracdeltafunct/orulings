@@ -14,13 +14,24 @@
               "section": "401.1.a",
               "text": "The Head Judge may require deck registration at low OPL.",
               "children": []
+            },
+            {
+              "section": "401.1.b",
+              "text": "Even when a low OPL constructed event does not require deck registration, players are expected to use the same deck throughout the event unless given permission by the tournament organizer.",
+              "children": []
             }
           ]
         },
         {
           "section": "401.2",
           "text": "A registered decklist must have a complete, unambiguous record of the player's Champion Legend, battlefields, Main Deck including Chosen Champion, Rune Deck, and sideboard (if applicable to the format).",
-          "children": []
+          "children": [
+            {
+              "section": "401.2.a",
+              "text": "They must also include registered records of any cards selected for special additional deckbuilding rules. (Example: The three Legends selected for Neeko, Blending In must be registered on a player's decklist and can't be changed once they are submitted.)",
+              "children": []
+            }
+          ]
         },
         {
           "section": "401.3",
@@ -56,7 +67,7 @@
       "children": [
         {
           "section": "402.1",
-          "text": "In a constructed event, players must register a Main Deck of exactly 40 cards (including a chosen champion), 1 Legend, 12 runes, and exactly 3 battlefields each with a unique name.",
+          "text": "In a constructed event, players must use a Main Deck of exactly 40 cards (including a chosen champion), 1 Legend, 12 runes, and exactly 3 battlefields each with a unique name.",
           "children": []
         },
         {
@@ -87,7 +98,7 @@
         },
         {
           "section": "403.4",
-          "text": "Players may use sideboard cards to modify their deck in between games of a match. Sideboard cards must be exchanged 1 for 1 with Main Deck cards.",
+          "text": "Players may use sideboard cards to modify their deck in between games of a match. In constructed, sideboard cards must be exchanged 1 for 1 with Main Deck cards.",
           "children": [
             {
               "section": "403.4.a",
@@ -210,77 +221,82 @@
             },
             {
               "section": "406.1.c",
-              "text": "Each player must shuffle their Main Deck and their Rune Deck. See 420 for more information on shuffling.",
+              "text": "If a game ends due to a game loss penalty after players have selected and revealed their battlefields, players must use different battlefields for any following games in the match.",
               "children": []
             },
             {
               "section": "406.1.d",
-              "text": "Each player must present their Main Deck, Rune Deck, and sideboard (if applicable to the format) to their opponents.",
+              "text": "Each player must shuffle their Main Deck and their Rune Deck. See 421 for more information on shuffling.",
               "children": []
             },
             {
               "section": "406.1.e",
+              "text": "Each player must present their Main Deck, Rune Deck, and sideboard (if applicable to the format) to their opponents.",
+              "children": []
+            },
+            {
+              "section": "406.1.f",
               "text": "Each player may shuffle the Main Deck and Rune Deck of each of their opponents.",
               "children": [
                 {
-                  "section": "406.1.e.1",
+                  "section": "406.1.f.1",
                   "text": "In team competitions, each player may shuffle the Main Deck and Rune Deck of one of their team's opponents.",
                   "children": []
                 },
                 {
-                  "section": "406.1.e.2",
+                  "section": "406.1.f.2",
                   "text": "At Professional OPL, this is required.",
                   "children": []
                 },
                 {
-                  "section": "406.1.e.3",
+                  "section": "406.1.f.3",
                   "text": "A player may request a judge shuffle their deck in lieu of an opponent, to be honored at judge discretion.",
                   "children": []
                 }
               ]
             },
             {
-              "section": "406.1.f",
+              "section": "406.1.g",
               "text": "For the first game of a match, start of game procedures may be performed as soon as both players reach their assigned seat, even before the start of the round clock. Gameplay must wait for the round clock to begin.",
               "children": []
             },
             {
-              "section": "406.1.g",
+              "section": "406.1.h",
               "text": "For competitions run using a \"best of 1\" format instead of a \"best of 3\" format, the head judge may opt to use the altered initial setup process listed below to closer mirror the \"best of 3\" experience:",
               "children": [
                 {
-                  "section": "406.1.g.1",
+                  "section": "406.1.h.1",
                   "text": "Each player separates their Champion Legend and places it in the Legend Zone.",
                   "children": []
                 },
                 {
-                  "section": "406.1.g.2",
+                  "section": "406.1.h.2",
                   "text": "Each player randomly selects one of their three Battlefields, and places it into the Battlefield Zone.",
                   "children": []
                 },
                 {
-                  "section": "406.1.g.3",
+                  "section": "406.1.h.3",
                   "text": "Players use the Play First Rule listed below to determine the designated player. See 407 for more information on the Play First Rule.",
                   "children": []
                 },
                 {
-                  "section": "406.1.g.4",
+                  "section": "406.1.h.4",
                   "text": "The designated player chooses if they would like to go first or last.",
                   "children": []
                 },
                 {
-                  "section": "406.1.g.5",
+                  "section": "406.1.h.5",
                   "text": "Players then have the opportunity to sideboard as if they were in between games of a \"best of 3\" match. See 403 for more information on sideboards.",
                   "children": []
                 },
                 {
-                  "section": "406.1.g.6",
+                  "section": "406.1.h.6",
                   "text": "After sideboarding is complete, each player separates their Chosen Champion and places it in the Champion Zone.",
                   "children": []
                 },
                 {
-                  "section": "406.1.g.7",
-                  "text": "Players perform shuffling steps 406.1.c.-406.1.e.3. listed above, then proceed to CR 110. Setup Process.",
+                  "section": "406.1.h.7",
+                  "text": "Players perform shuffling steps 406.1.d.-406.1.f.3. listed above, then proceed to CR 110. Setup Process.",
                   "children": []
                 }
               ]
@@ -479,7 +495,7 @@
         },
         {
           "section": "410.4",
-          "text": "Players can't scout other match results before deciding to concede or draw their match and need to remain in their seats while their match is in progress.",
+          "text": "Players can't scout other match results before deciding to concede or draw their match and need to remain in their seats while their match is in progress. Violating this policy is considered an unsporting minor penalty. (See 704.2. for Unsporting Minor penalties.)",
           "children": []
         },
         {
@@ -505,10 +521,15 @@
         },
         {
           "section": "411.3",
-          "text": "Deck checks for the players in a match should occur after players have randomized and presented their decks, but before opening hands are drawn.",
+          "text": "Random deck checks should occur at the start of a round, after players have randomized and presented their decks, but before opening hands are drawn and should verify all elements of the registered decks.",
           "children": [
             {
               "section": "411.3.a",
+              "text": "A deck check can be performed after the mulligan procedure is complete as long as play has not begun and each player's hand is preserved.",
+              "children": []
+            },
+            {
+              "section": "411.3.b",
               "text": "If a deck check is performed within a match, judges should grant a time extension to that match sufficient to cover the logistical time needed to perform the check.",
               "children": []
             }
@@ -683,12 +704,12 @@
         },
         {
           "section": "416.4",
-          "text": "Players may not refer to notes from outside the current match, including notes from previous matches, during games.",
+          "text": "Players may not refer to notes from outside the current match, including written notes from previous matches, during games.",
           "children": []
         },
         {
           "section": "416.5",
-          "text": "Between games, players may refer to notes they made prior to the match. They do not have to reveal these notes to opponents.",
+          "text": "Between games, players may refer to written notes they made prior to the match. They do not have to reveal these notes to opponents. Players may consult such notes during sideboarding and after battlefields are revealed, but must stop once opening hands are drawn (before mulligans).",
           "children": []
         }
       ]
@@ -781,7 +802,7 @@
           "children": [
             {
               "section": "419.4.a",
-              "text": "Modify or obscure the card name or cost, or make the art unrecognizable.",
+              "text": "Modify or obscure the card name, Might/Might Bonus, or cost, or make the art unrecognizable.",
               "children": []
             },
             {
@@ -906,7 +927,7 @@
             },
             {
               "section": "422.2.b",
-              "text": "Players may use a unique sleeve or additional layer to distinguish their Chosen Champion during game setup, but must change its sleeve to match their Main Deck if it would enter a zone whose information level is private during gameplay. See CR 128. Privacy for information types.",
+              "text": "Players may use a unique sleeve or additional layer to distinguish their Chosen Champion during game setup, but must change its sleeve to match their Main Deck if it would enter a zone whose information level is private or secret during gameplay. See CR 128. Privacy for information types.",
               "children": []
             }
           ]

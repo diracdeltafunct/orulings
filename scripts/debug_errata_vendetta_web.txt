@@ -216,45 +216,15 @@ Announcements
 
 
 
-2026-07-20T16:00:00.000Z
+2026-10-09T20:00:00.000Z
 
 
-Preparing for the Vendetta Pre-Rift
-
-
-
-
-Get ready to play Riftbound’s newest set at your local Pre-Rift.
+A festival of brilliance begins in Radiance!
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Announcements
-
-
-
-2026-07-17T16:00:00.000Z
-
-
-Riftbound: Vendetta, Wild Rift, and You!
-
-
-
-
-Participants in the Pre-Rift and winners of the first Summoner Skirmish get special prizes from Wild Rift!
+Take a look at some of the cards that are lighting up Radiance, dropping October 23.
 
 
 
@@ -276,45 +246,15 @@ Announcements
 
 
 
-2026-07-17T16:00:00.000Z
+2026-10-09T16:00:00.000Z
 
 
-Riftbound at Gen Con 2026
-
-
-
-
-How to experience Riftbound at one of gaming’s largest conventions.
+Radiance Errata Updates
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Announcements
-
-
-
-2026-07-17T00:30:00.000Z
-
-
-Core Rules: Vendetta Patch Notes
-
-
-
-
-Here are the updates to Riftbound’s Core Rules with Vendetta
+Updates to the text of cards introduced with the release of Radiance.
 
 
 
@@ -336,15 +276,37 @@ Announcements
 
 
 
-2026-07-17T00:30:00.000Z
+2026-10-09T16:00:00.000Z
 
 
-July Ban List Updates
+October 2026 Tournament Rules Changelog
 
 
 
 
-We are announcing new bans for Standard as well as the creation of a Constructed 2v2 ban list.
+
+
+
+
+
+
+
+
+
+
+Announcements
+
+
+
+2026-10-09T16:00:00.000Z
+
+
+[Article] Radiance Patch Notes [RFB_ST0526_030_R001]
+
+
+
+
+Read about the latest changes to core rules, along with some fun new interactions.
 
 
 
@@ -366,45 +328,15 @@ Announcements
 
 
 
-2026-07-17T00:30:00.000Z
+2026-09-28T19:00:00.000Z
 
 
-A Note on Vendetta Card Images
-
-
-
-
-We have identified a few updates for Vendetta we want to tell you.
+The boys are back. Find them in Radiance!
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Announcements
-
-
-
-2026-07-17T00:30:00.000Z
-
-
-July 2026 Tournament Rules Update & Changelog
-
-
-
-
-Riftbound’s latest tournament rule updates explained.
+Heartsteel OVN and OVN signature cards drop October 23rd in Riftound’s 5th Set: Radiance
 
 
 
@@ -426,15 +358,15 @@ Announcements
 
 
 
-2026-07-17T00:30:00.000Z
+2026-09-25T22:30:00.000Z
 
 
-Rules Hub
+The Radiance Overview
 
 
 
 
-One page for easy access to the current rules of Riftbound
+Everything you want to know about Radiance.
 
 
 
@@ -456,15 +388,75 @@ Announcements
 
 
 
-2026-07-07T01:00:00.000Z
+2026-09-25T22:30:00.000Z
 
 
-The Vendetta Begins
+Watch the Dev Drop for Radiance!
 
 
 
 
-A first glance at Riftbound’s 4th set!
+Get ready to make show-stopping plays! Riftbound’s fifth set, Radiance, launches worldwide on October 23, 2026. Learn all about the new Legends, mechanics, and cards in this Dev Drop.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Announcements
+
+
+
+2026-09-25T16:00:00.000Z
+
+
+Riftbound Radiance Drawing FAQ
+
+
+
+
+Everything you need to know about the Radiance merch drawings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Announcements
+
+
+
+2026-09-18T16:00:00.000Z
+
+
+Radiance Preview Season
+
+
+
+
+Previews kick off September 25 at the Los Angeles RQ! Find where to see the new cards for Set 5.
 
 
 
