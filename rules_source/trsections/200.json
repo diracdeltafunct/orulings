@@ -176,7 +176,7 @@
             },
             {
               "section": "204.4.c",
-              "text": "Responding to floor judges who bring matters to their attention.",
+              "text": "Responding to floor judges who bring matters to their attention.deck",
               "children": []
             },
             {
@@ -234,11 +234,22 @@
             },
             {
               "section": "204.5.c",
+              "text": "Intervening in games when they see an error occur to apply the appropriate fixes and penalties. This does not apply to Missed Trigger errors. See 702.2. For more information on Missed Trigger errors.",
+              "children": [
+                {
+                  "section": "204.5.c.1",
+                  "text": "Judges should intervene AFTER an error occurs and should not attempt to prevent a player from erroring. This does not apply to proactively intervening in cases of Unsporting Conduct.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "204.5.d",
               "text": "Assist with translation if able.",
               "children": []
             },
             {
-              "section": "204.5.d",
+              "section": "204.5.e",
               "text": "Assist players in technically precise play (at low OPL). (This should generally not include strategic advice.)",
               "children": []
             }

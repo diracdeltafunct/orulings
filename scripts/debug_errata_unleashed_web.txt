@@ -200,15 +200,45 @@ Rules and Releases
 
 
 
-2026-04-29T16:00:00.000Z
+2026-08-14T01:00:00.000Z
 
 
-Unleashed Rules FAQ and Clarifications
+Vendetta Rules FAQ and Clarifications
 
 
 
 
-Sharing clarifications and answering some frequent questions regarding Unleashed’s core rules updates.
+Answers for some frequent questions regarding Vendetta’s core rules update.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rules and Releases
+
+
+
+2026-04-03T01:00:00.000Z
+
+
+Unleashed Errata Updates
+
+
+
+
+Updates on the rules wording for cards from Spiritforged and Unleashed.
 
 
 
@@ -419,36 +449,6 @@ Riftbound Core Rules: Patch Notes
 
 
 The first major Riftbound rules patch is here!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rules and Releases
-
-
-
-2025-10-16T19:00:00.000Z
-
-
-Riftbound Tournament Rules
-
-
-
-
-Rules, responsibilities and procedures to be followed in all Riftbound competitions.
 
 
 

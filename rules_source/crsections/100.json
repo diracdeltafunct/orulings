@@ -18,39 +18,49 @@
       "children": [
         {
           "section": "103.1",
+          "text": "Cards in a player's deck or rules of a Game Mode may indicate additional choices to be made while building the deck. Example: A unit reads in part \"If [Name] is in your deck, choose 3 different legends in addition to your starting legend.\" This decision is made while building the deck. Example: The rules of a game mode read in part \"Choose an additional Chosen Champion with a different Champion Tag and Domain than your Champion Legend. Place it in the Champion Zone at the start of the game alongside your other Chosen Champion. Your deck's Domain Identity includes that additional Chosen Champion's Domain, if applicable.\" The Chosen Champion chosen this way is decided while building the deck.",
+          "children": []
+        },
+        {
+          "section": "103.2",
           "text": "1 Champion Legend",
           "children": [
             {
-              "section": "103.1.a",
+              "section": "103.2.a",
               "text": "This is placed in the Legend Zone at the start of the game.",
               "children": []
             },
             {
-              "section": "103.1.b",
+              "section": "103.2.b",
               "text": "This will dictate the Domain Identity of the deck.",
               "children": [
                 {
-                  "section": "103.1.b.1",
+                  "section": "103.2.b.1",
                   "text": "Cards included in your deck must abide by your Domain Identity.",
                   "children": []
                 },
                 {
-                  "section": "103.1.b.2",
+                  "section": "103.2.b.2",
                   "text": "Your deck's Domain Identity is dictated by the domains of your Champion Legend. In the default card frame, these domains appear as symbols in the legend's upper left corner.",
                   "children": []
                 },
                 {
-                  "section": "103.1.b.3",
+                  "section": "103.2.b.3",
                   "text": "If a card has a single Domain, then that card is permitted in the Domain Identity that corresponds to the same Domain.",
                   "children": []
                 },
                 {
-                  "section": "103.1.b.4",
+                  "section": "103.2.b.4",
                   "text": "If a card has more than one Domain, then that card is permitted only in a Domain Identity that contains all of the indicated Domains on that card.",
                   "children": []
                 },
                 {
-                  "section": "103.1.b.5",
+                  "section": "103.2.b.5",
+                  "text": "If a card has no Domain, then that card is permitted in decks of any Domain Identity.",
+                  "children": []
+                },
+                {
+                  "section": "103.2.b.6",
                   "text": "Some Game Effects may allow a player to add cards to their deck irrespective of those cards' Domains. Those cards are considered part of their deck's Domain Identity, regardless of their Domain.",
                   "children": []
                 }
@@ -59,117 +69,117 @@
           ]
         },
         {
-          "section": "103.2",
+          "section": "103.3",
           "text": "A Main Deck of at least 40 cards: A Chosen Champion Unit, as well as Units, Gear, and Spells",
           "children": [
             {
-              "section": "103.2.a",
+              "section": "103.3.a",
               "text": "Chosen Champion",
               "children": [
                 {
-                  "section": "103.2.a.1",
+                  "section": "103.3.a.1",
                   "text": "This will be placed in the Champion Zone at the start of the game.",
                   "children": []
                 },
                 {
-                  "section": "103.2.a.2",
+                  "section": "103.3.a.2",
                   "text": "Must be a champion unit with a champion tag that matches the tag on your Champion Legend. Example: Loose Cannon has the tag Jinx. Therefore, a player could choose Jinx, Rebel or Jinx, Demolitionist as their Chosen Champion, because they also have the tag Jinx. Example: Tibbers has the tag Annie, but it is a signature unit, not a champion unit. It cannot be your Chosen Champion, even if your Champion Legend has the tag Annie.",
                   "children": []
                 },
                 {
-                  "section": "103.2.a.3",
+                  "section": "103.3.a.3",
                   "text": "A player's Chosen Champion is both the specific card chosen for this slot during Deck Building and also any Champion Unit with the same name as the specific card selected for this specific slot during the course of play. Example: A player chose Jinx, Rebel as their Chosen Champion. One copy of Jinx, Rebel starts the game in their Chosen Champion zone. Any additional copies of Jinx, Rebel in their Main Deck, their hand, their trash, or on the board also count as their Chosen Champion for any game rules and effects that care about Chosen Champion status during the game.",
                   "children": []
                 }
               ]
             },
             {
-              "section": "103.2.b",
+              "section": "103.3.b",
               "text": "Your Main Deck can include up to 3 copies of the same named card.",
               "children": [
                 {
-                  "section": "103.2.b.1",
+                  "section": "103.3.b.1",
                   "text": "This includes your Chosen Champion. Example: A deck could include Volibear, Furious as its Chosen Champion and still include 2 more copies of Volibear, Furious in their Main Deck.",
                   "children": []
                 },
                 {
-                  "section": "103.2.b.2",
+                  "section": "103.3.b.2",
                   "text": "Cards have different names even if they represent the same character. Example: A deck could include 3 copies of Yasuo, Remorseful and 3 copies of Yasuo, Windrider, because they have different names.",
                   "children": []
                 }
               ]
             },
             {
-              "section": "103.2.c",
+              "section": "103.3.c",
               "text": "Subject to Domain Identity.",
               "children": []
             },
             {
-              "section": "103.2.d",
+              "section": "103.3.d",
               "text": "Your deck may only contain 3 total Signature cards that have the same Champion tag as your Champion Legend.",
               "children": [
                 {
-                  "section": "103.2.d.1",
+                  "section": "103.3.d.1",
                   "text": "Regardless of name, a deck may only contain a sum total of 3 Signature cards.",
                   "children": []
                 },
                 {
-                  "section": "103.2.d.2",
+                  "section": "103.3.d.2",
                   "text": "All of the Signature cards must have the Champion tag that corresponds to the Champion Legend of the deck.",
                   "children": []
                 },
                 {
-                  "section": "103.2.d.3",
+                  "section": "103.3.d.3",
                   "text": "Signature cards are not Champion units and cannot be placed in the Champion Zone.",
                   "children": []
                 }
               ]
             },
             {
-              "section": "103.2.e",
+              "section": "103.3.e",
               "text": "Subject to card legality of the Format being played.",
               "children": []
             }
           ]
         },
         {
-          "section": "103.3",
+          "section": "103.4",
           "text": "Rune Deck",
           "children": [
             {
-              "section": "103.3.a",
+              "section": "103.4.a",
               "text": "12 Rune Cards",
               "children": [
                 {
-                  "section": "103.3.a.1",
+                  "section": "103.4.a.1",
                   "text": "Cards in the Rune Deck must be of the Domain Identity of your Champion Legend.",
                   "children": []
                 }
               ]
             },
             {
-              "section": "103.3.b",
+              "section": "103.4.b",
               "text": "Must be shuffled and kept separate from the Main Deck.",
               "children": []
             }
           ]
         },
         {
-          "section": "103.4",
+          "section": "103.5",
           "text": "Battlefields",
           "children": [
             {
-              "section": "103.4.a",
+              "section": "103.5.a",
               "text": "The number will be dictated by your Mode of Play.",
               "children": []
             },
             {
-              "section": "103.4.b",
+              "section": "103.5.b",
               "text": "Subject to Domain Identity if applicable.",
               "children": []
             },
             {
-              "section": "103.4.c",
+              "section": "103.5.c",
               "text": "Cannot include more than one of a Battlefield of the same name when there are more than one required for the deck.",
               "children": []
             }
@@ -281,7 +291,7 @@
             },
             {
               "section": "107.3.d",
-              "text": "If a player loses Control of a Battlefield, any cards in the Facedown Zone associated with that Battlefield are removed during the next Cleanup. See rule 318. Cleanups for more information. See rule 421. Hide for more information.",
+              "text": "If a player loses Control of a Battlefield, any cards in the Facedown Zone associated with that Battlefield are removed during the next Cleanup. See rule 318. Cleanups for more information. See rule 422. Hide for more information.",
               "children": []
             },
             {
@@ -439,6 +449,11 @@
             },
             {
               "section": "108.4.d",
+              "text": "The number of cards in a player's Main Deck is Public Information.",
+              "children": []
+            },
+            {
+              "section": "108.4.e",
               "text": "The order of cards in the Main Deck is Secret Information during the course of play. See rule 128. Privacy for more information.",
               "children": []
             }
@@ -512,7 +527,7 @@
             },
             {
               "section": "108.7.b",
-              "text": "This is the location cards go when Drawn.",
+              "text": "This is the zone that cards go to when Drawn.",
               "children": []
             },
             {
@@ -541,7 +556,7 @@
     },
     {
       "section": "109",
-      "text": "All Game Objects in the collective Play Areas are Public Information.",
+      "text": "All Game Objects in the collective Play Areas are Public Information. See rule 119. Game Objects for more information.",
       "children": [
         {
           "section": "109.1",
@@ -576,7 +591,7 @@
       "children": [
         {
           "section": "113.1",
-          "text": "Your Mode of Play will dictate how these are used and placed into the Battlefield Zone. See rule 481. Modes of Play for more information.",
+          "text": "Your Mode of Play will dictate how these are used and placed into the Battlefield Zone. See rule 483. Modes of Play for more information.",
           "children": []
         }
       ]
@@ -630,7 +645,7 @@
         },
         {
           "section": "115.2",
-          "text": "See the selected Mode of Play for any adjustments to each player's first turn. See rule 481. Modes of Play for more information.",
+          "text": "See the selected Mode of Play for any adjustments to each player's first turn. See rule 483. Modes of Play for more information.",
           "children": []
         }
       ]
@@ -656,7 +671,7 @@
         },
         {
           "section": "117.3",
-          "text": "Finally, that player Recycles the cards that were set aside. See rule 416. Recycle for more information.",
+          "text": "Finally, that player Recycles the cards that were set aside. See rule 417. Recycle for more information.",
           "children": []
         }
       ]
@@ -702,7 +717,7 @@
         },
         {
           "section": "124.2",
-          "text": "A Game Object can have any of the following statuses (non-exhaustive): Attached, Attacking, Buffed, Banished, Controlled, Defending, Empowered, Equipped, Exhausted, Facedown, Readied, Replaced, Revealed, Stunned, and any applied Layer alternations.",
+          "text": "A Game Object can have any of the following statuses (non-exhaustive): Attached, Attacking, Buffed, Banished, Controlled, Defending, Empowered, Equipped, Exhausted, Facedown, Readied, Replaced, Revealed, Stunned, and any applied Layer effects.",
           "children": []
         }
       ]
@@ -919,7 +934,13 @@
         {
           "section": "133.3",
           "text": "Spells and other effects can refer to categories, sub-categories, supertypes, card types, tags, and other characteristics inclusively or exclusively. Example: A \"non-unit card\" is any card that is not a unit. Example: A \"unit\" is any game object that is a unit, regardless of any other categories it belongs to.",
-          "children": []
+          "children": [
+            {
+              "section": "133.3.a",
+              "text": "When characteristics are referred to in this way, it refers to any Game Object with the appropriate characteristic on the board, unless the zone is specified implicitly or explicitly by the effect doing the referring or the nature of the characteristic. Example: A \"Yeti\" refers to a game object with the Yeti tag on the board. Example: A \"spell\" refers to a spell on the chain, because spells cannot exist as game objects on the board. Example: A \"spell in your trash\" refers to a spell card in your trash because the effect specifies the zone in question.",
+              "children": []
+            }
+          ]
         },
         {
           "section": "133.4",
@@ -1141,12 +1162,22 @@
                       "section": "135.2.b.5.a",
                       "text": "The complement of a game action is made up of the players or Game Objects that perform that game action, that that game action is performed on, the condition under which it is performed, and the duration for its effect to last. Some game actions omit a complement entirely. Example: Void Seeker is made up of two instructions. The first is \"deal 4 to a unit at a battlefield.\" Here \"deal 4\" is the game action, while \"a unit at a battlefield,\" is its complement. The second instruction, \"draw 1,\" has no complement. Example: Teemo, Strategist's defend trigger reads \"When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with Hidden revealed this way, then recycle the revealed cards.\" There are four instructions here: \"choose an enemy unit here,\" \"reveal the top 5 cards of your Main Deck,\" \"deal 1 to that unit for each card with Hidden revealed this way,\" and \"recycle the revealed cards.\"",
                       "children": []
+                    },
+                    {
+                      "section": "135.2.b.5.b",
+                      "text": "If a conditional clause appears in instructions prior to one or more clauses with multiple instructions, that condition applies to all instructions in subsequent clauses in the same sentence. Example: A spell reads in part \"If you've gained a point this turn, draw 1, then discard 1.\" In order for either of the instructions that follow the \"If you've gained a point this turn,\" conditional clause to execute, the condition must be true. Example: Rogue Assassin is a legend that reads in part \"[Action][>] [E]: If it's your turn, move a friendly unit in a showdown to base and if I'm [Empowered], ready it.\" The first conditional clause in the activated ability applies to all subsequent instructions in the same sentence. The second conditional clause, \"if I'm [Empowered],\" only applies to the instruction that immediately follows it.",
+                      "children": []
                     }
                   ]
                 },
                 {
                   "section": "135.2.b.6",
                   "text": "Instructions do not include trigger conditions or the events or actions that a replacement effect defines as being eligible to be replaced. Example: An ability reads \"When you play me, draw 1.\" The trigger condition for this ability is not an instruction. \"Draw 1,\" is the only instruction included in the ability. Example: An ability reads \"If a unit would die, banish it instead.\" The text \"If a unit would die,\" is not an instruction of the ability. Example: An ability reads \"As I'm revealed from your Main Deck, Add [2].\" The text \"As I'm revealed from your Main Deck,\" is not an instruction of the ability.",
+                  "children": []
+                },
+                {
+                  "section": "135.2.b.7",
+                  "text": "Instructions of a spell or ability may reference actions taken during Finalization. They will do so by checking whether \"you\" performed those game actions. These instructions check whether the game action was performed, not by whom. If another player gains control of the spell or ability after the game action was performed during finalization, it will still be considered true for the purposes of these instructions. Example: Rampage is a spell that reads \"As you play this, you may pay [C] as an additional cost.\" and \"Choose a friendly unit and an enemy unit. If you paid the additional cost, give the friendly unit +2 [Might] this turn. They deal damage equal to their Mights to each other.\" If another player gains control of Rampage, although they are not the one who paid the cost, the \"if you paid the additional cost,\" condition will still be fulfilled. Example: Back Off is a spell that reads in part \"If you played this from your hand, draw 1.\" On resolution, Back Off checks if it was played from hand. If another player gained control of Back Off, as long as the card was played from hand, the condition will be true and the controller of the spell will draw 1.",
                   "children": []
                 }
               ]
@@ -1422,7 +1453,7 @@
                 },
                 {
                   "section": "141.1.a.4",
-                  "text": "Units can be Killed. See rule 428. Kill for more information.",
+                  "text": "Units can be Killed. See rule 429. Kill for more information.",
                   "children": []
                 }
               ]
@@ -1500,7 +1531,7 @@
         },
         {
           "section": "142.4",
-          "text": "Damage tracks how close a Unit is to being Killed. See rule 428. Kill for more information.",
+          "text": "Damage tracks how close a Unit is to being Killed. See rule 429. Kill for more information.",
           "children": [
             {
               "section": "142.4.a",
@@ -1521,7 +1552,7 @@
         },
         {
           "section": "142.5",
-          "text": "Damage can be Healed. See rule 418. Heal for more information.",
+          "text": "Damage can be Healed. See rule 419. Heal for more information.",
           "children": []
         }
       ]
@@ -1552,15 +1583,26 @@
           "children": [
             {
               "section": "143.2.a",
+              "text": "A Unit's Might can be referenced by cards and effects in one of three forms: A Unit has a Printed Might, that is the value in the top right corner of the unit card/token; a Base Might, that is a trait that is alterable by effects in the Trait-Altering layer; and an Effective Might, that is the value calculated in the arithmetic layer including all Might altering Game Effects. See rule 475. Layers for more information.",
+              "children": [
+                {
+                  "section": "143.2.a.1",
+                  "text": "Card text may refer to the latter two of these three forms. When cards or these rules refer to a Unit's Effective Might, they will do so by simply referring to that unit's \"Might.\" Example: A card reads in part \"Choose a unit. Its base Might becomes 5 this turn.\" This applies an effect in the trait-altering layer. Example: A card reads in part \"Choose a unit. Increase its Might to 5 this turn.\" This applies an effect in the arithmetic layer.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "section": "143.2.b",
               "text": "If a Unit ever has nonzero damage marked on it equalling or exceeding its Might, it is Killed.",
               "children": []
             },
             {
-              "section": "143.2.b",
-              "text": "If a unit's Might is ever less than 0, it is treated as 0 when referenced by spells and abilities, and when summing Might to be assigned as damage in the Combat Damage Step. See rule 465. The Combat Damage Step for more information.",
+              "section": "143.2.c",
+              "text": "If a unit's Might is ever less than 0, it is treated as 0 when referenced by spells and abilities, and when summing Might to be assigned as damage in the Combat Damage Step. See rule 467. The Combat Damage Step for more information.",
               "children": [
                 {
-                  "section": "143.2.b.1",
+                  "section": "143.2.c.1",
                   "text": "Although the unit's Might is treated as 0, it is not 0. Effects that calculate Might increases and decreases use the actual value of the unit's Might.",
                   "children": []
                 }
@@ -1588,7 +1630,7 @@
                 },
                 {
                   "section": "143.3.b.2",
-                  "text": "During a Combat Cleanup. See rule 466.1. for more information about Combat Cleanups.",
+                  "text": "During a Combat Cleanup. See rule 468.1. for more information about Combat Cleanups.",
                   "children": []
                 }
               ]
@@ -1602,6 +1644,22 @@
             {
               "section": "143.4.a",
               "text": "This can be altered by Accelerate or similar game effects. See rule 805. Accelerate for more information.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "143.5",
+          "text": "Units cannot be Attached to other permanents. See rule 435. Attach for more information on the attach game action. See rule 716. Attachment for more information on attachment.",
+          "children": [
+            {
+              "section": "143.5.a",
+              "text": "If a Unit would be Attached to a permanent, nothing happens.",
+              "children": []
+            },
+            {
+              "section": "143.5.b",
+              "text": "If a non-Unit Game Object that is Attached becomes a Unit through any means, it detaches as it becomes a Unit.",
               "children": []
             }
           ]
@@ -1669,7 +1727,7 @@
               "children": [
                 {
                   "section": "144.4.a.1",
-                  "text": "Units cannot Move to a Battlefield that already has units from 2 other players present, or where a Combat is ongoing that has 2 other players as participants. See rule 447.2. For more information on valid destinations for movement.",
+                  "text": "Units cannot Move to a Battlefield that already has units from 2 other players present, or where a Combat is ongoing that has 2 other players as participants. See rule 449.2. For more information on valid destinations for movement.",
                   "children": []
                 }
               ]
@@ -1767,7 +1825,7 @@
                 },
                 {
                   "section": "148.1.a.4",
-                  "text": "Gear can be Killed. See rule 428. Kill for more information.",
+                  "text": "Gear can be Killed. See rule 429. Kill for more information.",
                   "children": []
                 }
               ]
@@ -1829,7 +1887,7 @@
         },
         {
           "section": "149.3",
-          "text": "If an unattached non-Unit Gear is at a Battlefield for any reason during a cleanup, then it is recalled to its controller's Base as a corrective action. See rule 454. Recalls for more information. See rule 318. Cleanups for more information.",
+          "text": "If an unattached non-Unit Gear is at a Battlefield or in another player's base for any reason during a cleanup, then it is recalled to its controller's Base as a corrective action. See rule 456. Recalls for more information. See rule 318. Cleanups for more information.",
           "children": []
         }
       ]
@@ -1945,7 +2003,7 @@
         },
         {
           "section": "158.2",
-          "text": "If a later part of a spell applies a Replacement Effect that alters earlier parts of the spell, apply those replacement effects as appropriate. Example: A spell says \"Choose a unit. Kill it the next time it takes damage this turn.\" and \"[Legion] -- Kill it now instead. (Get the effect if you've played another card this turn.)\" If the Legion condition is satisfied, the unit is killed immediately and the instruction to kill it the next time it takes damage is ignored, even if the unit remains on the board somehow. See rule 367. Replacement Effects for more information.",
+          "text": "If a later part of a spell applies a Replacement Effect that alters earlier parts of the spell, apply those replacement effects as appropriate. Example: A spell says \"Choose a unit. Kill it the next time it takes damage this turn.\" and \"[Legion] -- Kill it now instead.\" If the Legion condition is satisfied, the unit is killed immediately and the instruction to kill it the next time it takes damage is negated, even if the unit remains on the board somehow. See rule 367. Replacement Effects for more information.",
           "children": []
         },
         {
@@ -2041,7 +2099,7 @@
             },
             {
               "section": "161.2.b",
-              "text": "When a Rune is Recycled it is returned to the Rune Deck, not the Main Deck. See rule 416. Recycle for more information.",
+              "text": "When a Rune is Recycled it is returned to the Rune Deck, not the Main Deck. See rule 417. Recycle for more information.",
               "children": []
             }
           ]
@@ -2112,12 +2170,12 @@
           "children": [
             {
               "section": "164.2.a",
-              "text": "[E]: [Reaction] -- Add [1].",
+              "text": "[Reaction][>] [E]: Add [1].",
               "children": []
             },
             {
               "section": "164.2.b",
-              "text": "Recycle this: [Reaction] -- Add [C].",
+              "text": "[Reaction][>] Recycle this: Add [C].",
               "children": [
                 {
                   "section": "164.2.b.1",
@@ -2169,7 +2227,7 @@
     },
     {
       "section": "168",
-      "text": "All Abilities that include the action \"Add\" are abilities that are adding Energy or Power to the Rune Pool. See rule 429. Add for more information.",
+      "text": "All Abilities that include the action \"Add\" are abilities that are adding Energy or Power to the Rune Pool. See rule 430. Add for more information.",
       "children": []
     },
     {
@@ -2311,7 +2369,7 @@
             },
             {
               "section": "174.2.b",
-              "text": "Legends are established at the start of a game, and remain in place for the duration of regular play.",
+              "text": "Legends are established at the start of a game, and remain in place for the duration of regular play. Legends may be Created during the course of play. They will be Created ready unless the effect specifies otherwise.",
               "children": []
             }
           ]
@@ -2359,15 +2417,10 @@
       "children": [
         {
           "section": "176.1",
-          "text": "The Champion Legend determines the Domain Identity of cards its owner can include. See rule 101. Deck Construction for more information.",
+          "text": "The Champion Legend determines the Domain Identity of cards its owner can include. See rule 101. Deck Construction for more information. 177. Multiple Types",
           "children": []
         }
       ]
-    },
-    {
-      "section": "177",
-      "text": "Multiple Types",
-      "children": []
     },
     {
       "section": "178",
@@ -2387,7 +2440,7 @@
                   "children": [
                     {
                       "section": "178.1.a.1.a",
-                      "text": "It will not be recalled to base in step 5 of a cleanup.",
+                      "text": "It will not be recalled to base from a Battlefield in step 5 of a cleanup.",
                       "children": []
                     }
                   ]
@@ -2626,6 +2679,11 @@
           "section": "187.11",
           "text": "A 0 [M] Shadow Clone token is a domainless unit token with 0 Might and \"When I attack, you may banish a unit from your trash. If you do, give me [Assault 4] this turn.\" See rule 807. Assault for more information.",
           "children": []
+        },
+        {
+          "section": "187.12",
+          "text": "A Bomb gear token is a domainless gear token with \"[Deploy]\" and \"[Deathknell][>] Deal 2 to an enemy unit here and kill all other Bombs you control here.\" See rule 830. Deploy for more information.",
+          "children": []
         }
       ]
     },
@@ -2670,11 +2728,16 @@
           "children": [
             {
               "section": "190.3.a",
-              "text": "Contested is a temporary status applied to the battlefield when a Unit controlled by a Player who does not currently Control that Battlefield Moves or otherwise becomes present there.",
+              "text": "Contested is a temporary status applied to a Battlefield when a Unit controlled by a Player who does not currently Control that Battlefield Moves or otherwise becomes present there.",
               "children": [
                 {
                   "section": "190.3.a.1",
-                  "text": "Units moving to or being played to a battlefield apply Contested status if that battlefield is not already Contested and that Unit's controller does not already control that battlefield.",
+                  "text": "Units moving to or being played to a battlefield apply Contested status if that Battlefield is not already Contested and that Unit's controller does not already control that battlefield.",
+                  "children": []
+                },
+                {
+                  "section": "190.3.a.2",
+                  "text": "A Unit changing controller while located at a Battlefield will also apply Contested status to that Battlefield if it isn't Contested and if the new controller doesn't control that Battlefield.",
                   "children": []
                 }
               ]
@@ -2762,88 +2825,98 @@
       "children": [
         {
           "section": "191.1",
-          "text": "When a player Plays, Hides, or Creates a Card or other Game Object, they are established as that Game Object's Controller.",
+          "text": "Players control their own Champion Legend.",
           "children": []
         },
         {
           "section": "191.2",
+          "text": "When a player Plays, Hides, or Creates a Card or other Game Object, they are established as that Game Object's Controller.",
+          "children": []
+        },
+        {
+          "section": "191.3",
           "text": "For Spells, they are the Spell's Controller.",
           "children": [
             {
-              "section": "191.2.a",
+              "section": "191.3.a",
               "text": "That player chooses targets.",
               "children": []
             },
             {
-              "section": "191.2.b",
+              "section": "191.3.b",
               "text": "That player chooses modes.",
               "children": []
             },
             {
-              "section": "191.2.c",
+              "section": "191.3.c",
               "text": "That player pays costs.",
               "children": []
             }
           ]
         },
         {
-          "section": "191.3",
+          "section": "191.4",
           "text": "For Permanents and Runes, when they Enter the Board, that player is assigned as that Game Object's Controller.",
           "children": [
             {
-              "section": "191.3.a",
+              "section": "191.4.a",
               "text": "That player may make decisions about the Game Object's Inherent Abilities.",
               "children": []
             },
             {
-              "section": "191.3.b",
+              "section": "191.4.b",
               "text": "That player may make decisions about the Game Object's Unique Abilities.",
               "children": []
             },
             {
-              "section": "191.3.c",
+              "section": "191.4.c",
               "text": "That player may make decisions about any game effects or decisions necessary while the card is being played.",
               "children": []
             },
             {
-              "section": "191.3.d",
+              "section": "191.4.d",
               "text": "That player may make decisions about any game effects created from \"When you play me\" effects of Permanents.",
               "children": []
             }
           ]
         },
         {
-          "section": "191.4",
+          "section": "191.5",
           "text": "For Abilities, they are the Ability's Controller.",
           "children": [
             {
-              "section": "191.4.a",
+              "section": "191.5.a",
               "text": "By default, the Controller of an Ability's Source is the Controller of that Ability.",
               "children": [
                 {
-                  "section": "191.4.a.1",
+                  "section": "191.5.a.1",
                   "text": "If an Ability's Source is located in a non-Board Zone, the Ability's Controller is the Owner of the Source.",
+                  "children": []
+                },
+                {
+                  "section": "191.5.a.2",
+                  "text": "If an Ability allows players other than the Controller or Owner of its Source to play it, the player that plays the Ability Controls the Ability.",
                   "children": []
                 }
               ]
             },
             {
-              "section": "191.4.b",
+              "section": "191.5.b",
               "text": "Changes to Control of an Ability's Source do not change Control of that Ability.",
               "children": []
             },
             {
-              "section": "191.4.c",
+              "section": "191.5.c",
               "text": "That player chooses targets.",
               "children": []
             },
             {
-              "section": "191.4.d",
+              "section": "191.5.d",
               "text": "That player chooses modes.",
               "children": []
             },
             {
-              "section": "191.4.e",
+              "section": "191.5.e",
               "text": "That player pays costs.",
               "children": []
             }
@@ -2857,15 +2930,10 @@
       "children": [
         {
           "section": "192.1",
-          "text": "The method of assignment of control is different, but the status of Control is the same across all Game Objects.",
+          "text": "The method of assignment of control is different, but the status of Control is the same across all Game Objects. 193. Winning",
           "children": []
         }
       ]
-    },
-    {
-      "section": "193",
-      "text": "Winning",
-      "children": []
     },
     {
       "section": "194",
@@ -2877,12 +2945,12 @@
           "children": [
             {
               "section": "194.1.a",
-              "text": "Holding a Battlefield. See rule 467. Scoring for more information.",
+              "text": "Holding a Battlefield. See rule 469. Scoring for more information.",
               "children": []
             },
             {
               "section": "194.1.b",
-              "text": "Conquering a Battlefield. See rule 467. Scoring for more information.",
+              "text": "Conquering a Battlefield. See rule 469. Scoring for more information.",
               "children": []
             },
             {
@@ -2892,7 +2960,7 @@
             },
             {
               "section": "194.1.d",
-              "text": "When an opponent Burns Out and picks that player to gain 1 point. See rule 431. Burn Out for more information.",
+              "text": "When an opponent Burns Out and picks that player to gain 1 point. See rule 432. Burn Out for more information.",
               "children": []
             }
           ]
@@ -2919,7 +2987,7 @@
           "children": [
             {
               "section": "194.3.a",
-              "text": "Some game modes or card effects may alter the Victory Score. See rule 481. Modes of Play for more information.",
+              "text": "Some game modes or card effects may alter the Victory Score. See rule 483. Modes of Play for more information.",
               "children": []
             }
           ]
@@ -2955,12 +3023,7 @@
     },
     {
       "section": "196",
-      "text": "When a player wins the game, the game ends.",
-      "children": []
-    },
-    {
-      "section": "197",
-      "text": "Locations",
+      "text": "When a player wins the game, the game ends. 197. Locations",
       "children": []
     },
     {

@@ -74,26 +74,31 @@
             },
             {
               "section": "502.4.b",
-              "text": "Rune Pools and the number and quantity of resources in them.",
+              "text": "If the end of match procedure has entered additional turns and where in the additional turns players are. Players must announce and acknowledge additional turns as they occur. (See 408 for more information on End of Match Procedure.)",
               "children": []
             },
             {
               "section": "502.4.c",
-              "text": "All players' current scores.",
+              "text": "Rune Pools and the number and quantity of resources in them.",
               "children": []
             },
             {
               "section": "502.4.d",
-              "text": "A permanent's current state, as distinct from its printed ones.",
+              "text": "All players' current scores.",
               "children": []
             },
             {
               "section": "502.4.e",
-              "text": "Spells and abilities on the Chain, their order, and play choices made for them.",
+              "text": "A permanent's current state, as distinct from its printed ones.",
               "children": []
             },
             {
               "section": "502.4.f",
+              "text": "Spells and abilities on the Chain, their order, and play choices made for them.",
+              "children": []
+            },
+            {
+              "section": "502.4.g",
               "text": "Spells and abilities that resolved previously in the turn, and the sources of them are themselves public.",
               "children": []
             }
@@ -153,6 +158,11 @@
         },
         {
           "section": "502.11",
+          "text": "Players are not required to share private information, and may bluff in regards to their private information.",
+          "children": []
+        },
+        {
+          "section": "502.12",
           "text": "In 2v2, teammates may share Private information, including directly showing each other the cards in their hand as defined by 484.8.e. in the Core Rules.",
           "children": []
         }
@@ -284,8 +294,36 @@
         },
         {
           "section": "505.2",
-          "text": "Players performing a loop must have each iteration of the loop be identical with no conditional actions.",
-          "children": []
+          "text": "Each iteration of a loop must contain identical, non-conditional actions performed on the same set of cards. To establish a loop, the looping player must be able to say with certainty exactly what each step of the loop will be, not just the outcome.",
+          "children": [
+            {
+              "section": "505.2.a",
+              "text": "Loops must be fully deterministic; they may not rely on probability, decision trees, or conditional actions. Example:",
+              "children": [
+                {
+                  "section": "505.2.a.1",
+                  "text": "Legal Loop: With enough Energy available, playing Grim Apothecary to a battlefield then using its trigger to return itself to hand 100 times.",
+                  "children": []
+                },
+                {
+                  "section": "505.2.a.2",
+                  "text": "Illegal Loop: A card reads \"Recycle 3 cards from your trash: Ready a unit.\" A player with enough Energy available wants to use this to recycle 2 copies of Stupefy from their trash and 1 copy of Downstage Dramatics with an additional copy of Dramatics in hand, planning to play the Downstage Dramatics from hand, and then play each card as they draw it until there are 3 cards in the trash for them to recycle.",
+                  "children": [
+                    {
+                      "section": "505.2.a.2.a",
+                      "text": "This is a non-deterministic loop because the order you play the cards is not guaranteed. If the loop only included copies of the same exact card draw spell, it would be deterministic.",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "section": "505.2.b",
+              "text": "Players can manually execute non-deterministic loops, but must do so in a timely fashion. Failure to do so is Slow Play. See 703.2 for more information on Slow Play.",
+              "children": []
+            }
+          ]
         },
         {
           "section": "505.3",
@@ -351,6 +389,11 @@
         {
           "section": "505.12",
           "text": "Players who try to opt-out of shortcutting or propose incorrect shortcutting to use up time are cheating. See 704.8 for more information about cheating.",
+          "children": []
+        },
+        {
+          "section": "505.13",
+          "text": "Players cannot use loops to stall. When other actions are available, attempting to perform a loop that doesn't change the game state is cheating. See 704.8 for more information about cheating.",
           "children": []
         }
       ]
@@ -453,6 +496,21 @@
                   "section": "506.3.e.9",
                   "text": "A player would be required to make a choice of whether or not to place an optional trigger on the chain. (Example: Overzealous Fan)",
                   "children": []
+                },
+                {
+                  "section": "506.3.e.10",
+                  "text": "A trigger would require a player to choose something, such as a unit or gear, even if there is only one legal choice. (Example: Abandoned Hall)",
+                  "children": []
+                },
+                {
+                  "section": "506.3.e.11",
+                  "text": "A trigger would cause a player to gain resources, such as XP or floating Power/Energy. (Example: Jhin, Murderous Artist)",
+                  "children": []
+                },
+                {
+                  "section": "506.3.e.12",
+                  "text": "A trigger would cause a card to change zones, such as a unit taking lethal damage. (Non-lethal damage is not an observable impact.)",
+                  "children": []
                 }
               ]
             }
@@ -481,7 +539,7 @@
         },
         {
           "section": "507.2",
-          "text": "Players that acquire secret or private information about a match in which a teammate is playing can't communicate with that teammate for the remainder of that match. See CR 128. Privacy for information types.",
+          "text": "Players that acquire secret or private information about a match in which a teammate is playing can't communicate with that teammate for the remainder of that match. See CR",
           "children": []
         }
       ]
@@ -527,7 +585,7 @@
         },
         {
           "section": "508.8",
-          "text": "Tokens must be represented by card objects that show all relevant information including ready state.",
+          "text": "Tokens must be represented by card objects that are able to represent ready state. They must be understandable and discernible by all players in the game where they are being used.",
           "children": []
         },
         {
@@ -597,14 +655,20 @@
                   "children": []
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "section": "509.5",
+          "text": "Players can always ready runes they just exhausted for Energy or unrecycle runes they just recycled for Power as long as no new action has been taken and focus has not been passed.",
+          "children": [
             {
-              "section": "509.4.d",
-              "text": "The player wants to undo a decision to exhaust or recycle runes.",
+              "section": "509.5.a",
+              "text": "When changing decisions as described in 509.3. - 509.4., players can ready/unrecycle runes used for those decisions.",
               "children": [
                 {
-                  "section": "509.4.d.1",
-                  "text": "A player exhausts two Calm runes. Before taking a new game action, the player decides they do not want to exhaust them, and readies them.",
+                  "section": "509.5.a.1",
+                  "text": "Example: A player exhausts two runes and plays Pouty Poro from hand to their base, then immediately decides they do not want to play it. They may return it to their hand and ready those two runes.",
                   "children": []
                 }
               ]
@@ -612,12 +676,28 @@
           ]
         },
         {
-          "section": "509.5",
+          "section": "509.6",
+          "text": "At high OPL, flexibility on gameplay decisions is not intended as a tool to allow players to reverse decisions after an opponent is required to indicate information that reveals that decision to be a tactical error.",
+          "children": [
+            {
+              "section": "509.6.a",
+              "text": "Example: Player A moves their 3 Might unit to a battlefield and passes focus. Player B indicates their 2 Might unit at that battlefield is now at 4 Might due to their legend, Wuju Bladesman. Player A can no longer change their decision to move to that battlefield and pass focus.",
+              "children": []
+            },
+            {
+              "section": "509.6.b",
+              "text": "Decisions made based on inaccurately represented public information may still be rewound at the discretion of the head judge. Inaccurately representing information to try to get a rewind is cheating.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "section": "509.7",
           "text": "Intentionally attempting to reverse decisions to gain information from an opponent is considered angle shooting. Players may not change their decisions based on an opponent's physical reaction or as a response to an opponent starting to take a game action. See 704.4. for more information on angle shooting.",
           "children": []
         },
         {
-          "section": "509.6",
+          "section": "509.8",
           "text": "While changing decisions as described above is allowed, players must still maintain an appropriate pace of play. See 703.2 for more information on Slow Play.",
           "children": []
         }
